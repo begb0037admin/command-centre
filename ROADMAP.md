@@ -13,6 +13,9 @@ Last updated: 2026-06-06
   - meeting-records: Meeting Reviews
   - hris-dashboard (local only — HRIS-dashboard-local folder)
 
+### High Priority
+- [ ] Build Command Centre GitHub Pages dashboard — single entry point for all projects. Must include: live links to all repos and GitHub Pages deployments, ROADMAP outstanding tasks visible at a glance, Quick Load URLs per project (one-click copy), last commit date per repo. Dedicated session required.
+
 ### Medium Priority
 - [ ] Delete desktop-tutorial repo (browser: https://github.com/begb0037admin/desktop-tutorial)
 - [ ] HRIS-dashboard-local: push 25 unpushed commits to hris-dashboard after secrets scrub
