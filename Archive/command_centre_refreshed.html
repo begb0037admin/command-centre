@@ -1,0 +1,344 @@
+
+<h2 class="sr-only">Kevin's AI Command Centre — refreshed with live data from Granola, showing this week's meetings and open actions</h2>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.cc-root { padding: 0.5rem 0 2rem; }
+.cc-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 1.75rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.cc-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 4px; }
+.cc-heading { font-size: 22px; font-weight: 500; color: var(--color-text-primary); line-height: 1.2; }
+.cc-datetime { text-align: right; font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+.cc-datetime .time { font-size: 20px; font-weight: 500; color: var(--color-text-primary); display: block; }
+.grid-2 { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 12px; margin-bottom: 12px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; margin-bottom: 12px; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
+.card-sm { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.875rem 1rem; }
+.slabel { font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 10px; }
+.metric-num { font-size: 28px; font-weight: 500; color: var(--color-text-primary); line-height: 1; margin-bottom: 2px; }
+.metric-label { font-size: 12px; color: var(--color-text-secondary); }
+.launch-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; width: 100%; background: var(--color-background-primary); border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-lg); padding: 0.875rem 1rem; cursor: pointer; transition: background 0.15s; text-align: left; }
+.launch-btn:hover { background: var(--color-background-secondary); border-color: var(--color-border-primary); }
+.launch-btn:active { transform: scale(0.99); }
+.l-icon { font-size: 14px; margin-bottom: 3px; }
+.l-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+.l-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+.l-arrow { font-size: 11px; color: var(--color-text-tertiary); margin-top: 5px; }
+.vip-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.vip-row:last-child { border-bottom: none; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; }
+.av-mc { background: #EEEDFE; color: #3C3489; }
+.av-sb { background: #E1F5EE; color: #085041; }
+.vip-name { font-size: 13px; color: var(--color-text-primary); font-weight: 500; }
+.vip-role { font-size: 11px; color: var(--color-text-secondary); }
+.mini-btn { margin-left: auto; font-size: 11px; font-weight: 500; color: var(--color-text-primary); background: var(--color-background-primary); border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 5px 10px; cursor: pointer; flex-shrink: 0; transition: background 0.15s; }
+.mini-btn:hover { background: var(--color-background-secondary); }
+.rules-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; font-size: 12px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.rules-row:last-child { border-bottom: none; }
+.rules-label { color: var(--color-text-secondary); }
+.rules-val { font-weight: 500; color: var(--color-text-primary); }
+.rules-ok { color: #1D9E75; font-size: 11px; font-weight: 500; }
+.quick-draft { width: 100%; resize: none; font-size: 13px; color: var(--color-text-primary); background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 12px; min-height: 68px; outline: none; font-family: var(--font-sans); transition: border-color 0.15s; display: block; margin-top: 8px; }
+.quick-draft:focus { border-color: var(--color-border-primary); }
+.send-btn { margin-top: 8px; float: right; font-size: 12px; font-weight: 500; color: var(--color-text-primary); background: var(--color-background-primary); border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 6px 14px; cursor: pointer; transition: background 0.15s; }
+.send-btn:hover { background: var(--color-background-secondary); }
+.pdot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+.d-red { background: #E24B4A; }
+.d-amber { background: #EF9F27; }
+.d-blue { background: #378ADD; }
+.d-gray { background: #888780; }
+.badge { display: inline-flex; align-items: center; font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 99px; flex-shrink: 0; white-space: nowrap; }
+.b-red { background: #FCEBEB; color: #A32D2D; }
+.b-amber { background: #FAEEDA; color: #854F0B; }
+.b-green { background: #EAF3DE; color: #3B6D11; }
+.b-blue { background: #E6F1FB; color: #0C447C; }
+.arow { display: flex; align-items: flex-start; gap: 8px; padding: 7px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 12px; }
+.arow:last-child { border-bottom: none; }
+.atext { color: var(--color-text-primary); flex: 1; line-height: 1.4; }
+.mtg-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.mtg-row:last-child { border-bottom: none; }
+.mtg-time { font-size: 11px; font-weight: 500; color: var(--color-text-tertiary); min-width: 40px; padding-top: 2px; white-space: nowrap; }
+.mtg-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.mtg-title { font-size: 13px; color: var(--color-text-primary); line-height: 1.4; }
+.mtg-meta { font-size: 11px; color: var(--color-text-secondary); margin-top: 1px; }
+.leave-banner { background: #FAEEDA; border-radius: var(--border-radius-md); padding: 8px 12px; display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.leave-dot { width: 6px; height: 6px; border-radius: 50%; background: #BA7517; flex-shrink: 0; }
+.leave-text { font-size: 12px; color: #633806; line-height: 1.4; }
+</style>
+
+<div class="cc-root">
+
+  <div class="cc-header">
+    <div>
+      <div class="cc-eyebrow">AI Command Centre</div>
+      <div class="cc-heading">Good morning, Kevin.</div>
+    </div>
+    <div class="cc-datetime">
+      <span class="time" id="live-time">--:--</span>
+      <span id="live-date"></span>
+    </div>
+  </div>
+
+  <div class="leave-banner">
+    <div class="leave-dot"></div>
+    <div class="leave-text">Leave starts w/c 4 May — handover to Simon must be completed this week. 5 days remaining.</div>
+  </div>
+
+  <div class="grid-4">
+    <div class="card-sm">
+      <div class="metric-num">4</div>
+      <div class="metric-label">Urgent today</div>
+    </div>
+    <div class="card-sm">
+      <div class="metric-num">6</div>
+      <div class="metric-label">Meetings this week</div>
+    </div>
+    <div class="card-sm">
+      <div class="metric-num">13</div>
+      <div class="metric-label">Open actions</div>
+    </div>
+    <div class="card-sm">
+      <div class="metric-num">5</div>
+      <div class="metric-label">Days to leave</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+
+    <div>
+      <div class="card" style="margin-bottom:12px;">
+        <div class="slabel">Launch assistant</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+
+          <button class="launch-btn" onclick="sendPrompt('Run my morning briefing')">
+            <div class="l-icon">📬</div>
+            <div class="l-title">Morning briefing</div>
+            <div class="l-desc">Full inbox triage + calendar check</div>
+            <div class="l-arrow">Run ↗</div>
+          </button>
+
+          <button class="launch-btn" onclick="sendPrompt('Check my emails and triage anything urgent from Marie Cooksey or Simon Burford')">
+            <div class="l-icon">🔴</div>
+            <div class="l-title">VIP check</div>
+            <div class="l-desc">Marie + Simon only, fast scan</div>
+            <div class="l-arrow">Run ↗</div>
+          </button>
+
+          <button class="launch-btn" onclick="sendPrompt('Check my Outlook calendar for today and tomorrow and flag any conflicts or scheduling issues')">
+            <div class="l-icon">🗓</div>
+            <div class="l-title">Calendar check</div>
+            <div class="l-desc">Today + tomorrow, flag conflicts</div>
+            <div class="l-arrow">Run ↗</div>
+          </button>
+
+          <button class="launch-btn" onclick="sendPrompt('Review my meetings from the past week using Granola')">
+            <div class="l-icon">📋</div>
+            <div class="l-title">Meeting review</div>
+            <div class="l-desc">Granola notes, decisions + actions</div>
+            <div class="l-arrow">Run ↗</div>
+          </button>
+
+          <button class="launch-btn" onclick="sendPrompt('Help me prepare my handover document for Simon covering all open projects and actions')">
+            <div class="l-icon">📤</div>
+            <div class="l-title">Prep handover</div>
+            <div class="l-desc">Simon cover pack for w/c 4 May</div>
+            <div class="l-arrow">Run ↗</div>
+          </button>
+
+          <button class="launch-btn" onclick="sendPrompt('Give me a weekly wrap-up — what emails need follow-up, what meetings happened, and any open actions')">
+            <div class="l-icon">📊</div>
+            <div class="l-title">Weekly wrap-up</div>
+            <div class="l-desc">Open actions + threads summary</div>
+            <div class="l-arrow">Run ↗</div>
+          </button>
+
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="slabel">Quick compose</div>
+        <textarea class="quick-draft" id="compose-input" placeholder="Describe what you need to write... e.g. 'Chase Marie on Company 80 decision, need sign-off before I go on leave'"></textarea>
+        <button class="send-btn" onclick="composeMessage()">Draft it ↗</button>
+        <div style="clear:both;"></div>
+      </div>
+    </div>
+
+    <div>
+
+      <div class="card" style="margin-bottom:12px;">
+        <div class="slabel">Open actions — this week</div>
+
+        <div class="arow">
+          <div class="pdot d-red" style="margin-top:4px;"></div>
+          <div class="atext">Get Marie's formal decision on Company 80 single structure — unblocks DTP1092</div>
+          <span class="badge b-red">today</span>
+        </div>
+        <div class="arow">
+          <div class="pdot d-red" style="margin-top:4px;"></div>
+          <div class="atext">Finalise and review handover document with Simon before leave</div>
+          <span class="badge b-red">today</span>
+        </div>
+        <div class="arow">
+          <div class="pdot d-red" style="margin-top:4px;"></div>
+          <div class="atext">Send encryption SOP document to Simon today</div>
+          <span class="badge b-red">today</span>
+        </div>
+        <div class="arow">
+          <div class="pdot d-red" style="margin-top:4px;"></div>
+          <div class="atext">Connect Melanie with Simon as a priority before leave</div>
+          <span class="badge b-red">today</span>
+        </div>
+        <div class="arow">
+          <div class="pdot d-amber" style="margin-top:4px;"></div>
+          <div class="atext">Investigate CDR "do not use" chemistry labels — update ticket</div>
+          <span class="badge b-amber">this week</span>
+        </div>
+        <div class="arow">
+          <div class="pdot d-amber" style="margin-top:4px;"></div>
+          <div class="atext">Run applicant report Friday + coordinate with James</div>
+          <span class="badge b-amber">Fri</span>
+        </div>
+        <div class="arow">
+          <div class="pdot d-amber" style="margin-top:4px;"></div>
+          <div class="atext">Follow up with Marie on Odyssey annual review meeting</div>
+          <span class="badge b-amber">this week</span>
+        </div>
+        <div class="arow">
+          <div class="pdot d-amber" style="margin-top:4px;"></div>
+          <div class="atext">Submit SharePoint ISM service request (HESA staff return)</div>
+          <span class="badge b-amber">carry over</span>
+        </div>
+        <div class="arow">
+          <div class="pdot d-gray" style="margin-top:4px;"></div>
+          <div class="atext">Confirm with Nathan: reference data pull approach before leave</div>
+          <span class="badge b-blue">before Fri</span>
+        </div>
+
+        <div style="margin-top:8px;">
+          <button class="send-btn" style="float:none;display:block;width:100%;text-align:center;" onclick="sendPrompt('Review all my open actions from this week and help me triage what to tackle first today before I go on leave')">Review all 13 actions ↗</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:12px;">
+        <div class="slabel">This week's meetings</div>
+
+        <div class="mtg-row">
+          <div class="mtg-time">Mon</div>
+          <div class="mtg-dot" style="background:#378ADD;"></div>
+          <div>
+            <div class="mtg-title">H&S Roadmap 27/04</div>
+            <div class="mtg-meta">Funding approved · applicant upload · Iris quote</div>
+          </div>
+        </div>
+        <div class="mtg-row">
+          <div class="mtg-time">Mon</div>
+          <div class="mtg-dot" style="background:#7F77DD;"></div>
+          <div>
+            <div class="mtg-title">PXD Org Structure + Reference Data</div>
+            <div class="mtg-meta">Single structure confirmed · Company 80 setup steps</div>
+          </div>
+        </div>
+        <div class="mtg-row">
+          <div class="mtg-time">Tue</div>
+          <div class="mtg-dot" style="background:#EF9F27;"></div>
+          <div>
+            <div class="mtg-title">Support Call: CDR #11675053</div>
+            <div class="mtg-meta">"Do not use" chemistry labels — investigation needed</div>
+          </div>
+        </div>
+        <div class="mtg-row">
+          <div class="mtg-time">Tue</div>
+          <div class="mtg-dot" style="background:#7F77DD;"></div>
+          <div>
+            <div class="mtg-title">DTP1092 College staff in PXD 28/04</div>
+            <div class="mtg-meta">Hierarchy design · proposal target 11 May</div>
+          </div>
+        </div>
+        <div class="mtg-row">
+          <div class="mtg-time">Wed</div>
+          <div class="mtg-dot" style="background:#1D9E75;"></div>
+          <div>
+            <div class="mtg-title">FA Catchup</div>
+            <div class="mtg-meta">Handover prep · Cority sign-off · leave coverage</div>
+          </div>
+        </div>
+        <div class="mtg-row">
+          <div class="mtg-time">Wed</div>
+          <div class="mtg-dot" style="background:#378ADD;"></div>
+          <div>
+            <div class="mtg-title">Managers Meeting</div>
+            <div class="mtg-meta">No summary yet</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:12px;">
+        <div class="slabel">VIP contacts</div>
+        <div class="vip-row">
+          <div class="avatar av-mc">MC</div>
+          <div>
+            <div class="vip-name">Marie Cooksey</div>
+            <div class="vip-role">Head of HR Systems · your boss</div>
+          </div>
+          <button class="mini-btn" onclick="sendPrompt('Check for any recent emails from Marie Cooksey and draft replies if needed')">Check ↗</button>
+        </div>
+        <div class="vip-row">
+          <div class="avatar av-sb">SB</div>
+          <div>
+            <div class="vip-name">Simon Burford</div>
+            <div class="vip-role">HR Systems Analysis Manager</div>
+          </div>
+          <button class="mini-btn" onclick="sendPrompt('Check for any recent emails from Simon Burford and draft replies if needed')">Check ↗</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="slabel">Calendar hard rules</div>
+        <div class="rules-row"><span class="rules-label">Working hours</span><span class="rules-val">09:00 – 17:00</span><span class="rules-ok">enforced</span></div>
+        <div class="rules-row"><span class="rules-label">Lunch block</span><span class="rules-val">12:00 – 13:00</span><span class="rules-ok">enforced</span></div>
+        <div class="rules-row"><span class="rules-label">Buffer between meetings</span><span class="rules-val">15 min</span><span class="rules-ok">enforced</span></div>
+        <div class="rules-row"><span class="rules-label">Daily focus time</span><span class="rules-val">2+ hours</span><span class="rules-ok">preferred AM</span></div>
+        <div class="rules-row"><span class="rules-label">Back-to-back meetings</span><span class="rules-val">never</span><span class="rules-ok">enforced</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:0;">
+    <div class="slabel">Triage legend</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:4px;align-items:center;">
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary);"><div class="pdot d-red"></div>Urgent — action today</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary);"><div class="pdot d-amber"></div>Needs response 24–48h</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary);"><div class="pdot d-blue"></div>FYI — no action needed</div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--color-text-secondary);"><div class="pdot d-gray"></div>Low priority / noise</div>
+      <div style="margin-left:auto;font-size:11px;color:var(--color-text-tertiary);">Sender priority → urgency → action required</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function pad(n) { return String(n).padStart(2,'0'); }
+  function updateClock() {
+    const now = new Date();
+    const t = document.getElementById('live-time');
+    const d = document.getElementById('live-date');
+    if (t) t.textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    if (d) {
+      const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      d.textContent = days[now.getDay()] + ', ' + now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
+    }
+  }
+  updateClock();
+  setInterval(updateClock, 10000);
+  function composeMessage() {
+    const input = document.getElementById('compose-input');
+    const val = input ? input.value.trim() : '';
+    if (val) sendPrompt('Draft an email for me: ' + val);
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+      if (document.activeElement && document.activeElement.id === 'compose-input') composeMessage();
+    }
+  });
+</script>
