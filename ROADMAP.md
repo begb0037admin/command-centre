@@ -5,6 +5,8 @@ Last updated: 2026-06-06
 ## Outstanding Tasks
 
 ### High Priority
+- [ ] HRIS Dashboard Refresh button broken — 401 error. Root cause: PAT in index.html may not have updated correctly on GitHub. Next session: verify PAT in live index.html on GitHub, fix and confirm Refresh button works. Session ended mid-fix.
+
 - [ ] Add missing CLAUDE.md files to repos that lack them:
   - hr-projects: College Staff in PXD
   - hr-projects: DPIA PXD
@@ -14,6 +16,8 @@ Last updated: 2026-06-06
   - hris-dashboard (local only — HRIS-dashboard-local folder)
 
 ### High Priority
+- [ ] HRIS Dashboard Refresh button broken — 401 error. Root cause: PAT in index.html may not have updated correctly on GitHub. Next session: verify PAT in live index.html on GitHub, fix and confirm Refresh button works. Session ended mid-fix.
+
 - [ ] Build Command Centre GitHub Pages dashboard — single entry point for all projects. Must include: live links to all repos and GitHub Pages deployments, ROADMAP outstanding tasks visible at a glance, Quick Load URLs per project (one-click copy), last commit date per repo. Dedicated session required.
 
 ### Medium Priority
