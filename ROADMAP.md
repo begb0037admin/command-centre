@@ -1,6 +1,6 @@
 # Command Centre — Roadmap & Outstanding Items
 
-Last updated: 2026-06-08
+Last updated: 2026-06-08 (late)
 
 ## Outstanding Tasks
 
@@ -17,7 +17,10 @@ Last updated: 2026-06-08
 - [x] Absences — white bullet list, text justified
 - [x] Yellow accent for Needs Response section
 - [x] Fuzzy EntryID matching + verbatim subject prompt
-- [ ] NEXT: Monitor calendar quality over next few runs; multi-machine setup
+- [x] Calendar items — Python post-processing hardcodes specific sub/alert for known absent colleagues
+- [x] Show Done / Hide Done — boolean flag, fully working
+- [x] Local script sync issue resolved — git checkout origin/main -- fetch_inbox.py
+- [ ] NEXT: Update Task Scheduler bat to auto-pull fetch_inbox.py; multi-machine setup
 
 ### High Priority
 - [ ] HRIS Dashboard Refresh button broken — 401 error. Root cause: PAT in index.html may not have updated correctly on GitHub. Next session: verify PAT in live index.html on GitHub, fix and confirm Refresh button works. Session ended mid-fix.
