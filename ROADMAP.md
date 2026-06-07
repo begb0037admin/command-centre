@@ -1,8 +1,23 @@
 # Command Centre — Roadmap & Outstanding Items
 
-Last updated: 2026-06-06
+Last updated: 2026-06-08
 
 ## Outstanding Tasks
+
+### work-inbox — Completed 2026-06-08
+- [x] Dashboard rebuilt from 2735d43 base — Oxford navy sidebar, light blue main, Inter font
+- [x] Time-of-day greeting (Good morning/afternoon/evening) — UK timezone
+- [x] GitHub fetch on load — live briefing.json from raw.githubusercontent.com
+- [x] Context bar — 5-7 sentence specific briefing, 15px font, no PAT/CI mentions
+- [x] Calendar items — specific sub/alert with correct/wrong examples in prompt
+- [x] AI cross-references OOO/handover emails to infer absences not in calendar
+- [x] Card click-through — whole tile openmail://, hover shadow, checkbox isolated
+- [x] Tick to hide — cards and priority rows fade then hide after 1500ms
+- [x] Show Done button — reveals hidden items for untick/reference
+- [x] Absences — white bullet list, text justified
+- [x] Yellow accent for Needs Response section
+- [x] Fuzzy EntryID matching + verbatim subject prompt
+- [ ] NEXT: Monitor calendar quality over next few runs; multi-machine setup
 
 ### High Priority
 - [ ] HRIS Dashboard Refresh button broken — 401 error. Root cause: PAT in index.html may not have updated correctly on GitHub. Next session: verify PAT in live index.html on GitHub, fix and confirm Refresh button works. Session ended mid-fix.
