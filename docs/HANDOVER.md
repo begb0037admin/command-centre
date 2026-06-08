@@ -1,19 +1,20 @@
-# HANDOVER — 2026-06-01
+# Handover — 08 June 2026
+
 ## TL;DR
-Project folder created. HTML page built Apr 2026 in legacy Admin account. No files committed here yet.
-## State of Play
-- Folder structure created, no files yet
-## Next Concrete Action
-Retrieve Command Centre HTML from Admin account session (2026-04-24) and save as command-centre.html in project root.
-## Watch Out For
-- Extension buttons reference Claude in Chrome — verify extension active after account migration
-## Docs Updated This Session
-- [x] STATUS.md (stub)
-- [ ] OPEN_QUESTIONS.md — [ ] RISKS.md — ADRs: none
----
+Kevin is on phased return (4hrs/day, full remote). Today's session established a new task data standard (description/actions separation) and applied it to all 14 tasks. Two new tasks added: Chemistry bulk delete (t014) and smart notes escalation (t002 updated). Backup in place.
 
-## Roadmap item added 2026-06-01
+## What happened this session
+- Chemistry bulk delete (case 68974493) investigated — ball was in Oxford's court since 3 Jun, not AG's. Julie Hickman is the contact for appraisal cycle details. Draft reply to Julie prepared.
+- Smart notes escalation (Cority 00476764 / CCC-19664) — escalation comment submitted via ticket. Quality PUG 16 June identified as second pressure point.
+- Command centre task data standard established: description = context/history; actions = dated log (done/todo/awaiting). All 14 tasks restructured.
+- Field renamed from `notes` to `description` in tasks.json and index.html.
+- Backup: Archive/tasks_backup_20260608.json
 
-v2 architecture agreed in session. Command Centre to integrate with all 13 project folders via Cowork (reads STATUS.md / HANDOVER.md for RAG dashboard). Chrome extension handles inbox triage and Granola meeting review. Seat model maps: Cowork = file reads/writes, Chrome = live data, Claude chat = reasoning layer, Kevin = approval. v1 artifact first, v2 standalone HTML second.
+## Awaiting
+- Julie Hickman reply (Chemistry bulk delete details)
+- Freeda Franks reply (smart notes escalation)
+- Simon to send Athena's email (flex points)
+- Marie's return (DPIA sign-off, Odyssey review, flex points plan)
 
-Design session scheduled: 2026-06-02.
+## Next action
+Brief team Tuesday 9 June. Monitor DSC upload and HWP check Wednesday 10 June.
