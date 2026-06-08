@@ -61,3 +61,10 @@ Tasks load from `data/tasks.json` on page open (cache-busted). Done-state persis
 
 ## Failover
 Kevin → Hope (Cross-Domain Code Brief required)
+
+## Task Data Standard (established 08 Jun 2026)
+Each task in data/tasks.json follows this structure:
+- **description** — the issue, background, context, history, dependencies. What it is and why it matters.
+- **actions** — a dated log of everything done and everything still to do. Format: [DD Mon YYYY] for completed. [TODO] for pending. [AWAITING] for blocked on someone else. [MONITOR] for passive watch items.
+- Never put actions in description. Never put context or history in actions.
+- Rollback: Archive/tasks_backup_20260608.json contains pre-standard snapshot.
