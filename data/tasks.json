@@ -18,8 +18,8 @@
       "title": "Smart notes escalation email \u2014 Cority ticket 00476764",
       "tier": "today",
       "source": "H&S Roadmap 08/06",
-      "emailRef": "Cority Support 00476764",
-      "notes": "Missing from two consecutive major releases. No timeline given. No account manager. Draft email ready to send.",
+      "emailRef": "Cority ticket 00476764",
+      "notes": "Smart notes draft-save feature missing for 6 months. No supplier timeline. No account manager. Ticket raised by James Salas. Escalation route and SLA review needed \u2014 agree owner while James is on leave.",
       "actions": [
         "Ticket reference: Cority Support 00476764 \u2014 request for ability to draft and edit smart notes.",
         "Push supplier for a committed release timeline \u2014 two major releases have passed with no delivery.",
