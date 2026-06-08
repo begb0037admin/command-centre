@@ -59,3 +59,9 @@ Pull today's calendar events from Granola or Outlook COM and display in sidebar 
 | hris-launcher | https://begb0037admin.github.io/hris-launcher/ | — |
 | hr-fa-knowledge-base | https://begb0037admin.github.io/hr-fa-knowledge-base/ | https://raw.githubusercontent.com/begb0037admin/hr-fa-knowledge-base/main/CLAUDE.md |
 | hris-dashboard | https://begb0037admin.github.io/hris-dashboard/ | https://raw.githubusercontent.com/begb0037admin/hris-dashboard/main/CLAUDE.md |
+
+## Standards Update — 08 Jun 2026
+- Task field `notes` renamed to `description` across tasks.json and index.html
+- New standard: description = context/history/background; actions = dated log of done/todo/awaiting
+- Backup of pre-change tasks.json: Archive/tasks_backup_20260608.json
+- All 14 existing tasks restructured to new standard
