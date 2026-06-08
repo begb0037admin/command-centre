@@ -1,0 +1,187 @@
+{
+  "tasks": [
+    {
+      "id": "t001",
+      "title": "Brief team directly",
+      "tier": "today",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "Tuesday 9 June. Bring catch-up forward from Wednesday.",
+      "actions": [
+        "Michael and James are already across the situation \u2014 it's the others who need to hear it from you directly.",
+        "Bring the Wednesday catch-up forward to Tuesday."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t002",
+      "title": "Smart notes escalation email \u2014 Cority ticket 00476764",
+      "tier": "today",
+      "source": "H&S Roadmap 08/06",
+      "emailRef": "Cority ticket 00476764 / CCC-19664",
+      "notes": "Smart notes draft-save missing 6+ months. Status: Pending Future Release. No account manager. No committed timeline. Escalation comment submitted by Kevin via ticket comment box on Cority ticket 00476764 (08 Jun) \u2014 awaiting response from Freeda Franks. Raising at Quality PUG Tue 16 June 2pm.",
+      "actions": [
+        "Kevin submitted escalation via ticket comment box on Cority ticket 00476764 (08 Jun) \u2014 awaiting response from Freeda Franks.",
+        "Escalation comment posted on Cority ticket 00476764 \u2014 awaiting response from Freeda Franks.",
+        "Raise at Quality PUG \u2014 Tuesday 16 June, 2:00 PM (virtual).",
+        "Push for: (1) committed timeline on CCC-19664, (2) clarification on cost comment, (3) named account manager contact."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t003",
+      "title": "Flex points plan before Marie returns",
+      "tier": "week",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "Urgent \u2014 Simon and Marie have already agreed a plan will be ready when she returns.",
+      "actions": [
+        "Simon is sending Athena's email with the holiday compliance requirements. Once received, pass to Michael and ask him to pull screenshots showing the system meets those requirements.",
+        "Talk to Michael about any other flex point ideas and get as many quotes to AG as possible.",
+        "Build the tracking document: three columns \u2014 what's agreed, what's booked, what's being investigated \u2014 with point values against each."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t004",
+      "title": "Raise DTP1092 change management record",
+      "tier": "week",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "Simon didn't raise during your leave \u2014 still outstanding.",
+      "actions": [
+        "Put Marie as the approver even though she's not back \u2014 it won't be formally approved until go-live, but the record needs to exist."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t005",
+      "title": "Set up pay admin buy codes \u2014 after Simon's assessment",
+      "tier": "week",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "Blocked \u2014 waiting for Simon's level 6 assessment.",
+      "actions": [
+        "Simon is assessing what's already in the system at level 6 and will create missing reference data (Division 901, subdivision, levels 4 and 5).",
+        "Wait for Simon's green light before acting."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t006",
+      "title": "SharePoint documentation response + recommend alignment meeting",
+      "tier": "week",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "",
+      "actions": [
+        "Finish written response to Simon. Issue: shared drive moved to SharePoint, guidance not updated, only you and Lee managing it.",
+        "Documents exist \u2014 just not pointed to correctly.",
+        "Recommend the alignment meeting to get everyone up to speed.",
+        "Touch base with Michael on this too."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t007",
+      "title": "DSE upload monitoring \u2014 Wednesday 10 June",
+      "tier": "week",
+      "source": "James A/L Handover 05/06",
+      "emailRef": "",
+      "notes": "Due Wednesday 10 June \u2014 James cover",
+      "actions": [
+        "Monitor SFTP and system checks as agreed in the James handover.",
+        "James returns in time for the following upload."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t008",
+      "title": "HWP archived users check \u2014 Wednesday 10 June",
+      "tier": "week",
+      "source": "H&S Handover Doc",
+      "emailRef": "",
+      "notes": "H&S admin team are checking Wednesday. Be available if anything escalates.",
+      "actions": [
+        "H&S admin team checking users being incorrectly archived in Healthy Working Plus on Wednesday 10 June.",
+        "Issue: users not present in PXD are being archived. Contractors and non-PXD users affected.",
+        "Manual rule created for known cases (e.g. Jill Farmer). Similar cases may arise \u2014 manually create accounts or add to do-not-archive rule.",
+        "Two open HWP tickets pending discussion with Gail Miller \u2014 James says these can wait until he returns."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t009",
+      "title": "DPIA \u2014 awaiting Marie's signature",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "",
+      "notes": "Marie has replied to final comment. Nothing active until she formally signs Stage 7.",
+      "actions": [
+        "No action required until Marie formally signs Stage 7."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t010",
+      "title": "Odyssey annual review \u2014 schedule with Marie",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "",
+      "notes": "Cannot progress until Marie is back.",
+      "actions": [
+        "Needs Marie. Cannot progress until she returns."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t011",
+      "title": "OSM P1 \u2014 monitor only, Asta managing",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "",
+      "notes": "Passive \u2014 Asta is managing.",
+      "actions": [
+        "Passive monitoring only. Asta is managing \u2014 no action required."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t012",
+      "title": "Vacancy alert email retest (case 68388326)",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "Case 68388326",
+      "notes": "Open since April \u2014 not urgent.",
+      "actions": [
+        "Park until fuller hours."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t013",
+      "title": "Insight module update \u2014 Lindsey Spriggs",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "",
+      "notes": "Park until at fuller hours.",
+      "actions": [
+        "Park until fuller hours. Contact: Lindsey Spriggs."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t014",
+      "title": "Chemistry bulk delete \u2014 get details from Julie, pass to Reenu",
+      "tier": "today",
+      "source": "Case 68974493",
+      "emailRef": "68974493 / 67938206",
+      "notes": "AG (Reenu Delaney) waiting on: (1) appraisal cycle name, (2) list of affected employees. Ball in our court since 3 June \u2014 Julie Hickman likely holds the details. Once received, forward straight to Reenu to action the deletion.",
+      "actions": [
+        "Reply to Julie's email asking for the appraisal cycle name and list of affected employees.",
+        "Once Julie replies, forward details straight to Reenu Delaney at AG to action the deletion."
+      ],
+      "dateAdded": "2026-06-08"
+    }
+  ]
+}
