@@ -18,13 +18,12 @@
       "title": "Smart notes escalation email \u2014 Cority ticket 00476764",
       "tier": "today",
       "source": "H&S Roadmap 08/06",
-      "emailRef": "Cority ticket 00476764",
-      "notes": "Smart notes draft-save feature missing for 6 months. No supplier timeline. No account manager. Ticket raised by James Salas. Escalation route and SLA review needed \u2014 agree owner while James is on leave.",
+      "emailRef": "Cority ticket 00476764 / CCC-19664",
+      "notes": "Smart notes draft-save missing 6+ months. Status: Pending Future Release. No account manager. No committed timeline. Escalation comment posted on closed ticket 04/06 \u2014 awaiting Freeda Franks response. Raising at Quality PUG Tue 16 June 2pm.",
       "actions": [
-        "Ticket reference: Cority Support 00476764 \u2014 request for ability to draft and edit smart notes.",
-        "Push supplier for a committed release timeline \u2014 two major releases have passed with no delivery.",
-        "Ask who the escalation contact is given there is no active account manager.",
-        "Copy Chris in when sending."
+        "Escalation comment posted on Cority ticket 00476764 \u2014 awaiting response from Freeda Franks.",
+        "Raise at Quality PUG \u2014 Tuesday 16 June, 2:00 PM (virtual).",
+        "Push for: (1) committed timeline on CCC-19664, (2) clarification on cost comment, (3) named account manager contact."
       ],
       "dateAdded": "2026-06-08"
     },
