@@ -1,195 +1,261 @@
 # AGENT_MODEL.md
+# Runtime Operating Model
 
-> Which seat does what, where the handoffs are, and who is allowed to
-> write to disk. Read this when you need to know who should be doing
-> what — not what the work is.
+Version : 1.0
+Status  : Ratified
+Updated : 2026-06-09 (v1.2)
+Author  : Kevin Lelitte, HR Systems, University of Oxford
 
-This file lives in every project root and in project-os-template/.
-It changes rarely. Per-project state lives in STATUS.md and HANDOVER.md.
-
----
-
-## 1. The Four Seats
-
-### Seat A — Project Claude (Architecture, Reasoning, Routing)
-
-- **Where it runs:** Claude.ai Project, in the project workspace.
-- **What it owns:**
-  - All reasoning, architecture, and trade-off analysis.
-  - Drafting ADRs, updating OPEN_QUESTIONS.md, ROADMAP.md, RISKS.md.
-  - Writing RUN SCRIPT commands for Kev to execute.
-  - Writing COWORK BRIEFs for Kev to paste into Cowork.
-  - Writing CHROME BRIEFs for Kev to paste into Chrome.
-  - Every session starts here. No other seat opens without a
-    dispatch command from this seat.
-- **What it does not own:**
-  - Does not write to disk.
-  - Does not run terminal commands.
-  - Does not open Cowork or Chrome directly — issues briefs for Kev
-    to action.
+Governed by: CONSTITUTION.md
+Scope      : All work repositories (begb0037admin)
 
 ---
 
-### Seat B — Kev + VS Code Terminal (Script Execution)
+## Preamble
 
-- **Where it runs:** VS Code integrated terminal, on the project machine.
-- **What it owns:**
-  - Running 🔵 RUN SCRIPT commands issued by Seat A exactly as given.
-  - Pasting results back to Seat A exactly as returned — no
-    interpretation, no summarising.
-  - Pasting 🟡 COWORK BRIEF blocks into Cowork exactly as written.
-  - Pasting 🔴 CHROME BRIEF blocks into Chrome exactly as written.
-- **What it does not own:**
-  - Never interprets, rewrites, or summarises a brief before pasting.
-  - Never makes file edits directly — all writes go through Seat C.
-  - RUN SCRIPTs are always read-only. Any script that would modify
-    disk is a mistake — push back to Seat A.
+This document defines the current implementation of the four-role
+model established in CONSTITUTION.md Section 1. It assigns tools
+and software to roles, defines dispatch mechanics, and records
+platform context.
 
----
+This document changes more frequently than the constitution. When
+the tooling changes, this document is updated. The constitutional
+principles do not change with it.
 
-### Seat C — Cowork (Disk Writes, Git, Verification)
-
-- **Where it runs:** Cowork, with file tools and bash shell pointed
-  at the project folder.
-- **What it owns:**
-  - All file writes to the project on disk. This is the only seat
-    with that authority.
-  - Applying edits drafted by Seat A — code changes, doc updates,
-    ADR files, STATUS.md, HANDOVER.md.
-  - Running verification commands: node audit/verify.mjs, git status,
-    git add, git commit.
-  - Reporting results back exactly — output verbatim, no editorialising.
-- **What it does not own:**
-  - Does not invent architecture or make decisions. If something
-    unexpected requires a decision, it stops and reports back.
-  - Does not validate live UI behaviour — that is Seat D.
-  - **Stop-and-report rule:** if anything unexpected is encountered
-    mid-task — a file that doesn't match, a test that fails — Cowork
-    stops immediately, reports the exact error back to Kev, and waits.
-    It does not attempt to solve the problem itself.
-- **Brief format rule:**
-  - COWORK BRIEFs contain commands only. No prose lines mixed in.
-    PowerShell executes every line — prose causes errors.
+If this document conflicts with CONSTITUTION.md, the constitution
+wins. See CONSTITUTION.md Section 6.
 
 ---
 
-### Seat D — Chrome Claude (Browser Smoke-Test)
+## Section 1 — Platform Context
 
-- **Where it runs:** Claude in Chrome extension, against the live
-  prototype at localhost or a deployed URL.
-- **What it owns:**
-  - Driving the running prototype as a user would.
-  - Smoke-testing newly-shipped behaviour end-to-end.
-  - Reading DOM, console messages, network requests.
-  - Reporting findings verbatim — what it sees, not what it expects.
-- **What it does not own:**
-  - No disk read or write.
-  - No terminal, no git, no node.
-  - No code edits — not even one-line fixes.
-  - No project documentation — Chrome reads the live page only.
-  - Cannot drop files onto the page itself — asks Kev to do it.
-- **Brief format rule:**
-  - CHROME BRIEFs are numbered checklists with specific expected
-    outputs. No vague instructions. Chrome reports exactly what
-    it sees against each numbered step.
+Two machines are in scope for work operations.
 
----
+**Work machine (Kevin)**
+Operator : Kevin Lelitte
+OS       : Windows
+Username : begb0037 | Domain: AD-OAK
+Path root: C:\Users\begb0037.AD-OAK\
+work-inbox: C:\Users\admin\Documents\Claude\Projects\work-inbox\
 
-## 2. Dispatch Language
+**Personal machine (Hope)**
+Operator : Hope (personal domain)
+OS       : macOS
+Scope    : AIMM and personal projects only — out of scope for
+           all work repositories
 
-Every time Seat A finishes reasoning it ends with one of these —
-labelled, ready to act on, no ambiguity about who acts next.
+The paths listed in this section are descriptive runtime context
+only and are not authoritative configuration values.
 
-| Signal | Who acts | Used for |
-|---|---|---|
-| 🔵 RUN SCRIPT | Kev + VS Code | Read-only terminal commands. Run exactly, paste output back. |
-| 🟡 COWORK BRIEF | Cowork via Kev | Write to disk, git operations. Commands only, no prose. |
-| 🔴 CHROME BRIEF | Chrome via Kev | Browser smoke-test. Numbered checklist, specific expected outputs. |
+The two machines do not share a local filesystem. Files stored on
+one machine are not directly accessible from the other.
 
-**Routing rules:**
-- Seat A always goes first. No other seat opens without a dispatch
-  command.
-- One dispatch at a time. Wait for the result before issuing the next.
-- If Cowork reports something unexpected, bring it back to Seat A
-  before issuing any further briefs.
+GitHub is the authoritative source of truth for all governed
+repositories and acts as the shared storage layer between machines.
+Repository content is authoritative; local copies are working
+copies only.
+
+A Cowork brief that relies on machine-specific paths, configuration,
+or local files may not execute correctly on the other machine. Any
+brief that touches the local filesystem must make the target machine
+explicit.
+
+Never hardcode machine-specific paths in repository files. Use
+GitHub URLs as the stable reference wherever possible. Scripts that
+require local paths must derive or parameterise them at runtime.
 
 ---
 
-## 3. Handoff Triggers
+## Section 2 — Role Assignments
 
-| From | To | Trigger |
-|---|---|---|
-| Seat A | Seat B (RUN SCRIPT) | Need to read disk, run a test, check git state |
-| Seat A | Seat B (COWORK BRIEF) | Edit is fully designed, exact change known |
-| Seat A | Seat B (CHROME BRIEF) | Commit landed, behaviour needs browser verification |
-| Seat C | Seat A (via Kev) | Unexpected finding mid-task |
-| Seat D | Seat A (via Kev) | Defect needs a decision |
-| Seat D | Seat C (via Seat A) | Defect has a mechanical fix |
+The four constitutional roles are currently assigned as follows.
 
----
+**Seat A — Reasoning Seat → Claude Chat**
+Thinks, plans, architects, and routes. All sessions begin here.
+Produces all dispatch briefs. Makes all architectural decisions.
+Does not write files. Does not execute commands. Does not operate
+the browser.
 
-## 4. Cold-Start Order
+**Seat B — Human Seat → Kevin (work) / Hope (personal)**
+Executes read-only terminal commands on instruction from Seat A.
+Pastes output back verbatim without interpretation or modification.
+Human authority is available for oversight, approval, and
+intervention at any point. When invoked, it supersedes all
+in-flight decisions. See CONSTITUTION.md Section 1.
 
-Every seat, every session, reads in this order:
+**Seat C — Execution Seat → Cowork**
+The sole seat authorised to implement approved changes. Writes
+files to disk, executes bash commands, makes git commits, and
+controls the browser when browser automation is required. Acts
+only on complete, explicit briefs from Seat A. Has no authority
+to make decisions beyond the brief.
 
-1. `CLAUDE.md` — project identity, rules, what's in and out of scope
-2. `STATUS.md` — current phase and next step
-3. `HANDOVER.md` — what the last session did and what's next
+**Seat D — Verification Seat → Chrome (browser)**
+Confirms live behaviour in a running environment. Read-only.
+Reports what it observes. Does not interpret or decide.
 
-That is the entire bootstrap. No fourth file unless HANDOVER.md
-specifically directs it. No human recap required if the handover
-was written correctly.
+Verification is requested only when the required answer cannot be
+obtained from reasoning or implementation outputs.
 
-**Cowork cold-start exception:** Cowork receives HANDOVER.md only,
-plus the COWORK BRIEF. It does not receive CLAUDE.md or STATUS.md —
-those invite architectural reasoning Cowork should not be doing.
-
-**Chrome cold-start exception:** Chrome receives the CHROME BRIEF
-only. No project docs.
-
----
-
-## 5. Rollover and End-of-Session Discipline
-
-**Trigger:** roll at ~70% context. Don't wait for the cap.
-
-**Before any session closes:**
-
-1. Stop new work.
-2. Replace HANDOVER.md — never append. Write: TL;DR, state of play,
-   next concrete action, watch-outs.
-3. Bump STATUS.md — only the lines that changed.
-4. Promote in-flight decisions to ADRs.
-5. Commit everything.
-
-Chat history is disposable. The docs are the memory.
-A HANDOVER.md that grows session over session means durable knowledge
-isn't being promoted. Keep it small.
+Seat D is never the first seat reached in a workflow.
 
 ---
 
-## 6. Disk-Write Authority
+## Section 3 — Dispatch Protocol
 
-**Cowork is the only seat that writes files to disk.**
+Dispatches are issued by Seat A only. Each dispatch targets exactly
+one seat. Dispatches are strictly sequential. Parallel dispatches
+are not permitted. See CONSTITUTION.md Section 2.
 
-No exceptions. If Seat A or Seat D believes a file needs to change,
-the output is a handoff to Seat C — not an edit attempt.
+**Dispatch notation:**
+
+🔵 RUN SCRIPT   → Seat B
+   Read-only terminal command. Kevin runs exactly as given and
+   pastes output back verbatim.
+
+🟡 COWORK BRIEF → Seat C
+   Implementation instruction. Commands only — no prose. Must be
+   fully self-contained with complete context. Cowork has zero
+   assumed knowledge of the current session.
+
+🔴 CHROME BRIEF → Seat D
+   Numbered checklist of browser actions with specific expected
+   outputs at each step. Used only when Seats A and C cannot
+   resolve the verification need.
+
+A brief is complete when the receiving seat requires no
+architectural decisions to carry it out. An incomplete brief is
+a Seat A failure. See CONSTITUTION.md Section 2.
 
 ---
 
-## 7. Quick Reference
+## Section 4 — Cowork Brief Standards
 
-| Seat | Surface | Reads | Writes | Terminal |
-|---|---|---|---|---|
-| A — Project Claude | Claude.ai Project | Uploaded docs | Nothing on disk | None |
-| B — Kev + VS Code | VS Code terminal | Terminal output | Nothing directly | Runs scripts |
-| C — Cowork | Cowork + bash | All docs + source | Everything | git, node, bash |
-| D — Chrome | Chrome extension | Live page DOM only | Nothing on disk | None |
+Cowork briefs must be self-contained. The following are required
+in every brief:
+
+- **Restore point** — the SHA or file state to return to if the
+  change fails. Must be stated explicitly. See CONSTITUTION.md
+  Section 4.
+- **Target machine** — Windows (work) or macOS (personal).
+  Never assumed.
+- **Complete file paths** — derived from GitHub URLs, never
+  hardcoded local paths.
+- **Exit condition** — a clear statement of what done looks like.
+
+Assumptions are prohibited. Any information required to complete
+the task must be present in the brief.
+
+Large audit or recon output must be written to a file by Cowork,
+not pasted to chat. Seat A reads it surgically on demand via
+targeted fetch.
+
+**Cache-bust rule — mandatory for all Cowork briefs:**
+Every `Invoke-WebRequest` call to `raw.githubusercontent.com` must
+include a cache-busting query string to guarantee a live fetch.
+Use this pattern in every brief:
+```powershell
+$t = Get-Date -Format yyyyMMddHHmm
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/...?t=$t"
+```
+Never use a raw GitHub URL without `?t=$t`. Cached responses are
+stale and will cause Seat C to work from outdated file content.
 
 ---
 
-## Last updated
+## Section 5 — Session Discipline
 
-2026-05-18 — Four-seat model. Seat B (Kev + VS Code) added as
-formal execution seat. Dispatch language formalised. ChatGPT
-removed. Stop-and-report rule locked for Cowork.
+These rules apply every session.
+
+1. Large output → Cowork writes to file. Never pasted to chat.
+   Seat A requests specific sections only.
+2. Trigger "prep handover" before any large execution task —
+   not after. Large execution task is determined by operator
+   judgement and includes any task expected to generate substantial
+   output, prolonged execution, or significant context accumulation.
+3. Open a fresh session for any task that starts with a large
+   data load.
+4. After a sustained or complex session, Seat A flags proactively:
+   "This session has been running for a while — should I generate
+   a handover brief now as a precaution?"
+5. No session closes without documentation updated to reflect
+   current state. See CONSTITUTION.md Section 5.
+
+---
+
+## Section 6 — Cross-Domain Model
+
+Two operators share the same GitHub account and tooling.
+
+**Kevin** — work domain. All Oxford HR Systems repositories.
+**Hope**  — personal domain. AIMM and personal projects only.
+
+Domain boundaries are strict. Work context is never carried into
+personal sessions and vice versa. Mixed-domain briefs are not
+valid.
+
+Shared tooling does not create shared authority. Domain separation
+remains in force regardless of platform, repository ownership, or
+account configuration.
+
+When an operator hits a session limit, they generate a handover
+brief and pass it to the other operator. The receiving operator
+works from the brief alone — zero assumed knowledge from the
+sending session. On completion, the receiving operator issues a
+return brief.
+
+The sending operator always generates the handover brief. The
+receiving operator never generates it on their behalf.
+
+If a receiving operator is asked to pick up work without a
+handover brief, the correct response is to request one before
+proceeding.
+
+**Failover chain (work):** Kevin → Hope
+**Failover chain (personal):** Hope → Kevin
+
+---
+
+## Section 7 — GitHub Access
+
+All repositories are hosted under the begb0037admin GitHub
+account. Private repositories are accessed via the GitHub
+Contents API.
+
+URL pattern : https://api.github.com/repos/begb0037admin/
+              {repo}/contents/{path}?ref=main
+Auth header : Authorization: token {PAT}
+
+Authentication secrets are held outside repository files and are
+never committed. When credentials are rotated, both operator
+preferences must be updated on the same day.
+
+---
+
+## Section 8 — Repository Scope
+
+The following repositories are currently governed by this model.
+This table reflects current governance scope and may change
+without constitutional amendment.
+
+| Repository           | Status         | Notes                    |
+|----------------------|----------------|--------------------------|
+| clockify             | Active         | Gold standard / template |
+| hris-dashboard       | Active         | Complex — handle last    |
+| hr-fa-knowledge-base | Active         |                          |
+| work-inbox           | Active         |                          |
+| meeting-records      | Active         |                          |
+| hr-projects          | Active         |                          |
+| desktop-tutorial     | Decommissioned | Deletion pending         |
+| aimm                 | Out of scope   | Personal domain — Hope   |
+| personal-finance     | Out of scope   | Personal domain — Hope   |
+
+---
+
+## Version History
+
+| Version | Date       | Change                              |
+|---------|------------|-------------------------------------|
+| 1.0     | 2026-06-06 | Initial ratification.               |
+| 1.1     | 2026-06-09 | Updated work-inbox local path.      |
+| 1.2     | 2026-06-09 | Cache-bust rule added to Section 4. |
