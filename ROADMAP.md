@@ -1,75 +1,61 @@
-# Command Centre — Roadmap & Outstanding Items
+# command-centre — Roadmap
 
-Last updated: 2026-06-08 (late)
+**Last updated:** 2026-06-08
+**Module 1 status:** ✅ Complete and live
 
-## Outstanding Tasks
+---
 
-### work-inbox — Completed 2026-06-08
-- [x] Dashboard rebuilt from 2735d43 base — Oxford navy sidebar, light blue main, Inter font
-- [x] Time-of-day greeting (Good morning/afternoon/evening) — UK timezone
-- [x] GitHub fetch on load — live briefing.json from raw.githubusercontent.com
-- [x] Context bar — 5-7 sentence specific briefing, 15px font, no PAT/CI mentions
-- [x] Calendar items — specific sub/alert with correct/wrong examples in prompt
-- [x] AI cross-references OOO/handover emails to infer absences not in calendar
-- [x] Card click-through — whole tile openmail://, hover shadow, checkbox isolated
-- [x] Tick to hide — cards and priority rows fade then hide after 1500ms
-- [x] Show Done button — reveals hidden items for untick/reference
-- [x] Absences — white bullet list, text justified
-- [x] Yellow accent for Needs Response section
-- [x] Fuzzy EntryID matching + verbatim subject prompt
-- [x] Calendar items — Python post-processing hardcodes specific sub/alert for known absent colleagues
-- [x] Show Done / Hide Done — boolean flag, fully working
-- [x] Local script sync issue resolved — git checkout origin/main -- fetch_inbox.py
-- [ ] NEXT: Update Task Scheduler bat to auto-pull fetch_inbox.py; multi-machine setup
+## Module 1 — To-Do Dashboard ✅
 
-### High Priority
-- [ ] HRIS Dashboard Refresh button broken — 401 error. Root cause: PAT in index.html may not have updated correctly on GitHub. Next session: verify PAT in live index.html on GitHub, fix and confirm Refresh button works. Session ended mid-fix.
+- [x] Single-file `index.html` — no framework, no build step
+- [x] Oxford navy sidebar (320px) — crest, branding, live task counts, week summary, Add Task
+- [x] Three priority tiers: Today 🔴 / This Week 🟡 / Parked ⚪
+- [x] Task cards with collapsible drawers — action bullets, source badge, email ref, editable notes, Move To controls
+- [x] Quick-add panel — title, tier picker, source, email ref, notes
+- [x] Done state — checkbox fade/strikethrough, persists in localStorage
+- [x] Hide/Show Done toggle
+- [x] Seed data — 13 tasks from SK 1-1 08/06, enriched with action detail from Granola transcript
+- [x] GitHub Pages live — `begb0037admin.github.io/command-centre/`
+- [x] Repo standardised — CLAUDE.md, HANDOVER.md, ROADMAP.md, README.md, AGENT_MODEL.md, CONSTITUTION.md
 
-- [ ] Add missing CLAUDE.md files to repos that lack them:
-  - hr-projects: College Staff in PXD
-  - hr-projects: DPIA PXD
-  - hr-projects: HR Systems Roadmap
-  - hr-projects: ORCID in PXD
-  - meeting-records: Meeting Reviews
-  - hris-dashboard (local only — HRIS-dashboard-local folder)
+---
 
-### High Priority
-- [ ] HRIS Dashboard Refresh button broken — 401 error. Root cause: PAT in index.html may not have updated correctly on GitHub. Next session: verify PAT in live index.html on GitHub, fix and confirm Refresh button works. Session ended mid-fix.
+## Next — Module 1 Automation
 
-- [ ] Build Command Centre GitHub Pages dashboard — single entry point for all projects. Must include: live links to all repos and GitHub Pages deployments, ROADMAP outstanding tasks visible at a glance, Quick Load URLs per project (one-click copy), last commit date per repo. Dedicated session required.
+### Priority 1 — Granola → Task write-back
+Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API. This is the core automation loop. Also resolves the manual-task persistence limitation in v1.
 
-### Medium Priority
-- [ ] Delete desktop-tutorial repo (browser: https://github.com/begb0037admin/desktop-tutorial)
-- [ ] HRIS-dashboard-local: push 25 unpushed commits to hris-dashboard after secrets scrub
-- [ ] HRIS-dashboard-local: add .gitignore to prevent session.json, saasit_cookies.json being committed
-- [ ] Investigate SAASIT session expiry — dashboard requires manual refresh every session
+### Priority 2 — Link tasks to work-inbox
+Surface email references on task cards as clickable `openmail://` links, pulling from `work-inbox/data/briefing.json` by subject match or case number.
 
-### Personal Domain (pass to Hope)
-- [ ] AIMM public repo: confirm no hardcoded ElevenLabs/Anthropic keys in index.html
-- [ ] Personal Finance: diff Kevin Lelitte Personal Finance vs Personal Finance — confirm canonical copy, archive legacy folder
+### Priority 3 — Persistent manual tasks
+Until Granola write-back is live, add GitHub API write-on-add for tasks created via the quick-add panel. Requires PAT prompt on page load (same pattern as hris-dashboard).
 
-## Repo Index
+---
 
-| Repo | URL | Branch | CLAUDE.md Quick Load |
-|---|---|---|---|
-| clockify | https://github.com/begb0037admin/clockify | main | https://raw.githubusercontent.com/begb0037admin/clockify/main/CLAUDE.md |
-| hris-dashboard | https://github.com/begb0037admin/hris-dashboard | main | https://raw.githubusercontent.com/begb0037admin/hris-dashboard/main/CLAUDE.md |
-| hris-launcher | https://github.com/begb0037admin/hris-launcher | main | https://raw.githubusercontent.com/begb0037admin/hris-launcher/main/CLAUDE.md |
-| hr-fa-knowledge-base | https://github.com/begb0037admin/hr-fa-knowledge-base | main | https://raw.githubusercontent.com/begb0037admin/hr-fa-knowledge-base/main/CLAUDE.md |
-| work-inbox | https://github.com/begb0037admin/work-inbox | main | https://raw.githubusercontent.com/begb0037admin/work-inbox/main/CLAUDE.md |
-| hr-projects | https://github.com/begb0037admin/hr-projects | main | (see subfolders) |
-| meeting-records | https://github.com/begb0037admin/meeting-records | main | (see subfolders) |
-| command-centre | https://github.com/begb0037admin/command-centre | main | https://raw.githubusercontent.com/begb0037admin/command-centre/main/CLAUDE.md |
+## Module 2 — Command Centre Wrapper (future)
 
-## Session Start — Quick Load URLs
+A second panel or tab giving:
+- Repo index — live links to all GitHub Pages deployments
+- ROADMAP view — outstanding items across all repos at a glance
+- Quick Load URLs — one-click copy per project
+- Last commit date per repo (GitHub API)
 
-Paste these into Claude at the start of a session to load context:
+---
 
-| Project | URL |
-|---|---|
-| Command Centre (this file) | https://raw.githubusercontent.com/begb0037admin/command-centre/main/ROADMAP.md |
-| Clockify | https://raw.githubusercontent.com/begb0037admin/clockify/main/CLAUDE.md |
-| HRIS Dashboard | https://raw.githubusercontent.com/begb0037admin/hris-dashboard/main/CLAUDE.md |
-| HR FA Knowledge Base | https://raw.githubusercontent.com/begb0037admin/hr-fa-knowledge-base/main/CLAUDE.md |
-| Work Inbox | https://raw.githubusercontent.com/begb0037admin/work-inbox/main/CLAUDE.md |
-| Command Centre | https://raw.githubusercontent.com/begb0037admin/command-centre/main/CLAUDE.md |
+## Module 3 — Calendar Integration (future)
+
+Pull today's calendar events from Granola or Outlook COM and display in sidebar below the task counts. Surface meeting-sourced tasks automatically.
+
+---
+
+## Repo Index (for reference)
+
+| Repo | GitHub Pages | CLAUDE.md |
+|---|---|---|
+| command-centre | https://begb0037admin.github.io/command-centre/ | https://raw.githubusercontent.com/begb0037admin/command-centre/main/CLAUDE.md |
+| clockify | https://begb0037admin.github.io/clockify/ | https://raw.githubusercontent.com/begb0037admin/clockify/main/CLAUDE.md |
+| work-inbox | https://begb0037admin.github.io/work-inbox/ | https://raw.githubusercontent.com/begb0037admin/work-inbox/main/CLAUDE.md |
+| hris-launcher | https://begb0037admin.github.io/hris-launcher/ | — |
+| hr-fa-knowledge-base | https://begb0037admin.github.io/hr-fa-knowledge-base/ | https://raw.githubusercontent.com/begb0037admin/hr-fa-knowledge-base/main/CLAUDE.md |
+| hris-dashboard | https://begb0037admin.github.io/hris-dashboard/ | https://raw.githubusercontent.com/begb0037admin/hris-dashboard/main/CLAUDE.md |
