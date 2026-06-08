@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Centre — Kevin Lelitte</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --oxford:        #002147;
+  --sidebar-bg:    #002147;
+  --main-bg:       #f5f7fb;
+  --card-bg:       #ffffff;
+  --text-dark:     #1a2740;
+  --text-muted:    #7a8a9e;
+  --text-very-muted: #b0b8c8;
+  --sidebar-width: 280px;
+
+  --today-color:  #ef4444;
+  --week-color:   #f59e0b;
+  --parked-color: #94a3b8;
+
+  --today-bg:   #fef2f2;
+  --week-bg:    #fffbeb;
+  --parked-bg:  #f8fafc;
+
+  --today-border:  #fca5a5;
+  --week-border:   #fcd34d;
+  --parked-border: #cbd5e1;
+}
+
+html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--main-bg); color: var(--text-dark); }
+
+/* ── LAYOUT ── */
+.shell { display: flex; min-height: 100vh; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  background: var(--sidebar-bg);
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* Oxford shield SVG inline */
+.sidebar-shield {
+  width: 44px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.sidebar-brand-text .brand-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.sidebar-brand-text .brand-sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.sidebar-user {
+  font-size: 12px;
+  color: rgba(255,255,255,0.42);
+  letter-spacing: 0.02em;
+}
+
+/* summary stats */
+.sidebar-stats {
+  padding: 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.28);
+  margin-bottom: 10px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.stat-row .stat-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.65);
+}
+.stat-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.stat-dot.today  { background: var(--today-color); }
+.stat-dot.week   { background: var(--week-color); }
+.stat-dot.parked { background: var(--parked-color); }
+.stat-count {
+  font-weight: 700;
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+}
+
+.sidebar-divider {
+  margin: 20px;
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* quick add btn in sidebar */
+.sidebar-quick-add {
+  margin: 0 20px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+.sidebar-quick-add:hover { background: rgba(255,255,255,0.18); }
+
+.sidebar-date {
+  margin: 16px 20px 0;
+  font-size: 11px;
+  color: rgba(255,255,255,0.28);
+}
+
+/* ── MAIN ── */
+.main {
+  flex: 1;
+  padding: 36px 40px;
+  overflow-y: auto;
+}
+
+.main-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.main-greeting h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.main-greeting .main-date {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn-primary {
+  background: var(--oxford);
+  color: #fff;
+}
+.btn-primary:hover { box-shadow: 0 4px 12px rgba(0,33,71,0.25); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid #d1d9e6;
+}
+.btn-ghost:hover { background: #edf0f6; color: var(--text-dark); }
+
+/* ── SECTIONS ── */
+.section { margin-bottom: 36px; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.section-dot.today  { background: var(--today-color); }
+.section-dot.week   { background: var(--week-color); }
+.section-dot.parked { background: var(--parked-color); }
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.01em;
+}
+
+.section-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-very-muted);
+  background: #edf0f6;
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: #dde3ee;
+}
+
+/* ── TASK CARDS ── */
+.task-list { display: flex; flex-direction: column; gap: 10px; }
+
+.task-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid #e4eaf4;
+  border-left-width: 4px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: box-shadow 0.15s;
+  box-shadow: 0 1px 3px rgba(0,33,71,0.05);
+}
+.task-card:hover { box-shadow: 0 4px 12px rgba(0,33,71,0.1); }
+
+.task-card.tier-today  { border-left-color: var(--today-color); }
+.task-card.tier-week   { border-left-color: var(--week-color); }
+.task-card.tier-parked { border-left-color: var(--parked-color); }
+
+.task-card.done {
+  opacity: 0.45;
+}
+.task-card.done .task-title {
+  text-decoration: line-through;
+  color: var(--text-very-muted);
+}
+.task-card.hidden { display: none; }
+
+/* checkbox */
+.task-check {
+  width: 18px; height: 18px;
+  border-radius: 4px;
+  border: 2px solid #c4cdd8;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.task-check.checked {
+  background: var(--oxford);
+  border-color: var(--oxford);
+}
+.task-check.checked::after {
+  content: '';
+  width: 10px; height: 6px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+.task-body { flex: 1; min-width: 0; }
+
+.task-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
+  flex: 1;
+  min-width: 0;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.badge-source {
+  background: #e8edf8;
+  color: #4a6080;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.task-notes {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.task-email-ref {
+  font-size: 12px;
+  color: var(--text-very-muted);
+  font-style: italic;
+}
+.task-date {
+  font-size: 11px;
+  color: var(--text-very-muted);
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 28px 20px;
+  color: var(--text-very-muted);
+  font-size: 13px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px dashed #d1d9e6;
+}
+
+/* ── QUICK-ADD PANEL ── */
+.panel-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 100;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.panel-overlay.open { display: flex; }
+
+.add-panel {
+  background: var(--card-bg);
+  width: 380px;
+  max-width: 100vw;
+  margin: 20px;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0,33,71,0.2);
+}
+
+.panel-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.form-group { margin-bottom: 16px; }
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #d1d9e6;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background: #fafbfd;
+  transition: border-color 0.15s;
+  outline: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--oxford);
+  background: #fff;
+}
+.form-textarea { resize: vertical; min-height: 64px; }
+
+.tier-picker {
+  display: flex;
+  gap: 8px;
+}
+.tier-option {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #e4eaf4;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-muted);
+  transition: all 0.15s;
+  text-align: center;
+}
+.tier-option.selected-today  { border-color: var(--today-color);  color: var(--today-color);  background: var(--today-bg); }
+.tier-option.selected-week   { border-color: var(--week-color);   color: var(--week-color);   background: var(--week-bg); }
+.tier-option.selected-parked { border-color: var(--parked-color); color: var(--parked-color); background: var(--parked-bg); }
+
+.panel-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.panel-actions .btn { flex: 1; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand">
+        <!-- Oxford shield SVG -->
+        <svg class="sidebar-shield" viewBox="0 0 44 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 0L0 8V28C0 40 10 48 22 52C34 48 44 40 44 28V8L22 0Z" fill="rgba(255,255,255,0.12)"/>
+          <path d="M22 2L2 9.5V28C2 39 11.5 46.5 22 50C32.5 46.5 42 39 42 28V9.5L22 2Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <!-- crown -->
+          <path d="M14 20L14 16L17 19L22 15L27 19L30 16L30 20L14 20Z" fill="rgba(255,255,255,0.7)"/>
+          <!-- cross -->
+          <rect x="20" y="20" width="4" height="14" fill="rgba(255,255,255,0.55)"/>
+          <rect x="14" y="24" width="16" height="4" fill="rgba(255,255,255,0.55)"/>
+          <!-- open book -->
+          <rect x="15" y="30" width="6" height="5" rx="0.5" fill="rgba(255,255,255,0.5)"/>
+          <rect x="23" y="30" width="6" height="5" rx="0.5" fill="rgba(255,255,255,0.5)"/>
+          <path d="M21 30 L22 35 L23 30" fill="rgba(255,255,255,0.3)"/>
+        </svg>
+        <div class="sidebar-brand-text">
+          <div class="brand-title">Command Centre</div>
+          <div class="brand-sub">Personnel Services</div>
+        </div>
+      </div>
+      <div class="sidebar-user">kevin.lelitte@admin.ox.ac.uk</div>
+    </div>
+
+    <div class="sidebar-stats">
+      <div class="stat-label">Week of <span id="weekLabel">—</span></div>
+      <div class="stat-row">
+        <span class="stat-name"><span class="stat-dot today"></span>Today</span>
+        <span class="stat-count" id="countToday">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-name"><span class="stat-dot week"></span>This Week</span>
+        <span class="stat-count" id="countWeek">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-name"><span class="stat-dot parked"></span>Parked</span>
+        <span class="stat-count" id="countParked">0</span>
+      </div>
+    </div>
+
+    <hr class="sidebar-divider">
+
+    <button class="sidebar-quick-add" onclick="openPanel()">
+      <span>＋</span> Add Task
+    </button>
+
+    <div class="sidebar-date" id="sidebarDate"></div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="main-header">
+      <div class="main-greeting">
+        <h1 id="greeting">Good morning, Kevin</h1>
+        <div class="main-date" id="mainDate"></div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-ghost" id="toggleDoneBtn" onclick="toggleDone()">Hide Done</button>
+        <button class="btn btn-primary" onclick="openPanel()">＋ Add Task</button>
+      </div>
+    </div>
+
+    <!-- TODAY -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-dot today"></span>
+        <span class="section-title">Today</span>
+        <span class="section-count" id="todayCount">0</span>
+        <span class="section-rule"></span>
+      </div>
+      <div class="task-list" id="todayList"></div>
+    </div>
+
+    <!-- THIS WEEK -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-dot week"></span>
+        <span class="section-title">This Week</span>
+        <span class="section-count" id="weekCount">0</span>
+        <span class="section-rule"></span>
+      </div>
+      <div class="task-list" id="weekList"></div>
+    </div>
+
+    <!-- PARKED -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-dot parked"></span>
+        <span class="section-title">Parked</span>
+        <span class="section-count" id="parkedCount">0</span>
+        <span class="section-rule"></span>
+      </div>
+      <div class="task-list" id="parkedList"></div>
+    </div>
+  </main>
+</div>
+
+<!-- QUICK-ADD PANEL -->
+<div class="panel-overlay" id="panelOverlay" onclick="handleOverlayClick(event)">
+  <div class="add-panel" id="addPanel">
+    <div class="panel-title">Add Task</div>
+
+    <div class="form-group">
+      <label class="form-label">Title</label>
+      <input class="form-input" id="newTitle" type="text" placeholder="What needs doing?">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Priority</label>
+      <div class="tier-picker">
+        <button class="tier-option selected-today" data-tier="today" onclick="selectTier('today')">🔴 Today</button>
+        <button class="tier-option" data-tier="week" onclick="selectTier('week')">🟡 This Week</button>
+        <button class="tier-option" data-tier="parked" onclick="selectTier('parked')">⚪ Parked</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Source</label>
+      <input class="form-input" id="newSource" type="text" placeholder="e.g. SK 1-1 08/06" value="Manual">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Email ref <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+      <input class="form-input" id="newEmailRef" type="text" placeholder="Case number or subject">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Notes <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+      <textarea class="form-textarea" id="newNotes" placeholder="One-line context"></textarea>
+    </div>
+
+    <div class="panel-actions">
+      <button class="btn btn-ghost" onclick="closePanel()">Cancel</button>
+      <button class="btn btn-primary" onclick="addTask()">Add Task</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── STATE ──
+let tasks = [];
+let doneVisible = true;
+let selectedTier = 'today';
+const DONE_KEY = 'commandCentre_done_v1';
+
+// ── INIT ──
+async function init() {
+  setGreetingAndDate();
+  await loadTasks();
+  loadDoneState();
+  render();
+}
+
+function setGreetingAndDate() {
+  const now = new Date();
+  const hour = now.getHours();
+  const greet = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  document.getElementById('greeting').textContent = `${greet}, Kevin`;
+
+  const opts = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+  const dateStr = now.toLocaleDateString('en-GB', opts);
+  document.getElementById('mainDate').textContent = dateStr;
+  document.getElementById('sidebarDate').textContent = dateStr;
+
+  // week label
+  const monday = new Date(now);
+  monday.setDate(now.getDate() - ((now.getDay() + 6) % 7));
+  document.getElementById('weekLabel').textContent = monday.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+}
+
+async function loadTasks() {
+  try {
+    const res = await fetch('data/tasks.json?_=' + Date.now());
+    if (!res.ok) throw new Error('fetch failed');
+    const data = await res.json();
+    tasks = data.tasks || [];
+  } catch (e) {
+    console.warn('Could not load tasks.json — starting empty', e);
+    tasks = [];
+  }
+}
+
+function loadDoneState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(DONE_KEY) || '{}');
+    tasks.forEach(t => { if (saved[t.id]) t.done = true; });
+  } catch(e) {}
+}
+
+function saveDoneState() {
+  const state = {};
+  tasks.forEach(t => { if (t.done) state[t.id] = true; });
+  localStorage.setItem(DONE_KEY, JSON.stringify(state));
+}
+
+// ── RENDER ──
+function render() {
+  const tiers = ['today', 'week', 'parked'];
+  const listIds = { today: 'todayList', week: 'weekList', parked: 'parkedList' };
+  const countIds = { today: 'todayCount', week: 'weekCount', parked: 'parkedCount' };
+  const sidebarIds = { today: 'countToday', week: 'countWeek', parked: 'countParked' };
+
+  tiers.forEach(tier => {
+    const tierTasks = tasks.filter(t => t.tier === tier);
+    const total = tierTasks.length;
+    const pending = tierTasks.filter(t => !t.done).length;
+
+    document.getElementById(countIds[tier]).textContent = `${pending} of ${total}`;
+    document.getElementById(sidebarIds[tier]).textContent = pending;
+
+    const list = document.getElementById(listIds[tier]);
+    list.innerHTML = '';
+
+    if (tierTasks.length === 0) {
+      list.innerHTML = '<div class="empty-state">No tasks in this tier</div>';
+      return;
+    }
+
+    tierTasks.forEach(task => {
+      const card = document.createElement('div');
+      card.className = `task-card tier-${tier}${task.done ? ' done' : ''}${(!doneVisible && task.done) ? ' hidden' : ''}`;
+      card.dataset.id = task.id;
+
+      card.innerHTML = `
+        <div class="task-check${task.done ? ' checked' : ''}" onclick="toggleTask('${task.id}')"></div>
+        <div class="task-body">
+          <div class="task-title-row">
+            <div class="task-title">${escHtml(task.title)}</div>
+            ${task.source ? `<span class="badge badge-source">${escHtml(task.source)}</span>` : ''}
+          </div>
+          <div class="task-meta">
+            ${task.notes ? `<span class="task-notes">${escHtml(task.notes)}</span>` : ''}
+            ${task.emailRef ? `<span class="task-email-ref">${escHtml(task.emailRef)}</span>` : ''}
+            <span class="task-date">${formatDate(task.dateAdded)}</span>
+          </div>
+        </div>
+      `;
+      list.appendChild(card);
+    });
+  });
+}
+
+function escHtml(str) {
+  return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatDate(d) {
+  if (!d) return '';
+  const [y, m, day] = d.split('-');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${parseInt(day)} ${months[parseInt(m)-1]}`;
+}
+
+// ── INTERACTIONS ──
+function toggleTask(id) {
+  const task = tasks.find(t => t.id === id);
+  if (!task) return;
+  task.done = !task.done;
+  saveDoneState();
+  render();
+}
+
+function toggleDone() {
+  doneVisible = !doneVisible;
+  document.getElementById('toggleDoneBtn').textContent = doneVisible ? 'Hide Done' : 'Show Done';
+  render();
+}
+
+// ── QUICK-ADD PANEL ──
+function openPanel() {
+  document.getElementById('panelOverlay').classList.add('open');
+  document.getElementById('newTitle').focus();
+}
+
+function closePanel() {
+  document.getElementById('panelOverlay').classList.remove('open');
+  clearPanel();
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('panelOverlay')) closePanel();
+}
+
+function selectTier(tier) {
+  selectedTier = tier;
+  document.querySelectorAll('.tier-option').forEach(btn => {
+    btn.className = 'tier-option';
+    if (btn.dataset.tier === tier) btn.classList.add(`selected-${tier}`);
+  });
+}
+
+function clearPanel() {
+  document.getElementById('newTitle').value = '';
+  document.getElementById('newSource').value = 'Manual';
+  document.getElementById('newEmailRef').value = '';
+  document.getElementById('newNotes').value = '';
+  selectTier('today');
+}
+
+function addTask() {
+  const title = document.getElementById('newTitle').value.trim();
+  if (!title) { document.getElementById('newTitle').focus(); return; }
+
+  const newTask = {
+    id: 't' + Date.now(),
+    title,
+    tier: selectedTier,
+    source: document.getElementById('newSource').value.trim() || 'Manual',
+    emailRef: document.getElementById('newEmailRef').value.trim(),
+    notes: document.getElementById('newNotes').value.trim(),
+    dateAdded: new Date().toISOString().slice(0, 10),
+    done: false
+  };
+
+  tasks.push(newTask);
+  closePanel();
+  render();
+}
+
+// keyboard shortcut
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closePanel();
+});
+
+init();
+</script>
+</body>
+</html>
