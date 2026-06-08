@@ -6,7 +6,11 @@
       "tier": "today",
       "source": "SK 1-1 08/06",
       "emailRef": "",
-      "notes": "",
+      "notes": "Tomorrow Tuesday 9 June. Bring catch-up forward from Wednesday.",
+      "actions": [
+        "Michael and James are already across the situation — it's the others who need to hear it from you directly.",
+        "Bring the Wednesday catch-up forward to Tuesday."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -16,6 +20,11 @@
       "source": "H&S Roadmap 08/06",
       "emailRef": "",
       "notes": "",
+      "actions": [
+        "Raise the Garden quality support ticket this week.",
+        "Push the supplier to commit to a specific timeline — don't accept a vague response.",
+        "If they say it's low priority, get them to say when. You have a stakeholder chain to keep informed."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -24,7 +33,12 @@
       "tier": "week",
       "source": "SK 1-1 08/06",
       "emailRef": "",
-      "notes": "",
+      "notes": "Urgent — Simon and Marie have already agreed a plan will be ready when she returns.",
+      "actions": [
+        "Simon is sending Athena's email with the holiday compliance requirements. Once received, pass to Michael and ask him to pull screenshots showing the system meets those requirements — holiday calculator evidence included.",
+        "Talk to Michael about any other flex point ideas and get as many quotes to AG as possible.",
+        "Build the tracking document: three columns — what's agreed, what's booked, what's being investigated — with point values against each."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -33,7 +47,11 @@
       "tier": "week",
       "source": "SK 1-1 08/06",
       "emailRef": "",
-      "notes": "",
+      "notes": "Simon didn't raise during your leave — still outstanding.",
+      "actions": [
+        "Put Marie as the approver even though she's not back — it won't be formally approved until go-live, but the record needs to exist.",
+        "Simon was busy getting Marie to agree to the proposal during your leave, so this is still outstanding."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -42,7 +60,11 @@
       "tier": "week",
       "source": "SK 1-1 08/06",
       "emailRef": "",
-      "notes": "",
+      "notes": "Blocked — waiting for Simon's level 6 assessment.",
+      "actions": [
+        "Simon is assessing what's already in the system at level 6 and will create missing reference data (Division 901, subdivision, levels 4 and 5).",
+        "Wait for Simon's green light before acting — he'll let you know when done."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -52,6 +74,11 @@
       "source": "H&S Roadmap 08/06",
       "emailRef": "",
       "notes": "",
+      "actions": [
+        "Raise the support ticket this week.",
+        "Push the supplier to commit to a specific timeline rather than accepting a vague response.",
+        "If they say it's low priority, get them to say when — you have a stakeholder chain to keep informed."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -61,6 +88,12 @@
       "source": "SK 1-1 08/06",
       "emailRef": "",
       "notes": "",
+      "actions": [
+        "Finish your written response to Simon. The issue: shared drive moved to SharePoint, guidance wasn't updated, and only you and Lee were managing it so nobody else knew where to find anything.",
+        "Documents are there — just not pointed to correctly.",
+        "Once response is done, recommend the alignment meeting to get everyone up to speed.",
+        "Touch base with Michael on this too."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -70,6 +103,9 @@
       "source": "James A/L Handover 05/06",
       "emailRef": "",
       "notes": "Due Wednesday 10 June",
+      "actions": [
+        "Monitor DSC upload on Wednesday 10 June as per James handover."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -78,7 +114,11 @@
       "tier": "parked",
       "source": "",
       "emailRef": "",
-      "notes": "Blocked: awaiting signature",
+      "notes": "Marie has replied to the final comment — signed off from your side. Nothing active until Marie formally signs Stage 7.",
+      "actions": [
+        "No action required. Marie has replied to the final comment and it's signed off from your side.",
+        "Nothing active to do until Marie formally signs Stage 7."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -87,7 +127,10 @@
       "tier": "parked",
       "source": "",
       "emailRef": "",
-      "notes": "",
+      "notes": "Cannot progress until Marie is back.",
+      "actions": [
+        "Needs Marie. Cannot progress until she returns."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -96,7 +139,10 @@
       "tier": "parked",
       "source": "",
       "emailRef": "",
-      "notes": "Monitor only — Asta managing",
+      "notes": "Passive — Asta is managing.",
+      "actions": [
+        "Passive monitoring only. Asta is managing — no action required from you."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -105,7 +151,10 @@
       "tier": "parked",
       "source": "",
       "emailRef": "Case 68388326",
-      "notes": "",
+      "notes": "Open since April — not urgent.",
+      "actions": [
+        "Still open since April. Not urgent — park until fuller hours."
+      ],
       "dateAdded": "2026-06-08"
     },
     {
@@ -114,7 +163,10 @@
       "tier": "parked",
       "source": "",
       "emailRef": "",
-      "notes": "Contact: Lindsey Spriggs",
+      "notes": "Park until at fuller hours.",
+      "actions": [
+        "Park until you're at fuller hours. Contact: Lindsey Spriggs."
+      ],
       "dateAdded": "2026-06-08"
     }
   ]
