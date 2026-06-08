@@ -169,6 +169,19 @@
         "Park until fuller hours. Contact: Lindsey Spriggs."
       ],
       "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t014",
+      "title": "Chemistry bulk delete \u2014 get details from Julie, pass to Reenu",
+      "tier": "today",
+      "source": "Case 68974493",
+      "emailRef": "68974493 / 67938206",
+      "notes": "AG (Reenu Delaney) waiting on: (1) appraisal cycle name, (2) list of affected employees. Ball in our court since 3 June \u2014 Julie Hickman likely holds the details. Once received, forward straight to Reenu to action the deletion.",
+      "actions": [
+        "Reply to Julie's email asking for the appraisal cycle name and list of affected employees.",
+        "Once Julie replies, forward details straight to Reenu Delaney at AG to action the deletion."
+      ],
+      "dateAdded": "2026-06-08"
     }
   ]
 }
