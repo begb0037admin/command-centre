@@ -1,0 +1,121 @@
+{
+  "tasks": [
+    {
+      "id": "t001",
+      "title": "Brief team directly",
+      "tier": "today",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t002",
+      "title": "Smart notes escalation email to supplier",
+      "tier": "today",
+      "source": "H&S Roadmap 08/06",
+      "emailRef": "",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t003",
+      "title": "Flex points plan before Marie returns",
+      "tier": "week",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t004",
+      "title": "Raise DTP1092 change management record",
+      "tier": "week",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t005",
+      "title": "Set up pay admin buy codes — after Simon's assessment",
+      "tier": "week",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t006",
+      "title": "Cority/H&S support ticket — push supplier for committed timeline",
+      "tier": "week",
+      "source": "H&S Roadmap 08/06",
+      "emailRef": "",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t007",
+      "title": "SharePoint documentation response + recommend alignment meeting",
+      "tier": "week",
+      "source": "SK 1-1 08/06",
+      "emailRef": "",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t008",
+      "title": "DSC upload monitoring — Wednesday 10 June",
+      "tier": "week",
+      "source": "James A/L Handover 05/06",
+      "emailRef": "",
+      "notes": "Due Wednesday 10 June",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t009",
+      "title": "DPIA — awaiting Marie's signature",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "",
+      "notes": "Blocked: awaiting signature",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t010",
+      "title": "Odyssey annual review — schedule with Marie",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t011",
+      "title": "OSM P1 — monitor only, Asta managing",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "",
+      "notes": "Monitor only — Asta managing",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t012",
+      "title": "Vacancy alert email retest (case 68388326)",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "Case 68388326",
+      "notes": "",
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t013",
+      "title": "Insight module update — Lindsey Spriggs",
+      "tier": "parked",
+      "source": "",
+      "emailRef": "",
+      "notes": "Contact: Lindsey Spriggs",
+      "dateAdded": "2026-06-08"
+    }
+  ]
+}
