@@ -1,85 +1,63 @@
-# Command Centre — Claude Bootstrap
-Last updated: 2026-06-06
+# CLAUDE.md — command-centre
+> AI bootstrap entry point. Read this first.
+> Keep this file under 200 lines. Push details to linked docs.
 
 ## Identity
-- **Project:** Command Centre
-- **Purpose:** (1) Master orientation hub for all of Kevin's work projects — repo index, outstanding tasks, session start pattern. (2) Browser-based HTML operations hub — quick-launch buttons for Claude tools (Chrome extension), Granola meeting access, and daily workflow shortcuts.
-- **Owner:** Kevin Lelitte — HR Systems Manager/Director
-- **GitHub account:** begb0037admin
-- **Status:** Active
-- **Repository:** C:\Users\begb0037.AD-OAK\Work Folders\Documents\Claude\Projects\Command Centre
+- **Project:** Command Centre — To-Do Dashboard (Module 1)
+- **Purpose:** Weekly task dashboard for Kevin Lelitte. Three priority tiers (Today / This Week / Parked). Tasks sourced from meeting notes and Granola transcripts. Collapsible drawers show action detail, source, notes, and tier-move controls.
+- **Owner:** Kevin Lelitte, HR Systems Manager/Director, University of Oxford
+- **Status:** Active — Module 1 live
+- **Repo:** https://github.com/begb0037admin/command-centre
+- **Live dashboard:** https://begb0037admin.github.io/command-centre/
+- **Last updated:** 2026-06-08 (v1.0 — Module 1 complete)
 
-## Domain Boundary
-**WORK (Kevin's domain):** Clockify, Command Centre, HR Systems Roadmap, DTP1092, DPIA PXD, ORCID in PXD, KPI Agenda, Meeting Reviews, SK Handover, HR FA Knowledge Base, HRIS Dashboard, Work Inbox.
-
-**PERSONAL (Hope's domain):** AIMM (dashboard + YouTube). Never mix domains unless a Cross-Domain Code Brief has been issued.
-
-## Session Start Pattern
-1. Load this file (CLAUDE.md) for orientation
-2. Load ROADMAP.md for outstanding tasks:
-   https://raw.githubusercontent.com/begb0037admin/command-centre/main/ROADMAP.md
-3. Load the CLAUDE.md for the specific project you are working on
+## Bootstrap Order
+1. This file (orientation)
+2. `HANDOVER.md` (current state, known issues, next action)
+3. `ROADMAP.md` (outstanding items and future modules)
 4. Confirm with Kevin which task to tackle before doing anything
 
-## Bootstrap Order (local app)
-1. This file
-2. docs\STATUS.md
-3. docs\HANDOVER.md
-
-## Repo Index
-
-| Repo | GitHub Pages | CLAUDE.md Quick Load |
-|---|---|---|
-| clockify | https://begb0037admin.github.io/clockify/ | https://raw.githubusercontent.com/begb0037admin/clockify/main/CLAUDE.md |
-| hris-dashboard | https://begb0037admin.github.io/hris-dashboard/ | https://raw.githubusercontent.com/begb0037admin/hris-dashboard/main/CLAUDE.md |
-| hris-launcher | — | https://raw.githubusercontent.com/begb0037admin/hris-launcher/main/CLAUDE.md |
-| hr-fa-knowledge-base | https://begb0037admin.github.io/hr-fa-knowledge-base/ | https://raw.githubusercontent.com/begb0037admin/hr-fa-knowledge-base/main/CLAUDE.md |
-| work-inbox | https://begb0037admin.github.io/work-inbox/ | https://raw.githubusercontent.com/begb0037admin/work-inbox/main/CLAUDE.md |
-| hr-projects | — | (see subfolders) |
-| meeting-records | — | (see subfolders) |
-| command-centre | — | https://raw.githubusercontent.com/begb0037admin/command-centre/main/CLAUDE.md |
-
-## Where Things Live (local app)
-| What | Where |
+## Architecture
+| Component | Description |
 |---|---|
-| Main application | command-centre.html (project root) |
-| Current state | docs\STATUS.md |
-| Latest handover | docs\HANDOVER.md |
-| Architecture decisions | docs\decisions\ |
-| Framework reference | PROJECT_OS.md |
-| Agent roles | AGENT_MODEL.md |
-| Rollover procedure | ROLLOVER_SOP.md |
+| `index.html` | Single-file dashboard. Oxford navy sidebar (320px), blue-grey main area (#f5f7fb). No framework, no build step. |
+| `data/tasks.json` | Task data store. Fields: id, title, tier, source, emailRef, notes, actions[], dateAdded. |
+
+## Data Flow
+Tasks load from `data/tasks.json` on page open (cache-busted). Done-state persists in `localStorage` (key: `commandCentre_done_v1`). Manual tasks added via quick-add panel exist in memory only — lost on refresh. Persistent manual tasks require GitHub write-back (ROADMAP item 1).
+
+## Design System
+- Oxford navy sidebar: `#002147`
+- Main background: `#f5f7fb` (matches hris-launcher)
+- Font: Inter (Google Fonts)
+- Tier colours: Today `#ef4444` / This Week `#f59e0b` / Parked `#94a3b8`
+- Oxford crest embedded as base64 JPEG (OUO.jpg)
+
+## GitHub
+- **Repo:** `begb0037admin/command-centre`
+- **Branch:** `main`
+- **Pages:** enabled — deploys from root of main
+- **Proxy reads:** `https://github-proxy.lelitte.co.uk/command-centre/`
+- **API writes:** `https://api.github.com/repos/begb0037admin/command-centre/contents/{path}?ref=main`
+- PAT stored in Kevin's preferences — never commit to any file
 
 ## Seat Model
 | Seat | Role | Rule |
 |---|---|---|
-| A | Claude Chat | Reasons, plans, drafts all briefs. Always first. |
-| B | Kevin (local machine) | Runs scripts, pastes output back verbatim. |
-| C | Cowork | Disk writes only. No network access to external APIs. |
-| D | Chrome | Smoke tests only. Read-only. Last resort. |
-
-## GitHub API — Important Constraints
-- Most repos are public. Raw files are fetchable without auth.
-- PAT only needed for write operations (PUT/POST to Contents API).
-- Current PAT: stored in Kevin's preferences — never hardcode in any committed file.
-- Cowork cannot make GitHub API calls — outbound network is disabled in its sandbox.
-- All PUT/POST operations must go through Seat B (Kevin's local PowerShell or Python).
-- Always use byte-level encoding for GitHub Contents API PUT. Never use PowerShell string conversion (UTF-16 corruption risk).
-
-## Conventions
-- Single HTML file — no framework, no build step
-- Claude in Chrome extension required for live button actions
-- All changes go through Cowork (Seat C)
+| A | Claude Chat | Reasons, plans, writes all code and briefs. Always first. |
+| B | Kevin | Runs scripts, pastes output back verbatim. |
+| C | Cowork | Disk writes only. No GitHub API access. |
+| D | Chrome | Smoke-test only. Read-only. Last resort. |
 
 ## Hard Rules
-- Single file only — no splitting
-- No credentials embedded in HTML
-- Never mix work and personal domains in the same session or brief
-- One dispatch at a time — wait for result before the next
+- Single `index.html` — no framework, no build step
+- No credentials in any committed file
+- All GitHub writes via Seat B (Contents API + PAT)
+- One dispatch at a time — wait for result before next
+- tasks.json is the source of truth for task content — not session memory
 
-## Out of Scope
-- Project management (individual project folders)
-- AIMM (personal project — Hope's domain only)
+## Domain
+**WORK (Kevin's domain).** Do not mix with Hope's personal domain (AIMM, Personal Finance) unless a Cross-Domain Code Brief has been issued.
 
-## Failover Chain
-Kevin → Hope
+## Failover
+Kevin → Hope (Cross-Domain Code Brief required)
