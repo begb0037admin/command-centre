@@ -425,6 +425,37 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 }
 .task-card.expanded .task-drawer { display: block; }
 
+/* what you need to do */
+.drawer-actions-list {
+  list-style: none;
+  margin: 0 0 14px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.drawer-actions-list li {
+  font-size: 13px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+.drawer-actions-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--oxford);
+  font-size: 12px;
+  top: 1px;
+  opacity: 0.6;
+}
+.drawer-divider {
+  border: none;
+  border-top: 1px solid #eaeef5;
+  margin: 12px 0 14px;
+}
+
 .drawer-grid {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -827,6 +858,11 @@ function render() {
           <div class="task-expand-btn">▼</div>
         </div>
         <div class="task-drawer">
+          ${task.actions && task.actions.length ? `
+          <ul class="drawer-actions-list">
+            ${task.actions.map(a => `<li>${escHtml(a)}</li>`).join('')}
+          </ul>
+          <hr class="drawer-divider">` : ''}
           <div class="drawer-grid">
             <span class="drawer-label">Source</span>
             <span class="drawer-value${task.source ? '' : ' empty'}">${task.source ? escHtml(task.source) : 'None'}</span>
