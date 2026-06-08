@@ -17,7 +17,7 @@
   --text-dark:     #1a2740;
   --text-muted:    #7a8a9e;
   --text-very-muted: #b0b8c8;
-  --sidebar-width: 280px;
+  --sidebar-width: 320px;
 
   --today-color:  #ef4444;
   --week-color:   #f59e0b;
@@ -52,77 +52,81 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 }
 
 .sidebar-header {
-  padding: 24px 20px 20px;
+  padding: 28px 22px 22px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .sidebar-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-/* Oxford shield SVG inline */
+/* Oxford crest image */
 .sidebar-shield {
-  width: 44px;
-  height: 52px;
+  width: 72px;
+  height: 72px;
   flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.18);
 }
 
 .sidebar-brand-text .brand-title {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: #ffffff;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.sidebar-brand-text .brand-sub {
-  font-size: 11px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.38);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-top: 2px;
+  line-height: 1.2;
+}
+.sidebar-brand-text .brand-sub {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
 }
 
 .sidebar-user {
-  font-size: 12px;
+  font-size: 13px;
   color: rgba(255,255,255,0.42);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 /* summary stats */
 .sidebar-stats {
-  padding: 20px 20px 0;
+  padding: 24px 22px 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .stat-label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.28);
-  margin-bottom: 10px;
+  color: rgba(255,255,255,0.32);
+  margin-bottom: 8px;
 }
 
 .stat-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 15px;
 }
 .stat-row .stat-name {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.65);
+  gap: 10px;
+  color: rgba(255,255,255,0.72);
 }
 .stat-dot {
-  width: 8px; height: 8px;
+  width: 9px; height: 9px;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -131,25 +135,25 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 .stat-dot.parked { background: var(--parked-color); }
 .stat-count {
   font-weight: 700;
-  font-size: 14px;
-  color: rgba(255,255,255,0.85);
+  font-size: 16px;
+  color: rgba(255,255,255,0.9);
 }
 
 .sidebar-divider {
-  margin: 20px;
+  margin: 22px 22px;
   border: none;
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 /* quick add btn in sidebar */
 .sidebar-quick-add {
-  margin: 0 20px;
-  padding: 10px 16px;
+  margin: 0 22px;
+  padding: 12px 18px;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 8px;
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
@@ -161,8 +165,8 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 .sidebar-quick-add:hover { background: rgba(255,255,255,0.18); }
 
 .sidebar-date {
-  margin: 16px 20px 0;
-  font-size: 11px;
+  margin: 18px 22px 0;
+  font-size: 12px;
   color: rgba(255,255,255,0.28);
 }
 
