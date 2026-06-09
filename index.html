@@ -300,6 +300,31 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 }
 .task-card.hidden { display: none; }
 
+/* ── DRAG AND DROP ── */
+.drag-handle {
+  cursor: grab;
+  color: var(--text-very-muted);
+  font-size: 15px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  user-select: none;
+  padding: 2px 2px 2px 0;
+  flex-shrink: 0;
+  margin-top: 1px;
+  letter-spacing: -2px;
+}
+.task-card:hover .drag-handle { opacity: 1; }
+.task-card.dragging { opacity: 0.35; box-shadow: none; }
+.task-card.drop-before { border-top: 2px solid var(--oxford) !important; }
+.task-card.drop-after  { border-bottom: 2px solid var(--oxford) !important; }
+.task-list.drop-target-empty {
+  outline: 2px dashed #c4cdd8;
+  outline-offset: -4px;
+  border-radius: 10px;
+  min-height: 56px;
+  background: rgba(0,33,71,0.02);
+}
+
 /* checkbox */
 .task-check {
   width: 18px; height: 18px;
@@ -693,7 +718,10 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
         <span class="section-count" id="todayCount">0</span>
         <span class="section-rule"></span>
       </div>
-      <div class="task-list" id="todayList"></div>
+      <div class="task-list" id="todayList"
+     ondragover="onListDragOver(event,'today')"
+     ondragleave="onListDragLeave(event)"
+     ondrop="onListDrop(event,'today')"></div>
     </div>
 
     <!-- THIS WEEK -->
@@ -704,7 +732,10 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
         <span class="section-count" id="weekCount">0</span>
         <span class="section-rule"></span>
       </div>
-      <div class="task-list" id="weekList"></div>
+      <div class="task-list" id="weekList"
+     ondragover="onListDragOver(event,'week')"
+     ondragleave="onListDragLeave(event)"
+     ondrop="onListDrop(event,'week')"></div>
     </div>
 
     <!-- PARKED -->
@@ -715,7 +746,10 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
         <span class="section-count" id="parkedCount">0</span>
         <span class="section-rule"></span>
       </div>
-      <div class="task-list" id="parkedList"></div>
+      <div class="task-list" id="parkedList"
+     ondragover="onListDragOver(event,'parked')"
+     ondragleave="onListDragLeave(event)"
+     ondrop="onListDrop(event,'parked')"></div>
     </div>
   </main>
 </div>
@@ -769,8 +803,135 @@ let selectedTier = 'today';
 const DONE_KEY = 'commandCentre_done_v1';
 const expandedIds = new Set();
 
+// ── DRAG AND DROP ──
+const ORDER_KEY = 'commandCentre_order_v1';
+let customOrder = { today: [], week: [], parked: [] };
+let dragSrcId   = null;
+let dropPos     = 'after';
+
+function loadOrder() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(ORDER_KEY) || '{}');
+    if (saved.today)  customOrder.today  = saved.today;
+    if (saved.week)   customOrder.week   = saved.week;
+    if (saved.parked) customOrder.parked = saved.parked;
+  } catch(e) {}
+}
+
+function saveOrder() {
+  ['today','week','parked'].forEach(tier => {
+    const ids = tasks.filter(t => t.tier === tier).map(t => t.id);
+    customOrder[tier] = [
+      ...customOrder[tier].filter(id => ids.includes(id)),
+      ...ids.filter(id => !customOrder[tier].includes(id))
+    ];
+  });
+  localStorage.setItem(ORDER_KEY, JSON.stringify(customOrder));
+}
+
+function getOrderedTasks(tier) {
+  const tierTasks = tasks.filter(t => t.tier === tier);
+  const order = customOrder[tier] || [];
+  return tierTasks.sort((a, b) => {
+    const ai = order.indexOf(a.id);
+    const bi = order.indexOf(b.id);
+    if (ai < 0 && bi < 0) return 0;
+    if (ai < 0) return 1;
+    if (bi < 0) return -1;
+    return ai - bi;
+  });
+}
+
+function clearDragStyles() {
+  document.querySelectorAll('.task-card').forEach(c =>
+    c.classList.remove('dragging','drop-before','drop-after'));
+  document.querySelectorAll('.task-list').forEach(l =>
+    l.classList.remove('drop-target-empty'));
+}
+
+function onCardDragStart(e, id) {
+  dragSrcId = id;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', id);
+  setTimeout(() => {
+    const el = document.querySelector('[data-id="' + id + '"]');
+    if (el) el.classList.add('dragging');
+  }, 0);
+}
+
+function onCardDragEnd() {
+  clearDragStyles();
+  dragSrcId = null;
+}
+
+function onCardDragOver(e, targetId) {
+  e.preventDefault();
+  e.stopPropagation();
+  if (!dragSrcId || dragSrcId === targetId) return;
+  document.querySelectorAll('.task-card').forEach(c =>
+    c.classList.remove('drop-before','drop-after'));
+  const card = document.querySelector('[data-id="' + targetId + '"]');
+  if (!card) return;
+  const rect = card.getBoundingClientRect();
+  dropPos = e.clientY < rect.top + rect.height / 2 ? 'before' : 'after';
+  card.classList.add(dropPos === 'before' ? 'drop-before' : 'drop-after');
+}
+
+function onCardDragLeave(e) {
+  e.currentTarget.classList.remove('drop-before','drop-after');
+}
+
+function onCardDrop(e, targetId, targetTier) {
+  e.preventDefault();
+  e.stopPropagation();
+  if (!dragSrcId || dragSrcId === targetId) return;
+  const src = tasks.find(t => t.id === dragSrcId);
+  if (!src) return;
+  const oldTier = src.tier;
+  src.tier = targetTier;
+  saveOrder();
+  const arr = customOrder[targetTier];
+  const si  = arr.indexOf(dragSrcId);
+  if (si > -1) arr.splice(si, 1);
+  const ti = arr.indexOf(targetId);
+  arr.splice(Math.max(0, dropPos === 'before' ? ti : ti + 1), 0, dragSrcId);
+  if (oldTier !== targetTier) {
+    customOrder[oldTier] = customOrder[oldTier].filter(id => id !== dragSrcId);
+  }
+  localStorage.setItem(ORDER_KEY, JSON.stringify(customOrder));
+  clearDragStyles();
+  render();
+}
+
+function onListDragOver(e, tier) {
+  e.preventDefault();
+  const listId = { today: 'todayList', week: 'weekList', parked: 'parkedList' }[tier];
+  const tierTasks = tasks.filter(t => t.tier === tier);
+  if (tierTasks.length === 0) document.getElementById(listId).classList.add('drop-target-empty');
+}
+
+function onListDragLeave(e) {
+  e.currentTarget.classList.remove('drop-target-empty');
+}
+
+function onListDrop(e, tier) {
+  e.preventDefault();
+  if (!dragSrcId) return;
+  const src = tasks.find(t => t.id === dragSrcId);
+  if (!src || src.tier === tier) { clearDragStyles(); return; }
+  const oldTier = src.tier;
+  src.tier = tier;
+  saveOrder();
+  customOrder[oldTier] = customOrder[oldTier].filter(id => id !== dragSrcId);
+  if (!customOrder[tier].includes(dragSrcId)) customOrder[tier].push(dragSrcId);
+  localStorage.setItem(ORDER_KEY, JSON.stringify(customOrder));
+  clearDragStyles();
+  render();
+}
+
 // ── INIT ──
 async function init() {
+  loadOrder();
   setGreetingAndDate();
   await loadTasks();
   loadDoneState();
@@ -827,7 +988,7 @@ function render() {
   const sidebarIds = { today: 'countToday', week: 'countWeek', parked: 'countParked' };
 
   tiers.forEach(tier => {
-    const tierTasks = tasks.filter(t => t.tier === tier);
+    const tierTasks = getOrderedTasks(tier);
     const total = tierTasks.length;
     const pending = tierTasks.filter(t => !t.done).length;
 
@@ -853,6 +1014,7 @@ function render() {
 
       card.innerHTML = `
         <div class="task-card-top" onclick="toggleExpand('${task.id}')">
+          <div class="drag-handle" title="Drag to reorder">⣿⣿</div>
           <div class="task-check${task.done ? ' checked' : ''}" onclick="event.stopPropagation(); toggleTask('${task.id}')"></div>
           <div class="task-body">
             <div class="task-title-row">
@@ -885,6 +1047,12 @@ function render() {
           </div>
         </div>
       `;
+      card.draggable = true;
+      card.addEventListener('dragstart', e => onCardDragStart(e, task.id));
+      card.addEventListener('dragend',   () => onCardDragEnd());
+      card.addEventListener('dragover',  e => onCardDragOver(e, task.id));
+      card.addEventListener('dragleave', e => onCardDragLeave(e));
+      card.addEventListener('drop',      e => onCardDrop(e, task.id, tier));
       list.appendChild(card);
     });
   });
