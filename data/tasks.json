@@ -31,6 +31,41 @@
       "dateAdded": "2026-06-08"
     },
     {
+      "id": "t014",
+      "title": "Chemistry bulk delete \u2014 get details from Julie, pass to Reenu",
+      "tier": "today",
+      "source": "Case 68974493",
+      "emailRef": "68974493 / 67938206",
+      "description": "Chemistry department has incorrectly assigned appraisals in PeopleXD (My Development module). A bulk delete is required. Originally raised as case 67938206 in late 2025 \u2014 AG (Reenu Delaney) quoted scripted work via flex points. Flex points case raised in April 2026 as 68974493. Marie Cooksey handed case to Kevin on 2 June 2026. On 3 June, Reenu asked Kevin for the appraisal cycle name and a list of affected employees before she can action the deletion. Ball has been in Oxford's court since 3 June. Julie Hickman is most likely to hold the required details.",
+      "actions": [
+        "[Oct 2025] Case 67938206 raised \u2014 Chemistry bulk delete of appraisal assignments.",
+        "[Apr 2026] Flex points agreed as payment route \u2014 case 68974493 raised.",
+        "[02 Jun 2026] Marie handed case to Kevin as lead.",
+        "[03 Jun 2026] Reenu Delaney requested appraisal cycle name and affected employee list from Kevin \u2014 no reply sent.",
+        "[08 Jun 2026] Kevin drafted reply to Julie Hickman requesting the required details.",
+        "[AWAITING] Julie Hickman to provide appraisal cycle name and affected employee list.",
+        "[TODO \u2014 on receipt] Forward details straight to Reenu Delaney at AG to action the deletion."
+      ],
+      "dateAdded": "2026-06-08"
+    },
+    {
+      "id": "t015",
+      "title": "Web pages and URL linking \u2014 job posting updates",
+      "tier": "week",
+      "source": "Meeting with Laura Porter 03/06",
+      "emailRef": "",
+      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages still link to the old location: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page expected to be retired 23/24 June. Agreed approach: update all links to the new URL, use hyperlinked text (\u201cIM Principles\u201d / \u201cinternal mobility principles\u201d) rather than displaying the full long URL, test before making any live changes, and check whether links can open in a new tab. Updates planned for 22 June ahead of old page retirement. Follow-up with Laura scheduled 15\u201316 June.",
+      "actions": [
+        "[03 Jun 2026] Meeting with Laura Porter \u2014 reviewed three pages needing link updates.",
+        "[03 Jun 2026] New URL confirmed live later that day: https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-working-here/SitePages/internal-mobility-principles.aspx",
+        "[TODO \u2014 15/16 Jun] Reconnect with Laura Porter as planned.",
+        "[TODO \u2014 22 Jun] Test new URL, update links on all three identified pages, replace visible long URLs with hyperlinked text, check whether links open in a new tab.",
+        "[TODO] Email Laura with updates if changes are made before they next meet.",
+        "[MONITOR] Old page retirement \u2014 expected 23/24 June."
+      ],
+      "dateAdded": "2026-06-03"
+    },
+    {
       "id": "t003",
       "title": "Flex points plan before Marie returns",
       "tier": "week",
@@ -185,24 +220,6 @@
         "[17 Feb 2026] Action assigned: confirm whether Insight module automated reminder functionality can be enabled.",
         "[13 Apr 2026] Lindsey Spriggs chased for update \u2014 no reply sent.",
         "[PARKED] Reply to Lindsey with update on Insight module reminder investigation. Action when at fuller hours."
-      ],
-      "dateAdded": "2026-06-08"
-    },
-    {
-      "id": "t014",
-      "title": "Chemistry bulk delete \u2014 get details from Julie, pass to Reenu",
-      "tier": "today",
-      "source": "Case 68974493",
-      "emailRef": "68974493 / 67938206",
-      "description": "Chemistry department has incorrectly assigned appraisals in PeopleXD (My Development module). A bulk delete is required. Originally raised as case 67938206 in late 2025 \u2014 AG (Reenu Delaney) quoted scripted work via flex points. Flex points case raised in April 2026 as 68974493. Marie Cooksey handed case to Kevin on 2 June 2026. On 3 June, Reenu asked Kevin for the appraisal cycle name and a list of affected employees before she can action the deletion. Ball has been in Oxford's court since 3 June. Julie Hickman is most likely to hold the required details.",
-      "actions": [
-        "[Oct 2025] Case 67938206 raised \u2014 Chemistry bulk delete of appraisal assignments.",
-        "[Apr 2026] Flex points agreed as payment route \u2014 case 68974493 raised.",
-        "[02 Jun 2026] Marie handed case to Kevin as lead.",
-        "[03 Jun 2026] Reenu Delaney requested appraisal cycle name and affected employee list from Kevin \u2014 no reply sent.",
-        "[08 Jun 2026] Kevin drafted reply to Julie Hickman requesting the required details.",
-        "[AWAITING] Julie Hickman to provide appraisal cycle name and affected employee list.",
-        "[TODO \u2014 on receipt] Forward details straight to Reenu Delaney at AG to action the deletion."
       ],
       "dateAdded": "2026-06-08"
     }
