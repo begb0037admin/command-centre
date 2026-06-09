@@ -653,7 +653,16 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
   margin-top: 20px;
 }
 .panel-actions .btn { flex: 1; }
-</style>
+
+/* -- INBOX WIDGET -- */
+.sidebar-inbox{margin:18px 22px 0;padding:14px 0 0;border-top:1px solid rgba(255,255,255,0.1)}
+.sidebar-inbox-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:8px}
+.sidebar-inbox-row{display:flex;align-items:center;justify-content:space-between;font-size:14px;margin-bottom:5px}
+.sidebar-inbox-name{color:rgba(255,255,255,.72)}
+.sidebar-inbox-count{font-weight:700;color:rgba(255,255,255,.9)}
+.sidebar-inbox-refreshed{font-size:11px;color:rgba(255,255,255,.28);margin-bottom:8px}
+.sidebar-inbox-vip{font-size:12px;margin-top:4px;color:#fbbf24;font-weight:600}
+.sidebar-inbox-unavailable{font-size:12px;color:rgba(255,255,255,.28);font-style:italic}</style>
 </head>
 <body>
 
@@ -695,7 +704,13 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
     </button>
 
     <div class="sidebar-date" id="sidebarDate"></div>
-  </aside>
+  
+    <div class="sidebar-inbox">
+      <div class="sidebar-inbox-label">Inbox</div>
+      <div id="inboxWidgetContent">
+        <div class="sidebar-inbox-unavailable">Loading...</div>
+      </div>
+    </div>  </aside>
 
   <!-- MAIN -->
   <main class="main">
@@ -1170,5 +1185,28 @@ document.addEventListener('keydown', e => {
 
 init();
 </script>
-</body>
+
+<script>
+async function loadInboxWidget(){
+  var el=document.getElementById('inboxWidgetContent');
+  if(!el)return;
+  try{
+    var res=await fetch('https://raw.githubusercontent.com/begb0037admin/work-inbox/main/data/briefing.json?_='+Date.now());
+    if(!res.ok)throw new Error('fetch failed');
+    var data=await res.json();
+    var urgentCount=(data.urgent||[]).length;
+    var needsCount=(data.needs||[]).length;
+    var vipNames=['Simon Burford','Marie Cooksey'];
+    var allItems=[].concat(data.urgent||[]).concat(data.needs||[]);
+    var vipCount=allItems.filter(function(item){return vipNames.some(function(name){return (item.title||'').includes(name)||(item.sub||'').includes(name);});}).length;
+    var refreshed=data.refreshed_at||'Unknown';
+    var html='<div class="sidebar-inbox-refreshed">Last briefed: '+refreshed+'</div>';
+    html+='<div class="sidebar-inbox-row"><span class="sidebar-inbox-name">&#128308; Urgent</span><span class="sidebar-inbox-count">'+urgentCount+'</span></div>';
+    html+='<div class="sidebar-inbox-row"><span class="sidebar-inbox-name">&#128993; Needs</span><span class="sidebar-inbox-count">'+needsCount+'</span></div>';
+    if(vipCount>0){html+='<div class="sidebar-inbox-vip">&#9888;&#65039; VIP &nbsp;'+vipCount+'</div>';}
+    el.innerHTML=html;
+  }catch(e){el.innerHTML='<div class="sidebar-inbox-unavailable">Inbox unavailable</div>';}
+}
+loadInboxWidget();
+</script></body>
 </html>
