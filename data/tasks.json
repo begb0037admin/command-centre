@@ -20,14 +20,15 @@
       "tier": "today",
       "source": "H&S Roadmap 08/06",
       "emailRef": "Cority 00476764 / CCC-19664",
-      "description": "Smart notes draft-save feature has been missing in Cority for 6+ months. Originally raised by James Salas Guillen. The ability to save a note as a draft or reopen and edit an existing note is not available — users must complete all fields before saving, which is particularly burdensome for longer notes. Cority acknowledged the issue under CCC-19664 and logged it with their dev team. Status is currently 'Pending Future Release' with no committed timeline. Two major releases have passed with no delivery. There is no active account manager, removing the normal escalation route. In April 2026, Freeda Franks (Cority Customer Support Analyst) suggested enhanced access support at a cost — disputed, as this is a missing feature not an enhancement.",
+      "description": "Smart notes in Cority CoreEHS+ (GX2) do not allow edits after save and close. Raised November 2025, dev ref CCC-19664. Cority's official position (confirmed 08 Jun 2026 by Mehran Riaz, support leadership): this is an INTENDED feature — not a bug or missing feature. Cority classify the request to allow post-save edits as an enhancement, and it is NOT on their current roadmap. No timeline will be provided. Beta/early access ('enhanced access support') requires Premium Support, which Oxford does not have. Oxford has no named account manager — we are in a pool. Escalation route: support case owner → support leadership (done). If account/contract items needed, Cority sales team can be asked to reach out. Quality PUG on Tue 16 Jun at 2pm remains the formal pressure point.",
       "actions": [
-        "[Nov 2025] Ticket 00476764 raised by James Salas Guillen — option to draft or come back to a note after saving.",
-        "[Jan–Apr 2026] Multiple Cority updates from Freeda Franks — dev team still working, no timeline given.",
-        "[Apr 2026] Freeda suggested enhanced access support at a cost — position: this is a missing feature, not a chargeable enhancement.",
-        "[08 Jun 2026] Kevin submitted escalation comment via Cority ticket comment box — requesting committed timeline on CCC-19664, clarification on cost position, and named account manager contact.",
-        "[TODO — 16 Jun] Raise at Quality PUG, 2:00 PM (virtual) — escalate formally if no response received from Freeda before then.",
-        "[AWAITING] Response from Freeda Franks to escalation comment."
+        "[Nov 2025] Ticket 00476764 raised by James — smart notes cannot be edited after save/close.",
+        "[Nov–Jun] Multiple 'still working on it' updates from Freeda Franks (support analyst). Dev ref CCC-19664 assigned.",
+        "[08 Jun 2026] Kevin escalated formally — requested timeline, clarification on cost comment, named account manager.",
+        "[08 Jun 2026] Mehran Riaz (support leadership) responded: feature is INTENDED behaviour, classified as enhancement, NOT on roadmap. No timeline. Premium Support required for beta access (Oxford does not have it). No named account manager — pool model. Sales team available if needed.",
+        "[MONITOR] Quality PUG — Tue 16 Jun, 2pm. Raise CCC-19664 formally. Use Mehran's response as evidence that standard escalation is exhausted.",
+        "[TODO — before PUG] Prepare talking points: 6+ months open, intentional feature reclassification, no roadmap commitment, no account manager, Premium Support paywall.",
+        "[TODO — after PUG] Decide whether to pursue via sales/account route or accept as a known limitation and communicate to stakeholders."
       ],
       "dateAdded": "2026-06-08"
     },
@@ -37,15 +38,17 @@
       "tier": "today",
       "source": "Case 68974493",
       "emailRef": "68974493 / 67938206",
-      "description": "Chemistry department has incorrectly assigned appraisals in PeopleXD (My Development module). A bulk delete is required. Originally raised as case 67938206 in late 2025 — AG (Reenu Delaney) quoted scripted work via flex points. Flex points case raised in April 2026 as 68974493. Marie Cooksey handed case to Kevin on 2 June 2026. On 3 June, Reenu asked Kevin for the appraisal cycle name and a list of affected employees before she can action the deletion. Ball has been in Oxford's court since 3 June. Julie Hickman is most likely to hold the required details.",
+      "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie). Julie Hickman has run the affected employee report and will share the export via OneDrive.",
       "actions": [
         "[Oct 2025] Case 67938206 raised — Chemistry bulk delete of appraisal assignments.",
         "[Apr 2026] Flex points agreed as payment route — case 68974493 raised.",
         "[02 Jun 2026] Marie handed case to Kevin as lead.",
-        "[03 Jun 2026] Reenu Delaney requested appraisal cycle name and affected employee list from Kevin.",
-        "[09 Jun 2026] Email sent to Julie Hickman requesting appraisal cycle name and affected employee list.",
-        "[AWAITING] Julie Hickman to provide details.",
-        "[TODO — on receipt] Forward straight to Reenu Delaney at AG to action the deletion."
+        "[03 Jun 2026] Reenu Delaney requested appraisal cycle name and affected employee list.",
+        "[09 Jun 2026] Email sent to Julie Hickman requesting details.",
+        "[09 Jun 2026] Julie confirmed: cycle name '(DO NOT USE) CDR2025Chemistry', 5,568 staff to be removed. Report run by Julie — OneDrive export incoming.",
+        "[AWAITING] Julie to share OneDrive export of affected employee list.",
+        "[TODO — on receipt] Forward cycle name + employee list export to Reenu Delaney at AG to action the deletion.",
+        "[TODO] Reply to Julie confirming details received and next steps."
       ],
       "dateAdded": "2026-06-08"
     },
