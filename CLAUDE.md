@@ -69,3 +69,42 @@ Each task in data/tasks.json follows this structure:
 - Never put actions in description. Never put context or history in actions.
 - Rollback: Archive/tasks_backup_20260608.json contains pre-standard snapshot.
 
+---
+
+## Backup and Recovery Procedures
+
+### Auto-backup rule — mandatory before every write
+
+Before any write to `data/tasks.json` or `index.html`, Seat A MUST:
+1. Check whether a backup for today's date already exists in `Archive/`
+2. If not, fetch the current file and push it to `Archive/` with a datestamped filename:
+   - `Archive/tasks_backup_YYYYMMDD.json`
+   - `Archive/index_backup_YYYYMMDD.html`
+3. Only then proceed with the intended write
+
+No exceptions — single-task updates, bulk changes, and UI edits alike.
+If a backup for today's date already exists in Archive/, skip — it is already taken.
+
+### Rollback procedure
+
+If a bad push is made, restore as follows:
+
+Step 1 — Find the last good commit:
+GET https://api.github.com/repos/begb0037admin/command-centre/commits?path=data/tasks.json&per_page=5
+Identify the commit SHA immediately before the bad one.
+
+Step 2 — Fetch the file at that commit:
+GET https://api.github.com/repos/begb0037admin/command-centre/contents/data/tasks.json?ref=COMMIT_SHA
+Decode the base64 content field.
+
+Step 3 — Restore via PUT with the old content and message 'Rollback to COMMIT_SHA'.
+
+Alternative — restore from Archive/: fetch tasks_backup_YYYYMMDD.json for the nearest date
+and PUT it back. For index.html use index_backup_YYYYMMDD.html.
+
+### Staleness guard — inbox pickup routine
+
+When running the inbox pickup routine (docs/INBOX_PICKUP_ROUTINE.md):
+- Read refreshed_at from briefing.json
+- If the timestamp is more than 24 hours old, STOP and warn Kevin before proceeding
+- Never auto-update tasks from stale briefing data without Kevin explicit confirmation
