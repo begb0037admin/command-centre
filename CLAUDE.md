@@ -68,3 +68,4 @@ Each task in data/tasks.json follows this structure:
 - **actions** — a dated log of everything done and everything still to do. Format: [DD Mon YYYY] for completed. [TODO] for pending. [AWAITING] for blocked on someone else. [MONITOR] for passive watch items.
 - Never put actions in description. Never put context or history in actions.
 - Rollback: Archive/tasks_backup_20260608.json contains pre-standard snapshot.
+
