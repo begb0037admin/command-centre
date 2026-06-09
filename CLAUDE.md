@@ -108,3 +108,14 @@ When running the inbox pickup routine (docs/INBOX_PICKUP_ROUTINE.md):
 - Read refreshed_at from briefing.json
 - If the timestamp is more than 24 hours old, STOP and warn Kevin before proceeding
 - Never auto-update tasks from stale briefing data without Kevin explicit confirmation
+
+
+## Inbox Pickup Routine
+Trigger phrases: "pick up inbox", "read inbox", "update from inbox", "inbox update", "sync inbox"
+When triggered, follow `docs/INBOX_PICKUP_ROUTINE.md` exactly.
+
+Data sources:
+- Work inbox briefing: `begb0037admin/work-inbox` → `data/briefing.json`
+- Task store: `begb0037admin/command-centre` → `data/tasks.json`
+
+Both fetched via GitHub API with the standard PAT.
