@@ -306,6 +306,11 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 }
 .task-card.hidden { display: none; }
 
+.title-edit-btn { background: none; border: none; color: var(--text-very-muted); cursor: pointer; font-size: 13px; padding: 2px 6px; border-radius: 4px; opacity: 0; transition: opacity 0.12s; flex-shrink: 0; }
+.task-card-top:hover .title-edit-btn { opacity: 1; }
+.title-edit-btn:hover { background: #edf0f6; color: var(--text-dark); }
+.title-edit { width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: var(--text-dark); border: 1px solid var(--oxford); border-radius: 6px; padding: 4px 8px; outline: none; }
+
 /* ── DRAG AND DROP ── */
 .drag-handle {
   cursor: grab;
@@ -1090,7 +1095,8 @@ function render() {
           <div class="task-check${task.done ? ' checked' : ''}" onclick="event.stopPropagation(); toggleTask('${task.id}')"></div>
           <div class="task-body">
             <div class="task-title-row">
-              <div class="task-title">${escHtml(task.title)}</div>
+              <div class="task-title" id="title-${task.id}">${escHtml(task.title)}</div>
+              <button class="title-edit-btn" title="Rename task" onclick="editTitle('${task.id}', event)">✎</button>
             </div>
           </div>
           ${task.entryId ? `<button class="sg-btn" style="flex-shrink:0;margin-left:auto" onclick="openTaskEmail('${task.entryId}', event)">📧 Open email</button>` : ''}
@@ -1134,6 +1140,52 @@ function render() {
 
 function escHtml(str) {
   return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function escAttr(s) {
+  return (s || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
+
+function editTitle(id, ev) {
+  if (ev) ev.stopPropagation();
+  const task = tasks.find(t => t.id === id);
+  const el = document.getElementById('title-' + id);
+  if (!task || !el || el.querySelector('input')) return;
+  const old = task.title;
+  el.innerHTML = '<input class="title-edit" value="' + escAttr(old) + '">';
+  const inp = el.querySelector('input');
+  inp.focus(); inp.select();
+  inp.addEventListener('click', e => e.stopPropagation());
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Enter') inp.blur();
+    if (e.key === 'Escape') { inp.value = old; inp.blur(); }
+  });
+  inp.addEventListener('blur', () => {
+    const v = inp.value.trim();
+    if (v && v !== old) { task.title = v; persistTasks('Rename: ' + v); }
+    render();
+  });
+}
+
+function mergeRemote(remote) {
+  // Adopt changes that landed on GitHub after this page loaded, so a save
+  // from a stale page never wipes them. Local wins on tier/title/description
+  // (the user just touched those); actions are unioned; remotely-added tasks kept.
+  if (!remote || !Array.isArray(remote.tasks)) return false;
+  let changed = false;
+  const localById = {};
+  tasks.forEach(t => localById[t.id] = t);
+  remote.tasks.forEach(rt => {
+    const lt = localById[rt.id];
+    if (!lt) { tasks.push(rt); changed = true; return; }
+    const ra = rt.actions || [], la = lt.actions || [];
+    const merged = ra.slice();
+    la.forEach(a => { if (!merged.includes(a)) merged.push(a); });
+    if (merged.length !== la.length || merged.some((a, i) => a !== la[i])) changed = true;
+    lt.actions = merged;
+    if (rt.entryId && !lt.entryId) { lt.entryId = rt.entryId; changed = true; }
+  });
+  return changed;
 }
 
 function formatDate(d) {
@@ -1257,6 +1309,11 @@ async function doPersist() {
   const reasons = persistQueue.splice(0).join('; ');
   if (!reasons) return;
   try {
+    try {
+      const cur = await (await fetch('https://api.github.com/repos/begb0037admin/command-centre/contents/data/tasks.json?t=' + Date.now(),
+        { headers: { 'Accept': 'application/vnd.github.raw+json' } })).json();
+      if (mergeRemote(cur)) render();
+    } catch (e2) { console.warn('merge check skipped', e2); }
     tasksDoc.tasks = tasks;
     const res = await fetch(CC_WRITER_URL, { method: 'POST',
       headers: { 'Content-Type': 'application/json' },
