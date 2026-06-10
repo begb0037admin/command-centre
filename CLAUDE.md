@@ -41,19 +41,17 @@ Tasks load from `data/tasks.json` on page open (cache-busted). Done-state persis
 - **API writes:** `https://api.github.com/repos/begb0037admin/command-centre/contents/{path}?ref=main`
 - PAT stored in Kevin's preferences — never commit to any file
 
-## Seat Model
-| Seat | Role | Rule |
-|---|---|---|
-| A | Claude Chat | Reasons, plans, writes all code and briefs. Always first. |
-| B | Kevin | Runs scripts, pastes output back verbatim. |
-| C | Cowork | Disk writes only. No GitHub API access. |
-| D | Chrome | Smoke-test only. Read-only. Last resort. |
+## Agent Model (v2.0 — see AGENT_MODEL.md)
+| Party | Role |
+|---|---|
+| Claude Code | Reasons, writes code, executes GitHub API writes, verifies live behaviour. |
+| Kevin | Approval authority — new tasks, tier changes, destructive ops, constitution changes. |
 
 ## Hard Rules
 - Single `index.html` — no framework, no build step
 - No credentials in any committed file
-- All GitHub writes via Seat B (Contents API + PAT)
-- One dispatch at a time — wait for result before next
+- All GitHub writes by Claude Code via Contents API — fresh SHA before every PUT
+- One write at a time — verify result before the next
 - tasks.json is the source of truth for task content — not session memory
 
 ## Domain
@@ -75,7 +73,7 @@ Each task in data/tasks.json follows this structure:
 
 ### Auto-backup rule — mandatory before every write
 
-Before any write to `data/tasks.json` or `index.html`, Seat A MUST:
+Before any write to `data/tasks.json` or `index.html`, Claude Code MUST:
 1. Check whether a backup for today's date already exists in `Archive/`
 2. If not, fetch the current file and push it to `Archive/` with a datestamped filename:
    - `Archive/tasks_backup_YYYYMMDD.json`
