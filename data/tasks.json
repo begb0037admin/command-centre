@@ -111,10 +111,11 @@
         "[TODO] Raise OSM change management record for DTP1092. Set Marie Cooksey as approver.",
         "[TODO] Record does not need Marie's formal sign-off immediately — just needs to exist before go-live.",
         "[10 Jun 2026] Crispin Muncaster is reminding attendees to review Simon's materials ahead of a meeting later today on College staff in PeopleXD proposal. (email: Crispin Muncaster - RE: College staff in PeopleXD proposal)",
-        "[10 Jun 2026] College staff in PXD meeting has been moved; Crispin Muncaster notified of reschedule. (email: Crispin Muncaster - DTP1092 College staff in PXD)"
+        "[10 Jun 2026] College staff in PXD meeting has been moved; Crispin Muncaster notified of reschedule. (email: Crispin Muncaster - DTP1092 College staff in PXD)",
+        "[10 Jun 2026] Simon has mentioned Kevin in the DTP1092 College Staff in PXD Proposal document, indicating progress on the change management record setup. (email: Simon Burford - Simon Burford mentioned you in \"DTP1092 - College Staff in PXD Proposal\".)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E260000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0ACA0000"
     },
     {
       "id": "t005",
@@ -318,12 +319,13 @@
       "tier": "tomorrow",
       "source": "Inbox 2026-06-10 09:43",
       "emailRef": "RE: Holiday Records Duty - proposed reports",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0AC70000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0ACE0000",
       "description": "Athena Artuso has sent a full review of Holiday Records Duty requirements with an introductory section covering what is actually required. Kevin has asked her to send this through and needs to review it to understand the scope and requirements for this duty.",
       "actions": [
         "[10 Jun 2026] Created from inbox suggestion (email from Athena Artuso)",
         "[10 Jun 2026] Kevin asked Athena to send through the requirements review document to examine scope and requirements (sent: Re: Holiday Records Duty - proposed reports).",
-        "[AWAITING] Athena to send the Holiday Records Duty requirements review document."
+        "[AWAITING] Athena to send the Holiday Records Duty requirements review document.",
+        "[10 Jun 2026] Athena has sent the full Holiday Records Duty review with introductory section following management team meeting discussion; Kevin needs to review this document. (email: Athena Artuso - RE: Holiday Records Duty - proposed reports)"
       ],
       "dateAdded": "2026-06-10"
     },
