@@ -1201,6 +1201,7 @@ function toggleTask(id) {
   if (!task) return;
   task.done = !task.done;
   saveDoneState();
+  persistTasks((task.done ? 'Mark done: ' : 'Reopen: ') + task.title);
   render();
 }
 
