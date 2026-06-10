@@ -319,6 +319,19 @@
         "[10 Jun 2026] Created from inbox suggestion (email from Athena Artuso)"
       ],
       "dateAdded": "2026-06-10"
+    },
+    {
+      "id": "t1781099896490",
+      "title": "Follow up on Scoping Session with Sophie Levy",
+      "tier": "parked",
+      "source": "Inbox 2026-06-08 15:58",
+      "emailRef": "RE: Scoping Session update",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E2E0000",
+      "description": "Sophie Levy has not heard from Kevin in two months and is seeking an update. She references April 2026 information and needs clarity on project status. This requires Kevin to reconnect and provide a current update on the scoping work.",
+      "actions": [
+        "[10 Jun 2026] Created from inbox suggestion (email from Sophie Levy)"
+      ],
+      "dateAdded": "2026-06-10"
     }
   ]
 }
