@@ -20,7 +20,7 @@
     {
       "id": "t002",
       "title": "Smart notes escalation — Cority ticket 00476764",
-      "tier": "tomorrow",
+      "tier": "week",
       "source": "H&S Roadmap 08/06",
       "emailRef": "Cority 00476764 / CCC-19664",
       "description": "Smart notes in Cority CoreEHS+ (GX2) do not allow edits after save and close. Raised November 2025, dev ref CCC-19664. Cority's official position (confirmed 08 Jun 2026 by Mehran Riaz, support leadership): this is an INTENDED feature — not a bug or missing feature. Cority classify the request to allow post-save edits as an enhancement, and it is NOT on their current roadmap. No timeline will be provided. Beta/early access ('enhanced access support') requires Premium Support, which Oxford does not have. Oxford has no named account manager — we are in a pool. Escalation route: support case owner → support leadership (done). If account/contract items needed, Cority sales team can be asked to reach out. Quality PUG on Tue 16 Jun at 2pm remains the formal pressure point.",
