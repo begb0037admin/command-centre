@@ -14,7 +14,8 @@
         "[10 Jun 2026] Team meeting today (10 June) will focus on KPIs and Statistics; each team should be ready to present. (email: Simon Burford - Team Meeting - 10th June)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E410000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E410000",
+      "done": true
     },
     {
       "id": "t002",
@@ -37,7 +38,7 @@
     {
       "id": "t014",
       "title": "Chemistry bulk delete — get details from Julie, pass to Reenu",
-      "tier": "today",
+      "tier": "tomorrow",
       "source": "Case 68974493",
       "emailRef": "68974493 / 67938206",
       "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie). Julie Hickman has run the affected employee report and will share the export via OneDrive.",
@@ -216,7 +217,8 @@
         "[08 Jun] Simon confirmed still ongoing — supplier blaming Oxford's implementation.",
         "[MONITOR] No action from Kevin unless escalated. Watch for volume increase post-half-term."
       ],
-      "dateAdded": "2026-06-08"
+      "dateAdded": "2026-06-08",
+      "done": true
     },
     {
       "id": "t012",
@@ -294,7 +296,8 @@
         "[AWAITING] Athena and Sarah to return before progressing.",
         "[TODO — on return] Discuss Risk Base requirements with Athena and Sarah."
       ],
-      "dateAdded": "2026-06-09"
+      "dateAdded": "2026-06-09",
+      "done": true
     }
   ]
 }
