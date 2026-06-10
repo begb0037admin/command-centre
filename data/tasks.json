@@ -90,7 +90,10 @@
         "[TODO] Once Athena's email received from Simon, pass to Michael — ask him to pull screenshots confirming system meets holiday provision requirements (holiday calculator evidence included).",
         "[TODO] Talk to Michael about additional flex point ideas — get as many quotes to AG as possible.",
         "[TODO] Build tracking document: three columns — agreed, booked, under investigation — with point values against each.",
-        "[AWAITING] Simon to send Athena's email. Marie's return to formally sign off plan."
+        "[AWAITING] Simon to send Athena's email. Marie's return to formally sign off plan.",
+        "[10 Jun 2026] Simon (Teams, after 1-1): Athena will ask Codex to output a requirements document for individual reports - likely easier than the all-in-one report spec, and easier to take to Access Group for a quote.",
+        "[AWAITING] Athena’s requirements document - hold off raising anything with Access Group until she sends it through.",
+        "[TODO] Come up with report ideas together with Michael."
       ],
       "dateAdded": "2026-06-08"
     },
@@ -122,7 +125,12 @@
         "[08 Jun] Confirmed blocked — waiting for Simon's level 6 assessment.",
         "[09 Jun 2026] Context confirmed at FA Catch-up: ad hoc codes created by Michael during Kevin's leave as workaround. Last two structure changes were incomplete at pay admin level.",
         "[AWAITING] Simon to complete assessment and create missing reference data (Division 901, subdivision, levels 4 and 5).",
-        "[TODO — after Simon] Set up pay admin buy codes once Simon confirms ready."
+        "[TODO — after Simon] Set up pay admin buy codes once Simon confirms ready.",
+        "[10 Jun 2026] Simon (Teams, after 1-1): department codes for all colleges and halls already exist in reference data - no department code work needed. Asked Kevin to set up all 40 REF2029 Pay Administered By codes in UOXU. Full code list: docs/REF2029_pay_admin_codes.md.",
+        "[10 Jun 2026] Simon created in UOXU: Division Code 901 (Colleges and Halls), USER_CODE1 ZSD901, USER_CODE2 Z90101, MANAGEMENT_UNITs Z901 (Colleges) and Z902 (Permanent Private Halls).",
+        "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
+        "[TODO] Raise change request - include Simon’s created items (Division 901, ZSD901, Z90101, Z901, Z902) and note the Division Code blocker below.",
+        "[AWAITING] Division Code cannot be added until linked to a Company Code - blocked until Conor walks through the config on Fri 12 Jun."
       ],
       "dateAdded": "2026-06-08"
     },
