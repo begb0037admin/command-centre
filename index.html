@@ -1012,6 +1012,7 @@ async function init() {
   await loadTasks();
   loadDoneState();
   render();
+  if (typeof loadInboxSuggestions === 'function') loadInboxSuggestions();
 }
 
 function setGreetingAndDate() {
@@ -1405,6 +1406,14 @@ loadInboxWidget();
 var SG_DISMISS_KEY='commandCentre_dismissedSuggestions_v1';
 function sgDismissed(){try{return JSON.parse(localStorage.getItem(SG_DISMISS_KEY)||'{}')}catch(e){return{}}}
 function dismissSuggestion(key){var d=sgDismissed();d[key]=true;localStorage.setItem(SG_DISMISS_KEY,JSON.stringify(d));loadInboxSuggestions();}
+function normSubj(s){return (s||'').toLowerCase().replace(/^((re|fw|fwd)\s*:\s*)+/,'').replace(/\s+/g,' ').trim();}
+function suggestionCovered(s){
+  var ns=normSubj(s.email_subject);
+  return (tasks||[]).some(function(t){
+    if(t.entryId&&s.entry_id&&t.entryId===s.entry_id) return true;
+    return !!ns&&normSubj(t.emailRef)===ns;
+  });
+}
 async function loadInboxSuggestions(){
   var host=document.getElementById('inboxSuggestions');
   if(!host)return;
@@ -1413,7 +1422,7 @@ async function loadInboxSuggestions(){
     if(!res.ok)throw new Error('fetch failed');
     var data=await res.json();
     var d=sgDismissed();
-    var newTasks=(data.new_tasks||[]).filter(function(s){return !d['n_'+s.entry_id]});
+    var newTasks=(data.new_tasks||[]).filter(function(s){return !d['n_'+s.entry_id]&&!suggestionCovered(s)});
     window.sgList=newTasks;
     if(!newTasks.length){host.innerHTML='';return;}
     var stale=false;
