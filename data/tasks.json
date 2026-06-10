@@ -52,10 +52,12 @@
         "[TODO — on receipt] Forward cycle name + employee list export to Reenu Delaney at AG to action the deletion.",
         "[TODO] Reply to Julie confirming details received and next steps.",
         "[10 Jun 2026] Julie Hickman is on annual leave 10 June; queries should be redirected per her auto-reply instructions. (email: Julie Hickman - Automatic reply: Access Support Team | 68974493 - New Case)",
-        "[10 Jun 2026] Access Group case 68978576 has been updated; monitor for resolution progress. (email: Access Support - Access Support Team | 68978576 - Your Case Has Been Updated)"
+        "[10 Jun 2026] Access Group case 68978576 has been updated; monitor for resolution progress. (email: Access Support - Access Support Team | 68978576 - Your Case Has Been Updated)",
+        "[10 Jun 2026] Kevin replied to Julie Hickman confirming AG are ready to proceed on Chemistry bulk delete; two items needed from Kevin's team before they can progress. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)",
+        "[10 Jun 2026] Kevin confirmed receipt of export from Julie Hickman for Chemistry bulk delete and is passing details across to Reenu Delaney to progress the AG case. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0AC50000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077ECC59D40000"
     },
     {
       "id": "t015",
@@ -70,9 +72,11 @@
         "[TODO — 15/16 Jun] Reconnect with Laura Porter as planned.",
         "[TODO — 22 Jun] Test new URL, update links on all three identified pages, replace visible long URLs with hyperlinked text, check whether links open in a new tab.",
         "[TODO] Email Laura with updates if changes are made before they next meet.",
-        "[MONITOR] Old page retirement — expected 23/24 June."
+        "[MONITOR] Old page retirement — expected 23/24 June.",
+        "[10 Jun 2026] Kevin has engaged with Athena Artuso on Holiday Records Duty reports and asked her to confirm details; task involves reviewing proposed reports and related documentation. (email: Kevin (sent to: Simon Burford; Athena Artuso) - Re: Holiday Records Duty - proposed reports)"
       ],
-      "dateAdded": "2026-06-03"
+      "dateAdded": "2026-06-03",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077ECC59D30000"
     },
     {
       "id": "t003",
@@ -102,10 +106,11 @@
         "[08 Jun] Confirmed outstanding — Simon did not raise during Kevin's leave.",
         "[TODO] Raise OSM change management record for DTP1092. Set Marie Cooksey as approver.",
         "[TODO] Record does not need Marie's formal sign-off immediately — just needs to exist before go-live.",
-        "[10 Jun 2026] Crispin Muncaster is reminding attendees to review Simon's materials ahead of a meeting later today on College staff in PeopleXD proposal. (email: Crispin Muncaster - RE: College staff in PeopleXD proposal)"
+        "[10 Jun 2026] Crispin Muncaster is reminding attendees to review Simon's materials ahead of a meeting later today on College staff in PeopleXD proposal. (email: Crispin Muncaster - RE: College staff in PeopleXD proposal)",
+        "[10 Jun 2026] College staff in PXD meeting has been moved; Crispin Muncaster notified of reschedule. (email: Crispin Muncaster - DTP1092 College staff in PXD)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0AC40000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E260000"
     },
     {
       "id": "t005",
@@ -148,10 +153,11 @@
       "actions": [
         "[05 Jun] James handover completed — Kevin confirmed as cover for Wednesday 10 June DSC upload.",
         "[TODO — 10 Jun] Monitor SFTP and run system checks for DSC upload. Flag any issues immediately.",
-        "[10 Jun 2026] James Salas confirms he is on annual leave from end of 5 June and returns 18 June; coverage for DSC upload on 10 June is confirmed. (email: James Salas Guillen - Annual leave and support during my absence)"
+        "[10 Jun 2026] James Salas confirms he is on annual leave from end of 5 June and returns 18 June; coverage for DSC upload on 10 June is confirmed. (email: James Salas Guillen - Annual leave and support during my absence)",
+        "[10 Jun 2026] Team meeting scheduled for 10 June (today) focuses on KPIs and Statistics; team members need to be ready to present. (email: Simon Burford - Team Meeting - 10th June)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000779BE36460000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E410000"
     },
     {
       "id": "t008",
