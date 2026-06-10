@@ -11,7 +11,8 @@
         "[08 Jun] Identified: team briefing needed — Michael and James already aware, others not yet informed.",
         "[09 Jun 2026] Team briefed at FA Team Catch-up — OH outcome, phased return schedule (4hrs/day, mornings, fully remote), org structure context, and flex points ask all covered.",
         "[09 Jun 2026] KPI data sent to Michael for Wednesday HR Systems team meeting presentation. ✓",
-        "[10 Jun 2026] Team meeting today (10 June) will focus on KPIs and Statistics; each team should be ready to present. (email: Simon Burford - Team Meeting - 10th June)"
+        "[10 Jun 2026] Team meeting today (10 June) will focus on KPIs and Statistics; each team should be ready to present. (email: Simon Burford - Team Meeting - 10th June)",
+        "[10 Jun 2026] Done - confirmed by Kevin. Closed."
       ],
       "dateAdded": "2026-06-08",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E410000",
@@ -63,7 +64,7 @@
     {
       "id": "t015",
       "title": "Web pages and URL linking — job posting updates",
-      "tier": "week",
+      "tier": "today",
       "source": "Meeting with Laura Porter 03/06",
       "emailRef": "",
       "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages still link to the old location: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page expected to be retired 23/24 June. Agreed approach: update all links to the new URL, use hyperlinked text (“IM Principles” / “internal mobility principles”) rather than displaying the full long URL, test before making any live changes, and check whether links can open in a new tab. Updates planned for 22 June ahead of old page retirement. Follow-up with Laura scheduled 15–16 June.",
