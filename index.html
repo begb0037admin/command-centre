@@ -20,14 +20,17 @@
   --sidebar-width: 320px;
 
   --today-color:  #ef4444;
+  --tomorrow-color: #f97316;
   --week-color:   #f59e0b;
   --parked-color: #94a3b8;
 
   --today-bg:   #fef2f2;
+  --tomorrow-bg: #fff7ed;
   --week-bg:    #fffbeb;
   --parked-bg:  #f8fafc;
 
   --today-border:  #fca5a5;
+  --tomorrow-border: #fdba74;
   --week-border:   #fcd34d;
   --parked-border: #cbd5e1;
 }
@@ -131,6 +134,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
   flex-shrink: 0;
 }
 .stat-dot.today  { background: var(--today-color); }
+.stat-dot.tomorrow { background: var(--tomorrow-color); }
 .stat-dot.week   { background: var(--week-color); }
 .stat-dot.parked { background: var(--parked-color); }
 .stat-count {
@@ -245,6 +249,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
   flex-shrink: 0;
 }
 .section-dot.today  { background: var(--today-color); }
+.section-dot.tomorrow { background: var(--tomorrow-color); }
 .section-dot.week   { background: var(--week-color); }
 .section-dot.parked { background: var(--parked-color); }
 
@@ -288,6 +293,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 .task-card:hover { box-shadow: 0 4px 12px rgba(0,33,71,0.1); }
 
 .task-card.tier-today  { border-left-color: var(--today-color); }
+.task-card.tier-tomorrow { border-left-color: var(--tomorrow-color); }
 .task-card.tier-week   { border-left-color: var(--week-color); }
 .task-card.tier-parked { border-left-color: var(--parked-color); }
 
@@ -644,6 +650,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
   text-align: center;
 }
 .tier-option.selected-today  { border-color: var(--today-color);  color: var(--today-color);  background: var(--today-bg); }
+.tier-option.selected-tomorrow { border-color: var(--tomorrow-color); color: var(--tomorrow-color); background: var(--tomorrow-bg); }
 .tier-option.selected-week   { border-color: var(--week-color);   color: var(--week-color);   background: var(--week-bg); }
 .tier-option.selected-parked { border-color: var(--parked-color); color: var(--parked-color); background: var(--parked-bg); }
 
@@ -665,10 +672,11 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 .sidebar-inbox-unavailable{font-size:12px;color:rgba(255,255,255,.28);font-style:italic}
 /* -- INBOX SUGGESTIONS -- */
 .sg-section{margin-bottom:36px}
-.sg-card{background:#fff;border:1px solid #e4eaf4;border-left:4px solid #378add;border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,33,71,0.05)}
+.sg-card{cursor:grab;background:#fff;border:1px solid #e4eaf4;border-left:4px solid #378add;border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,33,71,0.05)}
 .sg-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
 .sg-tier{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap}
 .sg-tier-today{background:var(--today-bg);color:var(--today-color);border:1px solid var(--today-border)}
+.sg-tier-tomorrow{background:var(--tomorrow-bg);color:var(--tomorrow-color);border:1px solid var(--tomorrow-border)}
 .sg-tier-week{background:var(--week-bg);color:var(--week-color);border:1px solid var(--week-border)}
 .sg-title{font-size:14px;font-weight:600;color:var(--text-dark);flex:1;min-width:0}
 .sg-desc{font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:8px}
@@ -705,6 +713,10 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
       <div class="stat-row">
         <span class="stat-name"><span class="stat-dot today"></span>Today</span>
         <span class="stat-count" id="countToday">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-name"><span class="stat-dot tomorrow"></span>Tomorrow</span>
+        <span class="stat-count" id="countTomorrow">0</span>
       </div>
       <div class="stat-row">
         <span class="stat-name"><span class="stat-dot week"></span>This Week</span>
@@ -760,6 +772,20 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
      ondrop="onListDrop(event,'today')"></div>
     </div>
 
+    <!-- TOMORROW -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-dot tomorrow"></span>
+        <span class="section-title">Tomorrow</span>
+        <span class="section-count" id="tomorrowCount">0</span>
+        <span class="section-rule"></span>
+      </div>
+      <div class="task-list" id="tomorrowList"
+     ondragover="onListDragOver(event,'tomorrow')"
+     ondragleave="onListDragLeave(event)"
+     ondrop="onListDrop(event,'tomorrow')"></div>
+    </div>
+
     <!-- THIS WEEK -->
     <div class="section">
       <div class="section-header">
@@ -804,6 +830,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
       <label class="form-label">Priority</label>
       <div class="tier-picker">
         <button class="tier-option selected-today" data-tier="today" onclick="selectTier('today')">🔴 Today</button>
+        <button class="tier-option" data-tier="tomorrow" onclick="selectTier('tomorrow')">🟠 Tomorrow</button>
         <button class="tier-option" data-tier="week" onclick="selectTier('week')">🟡 This Week</button>
         <button class="tier-option" data-tier="parked" onclick="selectTier('parked')">⚪ Parked</button>
       </div>
@@ -834,6 +861,8 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 <script>
 // ── STATE ──
 let tasks = [];
+let tasksDoc = { tasks: [] };
+let sgDragIdx = null;
 let doneVisible = true;
 let selectedTier = 'today';
 const DONE_KEY = 'commandCentre_done_v1';
@@ -841,7 +870,7 @@ const expandedIds = new Set();
 
 // ── DRAG AND DROP ──
 const ORDER_KEY = 'commandCentre_order_v1';
-let customOrder = { today: [], week: [], parked: [] };
+let customOrder = { today: [], tomorrow: [], week: [], parked: [] };
 let dragSrcId   = null;
 let dropPos     = 'after';
 
@@ -849,13 +878,14 @@ function loadOrder() {
   try {
     const saved = JSON.parse(localStorage.getItem(ORDER_KEY) || '{}');
     if (saved.today)  customOrder.today  = saved.today;
+    if (saved.tomorrow) customOrder.tomorrow = saved.tomorrow;
     if (saved.week)   customOrder.week   = saved.week;
     if (saved.parked) customOrder.parked = saved.parked;
   } catch(e) {}
 }
 
 function saveOrder() {
-  ['today','week','parked'].forEach(tier => {
+  ['today','tomorrow','week','parked'].forEach(tier => {
     const ids = tasks.filter(t => t.tier === tier).map(t => t.id);
     customOrder[tier] = [
       ...customOrder[tier].filter(id => ids.includes(id)),
@@ -920,6 +950,7 @@ function onCardDragLeave(e) {
 function onCardDrop(e, targetId, targetTier) {
   e.preventDefault();
   e.stopPropagation();
+  if (sgDragIdx !== null) { addSuggestionAsTask(sgDragIdx, targetTier); return; }
   if (!dragSrcId || dragSrcId === targetId) return;
   const src = tasks.find(t => t.id === dragSrcId);
   if (!src) return;
@@ -933,6 +964,7 @@ function onCardDrop(e, targetId, targetTier) {
   arr.splice(Math.max(0, dropPos === 'before' ? ti : ti + 1), 0, dragSrcId);
   if (oldTier !== targetTier) {
     customOrder[oldTier] = customOrder[oldTier].filter(id => id !== dragSrcId);
+    persistTasks('Move task to ' + targetTier);
   }
   localStorage.setItem(ORDER_KEY, JSON.stringify(customOrder));
   clearDragStyles();
@@ -941,7 +973,7 @@ function onCardDrop(e, targetId, targetTier) {
 
 function onListDragOver(e, tier) {
   e.preventDefault();
-  const listId = { today: 'todayList', week: 'weekList', parked: 'parkedList' }[tier];
+  const listId = { today: 'todayList', tomorrow: 'tomorrowList', week: 'weekList', parked: 'parkedList' }[tier];
   const tierTasks = tasks.filter(t => t.tier === tier);
   if (tierTasks.length === 0) document.getElementById(listId).classList.add('drop-target-empty');
 }
@@ -952,6 +984,7 @@ function onListDragLeave(e) {
 
 function onListDrop(e, tier) {
   e.preventDefault();
+  if (sgDragIdx !== null) { addSuggestionAsTask(sgDragIdx, tier); return; }
   if (!dragSrcId) return;
   const src = tasks.find(t => t.id === dragSrcId);
   if (!src || src.tier === tier) { clearDragStyles(); return; }
@@ -960,6 +993,7 @@ function onListDrop(e, tier) {
   saveOrder();
   customOrder[oldTier] = customOrder[oldTier].filter(id => id !== dragSrcId);
   if (!customOrder[tier].includes(dragSrcId)) customOrder[tier].push(dragSrcId);
+  persistTasks('Move task to ' + tier);
   localStorage.setItem(ORDER_KEY, JSON.stringify(customOrder));
   clearDragStyles();
   render();
@@ -996,6 +1030,7 @@ async function loadTasks() {
     const res = await fetch('data/tasks.json?_=' + Date.now());
     if (!res.ok) throw new Error('fetch failed');
     const data = await res.json();
+    tasksDoc = data;
     tasks = data.tasks || [];
   } catch (e) {
     console.warn('Could not load tasks.json — starting empty', e);
@@ -1018,10 +1053,10 @@ function saveDoneState() {
 
 // ── RENDER ──
 function render() {
-  const tiers = ['today', 'week', 'parked'];
-  const listIds = { today: 'todayList', week: 'weekList', parked: 'parkedList' };
-  const countIds = { today: 'todayCount', week: 'weekCount', parked: 'parkedCount' };
-  const sidebarIds = { today: 'countToday', week: 'countWeek', parked: 'countParked' };
+  const tiers = ['today', 'tomorrow', 'week', 'parked'];
+  const listIds = { today: 'todayList', tomorrow: 'tomorrowList', week: 'weekList', parked: 'parkedList' };
+  const countIds = { today: 'todayCount', tomorrow: 'tomorrowCount', week: 'weekCount', parked: 'parkedCount' };
+  const sidebarIds = { today: 'countToday', tomorrow: 'countTomorrow', week: 'countWeek', parked: 'countParked' };
 
   tiers.forEach(tier => {
     const tierTasks = getOrderedTasks(tier);
@@ -1045,8 +1080,8 @@ function render() {
       card.className = `task-card tier-${tier}${task.done ? ' done' : ''}${(!doneVisible && task.done) ? ' hidden' : ''}${isExpanded ? ' expanded' : ''}`;
       card.dataset.id = task.id;
 
-      const tierLabels = { today: '🔴 Today', week: '🟡 This Week', parked: '⚪ Parked' };
-      const otherTiers = ['today','week','parked'].filter(t => t !== tier);
+      const tierLabels = { today: '🔴 Today', tomorrow: '🟠 Tomorrow', week: '🟡 This Week', parked: '⚪ Parked' };
+      const otherTiers = ['today','tomorrow','week','parked'].filter(t => t !== tier);
 
       card.innerHTML = `
         <div class="task-card-top" onclick="toggleExpand('${task.id}')">
@@ -1057,6 +1092,7 @@ function render() {
               <div class="task-title">${escHtml(task.title)}</div>
             </div>
           </div>
+          ${task.entryId ? `<button class="sg-btn" style="flex-shrink:0;margin-left:auto" onclick="openTaskEmail('${task.entryId}', event)">📧 Open email</button>` : ''}
           <div class="task-expand-btn">▼</div>
         </div>
         <div class="task-drawer">
@@ -1079,6 +1115,7 @@ function render() {
           <div class="drawer-actions">
             <span class="drawer-move-label">Move to:</span>
             ${otherTiers.map(t => `<button class="move-btn" onclick="moveTask('${task.id}','${t}')">${tierLabels[t]}</button>`).join('')}
+            ${task.entryId ? `<button class="move-btn" onclick="openTaskEmail('${task.entryId}', event)">📧 Open email</button>` : ''}
             <button class="save-description-btn" id="save-${task.id}" onclick="saveDescription('${task.id}')">Save notes</button>
           </div>
         </div>
@@ -1131,6 +1168,7 @@ function moveTask(id, newTier) {
   if (!task) return;
   expandedIds.delete(id);
   task.tier = newTier;
+  persistTasks('Move task to ' + newTier);
   render();
 }
 
@@ -1144,6 +1182,7 @@ function saveDescription(id) {
   if (!task) return;
   const ta = document.getElementById('notes-' + id);
   if (ta) task.description = ta.value.trim();
+  persistTasks('Edit notes: ' + (task.title || id));
   const btn = document.getElementById('save-' + id);
   if (btn) btn.classList.remove('visible');
 }
@@ -1189,14 +1228,85 @@ function addTask() {
     tier: selectedTier,
     source: document.getElementById('newSource').value.trim() || 'Manual',
     emailRef: document.getElementById('newEmailRef').value.trim(),
-    notes: document.getElementById('newNotes').value.trim(),
+    description: document.getElementById('newNotes').value.trim(),
+    actions: [],
     dateAdded: new Date().toISOString().slice(0, 10),
     done: false
   };
 
   tasks.push(newTask);
+  persistTasks('Add task: ' + title);
   closePanel();
   render();
+}
+
+// ── GITHUB WRITE-BACK ──
+const CC_PAT_KEY = 'commandCentre_pat_v1';
+let persistTimer = null;
+let persistQueue = [];
+
+function ccToken() {
+  let t = (localStorage.getItem(CC_PAT_KEY) || '').trim();
+  if (!t) {
+    t = (window.prompt('Paste a GitHub token to enable saving from this browser.\n\nFine-grained, scoped to command-centre + work-inbox, Contents read/write.\nStored only in this browser (localStorage). Cancel = read-only mode.') || '').trim();
+    if (t) localStorage.setItem(CC_PAT_KEY, t);
+  }
+  return t;
+}
+
+function persistTasks(reason) {
+  persistQueue.push(reason);
+  clearTimeout(persistTimer);
+  persistTimer = setTimeout(doPersist, 900);
+}
+
+async function doPersist() {
+  const reasons = persistQueue.splice(0).join('; ');
+  if (!reasons) return;
+  const token = ccToken();
+  if (!token) { console.warn('No token - changes are local only'); return; }
+  try {
+    const api = 'https://api.github.com/repos/begb0037admin/command-centre/contents/data/tasks.json';
+    const head = { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json' };
+    const cur = await (await fetch(api + '?t=' + Date.now(), { headers: head })).json();
+    tasksDoc.tasks = tasks;
+    const jsonStr = JSON.stringify(tasksDoc, null, 2)
+      .replace(/[\u0080-\uffff]/g, c => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
+    const res = await fetch(api, { method: 'PUT', headers: head, body: JSON.stringify({
+      message: 'dashboard: ' + reasons, content: btoa(jsonStr), sha: cur.sha }) });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    console.log('Saved to GitHub:', reasons);
+  } catch (err) {
+    console.warn('Save failed', err);
+    alert('Could not save to GitHub - this change is local only.\n(' + err.message + ')');
+  }
+}
+
+function addSuggestionAsTask(idx, tier) {
+  const s = (window.sgList || [])[idx];
+  sgDragIdx = null;
+  clearDragStyles();
+  if (!s) return;
+  const stamp = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  tasks.push({
+    id: 't' + Date.now(),
+    title: s.title,
+    tier: tier,
+    source: 'Inbox ' + (s.received || ''),
+    emailRef: s.email_subject || '',
+    entryId: s.entry_id || '',
+    description: s.description || '',
+    actions: ['[' + stamp + '] Created from inbox suggestion (email from ' + (s.email_from || '') + ')'],
+    dateAdded: new Date().toISOString().slice(0, 10)
+  });
+  if (typeof dismissSuggestion === 'function') dismissSuggestion('n_' + s.entry_id);
+  persistTasks('Add from inbox: ' + s.title);
+  render();
+}
+
+function openTaskEmail(entryId, ev) {
+  if (ev) ev.stopPropagation();
+  window.location.href = 'openmail://' + entryId;
 }
 
 // keyboard shortcut
@@ -1234,7 +1344,6 @@ loadInboxWidget();
 var SG_DISMISS_KEY='commandCentre_dismissedSuggestions_v1';
 function sgDismissed(){try{return JSON.parse(localStorage.getItem(SG_DISMISS_KEY)||'{}')}catch(e){return{}}}
 function dismissSuggestion(key){var d=sgDismissed();d[key]=true;localStorage.setItem(SG_DISMISS_KEY,JSON.stringify(d));loadInboxSuggestions();}
-function openSuggestionEmail(entryId){window.location.href='openmail:'+entryId;}
 async function loadInboxSuggestions(){
   var host=document.getElementById('inboxSuggestions');
   if(!host)return;
@@ -1244,25 +1353,21 @@ async function loadInboxSuggestions(){
     var data=await res.json();
     var d=sgDismissed();
     var newTasks=(data.new_tasks||[]).filter(function(s){return !d['n_'+s.entry_id]});
-    var updates=(data.task_updates||[]).filter(function(s){return !d['u_'+s.entry_id+'_'+s.task_id]});
-    if(!newTasks.length&&!updates.length){host.innerHTML='';return;}
+    window.sgList=newTasks;
+    if(!newTasks.length){host.innerHTML='';return;}
     var stale=false;
     try{stale=(Date.now()-new Date((data.generated_at||'').replace(' ','T')).getTime())>24*3600*1000}catch(e){}
-    var tierChip={today:'<span class="sg-tier sg-tier-today">&#128308; Today</span>',week:'<span class="sg-tier sg-tier-week">&#128993; This Week</span>'};
-    var h='<div class="section sg-section"><div class="section-header"><span class="section-dot" style="background:#378add"></span><span class="section-title">From your inbox</span><span class="section-count">'+(newTasks.length+updates.length)+'</span><span class="section-rule"></span></div>';
-    h+='<div class="sg-stamp'+(stale?' sg-stale':'')+'">Suggested '+escHtml(data.generated_at||'')+(stale?' &mdash; stale, briefing needs a refresh':'')+'</div>';
-    newTasks.forEach(function(s){
-      h+='<div class="sg-card"><div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
+    var tierChip={today:'<span class="sg-tier sg-tier-today">&#128308; Today</span>',tomorrow:'<span class="sg-tier sg-tier-tomorrow">&#128992; Tomorrow</span>',week:'<span class="sg-tier sg-tier-week">&#128993; This Week</span>'};
+    var h='<div class="section sg-section"><div class="section-header"><span class="section-dot" style="background:#378add"></span><span class="section-title">From your inbox</span><span class="section-count">'+newTasks.length+'</span><span class="section-rule"></span></div>';
+    h+='<div class="sg-stamp'+(stale?' sg-stale':'')+'">Suggested '+escHtml(data.generated_at||'')+(stale?' &mdash; stale, briefing needs a refresh':'')+' &middot; drag a card into a list below to add it as a task</div>';
+    newTasks.forEach(function(s,i){
+      h+='<div class="sg-card" draggable="true" ondragstart="sgDragIdx='+i+'" ondragend="sgDragIdx=null;clearDragStyles()">'
+        +'<div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
         +'<div class="sg-desc">'+escHtml(s.description)+'</div>'
         +'<div class="sg-meta">From '+escHtml(s.email_from)+' &middot; &quot;'+escHtml(s.email_subject)+'&quot; &middot; '+escHtml(s.received||'')+'</div>'
-        +'<div class="sg-actions"><button class="sg-btn" onclick="openSuggestionEmail(\''+s.entry_id+'\')">Open email</button>'
+        +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">&#128231; Open email</button>'
         +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')">Dismiss</button>'
-        +'<span class="sg-hint">To add: tell Claude &quot;accept inbox suggestions&quot;</span></div></div>';
-    });
-    updates.forEach(function(s){
-      h+='<div class="sg-update"><span class="sg-update-text"><strong>'+escHtml(s.task_title)+'</strong> &mdash; '+escHtml(s.note)+' <span style="color:var(--text-very-muted)">(from '+escHtml(s.email_from)+')</span></span>'
-        +'<button class="sg-btn" onclick="openSuggestionEmail(\''+s.entry_id+'\')">Open email</button>'
-        +'<button class="sg-btn" onclick="dismissSuggestion(\'u_'+s.entry_id+'_'+s.task_id+'\')">Dismiss</button></div>';
+        +'<span class="sg-hint">drag into Today / Tomorrow / This Week to add</span></div></div>';
     });
     h+='</div>';
     host.innerHTML=h;
