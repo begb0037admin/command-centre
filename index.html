@@ -662,7 +662,26 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
 .sidebar-inbox-count{font-weight:700;color:rgba(255,255,255,.9)}
 .sidebar-inbox-refreshed{font-size:11px;color:rgba(255,255,255,.28);margin-bottom:8px}
 .sidebar-inbox-vip{font-size:12px;margin-top:4px;color:#fbbf24;font-weight:600}
-.sidebar-inbox-unavailable{font-size:12px;color:rgba(255,255,255,.28);font-style:italic}</style>
+.sidebar-inbox-unavailable{font-size:12px;color:rgba(255,255,255,.28);font-style:italic}
+/* -- INBOX SUGGESTIONS -- */
+.sg-section{margin-bottom:36px}
+.sg-card{background:#fff;border:1px solid #e4eaf4;border-left:4px solid #378add;border-radius:12px;padding:14px 18px;margin-bottom:10px;box-shadow:0 1px 3px rgba(0,33,71,0.05)}
+.sg-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.sg-tier{font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.sg-tier-today{background:var(--today-bg);color:var(--today-color);border:1px solid var(--today-border)}
+.sg-tier-week{background:var(--week-bg);color:var(--week-color);border:1px solid var(--week-border)}
+.sg-title{font-size:14px;font-weight:600;color:var(--text-dark);flex:1;min-width:0}
+.sg-desc{font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:8px}
+.sg-meta{font-size:12px;color:var(--text-very-muted);margin-bottom:10px}
+.sg-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.sg-btn{padding:5px 12px;border-radius:20px;border:1px solid #d1d9e6;background:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:var(--text-muted);transition:all .12s}
+.sg-btn:hover{background:#edf0f6;color:var(--text-dark);border-color:#b0b8c8}
+.sg-hint{font-size:11px;color:var(--text-very-muted);margin-left:auto;font-style:italic}
+.sg-update{background:#fff;border:1px solid #e4eaf4;border-radius:12px;padding:10px 18px;margin-bottom:8px;font-size:13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sg-update-text{flex:1;min-width:200px;color:var(--text-dark);line-height:1.45}
+.sg-stamp{font-size:11px;color:var(--text-very-muted);margin:-6px 0 14px 24px}
+.sg-stale{color:#c2410c;font-weight:600}
+</style>
 </head>
 <body>
 
@@ -724,6 +743,8 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
         <button class="btn btn-primary" onclick="openPanel()">＋ Add Task</button>
       </div>
     </div>
+
+    <div id="inboxSuggestions"></div>
 
     <!-- TODAY -->
     <div class="section">
@@ -1208,5 +1229,45 @@ async function loadInboxWidget(){
   }catch(e){el.innerHTML='<div class="sidebar-inbox-unavailable">Inbox unavailable</div>';}
 }
 loadInboxWidget();
+</script>
+<script>
+var SG_DISMISS_KEY='commandCentre_dismissedSuggestions_v1';
+function sgDismissed(){try{return JSON.parse(localStorage.getItem(SG_DISMISS_KEY)||'{}')}catch(e){return{}}}
+function dismissSuggestion(key){var d=sgDismissed();d[key]=true;localStorage.setItem(SG_DISMISS_KEY,JSON.stringify(d));loadInboxSuggestions();}
+function openSuggestionEmail(entryId){window.location.href='openmail:'+entryId;}
+async function loadInboxSuggestions(){
+  var host=document.getElementById('inboxSuggestions');
+  if(!host)return;
+  try{
+    var res=await fetch('https://raw.githubusercontent.com/begb0037admin/work-inbox/main/data/inbox_suggestions.json?_='+Date.now());
+    if(!res.ok)throw new Error('fetch failed');
+    var data=await res.json();
+    var d=sgDismissed();
+    var newTasks=(data.new_tasks||[]).filter(function(s){return !d['n_'+s.entry_id]});
+    var updates=(data.task_updates||[]).filter(function(s){return !d['u_'+s.entry_id+'_'+s.task_id]});
+    if(!newTasks.length&&!updates.length){host.innerHTML='';return;}
+    var stale=false;
+    try{stale=(Date.now()-new Date((data.generated_at||'').replace(' ','T')).getTime())>24*3600*1000}catch(e){}
+    var tierChip={today:'<span class="sg-tier sg-tier-today">&#128308; Today</span>',week:'<span class="sg-tier sg-tier-week">&#128993; This Week</span>'};
+    var h='<div class="section sg-section"><div class="section-header"><span class="section-dot" style="background:#378add"></span><span class="section-title">From your inbox</span><span class="section-count">'+(newTasks.length+updates.length)+'</span><span class="section-rule"></span></div>';
+    h+='<div class="sg-stamp'+(stale?' sg-stale':'')+'">Suggested '+escHtml(data.generated_at||'')+(stale?' &mdash; stale, briefing needs a refresh':'')+'</div>';
+    newTasks.forEach(function(s){
+      h+='<div class="sg-card"><div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
+        +'<div class="sg-desc">'+escHtml(s.description)+'</div>'
+        +'<div class="sg-meta">From '+escHtml(s.email_from)+' &middot; &quot;'+escHtml(s.email_subject)+'&quot; &middot; '+escHtml(s.received||'')+'</div>'
+        +'<div class="sg-actions"><button class="sg-btn" onclick="openSuggestionEmail(\''+s.entry_id+'\')">Open email</button>'
+        +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')">Dismiss</button>'
+        +'<span class="sg-hint">To add: tell Claude &quot;accept inbox suggestions&quot;</span></div></div>';
+    });
+    updates.forEach(function(s){
+      h+='<div class="sg-update"><span class="sg-update-text"><strong>'+escHtml(s.task_title)+'</strong> &mdash; '+escHtml(s.note)+' <span style="color:var(--text-very-muted)">(from '+escHtml(s.email_from)+')</span></span>'
+        +'<button class="sg-btn" onclick="openSuggestionEmail(\''+s.entry_id+'\')">Open email</button>'
+        +'<button class="sg-btn" onclick="dismissSuggestion(\'u_'+s.entry_id+'_'+s.task_id+'\')">Dismiss</button></div>';
+    });
+    h+='</div>';
+    host.innerHTML=h;
+  }catch(e){host.innerHTML='';}
+}
+loadInboxSuggestions();
 </script></body>
 </html>
