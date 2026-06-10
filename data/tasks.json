@@ -114,7 +114,7 @@
     {
       "id": "t005",
       "title": "Set up pay admin buy codes — after Simon's assessment",
-      "tier": "week",
+      "tier": "tomorrow",
       "source": "SK 1-1 08/06",
       "emailRef": "",
       "description": "Pay admin buy codes need to be set up in PeopleXD for DTP1092. Blocked pending Simon's assessment of what already exists at level 6 in the system. Simon will create missing reference data (Division 901, subdivision, levels 4 and 5) before Kevin proceeds. Context: during Kevin's leave, two org structure changes were incomplete — full department structures had not been created down to pay admin level. Michael had to create missing codes ad hoc when staff requests couldn't be processed. Root cause is linked to the documentation/process gap (see t006). No action from Kevin until Simon gives the green light.",
