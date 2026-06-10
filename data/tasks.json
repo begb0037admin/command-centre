@@ -97,7 +97,7 @@
     {
       "id": "t004",
       "title": "Raise DTP1092 change management record",
-      "tier": "week",
+      "tier": "tomorrow",
       "source": "SK 1-1 08/06",
       "emailRef": "",
       "description": "A formal change management record needs to be raised in OSM for the DTP1092 College Staff into PeopleXD project. This was not raised by Simon during Kevin's leave and remains outstanding. Marie Cooksey is the approver — the record won't be formally approved until go-live but needs to exist now for audit and governance purposes.",
