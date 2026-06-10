@@ -173,9 +173,6 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
   font-size: 12px;
   color: rgba(255,255,255,0.28);
 }
-.sidebar-token { margin: 8px 22px 0; font-size: 11px; }
-.sidebar-token a { color: rgba(255,255,255,0.35); text-decoration: none; }
-.sidebar-token a:hover { color: rgba(255,255,255,0.7); text-decoration: underline; }
 
 /* ── MAIN ── */
 .main {
@@ -738,7 +735,6 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
     </button>
 
     <div class="sidebar-date" id="sidebarDate"></div>
-    <div class="sidebar-token"><a href="#" onclick="resetToken();return false;">Set / reset GitHub token</a></div>
   
     <div class="sidebar-inbox">
       <div class="sidebar-inbox-label">Inbox</div>
@@ -1246,18 +1242,10 @@ function addTask() {
 }
 
 // ── GITHUB WRITE-BACK ──
-const CC_PAT_KEY = 'commandCentre_pat_v1';
+const CC_WRITER_URL = 'https://cc-tasks-writer.kevinlelitte.workers.dev';
+localStorage.removeItem('commandCentre_pat_v1');
 let persistTimer = null;
 let persistQueue = [];
-
-function ccToken() {
-  let t = (localStorage.getItem(CC_PAT_KEY) || '').trim();
-  if (!t) {
-    t = (window.prompt('Paste a GitHub token to enable saving from this browser.\n\nFine-grained, scoped to command-centre + work-inbox, Contents read/write.\nStored only in this browser (localStorage). Cancel = read-only mode.') || '').trim();
-    if (t) localStorage.setItem(CC_PAT_KEY, t);
-  }
-  return t;
-}
 
 function persistTasks(reason) {
   persistQueue.push(reason);
@@ -1268,31 +1256,18 @@ function persistTasks(reason) {
 async function doPersist() {
   const reasons = persistQueue.splice(0).join('; ');
   if (!reasons) return;
-  const token = ccToken();
-  if (!token) { console.warn('No token - changes are local only'); return; }
   try {
-    const api = 'https://api.github.com/repos/begb0037admin/command-centre/contents/data/tasks.json';
-    const head = { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json' };
-    const cur = await (await fetch(api + '?t=' + Date.now(), { headers: head })).json();
-    if (!cur.sha) throw new Error('read failed - ' + (cur.message || 'no sha'));
     tasksDoc.tasks = tasks;
-    const jsonStr = JSON.stringify(tasksDoc, null, 2)
-      .replace(/[\u0080-\uffff]/g, c => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
-    const res = await fetch(api, { method: 'PUT', headers: head, body: JSON.stringify({
-      message: 'dashboard: ' + reasons, content: btoa(jsonStr), sha: cur.sha }) });
-    if (!res.ok) { let m = ''; try { m = (await res.json()).message || ''; } catch (e2) {}
-      throw new Error('HTTP ' + res.status + (m ? ' - ' + m : '')); }
-    console.log('Saved to GitHub:', reasons);
+    const res = await fetch(CC_WRITER_URL, { method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: reasons, doc: tasksDoc }) });
+    const out = await res.json().catch(() => ({}));
+    if (!res.ok || !out.ok) throw new Error(out.error || ('HTTP ' + res.status));
+    console.log('Saved to GitHub:', reasons, out.commit || '');
+    ccNotify('Saved to GitHub \u2713');
   } catch (err) {
     console.warn('Save failed', err);
     ccNotify('Not saved to GitHub - change is local only. ' + (err.message || ''));
-    if (/401|403/.test(String(err.message))) {
-      setTimeout(() => {
-        if (confirm('GitHub rejected the token (' + err.message + ').\n\nCommon cause: token created with the default "Public repositories (read-only)" access. It must be "Only select repositories" with command-centre + work-inbox, and Contents: Read and write.\n\nClear the stored token so you can paste a new one?')) {
-          localStorage.removeItem(CC_PAT_KEY);
-        }
-      }, 300);
-    }
   }
 }
 
@@ -1308,11 +1283,6 @@ function ccNotify(msg) {
   el.style.display = 'block';
   clearTimeout(el._t);
   el._t = setTimeout(() => { el.style.display = 'none'; }, 7000);
-}
-
-function resetToken() {
-  localStorage.removeItem(CC_PAT_KEY);
-  ccToken();
 }
 
 function addSuggestionAsTask(idx, tier) {
