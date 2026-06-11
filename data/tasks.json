@@ -322,7 +322,7 @@
       "tier": "today",
       "source": "Inbox 2026-06-10 09:43",
       "emailRef": "RE: Holiday Records Duty - proposed reports",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0ACE0000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B50000",
       "description": "Athena Artuso has sent a full review of Holiday Records Duty requirements with an introductory section covering what is actually required. Kevin has asked her to send this through and needs to review it to understand the scope and requirements for this duty.",
       "actions": [
         "[10 Jun 2026] Created from inbox suggestion (email from Athena Artuso)",
@@ -330,7 +330,8 @@
         "[AWAITING] Athena to send the Holiday Records Duty requirements review document.",
         "[10 Jun 2026] Athena has sent the full Holiday Records Duty review with introductory section following management team meeting discussion; Kevin needs to review this document. (email: Athena Artuso - RE: Holiday Records Duty - proposed reports)",
         "[11 Jun 2026] Athena has sent the full Holiday Records Duty review with scope and requirements as requested; Kevin can now proceed to review. (email: Athena Artuso - RE: Holiday Records Duty - proposed reports)",
-        "[11 Jun 2026] Kevin confirmed willingness to review Athena's Holiday Records Duty proposed reports and asked Athena to send through the document. (email: Kevin (sent to: Simon Burford; Athena Artuso) - Re: Holiday Records Duty - proposed reports)"
+        "[11 Jun 2026] Kevin confirmed willingness to review Athena's Holiday Records Duty proposed reports and asked Athena to send through the document. (email: Kevin (sent to: Simon Burford; Athena Artuso) - Re: Holiday Records Duty - proposed reports)",
+        "[11 Jun 2026] Kevin has reviewed the revised three-report specification and confirmed it aligns with requirements; now moving to quote stage with Access Group. (email: Kevin (sent to: Athena Artuso; Simon Burford) - Re: Holiday Records Duty - proposed reports)"
       ],
       "dateAdded": "2026-06-10"
     },
@@ -343,7 +344,8 @@
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E2E0000",
       "description": "Sophie Levy has not heard from Kevin in two months and is seeking an update. She references April 2026 information and needs clarity on project status. This requires Kevin to reconnect and provide a current update on the scoping work.",
       "actions": [
-        "[10 Jun 2026] Created from inbox suggestion (email from Sophie Levy)"
+        "[10 Jun 2026] Created from inbox suggestion (email from Sophie Levy)",
+        "[11 Jun 2026] Sophie Levy chased for an update after two months with no contact; latest information she has is from April 2026. (email: Sophie Levy - RE: Scoping Session update)"
       ],
       "dateAdded": "2026-06-10"
     }
