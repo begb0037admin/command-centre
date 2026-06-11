@@ -74,6 +74,7 @@
         "[03 Jun 2026] New URL confirmed live later that day: https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-working-here/SitePages/internal-mobility-principles.aspx",
         "[11 Jun 2026] Attempted recruitment URL update via Recruitment > Toolbox > Recruitment Admin > E-Form Maintenance > Search Appointments Version 4 — clicking Save redirects to 'Sorry But Page Not Found' and changes are not saved (Production, OXU and OXZ).",
         "[11 Jun 2026] Raised Access support case 69001655 (PeopleXD – Recruitment / rEcruit, business impact Moderate, screenshots attached). Assigned to Maura McGlynn, status With Access.",
+        "[11 Jun 2026] Access confirmed receipt of case 69001655. (email: Access Support Team | 69001655 - Your Case Has Been Received)",
         "[AWAITING] Access resolution of case 69001655 — blocks the vacancy application page link updates.",
         "[TODO — 15/16 Jun] Reconnect with Laura Porter as planned.",
         "[TODO — 22 Jun] Test new URL, update links on all three identified pages, replace visible long URLs with hyperlinked text, check whether links open in a new tab.",
@@ -98,6 +99,7 @@
         "[AWAITING] Simon to send Athena's email. Marie's return to formally sign off plan.",
         "[10 Jun 2026] Simon (Teams, after 1-1): Athena will ask Codex to output a requirements document for individual reports - likely easier than the all-in-one report spec, and easier to take to Access Group for a quote.",
         "[AWAITING] Athena’s requirements document - hold off raising anything with Access Group until she sends it through.",
+        "[11 Jun 2026] First flex point quote in motion: FlexPoints case 69001638 raised with Access for the Holiday Records Duty reports (quote pending) — see 'Review Holiday Records Duty reports from Athena' task. (email: Ann-Marie Topliss - RE: #External# PeopleXD Insight Reporting – Quote Request)",
         "[TODO] Come up with report ideas together with Michael."
       ],
       "dateAdded": "2026-06-08"
@@ -326,7 +328,7 @@
       "source": "Inbox 2026-06-10 09:43",
       "emailRef": "RE: Holiday Records Duty - proposed reports",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B50000",
-      "description": "Athena Artuso has sent a full review of Holiday Records Duty requirements with an introductory section covering what is actually required. Kevin has asked her to send this through and needs to review it to understand the scope and requirements for this duty.",
+      "description": "Athena Artuso has sent a full review of Holiday Records Duty requirements with an introductory section covering what is actually required. Kevin has asked her to send this through and needs to review it to understand the scope and requirements for this duty. The reviewed three-report specification is now at quote stage with Access: FlexPoints case 69001638 (raised 11 Jun 2026 by Ann-Marie Topliss in Mike's absence), payment intended via flex points — see 'Flex points plan before Marie returns' task.",
       "actions": [
         "[10 Jun 2026] Created from inbox suggestion (email from Athena Artuso)",
         "[10 Jun 2026] Kevin asked Athena to send through the requirements review document to examine scope and requirements (sent: Re: Holiday Records Duty - proposed reports).",
@@ -334,7 +336,10 @@
         "[10 Jun 2026] Athena has sent the full Holiday Records Duty review with introductory section following management team meeting discussion; Kevin needs to review this document. (email: Athena Artuso - RE: Holiday Records Duty - proposed reports)",
         "[11 Jun 2026] Athena has sent the full Holiday Records Duty review with scope and requirements as requested; Kevin can now proceed to review. (email: Athena Artuso - RE: Holiday Records Duty - proposed reports)",
         "[11 Jun 2026] Kevin confirmed willingness to review Athena's Holiday Records Duty proposed reports and asked Athena to send through the document. (email: Kevin (sent to: Simon Burford; Athena Artuso) - Re: Holiday Records Duty - proposed reports)",
-        "[11 Jun 2026] Kevin has reviewed the revised three-report specification and confirmed it aligns with requirements; now moving to quote stage with Access Group. (email: Kevin (sent to: Athena Artuso; Simon Burford) - Re: Holiday Records Duty - proposed reports)"
+        "[11 Jun 2026] Kevin has reviewed the revised three-report specification and confirmed it aligns with requirements; now moving to quote stage with Access Group. (email: Kevin (sent to: Athena Artuso; Simon Burford) - Re: Holiday Records Duty - proposed reports)",
+        "[11 Jun 2026] Access confirmed the quote request is being worked on — 'Quote Pending'. (email: Access Support - Access FlexPoints | Quote Pending)",
+        "[11 Jun 2026] Ann-Marie Topliss (covering in Mike's absence) created FlexPoints case 69001638 for the quote request. (email: Ann-Marie Topliss - RE: #External# PeopleXD Insight Reporting – Quote Request)",
+        "[AWAITING] Access quote on FlexPoints case 69001638."
       ],
       "dateAdded": "2026-06-10"
     },
