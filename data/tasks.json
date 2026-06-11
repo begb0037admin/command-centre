@@ -82,7 +82,7 @@
     {
       "id": "t003",
       "title": "Flex points plan before Marie returns",
-      "tier": "today",
+      "tier": "tomorrow",
       "source": "SK 1-1 08/06",
       "emailRef": "",
       "description": "2,935 flex points remaining with expiry approximately early July 2026. Simon and Marie have already agreed a plan will be ready when Marie returns from leave. Chemistry bulk deletion (£525, AG, approved by Marie) is already committed. Remaining points need to be allocated before expiry — options discussed include payroll training and manager holiday compliance reports. Athena has sent an email with holiday compliance requirements that needs to be passed to Michael to assess against current system capability.",
@@ -116,7 +116,7 @@
         "[11 Jun 2026] Crispin has uploaded the updated Organization Structure document to the project Teams site with today's date; this supports the DTP1092 change management record work. (email: Crispin Muncaster - RE: College staff in PeopleXD proposal)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0ACD0000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0ACA0000",
       "done": true
     },
     {
@@ -141,7 +141,7 @@
         "[11 Jun 2026] Kevin has located Pay Administered By values in UOXU and can see what exists at level 6; ready to progress once Simon confirms missing reference data creation. (email: Kevin (sent to: Conor O'Brien) - Re: Organisational Hierarchy & Payroll Company Set-Up)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B20000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0ACB0000"
     },
     {
       "id": "t006",
@@ -322,7 +322,7 @@
       "tier": "today",
       "source": "Inbox 2026-06-10 09:43",
       "emailRef": "RE: Holiday Records Duty - proposed reports",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077ECC59D30000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077ECC0ACE0000",
       "description": "Athena Artuso has sent a full review of Holiday Records Duty requirements with an introductory section covering what is actually required. Kevin has asked her to send this through and needs to review it to understand the scope and requirements for this duty.",
       "actions": [
         "[10 Jun 2026] Created from inbox suggestion (email from Athena Artuso)",
