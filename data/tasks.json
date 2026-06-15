@@ -68,7 +68,7 @@
       "tier": "today",
       "source": "Meeting with Laura Porter 03/06",
       "emailRef": "",
-      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages still link to the old location: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page expected to be retired 23/24 June. Agreed approach: update all links to the new URL, use hyperlinked text (“IM Principles” / “internal mobility principles”) rather than displaying the full long URL, test before making any live changes, and check whether links can open in a new tab. Updates planned for 22 June ahead of old page retirement. Follow-up with Laura scheduled 15–16 June.",
+      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages still link to the old location: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page expected to be retired 23/24 June. Agreed approach: update all links to the new URL, use hyperlinked text ("IM Principles" / "internal mobility principles") rather than displaying the full long URL, test before making any live changes, and check whether links can open in a new tab. Updates planned for 22 June ahead of old page retirement. Follow-up with Laura scheduled 15–16 June.",
       "actions": [
         "[03 Jun 2026] Meeting with Laura Porter — reviewed three pages needing link updates.",
         "[03 Jun 2026] New URL confirmed live later that day: https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-working-here/SitePages/internal-mobility-principles.aspx",
@@ -94,7 +94,7 @@
         "[TODO] Build tracking document: three columns — agreed, booked, under investigation — with point values against each.",
         "[AWAITING] Simon to send Athena's email. Marie's return to formally sign off plan.",
         "[10 Jun 2026] Simon (Teams, after 1-1): Athena will ask Codex to output a requirements document for individual reports - likely easier than the all-in-one report spec, and easier to take to Access Group for a quote.",
-        "[AWAITING] Athena’s requirements document - hold off raising anything with Access Group until she sends it through.",
+        "[AWAITING] Athena's requirements document - hold off raising anything with Access Group until she sends it through.",
         "[TODO] Come up with report ideas together with Michael."
       ],
       "dateAdded": "2026-06-08"
@@ -135,7 +135,7 @@
         "[10 Jun 2026] Simon (Teams, after 1-1): department codes for all colleges and halls already exist in reference data - no department code work needed. Asked Kevin to set up all 40 REF2029 Pay Administered By codes in UOXU. Full code list: docs/REF2029_pay_admin_codes.md.",
         "[10 Jun 2026] Simon created in UOXU: Division Code 901 (Colleges and Halls), USER_CODE1 ZSD901, USER_CODE2 Z90101, MANAGEMENT_UNITs Z901 (Colleges) and Z902 (Permanent Private Halls).",
         "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
-        "[TODO] Raise change request - include Simon’s created items (Division 901, ZSD901, Z90101, Z901, Z902) and note the Division Code blocker below.",
+        "[TODO] Raise change request - include Simon's created items (Division 901, ZSD901, Z90101, Z901, Z902) and note the Division Code blocker below.",
         "[AWAITING] Division Code cannot be added until linked to a Company Code - blocked until Conor walks through the config on Fri 12 Jun.",
         "[10 Jun 2026] Simon has found that some reference data codes were too long and adjusted them; Kevin needs to review the changes to confirm they are acceptable before proceeding with the setup. (email: Simon Burford - RE: College staff in PeopleXD proposal)",
         "[10 Jun 2026] Simon identified that proposed org structure codes for the multi-company setup were too long and has made adjustments in the test environment; Kevin should review these changes. (email: Simon Burford - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)",
@@ -364,6 +364,68 @@
         "[15 Jun 2026] Kevin initiated the Holiday Records Reports quote request with Mike West, confirming the requirement and seeking pricing. (email: Kevin (sent to: Mike West; Ann-Marie Topliss; Amanda Mcdonnell) - PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)"
       ],
       "dateAdded": "2026-06-11"
+    },
+    {
+      "id": "t019",
+      "title": "Pay Code 121 / PAYPAY25 — add to HR Reporting SQL",
+      "tier": "today",
+      "source": "Michael 1-1 15/06",
+      "emailRef": "",
+      "description": "Pay Code 121 (report reference PAYPAY25) needs to be added to the SQL in HR Reporting. Raised by Michael in 1-1 on 15 June — needed for this month's payroll run. Process: identify which .RDL report(s) in the suite currently handle pay code filtering, edit the SQL to include PAYPAY25 / Pay Code 121, render in Visual Studio, and deploy through DEV → TEST → QA → LIVE environments. KB reference: DRAFT_HOW TO - Manage Reports - Render a Report in Visual Studio; DRAFT_HOW TO - Manage Reports - Report Files.",
+      "actions": [
+        "[15 Jun 2026] Action raised by Michael in 1-1 — Pay Code 121 / PAYPAY25 missing from SQL report suite. Needed for this month's payroll.",
+        "[TODO] Confirm with Michael which specific report(s) in the suite need amending.",
+        "[TODO] Edit SQL to add Pay Code 121 / PAYPAY25 to the relevant report(s).",
+        "[TODO] Render updated report(s) in Visual Studio and deploy DEV → TEST → QA → LIVE.",
+        "[TODO] Verify output in LIVE environment before payroll run."
+      ],
+      "dateAdded": "2026-06-15"
+    },
+    {
+      "id": "t020",
+      "title": "Org hierarchy migration — enable 16 COREPORTAL_ADMIN menu options",
+      "tier": "week",
+      "source": "Michael 1-1 15/06",
+      "emailRef": "RE: Menu Profile for hierarchy administration",
+      "description": "As part of the Back Office to Portal org hierarchy migration, 16 menu options need to be enabled on COREPORTAL_ADMIN across all environments. Asta Palmer emailed Kevin, Michael O'Sullivan and Simon Burford on 15 June with details of the menu profile for hierarchy administration. Helen's documentation is already in the HR FA Knowledge Base: PeopleXD People Management - Maintain the Organisational Hierarchy v1 (Mar 2024). A change request needs to be raised and linked to Helen's guide.",
+      "actions": [
+        "[15 Jun 2026] Action raised by Michael in 1-1 — 16 COREPORTAL_ADMIN menu options to be enabled as part of Back Office to Portal org hierarchy migration.",
+        "[15 Jun 2026] Asta Palmer emailed Kevin, Michael O'Sullivan and Simon Burford with menu profile for hierarchy administration details. (email: Asta Palmer - RE: Menu Profile for hierarchy administration)",
+        "[TODO] Review Asta's email to confirm the list of 16 menu options.",
+        "[TODO] Raise change request in OSM — link to PeopleXD People Management - Maintain the Organisational Hierarchy v1 as supporting documentation.",
+        "[TODO] Enable 16 menu options on COREPORTAL_ADMIN across all environments (DEV / TEST / QA / LIVE).",
+        "[TODO] Verify configuration in each environment before sign-off."
+      ],
+      "dateAdded": "2026-06-15"
+    },
+    {
+      "id": "t021",
+      "title": "FP 68261303 — Multi Company Setup, respond to Conor O'Brien",
+      "tier": "today",
+      "source": "Email 15/06 12:54",
+      "emailRef": "RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup",
+      "description": "Conor O'Brien (Access Group) emailed Simon, Kevin and Mike West on 15 June regarding FP 68261303 Multi Company Setup. This is the ongoing multi-company configuration work linked to the DTP1092 / REF2029 colleges and halls project (see t005). Conor has been Kevin's main Access Group contact on the organisational hierarchy and payroll company set-up work. A response or action is needed.",
+      "actions": [
+        "[15 Jun 2026] Conor O'Brien emailed with update on FP 68261303 Multi Company Setup. (email: Conor O'Brien - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)",
+        "[TODO] Review Conor's email and determine what response or next action is required.",
+        "[TODO] Reply to Conor / coordinate with Simon on next steps for multi-company setup."
+      ],
+      "dateAdded": "2026-06-15"
+    },
+    {
+      "id": "t022",
+      "title": "Menu Profile for hierarchy administration — review Asta's email",
+      "tier": "today",
+      "source": "Email 15/06 10:28",
+      "emailRef": "RE: Menu Profile for hierarchy administration",
+      "description": "Asta Palmer emailed Kevin, Michael O'Sullivan and Simon Burford on 15 June regarding the menu profile for hierarchy administration. This is directly related to the org hierarchy migration work (t020) — enabling the correct menu options in COREPORTAL_ADMIN as part of the Back Office to Portal transition. Asta is the operational contact for OSM and has experience with PeopleXD admin configuration.",
+      "actions": [
+        "[15 Jun 2026] Asta Palmer emailed Kevin, Michael O'Sullivan and Simon Burford with details on menu profile for hierarchy administration. (email: Asta Palmer - RE: Menu Profile for hierarchy administration)",
+        "[TODO] Review Asta's email and extract the list of menu options / profile details.",
+        "[TODO] Cross-reference with t020 (org hierarchy migration) — confirm this covers the 16 COREPORTAL_ADMIN menu options.",
+        "[TODO] Coordinate response with Michael and Simon."
+      ],
+      "dateAdded": "2026-06-15"
     }
   ]
 }
