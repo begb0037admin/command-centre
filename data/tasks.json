@@ -383,19 +383,23 @@
     },
     {
       "id": "t020",
-      "title": "Org hierarchy migration -- enable 16 COREPORTAL_ADMIN menu options",
+      "title": "Org hierarchy migration -- enable COREPORTAL_ADMIN menu options",
       "tier": "today",
       "source": "Michael 1-1 15/06",
       "emailRef": "RE: Menu Profile for hierarchy administration",
-      "description": "As part of the Back Office to Portal org hierarchy migration (DTP1092 / college data input project), 16 menu options need to be enabled on COREPORTAL_ADMIN across all environments. Asta Palmer emailed Kevin, Michael O'Sullivan and Simon Burford on 15 June with details of the menu profile for hierarchy administration. Helen's documentation is already in the HR FA Knowledge Base: PeopleXD People Management - Maintain the Organisational Hierarchy v1 (Mar 2024). A change request needs to be raised and linked to Helen's guide. This task arose directly from the college data input migration exposing the need to manage org hierarchy via Portal rather than Back Office.",
+      "description": "As part of the Back Office to Portal org hierarchy migration (DTP1092 / college data input project), a set of menu options need to be enabled on COREPORTAL_ADMIN across all environments. Root cause confirmed by Michael O'Sullivan (17 Jun): the org structure management was NEVER migrated from Back Office into the Portal -- the college data input migration exposed this gap. No Portal-specific How-To guidance exists yet; documenting the process is a required follow-up action. Asta Palmer is running a comparison of what is currently enabled against what is needed and will send the full list to Kevin for the change request. Simon Burford identified the specific options needed in UOXU (two groups): HIERARCHY GROUP -- Show org Hierarchy, Delete hierarchy by business units, Show my hierarchy, Get hierarchy by business units, Set hierarchy items, Log/link hierarchy items, Set hierarchy levels, Update hierarchy by business units. POST MANAGEMENT GROUP -- Post Management, Post Appointment Maintenance, Post Management Parameters, Post Profile Maintenance, Post Restructuring, Post Profile Section History, Structure Setup, Terms and Conditions (Maintenance), View Post Appointments. Note from Michael: some functionality may be covered by COREPORTAL_SUPPORT or COREPORTAL_HR_ADMIN_WEB rather than COREPORTAL_ADMIN -- Asta's comparison will clarify. Kevin's approach: use UOXU as proof of concept before rolling out to remaining environments. Kevin will produce guidance and supporting documentation as part of this work. Helen's existing guide is the starting point: PeopleXD People Management - Maintain the Organisational Hierarchy v1 (Mar 2024), HR FA Knowledge Base.",
       "actions": [
-        "[15 Jun 2026] Action raised by Michael in 1-1 -- 16 COREPORTAL_ADMIN menu options to be enabled as part of Back Office to Portal org hierarchy migration.",
-        "[15 Jun 2026] Asta Palmer emailed Kevin, Michael O'Sullivan and Simon Burford with menu profile for hierarchy administration details. (email: Asta Palmer - RE: Menu Profile for hierarchy administration)",
-        "[TODO] Review Asta's email to confirm the full list of 16 menu options.",
-        "[TODO] Raise change request in OSM -- link to PeopleXD People Management - Maintain the Organisational Hierarchy v1 as supporting documentation.",
-        "[TODO] Enable 16 menu options on COREPORTAL_ADMIN across all environments (DEV / TEST / QA / LIVE).",
+        "[15 Jun 2026] Action raised by Michael in 1-1 -- menu options to be enabled as part of Back Office to Portal org hierarchy migration. (email: Asta Palmer - RE: Menu Profile for hierarchy administration)",
+        "[12 Jun 2026] Asta Palmer confirmed Helen had been working on this; limitations prevented full migration to Portal at the time. Asta to run comparison of enabled vs required options on COREPORTAL_ADMIN and send to Kevin for the change request.",
+        "[17 Jun 2026] Michael O'Sullivan confirmed: org structure management was never migrated from Back Office to Portal -- that is why the options are not enabled. No Portal-specific How-To guidance documented; needs to be produced. Some functionality may sit under COREPORTAL_SUPPORT or COREPORTAL_HR_ADMIN_WEB.",
+        "[17 Jun 2026] Simon Burford confirmed the specific options he had to add in UOXU to get hierarchy access -- two groups identified (Hierarchy group and Post Management group -- see description for full lists).",
+        "[17 Jun 2026] Kevin replied to Asta: use UOXU as proof of concept before wider rollout. Kevin will put together guidance and supporting documentation to include as part of this work. Asked Asta to run comparison and send details.",
+        "[AWAITING] Asta Palmer to run comparison and send full confirmed list of menu options to Kevin for the change request.",
+        "[TODO -- on receipt of Asta's comparison] Raise change request in OSM -- link to Helen's guide (Maintain the Organisational Hierarchy v1) as supporting documentation.",
+        "[TODO] Enable confirmed menu options on COREPORTAL_ADMIN in UOXU first (proof of concept), then DEV / TEST / QA / LIVE.",
+        "[TODO] Produce Portal-specific How-To guidance for org hierarchy management -- no documentation currently exists.",
         "[TODO] Verify configuration in each environment before sign-off.",
-        "[TODO] Coordinate response with Michael and Simon."
+        "[TODO] Coordinate with Michael and Simon throughout."
       ],
       "dateAdded": "2026-06-15"
     },
