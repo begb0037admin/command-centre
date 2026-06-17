@@ -75,9 +75,12 @@
         "[TODO -- today 16 Jun] Reconnect with Laura Porter as planned.",
         "[TODO -- 22 Jun] Test new URL, update links on all three identified pages, replace visible long URLs with hyperlinked text, check whether links open in a new tab.",
         "[TODO] Email Laura with updates if changes are made before they next meet.",
-        "[MONITOR] Old page retirement -- expected 23/24 June."
+        "[MONITOR] Old page retirement -- expected 23/24 June.",
+        "[17 Jun 2026] Kevin confirmed with Laura Porter on 16 June that the additional couple of days' contingency before 23/24 June URL retirement is useful. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)",
+        "[17 Jun 2026] Kevin provided Laura Porter an update on the IM Principles URL change on 16 June. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)"
       ],
-      "dateAdded": "2026-06-03"
+      "dateAdded": "2026-06-03",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167660000"
     },
     {
       "id": "t003",
@@ -355,14 +358,15 @@
       "tier": "today",
       "source": "Inbox 2026-06-11 15:01",
       "emailRef": "RE: #External# PeopleXD Insight Reporting - Quote Request for Holiday Records Reports",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B60000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167650000",
       "description": "Ann-Marie Topliss has created FlexPoints case #69001638. Kevin's flex points expire by 29 June 2026. Chemistry bulk deletion (£525) is already committed, leaving remaining points to be allocated before expiry. This needs coordination with Simon and Marie's plan (t003). Holiday Records Reports quote now in progress (t1781099880461).",
       "actions": [
         "[11 Jun 2026] Created from inbox suggestion (email from Ann-Marie Topliss)",
         "[15 Jun 2026] Kevin initiated the Holiday Records Reports quote request with Mike West, confirming the requirement and seeking pricing. (email: Kevin (sent to: Mike West; Ann-Marie Topliss; Amanda Mcdonnell) - PeopleXD Insight Reporting - Quote Request for Holiday Records Reports)",
         "[AWAITING] Quote from AG for Holiday Records Reports (case #69001638).",
         "[TODO] Confirm total committed spend and remaining balance once quote received.",
-        "[TODO] Identify any further flex point uses before 29 June expiry."
+        "[TODO] Identify any further flex point uses before 29 June expiry.",
+        "[17 Jun 2026] Kevin sought Marie Cooksey's approval for Holiday Records reporting work flex points spend on 15 June. (email: Kevin (sent to: Marie Cooksey; Simon Burford) - Holiday Records Reporting – FlexPoints Approval)"
       ],
       "dateAdded": "2026-06-11"
     },
@@ -400,9 +404,11 @@
         "[TODO] Enable confirmed menu options on COREPORTAL_ADMIN in UOXU first (proof of concept), then DEV / TEST / QA / LIVE.",
         "[TODO] Produce Portal-specific How-To guidance for org hierarchy management -- no documentation currently exists.",
         "[TODO] Verify configuration in each environment before sign-off.",
-        "[TODO] Coordinate with Michael and Simon throughout."
+        "[TODO] Coordinate with Michael and Simon throughout.",
+        "[17 Jun 2026] Kevin asked Asta Palmer to run a comparison and send details of menu profile differences between environments on 15 June. (email: Kevin (sent to: Asta Palmer; Michael O'Sullivan; Simon Burford) - Re: Menu Profile for hierarchy administration)"
       ],
-      "dateAdded": "2026-06-15"
+      "dateAdded": "2026-06-15",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167630000"
     },
     {
       "id": "t021",
