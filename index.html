@@ -1108,7 +1108,8 @@ function render() {
           <div class="task-check${task.done ? ' checked' : ''}" onclick="event.stopPropagation(); toggleTask('${task.id}')"></div>
           <div class="task-body">
             <div class="task-title-row">
-              <div class="task-title" id="title-${task.id}">${escHtml(task.title)}${taskBadge(task)}</div>
+              <div class="task-title" id="title-${task.id}">${escHtml(task.title)}</div>
+              ${taskBadge(task)}
               <button class="title-edit-btn" title="Rename task" onclick="editTitle('${task.id}', event)">✎</button>
             </div>
           </div>
