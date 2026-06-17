@@ -414,9 +414,12 @@
       "actions": [
         "[15 Jun 2026] Conor O'Brien emailed with update on FP 68261303 Multi Company Setup. (email: Conor O'Brien - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)",
         "[TODO] Review Conor's email and determine what response or next action is required.",
-        "[TODO] Reply to Conor / coordinate with Simon on next steps for multi-company setup."
+        "[TODO] Reply to Conor / coordinate with Simon on next steps for multi-company setup.",
+        "[17 Jun 2026] Kevin replied to Conor O'Brien with Pay Administered By values found in UOXU for the multi-company setup work. (email: Kevin (sent to: Conor O'Brien) - Re: Organisational Hierarchy & Payroll Company Set-Up)",
+        "[17 Jun 2026] Kevin sent Conor O'Brien a draft REF2029 load file based on the test HR Reference File format for multi-company setup. (email: Kevin (sent to: Conor O'Brien) - Re: #External# Re: Organisational Hierarchy & Payroll Company Set-Up)"
       ],
-      "dateAdded": "2026-06-15"
+      "dateAdded": "2026-06-15",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B30000"
     }
   ]
 }
