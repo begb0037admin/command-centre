@@ -31,8 +31,9 @@
         "[Nov-Jun] Multiple 'still working on it' updates from Freeda Franks (support analyst). Dev ref CCC-19664 assigned.",
         "[08 Jun 2026] Kevin escalated formally -- requested timeline, clarification on cost comment, named account manager.",
         "[08 Jun 2026] Mehran Riaz (support leadership) responded: feature is INTENDED behaviour, classified as enhancement, NOT on roadmap. No timeline. Premium Support required for beta access (Oxford does not have it). No named account manager -- pool model. Sales team available if needed.",
-        "[TODO -- PUG TODAY 16 Jun 14:00] Raise CCC-19664 formally at Cority PUG with Christopher Sanders. Use Mehran's response as evidence that standard escalation is exhausted. Talking points: 6+ months open, intentional feature reclassification, no roadmap commitment, no account manager, Premium Support paywall.",
-        "[TODO -- after PUG] Decide whether to pursue via sales/account route or accept as a known limitation and communicate to stakeholders."
+        "[16 Jun 2026] Raised at Cority PUG with Christopher Sanders. PUG acknowledged smart notes as outstanding; Kevin to escalate directly with Cority for a firm delivery date.",
+        "[TODO] Chase Cority for firm delivery date on CCC-19664 draft/save functionality.",
+        "[TODO] Decide whether to pursue via sales/account route or accept as a known limitation and communicate to stakeholders."
       ],
       "dateAdded": "2026-06-08"
     },
@@ -394,8 +395,8 @@
         "[17 Jun 2026] Michael O'Sullivan confirmed: org structure management was never migrated from Back Office to Portal -- that is why the options are not enabled. No Portal-specific How-To guidance documented; needs to be produced. Some functionality may sit under COREPORTAL_SUPPORT or COREPORTAL_HR_ADMIN_WEB.",
         "[17 Jun 2026] Simon Burford confirmed the specific options he had to add in UOXU to get hierarchy access -- two groups identified (Hierarchy group and Post Management group -- see description for full lists).",
         "[17 Jun 2026] Kevin replied to Asta: use UOXU as proof of concept before wider rollout. Kevin will put together guidance and supporting documentation to include as part of this work. Asked Asta to run comparison and send details.",
+        "[17 Jun 2026] Change request raised in OSM for COREPORTAL_ADMIN org hierarchy migration.",
         "[AWAITING] Asta Palmer to run comparison and send full confirmed list of menu options to Kevin for the change request.",
-        "[TODO -- on receipt of Asta's comparison] Raise change request in OSM -- link to Helen's guide (Maintain the Organisational Hierarchy v1) as supporting documentation.",
         "[TODO] Enable confirmed menu options on COREPORTAL_ADMIN in UOXU first (proof of concept), then DEV / TEST / QA / LIVE.",
         "[TODO] Produce Portal-specific How-To guidance for org hierarchy management -- no documentation currently exists.",
         "[TODO] Verify configuration in each environment before sign-off.",
