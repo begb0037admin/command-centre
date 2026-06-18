@@ -1109,11 +1109,11 @@ function render() {
           <div class="task-body">
             <div class="task-title-row">
               <div class="task-title" id="title-${task.id}">${escHtml(task.title)}</div>
-              ${taskBadge(task)}
               <button class="title-edit-btn" title="Rename task" onclick="editTitle('${task.id}', event)">✎</button>
             </div>
           </div>
-          ${task.entryId ? `<button class="sg-btn" style="flex-shrink:0;margin-left:auto" onclick="openTaskEmail('${task.entryId}', event)">📧 Open email</button>` : ''}
+          ${taskBadge(task)}
+          ${task.entryId ? `<button class="sg-btn" style="flex-shrink:0" onclick="openTaskEmail('${task.entryId}', event)">📧 Open email</button>` : ''}
           <div class="task-expand-btn">▼</div>
         </div>
         <div class="task-drawer">
