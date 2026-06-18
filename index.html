@@ -1062,14 +1062,13 @@ function saveDoneState() {
 }
 
 // ── RENDER ──
-function taskBadge(task) {
-  const today = new Date().toISOString().slice(0, 10);
-  const d = new Date();
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const todayPrefix = '[' + String(d.getDate()).padStart(2,'0') + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() + ']';
-  if (task.dateAdded === today) return '<span class="task-badge task-badge-new">NEW</span>';
-  if (task.actions && task.actions.some(a => a.startsWith(todayPrefix))) return '<span class="task-badge task-badge-updated">UPDATED</span>';
-  return '';
+function _recentPfxs(n){const mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return Array.from({length:n},(_,i)=>{const d=new Date();d.setDate(d.getDate()-i);return'['+String(d.getDate()).padStart(2,'0')+' '+mo[d.getMonth()]+' '+d.getFullYear()+']';});}
+function taskBadge(task){
+  const cutoff=new Date();cutoff.setDate(cutoff.getDate()-4);cutoff.setHours(0,0,0,0);
+  if(task.dateAdded&&new Date(task.dateAdded+'T12:00:00')>=cutoff)return'<span class="task-badge task-badge-new">NEW</span>';
+  const pfxs=_recentPfxs(4);
+  if(task.actions&&task.actions.some(a=>pfxs.some(p=>a.startsWith(p))))return'<span class="task-badge task-badge-updated">UPDATED</span>';
+  return'';
 }
 function render() {
   const tiers = ['today', 'tomorrow', 'week', 'parked'];
