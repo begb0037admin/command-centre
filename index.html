@@ -304,9 +304,9 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
   text-decoration: line-through;
   color: var(--text-very-muted);
 }
-.task-badge { display:inline-block; font-size:10px; font-weight:700; padding:2px 7px; border-radius:10px; vertical-align:middle; margin-left:4px; letter-spacing:0.4px; white-space:nowrap; flex-shrink:0; }
-.task-badge-new { background:#dcfce7; color:#15803d; }
-.task-badge-updated { background:#dbeafe; color:#1d4ed8; }
+.task-badge { display:inline-block; font-size:11px; font-weight:600; padding:3px 8px; border-radius:5px; vertical-align:middle; margin-left:4px; letter-spacing:0.4px; white-space:nowrap; flex-shrink:0; }
+.task-badge-new { background:#dcfce7; color:#15803d; border:1px solid #86efac; }
+.task-badge-updated { background:#e6f1fb; color:#185fa5; border:1px solid #b5d4f4; }
 .task-card.hidden { display: none; }
 
 .title-edit-btn { background: none; border: none; color: var(--text-very-muted); cursor: pointer; font-size: 13px; padding: 2px 6px; border-radius: 4px; opacity: 0; transition: opacity 0.12s; flex-shrink: 0; }
@@ -441,6 +441,7 @@ html, body { height: 100%; font-family: 'Inter', sans-serif; background: var(--m
   cursor: pointer;
   border-radius: inherit;
   transition: background 0.1s;
+  width: 100%;
 }
 .task-card-top:hover { background: #f7f9fd; }
 
@@ -1112,7 +1113,7 @@ function render() {
             </div>
           </div>
           ${taskBadge(task)}
-          ${task.entryId ? `<button class="sg-btn" style="flex-shrink:0" onclick="openTaskEmail('${task.entryId}', event)">📧 Open email</button>` : ''}
+          ${task.entryId ? `<button class="sg-btn" style="flex-shrink:0" onclick="openTaskEmail('${task.entryId}', event)">Open email</button>` : ''}
           <div class="task-expand-btn">▼</div>
         </div>
         <div class="task-drawer">
@@ -1135,7 +1136,7 @@ function render() {
           <div class="drawer-actions">
             <span class="drawer-move-label">Move to:</span>
             ${otherTiers.map(t => `<button class="move-btn" onclick="moveTask('${task.id}','${t}'">${tierLabels[t]}</button>`).join('')}
-            ${task.entryId ? `<button class="move-btn" onclick="openTaskEmail('${task.entryId}', event)">📧 Open email</button>` : ''}
+            ${task.entryId ? `<button class="move-btn" onclick="openTaskEmail('${task.entryId}', event)">Open email</button>` : ''}
             <button class="save-description-btn" id="save-${task.id}" onclick="saveDescription('${task.id}')">Save notes</button>
           </div>
         </div>
@@ -1448,7 +1449,7 @@ async function loadInboxSuggestions(){
         +'<div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
         +'<div class="sg-desc">'+escHtml(s.description)+'</div>'
         +'<div class="sg-meta">From '+escHtml(s.email_from)+' &middot; &quot;'+escHtml(s.email_subject)+'&quot; &middot; '+escHtml(s.received||'')+'</div>'
-        +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">&#128231; Open email</button>'
+        +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">Open email</button>'
         +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')" >Dismiss</button>'
         +'<span class="sg-hint">drag into Today / Tomorrow / This Week to add</span></div></div>';
     });
