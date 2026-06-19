@@ -2,6 +2,19 @@
 > AI bootstrap entry point. Read this first.
 > Keep this file under 200 lines. Push details to linked docs.
 
+---
+
+## MANDATORY BACKUP RULE — DO THIS BEFORE ANY WRITE
+
+**Before writing to `index.html` or `data/tasks.json`, you MUST:**
+1. Check if `Archive/index_backup_YYYYMMDD.html` (or `tasks_backup_YYYYMMDD.json`) already exists for today's date.
+2. If NOT, fetch the current live file and push it to `Archive/` with today's datestamp — FIRST, before any other change.
+3. Only then make the intended write.
+
+No exceptions. Single-task updates, bulk changes, UI edits, bug fixes — all require a backup first. If a backup for today already exists in Archive/, skip — it is already taken.
+
+---
+
 ## Identity
 - **Project:** Command Centre — To-Do Dashboard (Module 1)
 - **Purpose:** Weekly task dashboard for Kevin Lelitte. Four priority tiers (Today / Tomorrow / This Week / Parked). Tasks sourced from meeting notes and Granola transcripts. Collapsible drawers show action detail, source, notes, and tier-move controls.
@@ -9,7 +22,7 @@
 - **Status:** Active — Module 1 live
 - **Repo:** https://github.com/begb0037admin/command-centre
 - **Live dashboard:** https://begb0037admin.github.io/command-centre/
-- **Last updated:** 2026-06-08 (v1.0 — Module 1 complete)
+- **Last updated:** 2026-06-19
 
 ## Bootstrap Order
 1. This file (orientation)
@@ -70,21 +83,7 @@ Each task in data/tasks.json follows this structure:
 
 ---
 
-## Backup and Recovery Procedures
-
-### Auto-backup rule — mandatory before every write
-
-Before any write to `data/tasks.json` or `index.html`, Claude Code MUST:
-1. Check whether a backup for today's date already exists in `Archive/`
-2. If not, fetch the current file and push it to `Archive/` with a datestamped filename:
-   - `Archive/tasks_backup_YYYYMMDD.json`
-   - `Archive/index_backup_YYYYMMDD.html`
-3. Only then proceed with the intended write
-
-No exceptions — single-task updates, bulk changes, and UI edits alike.
-If a backup for today's date already exists in Archive/, skip — it is already taken.
-
-### Rollback procedure
+## Rollback procedure
 
 If a bad push is made, restore as follows:
 
