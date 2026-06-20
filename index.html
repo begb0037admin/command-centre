@@ -364,7 +364,7 @@ function cardHTML(t){
   var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
   var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\')">' +tierLabel(tier)+'</button>';}).join('');
 
-  return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'">'
+  return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'">'
     +'<div class="card-top">'
     +'<div class="task-check '+checkedCls+'" onclick="toggleDone(event,\''+t.id+'\')" ></div>'
     +'<div class="task-title" onclick="toggleDrawer(\''+t.id+'\')" id="title-'+t.id+'">'+escHtml(t.title)+src+'</div>'
@@ -407,8 +407,9 @@ function toggleDrawer(id){
     card.classList.toggle('expanded',opening);
     card.classList.remove('deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked');
     if(opening){
-      var listEl=card.closest('.task-list');
-      var tier=listEl?listEl.id.replace('list-',''):'today';
+      var tier=card.dataset.tier;
+      if(!tier){var t=tasks.find(function(x){return x.id===id;});tier=t?t.tier:'today';}
+      void card.offsetWidth;
       card.classList.add('deep-linked-'+tier);
     }
   }
