@@ -403,9 +403,13 @@ function toggleDrawer(id){
   d.classList.toggle('open');
   var card=document.getElementById('card-'+id);
   if(card){
-    card.classList.toggle('expanded',d.classList.contains('open'));
-    if(!d.classList.contains('open')){
-      card.classList.remove('deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked');
+    var opening=d.classList.contains('open');
+    card.classList.toggle('expanded',opening);
+    card.classList.remove('deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked');
+    if(opening){
+      var listEl=card.closest('.task-list');
+      var tier=listEl?listEl.id.replace('list-',''):'today';
+      card.classList.add('deep-linked-'+tier);
     }
   }
 }
