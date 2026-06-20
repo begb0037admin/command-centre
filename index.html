@@ -10,7 +10,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --oxford:#002147;--sidebar:#002147;--main:#f5f7fb;--card:#fff;
-  --today:#ef4444;--tomorrow:#f97316;--week:#f59e0b;--parked:#94a3b8;
+  --today:#ef4444;--tomorrow:#eab308;--week:#22c55e;--parked:#94a3b8;
   --text:#1a2740;--muted:#7a8a9e;--vmuted:#b0b8c8;
   --sidebar-w:300px;
 }
@@ -61,8 +61,8 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
 
 .tier-col{background:#fff;border-radius:11px;border:1px solid #e8ecf4;overflow:hidden;min-height:110px}
 .tier-header{padding:11px 15px;display:flex;align-items:center;gap:7px;border-bottom:1px solid #e8ecf4}
-.tier-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.tier-title{font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--text)}
+.tier-dot{width:13px;height:13px;border-radius:50%;flex-shrink:0}
+.tier-title{font-size:15px;font-weight:700;letter-spacing:.03em;color:var(--text)}
 .tier-count{margin-left:auto;font-size:11.5px;color:var(--muted);font-weight:600}
 .tier-col.drag-over{outline:2px dashed var(--oxford);outline-offset:-2px;background:#f0f4fa}
 .tier-col.sug-drag-over{outline:2px dashed #4ade80;outline-offset:-2px;background:#f0fdf4}
@@ -73,8 +73,14 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
 .task-card:active{cursor:grabbing}
 .task-card.dragging{opacity:.5;box-shadow:0 8px 24px rgba(0,33,71,.18)}
 .task-card.expanded{border-color:var(--oxford);box-shadow:0 4px 16px rgba(0,33,71,.13)}
-.task-card.deep-linked{border-color:var(--oxford);box-shadow:0 0 0 3px rgba(0,33,71,.18);animation:deeplink-flash 1.8s ease-out}
-@keyframes deeplink-flash{0%{background:#e8eef6}100%{background:#fff}}
+.task-card.deep-linked-today{border-color:var(--today);box-shadow:0 0 0 4px rgba(239,68,68,.22);animation:deeplink-flash-today 2s ease-out}
+.task-card.deep-linked-tomorrow{border-color:var(--tomorrow);box-shadow:0 0 0 4px rgba(234,179,8,.25);animation:deeplink-flash-tomorrow 2s ease-out}
+.task-card.deep-linked-week{border-color:var(--week);box-shadow:0 0 0 4px rgba(34,197,94,.22);animation:deeplink-flash-week 2s ease-out}
+.task-card.deep-linked-parked{border-color:var(--parked);box-shadow:0 0 0 4px rgba(148,163,184,.25);animation:deeplink-flash-parked 2s ease-out}
+@keyframes deeplink-flash-today{0%{background:#fef2f2}100%{background:#fff}}
+@keyframes deeplink-flash-tomorrow{0%{background:#fefce8}100%{background:#fff}}
+@keyframes deeplink-flash-week{0%{background:#f0fdf4}100%{background:#fff}}
+@keyframes deeplink-flash-parked{0%{background:#f8fafc}100%{background:#fff}}
 .task-card.done-card .task-title{text-decoration:line-through;color:var(--muted)}
 .card-top{display:flex;align-items:flex-start;gap:9px;padding:10px 11px 7px}
 .task-check{width:15px;height:15px;border-radius:50%;border:2px solid #cbd5e1;flex-shrink:0;margin-top:2px;cursor:pointer;transition:background .15s,border-color .15s;display:flex;align-items:center;justify-content:center}
@@ -135,8 +141,8 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
 .sg-hint{font-size:10.5px;color:var(--vmuted)}
 .sg-tier{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:4px;padding:1px 5px;flex-shrink:0}
 .sg-tier-today{background:#fef2f2;color:#b91c1c}
-.sg-tier-tomorrow{background:#fff7ed;color:#c2410c}
-.sg-tier-week{background:#fffbeb;color:#b45309}
+.sg-tier-tomorrow{background:#fefce8;color:#854d0e}
+.sg-tier-week{background:#f0fdf4;color:#166534}
 
 /* SOURCE CHIP */
 .source-chip{display:inline-block;font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:#eef2f8;color:#5a6a82;border-radius:3px;padding:1px 5px;margin-left:5px;vertical-align:middle}
@@ -613,10 +619,13 @@ loadTasks().then(function(){
       var card=document.getElementById('card-'+hash);
       if(card){
         card.scrollIntoView({behavior:'smooth',block:'center'});
-        card.classList.add('deep-linked');
+        var _tierEl=card.closest('.task-list');
+        var _tier=_tierEl?_tierEl.id.replace('list-',''):'';
+        var _dlClass='deep-linked-'+(_tier||'today');
+        card.classList.add(_dlClass);
         var drawer=document.getElementById('drawer-'+hash);
         if(drawer&&!drawer.classList.contains('open')) toggleDrawer(hash);
-        setTimeout(function(){card.classList.remove('deep-linked');},3000);
+        setTimeout(function(){card.classList.remove(_dlClass);},3000);
       }
     },400);
   }
