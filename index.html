@@ -402,7 +402,12 @@ function toggleDrawer(id){
   var d=document.getElementById('drawer-'+id);
   d.classList.toggle('open');
   var card=document.getElementById('card-'+id);
-  if(card) card.classList.toggle('expanded',d.classList.contains('open'));
+  if(card){
+    card.classList.toggle('expanded',d.classList.contains('open'));
+    if(!d.classList.contains('open')){
+      card.classList.remove('deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked');
+    }
+  }
 }
 
 /* OPEN EMAIL */
@@ -625,7 +630,6 @@ loadTasks().then(function(){
         card.classList.add(_dlClass);
         var drawer=document.getElementById('drawer-'+hash);
         if(drawer&&!drawer.classList.contains('open')) toggleDrawer(hash);
-        setTimeout(function(){card.classList.remove(_dlClass);},3000);
       }
     },400);
   }
