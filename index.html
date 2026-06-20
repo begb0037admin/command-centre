@@ -374,7 +374,7 @@ function renderBoard(){
     counts[tier]=items.length;
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
-  document.getElementById('badge-total').textContent=tasks.length;
+  var bt=document.getElementById('badge-total');if(bt)bt.textContent=tasks.length;
   document.querySelectorAll('.task-card').forEach(function(card){
     card.addEventListener('dragstart',onCardDragStart);
     card.addEventListener('dragend',onCardDragEnd);
