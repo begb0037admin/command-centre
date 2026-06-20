@@ -164,14 +164,38 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
 @keyframes flash-card{0%,30%{background:#fef9c3}100%{background:#fff}}
 .flash-new{animation:flash-card 1.4s ease-out}
 
-/* SECTION (suggestions) */
-.section{margin-bottom:0}
-.section-header{display:flex;align-items:center;gap:7px;margin-bottom:10px}
-.section-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.section-title{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text)}
-.section-count{font-size:11px;font-weight:600;color:var(--muted);background:#eef2f8;border-radius:8px;padding:0 6px}
-.section-rule{flex:1;height:1px;background:#e8ecf4}
-</style>
+/* FOCUS MODE */
+.tier-grid.focus-mode{grid-template-columns:1fr}
+.tier-col.focus-hidden{display:none}
+
+/* SIDEBAR QUICK-ADD */
+.sb-section-qa{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:0 8px;margin:16px 0 8px}
+.sb-qa{padding:0 12px 4px}
+.sb-qa input[type=text]{font-family:inherit;font-size:12px;border:1.5px solid rgba(255,255,255,.15);border-radius:7px;padding:6px 10px;width:100%;background:rgba(255,255,255,.08);color:#fff;outline:none;margin-bottom:6px}
+.sb-qa input[type=text]::placeholder{color:rgba(255,255,255,.35)}
+.sb-qa input[type=text]:focus{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.12)}
+.sb-qa-row{display:flex;gap:6px}
+.sb-qa-row select{font-family:inherit;font-size:11.5px;border:1.5px solid rgba(255,255,255,.15);border-radius:6px;padding:5px 7px;background:rgba(255,255,255,.08);color:#fff;outline:none;flex:1;cursor:pointer}
+.sb-qa-row select option{background:#002147;color:#fff}
+.sb-qa-row button{font-family:inherit;font-size:11.5px;font-weight:600;border:none;border-radius:6px;padding:5px 14px;background:rgba(255,255,255,.18);color:#fff;cursor:pointer}
+.sb-qa-row button:hover{background:rgba(255,255,255,.28)}
+
+/* FOCUS SUMMARY */
+.sb-focus-summary{padding:0 12px 4px}
+.sb-focus-row{display:flex;align-items:center;justify-content:space-between;padding:4px 0}
+.sb-focus-label{font-size:12.5px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:8px}
+.sb-focus-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sb-focus-count{font-size:12px;font-weight:700;background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);border-radius:8px;padding:1px 9px;min-width:24px;text-align:center}
+.sb-focus-count.urgent{background:rgba(239,68,68,.35);color:#fca5a5}
+
+/* SIDEBAR CLOCK */
+.sb-clock{padding:16px 20px 20px;border-top:1px solid rgba(255,255,255,.1);margin-top:auto}
+.sb-clock-time{font-size:28px;font-weight:700;color:#fff;letter-spacing:.02em;line-height:1}
+.sb-clock-date{font-size:12px;color:rgba(255,255,255,.45);margin-top:5px}
+
+/* LAST UPDATED */
+.last-updated{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.focus-select{font-family:inherit;font-size:12.5px;border:1.5px solid #dde2ec;border-radius:7px;padding:6px 9px;background:var(--main);color:var(--text);outline:none;cursor:pointer}
 </head>
 <body>
 <div class="shell">
@@ -190,36 +214,53 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
   </div>
   <nav class="sb-nav">
     <div class="sb-section">Tasks</div>
-    <a onclick="showView('board')" id="nav-board" class="active">
-      <span class="nav-icon">&#x229E;</span> Board
-      <span class="tier-badge" id="badge-total">0</span>
-    </a>
     <a onclick="showView('inbox')" id="nav-inbox">
-      <span class="nav-icon">&#128229;</span> From your inbox
+      From your inbox
       <span class="tier-badge" id="badge-inbox">0</span>
     </a>
-    <div class="sb-section">Jump to</div>
-    <a onclick="showView('board');setTimeout(()=>scrollToTier('today'),50)" id="nav-today">
-      <span class="nav-icon" style="color:var(--today)">&#9679;</span> Today
-      <span class="tier-badge" id="badge-today">0</span>
-    </a>
-    <a onclick="showView('board');setTimeout(()=>scrollToTier('tomorrow'),50)" id="nav-tomorrow">
-      <span class="nav-icon" style="color:var(--tomorrow)">&#9679;</span> Tomorrow
-      <span class="tier-badge" id="badge-tomorrow">0</span>
-    </a>
-    <a onclick="showView('board');setTimeout(()=>scrollToTier('week'),50)" id="nav-week">
-      <span class="nav-icon" style="color:var(--week)">&#9679;</span> This Week
-      <span class="tier-badge" id="badge-week">0</span>
-    </a>
-    <a onclick="showView('board');setTimeout(()=>scrollToTier('parked'),50)" id="nav-parked">
-      <span class="nav-icon" style="color:var(--parked)">&#9679;</span> Parked
-      <span class="tier-badge" id="badge-parked">0</span>
-    </a>
+    <div class="sb-section">Daily Focus</div>
+    <div class="sb-focus-summary">
+      <div class="sb-focus-row">
+        <span class="sb-focus-label"><span class="sb-focus-dot" style="background:var(--today)"></span>Today</span>
+        <span class="sb-focus-count urgent" id="focus-today">0</span>
+      </div>
+      <div class="sb-focus-row">
+        <span class="sb-focus-label"><span class="sb-focus-dot" style="background:var(--tomorrow)"></span>Tomorrow</span>
+        <span class="sb-focus-count" id="focus-tomorrow">0</span>
+      </div>
+      <div class="sb-focus-row">
+        <span class="sb-focus-label"><span class="sb-focus-dot" style="background:var(--week)"></span>This Week</span>
+        <span class="sb-focus-count" id="focus-week">0</span>
+      </div>
+      <div class="sb-focus-row">
+        <span class="sb-focus-label"><span class="sb-focus-dot" style="background:var(--parked)"></span>Parked</span>
+        <span class="sb-focus-count" id="focus-parked">0</span>
+      </div>
+    </div>
+    <div class="sb-section sb-section-qa">Add task</div>
+    <div class="sb-qa">
+      <form onsubmit="quickAdd(event)">
+        <input type="text" id="qa-input" placeholder="Task title…" autocomplete="off">
+        <div class="sb-qa-row">
+          <select id="qa-tier">
+            <option value="today">Today</option>
+            <option value="tomorrow">Tomorrow</option>
+            <option value="week" selected>This Week</option>
+            <option value="parked">Parked</option>
+          </select>
+          <button type="submit">Add</button>
+        </div>
+      </form>
+    </div>
     <div class="sb-section">Links</div>
-    <a href="https://begb0037admin.github.io/work-inbox/" target="_blank"><span class="nav-icon">&#128231;</span> Work Inbox</a>
-    <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank"><span class="nav-icon">&#128202;</span> HRIS Dashboard</a>
-    <a href="https://begb0037admin.github.io/hris-launcher/" target="_blank"><span class="nav-icon">&#128640;</span> HRIS Launcher</a>
+    <a href="https://begb0037admin.github.io/work-inbox/" target="_blank">Work Inbox</a>
+    <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank">HRIS Dashboard</a>
+    <a href="https://begb0037admin.github.io/hris-launcher/" target="_blank">HRIS Launcher</a>
   </nav>
+  <div class="sb-clock">
+    <div class="sb-clock-time" id="sb-clock-time">00:00</div>
+    <div class="sb-clock-date" id="sb-clock-date"></div>
+  </div>
 </aside>
 
 <!-- MAIN -->
@@ -227,17 +268,14 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
   <header class="top-bar">
     <div class="top-bar-title" id="view-title">Task Board</div>
     <div class="top-bar-actions">
-      <form class="qa-form" onsubmit="quickAdd(event)">
-        <input type="text" id="qa-input" placeholder="Add a task…" autocomplete="off">
-        <select id="qa-tier">
-          <option value="today">Today</option>
-          <option value="tomorrow">Tomorrow</option>
-          <option value="week" selected>This Week</option>
-          <option value="parked">Parked</option>
-        </select>
-        <button type="submit" class="btn btn-primary">Add</button>
-      </form>
-      <button class="btn btn-ghost" onclick="loadTasks()">&#8635; Refresh</button>
+      <select class="focus-select" id="focus-filter" onchange="setFocusMode(this.value)">
+        <option value="all">All tiers</option>
+        <option value="today">Today only</option>
+        <option value="tomorrow">Tomorrow only</option>
+        <option value="week">This Week only</option>
+        <option value="parked">Parked only</option>
+      </select>
+      <span class="last-updated" id="last-updated"></span>
     </div>
   </header>
 
@@ -306,7 +344,8 @@ function showView(v){
   document.getElementById('view-board').style.display=v==='board'?'':'none';
   document.getElementById('view-inbox').style.display=v==='inbox'?'':'none';
   document.getElementById('view-title').textContent=v==='board'?'Task Board':'From your inbox';
-  ['board','inbox'].forEach(function(n){document.getElementById('nav-'+n).classList.toggle('active',n===v);});
+  var navInbox=document.getElementById('nav-inbox');
+  if(navInbox)navInbox.classList.toggle('active',v==='inbox');
 }
 
 /* LOAD TASKS */
@@ -320,16 +359,19 @@ async function loadTasks(){
   if(!data){console.warn('Could not load tasks');return;}
   tasks=Array.isArray(data)?data:(data.tasks||[]);
   renderBoard();
+  var lu=document.getElementById('last-updated');
+  if(lu){var n=new Date();lu.textContent='Updated '+n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
 }
 
 /* RENDER */
 function renderBoard(){
+  var counts={};
   TIERS.forEach(function(tier){
     var list=document.getElementById('list-'+tier);
     var count=document.getElementById('count-'+tier);
     var items=tasks.filter(function(t){return t.tier===tier;});
     count.textContent=items.length;
-    document.getElementById('badge-'+tier).textContent=items.length;
+    counts[tier]=items.length;
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
   document.getElementById('badge-total').textContent=tasks.length;
@@ -337,7 +379,38 @@ function renderBoard(){
     card.addEventListener('dragstart',onCardDragStart);
     card.addEventListener('dragend',onCardDragEnd);
   });
+  updateFocusSummary(counts);
 }
+
+function updateFocusSummary(counts){
+  var map={today:'focus-today',tomorrow:'focus-tomorrow',week:'focus-week',parked:'focus-parked'};
+  TIERS.forEach(function(tier){
+    var el=document.getElementById(map[tier]);
+    if(!el)return;
+    el.textContent=counts[tier]||0;
+    if(tier==='today')el.className='sb-focus-count'+(counts[tier]>0?' urgent':'');
+  });
+}
+
+function setFocusMode(tier){
+  var grid=document.querySelector('.tier-grid');
+  if(!grid)return;
+  TIERS.forEach(function(t){
+    var col=document.getElementById('tier-'+t);
+    if(col)col.classList.toggle('focus-hidden',tier!=='all'&&t!==tier);
+  });
+  grid.classList.toggle('focus-mode',tier!=='all');
+}
+
+function updateClock(){
+  var now=new Date();
+  var t=document.getElementById('sb-clock-time');
+  var d=document.getElementById('sb-clock-date');
+  if(t)t.textContent=now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+  if(d)d.textContent=now.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+}
+setInterval(updateClock,1000);
+updateClock();
 
 /* CARD HTML */
 function cardHTML(t){
@@ -355,8 +428,8 @@ function cardHTML(t){
     else if(addedTs>cutoff)badge='<span class="new-badge badge-new">NEW</span>';
   }
 
-  var emailBtn=t.entryId?'<button class="open-email-btn" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')" style="display:inline-flex">&#9993;</button>':'';
-  var editBtn='<button class="edit-title-btn" title="Rename" onclick="startRename(event,\''+t.id+'\')" style="display:inline-flex">&#9998;</button>';
+  var emailBtn=t.entryId?'<button class="open-email-btn" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')" style="display:inline-flex">Email</button>':'';
+  var editBtn='<button class="edit-title-btn" title="Rename" onclick="startRename(event,\''+t.id+'\')" style="display:inline-flex">Rename</button>';
 
   var descPreview=t.summary?'<div class="card-desc" onclick="toggleDrawer(\''+t.id+'\')">' +escHtml(t.summary)+'</div>':'';
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
@@ -582,7 +655,7 @@ async function loadInboxSuggestions(){
     if(!newTasks.length){host.innerHTML='';return;}
     var stale=false;
     try{stale=(Date.now()-new Date((data.generated_at||'').replace(' ','T')).getTime())>24*3600*1000}catch(e){}
-    var tierChip={today:'<span class="sg-tier sg-tier-today">&#128308; Today</span>',tomorrow:'<span class="sg-tier sg-tier-tomorrow">&#128992; Tomorrow</span>',week:'<span class="sg-tier sg-tier-week">&#128993; This Week</span>'};
+    var tierChip={today:'<span class="sg-tier sg-tier-today">Today</span>',tomorrow:'<span class="sg-tier sg-tier-tomorrow">Tomorrow</span>',week:'<span class="sg-tier sg-tier-week">This Week</span>'};
     var h='<div class="section sg-section"><div class="section-header"><span class="section-dot" style="background:#378add"></span><span class="section-title">From your inbox</span><span class="section-count">'+newTasks.length+'</span><span class="section-rule"></span></div>';
     h+='<div class="sg-stamp'+(stale?' sg-stale':'')+'">'
       +'Suggested '+escHtml(data.generated_at||'')+(stale?' &mdash; stale, briefing needs a refresh':'')
@@ -592,7 +665,7 @@ async function loadInboxSuggestions(){
         +'<div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
         +'<div class="sg-desc">'+escHtml(s.description)+'</div>'
         +'<div class="sg-meta">From '+escHtml(s.email_from)+' &middot; &quot;'+escHtml(s.email_subject)+'&quot; &middot; '+escHtml(s.received||'')+'</div>'
-        +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">&#128231; Open email</button>'
+        +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">Open email</button>'
         +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')" >Dismiss</button>'
         +'<span class="sg-hint">drag into Today / Tomorrow / This Week to add</span></div></div>';
     });
