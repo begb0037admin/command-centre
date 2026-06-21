@@ -30,6 +30,23 @@
 
 ---
 
+## UI APPROVAL GATE — BEFORE EVERY VISUAL PUSH
+
+**Every visual change to `index.html` must be screenshotted and approved before it goes to main. No exceptions — not for small tweaks, not for "obvious" fixes.**
+
+1. Implement the change locally.
+2. Take a screenshot and send it to Kevin.
+3. Wait for Kevin to explicitly say **"approved"**.
+4. Only then commit and push to main.
+
+### Rules
+- "It looks right" is not approval — wait for Kevin's word.
+- If the stop hook fires before approval, commit to a holding branch rather than pushing to main.
+- One visual change per approval cycle — do not bundle unrelated changes into one screenshot.
+- If Kevin says anything other than "approved" (e.g. "not approved", requests a change), do not push.
+
+---
+
 ## Identity
 - **Project:** Command Centre — To-Do Dashboard (Module 1)
 - **Purpose:** Weekly task dashboard for Kevin Lelitte. Four priority tiers (Today / Tomorrow / This Week / Parked). Tasks sourced from meeting notes and Granola transcripts. Collapsible drawers show action detail, source, notes, and tier-move controls.
