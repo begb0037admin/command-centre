@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-21 (Phase 1 governance artefacts committed — Codex challenge pending)
+**Last updated:** 2026-06-21 (Governance workflow correction — Codex controlled write constraint applied)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -11,7 +11,8 @@
 |---|---|
 | `index.html` | Single-file dashboard. Oxford navy sidebar (320px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. |
 | `data/tasks.json` | Task data. Fields: id, title, tier (today/week/parked), source, emailRef, notes, actions[], dateAdded. |
-| `governance/` | Governance workflow standard, phase templates, and phase evidence artefacts (added 2026-06-21). |
+| `governance/` | Governance workflow standard (v1.1), phase templates, and phase evidence artefacts. |
+| `docs/project/generated/` | Approved Codex artefact path. All Codex-produced review artefacts are committed here. |
 
 ---
 
@@ -53,16 +54,63 @@
 | Inbox suggestions | `data/inbox_suggestions.json` (written by work-inbox fetch_inbox.py Phase 3.5) |
 | Triage ledger | `data/triage_ledger.json` (dedup tracker for Phase 3.6 auto-updates) |
 | Archive | `Archive/tasks_backup_YYYYMMDD.json` (auto-created before every write) |
-| Governance standard | `governance/GOVERNANCE_WORKFLOW_STANDARD.md` |
+| Governance standard | `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (v1.1) |
 | Phase 1 Evidence Package | `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` |
 | Phase 1 Review Request | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` |
 | Phase templates | `governance/templates/` (9 templates) |
+| Codex artefact path | `docs/project/generated/` |
 
 ---
 
 ## Governance Workflow
 
-All multi-repository governance operations follow the 6-stage workflow defined in `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (committed 2026-06-21, commit `6f6cd8ae31d17c0c3c251f4837724c4279578a4a`).
+All multi-repository governance operations follow the 6-stage workflow defined in `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (v1.1, updated 2026-06-21, commit `65b753b5cf5242307786dda0eca09c766812878d`).
+
+### Governance Workflow Correction (2026-06-21)
+
+**Trigger:** Codex attempted to commit review artefacts during Phase 1 Stage 3 without a clearly defined write path, resulting in local file outputs and failed commits.
+
+**Correction applied:**
+- GOVERNANCE_WORKFLOW_STANDARD.md updated to v1.1 — Section 9 (Codex Controlled Write Constraint) added.
+- Artefact table updated: Codex-produced artefacts (Challenge Report, Remediation Request, Validation Report) now explicitly assigned to `docs/project/generated/`.
+- Agent responsibilities updated: Codex write boundary and operating mode verification made mandatory.
+- Claude Code fallback obligation made explicit: when Codex cannot write, Claude Code commits Codex artefact content exactly as supplied, no edits.
+- 6 Codex-facing templates updated: PHASE_REVIEW_REQUEST, PHASE_CHALLENGE_REPORT, PHASE_REMEDIATION_REQUEST, PHASE_VALIDATION_REQUEST, PHASE_VALIDATION_REPORT, PHASE_GOVERNANCE_REVIEW_REQUEST.
+- All updated templates now include: Codex Operating Mode section (Option A / Option B), Claude Code Commit Handoff section with exact filenames, target path, wording preservation requirement, and HANDOVER.md update obligation.
+
+**Codex operating model (corrected):**
+
+| Role | Agent | Write path |
+|------|-------|------------|
+| Primary implementation and remediation | Claude Code | `governance/evidence/` + all production files |
+| Independent technical reviewer | Codex | `docs/project/generated/` only |
+| Programme governance decision authority | ChatGPT / Kevin | `governance/evidence/` (Governance Decision only) |
+
+**Approved Codex artefact path:** `begb0037admin/command-centre/docs/project/generated/`
+
+**Approved Codex artefacts:**
+- `PHASE_X_CHALLENGE_REPORT.md`
+- `PHASE_X_REMEDIATION_REQUEST.md`
+- `PHASE_X_VALIDATION_REPORT.md`
+- `PHASE_X_GOVERNANCE_REVIEW_REQUEST.md`
+
+**Codex must not write, modify, or commit:** governance standards, templates, implementation files, production files, operational files, application code, backups, remediation evidence, HANDOVER.md (unless explicitly authorised).
+
+**Files updated in this correction:**
+
+| File | Content SHA |
+|------|-------------|
+| `governance/GOVERNANCE_WORKFLOW_STANDARD.md` | `493c93d7abb3d89f4efa770a5430ebd693a29511` |
+| `governance/templates/PHASE_REVIEW_REQUEST_TEMPLATE.md` | `bcc71e7708a6a86f89ee37a76fad380f6527c881` |
+| `governance/templates/PHASE_CHALLENGE_REPORT_TEMPLATE.md` | `1f77c00bb35a397037cc21db759ad289ba4d8acf` |
+| `governance/templates/PHASE_REMEDIATION_REQUEST_TEMPLATE.md` | `74407d59ecaac165c48e6094d27894164ec33f8c` |
+| `governance/templates/PHASE_VALIDATION_REQUEST_TEMPLATE.md` | `d370ba3b58cc1611b0bb95467c6e6ebe3a3cd4e3` |
+| `governance/templates/PHASE_VALIDATION_REPORT_TEMPLATE.md` | `c49e079346ad6fc025423b0f58c8e5a0c96f209c` |
+| `governance/templates/PHASE_GOVERNANCE_REVIEW_REQUEST_TEMPLATE.md` | `8f9752f267b5162a680c80d75531181dbd76e4d1` |
+
+**Workflow/template correction commit SHA:** `65b753b5cf5242307786dda0eca09c766812878d`
+
+**All 7 files GET-verified at that commit SHA.**
 
 ### Template Index
 
@@ -78,15 +126,18 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 | Governance Review Request | `governance/templates/PHASE_GOVERNANCE_REVIEW_REQUEST_TEMPLATE.md` | 6 |
 | Governance Decision | `governance/templates/PHASE_GOVERNANCE_DECISION_TEMPLATE.md` | 6 |
 
-### Workflow Summary
-| Stage | Action | Produced by |
-|-------|--------|-------------|
-| 1 — Execute | Perform approved writes | Claude Code |
-| 2 — Evidence | Evidence Package | Claude Code |
-| 3 — Challenge | Review Request + Challenge Report | Claude Code / Challenger |
-| 4 — Remediation | Remediation Request + Evidence (if gaps) | Claude Code |
-| 5 — Validation | Validation Request + Report (if gaps) | Claude Code / Challenger |
-| 6 — Decision | Governance Review Request + Decision | Claude Code / Kevin |
+### Workflow Summary (corrected v1.1)
+| Stage | Action | Produced by | Path |
+|-------|--------|-------------|------|
+| 1 — Execute | Perform approved writes | Claude Code | Various repos |
+| 2 — Evidence | Evidence Package | Claude Code | `governance/evidence/` |
+| 3 — Challenge | Review Request | Claude Code | `governance/evidence/` |
+| 3 — Challenge | Challenge Report + Remediation Request | Codex | `docs/project/generated/` |
+| 4 — Remediation | Remediation Evidence | Claude Code | `governance/evidence/` |
+| 5 — Validation | Validation Request | Claude Code | `governance/evidence/` |
+| 5 — Validation | Validation Report | Codex | `docs/project/generated/` |
+| 6 — Decision | Governance Review Request | Claude Code | `governance/evidence/` |
+| 6 — Decision | Governance Decision | Kevin | `governance/evidence/` |
 
 ---
 
@@ -98,12 +149,6 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 |----------|------|------------|-------------|----------|
 | PHASE_1_EVIDENCE_PACKAGE.md | `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` | `f941af6984664efd70d70e06dccf9b7a8a1dfc2a` | `07449bef60a2e8a5ffa8a17445052c20e0b0a742` | ✅ GET confirmed |
 | PHASE_1_REVIEW_REQUEST.md | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` | `f941af6984664efd70d70e06dccf9b7a8a1dfc2a` | `42275d4d7569a988eb75d99e91d96ddff391a71a` | ✅ GET confirmed |
-
-### Verification Result
-
-Both artefacts retrieved via GET at commit `f941af6984664efd70d70e06dccf9b7a8a1dfc2a`:
-- `PHASE_1_EVIDENCE_PACKAGE.md`: present, content SHA `07449bef`, all required sections confirmed.
-- `PHASE_1_REVIEW_REQUEST.md`: present, content SHA `42275d4d`, NEXT STAGE section confirmed with correct Target Agent, Required Inputs, Required Outputs, Workflow Status (Stage 1 Complete / Stage 2 Pending), and Handoff Instructions.
 
 ### Current Workflow Status
 
@@ -118,25 +163,29 @@ Both artefacts retrieved via GET at commit `f941af6984664efd70d70e06dccf9b7a8a1d
 
 ### Next Agent: Codex
 
-**Action required:** Codex must independently challenge the Evidence Package (VT-01 through VT-07) and commit its outputs to `governance/evidence/`.
+**Action required:** Codex must independently challenge the Evidence Package (VT-01 through VT-07).
+
+**Codex operating mode:** Codex must first verify GitHub write access and declare operating mode (Option A or B) before proceeding.
 
 **Required Codex inputs:**
 - `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md`
 - `governance/evidence/PHASE_1_REVIEW_REQUEST.md`
-- `governance/GOVERNANCE_WORKFLOW_STANDARD.md`
+- `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (v1.1)
 - `governance/templates/`
 
-**Required Codex outputs:**
-- `governance/evidence/PHASE_1_CHALLENGE_REPORT.md` — always required
-- `governance/evidence/PHASE_1_REMEDIATION_REQUEST.md` — required if any VT finding is FAIL or PARTIAL
+**Required Codex outputs (committed to `docs/project/generated/`):**
+- `PHASE_1_CHALLENGE_REPORT.md` — always required
+- `PHASE_1_REMEDIATION_REQUEST.md` — required if any VT finding is FAIL or PARTIAL
 
-**Codex entry point:** Read `governance/evidence/PHASE_1_REVIEW_REQUEST.md` in full first. All instructions are there.
+**If Codex cannot write:** Codex outputs full Markdown artefact contents in chat. Claude Code commits them to `docs/project/generated/` exactly as supplied, verifies each commit, and updates this HANDOVER.md.
+
+**Codex entry point:** Read `governance/evidence/PHASE_1_REVIEW_REQUEST.md` in full first. The Codex Operating Mode section now appears before the Critical Instructions.
 
 ---
 
 ## Next Action
 
-**Governance:** Codex to produce `PHASE_1_CHALLENGE_REPORT.md` and (if required) `PHASE_1_REMEDIATION_REQUEST.md` in `governance/evidence/`. Claude Code will read the committed Challenge Report and proceed to Stage 4 or Stage 6 based on the overall verdict.
+**Governance:** Codex to produce `PHASE_1_CHALLENGE_REPORT.md` and (if required) `PHASE_1_REMEDIATION_REQUEST.md` in `docs/project/generated/`. Claude Code will read the committed Challenge Report and proceed to Stage 4 or Stage 6 based on the overall verdict.
 
 **ROADMAP item 1:** Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API.
 
@@ -161,14 +210,24 @@ Both artefacts retrieved via GET at commit `f941af6984664efd70d70e06dccf9b7a8a1d
 - Authentication diagnostic: GITHUB_PAT env var absent but confirmed not Claude Code's auth mechanism (gh CLI keyring).
 - Pending: ag-flexpoints AGENT_MODEL.md status unverified (not in MCP scope this session).
 
-### 2026-06-21 — Governance workflow standard + templates
+### 2026-06-21 — Governance workflow standard + templates (v1.0)
 - `governance/GOVERNANCE_WORKFLOW_STANDARD.md` — 6-stage workflow, 10-artefact set, agent responsibilities, handoff requirements.
 - 9 phase templates committed to `governance/templates/`. All verified by directory GET.
 - Commit SHA: `6f6cd8ae31d17c0c3c251f4837724c4279578a4a`.
 
 ### 2026-06-21 — Phase 1 governance artefacts committed (Stage 2 complete)
-- `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` — full Phase 1 execution evidence with all required sections: scope, repos reviewed, repos excluded, architecture, authentication, authorization, baseline capture, backup, governance writes, verification, HANDOVER, exceptions, claims, assumptions, risks, outstanding items, evidence summary.
-- `governance/evidence/PHASE_1_REVIEW_REQUEST.md` — addressed to Codex; VT-01 through VT-07 verification tasks with direct-inspection instructions; NEXT STAGE section confirmed present with correct workflow status (Stage 1 Complete / Stage 2 Pending).
+- `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` — full Phase 1 execution evidence.
+- `governance/evidence/PHASE_1_REVIEW_REQUEST.md` — addressed to Codex; VT-01 through VT-07; NEXT STAGE section confirmed.
 - Commit SHA (artefacts): `f941af6984664efd70d70e06dccf9b7a8a1dfc2a`.
 - Both artefacts verified by GET at that commit.
-- **Workflow is now at Stage 3 — Codex action required.**
+- **Workflow is at Stage 3 — Codex action required.**
+
+### 2026-06-21 — Governance workflow correction (v1.1)
+- **Problem:** Codex attempted Stage 3 commit without a defined write role; produced local file paths as outputs.
+- **Correction:** GOVERNANCE_WORKFLOW_STANDARD.md updated to v1.1. Section 9 (Codex Controlled Write Constraint) added. 6 Codex-facing templates updated with Codex Operating Mode and Claude Code Commit Handoff sections.
+- **Approved Codex write path:** `docs/project/generated/`
+- **Codex write boundary:** Challenge Report, Remediation Request, Validation Report, Governance Review Request only. No other files.
+- **Fallback rule:** If Codex cannot write, Codex outputs full Markdown in chat; Claude Code commits exactly as supplied.
+- **Correction commit SHA:** `65b753b5cf5242307786dda0eca09c766812878d`
+- **All 7 changed files GET-verified at that commit.**
+- **Stage 3 remains open — Codex must re-run with corrected instructions.**
