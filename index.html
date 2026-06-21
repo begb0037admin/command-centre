@@ -33,6 +33,12 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
 .sb-clock{padding:14px 16px 18px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.6}
 .sb-section{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:0 8px;margin:16px 0 5px}
 .sb-section:first-child{margin-top:0}
+.focus-tasks{padding:0 10px 8px}
+.focus-tier{margin-bottom:10px}
+.focus-tier-label{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.focus-task-item{font-size:12px;color:rgba(255,255,255,.75);padding:2px 0 2px 10px;border-left:2px solid currentColor;line-height:1.35;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.focus-task-item:hover{color:#fff}
+.focus-empty{font-size:11.5px;color:rgba(255,255,255,.3);font-style:italic;padding:2px 0}
 .sb-nav a{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:7px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;transition:background .15s,color .15s;cursor:pointer}
 .sb-nav a:hover,.sb-nav a.active{background:rgba(255,255,255,.1);color:#fff}
 .nav-icon{width:17px;text-align:center;font-size:13px;flex-shrink:0}
@@ -226,23 +232,8 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
       From your inbox
       <span class="tier-badge" id="badge-inbox">0</span>
     </a>
-    <div class="sb-section">Jump to</div>
-    <a onclick="showView('board');setTimeout(()=>scrollToTier('today'),50)" id="nav-today">
-      <span class="nav-icon" style="color:var(--today)">&#9679;</span> Today
-      <span class="tier-badge" id="badge-today">0</span>
-    </a>
-    <a onclick="showView('board');setTimeout(()=>scrollToTier('tomorrow'),50)" id="nav-tomorrow">
-      <span class="nav-icon" style="color:var(--tomorrow)">&#9679;</span> Tomorrow
-      <span class="tier-badge" id="badge-tomorrow">0</span>
-    </a>
-    <a onclick="showView('board');setTimeout(()=>scrollToTier('week'),50)" id="nav-week">
-      <span class="nav-icon" style="color:var(--week)">&#9679;</span> This Week
-      <span class="tier-badge" id="badge-week">0</span>
-    </a>
-    <a onclick="showView('board');setTimeout(()=>scrollToTier('parked'),50)" id="nav-parked">
-      <span class="nav-icon" style="color:var(--parked)">&#9679;</span> Parked
-      <span class="tier-badge" id="badge-parked">0</span>
-    </a>
+    <div class="sb-section">Daily Focus</div>
+    <div id="focus-tasks" class="focus-tasks"></div>
     <div class="sb-section">Links</div>
     <a href="https://begb0037admin.github.io/work-inbox/" target="_blank">Work Inbox</a>
     <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank">HRIS Dashboard</a>
@@ -348,10 +339,27 @@ function renderBoard(){
     var count=document.getElementById('count-'+tier);
     var items=tasks.filter(function(t){return t.tier===tier;});
     count.textContent=items.length;
-    document.getElementById('badge-'+tier).textContent=items.length;
+    var badge=document.getElementById('badge-'+tier);if(badge)badge.textContent=items.length;
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
   var badgeTotal=document.getElementById('badge-total'); if(badgeTotal) badgeTotal.textContent=tasks.length;
+  var ft=document.getElementById('focus-tasks');
+  if(ft){
+    var tierCfg=[{id:'today',label:'Today',color:'var(--today)'},{id:'tomorrow',label:'Tomorrow',color:'var(--tomorrow)'},{id:'week',label:'This Week',color:'var(--week)'},{id:'parked',label:'Parked',color:'var(--parked)'}];
+    var html='';
+    tierCfg.forEach(function(tc){
+      var items=tasks.filter(function(t){return t.tier===tc.id;});
+      if(items.length===0)return;
+      html+='<div class="focus-tier">';
+      html+='<div class="focus-tier-label" style="color:'+tc.color+'">'+tc.label+'</div>';
+      items.forEach(function(t){
+        html+='<div class="focus-task-item" style="border-color:'+tc.color+'" onclick="showView(\'board\');setTimeout(function(){scrollToTier(\''+tc.id+'\')},50)" title="'+t.title.replace(/"/g,'&quot;')+'">'+t.title+'</div>';
+      });
+      html+='</div>';
+    });
+    if(!html)html='<div class="focus-empty">No tasks yet</div>';
+    ft.innerHTML=html;
+  }
   document.querySelectorAll('.task-card').forEach(function(card){
     card.addEventListener('dragstart',onCardDragStart);
     card.addEventListener('dragend',onCardDragEnd);
