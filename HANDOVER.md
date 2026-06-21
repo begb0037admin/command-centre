@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-21 (Governance workflow standard + templates committed)
+**Last updated:** 2026-06-21 (Phase 1 governance artefacts committed — Codex challenge pending)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -11,7 +11,7 @@
 |---|---|
 | `index.html` | Single-file dashboard. Oxford navy sidebar (320px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. |
 | `data/tasks.json` | Task data. Fields: id, title, tier (today/week/parked), source, emailRef, notes, actions[], dateAdded. |
-| `governance/` | Governance workflow standard and phase templates (added 2026-06-21). |
+| `governance/` | Governance workflow standard, phase templates, and phase evidence artefacts (added 2026-06-21). |
 
 ---
 
@@ -54,14 +54,15 @@
 | Triage ledger | `data/triage_ledger.json` (dedup tracker for Phase 3.6 auto-updates) |
 | Archive | `Archive/tasks_backup_YYYYMMDD.json` (auto-created before every write) |
 | Governance standard | `governance/GOVERNANCE_WORKFLOW_STANDARD.md` |
-| Evidence artefacts | `governance/evidence/PHASE_[NAME]_*_YYYYMMDD.md` (created per phase) |
-| Phase templates | `governance/templates/` (9 templates — see below) |
+| Phase 1 Evidence Package | `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` |
+| Phase 1 Review Request | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` |
+| Phase templates | `governance/templates/` (9 templates) |
 
 ---
 
 ## Governance Workflow
 
-All multi-repository governance operations follow the 6-stage workflow defined in `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (committed 2026-06-21, commit `6f6cd8ae`).
+All multi-repository governance operations follow the 6-stage workflow defined in `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (committed 2026-06-21, commit `6f6cd8ae31d17c0c3c251f4837724c4279578a4a`).
 
 ### Template Index
 
@@ -89,11 +90,55 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 
 ---
 
+## Phase 1 Governance Artefacts
+
+### Artefacts Committed
+
+| Artefact | Path | Commit SHA | Content SHA | Verified |
+|----------|------|------------|-------------|----------|
+| PHASE_1_EVIDENCE_PACKAGE.md | `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` | `f941af6984664efd70d70e06dccf9b7a8a1dfc2a` | `07449bef60a2e8a5ffa8a17445052c20e0b0a742` | ✅ GET confirmed |
+| PHASE_1_REVIEW_REQUEST.md | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` | `f941af6984664efd70d70e06dccf9b7a8a1dfc2a` | `42275d4d7569a988eb75d99e91d96ddff391a71a` | ✅ GET confirmed |
+
+### Verification Result
+
+Both artefacts retrieved via GET at commit `f941af6984664efd70d70e06dccf9b7a8a1dfc2a`:
+- `PHASE_1_EVIDENCE_PACKAGE.md`: present, content SHA `07449bef`, all required sections confirmed.
+- `PHASE_1_REVIEW_REQUEST.md`: present, content SHA `42275d4d`, NEXT STAGE section confirmed with correct Target Agent, Required Inputs, Required Outputs, Workflow Status (Stage 1 Complete / Stage 2 Pending), and Handoff Instructions.
+
+### Current Workflow Status
+
+| Stage | Status |
+|-------|--------|
+| Stage 1 — Execute (AGENT_MODEL v2.0 propagation) | ✅ Complete |
+| Stage 2 — Evidence (Evidence Package + Review Request) | ✅ Complete |
+| Stage 3 — Challenge | ⏳ Pending — **Next agent: Codex** |
+| Stage 4 — Remediation | 🔲 Conditional on Stage 3 |
+| Stage 5 — Validation | 🔲 Conditional on Stage 4 |
+| Stage 6 — Governance Decision | 🔲 Awaiting Kevin |
+
+### Next Agent: Codex
+
+**Action required:** Codex must independently challenge the Evidence Package (VT-01 through VT-07) and commit its outputs to `governance/evidence/`.
+
+**Required Codex inputs:**
+- `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md`
+- `governance/evidence/PHASE_1_REVIEW_REQUEST.md`
+- `governance/GOVERNANCE_WORKFLOW_STANDARD.md`
+- `governance/templates/`
+
+**Required Codex outputs:**
+- `governance/evidence/PHASE_1_CHALLENGE_REPORT.md` — always required
+- `governance/evidence/PHASE_1_REMEDIATION_REQUEST.md` — required if any VT finding is FAIL or PARTIAL
+
+**Codex entry point:** Read `governance/evidence/PHASE_1_REVIEW_REQUEST.md` in full first. All instructions are there.
+
+---
+
 ## Next Action
 
-**ROADMAP item 1:** Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API.
+**Governance:** Codex to produce `PHASE_1_CHALLENGE_REPORT.md` and (if required) `PHASE_1_REMEDIATION_REQUEST.md` in `governance/evidence/`. Claude Code will read the committed Challenge Report and proceed to Stage 4 or Stage 6 based on the overall verdict.
 
-**Governance next step:** Produce Phase 1 Evidence Package and Review Request (addressed to Codex) using the committed templates, to formally close Phase 1 under the new workflow standard.
+**ROADMAP item 1:** Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API.
 
 ---
 
@@ -108,16 +153,22 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 - Badge alignment fixed; badge CSS normalised to match Work Inbox; emoji stripped from Open email buttons.
 - Live on main: commit `e7c4b22`.
 
-### 2026-06-21 — Governance Phase 1 complete
+### 2026-06-21 — Governance Phase 1 complete (execution)
 - AGENT_MODEL.md v2.0 propagated to all 7 repositories (clockify, hr-fa-knowledge-base, hr-projects, meeting-records, hris-dashboard, hris-launcher, hris-change-requests).
 - Datestamped backups created in Archive/ for each repo before every write.
 - All 7 v2.0 writes verified by GET; content SHA `05fc8adaab7e5b9524fe2c4f85ace667d7e04801` identical across all repos.
-- CONSTITUTION.md v1.0 SHA `a25878b0` confirmed unchanged across all repos; no propagation needed.
-- Authentication diagnostic: GITHUB_PAT env var absent but confirmed not Claude Code's auth mechanism. Claude Code uses gh CLI keyring (MCP GitHub server).
-- HANDOVER.md updated: commit `78744371`.
-- **Pending:** ag-flexpoints AGENT_MODEL.md status unverified (not in MCP scope this session).
+- CONSTITUTION.md v1.0 SHA `a25878b0` confirmed unchanged; no propagation needed.
+- Authentication diagnostic: GITHUB_PAT env var absent but confirmed not Claude Code's auth mechanism (gh CLI keyring).
+- Pending: ag-flexpoints AGENT_MODEL.md status unverified (not in MCP scope this session).
 
 ### 2026-06-21 — Governance workflow standard + templates
-- `governance/GOVERNANCE_WORKFLOW_STANDARD.md` — 6-stage workflow, 10-artefact set, agent responsibilities, handoff requirements. Content SHA: `560123f7`.
+- `governance/GOVERNANCE_WORKFLOW_STANDARD.md` — 6-stage workflow, 10-artefact set, agent responsibilities, handoff requirements.
 - 9 phase templates committed to `governance/templates/`. All verified by directory GET.
 - Commit SHA: `6f6cd8ae31d17c0c3c251f4837724c4279578a4a`.
+
+### 2026-06-21 — Phase 1 governance artefacts committed (Stage 2 complete)
+- `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` — full Phase 1 execution evidence with all required sections: scope, repos reviewed, repos excluded, architecture, authentication, authorization, baseline capture, backup, governance writes, verification, HANDOVER, exceptions, claims, assumptions, risks, outstanding items, evidence summary.
+- `governance/evidence/PHASE_1_REVIEW_REQUEST.md` — addressed to Codex; VT-01 through VT-07 verification tasks with direct-inspection instructions; NEXT STAGE section confirmed present with correct workflow status (Stage 1 Complete / Stage 2 Pending).
+- Commit SHA (artefacts): `f941af6984664efd70d70e06dccf9b7a8a1dfc2a`.
+- Both artefacts verified by GET at that commit.
+- **Workflow is now at Stage 3 — Codex action required.**
