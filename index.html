@@ -37,12 +37,18 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
 .nav-icon{width:17px;text-align:center;font-size:13px;flex-shrink:0}
 .tier-badge{margin-left:auto;background:rgba(255,255,255,.15);color:rgba(255,255,255,.8);font-size:10.5px;font-weight:600;border-radius:9px;padding:1px 6px;min-width:18px;text-align:center}
 .sb-qa{padding:12px 12px 4px}
-.sb-qa input[type=text]{width:100%;font-family:inherit;font-size:12.5px;border:1.5px solid rgba(255,255,255,.2);border-radius:7px;padding:7px 10px;background:rgba(255,255,255,.08);color:#fff;outline:none}
+.sb-qa form{display:grid;grid-template-columns:1fr auto;gap:6px}
+.sb-qa input[type=text]{grid-column:1/-1;width:100%;font-family:inherit;font-size:12.5px;border:1.5px solid rgba(255,255,255,.2);border-radius:7px;padding:7px 10px;background:rgba(255,255,255,.08);color:#fff;outline:none}
 .sb-qa input[type=text]::placeholder{color:rgba(255,255,255,.4)}
 .sb-qa input[type=text]:focus{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.12)}
-.sb-qa-row{display:flex;gap:6px;margin-top:6px}
-.sb-qa select{flex:1;font-family:inherit;font-size:12px;border:1.5px solid rgba(255,255,255,.2);border-radius:7px;padding:6px 7px;background:rgba(255,255,255,.08);color:#fff;outline:none;cursor:pointer}
-.sb-qa .btn-primary{flex-shrink:0;padding:6px 14px;font-size:12px}
+.sb-qa-select{position:relative}
+.sb-qa-sel-btn{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;border:1.5px solid rgba(255,255,255,.2);border-radius:7px;background:rgba(255,255,255,.08);color:#fff;font-size:12px;font-family:inherit;cursor:pointer;user-select:none;height:100%}
+.sb-qa-sel-btn:hover{background:rgba(255,255,255,.13)}
+.sb-qa-sel-list{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#001835;border:1.5px solid rgba(255,255,255,.2);border-radius:7px;overflow:hidden;z-index:200;list-style:none;padding:3px 0}
+.sb-qa-sel-list.open{display:block}
+.sb-qa-sel-list li{padding:7px 10px;font-size:12px;font-family:inherit;color:#fff;cursor:pointer}
+.sb-qa-sel-list li:hover,.sb-qa-sel-list li.selected{background:rgba(255,255,255,.15)}
+.sb-qa .btn-primary{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);color:#fff;padding:6px 14px;font-size:12px}
 
 /* MAIN */
 .main-area{flex:1;min-width:0;display:flex;flex-direction:column}
@@ -198,15 +204,19 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
   <div class="sb-qa">
     <form onsubmit="quickAdd(event)">
       <input type="text" id="qa-input" placeholder="Add a task…" autocomplete="off">
-      <div class="sb-qa-row">
-        <select id="qa-tier">
-          <option value="today">Today</option>
-          <option value="tomorrow">Tomorrow</option>
-          <option value="week" selected>This Week</option>
-          <option value="parked">Parked</option>
-        </select>
-        <button type="submit" class="btn btn-primary">Add</button>
+      <div class="sb-qa-select" id="qa-tier-wrap">
+        <div class="sb-qa-sel-btn" onclick="toggleTierDrop()">
+          <span id="qa-tier-label">This Week</span><span>&#9662;</span>
+        </div>
+        <ul class="sb-qa-sel-list" id="qa-tier-list">
+          <li onclick="setTier('today','Today')">Today</li>
+          <li onclick="setTier('tomorrow','Tomorrow')">Tomorrow</li>
+          <li class="selected" onclick="setTier('week','This Week')">This Week</li>
+          <li onclick="setTier('parked','Parked')">Parked</li>
+        </ul>
+        <input type="hidden" id="qa-tier" value="week">
       </div>
+      <button type="submit" class="btn btn-primary">Add</button>
     </form>
   </div>
   <nav class="sb-nav">
@@ -627,6 +637,19 @@ async function promoteSuggestion(idx,tier){
   await persistTasks('Add task from inbox: '+newTask.title);
   loadInboxSuggestions();
 }
+
+/* TIER DROPDOWN */
+function toggleTierDrop(){document.getElementById('qa-tier-list').classList.toggle('open');}
+function setTier(val,label){
+  document.getElementById('qa-tier').value=val;
+  document.getElementById('qa-tier-label').textContent=label;
+  document.querySelectorAll('.sb-qa-sel-list li').forEach(function(li){li.classList.toggle('selected',li.textContent===label);});
+  document.getElementById('qa-tier-list').classList.remove('open');
+}
+document.addEventListener('click',function(e){
+  var wrap=document.getElementById('qa-tier-wrap');
+  if(wrap&&!wrap.contains(e.target))document.getElementById('qa-tier-list').classList.remove('open');
+});
 
 /* INIT */
 loadTasks().then(function(){
