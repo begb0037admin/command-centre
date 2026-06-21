@@ -316,7 +316,7 @@ async function loadTasks(){
   if(!data){console.warn('Could not load tasks');return;}
   tasks=Array.isArray(data)?data:(data.tasks||[]);
   var lu=document.getElementById('last-updated');
-  if(lu){var n=new Date();lu.textContent='Updated '+n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
+  if(lu){var n=new Date();lu.textContent='Updated '+n.toLocaleDateString('en-GB',{day:'numeric',month:'short'})+' '+n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
   renderBoard();
 }
 
