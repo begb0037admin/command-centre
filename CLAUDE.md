@@ -4,14 +4,29 @@
 
 ---
 
-## MANDATORY BACKUP RULE — DO THIS BEFORE ANY WRITE
+## MANDATORY BACKUP AND VERIFY PROTOCOL — BEFORE EVERY WRITE
 
-**Before writing to `index.html` or `data/tasks.json`, you MUST:**
-1. Check if `Archive/index_backup_YYYYMMDD.html` (or `tasks_backup_YYYYMMDD.json`) already exists for today's date.
-2. If NOT, fetch the current live file and push it to `Archive/` with today's datestamp — FIRST, before any other change.
-3. Only then make the intended write.
+**Every write to `index.html` or `data/tasks.json` requires all steps below, in order. No exceptions — not for single-line edits, not for bug fixes, not for anything.**
 
-No exceptions. Single-task updates, bulk changes, UI edits, bug fixes — all require a backup first. If a backup for today already exists in Archive/, skip — it is already taken.
+### Before making any change
+1. Identify the exact file(s) you will change.
+2. Create a timestamped backup in `Archive/`: `index_backup_YYYYMMDD_HHMM.html` or `tasks_backup_YYYYMMDD_HHMM.json`.
+3. Commit the backup immediately — before any edit.
+4. Read the backup back and confirm the git SHA matches the committed file.
+5. Only then make the requested change.
+
+### After making any change
+6. Read the changed file back and confirm the git SHA.
+7. If anything is wrong, restore from the verified backup before continuing.
+
+### Rules
+- Backup before write — every change, no exceptions.
+- Verify backup SHA before modifying.
+- Verify post-change SHA after writing.
+- Do not proceed on assumptions.
+- Do not skip verification steps.
+- One change at a time — do not bundle unrelated changes.
+- Do not advance to the next stage until the current stage is verified and clean.
 
 ---
 
@@ -22,7 +37,7 @@ No exceptions. Single-task updates, bulk changes, UI edits, bug fixes — all re
 - **Status:** Active — Module 1 live
 - **Repo:** https://github.com/begb0037admin/command-centre
 - **Live dashboard:** https://begb0037admin.github.io/command-centre/
-- **Last updated:** 2026-06-19
+- **Last updated:** 2026-06-21
 
 ## Bootstrap Order
 1. This file (orientation)
