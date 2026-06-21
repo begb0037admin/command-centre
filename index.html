@@ -30,6 +30,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
 .sb-sub{font-size:11.5px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.04em;margin-top:2px}
 .sb-user{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:2px}
 .sb-nav{padding:16px 12px 0;flex:1}
+.sb-clock{padding:14px 16px 18px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.6}
 .sb-section{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:0 8px;margin:16px 0 5px}
 .sb-section:first-child{margin-top:0}
 .sb-nav a{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:7px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;transition:background .15s,color .15s;cursor:pointer}
@@ -247,6 +248,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
     <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank">HRIS Dashboard</a>
     <a href="https://begb0037admin.github.io/hris-launcher/" target="_blank">HRIS Launcher</a>
   </nav>
+  <div class="sb-clock" id="sb-clock"></div>
 </aside>
 
 <!-- MAIN -->
@@ -650,6 +652,18 @@ document.addEventListener('click',function(e){
   var wrap=document.getElementById('qa-tier-wrap');
   if(wrap&&!wrap.contains(e.target))document.getElementById('qa-tier-list').classList.remove('open');
 });
+
+/* CLOCK */
+function updateClock(){
+  var el=document.getElementById('sb-clock');
+  if(!el)return;
+  var n=new Date();
+  var time=n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  var date=n.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  el.innerHTML=time+'<br>'+date;
+}
+updateClock();
+setInterval(updateClock,1000);
 
 /* INIT */
 loadTasks().then(function(){
