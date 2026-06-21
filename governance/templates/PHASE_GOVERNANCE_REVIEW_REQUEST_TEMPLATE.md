@@ -9,7 +9,7 @@
 |-------|-------|
 | Phase | [Phase name and number] |
 | Date | [YYYY-MM-DD] |
-| Produced by | [Executing agent identifier / session ID] |
+| Produced by | [Executing agent (Claude Code) identifier / session ID] |
 | Addressed to | Kevin Lelitte |
 | Governed by | GOVERNANCE_WORKFLOW_STANDARD.md v[X] |
 | Status | Awaiting Kevin's Governance Decision |
@@ -23,18 +23,18 @@
 |-------|----------------|------------|
 | Evidence Package | command-centre/governance/evidence/PHASE_[NAME]_EVIDENCE_PACKAGE_[YYYYMMDD].md | [SHA] |
 | Review Request | command-centre/governance/evidence/PHASE_[NAME]_REVIEW_REQUEST_[YYYYMMDD].md | [SHA] |
-| Challenge Report | command-centre/governance/evidence/PHASE_[NAME]_CHALLENGE_REPORT_[YYYYMMDD].md | [SHA] |
-| Remediation Request (if applicable) | command-centre/governance/evidence/PHASE_[NAME]_REMEDIATION_REQUEST_[YYYYMMDD].md | [SHA / N/A] |
+| Challenge Report | docs/project/generated/PHASE_[NAME]_CHALLENGE_REPORT_[YYYYMMDD].md | [SHA] |
+| Remediation Request (if applicable) | docs/project/generated/PHASE_[NAME]_REMEDIATION_REQUEST_[YYYYMMDD].md | [SHA / N/A] |
 | Remediation Evidence (if applicable) | command-centre/governance/evidence/PHASE_[NAME]_REMEDIATION_EVIDENCE_[YYYYMMDD].md | [SHA / N/A] |
-| Validation Report (if applicable) | command-centre/governance/evidence/PHASE_[NAME]_VALIDATION_REPORT_[YYYYMMDD].md | [SHA / N/A] |
+| Validation Report (if applicable) | docs/project/generated/PHASE_[NAME]_VALIDATION_REPORT_[YYYYMMDD].md | [SHA / N/A] |
 
 ---
 
 ## Outputs
 
-| Output | Produced by | Filename |
-|--------|-------------|----------|
-| Governance Decision | Kevin | `PHASE_[NAME]_GOVERNANCE_DECISION_[YYYYMMDD].md` |
+| Output | Produced by | Filename | Path |
+|--------|-------------|----------|-----------|
+| Governance Decision | Kevin | `PHASE_[NAME]_GOVERNANCE_DECISION_[YYYYMMDD].md` | `command-centre/governance/evidence/` |
 
 ---
 
@@ -129,3 +129,15 @@ The full evidence chain is linked in the Inputs table above. This section provid
 The Governance Decision is the final artefact in the phase workflow. Until it is committed with status APPROVED, the phase remains open. The executing agent does not begin any subsequent phase until this decision is committed.
 
 **Kevin — to close this phase, commit the Governance Decision document to `command-centre/governance/evidence/` with your decision and signature.**
+
+---
+
+## Claude Code Commit Handoff
+
+*This section records how Codex-produced artefacts were committed for this phase.*
+
+| Artefact | Committed by | Path | Commit SHA | Verified |
+|----------|-------------|------|------------|----------|
+| Challenge Report | [Codex directly / Claude Code (Option B fallback)] | `docs/project/generated/PHASE_[NAME]_CHALLENGE_REPORT_[YYYYMMDD].md` | [SHA] | [YES/NO] |
+| Remediation Request (if applicable) | [Codex directly / Claude Code (Option B fallback)] | `docs/project/generated/PHASE_[NAME]_REMEDIATION_REQUEST_[YYYYMMDD].md` | [SHA / N/A] | [YES/NO / N/A] |
+| Validation Report (if applicable) | [Codex directly / Claude Code (Option B fallback)] | `docs/project/generated/PHASE_[NAME]_VALIDATION_REPORT_[YYYYMMDD].md` | [SHA / N/A] | [YES/NO / N/A] |

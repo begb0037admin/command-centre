@@ -17,6 +17,24 @@
 
 ---
 
+## Codex Operating Mode
+
+Before beginning review, Codex must verify and declare its operating mode:
+
+**Option A — Controlled GitHub Artefact Writer**  
+Codex has write access to `begb0037admin/command-centre/docs/project/generated/` and will commit approved review artefacts directly. After each commit, Codex must verify the file via repository read and record the commit SHA.
+
+**Option B — Read-Only Reviewer With Claude Code Commit Handoff**  
+Codex does not have write access. Codex will output full Markdown artefact contents in chat for Claude Code to commit to `begb0037admin/command-centre/docs/project/generated/`. Codex must include a **Claude Code Commit Handoff** section in every output artefact.
+
+Codex must verify access before proceeding. If write access fails on first attempt, Codex must not retry — switch to Option B immediately.
+
+**Codex write boundary:** Codex may write only to `docs/project/generated/`. Codex must not modify governance standards, templates, implementation files, production files, operational files, application code, backups, remediation evidence, or HANDOVER.md.
+
+**Operating mode for this session:** [Option A / Option B — Codex declares before producing outputs]
+
+---
+
 ## Inputs
 
 | Input | Repository path | Commit SHA |
@@ -32,7 +50,8 @@ This request requires the challenging agent to produce:
 
 | Output | Filename | Destination |
 |--------|----------|-------------|
-| Challenge Report | `PHASE_[NAME]_CHALLENGE_REPORT_[YYYYMMDD].md` | `command-centre/governance/evidence/` |
+| Challenge Report | `PHASE_[NAME]_CHALLENGE_REPORT_[YYYYMMDD].md` | `begb0037admin/command-centre/docs/project/generated/` |
+| Remediation Request (if gaps found) | `PHASE_[NAME]_REMEDIATION_REQUEST_[YYYYMMDD].md` | `begb0037admin/command-centre/docs/project/generated/` |
 
 ---
 
@@ -46,7 +65,11 @@ This request requires the challenging agent to produce:
 
 4. **No silent passes.** Every verification task listed below must receive a finding. If you cannot verify a claim — because the API is unreachable, the file does not exist, or the SHA does not match — record it as FAIL or PARTIAL with an explanation.
 
-5. **Do not communicate with the executing agent.** All findings go into the Challenge Report committed to the repository.
+5. **Distinguish directly inspected from reported evidence.** In your Challenge Report, every finding must clearly state whether the underlying data was: (a) **Directly inspected** — you retrieved it from GitHub API and are reporting what you received; or (b) **Reported by executing agent** — you are relaying what the Evidence Package says, without independent verification. PASS requires direct inspection.
+
+6. **Do not communicate with the executing agent.** All findings go into the Challenge Report committed to the repository (or output in chat for Claude Code to commit).
+
+7. **Write boundary.** See the Codex Operating Mode section above. Do not write outside `docs/project/generated/`.
 
 ---
 
@@ -139,16 +162,33 @@ Required evidence: live GitHub Contents API GET for each updated file in each re
 |------|----------|------|
 | Challenging agent cannot reach GitHub API | HIGH | Record as PARTIAL for all VT items requiring live API calls; do not mark PASS |
 | Evidence Package was amended after this request was committed | MEDIUM | Use the SHA pinned in the Inputs table above, not HEAD |
+| Codex write access unavailable | MEDIUM | Switch to Option B; output full artefact Markdown in chat for Claude Code to commit |
 
 ---
 
 ## NEXT STAGE
 
-**→ Challenging agent produces: `PHASE_[NAME]_CHALLENGE_REPORT_[YYYYMMDD].md`**
+**→ Challenging agent produces: `PHASE_[NAME]_CHALLENGE_REPORT_[YYYYMMDD].md`**  
+**→ If gaps found: `PHASE_[NAME]_REMEDIATION_REQUEST_[YYYYMMDD].md`**
 
-The Challenge Report must be committed to `command-centre/governance/evidence/` on branch `main`. The executing agent will read it at that path.
+Both artefacts must be committed to `begb0037admin/command-centre/docs/project/generated/` on branch `main` (or output in chat for Claude Code to commit if Codex is in Option B mode).
 
-If all findings are PASS → the executing agent proceeds to Stage 6 (Governance Review Request).
+If all findings are PASS → the executing agent proceeds to Stage 6 (Governance Review Request).  
 If any finding is FAIL or PARTIAL → Stage 4 (Remediation) is mandatory before Stage 6.
 
-**Challenge Report commit SHA (to be recorded by challenging agent):** [populated by challenger]
+**Challenge Report commit SHA (to be recorded by challenging agent or Claude Code after commit):** [populated after commit]
+
+---
+
+## Claude Code Commit Handoff
+
+*This section applies when Codex is operating in Option B (Read-Only Reviewer With Claude Code Commit Handoff).*
+
+| Field | Value |
+|-------|-------|
+| Artefacts to commit | Challenge Report; Remediation Request (if gaps found) |
+| Exact filenames | `PHASE_[NAME]_CHALLENGE_REPORT_[YYYYMMDD].md`; `PHASE_[NAME]_REMEDIATION_REQUEST_[YYYYMMDD].md` |
+| Repository target path | `begb0037admin/command-centre/docs/project/generated/` |
+| Wording preservation | Claude Code must commit Codex artefact content exactly as supplied — no edits, no reformatting, no omissions |
+| Required verification | After each commit: retrieve file via GitHub Contents API and confirm content SHA matches |
+| Required HANDOVER.md update | Claude Code must update HANDOVER.md with: artefact paths, commit SHAs, verification results, Codex operating mode declared, and next workflow stage |
