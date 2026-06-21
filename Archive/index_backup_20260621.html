@@ -190,8 +190,12 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
   </div>
   <nav class="sb-nav">
     <div class="sb-section">Tasks</div>
+    <a onclick="showView('board')" id="nav-board" class="active">
+      <span class="nav-icon">&#x229E;</span> Board
+      <span class="tier-badge" id="badge-total">0</span>
+    </a>
     <a onclick="showView('inbox')" id="nav-inbox">
-      From your inbox
+      <span class="nav-icon">&#128229;</span> From your inbox
       <span class="tier-badge" id="badge-inbox">0</span>
     </a>
     <div class="sb-section">Jump to</div>
@@ -212,9 +216,9 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
       <span class="tier-badge" id="badge-parked">0</span>
     </a>
     <div class="sb-section">Links</div>
-    <a href="https://begb0037admin.github.io/work-inbox/" target="_blank">Work Inbox</a>
-    <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank">HRIS Dashboard</a>
-    <a href="https://begb0037admin.github.io/hris-launcher/" target="_blank">HRIS Launcher</a>
+    <a href="https://begb0037admin.github.io/work-inbox/" target="_blank"><span class="nav-icon">&#128231;</span> Work Inbox</a>
+    <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank"><span class="nav-icon">&#128202;</span> HRIS Dashboard</a>
+    <a href="https://begb0037admin.github.io/hris-launcher/" target="_blank"><span class="nav-icon">&#128640;</span> HRIS Launcher</a>
   </nav>
 </aside>
 
@@ -302,7 +306,7 @@ function showView(v){
   document.getElementById('view-board').style.display=v==='board'?'':'none';
   document.getElementById('view-inbox').style.display=v==='inbox'?'':'none';
   document.getElementById('view-title').textContent=v==='board'?'Task Board':'From your inbox';
-  ['board','inbox'].forEach(function(n){var el=document.getElementById('nav-'+n);if(el)el.classList.toggle('active',n===v);});
+  ['board','inbox'].forEach(function(n){document.getElementById('nav-'+n).classList.toggle('active',n===v);});
 }
 
 /* LOAD TASKS */
@@ -328,7 +332,7 @@ function renderBoard(){
     document.getElementById('badge-'+tier).textContent=items.length;
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
-  var badgeTotal=document.getElementById('badge-total'); if(badgeTotal) badgeTotal.textContent=tasks.length;
+  document.getElementById('badge-total').textContent=tasks.length;
   document.querySelectorAll('.task-card').forEach(function(card){
     card.addEventListener('dragstart',onCardDragStart);
     card.addEventListener('dragend',onCardDragEnd);
