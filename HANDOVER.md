@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-18 (badge alignment + UI polish)
+**Last updated:** 2026-06-21 (Governance Phase 1 complete)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -76,3 +76,24 @@
 - **Badge CSS normalised** — updated `.task-badge`, `.task-badge-new`, `.task-badge-updated` to match Work Inbox exactly (11px / 600wt / 3px 8px / 5px radius / coloured borders).
 - **Emoji removed** — stripped from all three "Open email" button instances in index.html.
 - Live on main: commit `e7c4b22`. Changes pushed directly to main.
+
+### 2026-06-21 — Governance Phase 1 complete
+- **Objective:** Propagate AGENT_MODEL.md v2.0 to all 7 repositories still on v1.0/v1.1.
+- **Source of truth:** command-centre and work-inbox AGENT_MODEL.md (SHA `5d5ff18872e803ad5ee8f50639fabed7abc56d06`)
+- **Authentication diagnostic completed:** GITHUB_PAT env var absent but confirmed NOT Claude Code's auth mechanism. Claude Code authenticates via gh CLI keyring (MCP GitHub server). GITHUB_PAT is for locally-run scripts (fetch_inbox.py) only. All MCP reads verified across 9 repos before any write.
+- **Backup protocol:** Archive/ created in all 7 repos; datestamped backup `Archive/AGENT_MODEL_backup_20260621.md` committed and GET-verified in each repo before governance write.
+- **Write results — all 7 repos verified (content SHA `05fc8adaab7e5b9524fe2c4f85ace667d7e04801`):**
+
+| Repository | Backup commit | Write commit | Verified |
+|---|---|---|---|
+| clockify | 7565ad8d | 2b49c173 | ✅ |
+| hr-fa-knowledge-base | d40e3dd6 | 7c5546f6 | ✅ |
+| hr-projects | 3689183e | b948dd62 | ✅ |
+| meeting-records | 8d9b048d | ea3a3e3f | ✅ |
+| hris-dashboard | 78ac3692 | 60080061 | ✅ |
+| hris-launcher | f3f9eabe | 8b27436e | ✅ |
+| hris-change-requests | 5b28fb7f | 3fd7fb15 | ✅ |
+
+- **CONSTITUTION.md:** v1.0 SHA `a25878b0` confirmed identical across all repos checked — no propagation needed.
+- **Governance stack exercised:** All three CONSTITUTION.md Section 9 gate criteria met — v1.0 now confirmed stable.
+- **Pending:** ag-flexpoints repo not in MCP session scope — AGENT_MODEL.md status unverified; check in a future session.
