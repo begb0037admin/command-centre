@@ -723,7 +723,7 @@ setInterval(updateClock,1000);
   var handle=document.getElementById('sb-resize');
   var sidebar=document.querySelector('.sidebar');
   var stored=localStorage.getItem('commandCentre_sidebarW');
-  if(stored){var w=parseInt(stored);if(w>=180&&w<=700){sidebar.style.width=w+'px';document.documentElement.style.setProperty('--sidebar-w',w+'px');}}
+  if(stored){var w=parseInt(stored);if(w>=180){sidebar.style.width=w+'px';document.documentElement.style.setProperty('--sidebar-w',w+'px');}}
   var startX,startW;
   handle.addEventListener('mousedown',function(e){
     startX=e.clientX;startW=sidebar.offsetWidth;
@@ -733,7 +733,7 @@ setInterval(updateClock,1000);
     e.preventDefault();
   });
   function onMove(e){
-    var w=Math.max(180,Math.min(700,startW+(e.clientX-startX)));
+    var w=Math.max(180,startW+(e.clientX-startX));
     sidebar.style.width=w+'px';
     document.documentElement.style.setProperty('--sidebar-w',w+'px');
   }
