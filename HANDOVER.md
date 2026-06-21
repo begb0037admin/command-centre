@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-21 (Phase 1 Stage 4 remediation complete — Stage 5 validation pending)
+**Last updated:** 2026-06-21 (Wave 2 v2.1 propagation complete — all 9 repos at v2.1, outstanding items retired)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -174,10 +174,10 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 
 | Stage | Status |
 |-------|--------|
-| Stage 1 — Execute (AGENT_MODEL v2.0 propagation) | ✅ Complete (7 repos) — EXCEPTION: ag-flexpoints not updated |
+| Stage 1 — Execute (AGENT_MODEL v2.1 propagation) | ✅ Complete — all 9 repos at v2.1 (Wave 1 + Wave 2 + ag-flexpoints + hris-change-requests) |
 | Stage 2 — Evidence (Evidence Package + Review Request) | ✅ Complete |
 | Stage 3 — Challenge (Codex, Option B) | ✅ Complete — GAPS FOUND (VT-01 through VT-07 all PARTIAL) |
-| Stage 4 — Remediation (RA-01 through RA-07) | ✅ Complete — 2 outstanding items pending Kevin approval |
+| Stage 4 — Remediation (RA-01 through RA-07) | ✅ Complete — outstanding items now resolved (Wave 2) |
 | Stage 5 — Validation | ⏳ Pending — **Next agent: Codex** |
 | Stage 6 — Governance Decision | 🔲 Awaiting Kevin |
 
@@ -189,18 +189,38 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 
 **Codex operating mode:** Codex must declare Option A or B. If Option B, output full Markdown in chat; Claude Code commits.
 
-**Outstanding items requiring Kevin approval before Phase 1 can be PASS:**
-1. ag-flexpoints AGENT_MODEL.md update — v1.1 → v2.0
-2. v2.0 content correction — add hris-change-requests and ag-flexpoints to Section 8 scope table, re-propagate across all repos
+**Outstanding items status:** ✅ Both resolved — no further Kevin approval required before Codex validation.
 
-**These items must not be executed without Kevin's explicit approval.**
+### Phase 1 v2.1 Estate — Final State
+
+All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-row Section 8 scope table (blob `fba303449462c5a1c031cf47010ae8788f8a1db2`).
+
+| Repository | Wave | Backup SHA | Write commit SHA | Verified |
+|---|---|---|---|---|
+| ag-flexpoints | Wave 1 (prior session) | `125c2a6c` | `862ace12` | ✅ |
+| hris-change-requests | Wave 1 (prior session) | `69332c44` (Phase 1) | `0e371d3d` | ✅ |
+| clockify | Wave 2 | `c226199d` (Phase 1) | `05755a08` | ✅ |
+| hr-fa-knowledge-base | Wave 2 | `c226199d` (Phase 1) | `2c386f43` | ✅ |
+| hr-projects | Wave 2 | `c226199d` (Phase 1) | `3194332c` | ✅ |
+| meeting-records | Wave 2 | `f708523d` (Phase 1) | `f5b737cf` | ✅ |
+| hris-dashboard | Wave 2 | `3855713e` (Phase 1) | `439e5b85` | ✅ |
+| hris-launcher | Wave 2 | `d15e4b7e` (Phase 1) | `9d273455` | ✅ |
+| command-centre | Wave 2 | `5d5ff188` — commit `1419d4ad` | `d6febbe5` | ✅ |
+
+**command-centre closure check (2026-06-21):**
+- Backup commit SHA: `1419d4ada6ee1dfd897608e1ee5d070491bc431c` (14:44:55Z)
+- Write commit SHA: `d6febbe504c0549e92707d702f498a90d424a1ba` (14:47:48Z)
+- Live AGENT_MODEL.md blob SHA: `fba303449462c5a1c031cf47010ae8788f8a1db2`
+- Backup before write: ✅ confirmed by timestamp
+- Live file matches expected v2.1 SHA: ✅
 
 ### Key Findings from Remediation
 
 | Finding | Detail |
 |---|---|
-| ag-flexpoints completion gap | Repo confirmed Active at `begb0037admin/ag-flexpoints`; AGENT_MODEL.md still v1.1 (blob `d7bbc192`); not updated in Phase 1 |
-| hris-change-requests scope table defect | v2.0 content does not list hris-change-requests in Section 8; defect in source content, not in propagation |
+| ag-flexpoints completion gap | ✅ Resolved — updated to v2.1 (Wave 1) |
+| hris-change-requests scope table defect | ✅ Resolved — updated to v2.1 (Wave 1) |
+| v2.0 scope table missing 2 repos | ✅ Resolved — v2.1 adds hris-change-requests + ag-flexpoints to Section 8; propagated to all 9 repos |
 | Backup version metadata corrected | hris-dashboard, hris-launcher, hris-change-requests were v1.1 before Phase 1 (not v1.0 as evidence package stated) |
 | CONSTITUTION.md three-blob estate | 6 repos: `a25878b0`; hris-dashboard: `6dcffd6d`; hris-change-requests: `178bc0d9`; Phase 1 completion independent of CONSTITUTION.md |
 | Authentication confirmed | Principal `begb0037admin` (ID `267986202`); gh CLI keyring via MCP GitHub server |
@@ -210,9 +230,7 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 
 ## Next Action
 
-**Governance:** Codex to validate remediation evidence (`PHASE_1_REMEDIATION_EVIDENCE.md`) and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`. Claude Code will then (subject to Kevin approval) execute outstanding Phase 1 items and prepare governance decision request.
-
-**Kevin approval required:** ag-flexpoints AGENT_MODEL.md update + v2.0 scope table correction + re-propagation.
+**Governance:** Codex to validate remediation evidence (`PHASE_1_REMEDIATION_EVIDENCE.md`) against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`. All outstanding Phase 1 items are now resolved — no blocking items remain before validation.
 
 **ROADMAP item 1:** Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API.
 
@@ -276,4 +294,17 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 - `governance/evidence/PHASE_1_REMEDIATION_EVIDENCE.md` — commit `d3ac11c5`; blob `e30a9dd7` ✅
 - `governance/evidence/PHASE_1_VALIDATION_REQUEST.md` — commit `d3ac11c5`; blob `fad75a35` ✅
 - **Workflow is at Stage 5 — Codex validation required.**
-- **Two outstanding items require Kevin approval before Phase 1 governance decision.**
+- **Two outstanding items required Kevin approval — approved and resolved in Wave 1 + Wave 2 (below).**
+
+### 2026-06-21 — Wave 1: ag-flexpoints + hris-change-requests updated to v2.1
+- Kevin approved: update ag-flexpoints to v2.1; correct hris-change-requests scope table.
+- ag-flexpoints: backup `125c2a6c` (v1.1) + write commit `862ace12` → v2.1 blob `fba30344` ✅
+- hris-change-requests: backup existed from Phase 1 (`69332c44`) — skipped; write commit `0e371d3d` → v2.1 blob `fba30344` ✅
+- Both repositories confirmed at v2.1 with complete 13-row Section 8.
+
+### 2026-06-21 — Wave 2: v2.1 propagated to remaining 7 repos
+- Kevin approved: propagate v2.1 to clockify, hr-fa-knowledge-base, hr-projects, meeting-records, hris-dashboard, hris-launcher, command-centre.
+- All 6 pre-backed repos wrote in parallel; command-centre backup created first (commit `1419d4ad`, blob `5d5ff188`), then v2.1 written.
+- All 7 repos confirmed at v2.1 blob `fba303449462c5a1c031cf47010ae8788f8a1db2` ✅
+- command-centre closure check: backup before write confirmed by timestamp (14:44:55Z → 14:47:48Z) ✅
+- **Full estate now at v2.1. All Phase 1 outstanding items retired. Workflow ready for Stage 5.**
