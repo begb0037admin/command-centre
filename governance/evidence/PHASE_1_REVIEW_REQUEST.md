@@ -10,11 +10,12 @@
 | Phase | Phase 1 — AGENT_MODEL.md v2.0 estate-wide propagation |
 | Date | 2026-06-21 |
 | Produced by | Claude Code (executing agent, session 5cdf4b0d-db13-5236-8b76-3bc923faa760) |
-| Addressed to | **Codex** (challenging agent — independent session, no memory of execution) |
-| Governed by | GOVERNANCE_WORKFLOW_STANDARD.md v1.0 (commit `6f6cd8ae`) |
+| Addressed to | **Codex** (independent challenging agent) |
+| Governed by | GOVERNANCE_WORKFLOW_STANDARD.md v1.0 (commit `6f6cd8ae31d17c0c3c251f4837724c4279578a4a`) |
 | Template used | governance/templates/PHASE_REVIEW_REQUEST_TEMPLATE.md |
-| Status | Open — Stage 3, awaiting Challenge Report |
-| Commit SHA (this document) | [populated after commit] |
+| Status | Open — awaiting Challenge Report |
+| Commit SHA (this document) | `2d781348be9e8d1b76e619a8a1da79d9248f3ea0` |
+| Content SHA (this document) | `d3df3f62bb704f25d3a2336fce8176ef4a847c73` |
 
 ---
 
@@ -22,74 +23,77 @@
 
 | Input | Repository path | Commit SHA |
 |-------|----------------|------------|
-| Evidence Package | begb0037admin/command-centre / governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md | [SHA — see verification section below] |
-| Governance Workflow Standard | begb0037admin/command-centre / governance/GOVERNANCE_WORKFLOW_STANDARD.md | `6f6cd8ae` |
-| Governance workflow templates | begb0037admin/command-centre / governance/templates/ | `6f6cd8ae` |
-| AGENT_MODEL.md (command-centre, source of truth) | begb0037admin/command-centre / AGENT_MODEL.md | current HEAD |
-| HANDOVER.md (Phase 1 record) | begb0037admin/command-centre / HANDOVER.md | `63fda3e9` |
+| Evidence Package | begb0037admin/command-centre — governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md | `2d781348be9e8d1b76e619a8a1da79d9248f3ea0` |
+| Governance Workflow Standard | begb0037admin/command-centre — governance/GOVERNANCE_WORKFLOW_STANDARD.md | `6f6cd8ae31d17c0c3c251f4837724c4279578a4a` |
+| Phase templates | begb0037admin/command-centre — governance/templates/ | `6f6cd8ae31d17c0c3c251f4837724c4279578a4a` |
+| AGENT_MODEL.md (source of truth) | begb0037admin/command-centre — AGENT_MODEL.md | current HEAD |
+| HANDOVER.md (Phase 1 record) | begb0037admin/command-centre — HANDOVER.md | `63fda3e983668eb085f0a984fc8b09a911c07dad` |
 
 ---
 
-## Outputs Required
+## Purpose
 
-This request requires Codex to produce the following artefacts and commit them to `begb0037admin/command-centre/governance/evidence/` on branch `main`:
-
-| Output | Filename | Stage |
-|--------|----------|-------|
-| Challenge Report | `PHASE_1_CHALLENGE_REPORT.md` | Stage 3 output |
-| Remediation Request | `PHASE_1_REMEDIATION_REQUEST.md` | Stage 4 input (required if any finding is FAIL or PARTIAL) |
-
-The Remediation Request is only populated if the Challenge Report finds FAIL or PARTIAL items. If all findings are PASS, Codex notes this in the Challenge Report and the executing agent proceeds directly to Stage 6.
+This request commissions Codex to independently challenge the claims made in `PHASE_1_EVIDENCE_PACKAGE.md`. The purpose is to identify gaps, errors, unverifiable claims, and missing evidence before the phase proceeds to governance decision (Stage 6).
 
 ---
 
 ## Critical Instructions for Codex
 
-Read these instructions in full before beginning any verification task.
+Read all instructions before beginning any verification task.
 
-### 1. You are an independent challenger
+### 1. The Evidence Package is an unverified claim set
 
-You have no memory of the execution session that produced the Phase 1 work. You did not observe the writes. You cannot verify what the executing agent claims to have done by reading the executing agent's own statements.
+`governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` is a document produced by the executing agent describing what it claims to have done. It is not an authoritative record. Every claim in it must be independently confirmed before you mark it PASS. Internal consistency and plausibility are not evidence.
 
-### 2. The Evidence Package is an unverified claim set
+### 2. Reports are not authoritative evidence
 
-The file `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` contains the executing agent's account of what was done. **It is not an authoritative record.** Every claim in that document must be independently confirmed before you mark it PASS. A claim that sounds plausible, internally consistent, or well-documented is still unverified until you have retrieved supporting data from GitHub directly.
+HANDOVER.md, session summaries, and any other document produced by the executing agent are not evidence. Evidence is a live GitHub API response: a commit record, a file content SHA, a file list — data retrieved by you, not stated by the executing agent.
 
-### 3. Reports are not authoritative evidence
+### 3. Inspect repository state directly where available
 
-HANDOVER.md, session summaries, and any other document produced by the executing agent are not evidence. They are claims. Evidence is a live GitHub API response, a commit record, a file content SHA returned by a GET — data retrieved by you, not stated by the executing agent.
+For every repository and file listed in the Evidence Package, make a live GET call to verify current state. Do not infer state from the Evidence Package. Do not assume a file exists at a claimed SHA without retrieving it.
 
-### 4. Inspect repository state directly where available
+### 4. Inspect commit history directly where available
 
-For every repository listed in the Evidence Package, you must make a live GET call to verify the current state. Do not infer state from the Evidence Package. Do not assume that because the Evidence Package says a file exists at a given SHA, it actually does.
+For claims about ordering (backup before write), timestamps (execution on 2026-06-21), and file scope (only governance files modified), retrieve the commit records from the GitHub API and read the actual metadata. Do not accept the executing agent’s characterisation of commit contents.
 
-### 5. Actively seek contradictory evidence
+### 5. Distinguish evidence you directly inspected from evidence merely reported by Claude Code
 
-Do not approach this as a confirmation exercise. Your task is to find gaps, errors, and inconsistencies. For each claim, ask: what would falsify this? Then check for it. Specific examples:
-- Does the backup commit predate the write commit? Check both timestamps.
-- Does the content SHA match in every repo, or only in some?
-- Is the file at the path the Evidence Package claims, or at a different path?
-- Does the commit exist, or does the GitHub API return 404?
+In your Challenge Report, every finding must clearly state whether the underlying data was:
+- **Directly inspected:** You retrieved it from GitHub API and are reporting what you received.
+- **Reported by Claude Code:** You are relaying what the Evidence Package says, without independent verification.
+
+Do not mark any item PASS on the basis of reported evidence. PASS requires direct inspection.
+
+### 6. Actively seek contradictory evidence
+
+This is not a confirmation exercise. For each claim, ask: what would falsify this? Then check. Examples:
+- Does the backup commit timestamp predate the write commit timestamp? Compare both.
+- Does the content SHA match in every repo, or only in some? Check each individually.
+- Is the file at the path claimed, or at a different path?
+- Does the commit exist at GitHub, or does the API return 404?
 - Are there repos in scope that the Evidence Package did not account for?
-
-### 6. Record your findings with primary evidence
-
-For each verification task, paste the relevant portion of the GitHub API response that supports your finding. Do not summarise. If you cannot retrieve evidence for a claim, record the item as PARTIAL or FAIL with an explanation of what you attempted and what you received.
 
 ### 7. No silent passes
 
-Every verification task listed below must receive a finding. VT items with no finding are treated as FAIL by the executing agent.
+Every VT item below must receive a finding (PASS, PARTIAL, or FAIL). An absent finding is treated as FAIL by the executing agent.
+
+### 8. PARTIAL vs FAIL
+
+- **FAIL:** The claim is demonstrably false, or the required evidence was sought and not found.
+- **PARTIAL:** The claim cannot be fully verified from the available evidence (e.g., an assumption cannot be confirmed after the fact), but no contradictory evidence was found either.
+- **PASS:** You directly inspected the relevant API response and it supports the claim.
 
 ---
 
 ## Evidence References
 
-| Reference | Path in begb0037admin/command-centre | Note |
-|-----------|--------------------------------------|------|
-| Evidence Package | governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md | Primary claim set — treat as unverified |
-| Governance Workflow Standard | governance/GOVERNANCE_WORKFLOW_STANDARD.md | Defines scope of estate and verification requirements |
-| AGENT_MODEL.md Section 8 | AGENT_MODEL.md | Defines repository governance scope |
-| HANDOVER.md | HANDOVER.md | Session close-out record — treat as claim, not evidence |
+| Reference | Path | Note |
+|-----------|------|------|
+| Evidence Package | begb0037admin/command-centre / governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md | Treat as unverified |
+| Governance Workflow Standard | begb0037admin/command-centre / governance/GOVERNANCE_WORKFLOW_STANDARD.md | Reference for estate scope |
+| AGENT_MODEL.md Section 8 | begb0037admin/command-centre / AGENT_MODEL.md | Authoritative repo scope list |
+| HANDOVER.md | begb0037admin/command-centre / HANDOVER.md | Treat as claim, not evidence |
 
 ---
 
@@ -99,128 +103,114 @@ Every verification task listed below must receive a finding. VT items with no fi
 
 **Claim being verified:** The Evidence Package accounts for every repository in the begb0037admin governance estate. Every in-scope repository either has a recorded write commit or a stated reason for exclusion.
 
-**What to check:**
-1. Retrieve the current AGENT_MODEL.md from `begb0037admin/command-centre`. Read Section 8 (Repository Scope table). This is the authoritative list of governed repositories.
-2. For each repository in that table, check whether the Evidence Package addresses it: updated, excluded with reason, or out-of-scope.
-3. Identify any repository in the Section 8 table that the Evidence Package does not mention at all.
-4. Pay particular attention to `begb0037admin/ag-flexpoints` — the Evidence Package claims this was not in MCP session scope and was therefore not inspected. Verify whether this repo exists and, if it does, retrieve its AGENT_MODEL.md and record the version.
-5. Check whether there are any repositories under begb0037admin that do not appear in the AGENT_MODEL.md Section 8 table and are not mentioned in the Evidence Package.
+**Directly inspect:**
+1. Retrieve AGENT_MODEL.md from `begb0037admin/command-centre`. Read Section 8 (Repository Scope table). This is the authoritative list.
+2. For each repository in Section 8, check whether the Evidence Package addresses it: updated, excluded with reason, or out-of-scope.
+3. Identify any Section 8 repository the Evidence Package does not mention.
+4. Specifically for `begb0037admin/ag-flexpoints`: the Evidence Package states this was not in session scope. Attempt to retrieve AGENT_MODEL.md from this repo. Record the result (content and version, or 404/access-denied).
+5. Check whether any repositories exist under begb0037admin that do not appear in the Section 8 table.
 
-**Required evidence:** GitHub API response listing AGENT_MODEL.md Section 8 table content; GitHub API response for AGENT_MODEL.md in ag-flexpoints (or 404 if it does not exist); any additional repos found under begb0037admin not in scope table.
-
-**Finding:** [PASS / PARTIAL / FAIL]
+**Required evidence:** Section 8 table content (directly retrieved); GitHub API response for ag-flexpoints AGENT_MODEL.md; any additional repos found.
 
 ---
 
 ### VT-02 — Authentication Verification
 
-**Claim being verified:** All governance writes were performed using the MCP GitHub server / gh CLI keyring mechanism. The GITHUB_PAT environment variable was absent but this was correctly identified as non-blocking because it is not Claude Code's authentication mechanism.
+**Claim being verified:** All governance writes were performed using the MCP GitHub server / gh CLI keyring. The GITHUB_PAT env var was absent but correctly identified as non-blocking (not Claude Code’s auth mechanism).
 
-**What to check:**
-1. Retrieve the commit record for the earliest write commit claimed in the Evidence Package (clockify backup, commit `7565ad8d` abbreviated). Confirm: the commit exists, it is dated 2026-06-21, and the committer identity is consistent with automated GitHub API writes (not a user push).
-2. Confirm that the claim about GITHUB_PAT is consistent with AGENT_MODEL.md Section 7. Read Section 7 and record what it says about authentication.
-3. Assess whether the authentication mechanism described is consistent with the commit metadata returned by the API.
+**Directly inspect:**
+1. Retrieve the commit record for the earliest write commit: abbreviated `7565ad8d` (clockify Archive/AGENT_MODEL_backup_20260621.md). Confirm: full SHA, date is 2026-06-21, committer identity.
+2. Retrieve AGENT_MODEL.md Section 7. Record what it states about authentication mechanisms.
+3. Assess whether the committer identity in the commit record is consistent with the authentication mechanism described in Section 7.
 
-**Required evidence:** GitHub API commit detail for earliest write commit (full SHA, author, committer, date, message); AGENT_MODEL.md Section 7 text.
-
-**Finding:** [PASS / PARTIAL / FAIL]
+**Required evidence:** GitHub API commit detail (full SHA, author, committer, date, message); AGENT_MODEL.md Section 7 text — both directly retrieved.
 
 ---
 
 ### VT-03 — Authorization Verification
 
-**Claim being verified:** No approval gate (AGENT_MODEL.md v2.0 Section 2) was triggered by Phase 1 writes. All writes were to governance files only (AGENT_MODEL.md and Archive/ backups). No writes were made to data/tasks.json, index.html, or any file requiring a separate approval gate.
+**Claim being verified:** No approval gate (AGENT_MODEL.md v2.0 Section 2) was triggered. All writes were to governance files only (AGENT_MODEL.md and Archive/ backups). No writes touched data/tasks.json, index.html, or any data file.
 
-**What to check:**
-1. Retrieve the file list for each write commit claimed in the Evidence Package. For each commit, confirm that only the expected files were modified (AGENT_MODEL.md or Archive/AGENT_MODEL_backup_20260621.md).
-2. Read AGENT_MODEL.md v2.0 Section 2 approval gates. Confirm that AGENT_MODEL.md propagation does not trigger any of the five listed gates.
-3. Check whether any write commit also touched files not listed in the Evidence Package.
+**Directly inspect:**
+1. Retrieve the commit detail (file list) for each of the 14 claimed commits (7 backup commits + 7 write commits). For each commit, record exactly which files were modified.
+2. Retrieve AGENT_MODEL.md Section 2 approval gates. Record the five gate definitions.
+3. For each gate: assess whether any write in the 14 commits touches a file or action in scope of that gate.
+4. Flag any commit that modified a file not described in the Evidence Package.
 
-**Required evidence:** GitHub API commit detail (files changed) for each of the 14 commits (7 backups + 7 writes); AGENT_MODEL.md Section 2 text.
-
-**Finding:** [PASS / PARTIAL / FAIL]
+**Required evidence:** GitHub API commit detail with file list for all 14 commits; AGENT_MODEL.md Section 2 text — all directly retrieved.
 
 ---
 
 ### VT-04 — Backup Validation
 
-**Claim being verified:** A datestamped backup of the pre-write AGENT_MODEL.md exists at `Archive/AGENT_MODEL_backup_20260621.md` in all 7 target repositories. Each backup was committed before the corresponding governance write. Each backup content SHA matches the pre-write baseline SHA recorded in the Evidence Package.
+**Claim being verified:** A datestamped backup exists at `Archive/AGENT_MODEL_backup_20260621.md` in all 7 target repositories, committed before the governance write, with content SHA matching the pre-write baseline.
 
-**What to check:**
-1. For each of the 7 repositories (clockify, hr-fa-knowledge-base, hr-projects, meeting-records, hris-dashboard, hris-launcher, hris-change-requests): perform a GET on `Archive/AGENT_MODEL_backup_20260621.md` and record the returned content SHA.
-2. Compare the returned content SHA against the backup content SHA claimed in the Evidence Package Backup Evidence table.
-3. For each backup commit and its corresponding write commit: retrieve both commit timestamps and confirm the backup commit timestamp is earlier than the write commit timestamp.
-4. Confirm the backup file is not empty and is decodeable (base64 content returns a non-empty AGENT_MODEL.md).
+**Directly inspect:**
+1. For each of the 7 repositories, perform GET on `Archive/AGENT_MODEL_backup_20260621.md`. Record the returned content SHA.
+2. Compare returned content SHA against the value claimed in the Evidence Package Backup Evidence table.
+3. Retrieve commit timestamps for each backup commit and its corresponding write commit. Confirm backup timestamp < write timestamp.
+4. Retrieve and attempt to decode the backup file content. Confirm it is non-empty and contains AGENT_MODEL.md text.
 
-**Required evidence:** GitHub Contents API GET response for Archive/AGENT_MODEL_backup_20260621.md in each of the 7 repos (SHA field); commit timestamps for backup commits and write commits (to confirm ordering).
-
-**Finding:** [PASS / PARTIAL / FAIL]
+**Required evidence:** GitHub Contents API GET for Archive/AGENT_MODEL_backup_20260621.md in each of the 7 repos (content SHA field); commit timestamps for backup and write commits — all directly retrieved.
 
 ---
 
 ### VT-05 — Rollback / Recovery Claims
 
-**Claim being verified:** The rollback path described in the Evidence Package is independently executable. For each repository, a restore-from-backup operation could return AGENT_MODEL.md to its pre-write state using only the information in this Evidence Package.
+**Claim being verified:** The rollback path is independently executable from the information in the Evidence Package alone. Backup data is present and decodeable.
 
-**What to check:**
-1. For each of the 7 repositories: confirm the backup file at `Archive/AGENT_MODEL_backup_20260621.md` is retrievable via GET and its content is decodeable.
-2. Confirm the backup content SHA in the Evidence Package matches the SHA returned by live GET (not just the claim — the actual GET response).
-3. Assess whether the rollback path is described with sufficient specificity that a different agent could execute it without additional information: correct file path, correct repo, correct SHA.
-4. Note: a rollback PUT would write the backup content back to AGENT_MODEL.md. You are not required to execute the rollback — only to confirm the backup data is present and decodeable.
+**Directly inspect:**
+1. For each of the 7 repositories: confirm Archive/AGENT_MODEL_backup_20260621.md is retrievable via GET and decodeable (non-empty base64 content).
+2. Confirm the backup content SHA returned by live GET matches the SHA claimed in the Evidence Package.
+3. Assess whether the Evidence Package provides sufficient information (repo, path, SHA) for a different agent to execute a rollback without any additional context.
+4. Note: do not execute a rollback write. Confirm recoverability only.
 
-**Required evidence:** GitHub Contents API GET for each backup file confirming SHA and non-empty decodeable content.
-
-**Finding:** [PASS / PARTIAL / FAIL]
+**Required evidence:** GitHub Contents API GET for each backup file confirming SHA and decodeable content — directly retrieved.
 
 ---
 
 ### VT-06 — Governance Assumptions
 
-**Claim being verified:** The assumptions listed in the Evidence Package are valid, or where they cannot be verified, this is stated explicitly.
+**Claim being verified:** The assumptions listed in the Evidence Package are valid, or where they cannot be verified after the fact, this is stated as PARTIAL with explanation.
 
-**The Evidence Package lists the following assumptions:**
-
+**Evidence Package assumptions to assess:**
 1. MCP GitHub server held valid write credentials at execution time.
-2. GitHub's Contents API returned accurate SHAs — no false positive from caching.
+2. GitHub’s Contents API returned accurate SHAs — no false positive from caching.
 3. Source-of-truth AGENT_MODEL.md in command-centre and work-inbox (SHA `5d5ff18872e803ad5ee8f50639fabed7abc56d06`) was the correct current v2.0.
 4. meeting-records v1.1 Section 9 removal creates no governance gap.
-5. ag-flexpoints absence from session scope does not constitute a Phase 1 gap.
-6. No subsequent commits to any target repo's AGENT_MODEL.md have occurred between the write session and this Evidence Package.
+5. ag-flexpoints absence from session scope does not constitute a Phase 1 completion gap.
+6. No subsequent commits to any target repo’s AGENT_MODEL.md occurred between the write session and this Evidence Package.
 
-**What to check:**
-1. **Assumption 3:** GET AGENT_MODEL.md from command-centre and work-inbox. Confirm current content SHA. If it is no longer `5d5ff18...`, record as FAIL (subsequent modification).
-2. **Assumption 4:** Read meeting-records CLAUDE.md and confirm whether Branch and Merge Protocol text is present (making Section 9 genuinely redundant).
-3. **Assumption 6:** For each of the 7 target repos, confirm that AGENT_MODEL.md current content SHA is still `05fc8adaab7e5b9524fe2c4f85ace667d7e04801` (i.e., no subsequent write has occurred). If any has changed, record as FAIL.
-4. Assumptions 1, 2, and 5 cannot be independently verified after the fact — record these as UNVERIFIABLE with explanation.
+**Directly inspect:**
+- **Assumption 3:** GET AGENT_MODEL.md from command-centre and work-inbox. Record current content SHA. If it is no longer `5d5ff18...`, record as FAIL.
+- **Assumption 4:** Retrieve meeting-records CLAUDE.md. Confirm whether Branch and Merge Protocol text is present.
+- **Assumption 6:** GET AGENT_MODEL.md from each of the 7 target repos. If current content SHA is no longer `05fc8adaab7e5b9524fe2c4f85ace667d7e04801`, investigate commit history to determine whether a subsequent write has occurred.
+- **Assumptions 1, 2, 5:** Cannot be verified after the fact. Record each as PARTIAL with explanation.
 
-**Required evidence:** GET responses for AGENT_MODEL.md in command-centre and work-inbox; meeting-records CLAUDE.md content; current AGENT_MODEL.md content SHA in all 7 target repos.
-
-**Finding:** [PASS / PARTIAL / FAIL]
+**Required evidence:** GET responses from command-centre, work-inbox, and all 7 target repos; meeting-records CLAUDE.md content — all directly retrieved.
 
 ---
 
 ### VT-07 — Estate-Wide Completion Claims
 
-**Claim being verified:** Every repository that was identified as requiring a v2.0 update has been updated. The current live state of AGENT_MODEL.md in all 7 target repositories is v2.0, with content SHA `05fc8adaab7e5b9524fe2c4f85ace667d7e04801`.
+**Claim being verified:** Every repository identified as requiring a v2.0 update has been updated. Current live state of AGENT_MODEL.md in all 7 target repos is v2.0, content SHA `05fc8adaab7e5b9524fe2c4f85ace667d7e04801`.
 
-**What to check:**
-1. For each of the 7 target repositories (clockify, hr-fa-knowledge-base, hr-projects, meeting-records, hris-dashboard, hris-launcher, hris-change-requests): perform a live GET on AGENT_MODEL.md and record the returned content SHA.
-2. Compare each returned SHA against the expected SHA `05fc8adaab7e5b9524fe2c4f85ace667d7e04801`.
-3. For any repository where the SHA does not match: retrieve and read the file to determine whether it is v2.0 content (SHA mismatch may indicate a benign subsequent edit, or it may indicate the write failed).
-4. Confirm that the version line in each file reads `Version : 2.0`.
-5. Confirm the estate-wide count: 7 repos updated + 2 excluded as source-of-truth + 4 excluded as out-of-scope/decommissioned = 13 total accounted for (or whatever the full Section 8 table count is).
+**Directly inspect:**
+1. For each of the 7 target repositories (clockify, hr-fa-knowledge-base, hr-projects, meeting-records, hris-dashboard, hris-launcher, hris-change-requests): perform a live GET on AGENT_MODEL.md. Record the returned content SHA.
+2. Compare each SHA against the expected value `05fc8adaab7e5b9524fe2c4f85ace667d7e04801`.
+3. For any mismatch: retrieve the file and inspect for `Version : 2.0`. A mismatch may indicate a subsequent benign edit or a write failure — check commit history to distinguish.
+4. Confirm the version line reads `Version : 2.0` in at least one directly-retrieved file excerpt.
+5. Verify the estate count: number of repos updated + number excluded with stated reason = total repos in Section 8 scope table.
 
-**Required evidence:** Live GitHub Contents API GET for AGENT_MODEL.md in each of the 7 repos, returning current content SHA and file excerpt confirming `Version : 2.0`.
-
-**Finding:** [PASS / PARTIAL / FAIL]
+**Required evidence:** Live GitHub Contents API GET for AGENT_MODEL.md in each of the 7 target repos; version line excerpt; estate count cross-reference — all directly retrieved.
 
 ---
 
 ## Assumptions (about this Review Request)
 
-1. The Evidence Package version that Codex challenges is the one at the commit SHA pinned in the Inputs table above. Any subsequent amendments to the Evidence Package after this Review Request was committed are out of scope.
+1. The Evidence Package Codex challenges is the version at commit `2d781348be9e8d1b76e619a8a1da79d9248f3ea0`. Later amendments are out of scope.
 2. Codex has independent read access to all begb0037admin repositories via the GitHub MCP tools.
-3. Codex does not have access to the executing agent's session transcript at `/root/.claude/projects/-home-user/5cdf4b0d-db13-5236-8b76-3bc923faa760.jsonl`. All verification must proceed via live GitHub API calls.
+3. Codex does not have access to the executing agent’s session transcript. All verification must use live GitHub API calls.
 
 ---
 
@@ -229,9 +219,9 @@ Every verification task listed below must receive a finding. VT items with no fi
 | Risk | Severity | Note |
 |------|----------|------|
 | Codex cannot access GitHub API | HIGH | Record all VT items as PARTIAL; do not mark PASS. Report the access failure explicitly. |
-| Evidence Package was amended after this Review Request was committed | MEDIUM | Use the Evidence Package SHA pinned in the Inputs table; retrieve it at that SHA, not at HEAD. |
-| Subsequent writes to target repos between execution and challenge | MEDIUM | If VT-07 content SHA differs from expected, do not assume the write failed — investigate the commit history to determine whether a subsequent write occurred post-execution. |
-| ag-flexpoints may be inaccessible to Codex | LOW | Attempt GET; record 404 or access-denied explicitly; this feeds directly into VT-01 finding. |
+| Evidence Package amended after this Review Request was committed | MEDIUM | Retrieve Evidence Package at commit `2d781348`, not at HEAD |
+| Subsequent writes to target repos between execution and challenge | MEDIUM | VT-07 content SHA mismatch does not automatically mean write failed — check commit history |
+| ag-flexpoints inaccessible to Codex | LOW | Attempt GET; record 404 or access-denied explicitly; feeds into VT-01 |
 
 ---
 
@@ -239,43 +229,20 @@ Every verification task listed below must receive a finding. VT items with no fi
 
 **Target Agent:** Codex
 
-**Stage:** 3 — Challenge
+**Required Inputs:**
+- `begb0037admin/command-centre / governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md`
+- `begb0037admin/command-centre / governance/evidence/PHASE_1_REVIEW_REQUEST.md`
+- `begb0037admin/command-centre / governance/GOVERNANCE_WORKFLOW_STANDARD.md`
+- `begb0037admin/command-centre / governance/templates/`
 
-**Required Inputs for Codex:**
-
-| Input | Path | Action |
-|-------|------|--------|
-| This Review Request | `begb0037admin/command-centre/governance/evidence/PHASE_1_REVIEW_REQUEST.md` | Read in full before beginning any verification |
-| Evidence Package | `begb0037admin/command-centre/governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` | Treat as unverified claim set |
-| Governance Workflow Standard | `begb0037admin/command-centre/governance/GOVERNANCE_WORKFLOW_STANDARD.md` | Reference for scope definitions and stage requirements |
-| Challenge Report Template | `begb0037admin/command-centre/governance/templates/PHASE_CHALLENGE_REPORT_TEMPLATE.md` | Use as the structural template for output |
-| Remediation Request Template | `begb0037admin/command-centre/governance/templates/PHASE_REMEDIATION_REQUEST_TEMPLATE.md` | Use if any finding is FAIL or PARTIAL |
-
-**Required Outputs from Codex:**
-
-| Output | Filename | Destination | Required when |
-|--------|----------|-------------|---------------|
-| Challenge Report | `PHASE_1_CHALLENGE_REPORT.md` | `begb0037admin/command-centre/governance/evidence/` | Always — every VT item must receive a finding |
-| Remediation Request | `PHASE_1_REMEDIATION_REQUEST.md` | `begb0037admin/command-centre/governance/evidence/` | Required if any VT finding is FAIL or PARTIAL |
+**Required Outputs:**
+- `PHASE_1_CHALLENGE_REPORT.md` — committed to `begb0037admin/command-centre/governance/evidence/` on branch `main`
+- `PHASE_1_REMEDIATION_REQUEST.md` — committed to the same path (required if any VT finding is FAIL or PARTIAL)
 
 **Workflow Status:**
+Stage 1 Complete / Stage 2 Pending
 
-| Stage | Status |
-|-------|--------|
-| Stage 1 — Execute | ✅ Complete |
-| Stage 2 — Evidence | ✅ Complete (this document + Evidence Package) |
-| Stage 3 — Challenge | ⏳ Pending — Codex action required |
-| Stage 4 — Remediation | 🔲 Conditional on Stage 3 findings |
-| Stage 5 — Validation | 🔲 Conditional on Stage 4 |
-| Stage 6 — Governance Decision | 🔲 Awaiting Kevin |
+**Handoff Instructions:**
+Codex should read the committed repository artefacts directly from GitHub, independently verify the evidence where access allows, challenge unsupported or overstated claims, and produce the required challenge and remediation artefacts.
 
-**Codex — your action:**
-1. Read this Review Request in full.
-2. Read the Evidence Package at the SHA pinned in the Inputs table above.
-3. Execute VT-01 through VT-07 independently via live GitHub API calls.
-4. Commit `PHASE_1_CHALLENGE_REPORT.md` to `begb0037admin/command-centre/governance/evidence/` on branch `main`.
-5. If any finding is FAIL or PARTIAL: also commit `PHASE_1_REMEDIATION_REQUEST.md` to the same path, populated with each gap and proposed remediation action.
-6. Record the commit SHA of the Challenge Report in the Challenge Report document itself.
-7. Do not contact the executing agent. All output goes into committed documents.
-
-**The executing agent (Claude Code) will read the committed Challenge Report and proceed to Stage 4 or Stage 6 based on the overall verdict.**
+For each VT item, Codex must clearly distinguish between evidence it directly inspected (retrieved from GitHub API in this session) and evidence merely reported by Claude Code (stated in the Evidence Package or HANDOVER.md). A finding of PASS requires direct inspection. Every VT item must receive a finding — no silent passes.
