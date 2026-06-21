@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-21 (Governance workflow correction — Codex controlled write constraint applied)
+**Last updated:** 2026-06-21 (Phase 1 Stage 4 remediation complete — Stage 5 validation pending)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -57,8 +57,12 @@
 | Governance standard | `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (v1.1) |
 | Phase 1 Evidence Package | `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` |
 | Phase 1 Review Request | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` |
+| Phase 1 Remediation Evidence | `governance/evidence/PHASE_1_REMEDIATION_EVIDENCE.md` |
+| Phase 1 Validation Request | `governance/evidence/PHASE_1_VALIDATION_REQUEST.md` |
 | Phase templates | `governance/templates/` (9 templates) |
 | Codex artefact path | `docs/project/generated/` |
+| Phase 1 Challenge Report (Codex) | `docs/project/generated/PHASE_1_CHALLENGE_REPORT.md` |
+| Phase 1 Remediation Request (Codex) | `docs/project/generated/PHASE_1_REMEDIATION_REQUEST.md` |
 
 ---
 
@@ -149,43 +153,66 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 |----------|------|------------|-------------|----------|
 | PHASE_1_EVIDENCE_PACKAGE.md | `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` | `f941af6984664efd70d70e06dccf9b7a8a1dfc2a` | `07449bef60a2e8a5ffa8a17445052c20e0b0a742` | ✅ GET confirmed |
 | PHASE_1_REVIEW_REQUEST.md | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` | `f941af6984664efd70d70e06dccf9b7a8a1dfc2a` | `42275d4d7569a988eb75d99e91d96ddff391a71a` | ✅ GET confirmed |
+| PHASE_1_CHALLENGE_REPORT.md (Codex Option B) | `docs/project/generated/PHASE_1_CHALLENGE_REPORT.md` | `c2ca67c5d3d8c650d05555f5bd3e2ea3439aca36` | `9c64b8c8ef950d4ffce3bd4f78ce06668bae1d54` | ✅ GET confirmed |
+| PHASE_1_REMEDIATION_REQUEST.md (Codex Option B) | `docs/project/generated/PHASE_1_REMEDIATION_REQUEST.md` | `c2ca67c5d3d8c650d05555f5bd3e2ea3439aca36` | `2840d1e2795db082e873d536261e0413655ccfcb` | ✅ GET confirmed |
+| PHASE_1_REMEDIATION_EVIDENCE.md | `governance/evidence/PHASE_1_REMEDIATION_EVIDENCE.md` | `d3ac11c585eaccc216f60468178349aa06376f51` | `e30a9dd78474003bdc0f9edc3deb94b9473c8eeb` | ✅ GET confirmed |
+| PHASE_1_VALIDATION_REQUEST.md | `governance/evidence/PHASE_1_VALIDATION_REQUEST.md` | `d3ac11c585eaccc216f60468178349aa06376f51` | `fad75a3549923b4a3cc7dfd03b6a08312c3adadd` | ✅ GET confirmed |
+
+### Codex Option B Handoff Record
+
+| Field | Value |
+|-------|-------|
+| Codex operating mode | Option B — Read-Only Reviewer With Claude Code Commit Handoff |
+| Reason | GitHub connector returned expired-token errors; no GH_TOKEN or GITHUB_TOKEN present |
+| Artefacts committed by Claude Code | `PHASE_1_CHALLENGE_REPORT.md`; `PHASE_1_REMEDIATION_REQUEST.md` |
+| Target path | `docs/project/generated/` |
+| Wording preserved | YES — committed exactly as supplied by Codex, no edits |
+| Commit SHA | `c2ca67c5d3d8c650d05555f5bd3e2ea3439aca36` |
+| Both files GET-verified | YES |
 
 ### Current Workflow Status
 
 | Stage | Status |
 |-------|--------|
-| Stage 1 — Execute (AGENT_MODEL v2.0 propagation) | ✅ Complete |
+| Stage 1 — Execute (AGENT_MODEL v2.0 propagation) | ✅ Complete (7 repos) — EXCEPTION: ag-flexpoints not updated |
 | Stage 2 — Evidence (Evidence Package + Review Request) | ✅ Complete |
-| Stage 3 — Challenge | ⏳ Pending — **Next agent: Codex** |
-| Stage 4 — Remediation | 🔲 Conditional on Stage 3 |
-| Stage 5 — Validation | 🔲 Conditional on Stage 4 |
+| Stage 3 — Challenge (Codex, Option B) | ✅ Complete — GAPS FOUND (VT-01 through VT-07 all PARTIAL) |
+| Stage 4 — Remediation (RA-01 through RA-07) | ✅ Complete — 2 outstanding items pending Kevin approval |
+| Stage 5 — Validation | ⏳ Pending — **Next agent: Codex** |
 | Stage 6 — Governance Decision | 🔲 Awaiting Kevin |
 
-### Next Agent: Codex
+### Next Agent: Codex (Stage 5 — Validation)
 
-**Action required:** Codex must independently challenge the Evidence Package (VT-01 through VT-07).
+**Action required:** Codex must re-assess VT-01 through VT-07 against `PHASE_1_REMEDIATION_EVIDENCE.md` and produce `PHASE_1_VALIDATION_REPORT.md`.
 
-**Codex operating mode:** Codex must first verify GitHub write access and declare operating mode (Option A or B) before proceeding.
+**Codex entry point:** `governance/evidence/PHASE_1_VALIDATION_REQUEST.md`
 
-**Required Codex inputs:**
-- `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md`
-- `governance/evidence/PHASE_1_REVIEW_REQUEST.md`
-- `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (v1.1)
-- `governance/templates/`
+**Codex operating mode:** Codex must declare Option A or B. If Option B, output full Markdown in chat; Claude Code commits.
 
-**Required Codex outputs (committed to `docs/project/generated/`):**
-- `PHASE_1_CHALLENGE_REPORT.md` — always required
-- `PHASE_1_REMEDIATION_REQUEST.md` — required if any VT finding is FAIL or PARTIAL
+**Outstanding items requiring Kevin approval before Phase 1 can be PASS:**
+1. ag-flexpoints AGENT_MODEL.md update — v1.1 → v2.0
+2. v2.0 content correction — add hris-change-requests and ag-flexpoints to Section 8 scope table, re-propagate across all repos
 
-**If Codex cannot write:** Codex outputs full Markdown artefact contents in chat. Claude Code commits them to `docs/project/generated/` exactly as supplied, verifies each commit, and updates this HANDOVER.md.
+**These items must not be executed without Kevin's explicit approval.**
 
-**Codex entry point:** Read `governance/evidence/PHASE_1_REVIEW_REQUEST.md` in full first. The Codex Operating Mode section now appears before the Critical Instructions.
+### Key Findings from Remediation
+
+| Finding | Detail |
+|---|---|
+| ag-flexpoints completion gap | Repo confirmed Active at `begb0037admin/ag-flexpoints`; AGENT_MODEL.md still v1.1 (blob `d7bbc192`); not updated in Phase 1 |
+| hris-change-requests scope table defect | v2.0 content does not list hris-change-requests in Section 8; defect in source content, not in propagation |
+| Backup version metadata corrected | hris-dashboard, hris-launcher, hris-change-requests were v1.1 before Phase 1 (not v1.0 as evidence package stated) |
+| CONSTITUTION.md three-blob estate | 6 repos: `a25878b0`; hris-dashboard: `6dcffd6d`; hris-change-requests: `178bc0d9`; Phase 1 completion independent of CONSTITUTION.md |
+| Authentication confirmed | Principal `begb0037admin` (ID `267986202`); gh CLI keyring via MCP GitHub server |
+| Authorization confirmed | Account owner — full admin/write/read on all repos |
 
 ---
 
 ## Next Action
 
-**Governance:** Codex to produce `PHASE_1_CHALLENGE_REPORT.md` and (if required) `PHASE_1_REMEDIATION_REQUEST.md` in `docs/project/generated/`. Claude Code will read the committed Challenge Report and proceed to Stage 4 or Stage 6 based on the overall verdict.
+**Governance:** Codex to validate remediation evidence (`PHASE_1_REMEDIATION_EVIDENCE.md`) and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`. Claude Code will then (subject to Kevin approval) execute outstanding Phase 1 items and prepare governance decision request.
+
+**Kevin approval required:** ag-flexpoints AGENT_MODEL.md update + v2.0 scope table correction + re-propagation.
 
 **ROADMAP item 1:** Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API.
 
@@ -220,7 +247,7 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 - `governance/evidence/PHASE_1_REVIEW_REQUEST.md` — addressed to Codex; VT-01 through VT-07; NEXT STAGE section confirmed.
 - Commit SHA (artefacts): `f941af6984664efd70d70e06dccf9b7a8a1dfc2a`.
 - Both artefacts verified by GET at that commit.
-- **Workflow is at Stage 3 — Codex action required.**
+- **Workflow was at Stage 3 — Codex action required.**
 
 ### 2026-06-21 — Governance workflow correction (v1.1)
 - **Problem:** Codex attempted Stage 3 commit without a defined write role; produced local file paths as outputs.
@@ -230,4 +257,23 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 - **Fallback rule:** If Codex cannot write, Codex outputs full Markdown in chat; Claude Code commits exactly as supplied.
 - **Correction commit SHA:** `65b753b5cf5242307786dda0eca09c766812878d`
 - **All 7 changed files GET-verified at that commit.**
-- **Stage 3 remains open — Codex must re-run with corrected instructions.**
+
+### 2026-06-21 — Stage 3 Challenge complete (Codex Option B handoff)
+- Codex operated in Option B (expired token; no GH_TOKEN).
+- Challenge Report and Remediation Request delivered in chat; committed by Claude Code exactly as supplied.
+- `docs/project/generated/PHASE_1_CHALLENGE_REPORT.md` — commit `c2ca67c5`; blob `9c64b8c8` ✅
+- `docs/project/generated/PHASE_1_REMEDIATION_REQUEST.md` — commit `c2ca67c5`; blob `2840d1e2` ✅
+- Overall verdict: GAPS FOUND. All VT-01 through VT-07 PARTIAL.
+
+### 2026-06-21 — Stage 4 Remediation complete (RA-01 through RA-07)
+- All seven remediation actions completed. Key findings:
+  - **ag-flexpoints**: Confirmed Active at v1.1 — completion gap. Phase 1 NOT complete.
+  - **hris-change-requests**: Updated to v2.0 but absent from v2.0 Section 8 scope table — content defect.
+  - **Backup metadata**: hris-dashboard, hris-launcher, hris-change-requests correctly v1.1 (not v1.0 as evidence package stated).
+  - **CONSTITUTION.md**: Three-blob estate (6 × `a25878b0`, hris-dashboard `6dcffd6d`, hris-change-requests `178bc0d9`). Phase 1 completion independent.
+  - **Authentication**: Principal `begb0037admin`; gh CLI keyring confirmed.
+  - **Authorization**: Account owner — all repos.
+- `governance/evidence/PHASE_1_REMEDIATION_EVIDENCE.md` — commit `d3ac11c5`; blob `e30a9dd7` ✅
+- `governance/evidence/PHASE_1_VALIDATION_REQUEST.md` — commit `d3ac11c5`; blob `fad75a35` ✅
+- **Workflow is at Stage 5 — Codex validation required.**
+- **Two outstanding items require Kevin approval before Phase 1 governance decision.**
