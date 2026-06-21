@@ -192,6 +192,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main);colo
     <div class="sb-section">Tasks</div>
     <a onclick="showView('board')" id="nav-board" class="active">
       <span class="nav-icon">&#x229E;</span> Board
+      <span class="tier-badge" id="badge-total">0</span>
     </a>
     <a onclick="showView('inbox')" id="nav-inbox">
       <span class="nav-icon">&#128229;</span> From your inbox
@@ -331,7 +332,7 @@ function renderBoard(){
     document.getElementById('badge-'+tier).textContent=items.length;
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
-  var badgeTotal=document.getElementById('badge-total'); if(badgeTotal) badgeTotal.textContent=tasks.length;
+  document.getElementById('badge-total').textContent=tasks.length;
   document.querySelectorAll('.task-card').forEach(function(card){
     card.addEventListener('dragstart',onCardDragStart);
     card.addEventListener('dragend',onCardDragEnd);
