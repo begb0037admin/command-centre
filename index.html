@@ -97,6 +97,8 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .tier-count{margin-left:auto;font-size:11.5px;color:var(--text-muted);font-weight:600}
 .tier-col.drag-over{outline:2px dashed var(--oxford);outline-offset:-2px;background:#f0f4fa}
 .tier-col.sug-drag-over{outline:2px dashed #4ade80;outline-offset:-2px;background:#f0fdf4}
+.tier-grid.focused .tier-col{display:none}
+.tier-grid.focused .tier-col.focus-active{display:block;grid-column:1/-1}
 
 /* TASK CARDS */
 .task-list{padding:7px;min-height:38px}
@@ -227,6 +229,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
           <span id="qa-tier-label">This Week</span><span>&#9662;</span>
         </div>
         <ul class="sb-qa-sel-list" id="qa-tier-list">
+          <li onclick="setTier('all','All')">All</li>
           <li onclick="setTier('today','Today')">Today</li>
           <li onclick="setTier('tomorrow','Tomorrow')">Tomorrow</li>
           <li class="selected" onclick="setTier('week','This Week')">This Week</li>
@@ -687,10 +690,24 @@ async function promoteSuggestion(idx,tier){
 /* TIER DROPDOWN */
 function toggleTierDrop(){document.getElementById('qa-tier-list').classList.toggle('open');}
 function setTier(val,label){
-  document.getElementById('qa-tier').value=val;
+  if(val!=='all') document.getElementById('qa-tier').value=val;
   document.getElementById('qa-tier-label').textContent=label;
   document.querySelectorAll('.sb-qa-sel-list li').forEach(function(li){li.classList.toggle('selected',li.textContent===label);});
   document.getElementById('qa-tier-list').classList.remove('open');
+  filterBoard(val);
+}
+function filterBoard(tier){
+  var grid=document.querySelector('.tier-grid');
+  if(!grid) return;
+  if(tier==='all'){
+    grid.classList.remove('focused');
+    document.querySelectorAll('.tier-col').forEach(function(c){c.classList.remove('focus-active');});
+  } else {
+    grid.classList.add('focused');
+    document.querySelectorAll('.tier-col').forEach(function(c){c.classList.remove('focus-active');});
+    var col=document.getElementById('tier-'+tier);
+    if(col) col.classList.add('focus-active');
+  }
 }
 document.addEventListener('click',function(e){
   var wrap=document.getElementById('qa-tier-wrap');
