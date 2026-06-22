@@ -99,11 +99,10 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .tier-col.sug-drag-over{outline:2px dashed #4ade80;outline-offset:-2px;background:#f0fdf4}
 
 /* STALE BANNER */
-#stale-banner{display:none;background:#fff8e6;border:1px solid #fde68a;border-radius:10px;padding:14px 20px;margin-bottom:14px;color:#92400e;font-size:14px;line-height:1.7}
-#stale-banner strong{font-weight:600}
-#stale-banner .stale-items{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-#stale-banner .stale-pill{background:#fde68a;border-radius:20px;padding:3px 10px;font-size:13px;font-weight:500;white-space:nowrap}
-#stale-banner .stale-pill .stale-age{font-weight:700;margin-right:4px}
+#stale-banner{display:none;background:#eff6ff;border:1px solid #bfdbfe;border-radius:11px;padding:20px 24px;margin-bottom:20px;color:#1e3a8a}
+#stale-banner .stale-banner-title{font-size:17px;font-weight:700;letter-spacing:.03em;color:#1d4ed8;margin-bottom:10px}
+#stale-banner .stale-row{font-size:14px;line-height:2}
+#stale-banner .stale-age{background:#1d4ed8;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-right:10px;vertical-align:middle;letter-spacing:.04em;display:inline-block}
 
 /* TASK CARDS */
 .task-list{padding:7px;min-height:38px}
@@ -409,13 +408,13 @@ function renderStaleBanner(){
   var todayTasks=tasks.filter(function(t){return t.tier==='today';});
   var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
   if(!stale.length){banner.style.display='none';return;}
-  var pills='';
+  var rows='';
   stale.forEach(function(t){
     var age=Math.floor((nowMs-new Date(t.dateAdded))/86400000);
-    pills+='<span class="stale-pill"><span class="stale-age">'+age+'d</span>'+escHtml(t.title)+'</span>';
+    rows+='<div class="stale-row"><span class="stale-age">'+age+'d</span>'+escHtml(t.title)+'</div>';
   });
-  banner.innerHTML='<strong>Watch — stale today:</strong> these Today tasks have been sitting for more than 3 days.<div class="stale-items">'+pills+'</div>';
-  banner.style.display='';
+  banner.innerHTML='<div class="stale-banner-title">Watch — stale today</div>'+rows;
+  banner.style.display='block';
 }
 
 /* CARD HTML */
