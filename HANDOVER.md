@@ -230,6 +230,8 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 
 ## Next Action
 
+**BLOCKING — Cloudflare Worker PAT (Priority 0):** Card moves / tier changes / notes edits do not persist across page refresh. `persistTasks()` calls the Cloudflare Worker, which holds a GitHub PAT that has almost certainly expired. Kevin must rotate the PAT in Cloudflare dashboard → Workers → `cc-tasks-writer` → Settings → Variables and Secrets. Full detail in ROADMAP.md Priority 0.
+
 **Governance:** Codex to validate remediation evidence (`PHASE_1_REMEDIATION_EVIDENCE.md`) against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`. All outstanding Phase 1 items are now resolved — no blocking items remain before validation.
 
 **ROADMAP item 1:** Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API.
@@ -242,6 +244,24 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 - Kevin hit token cap mid-session; Hope completed build under Cross-Domain Code Brief
 - Oxford crest: Kevin uploaded OUO.jpg — embedded as base64
 - All 13 seed tasks enriched with action bullet arrays from SK 1-1 Granola transcript
+
+### 2026-06-22 — Sidebar styling audit: stale banner, task counts, context bar
+
+**Command Centre:**
+- Stale "Watch — stale today" banner moved from sidebar to main content area, above the tier grid. Oxford blue tint (`#eff6ff` / `#bfdbfe` / `#1e3a8a`). Two-column layout: task list with red age pills (left) + stats panel — count, oldest, average age, stalled 2w+ (right). Title and age pills in `#dc2626`. Subtitle: "These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done."
+- Live task counts widget added to sidebar (Today / Tomorrow / This week / Actions due). Reads directly from in-memory `tasks` array; updates on every `renderBoard()` call — no fetch, no caching issues.
+- Banner and counts are fully dynamic: move a card → banner and sidebar update instantly.
+- All changes approved by Kevin and live on main.
+
+**Work Inbox:**
+- Context bar restyled to Oxford blue tint matching Command Centre stale banner.
+- "Context" label bumped to 17px, colour `#1d4ed8` to stand out.
+- Context paragraph split sentence-per-line with red dash bullets.
+- Tasks widget: label bumped to 13px, live heartbeat dot (green=success, red=fail), 30s polling via proxy URL.
+
+**Cloudflare Worker PAT (OUTSTANDING — parked for tomorrow):**
+- Card moves do not persist across page refresh. `persistTasks()` fails silently (only `console.warn`). Most likely cause: expired fine-grained GitHub PAT in Cloudflare Worker secret. Kevin to rotate PAT in Cloudflare dashboard. Full detail in ROADMAP.md Priority 0.
+- Next Claude action once PAT is refreshed: add visible save-status toast to `persistTasks()`.
 
 ### 2026-06-22 — Tier focus mode
 - Sidebar tier dropdown now filters the board: selecting a tier collapses all others and expands the selected one full-width.
