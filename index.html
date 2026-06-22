@@ -100,6 +100,12 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .tier-grid.focused .tier-col{display:none}
 .tier-grid.focused .tier-col.focus-active{display:block;grid-column:1/-1}
 
+/* STALE BANNER */
+#stale-banner{display:none;background:#eff6ff;border:1px solid #bfdbfe;border-radius:11px;padding:20px 24px;margin-bottom:20px;color:#1e3a8a}
+#stale-banner .stale-banner-title{font-size:17px;font-weight:700;letter-spacing:.03em;color:#1d4ed8;margin-bottom:10px}
+#stale-banner .stale-row{font-size:14px;line-height:2}
+#stale-banner .stale-age{background:#1d4ed8;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 8px;margin-right:10px;vertical-align:middle;letter-spacing:.04em;display:inline-block}
+
 /* TASK CARDS */
 .task-list{padding:7px;min-height:38px}
 .task-card{background:#fff;border:1px solid #e8ecf4;border-radius:8px;margin-bottom:5px;cursor:grab;transition:box-shadow .15s,border-color .15s;user-select:none}
@@ -266,6 +272,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 
   <!-- Board View -->
   <div class="content-area" id="view-board">
+    <div id="stale-banner"></div>
     <div class="tier-grid">
       <div class="tier-col tier-today" id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
         <div class="tier-header"><span class="tier-dot dot-today"></span><span class="tier-title">Today</span><span class="tier-count" id="count-today">0</span></div>
@@ -386,23 +393,31 @@ function renderBoard(){
       if(awaits.length>showA)b+='<div class="focus-more">+'+(awaits.length-showA)+' more</div>';
       html+=focusZone('waitingon','Waiting on',b);
     }
-    /* WATCH — stale Today tasks older than 3 days */
-    var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
-    if(stale.length){
-      var b='';
-      stale.forEach(function(t){
-        var age=Math.floor((nowMs-new Date(t.dateAdded))/86400000);
-        b+='<div class="focus-stale-item"><span class="stale-age">'+age+'d</span><span class="focus-stale-text" title="'+t.title.replace(/"/g,'&quot;')+'">'+t.title+'</span></div>';
-      });
-      html+=focusZone('watch','Watch — stale today',b);
-    }
     if(!html)html='<div class="focus-empty">No tasks yet</div>';
     ft.innerHTML=html;
   }
+  renderStaleBanner();
   document.querySelectorAll('.task-card').forEach(function(card){
     card.addEventListener('dragstart',onCardDragStart);
     card.addEventListener('dragend',onCardDragEnd);
   });
+}
+
+/* STALE BANNER */
+function renderStaleBanner(){
+  var banner=document.getElementById('stale-banner');
+  if(!banner) return;
+  var nowMs=new Date().setHours(0,0,0,0);
+  var todayTasks=tasks.filter(function(t){return t.tier==='today';});
+  var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
+  if(!stale.length){banner.style.display='none';return;}
+  var rows='';
+  stale.forEach(function(t){
+    var age=Math.floor((nowMs-new Date(t.dateAdded))/86400000);
+    rows+='<div class="stale-row"><span class="stale-age">'+age+'d</span>'+escHtml(t.title)+'</div>';
+  });
+  banner.innerHTML='<div class="stale-banner-title">Watch — stale today</div>'+rows;
+  banner.style.display='block';
 }
 
 /* CARD HTML */
