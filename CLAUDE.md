@@ -65,7 +65,7 @@
 ## Architecture
 | Component | Description |
 |---|---|
-| `index.html` | Single-file dashboard. Oxford navy sidebar (320px), blue-grey main area (#f5f7fb). No framework, no build step. |
+| `index.html` | Single-file dashboard. Oxford navy sidebar (340px), blue-grey main area (#f5f7fb). No framework, no build step. |
 | `data/tasks.json` | Task data store. Fields: id, title, tier, source, emailRef, notes, actions[], dateAdded. |
 
 ## Data Flow

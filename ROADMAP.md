@@ -8,7 +8,7 @@
 ## Module 1 — To-Do Dashboard ✅
 
 - [x] Single-file `index.html` — no framework, no build step
-- [x] Oxford navy sidebar (320px) — crest, branding, live task counts, week summary, Add Task
+- [x] Oxford navy sidebar (340px) — crest, branding, live task counts, week summary, Add Task
 - [x] Three priority tiers: Today 🔴 / This Week 🟡 / Parked ⚪
 - [x] Task cards with collapsible drawers — action bullets, source badge, email ref, editable notes, Move To controls
 - [x] Quick-add panel — title, tier picker, source, email ref, notes

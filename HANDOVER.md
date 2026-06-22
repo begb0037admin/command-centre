@@ -9,7 +9,7 @@
 
 | Component | Description |
 |---|---|
-| `index.html` | Single-file dashboard. Oxford navy sidebar (320px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. |
+| `index.html` | Single-file dashboard. Oxford navy sidebar (340px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. |
 | `data/tasks.json` | Task data. Fields: id, title, tier (today/week/parked), source, emailRef, notes, actions[], dateAdded. |
 | `governance/` | Governance workflow standard (v1.1), phase templates, and phase evidence artefacts. |
 | `docs/project/generated/` | Approved Codex artefact path. All Codex-produced review artefacts are committed here. |
