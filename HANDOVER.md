@@ -30,7 +30,7 @@
 - Time-aware greeting: Good morning / afternoon / evening, Kevin
 - Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser
 - 'From your inbox' suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
-- **Badge alignment fixed** — `.task-card-top` has `width: 100%` so NEW/UPDATED badges always appear at far right
+- **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. "All" returns to the four-column grid. Add button targets the focused tier.
 - **Badge CSS normalised** — NEW (green) and UPDATED (blue) badges match Work Inbox exactly
 - **Emoji removed** from all three "Open email" button locations
 
@@ -242,6 +242,11 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 - Kevin hit token cap mid-session; Hope completed build under Cross-Domain Code Brief
 - Oxford crest: Kevin uploaded OUO.jpg — embedded as base64
 - All 13 seed tasks enriched with action bullet arrays from SK 1-1 Granola transcript
+
+### 2026-06-22 — Tier focus mode
+- Sidebar tier dropdown now filters the board: selecting a tier collapses all others and expands the selected one full-width.
+- "All" option added to return to normal four-column view.
+- Commit: `f82178e`
 
 ### 2026-06-18 — Badge alignment + UI polish
 - Badge alignment fixed; badge CSS normalised to match Work Inbox; emoji stripped from Open email buttons.
