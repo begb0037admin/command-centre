@@ -101,10 +101,21 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .tier-grid.focused .tier-col.focus-active{display:block;grid-column:1/-1}
 
 /* STALE BANNER */
-#stale-banner{display:none;background:#eff6ff;border:1px solid #bfdbfe;border-radius:11px;padding:20px 24px;margin-bottom:20px;color:#1e3a8a}
-#stale-banner .stale-banner-title{font-size:17px;font-weight:700;letter-spacing:.03em;color:#dc2626;margin-bottom:10px}
+#stale-banner{display:none;background:#eff6ff;border:1px solid #bfdbfe;border-radius:11px;padding:20px 24px;margin-bottom:20px;color:#1e3a8a;display:flex;gap:32px;align-items:stretch}
+#stale-banner .stale-banner-left{flex:1;min-width:0}
+#stale-banner .stale-banner-title{font-size:17px;font-weight:700;letter-spacing:.03em;color:#dc2626;margin-bottom:4px}
+#stale-banner .stale-banner-sub{font-size:13px;color:#3b82f6;margin-bottom:12px;line-height:1.5}
 #stale-banner .stale-row{font-size:14px;line-height:2}
 #stale-banner .stale-age{background:#dc2626;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 0;margin-right:10px;vertical-align:middle;letter-spacing:.04em;display:inline-block;width:36px;text-align:center}
+#stale-banner .stale-divider{width:1px;background:#bfdbfe;flex-shrink:0}
+#stale-banner .stale-banner-right{width:220px;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;gap:14px}
+#stale-banner .stale-stat-block{text-align:center}
+#stale-banner .stale-stat-num{font-size:32px;font-weight:800;color:#dc2626;line-height:1}
+#stale-banner .stale-stat-label{font-size:11px;font-weight:600;color:#3b82f6;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+#stale-banner .stale-stat-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #bfdbfe;font-size:12.5px}
+#stale-banner .stale-stat-row:last-child{border-bottom:none}
+#stale-banner .stale-stat-row-label{color:#1e3a8a}
+#stale-banner .stale-stat-row-val{font-weight:700;color:#dc2626}
 
 /* TASK CARDS */
 .task-list{padding:7px;min-height:38px}
@@ -411,13 +422,18 @@ function renderStaleBanner(){
   var todayTasks=tasks.filter(function(t){return t.tier==='today';});
   var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
   if(!stale.length){banner.style.display='none';return;}
+  var ages=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
+  var maxAge=Math.max.apply(null,ages);
+  var avgAge=Math.round(ages.reduce(function(s,a){return s+a;},0)/ages.length);
+  var over2w=ages.filter(function(a){return a>=14;}).length;
   var rows='';
-  stale.forEach(function(t){
-    var age=Math.floor((nowMs-new Date(t.dateAdded))/86400000);
-    rows+='<div class="stale-row"><span class="stale-age">'+age+'d</span>'+escHtml(t.title)+'</div>';
+  stale.forEach(function(t,i){
+    rows+='<div class="stale-row"><span class="stale-age">'+ages[i]+'d</span>'+escHtml(t.title)+'</div>';
   });
-  banner.innerHTML='<div class="stale-banner-title">Watch — stale today</div>'+rows;
-  banner.style.display='block';
+  var left='<div class="stale-banner-left"><div class="stale-banner-title">Watch — stale today</div><div class="stale-banner-sub">These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done.</div>'+rows+'</div>';
+  var right='<div class="stale-divider"></div><div class="stale-banner-right"><div class="stale-stat-block"><div class="stale-stat-num">'+stale.length+'</div><div class="stale-stat-label">tasks stalled in Today</div></div><div><div class="stale-stat-row"><span class="stale-stat-row-label">Oldest</span><span class="stale-stat-row-val">'+maxAge+' days</span></div><div class="stale-stat-row"><span class="stale-stat-row-label">Average age</span><span class="stale-stat-row-val">'+avgAge+' days</span></div><div class="stale-stat-row"><span class="stale-stat-row-label">Stalled 2+ weeks</span><span class="stale-stat-row-val">'+over2w+' task'+(over2w!==1?'s':'')+'</span></div></div></div>';
+  banner.innerHTML=left+right;
+  banner.style.display='flex';
 }
 
 /* CARD HTML */
