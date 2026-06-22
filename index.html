@@ -100,6 +100,13 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .tier-grid.focused .tier-col{display:none}
 .tier-grid.focused .tier-col.focus-active{display:block;grid-column:1/-1}
 
+/* TASK COUNTS WIDGET */
+.task-counts-panel{padding:4px 10px 10px}
+.task-counts-row{display:flex;align-items:center;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.task-counts-row:last-child{border-bottom:none}
+.task-counts-name{color:rgba(255,255,255,.7)}
+.task-counts-val{font-weight:700;color:rgba(255,255,255,.9)}
+
 /* STALE BANNER */
 #stale-banner{display:none;background:#eff6ff;border:1px solid #bfdbfe;border-radius:11px;padding:20px 24px;margin-bottom:20px;color:#1e3a8a;display:flex;gap:32px;align-items:stretch}
 #stale-banner .stale-banner-left{flex:1;min-width:0}
@@ -263,6 +270,13 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
       From your inbox
       <span class="tier-badge" id="badge-inbox">0</span>
     </a>
+    <div class="sb-section">Tasks</div>
+    <div class="task-counts-panel" id="task-counts">
+      <div class="task-counts-row"><span class="task-counts-name">Today</span><span class="task-counts-val" id="tc-today">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">Tomorrow</span><span class="task-counts-val" id="tc-tomorrow">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">This week</span><span class="task-counts-val" id="tc-week">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">Actions due</span><span class="task-counts-val" id="tc-actions">0</span></div>
+    </div>
     <div class="sb-section">Daily Focus</div>
     <div id="focus-tasks" class="focus-tasks"></div>
     <div class="sb-section">Links</div>
@@ -376,6 +390,10 @@ function renderBoard(){
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
   var badgeTotal=document.getElementById('badge-total'); if(badgeTotal) badgeTotal.textContent=tasks.length;
+  var tcToday=document.getElementById('tc-today'); if(tcToday) tcToday.textContent=tasks.filter(function(t){return t.tier==='today';}).length;
+  var tcTom=document.getElementById('tc-tomorrow'); if(tcTom) tcTom.textContent=tasks.filter(function(t){return t.tier==='tomorrow';}).length;
+  var tcWeek=document.getElementById('tc-week'); if(tcWeek) tcWeek.textContent=tasks.filter(function(t){return t.tier==='week';}).length;
+  var tcAct=document.getElementById('tc-actions'); if(tcAct) tcAct.textContent=tasks.filter(function(t){return(t.actions||[]).some(function(a){return a.includes('[TODO]');});}).length;
   var ft=document.getElementById('focus-tasks');
   if(ft){
     var nowMs=new Date().setHours(0,0,0,0);
