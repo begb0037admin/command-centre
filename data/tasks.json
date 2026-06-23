@@ -69,7 +69,7 @@
         "[23 Jun 2026] Access Support has updated case #68978576, likely concerning Chemistry bulk deletion or related PeopleXD work. (email: Access Support - Access Support Team | 68978576 - Your Case Has Been Updated)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078716632D0000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078716632D0000"
     },
     {
       "id": "t015",
@@ -163,24 +163,24 @@
         "[10 Jun 2026] Simon has found that some reference data codes were too long and adjusted them; Kevin needs to review the changes to confirm they are acceptable before proceeding with the setup. (email: Simon Burford - RE: College staff in PeopleXD proposal)",
         "[10 Jun 2026] Simon identified that proposed org structure codes for the multi-company setup were too long and has made adjustments in the test environment; Kevin should review these changes. (email: Simon Burford - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)",
         "[11 Jun 2026] Kevin has located Pay Administered By values in UOXU and can see what exists at level 6; ready to progress once Simon confirms missing reference data creation. (email: Kevin (sent to: Conor O'Brien) - Re: Organisational Hierarchy & Payroll Company Set-Up)",
-        "[11 Jun 2026] Kevin has prepared a draft REF2029 load file based on test HR Reference File format and sent to Conor O'Brien. (email: Kevin (sent to: Conor O'Brien) - Re: #External# Re: Organisational Hierarchy & Payroll Company Set-Up)"
+        "[11 Jun 2026] Kevin has prepared a draft REF2029 load file based on test HR Reference File format and sent to Conor O'Brien. (email: Kevin (sent to: Conor O'Brien) - Re: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)"
       ],
       "dateAdded": "2026-06-08",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B30000"
     },
     {
       "id": "t006",
-      "title": "SharePoint documentation response + alignment meeting",
+      "title": "Org hierarchy documentation and process",
       "tier": "week",
       "source": "SK 1-1 08/06",
       "emailRef": "",
       "summary": "SharePoint guidance not updated when drive moved; written response to Simon and team alignment meeting needed.",
-      "description": "The shared drive was moved to SharePoint but guidance documentation was not updated to reflect the new location. Only Kevin and Lee were managing the migration, so other team members did not know where to find documents. The documents exist and are in the right place -- they are just not signposted correctly. Simon has raised this and Kevin needs to respond in writing before recommending an alignment meeting to bring the whole team up to speed. Michael also needs to be looped in.",
+      "description": "The shared drive was moved to SharePoint but guidance documentation was not updated to reflect the new location. Only Kevin and Lee were managing the migration, so other team members did not know where to find documents. The documents exist and are in the right place -- they are just not signposted correctly. Simon has raised this and Kevin needs to respond in writing before recommending an alignment meeting to bring the whole team up to speed on the org hierarchy documentation and process. Michael also needs to be looped in.",
       "actions": [
         "[08 Jun] Issue identified and raised by Simon -- shared drive moved to SharePoint, guidance not updated.",
         "[09 Jun 2026] Root cause confirmed at FA Team Catch-up: when content moved from shared drive to SharePoint/Teams, guidance pointing to documents was not updated. Created a single point of failure between Kevin and Lee -- others didn't know where to look. Documents exist and are correctly placed; signposting is the issue.",
         "[TODO] Write response to Simon explaining the situation and confirming documents are accessible.",
-        "[TODO] Recommend alignment meeting to get whole team up to speed on SharePoint structure.",
+        "[TODO] Recommend alignment meeting to get whole team up to speed on SharePoint structure and org hierarchy documentation.",
         "[TODO] Touch base with Michael separately on this."
       ],
       "dateAdded": "2026-06-08"
@@ -213,7 +213,7 @@
       "actions": [
         "[05 Jun] James flagged issue in handover -- users not in PXD being incorrectly archived in HWP.",
         "[05 Jun] Manual rule created for known cases (e.g. Jill Farmer).",
-        "[10 Jun 2026] H&S admin team check completed. James confirms DSE automated data upload to HWP went live 3 June and overall dataset looks good. (email: James Salas Guillen - FW: Preventing archiving of users not included in HR data upload)",
+        "[10 Jun 2026] H&S admin check completed. James confirms DSE automated data upload to HWP went live 3 June and overall dataset looks good. (email: James Salas Guillen - FW: Preventing archiving of users not included in HR data upload)",
         "[AWAITING] James to return 18 June -- two open HWP tickets with Gail Miller to pick up then."
       ],
       "dateAdded": "2026-06-08",
@@ -472,6 +472,20 @@
       ],
       "dateAdded": "2026-06-15",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1D0000"
+    },
+    {
+      "id": "t022",
+      "title": "Send POC meeting notes to Chris",
+      "tier": "today",
+      "source": "Kevin 23/06",
+      "emailRef": "",
+      "summary": "Send H&S Management System evaluation POC meeting notes to Christopher Sanders.",
+      "description": "Action from the H&S Management System (SHSMS / DTP1334) evaluation process. POC (Proof of Concept) meeting notes need to be sent to Christopher Sanders, who is the H&S-side lead and Kevin's counterpart on the evaluation. Chris attended the Cority PUG on 16 June and is across the SHSMS evaluation work.",
+      "actions": [
+        "[23 Jun 2026] Task raised by Kevin -- send POC meeting notes to Chris as priority today.",
+        "[TODO] Send POC meeting notes to Christopher Sanders."
+      ],
+      "dateAdded": "2026-06-23"
     }
   ]
 }
