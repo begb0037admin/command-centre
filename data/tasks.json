@@ -430,7 +430,7 @@
     {
       "id": "t020",
       "title": "Org hierarchy migration -- enable COREPORTAL_ADMIN menu options",
-      "tier": "today",
+      "tier": "week",
       "source": "Michael 1-1 15/06",
       "emailRef": "RE: Menu Profile for hierarchy administration",
       "summary": "COREPORTAL_ADMIN org hierarchy options need enabling across all environments; awaiting Asta's comparison.",
