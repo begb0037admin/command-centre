@@ -108,21 +108,23 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .task-counts-val{font-weight:700;color:rgba(255,255,255,.9)}
 
 /* STALE BANNER */
-#stale-banner{display:none;background:#eff6ff;border:1px solid #bfdbfe;border-radius:11px;padding:20px 24px;margin-bottom:20px;color:#1e3a8a;display:flex;gap:32px;align-items:stretch}
-#stale-banner .stale-banner-left{flex:1;min-width:0}
-#stale-banner .stale-banner-title{font-size:17px;font-weight:700;letter-spacing:.03em;color:#dc2626;margin-bottom:4px}
-#stale-banner .stale-banner-sub{font-size:13px;color:#3b82f6;margin-bottom:12px;line-height:1.5}
-#stale-banner .stale-row{font-size:14px;line-height:2}
-#stale-banner .stale-age{background:#dc2626;color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:2px 0;margin-right:10px;vertical-align:middle;letter-spacing:.04em;display:inline-block;width:36px;text-align:center}
-#stale-banner .stale-divider{width:1px;background:#bfdbfe;flex-shrink:0}
-#stale-banner .stale-banner-right{width:220px;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;gap:14px}
-#stale-banner .stale-stat-block{text-align:center}
-#stale-banner .stale-stat-num{font-size:32px;font-weight:800;color:#dc2626;line-height:1}
-#stale-banner .stale-stat-label{font-size:11px;font-weight:600;color:#3b82f6;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
-#stale-banner .stale-stat-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #bfdbfe;font-size:12.5px}
-#stale-banner .stale-stat-row:last-child{border-bottom:none}
-#stale-banner .stale-stat-row-label{color:#1e3a8a}
-#stale-banner .stale-stat-row-val{font-weight:700;color:#dc2626}
+#stale-banner{display:none;background:#eff6ff;border:1px solid #bfdbfe;border-radius:11px;margin-bottom:20px;color:#1e3a8a;display:flex;align-items:stretch;overflow:hidden}
+.bar-col{flex:1;padding:16px 18px;min-width:0}
+.bar-col+.bar-col{border-left:1px solid #bfdbfe}
+.bar-col-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#dc2626;margin-bottom:6px}
+.bar-col-sub{font-size:11px;color:#3b82f6;margin-bottom:8px;line-height:1.4}
+#stale-banner .stale-row{display:flex;align-items:center;gap:6px;font-size:13px;line-height:1.9;color:#1e3a8a}
+#stale-banner .stale-age{color:#dc2626;font-size:12px;font-weight:700;flex-shrink:0;min-width:26px}
+#stale-banner .focus-act-item{font-size:12px;color:#1e3a8a;border-left-color:#ef4444;padding:3px 0 3px 9px;margin-bottom:4px;white-space:normal;line-height:1.35}
+#stale-banner .focus-await-item{font-size:12px;color:#1e40af;border-left-color:#3b82f6;padding:3px 0 3px 9px;margin-bottom:4px;white-space:normal;line-height:1.35}
+#stale-banner .focus-more{color:#3b82f6;padding-left:9px}
+/* SIDEBAR STALE STATS */
+.sb-stale-stats{margin:4px 10px 8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 14px 10px;text-align:center}
+.sb-stale-num{font-size:26px;font-weight:800;color:#bf6060;line-height:1}
+.sb-stale-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin:3px 0 10px;line-height:1.3}
+.sb-stale-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-top:1px solid rgba(255,255,255,.08);font-size:12px}
+.sb-stale-row-label{color:rgba(255,255,255,.5)}
+.sb-stale-row-val{font-weight:700;color:#bf6060}
 
 /* TASK CARDS */
 .task-list{padding:7px;min-height:38px}
@@ -305,7 +307,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
       <div class="task-counts-row"><span class="task-counts-name">Actions due</span><span class="task-counts-val" id="tc-actions">0</span></div>
     </div>
     <div class="sb-section">Daily Focus</div>
-    <div id="focus-tasks" class="focus-tasks"></div>
+    <div id="sb-stale-stats"></div>
     <div class="sb-section">Links</div>
     <a href="https://begb0037admin.github.io/work-inbox/" target="_blank">Work Inbox</a>
     <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank">HRIS Dashboard</a>
@@ -519,25 +521,62 @@ function renderBoard(){
   });
 }
 
-/* STALE BANNER */
+/* STALE BANNER + SIDEBAR STATS */
 function renderStaleBanner(){
   var banner=document.getElementById('stale-banner');
-  if(!banner) return;
+  var sbStats=document.getElementById('sb-stale-stats');
   var nowMs=new Date().setHours(0,0,0,0);
   var todayTasks=tasks.filter(function(t){return t.tier==='today';});
   var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
-  if(!stale.length){banner.style.display='none';return;}
   var ages=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
-  var maxAge=Math.max.apply(null,ages);
-  var avgAge=Math.round(ages.reduce(function(s,a){return s+a;},0)/ages.length);
-  var over2w=ages.filter(function(a){return a>=14;}).length;
-  var rows='';
-  stale.forEach(function(t,i){
-    rows+='<div class="stale-row"><span class="stale-age">'+ages[i]+'d</span>'+escHtml(t.title)+'</div>';
-  });
-  var stats='<div class="stale-banner-right"><div class="stale-stat-block"><div class="stale-stat-num">'+stale.length+'</div><div class="stale-stat-label">tasks stalled in Today</div></div><div><div class="stale-stat-row"><span class="stale-stat-row-label">Oldest</span><span class="stale-stat-row-val">'+maxAge+' days</span></div><div class="stale-stat-row"><span class="stale-stat-row-label">Average age</span><span class="stale-stat-row-val">'+avgAge+' days</span></div><div class="stale-stat-row"><span class="stale-stat-row-label">Stalled 2+ weeks</span><span class="stale-stat-row-val">'+over2w+' task'+(over2w!==1?'s':'')+'</span></div></div></div>';
-  var tasklist='<div class="stale-banner-left"><div class="stale-banner-title">Watch — stale today</div><div class="stale-banner-sub">These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done.</div>'+rows+'</div>';
-  banner.innerHTML=stats+'<div class="stale-divider"></div>'+tasklist;
+  /* Sidebar compact stats */
+  if(sbStats){
+    if(stale.length){
+      var maxAge=Math.max.apply(null,ages);
+      var avgAge=Math.round(ages.reduce(function(s,a){return s+a;},0)/ages.length);
+      var over2w=ages.filter(function(a){return a>=14;}).length;
+      sbStats.innerHTML='<div class="sb-stale-stats">'
+        +'<div class="sb-stale-num">'+stale.length+'</div>'
+        +'<div class="sb-stale-label">Tasks stalled<br>in Today</div>'
+        +'<div class="sb-stale-row"><span class="sb-stale-row-label">Oldest</span><span class="sb-stale-row-val">'+maxAge+' days</span></div>'
+        +'<div class="sb-stale-row"><span class="sb-stale-row-label">Avg age</span><span class="sb-stale-row-val">'+avgAge+' days</span></div>'
+        +'<div class="sb-stale-row"><span class="sb-stale-row-label">2+ weeks</span><span class="sb-stale-row-val">'+over2w+' task'+(over2w!==1?'s':'')+'</span></div>'
+        +'</div>';
+    } else {sbStats.innerHTML='';}
+  }
+  if(!banner) return;
+  /* Col 1: Watch stale today */
+  var col1='';
+  if(stale.length){
+    var rows='';
+    stale.forEach(function(t,i){rows+='<div class="stale-row"><span class="stale-age">'+ages[i]+'d</span>'+escHtml(t.title)+'</div>';});
+    col1='<div class="bar-col"><div class="bar-col-title">Watch — stale today</div>'
+      +'<div class="bar-col-sub">In Today 3+ days — move on, park, or mark done.</div>'
+      +rows+'</div>';
+  }
+  /* Col 2: Act now ([TODO] from today tasks) */
+  var todos=[];
+  todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push(a.replace('[TODO]','').trim());});});
+  var col2='';
+  if(todos.length){
+    var show=Math.min(todos.length,5);var b='';
+    todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+    if(todos.length>show)b+='<div class="focus-more">+'+(todos.length-show)+' more</div>';
+    col2='<div class="bar-col"><div class="bar-col-title">Act now</div>'+b+'</div>';
+  }
+  /* Col 3: Waiting on ([AWAITING] from all tasks) */
+  var awaits=[];
+  tasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
+  var col3='';
+  if(awaits.length){
+    var showA=Math.min(awaits.length,4);var b='';
+    awaits.slice(0,showA).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+    if(awaits.length>showA)b+='<div class="focus-more">+'+(awaits.length-showA)+' more</div>';
+    col3='<div class="bar-col"><div class="bar-col-title">Waiting on</div>'+b+'</div>';
+  }
+  var hasContent=col1||col2||col3;
+  if(!hasContent){banner.style.display='none';return;}
+  banner.innerHTML=(col1||'')+(col2||'')+(col3||'');
   banner.style.display='flex';
 }
 
