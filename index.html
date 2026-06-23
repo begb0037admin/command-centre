@@ -228,9 +228,17 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .section-title{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-dark)}
 .section-count{font-size:11px;font-weight:600;color:var(--text-muted);background:#eef2f8;border-radius:8px;padding:0 6px}
 .section-rule{flex:1;height:1px;background:#e8ecf4}
+
+/* SAVE TOAST */
+#save-toast{position:fixed;bottom:24px;right:24px;z-index:9999;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:opacity .3s;opacity:0;pointer-events:none}
+#save-toast.visible{opacity:1;pointer-events:auto}
+#save-toast.saving{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe}
+#save-toast.success{background:#f0fdf4;color:#166534;border:1px solid #86efac}
+#save-toast.error{background:#fef2f2;color:#991b1b;border:1px solid #fca5a5;cursor:pointer}
 </style>
 </head>
 <body>
+<div id="save-toast"></div>
 <div class="shell">
 
 <!-- SIDEBAR -->
@@ -635,11 +643,32 @@ function mergeRemote(remote){
 }
 
 /* PERSIST */
+function showSaveToast(state,text){
+  var t=document.getElementById('save-toast');
+  if(!t)return;
+  t.className='visible '+state;
+  t.textContent=text;
+  clearTimeout(t._timer);
+  if(state==='error'){
+    t.onclick=function(){t.className='';};
+  } else {
+    t._timer=setTimeout(function(){t.className='';},2500);
+  }
+}
 async function persistTasks(msg){
+  showSaveToast('saving','Saving…');
   try{
     var res=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'write',file:'data/tasks.json',content:{tasks:tasks},message:msg})});
-    if(!res.ok)console.warn('Writer error',res.status);
-  }catch(e){console.warn('Writer fetch failed',e);}
+    if(!res.ok){
+      showSaveToast('error','Save failed — HTTP '+res.status+' (tap to dismiss)');
+      console.warn('Writer error',res.status);
+    } else {
+      showSaveToast('success','Saved ✓');
+    }
+  }catch(e){
+    showSaveToast('error','Save failed — '+e.message+' (tap to dismiss)');
+    console.warn('Writer fetch failed',e);
+  }
 }
 
 /* DRAG (tasks) */
