@@ -385,9 +385,9 @@ var tasks=[];
 var dragId=null;
 var sgDragIdx=null;
 
-/* DONE STATE */
-var doneSet=new Set(JSON.parse(localStorage.getItem(DONE_KEY)||'[]'));
-function saveDone(){localStorage.setItem(DONE_KEY,JSON.stringify([...doneSet]));}
+/* DONE STATE — persisted in tasks.json via Worker, not localStorage */
+function isDone(id){var t=tasks.find(function(x){return x.id===id;});return t?!!t.done:false;}
+function saveDone(){/* no-op — done state now in tasks.json */}
 
 /* MY LINKS */
 var QL_KEY='commandCentre_quicklinks_v1';
@@ -582,7 +582,7 @@ function renderStaleBanner(){
 
 /* CARD HTML */
 function cardHTML(t){
-  var done=doneSet.has(t.id);
+  var done=!!t.done;
   var checkedCls=done?'checked':'';
   var doneCls=done?'done-card':'';
 
@@ -630,12 +630,14 @@ function scrollToTier(tier){var el=document.getElementById('tier-'+tier);if(el)e
 /* TOGGLE DONE */
 function toggleDone(e,id){
   e.stopPropagation();
-  if(doneSet.has(id))doneSet.delete(id);else doneSet.add(id);
-  saveDone();
+  var t=tasks.find(function(x){return x.id===id;});
+  if(!t)return;
+  t.done=!t.done;
   var card=document.getElementById('card-'+id);
   var chk=card.querySelector('.task-check');
-  if(doneSet.has(id)){card.classList.add('done-card');chk.classList.add('checked');}
+  if(t.done){card.classList.add('done-card');chk.classList.add('checked');}
   else{card.classList.remove('done-card');chk.classList.remove('checked');}
+  persistTasks('Done state: '+id+(t.done?' checked':' unchecked'));
 }
 
 /* DRAWER */
