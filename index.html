@@ -118,6 +118,11 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 #stale-banner .focus-act-item{font-size:12px;color:#1e3a8a;border-left-color:#ef4444;padding:3px 0 3px 9px;margin-bottom:4px;white-space:normal;line-height:1.35}
 #stale-banner .focus-await-item{font-size:12px;color:#1e40af;border-left-color:#3b82f6;padding:3px 0 3px 9px;margin-bottom:4px;white-space:normal;line-height:1.35}
 #stale-banner .focus-more{color:#3b82f6;padding-left:9px}
+/* BOARD TOOLBAR */
+.board-toolbar{display:flex;align-items:center;justify-content:flex-end;margin-bottom:12px;gap:8px}
+.done-toggle-btn{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:7px;padding:5px 12px;font-size:12px;font-weight:600;color:#64748b;cursor:pointer;transition:background .15s,color .15s}
+.done-toggle-btn:hover{background:#e2e8f0;color:#334155}
+.done-toggle-btn.showing{background:#f0fdf4;border-color:#bbf7d0;color:#15803d}
 /* SIDEBAR STALE STATS */
 .sb-stale-stats{margin:4px 10px 8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 14px 10px;text-align:center}
 .sb-stale-num{font-size:26px;font-weight:800;color:#bf6060;line-height:1}
@@ -340,6 +345,9 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
   <!-- Board View -->
   <div class="content-area" id="view-board">
     <div id="stale-banner"></div>
+    <div class="board-toolbar">
+      <button class="done-toggle-btn" id="done-toggle-btn" onclick="toggleShowDone()"></button>
+    </div>
     <div class="tier-grid">
       <div class="tier-col tier-today" id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
         <div class="tier-header"><span class="tier-dot dot-today"></span><span class="tier-title">Today</span><span class="tier-count" id="count-today">0</span></div>
@@ -380,6 +388,7 @@ var INBOX_RAW='https://raw.githubusercontent.com/begb0037admin/work-inbox/main';
 var TIERS=['today','tomorrow','week','parked'];
 var DONE_KEY='commandCentre_done_v1';
 var DISMISS_KEY='cc_sg_dismissed_v1';
+var SHOW_DONE_KEY='cc_show_done_v1';
 
 var tasks=[];
 var dragId=null;
@@ -388,6 +397,28 @@ var sgDragIdx=null;
 /* DONE STATE — persisted in tasks.json via Worker, not localStorage */
 function isDone(id){var t=tasks.find(function(x){return x.id===id;});return t?!!t.done:false;}
 function saveDone(){/* no-op — done state now in tasks.json */}
+
+/* SHOW/HIDE DONE TOGGLE */
+function getShowDone(){return localStorage.getItem(SHOW_DONE_KEY)==='1';}
+function toggleShowDone(){
+  var next=!getShowDone();
+  localStorage.setItem(SHOW_DONE_KEY,next?'1':'0');
+  renderBoard();
+}
+function updateDoneToggleBtn(){
+  var btn=document.getElementById('done-toggle-btn');
+  if(!btn)return;
+  var showing=getShowDone();
+  var doneCount=tasks.filter(function(t){return !!t.done;}).length;
+  if(showing){
+    btn.textContent='Hide done ('+doneCount+')';
+    btn.classList.add('showing');
+  } else {
+    btn.textContent='Show done'+(doneCount?' ('+doneCount+')':'');
+    btn.classList.remove('showing');
+  }
+  btn.style.display=doneCount>0?'':'none';
+}
 
 /* MY LINKS */
 var QL_KEY='commandCentre_quicklinks_v1';
@@ -470,12 +501,15 @@ async function loadTasks(){
 
 /* RENDER */
 function renderBoard(){
+  var showDone=getShowDone();
+  updateDoneToggleBtn();
   TIERS.forEach(function(tier){
     var list=document.getElementById('list-'+tier);
     var count=document.getElementById('count-'+tier);
-    var items=tasks.filter(function(t){return t.tier===tier;});
+    var allItems=tasks.filter(function(t){return t.tier===tier;});
+    var items=showDone?allItems:allItems.filter(function(t){return !t.done;});
     count.textContent=items.length;
-    var badge=document.getElementById('badge-'+tier);if(badge)badge.textContent=items.length;
+    var badge=document.getElementById('badge-'+tier);if(badge)badge.textContent=allItems.length;
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
   var badgeTotal=document.getElementById('badge-total'); if(badgeTotal) badgeTotal.textContent=tasks.length;
@@ -637,6 +671,8 @@ function toggleDone(e,id){
   var chk=card.querySelector('.task-check');
   if(t.done){card.classList.add('done-card');chk.classList.add('checked');}
   else{card.classList.remove('done-card');chk.classList.remove('checked');}
+  updateDoneToggleBtn();
+  if(t.done&&!getShowDone()){card.style.transition='opacity .3s';card.style.opacity='0';setTimeout(function(){renderBoard();},320);}
   persistTasks('Done state: '+id+(t.done?' checked':' unchecked'));
 }
 
