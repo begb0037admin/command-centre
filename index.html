@@ -535,9 +535,9 @@ function renderStaleBanner(){
   stale.forEach(function(t,i){
     rows+='<div class="stale-row"><span class="stale-age">'+ages[i]+'d</span>'+escHtml(t.title)+'</div>';
   });
-  var left='<div class="stale-banner-left"><div class="stale-banner-title">Watch — stale today</div><div class="stale-banner-sub">These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done.</div>'+rows+'</div>';
-  var right='<div class="stale-divider"></div><div class="stale-banner-right"><div class="stale-stat-block"><div class="stale-stat-num">'+stale.length+'</div><div class="stale-stat-label">tasks stalled in Today</div></div><div><div class="stale-stat-row"><span class="stale-stat-row-label">Oldest</span><span class="stale-stat-row-val">'+maxAge+' days</span></div><div class="stale-stat-row"><span class="stale-stat-row-label">Average age</span><span class="stale-stat-row-val">'+avgAge+' days</span></div><div class="stale-stat-row"><span class="stale-stat-row-label">Stalled 2+ weeks</span><span class="stale-stat-row-val">'+over2w+' task'+(over2w!==1?'s':'')+'</span></div></div></div>';
-  banner.innerHTML=left+right;
+  var stats='<div class="stale-banner-right"><div class="stale-stat-block"><div class="stale-stat-num">'+stale.length+'</div><div class="stale-stat-label">tasks stalled in Today</div></div><div><div class="stale-stat-row"><span class="stale-stat-row-label">Oldest</span><span class="stale-stat-row-val">'+maxAge+' days</span></div><div class="stale-stat-row"><span class="stale-stat-row-label">Average age</span><span class="stale-stat-row-val">'+avgAge+' days</span></div><div class="stale-stat-row"><span class="stale-stat-row-label">Stalled 2+ weeks</span><span class="stale-stat-row-val">'+over2w+' task'+(over2w!==1?'s':'')+'</span></div></div></div>';
+  var tasklist='<div class="stale-banner-left"><div class="stale-banner-title">Watch — stale today</div><div class="stale-banner-sub">These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done.</div>'+rows+'</div>';
+  banner.innerHTML=stats+'<div class="stale-divider"></div>'+tasklist;
   banner.style.display='flex';
 }
 
