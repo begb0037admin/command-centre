@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-21 (Wave 2 v2.1 propagation complete — all 9 repos at v2.1, outstanding items retired)
+**Last updated:** 2026-06-23 (Worker persistence resolved; tasks.json restored and backed up)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -16,7 +16,7 @@
 
 ---
 
-## Current State (fully working as of 2026-06-18)
+## Current State (fully working as of 2026-06-23)
 
 ### Working
 - GitHub Pages live — `begb0037admin.github.io/command-centre/`
@@ -28,14 +28,14 @@
 - Done state: checkbox tick fades + strikes through card, persists in localStorage (`commandCentre_done_v1`)
 - Hide/Show Done toggle in header
 - Time-aware greeting: Good morning / afternoon / evening, Kevin
-- Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser
+- Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser ✅ **Confirmed working 2026-06-23**
 - 'From your inbox' suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
 - **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. "All" returns to the four-column grid. Add button targets the focused tier.
 - **Badge CSS normalised** — NEW (green) and UPDATED (blue) badges match Work Inbox exactly
 - **Emoji removed** from all three "Open email" button locations
+- **Save-status toast** — centred bottom toast: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
 
 ### Known Limitations (by design — v1)
-- Manual tasks added via quick-add panel persist via Cloudflare Worker write-back.
 - Done state in localStorage is keyed by task ID — if `tasks.json` is regenerated with new IDs, done state resets.
 
 ### GitHub Pages
@@ -106,7 +106,7 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 |------|-------------|
 | `governance/GOVERNANCE_WORKFLOW_STANDARD.md` | `493c93d7abb3d89f4efa770a5430ebd693a29511` |
 | `governance/templates/PHASE_REVIEW_REQUEST_TEMPLATE.md` | `bcc71e7708a6a86f89ee37a76fad380f6527c881` |
-| `governance/templates/PHASE_CHALLENGE_REPORT_TEMPLATE.md` | `1f77c00bb35a397037cc21db759ad289ba4d8acf` |
+| `governance/templates/PHASE_CHALLENGE_REPORT_TEMPLATE.md` | `1f77c00bb35a397037cc18ad0d0b759ad289ba4d8acf` |
 | `governance/templates/PHASE_REMEDIATION_REQUEST_TEMPLATE.md` | `74407d59ecaac165c48e6094d27894164ec33f8c` |
 | `governance/templates/PHASE_VALIDATION_REQUEST_TEMPLATE.md` | `d370ba3b58cc1611b0bb95467c6e6ebe3a3cd4e3` |
 | `governance/templates/PHASE_VALIDATION_REPORT_TEMPLATE.md` | `c49e079346ad6fc025423b0f58c8e5a0c96f209c` |
@@ -230,9 +230,7 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 
 ## Next Action
 
-**BLOCKING — Cloudflare Worker PAT (Priority 0):** Card moves / tier changes / notes edits do not persist across page refresh. `persistTasks()` calls the Cloudflare Worker, which holds a GitHub PAT that has almost certainly expired. Kevin must rotate the PAT in Cloudflare dashboard → Workers → `cc-tasks-writer` → Settings → Variables and Secrets. Full detail in ROADMAP.md Priority 0.
-
-**Governance:** Codex to validate remediation evidence (`PHASE_1_REMEDIATION_EVIDENCE.md`) against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`. All outstanding Phase 1 items are now resolved — no blocking items remain before validation.
+**Governance (Stage 5 — Codex):** Codex to validate remediation evidence (`PHASE_1_REMEDIATION_EVIDENCE.md`) against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`. No blocking items remain before validation.
 
 **ROADMAP item 1:** Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API.
 
@@ -333,3 +331,26 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 - All 7 repos confirmed at v2.1 blob `fba303449462c5a1c031cf47010ae8788f8a1db2` ✅
 - command-centre closure check: backup before write confirmed by timestamp (14:44:55Z → 14:47:48Z) ✅
 - **Full estate now at v2.1. All Phase 1 outstanding items retired. Workflow ready for Stage 5.**
+
+### 2026-06-23 — Cloudflare Worker persistence fix + data restore
+
+**Root causes identified and fixed (end-to-end Worker write now confirmed working):**
+
+1. **Schema mismatch** — `persistTasks()` was sending `{content:{tasks:[...]}}` but the Worker reads `{doc}`. Fixed in commit `0641890`. Dashboard now sends `{doc:{tasks:[]}}`.
+2. **Cloudflare secret name mismatch** — Worker code reads `env.HRIS_GITHUB_PAT` but the secret was registered as `GITHUB_PAT`. Kevin added `HRIS_GITHUB_PAT` with the correct PAT value to Cloudflare Worker secrets.
+
+**Save-status toast added** — centred bottom toast in `persistTasks()`: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row also added.
+
+**Data corruption event (2026-06-23 ~08:00):**
+- First successful Worker write used Kevin's cached browser (old code still sending `{content}` not `{doc}`). `doc` was `undefined`. Worker wrote base64(`undefined`) to `data/tasks.json` — all 24 tasks wiped.
+- Root cause: browser had cached `index.html` before the schema fix (commit `0641890`) was deployed.
+- Corrupted state backed up: `Archive/tasks_backup_20260623_0946_corrupted.json`.
+- Restored `data/tasks.json` to commit `bdc1d42` (last valid state — 24 tasks) via GitHub Contents API. Restore commit: `cad2a9fb`.
+- Restore verified: blob SHA `187343a777456f122fcf38934158cd1a8bff452d` matches `bdc1d42` exactly.
+
+**Restore point:**
+- Archive backup: `Archive/tasks_backup_20260623_0821.json` — commit `7d46f47c`
+- tasks.json blob SHA at restore point: `187343a777456f122fcf38934158cd1a8bff452d`
+- 24 tasks: Today=7, Tomorrow=3, This Week=6, Parked=8
+
+**Confirmed working 2026-06-23:** card moves, tier changes, notes edits, and inbox suggestion drags all persist across page refresh. Kevin tested and confirmed.
