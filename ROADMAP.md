@@ -1,6 +1,6 @@
 # command-centre — Roadmap
 
-**Last updated:** 2026-06-22
+**Last updated:** 2026-06-23
 **Module 1 status:** ✅ Complete and live
 
 ---
@@ -22,16 +22,16 @@
 
 ## Next — Module 1 Automation
 
-### Priority 0 — Cloudflare Worker PAT refresh (BLOCKING)
-Card moves, tier changes, notes edits, and inbox suggestion drags do not persist across page refresh. Root cause: `persistTasks()` in `index.html` calls the Cloudflare Worker (`cc-tasks-writer.kevinlelitte.workers.dev`) which holds a fine-grained GitHub PAT as a server-side secret. That PAT has almost certainly expired. Symptoms: UI updates instantly (in-memory), but on refresh `tasks.json` is unchanged.
+### Priority 0 — Cloudflare Worker persistence ✅ Resolved — 2026-06-23
 
-**Fix required (Kevin action):**
-1. Log in to Cloudflare dashboard → Workers → `cc-tasks-writer` → Settings → Variables and Secrets
-2. Rotate the fine-grained GitHub PAT (Contents: Read & Write on `command-centre` + `work-inbox`)
-3. Replace the secret value — no code change needed
+Two root causes identified and fixed:
 
-**Next Claude action (once PAT confirmed refreshed):**
-- Add visible save-status feedback to `persistTasks()` — a toast showing "Saved ✓" or "Save failed ✗ (HTTP XXX)" so failures surface immediately in future.
+1. **Schema mismatch** — `persistTasks()` was sending `{content:{tasks:[]}}` but the Worker reads `{doc}`. Fixed: dashboard now sends `{doc:{tasks:[]}}` (commit `0641890`).
+2. **Cloudflare secret name mismatch** — Worker code reads `env.HRIS_GITHUB_PAT` but the secret was stored as `GITHUB_PAT`. Fixed: Kevin added `HRIS_GITHUB_PAT` to Cloudflare Worker secrets (2026-06-23).
+
+**Also added:** Save-status toast in `persistTasks()` — "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
+
+Confirmed working 2026-06-23: card moves, tier changes, notes edits, and inbox suggestion drags all persist across page refresh.
 
 ### Priority 1 — Granola → Task write-back
 Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API. This is the core automation loop. Also resolves the manual-task persistence limitation in v1.
