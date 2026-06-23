@@ -235,6 +235,25 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 #save-toast.saving{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe}
 #save-toast.success{background:#f0fdf4;color:#166534;border:1px solid #86efac}
 #save-toast.error{background:#fef2f2;color:#991b1b;border:1px solid #fca5a5;cursor:pointer}
+/* MY LINKS */
+.ql-section-header{display:flex;align-items:center;justify-content:space-between}
+.ql-add-btn{background:none;border:none;color:rgba(255,255,255,.5);font-size:18px;line-height:1;cursor:pointer;padding:0 2px;font-weight:300}
+.ql-add-btn:hover{color:#fff}
+.ql-form-input{width:100%;font-family:inherit;font-size:12px;border:1.5px solid rgba(255,255,255,.2);border-radius:6px;padding:6px 8px;background:rgba(255,255,255,.08);color:#fff;outline:none;margin-bottom:5px;box-sizing:border-box}
+.ql-form-input::placeholder{color:rgba(255,255,255,.35)}
+.ql-form-input:focus{border-color:rgba(255,255,255,.4)}
+.ql-form-btns{display:flex;gap:5px}
+.ql-save-btn{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:11.5px;padding:4px 10px;border-radius:5px;cursor:pointer;font-family:inherit}
+.ql-save-btn:hover{background:rgba(255,255,255,.28)}
+.ql-cancel-btn{background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);font-size:11.5px;padding:4px 8px;border-radius:5px;cursor:pointer;font-family:inherit}
+.ql-cancel-btn:hover{color:rgba(255,255,255,.8)}
+.ql-link-row{display:flex;align-items:center;padding:6px 10px;border-radius:7px;transition:background .15s}
+.ql-link-row:hover{background:rgba(255,255,255,.1)}
+.ql-link-a{flex:1;font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.ql-link-row:hover .ql-link-a{color:#fff}
+.ql-remove-btn{background:none;border:none;color:rgba(255,255,255,.25);font-size:14px;cursor:pointer;padding:0 2px;flex-shrink:0;display:none;line-height:1}
+.ql-link-row:hover .ql-remove-btn{display:block}
+.ql-remove-btn:hover{color:#f87171}
 </style>
 </head>
 <body>
@@ -291,6 +310,19 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
     <a href="https://begb0037admin.github.io/work-inbox/" target="_blank">Work Inbox</a>
     <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank">HRIS Dashboard</a>
     <a href="https://begb0037admin.github.io/hris-launcher/" target="_blank">HRIS Launcher</a>
+    <a href="https://myaccess.theaccessgroup.com/dashboard/" target="_blank">Access Group Support</a>
+    <a href="https://begb0037admin.github.io/hr-fa-knowledge-base/" target="_blank">FA Knowledge Base</a>
+    <a href="https://oxford.saasiteu.com/Account/SelectRole?returnUrl=%2fModules%2fSelfService%2f%23home&NoDefaultProvider=True" target="_blank">OSM IT Services</a>
+    <div class="sb-section ql-section-header">My Links<button class="ql-add-btn" onclick="showAddLink()" title="Add link">+</button></div>
+    <div id="ql-add-form" style="display:none;padding:0 8px 8px">
+      <input id="ql-label" class="ql-form-input" type="text" placeholder="Label">
+      <input id="ql-url" class="ql-form-input" type="text" placeholder="https://">
+      <div class="ql-form-btns">
+        <button class="ql-save-btn" onclick="saveCustomLink()">Save</button>
+        <button class="ql-cancel-btn" onclick="hideAddLink()">Cancel</button>
+      </div>
+    </div>
+    <div id="custom-links"></div>
   </nav>
   <div class="sb-clock" id="sb-clock"></div>
   <div class="sb-resize-handle" id="sb-resize"></div>
@@ -355,6 +387,52 @@ var sgDragIdx=null;
 var doneSet=new Set(JSON.parse(localStorage.getItem(DONE_KEY)||'[]'));
 function saveDone(){localStorage.setItem(DONE_KEY,JSON.stringify([...doneSet]));}
 
+/* MY LINKS */
+var QL_KEY='commandCentre_quicklinks_v1';
+function getCustomLinks(){return JSON.parse(localStorage.getItem(QL_KEY)||'[]');}
+function saveCustomLinks(links){localStorage.setItem(QL_KEY,JSON.stringify(links));}
+function renderCustomLinks(){
+  var links=getCustomLinks();
+  var el=document.getElementById('custom-links');
+  if(!el)return;
+  el.innerHTML='';
+  links.forEach(function(link,i){
+    var row=document.createElement('div');
+    row.className='ql-link-row';
+    var label=link.label.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    var url=link.url.replace(/"/g,'&quot;');
+    row.innerHTML='<a class="ql-link-a" href="'+url+'" target="_blank">'+label+'</a>'
+      +'<button class="ql-remove-btn" onclick="removeCustomLink('+i+')" title="Remove">\xd7</button>';
+    el.appendChild(row);
+  });
+}
+function showAddLink(){
+  document.getElementById('ql-add-form').style.display='';
+  document.getElementById('ql-label').focus();
+}
+function hideAddLink(){
+  document.getElementById('ql-add-form').style.display='none';
+  document.getElementById('ql-label').value='';
+  document.getElementById('ql-url').value='';
+}
+function saveCustomLink(){
+  var label=document.getElementById('ql-label').value.trim();
+  var url=document.getElementById('ql-url').value.trim();
+  if(!label||!url)return;
+  if(!/^https?:\/\//i.test(url))url='https://'+url;
+  var links=getCustomLinks();
+  links.push({label:label,url:url});
+  saveCustomLinks(links);
+  renderCustomLinks();
+  hideAddLink();
+}
+function removeCustomLink(i){
+  var links=getCustomLinks();
+  links.splice(i,1);
+  saveCustomLinks(links);
+  renderCustomLinks();
+}
+
 /* DISMISS */
 function sgDismissed(){try{return JSON.parse(localStorage.getItem(DISMISS_KEY)||'{}')}catch(e){return{}}}
 function dismissSuggestion(id){
@@ -385,6 +463,7 @@ async function loadTasks(){
   var lu=document.getElementById('last-updated');
   if(lu){var n=new Date();lu.textContent='Updated '+n.toLocaleDateString('en-GB',{day:'numeric',month:'short'})+' '+n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
   renderBoard();
+  renderCustomLinks();
 }
 
 /* RENDER */
