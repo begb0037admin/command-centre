@@ -559,7 +559,7 @@ function renderStaleBanner(){
   todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push(a.replace('[TODO]','').trim());});});
   var col2='';
   if(todos.length){
-    var show=Math.min(todos.length,5);var b='';
+    var show=Math.min(todos.length,6);var b='';
     todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
     if(todos.length>show)b+='<div class="focus-more">+'+(todos.length-show)+' more</div>';
     col2='<div class="bar-col"><div class="bar-col-title">Act now</div>'+b+'</div>';
@@ -569,7 +569,7 @@ function renderStaleBanner(){
   tasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
   var col3='';
   if(awaits.length){
-    var showA=Math.min(awaits.length,4);var b='';
+    var showA=Math.min(awaits.length,5);var b='';
     awaits.slice(0,showA).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
     if(awaits.length>showA)b+='<div class="focus-more">+'+(awaits.length-showA)+' more</div>';
     col3='<div class="bar-col"><div class="bar-col-title">Waiting on</div>'+b+'</div>';
