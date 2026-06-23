@@ -74,19 +74,22 @@
       "tier": "today",
       "source": "Meeting with Laura Porter 03/06",
       "emailRef": "",
-      "summary": "Three intranet pages still link to old IM Principles URL; update and test planned 22 June before retirement 23/24 June.",
+      "summary": "TODAY is retirement date. E-Form save bug (case 69001555) may be fixed by Maura — Kevin to review and confirm, then complete remaining URL updates.",
       "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages still link to the old location: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page expected to be retired 23/24 June. Agreed approach: update all links to the new URL, use hyperlinked text ('IM Principles' / 'internal mobility principles') rather than displaying the full long URL, test before making any live changes, and check whether links can open in a new tab. Updates planned for 22 June ahead of old page retirement. Follow-up with Laura scheduled 15-16 June.",
       "actions": [
         "[03 Jun 2026] Meeting with Laura Porter -- reviewed three pages needing link updates.",
         "[03 Jun 2026] New URL confirmed live later that day: https://unioxfordnexus.sharepoint.com/sites/OXINTRANET-working-here/SitePages/internal-mobility-principles.aspx",
-        "[TODO -- today 16 Jun] Reconnect with Laura Porter as planned.",
-        "[TODO -- 22 Jun] Test new URL, update links on all three identified pages, replace visible long URLs with hyperlinked text, check whether links open in a new tab.",
-        "[TODO] Email Laura with updates if changes are made before they next meet.",
-        "[MONITOR] Old page retirement -- expected 23/24 June.",
+        "[16 Jun 2026] Reconnected with Laura Porter as planned.",
+        "[22 Jun 2026] URL change approach confirmed working (per Laura 20 Jun) — link updates progressing ahead of retirement.",
+        "[17 Jun 2026] Emailed Laura with update on changes.",
+        "[MONITOR] Old page retirement — TODAY 23/24 June.",
         "[17 Jun 2026] Kevin confirmed with Laura Porter on 16 June that the additional couple of days' contingency before 23/24 June URL retirement is useful. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)",
         "[17 Jun 2026] Kevin provided Laura Porter an update on the IM Principles URL change on 16 June. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)",
         "[20 Jun 2026] Laura Porter confirmed the URL change approach is working well and noted she does not need to include the full URL, providing contingency buffer through 23/24 June retirement window. (email: Laura Porter - RE: IM Principles - change to URL)",
-        "[23 Jun 2026] Kevin clarified to Sarah Murphy that today (23 June) is the actual scheduled change day for the IM URL change, confirming critical timing. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)"
+        "[23 Jun 2026] Kevin clarified to Sarah Murphy that today (23 June) is the actual scheduled change day for the IM URL change, confirming critical timing. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)",
+        "[23 Jun 2026] Urgent escalation — unable to save changes in Search Appointments V4 E-Form Maintenance (case 69001555); returns \"Sorry But Page Not Found\" in Production, OXU and OXZ. Blocking URL updates on vacancy application pages. Kevin requested urgent Teams call with Maura McGlynn (AG). Escalated to Sarah Murphy.",
+        "[23 Jun 2026] Maura McGlynn applied a config fix — reports changes now saving successfully. Kevin asked to review and confirm. (case: 69001555)",
+        "[AWAITING] Kevin to review Maura's config fix and confirm E-Form save issue resolved in Search Appointments V4."
       ],
       "dateAdded": "2026-06-03",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000"
