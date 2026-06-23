@@ -15,10 +15,12 @@
         "[10 Jun 2026] Team meeting today (10 June) will focus on KPIs and Statistics; each team should be ready to present. (email: Simon Burford - Team Meeting - 10th June)",
         "[10 Jun 2026] Done - confirmed by Kevin. Closed.",
         "[10 Jun 2026] Kevin shared a KPI presentation with Michael O'Sullivan on 9 June, indicating progress on team coordination work as part of the return briefing cycle. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - May 2026\" with you)",
-        "[19 Jun 2026] Kevin checked with the team on 15 June regarding support cover during early July while on leave, relevant to team briefing and working arrangements. (email: Kevin (sent to: Julie Hickman; Sarah Rowles; Marie Cooksey; Simon Burford; Athena Artuso) - Re: Support cover for first two weeks in July)"
+        "[19 Jun 2026] Kevin checked with the team on 15 June regarding support cover during early July while on leave, relevant to team briefing and working arrangements. (email: Kevin (sent to: Julie Hickman; Sarah Rowles; Marie Cooksey; Simon Burford; Athena Artuso) - Re: Support cover for first two weeks in July)",
+        "[23 Jun 2026] Julie has provided notice that both Michael and Emma are on leave during the week commencing 1 July, relevant to team briefing and support coverage planning. (email: Julie Hickman - RE: Support cover for first two weeks in July)",
+        "[23 Jun 2026] Kevin sent a follow-up request to Michael O'Sullivan asking him to confirm case creation email impact following new starter setup. (email: Kevin (sent to: Michael O'Sullivan) - Re: #External# Unexpected Case Creation Emails Following New Starter Setup)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167640000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007839150C30000",
       "done": true
     },
     {
@@ -63,10 +65,11 @@
         "[10 Jun 2026] Kevin replied to Julie Hickman confirming AG are ready to proceed on Chemistry bulk delete; two items needed from Kevin's team before they can progress. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)",
         "[10 Jun 2026] Kevin confirmed receipt of export from Julie Hickman for Chemistry bulk delete and is passing details across to Reenu Delaney to progress the AG case. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)",
         "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live. Awaiting confirmation email when live deployment complete. (case: 68974493)",
-        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin."
+        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin.",
+        "[23 Jun 2026] Access Support has updated case #68978576, likely concerning Chemistry bulk deletion or related PeopleXD work. (email: Access Support - Access Support Team | 68978576 - Your Case Has Been Updated)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077ECC59D40000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078716632D0000"
     },
     {
       "id": "t015",
@@ -390,7 +393,7 @@
       "tier": "today",
       "source": "Inbox 2026-06-11 15:01",
       "emailRef": "RE: #External# PeopleXD Insight Reporting - Quote Request for Holiday Records Reports",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000783912D6B0000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000784F08A3A0000",
       "summary": "Flex points expire 29 June; Chemistry committed, Holiday Records quote pending — remaining balance to confirm.",
       "description": "Ann-Marie Topliss has created FlexPoints case #69001638. Kevin's flex points expire by 29 June 2026. Chemistry bulk deletion (£525) is already committed, leaving remaining points to be allocated before expiry. This needs coordination with Simon and Marie's plan (t003). Holiday Records Reports quote now in progress (t1781099880461).",
       "actions": [
@@ -400,7 +403,9 @@
         "[TODO] Confirm total committed spend and remaining balance once quote received.",
         "[TODO] Identify any further flex point uses before 29 June expiry.",
         "[17 Jun 2026] Kevin sought Marie Cooksey's approval for Holiday Records reporting work flex points spend on 15 June. (email: Kevin (sent to: Marie Cooksey; Simon Burford) - Holiday Records Reporting – FlexPoints Approval)",
-        "[20 Jun 2026] Ann-Marie Topliss confirmed FlexPoints case #69001638 has been formally transitioned to Access Group and is progressing to quote stage. (email: Ann-Marie Topliss - RE: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)"
+        "[20 Jun 2026] Ann-Marie Topliss confirmed FlexPoints case #69001638 has been formally transitioned to Access Group and is progressing to quote stage. (email: Ann-Marie Topliss - RE: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)",
+        "[23 Jun 2026] Access Support has updated case #69001655 with progress on flex points allocation. (email: Access Support - Access Support Team | 69001655 - Your Case Has Been Updated)",
+        "[23 Jun 2026] Kevin escalated case #69001655 to Sarah Murphy on 19 June, requesting assistance with resolution. (email: Kevin (sent to: Sarah Murphy) - Escalation Request – Case 69001655)"
       ],
       "dateAdded": "2026-06-11"
     },
@@ -461,10 +466,11 @@
         "[TODO] Reply to Conor / coordinate with Simon on next steps for multi-company setup.",
         "[17 Jun 2026] Kevin replied to Conor O'Brien with Pay Administered By values found in UOXU for the multi-company setup work. (email: Kevin (sent to: Conor O'Brien) - Re: Organisational Hierarchy & Payroll Company Set-Up)",
         "[17 Jun 2026] Kevin sent Conor O'Brien a draft REF2029 load file based on the test HR Reference File format for multi-company setup. (email: Kevin (sent to: Conor O'Brien) - Re: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)",
-        "[20 Jun 2026] Kevin escalated Case 69001655 (Multi Company Setup FP 68261303) to Sarah Murphy at Access Group requesting dev team involvement. (email: Kevin (sent to: Sarah Murphy) - Escalation Request – Case 69001655)"
+        "[20 Jun 2026] Kevin escalated Case 69001655 (Multi Company Setup FP 68261303) to Sarah Murphy at Access Group requesting dev team involvement. (email: Kevin (sent to: Sarah Murphy) - Escalation Request – Case 69001655)",
+        "[23 Jun 2026] Simon has updated Conor O'Brien with the project team's proposal for post-design multi-company setup following today's meeting. (email: Simon Burford - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)"
       ],
       "dateAdded": "2026-06-15",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000784F08A3A0000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1D0000"
     }
   ]
 }
