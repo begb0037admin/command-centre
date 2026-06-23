@@ -46,7 +46,7 @@
       "tier": "today",
       "source": "Case 68974493",
       "emailRef": "68974493 / 67938206",
-      "summary": "5,568 Chemistry staff need bulk appraisal deletion; awaiting Julie's export to forward to Reenu at AG.",
+      "summary": "UAT signed off 23 Jun — Reenu proceeding to live. Awaiting confirmation email.",
       "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie). Julie Hickman has run the affected employee report and will share the export via OneDrive.",
       "actions": [
         "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
@@ -55,13 +55,15 @@
         "[03 Jun 2026] Reenu Delaney requested appraisal cycle name and affected employee list.",
         "[09 Jun 2026] Email sent to Julie Hickman requesting details.",
         "[09 Jun 2026] Julie confirmed: cycle name '(DO NOT USE) CDR2025Chemistry', 5,568 staff to be removed. Report run by Julie -- OneDrive export incoming.",
-        "[AWAITING] Julie to share OneDrive export of affected employee list.",
-        "[TODO -- on receipt] Forward cycle name + employee list export to Reenu Delaney at AG to action the deletion.",
-        "[TODO] Reply to Julie confirming details received and next steps.",
+        "[10 Jun 2026] Julie shared OneDrive export of affected employee list — received by Kevin.",
+        "[10 Jun 2026] Forwarded cycle name and employee list export to Reenu Delaney at AG.",
+        "[10 Jun 2026] Replied to Julie confirming details received and next steps.",
         "[10 Jun 2026] Julie Hickman is on annual leave 10 June; queries should be redirected per her auto-reply instructions. (email: Julie Hickman - Automatic reply: Access Support Team | 68974493 - New Case)",
         "[10 Jun 2026] Access Group case 68978576 has been updated; monitor for resolution progress. (email: Access Support - Access Support Team | 68978576 - Your Case Has Been Updated)",
         "[10 Jun 2026] Kevin replied to Julie Hickman confirming AG are ready to proceed on Chemistry bulk delete; two items needed from Kevin's team before they can progress. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)",
-        "[10 Jun 2026] Kevin confirmed receipt of export from Julie Hickman for Chemistry bulk delete and is passing details across to Reenu Delaney to progress the AG case. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)"
+        "[10 Jun 2026] Kevin confirmed receipt of export from Julie Hickman for Chemistry bulk delete and is passing details across to Reenu Delaney to progress the AG case. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)",
+        "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live. Awaiting confirmation email when live deployment complete. (case: 68974493)",
+        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin."
       ],
       "dateAdded": "2026-06-08",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077ECC59D40000"
