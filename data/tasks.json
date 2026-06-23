@@ -407,7 +407,8 @@
         "[23 Jun 2026] Access Support has updated case #69001655 with progress on flex points allocation. (email: Access Support - Access Support Team | 69001655 - Your Case Has Been Updated)",
         "[23 Jun 2026] Kevin escalated case #69001655 to Sarah Murphy on 19 June, requesting assistance with resolution. (email: Kevin (sent to: Sarah Murphy) - Escalation Request – Case 69001655)"
       ],
-      "dateAdded": "2026-06-11"
+      "dateAdded": "2026-06-11",
+      "done": true
     },
     {
       "id": "t019",
