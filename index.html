@@ -658,7 +658,7 @@ function showSaveToast(state,text){
 async function persistTasks(msg){
   showSaveToast('saving','Saving…');
   try{
-    var res=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'write',file:'data/tasks.json',content:{tasks:tasks},message:msg})});
+    var res=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({doc:{tasks:tasks},message:msg})});
     if(!res.ok){
       showSaveToast('error','Save failed — HTTP '+res.status+' (tap to dismiss)');
       console.warn('Writer error',res.status);
