@@ -230,7 +230,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .section-rule{flex:1;height:1px;background:#e8ecf4}
 
 /* SAVE TOAST */
-#save-toast{position:fixed;bottom:24px;right:24px;z-index:9999;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:opacity .3s;opacity:0;pointer-events:none}
+#save-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.18);transition:opacity .3s;opacity:0;pointer-events:none;white-space:nowrap}
 #save-toast.visible{opacity:1;pointer-events:auto}
 #save-toast.saving{background:#eff6ff;color:#1e3a8a;border:1px solid #bfdbfe}
 #save-toast.success{background:#f0fdf4;color:#166534;border:1px solid #86efac}
@@ -284,6 +284,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
       <div class="task-counts-row"><span class="task-counts-name">Tomorrow</span><span class="task-counts-val" id="tc-tomorrow">0</span></div>
       <div class="task-counts-row"><span class="task-counts-name">This week</span><span class="task-counts-val" id="tc-week">0</span></div>
       <div class="task-counts-row"><span class="task-counts-name">Actions due</span><span class="task-counts-val" id="tc-actions">0</span></div>
+      <div class="task-counts-row" id="tc-save-row" style="display:none"><span class="task-counts-name">Last save</span><span id="tc-save-val" style="font-size:12px;font-weight:700"></span></div>
     </div>
     <div class="sb-section">Daily Focus</div>
     <div id="focus-tasks" class="focus-tasks"></div>
@@ -645,14 +646,24 @@ function mergeRemote(remote){
 /* PERSIST */
 function showSaveToast(state,text){
   var t=document.getElementById('save-toast');
-  if(!t)return;
-  t.className='visible '+state;
-  t.textContent=text;
-  clearTimeout(t._timer);
-  if(state==='error'){
-    t.onclick=function(){t.className='';};
-  } else {
-    t._timer=setTimeout(function(){t.className='';},2500);
+  if(t){
+    t.className='visible '+state;
+    t.textContent=text;
+    clearTimeout(t._timer);
+    if(state==='error'){
+      t.onclick=function(){t.className='';};
+    } else {
+      t._timer=setTimeout(function(){t.className='';},3000);
+    }
+  }
+  if(state!=='saving'){
+    var row=document.getElementById('tc-save-row');
+    var val=document.getElementById('tc-save-val');
+    if(row&&val){
+      row.style.display='';
+      if(state==='success'){val.textContent='✓ OK';val.style.color='#4ade80';}
+      else{val.textContent='✗ '+text.replace(' (tap to dismiss)','');val.style.color='#f87171';}
+    }
   }
 }
 async function persistTasks(msg){
