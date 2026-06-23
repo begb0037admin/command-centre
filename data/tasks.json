@@ -195,6 +195,7 @@
       "description": "James Salas is on leave for two weeks (returning 18 June). As part of the handover (5 June), Kevin agreed to monitor the weekly DSC upload on Wednesday 10 June. This involves monitoring the SFTP and running system checks. James will be back in time for the following upload so this is a one-off cover.",
       "actions": [
         "[05 Jun] James handover completed -- Kevin confirmed as cover for Wednesday 10 June DSC upload.",
+        "[TODO] Monitor DSC upload on Wednesday 10 June.",
         "[10 Jun 2026] DSC upload monitored. James Salas confirms he is on annual leave from end of 5 June and returns 18 June. (email: James Salas Guillen - Annual leave and support during my absence)",
         "[10 Jun 2026] Team meeting scheduled for 10 June focused on KPIs and Statistics. (email: Simon Burford - Team Meeting - 10th June)"
       ],
@@ -484,6 +485,22 @@
       "actions": [
         "[23 Jun 2026] Task raised by Kevin -- send POC meeting notes to Chris as priority today.",
         "[TODO] Send POC meeting notes to Christopher Sanders."
+      ],
+      "dateAdded": "2026-06-23"
+    },
+    {
+      "id": "t023",
+      "title": "Respond to Support Call# 11688462 -- Ash VEA team",
+      "tier": "today",
+      "source": "Email 22/06 Marie Cooksey / Anna Carter-Windle",
+      "emailRef": "Support Call# 11688462",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663350000",
+      "summary": "Response required to Support Call# 11688462 re Ash VEA team. Kevin named in thread and response expected. Inbox triage incorrectly classified as FYI.",
+      "description": "Support Call# 11688462 concerns the Ash VEA team. Multiple emails received 22 June from Marie Cooksey and Anna Carter-Windle on this thread. Kevin is named in the emails and a response is expected. The inbox AI triage classified these as FYI based on subject line alone (support call reply chain) without reading the body, missing that Kevin needs to act. VEA context to be confirmed on opening the email.",
+      "actions": [
+        "[22 Jun 2026] Emails received from Marie Cooksey and Anna Carter-Windle on Support Call# 11688462 -- Ash VEA team. Kevin named, response expected.",
+        "[23 Jun 2026] Task created manually -- inbox triage had incorrectly classified as FYI.",
+        "[TODO] Open thread, read full context, and respond to Support Call# 11688462."
       ],
       "dateAdded": "2026-06-23"
     }
