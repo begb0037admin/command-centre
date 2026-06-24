@@ -215,10 +215,11 @@
         "[03 Jun 2026] DSE data feed went live -- three issues identified post go-live.",
         "[23 Jun 2026] Tony Boydell drafted Azure CR 126017 to exclude SBS users from DSE feed. James and Kevin both need to review.",
         "[TODO] Kevin to review and sign off Azure CR 126017 (SBS exclusion from DSE feed).",
-        "[AWAITING] James to progress contractor manual addition and email-less user resolution with supplier."
+        "[AWAITING] James to progress contractor manual addition and email-less user resolution with supplier.",
+        "[24 Jun 2026] Tony Boydell has drafted and refined the change request (Azure CR 126017) excluding SBS users from DSE feed; Kevin's sign-off now requested. (email: Tony Boydell - Re: DSE System - exclude SBS users )"
       ],
       "dateAdded": "2026-06-09",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007839150C30000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1A0000"
     },
     {
       "id": "t017",
@@ -330,10 +331,11 @@
         "[17 Jun 2026] Kevin sent Conor O'Brien a draft REF2029 load file and Pay Administered By values.",
         "[20 Jun 2026] Kevin escalated Case 69001655 to Sarah Murphy requesting dev team involvement.",
         "[23 Jun 2026] Simon updated Conor O'Brien with post-design multi-company setup proposal.",
-        "[AWAITING] Conor O'Brien / Access Group response to Simon's post-design proposal."
+        "[AWAITING] Conor O'Brien / Access Group response to Simon's post-design proposal.",
+        "[24 Jun 2026] Simon Burford updated Conor O'Brien on 23 June with the project team's post-design proposal for multi-company setup. (email: Julie Hickman - RE: Support cover for first two weeks in July)"
       ],
       "dateAdded": "2026-06-15",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1D0000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1C0000"
     },
     {
       "id": "t022",
@@ -393,7 +395,8 @@
         "[23 Jun 2026] Julie Hickman confirmed Michael AND Emma both absent w/c 1 July. No cover currently in place.",
         "[TODO] Identify who can provide first-line support cover w/c 1 July.",
         "[TODO] Notify Simon Burford and/or Marie Cooksey of the gap.",
-        "[TODO] Confirm cover arrangements and communicate to team."
+        "[TODO] Confirm cover arrangements and communicate to team.",
+        "[24 Jun 2026] Julie Hickman confirmed on 23 June that both Michael O'Sullivan AND Emma are on leave w/c 1 July, leaving no first-line support cover for that week. (email: Julie Hickman - RE: Support cover for first two weeks in July)"
       ],
       "dateAdded": "2026-06-23"
     },
