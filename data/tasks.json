@@ -91,13 +91,17 @@
       "tier": "tomorrow",
       "source": "SK 1-1 08/06",
       "emailRef": "",
-      "summary": "2,935 flex points expire early July; awaiting Athena's requirements doc before raising anything with AG.",
-      "description": "2,935 flex points remaining with expiry approximately early July 2026. Simon and Marie have already agreed a plan will be ready when Marie returns from leave. Chemistry bulk deletion (£525, AG, approved by Marie) is already committed. Remaining points need to be allocated before expiry -- options discussed include payroll training and manager holiday compliance reports.",
+      "summary": "Quote received: Holiday Records 3 reports = 2,800 flex points. Approve by 26 Jun. T&C: 3-month grace period after expiry.",
+      "description": "2,935 flex points remaining with expiry approximately 29 June 2026. Simon and Marie have already agreed a plan will be ready when Marie returns from leave. Chemistry bulk deletion (£525, AG, approved by Marie) is already committed. Holiday Records Reports quote received 24 Jun from Access Group (Alan Quirke, case 69001638): 3 reports at 2,800 flex points total. Key T&C: where FlexPoints are due to expire, the customer has 3 months to utilise them from the date of expiry -- so the 29 June expiry is not a hard cliff; Oxford has until approximately 29 September to use the committed points.",
       "actions": [
         "[08 Jun] Simon to send Athena's holiday compliance requirements email -- awaiting.",
         "[10 Jun 2026] Simon (Teams, after 1-1): Athena will ask Codex to output a requirements document for individual reports.",
-        "[AWAITING] Athena's requirements document - hold off raising anything with Access Group until she sends it through.",
-        "[TODO] Come up with report ideas together with Michael."
+        "[15 Jun 2026] Kevin requested quote from Mike West / Ann-Marie Topliss (Access Group) for Holiday Records Reports.",
+        "[20 Jun 2026] Ann-Marie Topliss confirmed case 69001638 transitioned to Optimisation Services and progressing to quote stage.",
+        "[24 Jun 2026] Quote received from Access Group (Alan Quirke, V1.0, dated 12 Jun). Scope: 3 reports -- Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Cost: 2,800 flex points (Payroll Consultant 2.5 days = 1,750pts; WFM Consultant 1.5 days = 1,050pts). Quote valid 14 days from 12 Jun -- EXPIRES 26 JUN. T&C: 3-month grace period after flex point expiry date.",
+        "[TODO] Approve flex points for case 69001638 TODAY or tomorrow -- quote expires 26 June.",
+        "[TODO] Confirm Marie Cooksey sign-off on flex points spend (sought 17 Jun, not yet confirmed).",
+        "[TODO] Confirm remaining balance after Chemistry (£525) and Holiday Records (2,800pts) are committed."
       ],
       "dateAdded": "2026-06-08",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167640000"
@@ -215,11 +219,10 @@
         "[03 Jun 2026] DSE data feed went live -- three issues identified post go-live.",
         "[23 Jun 2026] Tony Boydell drafted Azure CR 126017 to exclude SBS users from DSE feed. James and Kevin both need to review.",
         "[TODO] Kevin to review and sign off Azure CR 126017 (SBS exclusion from DSE feed).",
-        "[AWAITING] James to progress contractor manual addition and email-less user resolution with supplier.",
-        "[24 Jun 2026] Tony Boydell has drafted and refined the change request (Azure CR 126017) excluding SBS users from DSE feed; Kevin's sign-off now requested. (email: Tony Boydell - Re: DSE System - exclude SBS users )"
+        "[AWAITING] James to progress contractor manual addition and email-less user resolution with supplier."
       ],
       "dateAdded": "2026-06-09",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1A0000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007839150C30000"
     },
     {
       "id": "t017",
@@ -243,11 +246,14 @@
       "source": "Inbox 2026-06-10 09:43",
       "emailRef": "RE: Holiday Records Duty - proposed reports",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B50000",
-      "summary": "Three-report spec confirmed with Athena; quote request sent to AG (Mike West) — awaiting response.",
-      "description": "Athena Artuso has sent a full review of Holiday Records Duty requirements. Kevin has reviewed the revised three-report specification and confirmed it aligns with requirements. Now moving to quote stage with Access Group.",
+      "summary": "Three-report spec confirmed with Athena; quote received 24 Jun (2,800 flex points) -- approve by 26 Jun.",
+      "description": "Athena Artuso has sent a full review of Holiday Records Duty requirements. Kevin has reviewed the revised three-report specification and confirmed it aligns with requirements. Quote received from Access Group 24 June (case 69001638, Alan Quirke): 3 reports at 2,800 flex points total. Reports scoped: Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination.",
       "actions": [
         "[15 Jun 2026] Kevin initiated the Holiday Records Reports quote request with Mike West.",
-        "[AWAITING] Quote from Access Group (Mike West / Ann-Marie Topliss) for Holiday Records Reports."
+        "[20 Jun 2026] Ann-Marie Topliss confirmed case 69001638 transitioned to Optimisation Services.",
+        "[24 Jun 2026] Quote received (Alan Quirke, V1.0, dated 12 Jun). 2,800 flex points total -- Payroll Consultant 2.5 days (1,750pts) + WFM Consultant 1.5 days (1,050pts). Quote expires 26 June.",
+        "[TODO] Approve flex points for case 69001638 before 26 June -- provide PO or FlexPoints approval to Access Group.",
+        "[TODO] Confirm Marie Cooksey sign-off on spend."
       ],
       "dateAdded": "2026-06-10"
     },
@@ -268,19 +274,20 @@
     },
     {
       "id": "t1781204987882",
-      "title": "Allocate remaining flex points before 29 June expiry",
+      "title": "Holiday Records - 3 Reports Created -- approve flex points, case 69001638",
       "tier": "today",
-      "source": "Inbox 2026-06-11 15:01",
+      "source": "Inbox 2026-06-11 15:01 / Quote 24/06",
       "emailRef": "RE: #External# PeopleXD Insight Reporting - Quote Request for Holiday Records Reports",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000784F08A3A0000",
-      "summary": "Flex points expire 29 June; Chemistry committed, Holiday Records quote pending — remaining balance to confirm.",
-      "description": "Kevin's flex points expire by 29 June 2026. Chemistry bulk deletion (£525) is already committed. Holiday Records Reports quote in progress (case #69001638). Remaining points need to be allocated before expiry.",
+      "summary": "Quote received: 2,800 flex points for 3 Holiday Records reports. Quote expires 26 Jun -- approve today or tomorrow.",
+      "description": "Access Group quote received 24 June for case 69001638 (Holiday Records - 3 Reports Created). Prepared by Alan Quirke, V1.0, dated 12 June 2026. Scope: three reports built by a Payroll Consultant and WFM Consultant -- Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Cost: 2,800 flex points (Payroll Consultant 2.5 days = 1,750pts; WFM Consultant 1.5 days = 1,050pts; rate £1,100/day). Quote valid 14 days from 12 June -- expires 26 June. Next step: provide PO or FlexPoints approval; within 3 weeks of approval, consultant will reach out to agree delivery timelines. Key T&C: where FlexPoints are due to expire, the customer has 3 months to utilise them from the date of expiry (29 Jun expiry = use by ~29 Sep 2026).",
       "actions": [
         "[20 Jun 2026] Ann-Marie Topliss confirmed FlexPoints case #69001638 formally transitioned to Access Group and progressing to quote stage.",
         "[23 Jun 2026] Kevin escalated case #69001655 to Sarah Murphy requesting assistance with resolution.",
-        "[AWAITING] Quote from AG for Holiday Records Reports (case #69001638).",
-        "[TODO] Confirm total committed spend and remaining balance once quote received.",
-        "[TODO] Identify any further flex point uses before 29 June expiry."
+        "[24 Jun 2026] Quote received from Alan Quirke (Access Group, V1.0, dated 12 Jun). 3 reports: Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Total: 2,800 flex points. Quote expires 26 June.",
+        "[TODO] Approve flex points for case 69001638 TODAY or tomorrow -- quote expires 26 June.",
+        "[TODO] Confirm Marie Cooksey sign-off on flex points spend.",
+        "[TODO] Confirm total committed flex points balance (Chemistry + Holiday Records = 2,800pts + Chemistry commitment vs 2,935 available)."
       ],
       "dateAdded": "2026-06-11"
     },
@@ -331,11 +338,10 @@
         "[17 Jun 2026] Kevin sent Conor O'Brien a draft REF2029 load file and Pay Administered By values.",
         "[20 Jun 2026] Kevin escalated Case 69001655 to Sarah Murphy requesting dev team involvement.",
         "[23 Jun 2026] Simon updated Conor O'Brien with post-design multi-company setup proposal.",
-        "[AWAITING] Conor O'Brien / Access Group response to Simon's post-design proposal.",
-        "[24 Jun 2026] Simon Burford updated Conor O'Brien on 23 June with the project team's post-design proposal for multi-company setup. (email: Julie Hickman - RE: Support cover for first two weeks in July)"
+        "[AWAITING] Conor O'Brien / Access Group response to Simon's post-design proposal."
       ],
       "dateAdded": "2026-06-15",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1C0000"
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1D0000"
     },
     {
       "id": "t022",
@@ -395,8 +401,7 @@
         "[23 Jun 2026] Julie Hickman confirmed Michael AND Emma both absent w/c 1 July. No cover currently in place.",
         "[TODO] Identify who can provide first-line support cover w/c 1 July.",
         "[TODO] Notify Simon Burford and/or Marie Cooksey of the gap.",
-        "[TODO] Confirm cover arrangements and communicate to team.",
-        "[24 Jun 2026] Julie Hickman confirmed on 23 June that both Michael O'Sullivan AND Emma are on leave w/c 1 July, leaving no first-line support cover for that week. (email: Julie Hickman - RE: Support cover for first two weeks in July)"
+        "[TODO] Confirm cover arrangements and communicate to team."
       ],
       "dateAdded": "2026-06-23"
     },
