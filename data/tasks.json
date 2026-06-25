@@ -276,20 +276,21 @@
     {
       "id": "t019",
       "title": "Pay Code 121 / PAYPAY25 -- add to HR Reporting SQL",
-      "tier": "today",
+      "tier": "parked",
       "source": "Michael 1-1 15/06",
       "emailRef": "",
-      "summary": "Pay Code 121 (PAYPAY25) missing from HR Reporting SQL; needs adding and deploying DEV→TEST→QA→LIVE for payroll.",
+      "summary": "On hold on Tracy's instruction (24 Jun). Awaiting her response before any SQL work proceeds.",
       "description": "Pay Code 121 (report reference PAYPAY25) needs to be added to the SQL in HR Reporting. Raised by Michael in 1-1 on 15 June -- needed for this month's payroll run. Process: identify which .RDL report(s) handle pay code filtering, edit SQL, render in Visual Studio, deploy DEV -> TEST -> QA -> LIVE.",
       "actions": [
         "[15 Jun 2026] Action raised by Michael in 1-1 -- Pay Code 121 / PAYPAY25 missing from SQL report suite. Needed for this month's payroll.",
         "[TODO] Confirm with Michael which specific report(s) in the suite need amending.",
         "[TODO] Edit SQL to add Pay Code 121 / PAYPAY25 to the relevant report(s).",
         "[TODO] Render updated report(s) in Visual Studio and deploy DEV -> TEST -> QA -> LIVE.",
-        "[TODO] Verify output in LIVE environment before payroll run."
+        "[TODO] Verify output in LIVE environment before payroll run.",
+        "[24 Jun 2026] Tracy asked us to hang fire with this — awaiting her response before continuing.",
+        "[AWAITING] Tracy's response before any SQL work proceeds."
       ],
-      "dateAdded": "2026-06-15",
-      "notes": "[24 June 2026] Tracy - asked us to hang fire with this please. - awaiting her response before continuing "
+      "dateAdded": "2026-06-15"
     },
     {
       "id": "t020",
