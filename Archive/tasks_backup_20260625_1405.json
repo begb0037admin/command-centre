@@ -587,20 +587,19 @@
       "tier": "week",
       "source": "Kevin 25/06",
       "emailRef": "",
-      "summary": "Work Inbox should fetch tasks.json and render CC Today/This Week tasks as cards in priority panel. Each card: title, status, Email tag (opens email via openmail://), CC tag (opens CC task).",
-      "description": "Work Inbox and Command Centre work in tandem. Currently the CC button appears on work-inbox priority cards only when an email has been linked to a CC task by Phase 3.6. The gap: CC Today/This Week tasks that have no current email (e.g. t015 -- originating email is 22 days old, outside the 50-email fetch window) never appear in work-inbox at all. Kevin's workflow: scan Work Inbox first for morning overview, click CC button to go straight into the task. This should work for all active CC tasks, not just ones with a recent email. Card design: two visible tags on the card face -- Email tag (clickable, opens email via openmail:// using entryId, only shown if entryId is set) and CC tag (links to Command Centre task). The email open tag is more naturally at home in Work Inbox than in CC since WI is email-first. Cards visually distinct from inbox email cards -- CC-sourced label so Kevin knows at a glance where they came from. Exclude done tasks and Parked tier.",
+      "summary": "Work Inbox should fetch tasks.json and render CC Today/This Week tasks as cards in the priority panel, with CC button linking directly to Command Centre.",
+      "description": "Work Inbox and Command Centre work in tandem. Currently the CC button appears on work-inbox priority cards only when an email has been linked to a CC task by Phase 3.6. The gap: CC Today/This Week tasks that have no current email (e.g. t015 -- originating email is 22 days old, outside the 50-email fetch window) never appear in work-inbox at all. Kevin's workflow: scan Work Inbox first for morning overview, click CC button to go straight into the task. This should work for all active CC tasks, not just ones with a recent email. Build: work-inbox index.html fetches tasks.json from CC repo on load (alongside briefing.json); Today-tier tasks render as cards in the Today priority section; This Week-tier tasks render in the This Week section; each card shows title + status field; CC button links to the task in Command Centre. Cards visually distinct from inbox email cards -- labelled as CC source so Kevin knows at a glance where they came from.",
       "actions": [
         "[25 Jun 2026] Feature scoped by Kevin -- CC Today/This Week tasks should appear in Work Inbox priority panel with CC button. Originating issue: t015 not visible in work-inbox because its email is 22 days old and outside the 50-email fetch window.",
-        "[25 Jun 2026] Card design refined -- two tags on card face: Email tag (openmail:// via entryId, shown only if entryId set) and CC tag (links to Command Centre). Email open is more relevant in WI than CC since WI is email-first; both tags should appear in both dashboards but Email tag is the primary action in WI.",
-        "[TODO] Implement in work-inbox index.html: fetch tasks.json from CC repo on load (cache-busted).",
-        "[TODO] Render Today-tier CC tasks in work-inbox Today priority section; This Week-tier in This Week section.",
-        "[TODO] Each card: title, status field, Email tag (openmail:// if entryId set), CC tag (Command Centre link).",
-        "[TODO] Exclude done tasks (commandCentre_done_v1 localStorage) and Parked tier.",
+        "[TODO] Implement in work-inbox index.html: fetch tasks.json from CC repo on load.",
+        "[TODO] Render Today-tier CC tasks in work-inbox Today priority section.",
+        "[TODO] Render This Week-tier CC tasks in work-inbox This Week priority section.",
+        "[TODO] Each card: title, status field, CC button linking to Command Centre task.",
         "[TODO] Visual distinction from inbox email cards -- CC-sourced label.",
         "[TODO] Screenshot and get Kevin approval before pushing to main."
       ],
       "dateAdded": "2026-06-25",
-      "status": "Scoped 25 Jun — build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded."
+      "status": "Scoped 25 Jun — build CC task cards in work-inbox priority panel so Today/This Week tasks are visible without a current email."
     }
   ]
 }
