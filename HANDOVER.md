@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-25 (HR Systems Managers Meeting 24/06 task update — 8 new tasks, deletions, closures, updates)
+**Last updated:** 2026-06-25 (CLOUDFLARE_PHASE_SPLIT_MIGRATE governance complete — APPROVED, Stage 1 pending)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -63,6 +63,16 @@
 | Codex artefact path | `docs/project/generated/` |
 | Phase 1 Challenge Report (Codex) | `docs/project/generated/PHASE_1_CHALLENGE_REPORT.md` |
 | Phase 1 Remediation Request (Codex) | `docs/project/generated/PHASE_1_REMEDIATION_REQUEST.md` |
+| CLOUDFLARE Plan Review Request | `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_REVIEW_REQUEST_20260625.md` |
+| CLOUDFLARE Seat B Challenge Brief | `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_GOVERNANCE_CHALLENGE_BRIEF_20260625.md` |
+| CLOUDFLARE Codex Challenge Report | `docs/project/generated/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_CHALLENGE_REPORT_20260625.md` |
+| CLOUDFLARE Codex Remediation Request | `docs/project/generated/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_REMEDIATION_REQUEST_20260625.md` |
+| CLOUDFLARE Remediated Plan | `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_PLAN_REMEDIATED_20260625.md` |
+| CLOUDFLARE Remediation Evidence | `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_REMEDIATION_EVIDENCE_20260625.md` |
+| CLOUDFLARE Validation Request | `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_VALIDATION_REQUEST_20260625.md` |
+| CLOUDFLARE Codex Validation Report | `docs/project/generated/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_VALIDATION_REPORT_20260625.md` |
+| CLOUDFLARE Governance Review Request | `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_GOVERNANCE_REVIEW_REQUEST_20260625.md` |
+| CLOUDFLARE Governance Decision | `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_GOVERNANCE_DECISION_20260625.md` |
 
 ---
 
@@ -170,69 +180,87 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 | Commit SHA | `c2ca67c5d3d8c650d05555f5bd3e2ea3439aca36` |
 | Both files GET-verified | YES |
 
-### Current Workflow Status
+### Phase 1 Workflow Status
 
 | Stage | Status |
 |-------|--------|
-| Stage 1 — Execute (AGENT_MODEL v2.1 propagation) | ✅ Complete — all 9 repos at v2.1 (Wave 1 + Wave 2 + ag-flexpoints + hris-change-requests) |
-| Stage 2 — Evidence (Evidence Package + Review Request) | ✅ Complete |
-| Stage 3 — Challenge (Codex, Option B) | ✅ Complete — GAPS FOUND (VT-01 through VT-07 all PARTIAL) |
-| Stage 4 — Remediation (RA-01 through RA-07) | ✅ Complete — outstanding items now resolved (Wave 2) |
-| Stage 5 — Validation | ⏳ Pending — **Next agent: Codex** |
+| Stage 1 — Execute (AGENT_MODEL v2.1 propagation) | ✅ Complete — all 9 repos at v2.1 |
+| Stage 2 — Evidence | ✅ Complete |
+| Stage 3 — Challenge | ✅ Complete — GAPS FOUND |
+| Stage 4 — Remediation | ✅ Complete |
+| Stage 5 — Validation | ⏳ Pending — next agent: Codex |
 | Stage 6 — Governance Decision | 🔲 Awaiting Kevin |
 
-### Next Agent: Codex (Stage 5 — Validation)
-
-**Action required:** Codex must re-assess VT-01 through VT-07 against `PHASE_1_REMEDIATION_EVIDENCE.md` and produce `PHASE_1_VALIDATION_REPORT.md`.
-
-**Codex entry point:** `governance/evidence/PHASE_1_VALIDATION_REQUEST.md`
-
-**Codex operating mode:** Codex must declare Option A or B. If Option B, output full Markdown in chat; Claude Code commits.
-
-**Outstanding items status:** ✅ Both resolved — no further Kevin approval required before Codex validation.
+**Phase 1 Stage 5 entry point:** `governance/evidence/PHASE_1_VALIDATION_REQUEST.md`
 
 ### Phase 1 v2.1 Estate — Final State
 
-All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-row Section 8 scope table (blob `fba303449462c5a1c031cf47010ae8788f8a1db2`).
+All 9 governed repositories are now at AGENT_MODEL.md v2.1 (blob `fba303449462c5a1c031cf47010ae8788f8a1db2`).
 
 | Repository | Wave | Backup SHA | Write commit SHA | Verified |
 |---|---|---|---|---|
-| ag-flexpoints | Wave 1 (prior session) | `125c2a6c` | `862ace12` | ✅ |
-| hris-change-requests | Wave 1 (prior session) | `69332c44` (Phase 1) | `0e371d3d` | ✅ |
-| clockify | Wave 2 | `c226199d` (Phase 1) | `05755a08` | ✅ |
-| hr-fa-knowledge-base | Wave 2 | `c226199d` (Phase 1) | `2c386f43` | ✅ |
-| hr-projects | Wave 2 | `c226199d` (Phase 1) | `3194332c` | ✅ |
-| meeting-records | Wave 2 | `f708523d` (Phase 1) | `f5b737cf` | ✅ |
-| hris-dashboard | Wave 2 | `3855713e` (Phase 1) | `439e5b85` | ✅ |
-| hris-launcher | Wave 2 | `d15e4b7e` (Phase 1) | `9d273455` | ✅ |
+| ag-flexpoints | Wave 1 | `125c2a6c` | `862ace12` | ✅ |
+| hris-change-requests | Wave 1 | `69332c44` | `0e371d3d` | ✅ |
+| clockify | Wave 2 | `c226199d` | `05755a08` | ✅ |
+| hr-fa-knowledge-base | Wave 2 | `c226199d` | `2c386f43` | ✅ |
+| hr-projects | Wave 2 | `c226199d` | `3194332c` | ✅ |
+| meeting-records | Wave 2 | `f708523d` | `f5b737cf` | ✅ |
+| hris-dashboard | Wave 2 | `3855713e` | `439e5b85` | ✅ |
+| hris-launcher | Wave 2 | `d15e4b7e` | `9d273455` | ✅ |
 | command-centre | Wave 2 | `5d5ff188` — commit `1419d4ad` | `d6febbe5` | ✅ |
 
-**command-centre closure check (2026-06-21):**
-- Backup commit SHA: `1419d4ada6ee1dfd897608e1ee5d070491bc431c` (14:44:55Z)
-- Write commit SHA: `d6febbe504c0549e92707d702f498a90d424a1ba` (14:47:48Z)
-- Live AGENT_MODEL.md blob SHA: `fba303449462c5a1c031cf47010ae8788f8a1db2`
-- Backup before write: ✅ confirmed by timestamp
-- Live file matches expected v2.1 SHA: ✅
+---
 
-### Key Findings from Remediation
+## CLOUDFLARE_PHASE_SPLIT_MIGRATE — Governance Artefacts
 
-| Finding | Detail |
+**Status: APPROVED — Stage 1 execution pending (next session)**
+
+### Governance Chain
+
+| Stage | Artefact | Commit SHA |
+|---|---|---|
+| Pre-execution | Plan Review Request | `2ab2dd5563eb1aa4fac42e436ae1efd27687e919` |
+| Pre-execution | Seat B Challenge Brief (V2, V6, V7) | `be0a088cf1160cec23f7e8781c331062d9516cb1` |
+| Stage 3 | Codex Challenge Report (revised — fallback) | `d6a18be45225cb44d5ec89632cace9071c5950d1` |
+| Stage 3 | Codex Remediation Request (revised — fallback) | `d6a18be45225cb44d5ec89632cace9071c5950d1` |
+| Stage 4 | Remediated Plan + Remediation Evidence | `96aac2c1c6b6cb7a0df556e411a47c21f7cb79d6` |
+| Stage 5 | Validation Request | `63f59a32647096dd2347ddf0d99bd469873b120f` |
+| Stage 5 | Codex Validation Report (ALL PASS — fallback) | `57d241bc3bb282ef0569cab9b6395c813e90ad64` |
+| Stage 6 | Governance Review Request | `ab7cf77f3f892b3707f537dcea20d574d96b8437` |
+| Stage 6 | **Governance Decision — APPROVED** | `8baeecc98302e3f6a988cddda6859ec6046cd4bc` |
+
+### Golden Restore Point (captured at governance approval)
+
+| Item | Value |
 |---|---|
-| ag-flexpoints completion gap | ✅ Resolved — updated to v2.1 (Wave 1) |
-| hris-change-requests scope table defect | ✅ Resolved — updated to v2.1 (Wave 1) |
-| v2.0 scope table missing 2 repos | ✅ Resolved — v2.1 adds hris-change-requests + ag-flexpoints to Section 8; propagated to all 9 repos |
-| Backup version metadata corrected | hris-dashboard, hris-launcher, hris-change-requests were v1.1 before Phase 1 (not v1.0 as evidence package stated) |
-| CONSTITUTION.md three-blob estate | 6 repos: `a25878b0`; hris-dashboard: `6dcffd6d`; hris-change-requests: `178bc0d9`; Phase 1 completion independent of CONSTITUTION.md |
-| Authentication confirmed | Principal `begb0037admin` (ID `267986202`); gh CLI keyring via MCP GitHub server |
-| Authorization confirmed | Account owner — full admin/write/read on all repos |
+| `index.html` blob SHA | `b4e0d5d8d1546c9cc28bb5161fc60b0daebc63cd` |
+| `data/tasks.json` blob SHA | `cd0b540cfca6e22426fb2e46335cd8a10c1308d3` |
+| Repo HEAD at approval | `8baeecc98302e3f6a988cddda6859ec6046cd4bc` |
+| Hosting | GitHub Pages — `begb0037admin.github.io/command-centre/` |
+| Worker | `cc-tasks-writer.kevinlelitte.workers.dev` |
+
+*Full baseline capture (exact CORS allowlist, GitHub Pages settings, github-proxy smoke test) is Phase 0.2 of Stage 1 — to be completed at start of next session.*
+
+### Approved Plan Summary
+
+Remediated plan at `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_PLAN_REMEDIATED_20260625.md` (commit `96aac2c1c6b6cb7a0df556e411a47c21f7cb79d6`). Key phases:
+
+- **Phase 0** — Governance baseline, full restore-point capture, governed CLAUDE.md update (Gate 0.3 — Kevin approval required)
+- **Phase 1** — File split on GitHub Pages: `index.html` shell + `css/styles.css` + `js/app.js` + `js/api.js` (Gate 1.0 — Kevin approval required)
+- **Phase 2** — 25-item functional equivalence verification on GitHub Pages (Gate 2.0 — Kevin sign-off)
+- **Phase 3** — Cloudflare Pages migration, dual-origin transition, CORS update (Gates 3.0–3.6 — Kevin approval at each)
+
+Work-inbox follows the identical pattern once command-centre Phase 3 is confirmed stable.
 
 ---
 
 ## Next Action
 
-**Governance (Stage 5 — Codex):** Codex to validate remediation evidence (`PHASE_1_REMEDIATION_EVIDENCE.md`) against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`. No blocking items remain before validation.
+**CLOUDFLARE_PHASE_SPLIT_MIGRATE — Stage 1 (next session):**
+Read the approved plan at `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_PLAN_REMEDIATED_20260625.md`. Begin at Phase 0.1 (governance review). Proceed through Phase 0.2 (restore-point capture) before any write. Gate 0.3 requires Kevin approval for CLAUDE.md architecture update before any file is split.
 
-**ROADMAP item 1:** Granola meeting review → task update workflow now proven in production (2026-06-25 session). Workflow: read Granola via MCP → cross-reference tasks.json → Kevin approves new tasks and changes → backup protocol → write tasks.json via GitHub Contents API. No further build work needed.
+**Phase 1 Stage 5 (outstanding — Codex):**
+Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`.
 
 ---
 
@@ -257,10 +285,6 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 - Context paragraph split sentence-per-line with red dash bullets.
 - Tasks widget: label bumped to 13px, live heartbeat dot (green=success, red=fail), 30s polling via proxy URL.
 
-**Cloudflare Worker PAT (OUTSTANDING — parked for tomorrow):**
-- Card moves do not persist across page refresh. `persistTasks()` fails silently (only `console.warn`). Most likely cause: expired fine-grained GitHub PAT in Cloudflare Worker secret. Kevin to rotate PAT in Cloudflare dashboard. Full detail in ROADMAP.md Priority 0.
-- Next Claude action once PAT is refreshed: add visible save-status toast to `persistTasks()`.
-
 ### 2026-06-22 — Tier focus mode
 - Sidebar tier dropdown now filters the board: selecting a tier collapses all others and expands the selected one full-width.
 - "All" option added to return to normal four-column view.
@@ -271,117 +295,53 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 - Live on main: commit `e7c4b22`.
 
 ### 2026-06-21 — Governance Phase 1 complete (execution)
-- AGENT_MODEL.md v2.0 propagated to all 7 repositories (clockify, hr-fa-knowledge-base, hr-projects, meeting-records, hris-dashboard, hris-launcher, hris-change-requests).
+- AGENT_MODEL.md v2.0 propagated to all 7 repositories.
 - Datestamped backups created in Archive/ for each repo before every write.
 - All 7 v2.0 writes verified by GET; content SHA `05fc8adaab7e5b9524fe2c4f85ace667d7e04801` identical across all repos.
-- CONSTITUTION.md v1.0 SHA `a25878b0` confirmed unchanged; no propagation needed.
-- Pending: ag-flexpoints AGENT_MODEL.md status unverified (not in MCP scope this session).
+- CONSTITUTION.md v1.0 SHA `a25878b0` confirmed unchanged.
 
-### 2026-06-21 — Governance workflow standard + templates (v1.0)
+### 2026-06-21 — Governance workflow standard + templates (v1.0 → v1.1)
 - `governance/GOVERNANCE_WORKFLOW_STANDARD.md` — 6-stage workflow, 10-artefact set, agent responsibilities, handoff requirements.
-- 9 phase templates committed to `governance/templates/`. All verified by directory GET.
-- Commit SHA: `6f6cd8ae31d17c0c3c251f4837724c4279578a4a`.
+- 9 phase templates committed to `governance/templates/`. Correction to v1.1 applied same session.
+- Correction commit SHA: `65b753b5cf5242307786dda0eca09c766812878d`.
 
-### 2026-06-21 — Phase 1 governance artefacts committed (Stage 2 complete)
-- `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` — full Phase 1 execution evidence.
-- `governance/evidence/PHASE_1_REVIEW_REQUEST.md` — addressed to Codex; VT-01 through VT-07; NEXT STAGE section confirmed.
-- Commit SHA (artefacts): `f941af6984664efd70d70e06dccf9b7a8a1dfc2a`.
-- Both artefacts verified by GET at that commit.
-- **Workflow was at Stage 3 — Codex action required.**
-
-### 2026-06-21 — Governance workflow correction (v1.1)
-- **Problem:** Codex attempted Stage 3 commit without a defined write role; produced local file paths as outputs.
-- **Correction:** GOVERNANCE_WORKFLOW_STANDARD.md updated to v1.1. Section 9 (Codex Controlled Write Constraint) added. 6 Codex-facing templates updated with Codex Operating Mode and Claude Code Commit Handoff sections.
-- **Approved Codex write path:** `docs/project/generated/`
-- **Codex write boundary:** Challenge Report, Remediation Request, Validation Report, Governance Review Request only. No other files.
-- **Fallback rule:** If Codex cannot write, Codex outputs full Markdown in chat; Claude Code commits exactly as supplied.
-- **Correction commit SHA:** `65b753b5cf5242307786dda0eca09c766812878d`
-- **All 7 changed files GET-verified at that commit.**
-
-### 2026-06-21 — Stage 3 Challenge complete (Codex Option B handoff)
-- Codex operated in Option B (expired token; no GH_TOKEN).
-- Challenge Report and Remediation Request delivered in chat; committed by Claude Code exactly as supplied.
-- `docs/project/generated/PHASE_1_CHALLENGE_REPORT.md` — commit `c2ca67c5`; blob `9c64b8c8` ✅
-- `docs/project/generated/PHASE_1_REMEDIATION_REQUEST.md` — commit `c2ca67c5`; blob `2840d1e2` ✅
-- Overall verdict: GAPS FOUND. All VT-01 through VT-07 PARTIAL.
-
-### 2026-06-21 — Stage 4 Remediation complete (RA-01 through RA-07)
-- All seven remediation actions completed. Key findings:
-  - **ag-flexpoints**: Confirmed Active at v1.1 — completion gap. Phase 1 NOT complete.
-  - **hris-change-requests**: Updated to v2.0 but absent from v2.0 Section 8 scope table — content defect.
-  - **Backup metadata**: hris-dashboard, hris-launcher, hris-change-requests correctly v1.1 (not v1.0 as evidence package stated).
-  - **CONSTITUTION.md**: Three-blob estate (6 × `a25878b0`, hris-dashboard `6dcffd6d`, hris-change-requests `178bc0d9`). Phase 1 completion independent.
-  - **Authentication**: Principal `begb0037admin`; gh CLI keyring confirmed.
-  - **Authorization**: Account owner — all repos.
-- `governance/evidence/PHASE_1_REMEDIATION_EVIDENCE.md` — commit `d3ac11c5`; blob `e30a9dd7` ✅
-- `governance/evidence/PHASE_1_VALIDATION_REQUEST.md` — commit `d3ac11c5`; blob `fad75a35` ✅
-- **Workflow is at Stage 5 — Codex validation required.**
-- **Two outstanding items required Kevin approval — approved and resolved in Wave 1 + Wave 2 (below).**
-
-### 2026-06-21 — Wave 1: ag-flexpoints + hris-change-requests updated to v2.1
-- Kevin approved: update ag-flexpoints to v2.1; correct hris-change-requests scope table.
-- ag-flexpoints: backup `125c2a6c` (v1.1) + write commit `862ace12` → v2.1 blob `fba30344` ✅
-- hris-change-requests: backup existed from Phase 1 (`69332c44`) — skipped; write commit `0e371d3d` → v2.1 blob `fba30344` ✅
-- Both repositories confirmed at v2.1 with complete 13-row Section 8.
-
-### 2026-06-21 — Wave 2: v2.1 propagated to remaining 7 repos
-- Kevin approved: propagate v2.1 to clockify, hr-fa-knowledge-base, hr-projects, meeting-records, hris-dashboard, hris-launcher, command-centre.
-- All 6 pre-backed repos wrote in parallel; command-centre backup created first (commit `1419d4ad`, blob `5d5ff188`), then v2.1 written.
-- All 7 repos confirmed at v2.1 blob `fba303449462c5a1c031cf47010ae8788f8a1db2` ✅
-- command-centre closure check: backup before write confirmed by timestamp (14:44:55Z → 14:47:48Z) ✅
-- **Full estate now at v2.1. All Phase 1 outstanding items retired. Workflow ready for Stage 5.**
+### 2026-06-21 — Phase 1 Stages 2–4 complete; Stage 5 pending
+- Evidence Package, Review Request, Challenge Report (Codex Option B), Remediation Request, Remediation Evidence, Validation Request all committed.
+- Wave 1 + Wave 2: all 9 repos updated to v2.1 blob `fba303449462c5a1c031cf47010ae8788f8a1db2`.
+- Stage 5 (Codex validation) still pending.
 
 ### 2026-06-23 — Cloudflare Worker persistence fix + data restore
-
-**Root causes identified and fixed (end-to-end Worker write now confirmed working):**
-
-1. **Schema mismatch** — `persistTasks()` was sending `{content:{tasks:[...]}}` but the Worker reads `{doc}`. Fixed in commit `0641890`. Dashboard now sends `{doc:{tasks:[]}}`.
-2. **Cloudflare secret name mismatch** — Worker code reads `env.HRIS_GITHUB_PAT` but the secret was registered as `GITHUB_PAT`. Kevin added `HRIS_GITHUB_PAT` with the correct PAT value to Cloudflare Worker secrets.
-
-**Save-status toast added** — centred bottom toast in `persistTasks()`: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row also added.
-
-**Data corruption event (2026-06-23 ~08:00):**
-- First successful Worker write used Kevin's cached browser (old code still sending `{content}` not `{doc}`). `doc` was `undefined`. Worker wrote base64(`undefined`) to `data/tasks.json` — all 24 tasks wiped.
-- Root cause: browser had cached `index.html` before the schema fix (commit `0641890`) was deployed.
-- Corrupted state backed up: `Archive/tasks_backup_20260623_0946_corrupted.json`.
-- Restored `data/tasks.json` to commit `bdc1d42` (last valid state — 24 tasks) via GitHub Contents API. Restore commit: `cad2a9fb`.
-- Restore verified: blob SHA `187343a777456f122fcf38934158cd1a8bff452d` matches `bdc1d42` exactly.
-
-**Restore point:**
-- Archive backup: `Archive/tasks_backup_20260623_0821.json` — commit `7d46f47c`
-- tasks.json blob SHA at restore point: `187343a777456f122fcf38934158cd1a8bff452d`
-- 24 tasks: Today=7, Tomorrow=3, This Week=6, Parked=8
-
-**Confirmed working 2026-06-23:** card moves, tier changes, notes edits, and inbox suggestion drags all persist across page refresh. Kevin tested and confirmed.
+- Schema mismatch fixed: `persistTasks()` now sends `{doc:{tasks:[]}}`. Cloudflare secret `HRIS_GITHUB_PAT` added by Kevin.
+- Data corruption event recovered: 24 tasks restored from commit `bdc1d42`. Restore commit `cad2a9fb`.
+- Save-status toast added. Worker write confirmed working end-to-end by Kevin.
 
 ### 2026-06-25 — HR Systems Managers Meeting 24/06 — full task update
+- Source: Granola (ID: 36d1c98d-d1ae-4a94-b0df-3c4835b64f57). tasks.json commit `fd675769`. 8 new tasks (t032–t039), 2 deleted, 3 closed, 4 updated.
 
-Source: Granola notes from HR Systems Managers Meeting 24/06 (ID: 36d1c98d-d1ae-4a94-b0df-3c4835b64f57). Backup `tasks_backup_20260625_1100.json` already existed — backup protocol satisfied. tasks.json written at commit `fd675769ec40187cb9d71eaebac78503538a5d5a`, new SHA `cd0b540cfca6e22426fb2e46335cd8a10c1308d3`, 51,373 bytes.
+### 2026-06-25 — CLOUDFLARE_PHASE_SPLIT_MIGRATE governance — APPROVED
 
-**Deleted:**
-- `t1781099880461` — Holiday Records duplicate (10 Jun version; superseded by 11 Jun task with fuller content)
-- `t028` — UKVI Skilled Workers (Kevin not taking forward)
+**Objective:** Split 65KB `index.html` monolith into `index.html` shell + `css/styles.css` + `js/app.js` + `js/api.js`. Migrate hosting from GitHub Pages to Cloudflare Pages. Repeat for work-inbox once proven.
 
-**Closed (done: true):**
-- `t003` — Flex Points Plan (superseded by Holiday Records task t1781204987882)
-- `t022` — POC notes to Chris (confirmed sent and resolved at meeting)
-- `t029` — DTP1334 SHSMS pre-meeting briefing review (meeting held; superseded by t032)
+**Governance cycle completed this session:**
 
-**Updated:**
-- `t025` — Support cover: w/c 1 July corrected to w/c 6 July
-- `t031` — REF attributes via ESS: specific attributes added (REF qualifying contract, Unit of Assessment, academic employment function); RES indicator exclusion confirmed; scoping meeting agreed (Nathan, Kevin, Simon, Michelle); Marie to brief Michelle first
-- `t1781204987882` — Holiday Records: meeting outcome added (agree timing collectively, HEAT/leave/expiry constraints noted; Access Group slow; statutory deadline)
-- `t009` — DPIA Stage 7: 30 June deadline urgency flag added (5 days)
+| Stage | Outcome |
+|---|---|
+| Pre-execution plan challenge (Codex) | GAPS FOUND — 10 items (2 FAIL, 8 PARTIAL) |
+| Seat B challenge (Kevin) — V2, V6, V7 | All three accepted by Codex |
+| Stage 4 Remediation — R1–R10 | All 10 items addressed in remediated plan |
+| Stage 5 Validation (Codex) | ALL PASS |
+| Stage 6 Governance Decision | **APPROVED by Kevin** — commit `8baeecc98302e3f6a988cddda6859ec6046cd4bc` |
 
-**New tasks created (t032–t039):**
+**Key decisions made:**
+- V6: Pre-execution plan challenge is valid as additive governance (not a formal Stage violation)
+- V2: `*.pages.dev` preview URL is not a separate approval gate
+- V7: `github-proxy` CORS narrowed to smoke-test only; `cc-tasks-writer` is the only CORS-locked Worker
+- Repo visibility: default keep public; Kevin decides at Gate 3.6
+- CLAUDE.md hard rule update governed at Gate 0.3 before any file split
 
-| ID | Title | Tier |
-|---|---|---|
-| t032 | DTP1334 SHSMS Evaluation — ongoing post-meeting | week |
-| t033 | HR Reporting SSO Migration — Managed Desktop (Roadmap 179) | week |
-| t034 | Sickness Absence Reporting — open absence bug | today |
-| t035 | WFM / GLAM Rostering — set up resolution meeting | tomorrow |
-| t036 | Volunteering Hours — forward Matt Thomas thread to Marie | tomorrow |
-| t037 | Ultrix Licenses — chase Anne re Nathan's license | week |
-| t038 | SoundCloud DPIA Pilot — Kevin to be included in onboarding | week |
-| t039 | Summer support cover — training checks during Julie's leave | week |
+**Open risks at session close:**
+- Full baseline capture (CORS allowlist, GitHub Pages settings) deferred to Phase 0.2 at start of Stage 1
+- Phase 1 Stage 5 (Codex validation of AGENT_MODEL v2.1 propagation) still outstanding
+- work-inbox migration follows command-centre — not started
+
+**Next session entry point:** Read approved plan, begin Phase 0.1. Gate 0.3 requires Kevin approval before first write.
