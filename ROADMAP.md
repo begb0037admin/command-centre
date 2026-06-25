@@ -1,6 +1,6 @@
 # command-centre — Roadmap
 
-**Last updated:** 2026-06-23
+**Last updated:** 2026-06-25
 **Module 1 status:** ✅ Complete and live
 
 ---
@@ -41,6 +41,52 @@ Surface email references on task cards as clickable `openmail://` links, pulling
 
 ### Priority 3 — Persistent manual tasks
 Until Granola write-back is live, add GitHub API write-on-add for tasks created via the quick-add panel. Requires PAT prompt on page load (same pattern as hris-dashboard).
+
+---
+
+## Module 1.5 — AI Chat Panel ⏳ Planned (post-migration)
+
+**Prerequisite:** File split & Cloudflare Pages migration complete (see migration plan dated 2026-06-25). Do not begin this module until migration is confirmed stable.
+
+**Summary:** Replace the unused "From your inbox" suggestions panel with an embedded AI chat interface. Kevin types freeform notes and updates in the dashboard; Claude processes them and appends properly dated action entries to the relevant task — no separate Claude session required.
+
+### What gets built
+
+| Component | Detail |
+|---|---|
+| "Ask Claude" nav item | Replaces "From your inbox" in the sidebar nav |
+| Chat panel (main area) | Multi-turn conversational UI — same view-switching pattern as existing panels |
+| `js/chat.js` | Chat UI logic and thread management (clean new file in modular codebase) |
+| Worker `/chat` route | New route on `cc-tasks-writer` — receives message + tasks context, calls Anthropic API, returns reply + action entries to append |
+| `data/chat_history.json` | Persistent rolling conversation history (~20 exchanges). Loaded on panel open, saved after each exchange. GitHub-backed — works from any browser/machine. |
+| `ANTHROPIC_API_KEY` | New secret on `cc-tasks-writer` Worker (Kevin's Cloudflare account) |
+
+### Behaviour — Phase 1 (actions only)
+
+- **Freeform input** — type anything; Claude asks clarifying questions if the task or intent is unclear
+- **Actions-only writes** — Claude appends `[DD Mon YYYY]` dated entries to `tasks[].actions[]` only. No tier changes, no summary edits in Phase 1.
+- **Multi-turn** — full conversation thread passed with each API call; Claude retains context within the session
+- **Persistent memory** — last ~20 exchanges stored in `data/chat_history.json`; loaded on next visit so Claude remembers recent context across sessions
+- **Clear history** — manual reset button in the chat panel
+
+### Also removed in this phase
+
+- "From your inbox" nav item, panel HTML, and all inbox suggestions JS/fetch logic
+- Phase 3.5 of `fetch_inbox.py` (inbox suggestions generation — confirmed unused in practice)
+- `data/inbox_suggestions.json` archived
+
+### Governance gates
+
+| Gate | Requirement |
+|---|---|
+| Before build | Migration confirmed stable on Cloudflare Pages |
+| UI change | Screenshot of chat panel approved by Kevin before push to main |
+| Worker change | Kevin approves `/chat` route addition and `ANTHROPIC_API_KEY` secret |
+| Phase 2 (future) | Expand chat authority to tier changes and summary edits — separate planning session |
+
+### Combined with work-inbox
+
+The same chat feature is planned for the work-inbox dashboard in parallel — same Worker route, same `ANTHROPIC_API_KEY` secret, separate `data/chat_history.json` per repo. Both dashboards form a unified AI assistant accessible from either screen. See `work-inbox/ROADMAP.md`.
 
 ---
 
