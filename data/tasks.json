@@ -287,7 +287,8 @@
         "[TODO] Render updated report(s) in Visual Studio and deploy DEV -> TEST -> QA -> LIVE.",
         "[TODO] Verify output in LIVE environment before payroll run."
       ],
-      "dateAdded": "2026-06-15"
+      "dateAdded": "2026-06-15",
+      "notes": "[24 June 2026] Tracy - asked us to hang fire with this please. - awaiting her response before continuing "
     },
     {
       "id": "t020",
