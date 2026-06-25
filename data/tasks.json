@@ -16,7 +16,7 @@
         "[10 Jun 2026] Done - confirmed by Kevin. Closed.",
         "[10 Jun 2026] Kevin shared a KPI presentation with Michael O'Sullivan on 9 June, indicating progress on team coordination work as part of the return briefing cycle.",
         "[19 Jun 2026] Kevin checked with the team on 15 June regarding support cover during early July while on leave.",
-        "[23 Jun 2026] Julie has provided notice that both Michael and Emma are on leave during the week commencing 6 July.",
+        "[23 Jun 2026] Julie has provided notice that both Michael and Emma are on leave during the week commencing 1 July.",
         "[23 Jun 2026] Kevin sent a follow-up request to Michael O'Sullivan asking him to confirm case creation email impact following new starter setup."
       ],
       "dateAdded": "2026-06-08",
@@ -41,12 +41,47 @@
       "dateAdded": "2026-06-08"
     },
     {
+      "id": "t014",
+      "title": "Chemistry bulk delete -- get details from Julie, pass to Reenu",
+      "tier": "tomorrow",
+      "source": "Case 68974493",
+      "emailRef": "68974493 / 67938206",
+      "summary": "UAT signed off 23 Jun — Reenu proceeding to live. Awaiting confirmation email.",
+      "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie).",
+      "actions": [
+        "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
+        "[02 Jun 2026] Marie handed case to Kevin as lead.",
+        "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
+        "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live.",
+        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin."
+      ],
+      "dateAdded": "2026-06-08",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078716632D0000"
+    },
+    {
+      "id": "t015",
+      "title": "Web pages and URL linking -- job posting updates",
+      "tier": "today",
+      "source": "Meeting with Laura Porter 03/06",
+      "emailRef": "",
+      "summary": "Old page retired. E-Form save bug (case 69001555) fixed by Maura — Kevin to confirm, then complete remaining URL updates.",
+      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages needed link updates: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page retired 23/24 June. E-Form save bug in Search Appointments V4 was blocking updates -- Maura McGlynn (AG) applied a config fix on 23 June.",
+      "actions": [
+        "[03 Jun 2026] Meeting with Laura Porter -- reviewed three pages needing link updates.",
+        "[23 Jun 2026] Urgent escalation -- unable to save changes in Search Appointments V4 E-Form Maintenance (case 69001555). Maura McGlynn applied a config fix -- reports changes now saving. Kevin asked to review and confirm.",
+        "[AWAITING] Kevin to review Maura's config fix and confirm E-Form save issue resolved in Search Appointments V4.",
+        "[TODO] Complete remaining URL updates on vacancy application pages once E-Form save confirmed working."
+      ],
+      "dateAdded": "2026-06-03",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000"
+    },
+    {
       "id": "t003",
       "title": "Flex points plan before Marie returns",
       "tier": "tomorrow",
       "source": "SK 1-1 08/06",
       "emailRef": "",
-      "summary": "Closed. Holiday Records reports task (t1781204987882) now tracks all flex point delivery. Chemistry committed.",
+      "summary": "Holiday Records 3 reports approved (2,800 flex points, case 69001638). Chemistry committed. T&C: 3-month grace period after expiry.",
       "description": "2,935 flex points with expiry 29 June 2026. Chemistry bulk deletion (£525) committed. Holiday Records - 3 Reports Created (case 69001638) approved 24 June: 2,800 flex points total. Key T&C: where FlexPoints expire, customer has 3 months from date of expiry to utilise them -- 29 June expiry gives Oxford until ~29 September 2026.",
       "actions": [
         "[10 Jun 2026] Athena to produce requirements document for Holiday Records reports.",
@@ -54,11 +89,11 @@
         "[20 Jun 2026] Ann-Marie Topliss confirmed case 69001638 transitioned to Optimisation Services.",
         "[24 Jun 2026] Quote received (Alan Quirke, V1.0). 2,800 flex points -- Payroll Consultant 2.5 days (1,750pts) + WFM Consultant 1.5 days (1,050pts).",
         "[24 Jun 2026] Flex points approved by Kevin for case 69001638. Awaiting scheduling from Access Group.",
-        "[25 Jun 2026] Flex points plan superseded. Holiday Records reports task (t1781204987882) now tracks all delivery. Closed."
+        "[TODO] Confirm Marie Cooksey sign-off on spend.",
+        "[TODO] Confirm remaining balance after Chemistry and Holiday Records commitments."
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167640000",
-      "done": true
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167640000"
     },
     {
       "id": "t005",
@@ -101,7 +136,7 @@
       "tier": "parked",
       "source": "",
       "emailRef": "",
-      "summary": "DPIA v0.2 complete through Stage 6; awaiting Marie Cooksey's Stage 7 signature before DPO submission. 30 June deadline.",
+      "summary": "DPIA v0.2 complete through Stage 6; awaiting Marie Cooksey's Stage 7 signature before DPO submission.",
       "description": "PeopleXD Data Protection Impact Assessment (DPIA) is at v0.2 and complete through Stages 1-6. Stage 7 (sign-off) requires Marie Cooksey's signature before it can be sent to the Information Compliance Team (DPO review). Preliminary DPO review comments have been addressed.",
       "actions": [
         "[Apr 2026] DPIA v0.2 completed -- Stages 1-6 substantially complete, preliminary DPO comments addressed.",
@@ -154,41 +189,6 @@
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E430000"
     },
     {
-      "id": "t014",
-      "title": "Chemistry bulk delete -- get details from Julie, pass to Reenu",
-      "tier": "tomorrow",
-      "source": "Case 68974493",
-      "emailRef": "68974493 / 67938206",
-      "summary": "UAT signed off 23 Jun — Reenu proceeding to live. Awaiting confirmation email.",
-      "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie).",
-      "actions": [
-        "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
-        "[02 Jun 2026] Marie handed case to Kevin as lead.",
-        "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
-        "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live.",
-        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin."
-      ],
-      "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078716632D0000"
-    },
-    {
-      "id": "t015",
-      "title": "Web pages and URL linking -- job posting updates",
-      "tier": "today",
-      "source": "Meeting with Laura Porter 03/06",
-      "emailRef": "",
-      "summary": "Old page retired. E-Form save bug (case 69001555) fixed by Maura — Kevin to confirm, then complete remaining URL updates.",
-      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages needed link updates: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page retired 23/24 June. E-Form save bug in Search Appointments V4 was blocking updates -- Maura McGlynn (AG) applied a config fix on 23 June.",
-      "actions": [
-        "[03 Jun 2026] Meeting with Laura Porter -- reviewed three pages needing link updates.",
-        "[23 Jun 2026] Urgent escalation -- unable to save changes in Search Appointments V4 E-Form Maintenance (case 69001555). Maura McGlynn applied a config fix -- reports changes now saving. Kevin asked to review and confirm.",
-        "[AWAITING] Kevin to review Maura's config fix and confirm E-Form save issue resolved in Search Appointments V4.",
-        "[TODO] Complete remaining URL updates on vacancy application pages once E-Form save confirmed working."
-      ],
-      "dateAdded": "2026-06-03",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000"
-    },
-    {
       "id": "t016",
       "title": "DSE data feed issues -- post go-live",
       "tier": "week",
@@ -222,6 +222,26 @@
       "dateAdded": "2026-06-09"
     },
     {
+      "id": "t1781099880461",
+      "title": "Holiday Records - 3 Reports Created -- approved, awaiting scheduling (case 69001638)",
+      "tier": "week",
+      "source": "Inbox 2026-06-10 09:43",
+      "emailRef": "RE: Holiday Records Duty - proposed reports",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B50000",
+      "summary": "Approved 24 Jun. 2,800 flex points committed. Awaiting Access Group scheduling. Asta Palmer to be involved in delivery.",
+      "description": "Three Holiday Records reports commissioned from Access Group (case 69001638, Alan Quirke). Reports: Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Requires both a Payroll and WFM Consultant (2.5 + 1.5 days). Flex points approved by Kevin on 24 June. Asta Palmer to be involved in the delivery -- raise at FA catch-up and Managers Meeting to agree scheduling.",
+      "actions": [
+        "[15 Jun 2026] Kevin initiated quote request with Access Group (Mike West).",
+        "[20 Jun 2026] Ann-Marie Topliss confirmed case 69001638 transitioned to Optimisation Services.",
+        "[24 Jun 2026] Quote received (Alan Quirke, V1.0, dated 12 Jun). 2,800 flex points total.",
+        "[24 Jun 2026] Flex points approved by Kevin. Awaiting Access Group consultant to reach out and agree delivery timelines (within 3 weeks of approval per T&C).",
+        "[TODO] Raise at Managers Meeting -- agree when to schedule delivery given July capacity constraints.",
+        "[TODO] Confirm Asta Palmer's involvement in delivery at FA Catch-up.",
+        "[AWAITING] Access Group consultant to make contact and agree delivery schedule."
+      ],
+      "dateAdded": "2026-06-10"
+    },
+    {
       "id": "t1781099896490",
       "title": "Follow up on Scoping Session with Sophie Levy",
       "tier": "parked",
@@ -238,13 +258,13 @@
     },
     {
       "id": "t1781204987882",
-      "title": "Holiday Records - 3 Reports (case 69001638) -- approved, scheduling to be agreed",
+      "title": "Holiday Records - 3 Reports Created -- approved, awaiting scheduling (case 69001638)",
       "tier": "week",
-      "source": "Inbox 2026-06-11 15:01 / Quote 24/06 / Managers Meeting 24/06",
+      "source": "Inbox 2026-06-11 15:01 / Quote 24/06",
       "emailRef": "RE: #External# PeopleXD Insight Reporting - Quote Request for Holiday Records Reports",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000784F08A3A0000",
-      "summary": "Approved 24 Jun. 2,800 flex points committed. Access Group to contact within 3 weeks. Kevin to agree scheduling with team factoring in HEAT, July leave, and ~29 Sep expiry.",
-      "description": "Three Holiday Records reports commissioned from Access Group (case 69001638, Alan Quirke). Reports: Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Requires both a Payroll Consultant (2.5 days, 1,750pts) and WFM Consultant (1.5 days, 1,050pts). Total 2,800 flex points approved by Kevin 24 June. Flex points originally expired 29 June 2026; Access Group T&C gives a 3-month grace period from expiry date, meaning these points remain usable until approximately 29 September 2026. Asta Palmer to be involved in delivery. Statutory requirement: reports should be available from 1 April — timeline cannot slip indefinitely. Access Group noted as notoriously slow; risk of key people disappearing in August before work begins. Marie Kay away third week of August; statutory returns season adds further pressure.",
+      "summary": "Approved 24 Jun. 2,800 flex points committed. Awaiting Access Group scheduling. Discuss timing at Managers Meeting.",
+      "description": "Access Group Project Scope Document (case 69001638) received and approved 24 June 2026. Scope: 3 Holiday Records reports built by Payroll Consultant (2.5 days, 1,750pts) and WFM Consultant (1.5 days, 1,050pts). Total 2,800 flex points. Reports: Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Access Group T&C: consultant will make contact within 3 weeks of approval to agree delivery timelines. 3-month grace period applies to flex point expiry (29 Jun expiry = use by ~29 Sep 2026). Asta Palmer to be involved in delivery.",
       "actions": [
         "[15 Jun 2026] Kevin initiated quote request with Access Group (Mike West).",
         "[20 Jun 2026] Ann-Marie Topliss confirmed case 69001638 transitioned to Optimisation Services.",
@@ -313,20 +333,19 @@
     },
     {
       "id": "t022",
-      "title": "Send POC meeting notes to Chris -- COMPLETE",
+      "title": "Send POC meeting notes to Chris",
       "tier": "parked",
       "source": "Kevin 23/06",
       "emailRef": "",
-      "summary": "Complete. POC meeting notes sent to Christopher Sanders. Confirmed resolved at Managers Meeting 24 Jun.",
-      "description": "Action from the H&S Management System (SHSMS / DTP1334) evaluation process. POC meeting notes needed to be sent to Christopher Sanders, who is the H&S-side lead and Kevin's counterpart on the evaluation.",
+      "summary": "Send H&S Management System evaluation POC meeting notes to Christopher Sanders.",
+      "description": "Action from the H&S Management System (SHSMS / DTP1334) evaluation process. POC meeting notes need to be sent to Christopher Sanders, who is the H&S-side lead and Kevin's counterpart on the evaluation.",
       "actions": [
         "[23 Jun 2026] Task raised by Kevin -- send POC meeting notes to Chris as priority today.",
-        "[25 Jun 2026] Kevin sent Cority Product User Group meeting minutes (16 June 2026) to Christopher Sanders, partially fulfilling the POC notes action.",
-        "[25 Jun 2026] Confirmed complete at HR Systems Managers Meeting 24 Jun. No further action required. Closed."
+        "[TODO] Send POC meeting notes to Christopher Sanders.",
+        "[25 Jun 2026] Kevin sent Cority Product User Group meeting minutes (16 June 2026) to Christopher Sanders, partially fulfilling the POC notes action. (email: Kevin (sent to: Christopher Sanders) - Minutes – Cority Product User Group (PUG), 16 June 2026)"
       ],
       "dateAdded": "2026-06-23",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE60000",
-      "done": true
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE60000"
     },
     {
       "id": "t023",
@@ -361,13 +380,13 @@
     },
     {
       "id": "t025",
-      "title": "Support cover w/c 6 July -- plan needed",
+      "title": "Support cover w/c 1 July -- plan needed today",
       "tier": "today",
       "source": "Julie Hickman 23/06",
       "emailRef": "RE: Support cover for first two weeks in July",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1C0000",
-      "summary": "Both Michael AND Emma off w/c 6 July. No first-line support cover that week. Plan needed.",
-      "description": "Julie Hickman confirmed that both Michael O'Sullivan AND Emma are on leave during the week commencing 6 July 2026. This leaves no first-line HR Systems support cover for that week. Kevin needs to decide who covers, what can be deferred, and whether Simon Burford or Marie Cooksey need to be informed or involved. Kevin is also on phased return (4hrs/day, mornings, fully remote) that week.",
+      "summary": "Both Michael AND Emma off w/c 1 July. No first-line support cover that week. Plan needed today.",
+      "description": "Julie Hickman confirmed on 23 June that both Michael O'Sullivan AND Emma are on leave during the week commencing 1 July 2026. This leaves no first-line HR Systems support cover for that week. Kevin needs to decide who covers, what can be deferred, and whether Simon Burford or Marie Cooksey need to be informed or involved.",
       "actions": [
         "[23 Jun 2026] Julie Hickman confirmed Michael AND Emma both absent w/c 6 July. No cover currently in place.",
         "[24 Jun 2026] Raised at HR Systems Managers Meeting -- Kevin was working on a plan at FA catch-up that morning.",
@@ -409,20 +428,37 @@
       "dateAdded": "2026-06-23"
     },
     {
+      "id": "t028",
+      "title": "UKVI Skilled Workers -- CoreHR HEI Group, review and respond",
+      "tier": "tomorrow",
+      "source": "CoreHR HEI Group 23/06",
+      "emailRef": "UKVI requirement for Skilled Workers",
+      "summary": "CoreHR HEI Group circulated UKVI Skilled Workers update 23 Jun. Review for PeopleXD system changes required and raise at Managers Meeting 24 Jun.",
+      "description": "The CoreHR HEI Group circulated an email on 23 June regarding UKVI requirements for Skilled Workers -- likely changes to the Skilled Worker visa route affecting salary thresholds, employer reporting, or record-keeping requirements. Kevin needs to read the email and assess whether any PeopleXD configuration changes, reports, or CRs are needed.",
+      "actions": [
+        "[23 Jun 2026] CoreHR HEI Group circulated UKVI Skilled Workers update.",
+        "[TODO] Read the CoreHR HEI Group email in full.",
+        "[TODO] Assess whether any PeopleXD system changes, reports, or CRs are needed.",
+        "[TODO] Raise at HR Systems Managers Meeting 24 June -- check if peers have seen it."
+      ],
+      "dateAdded": "2026-06-23"
+    },
+    {
       "id": "t029",
-      "title": "DTP1334 SHSMS Evaluation -- pre-meeting briefing review",
-      "tier": "parked",
+      "title": "DTP1334 SHSMS Evaluation -- review Helen Harbour briefing and weightings",
+      "tier": "tomorrow",
       "source": "Helen Harbour 17-18/06",
       "emailRef": "DTP1334 SHSMS Evaluation Briefing - placeholder",
-      "summary": "Closed. Pre-meeting briefing reviewed; meeting held 24 Jun; scoring methodology and key dates confirmed. Superseded by new SHSMS ongoing task (t032).",
-      "description": "Helen Harbour sent two emails in the week of 17-18 June related to DTP1334: a SHSMS Evaluation Briefing placeholder document and a Strategic H&S Modular System requirements evaluation weightings spreadsheet. Both were needed to prepare for the Managers Meeting on 24 June and to inform POC documentation for Christopher Sanders.",
+      "summary": "Helen Harbour sent SHSMS evaluation briefing (17 Jun, RED) and weightings spreadsheet (18 Jun). Review before progressing POC documentation with Chris.",
+      "description": "Helen Harbour sent two emails in the week of 17-18 June related to DTP1334: a SHSMS Evaluation Briefing placeholder document and a Strategic H&S Modular System requirements evaluation weightings spreadsheet (Sonhal Mistry also involved). Both are directly relevant to the POC work Kevin needs to do with Christopher Sanders (t022).",
       "actions": [
-        "[17 Jun 2026] Helen Harbour sent DTP1334 SHSMS Evaluation Briefing placeholder.",
+        "[17 Jun 2026] Helen Harbour sent DTP1334 SHSMS Evaluation Briefing placeholder -- RED, act today (now overdue).",
         "[18 Jun 2026] Helen Harbour sent Strategic H&S Modular System requirements evaluation weightings (Sonhal Mistry also on thread).",
-        "[24 Jun 2026] Briefing reviewed, meeting held. Scoring methodology confirmed: Requirements 65%, Price 30%, References 5%. Key dates confirmed. Superseded by ongoing SHSMS evaluation task (t032). Closed."
+        "[TODO] Review Helen's evaluation briefing document.",
+        "[TODO] Review the evaluation weightings spreadsheet.",
+        "[TODO] Use both to inform POC meeting notes before sending to Chris (t022)."
       ],
-      "dateAdded": "2026-06-23",
-      "done": true
+      "dateAdded": "2026-06-23"
     },
     {
       "id": "t030",
@@ -447,8 +483,8 @@
       "tier": "week",
       "source": "Sarah Rowles 24/06",
       "emailRef": "REF attributes via ESS",
-      "summary": "Scoping meeting to be set up by Nathan (Kevin, Simon, Michelle). RES indicator must NOT be included. End-July deadline tight given thin July capacity.",
-      "description": "Sarah Rowles added a new item to the HR Systems Roadmap: sharing specific REF attributes with staff via Employee Self-Service (ESS) by end of July 2026, to enable the REF appeals process. Simon Burford and Kevin Lelitte are named. Specific attributes confirmed at Managers Meeting: REF qualifying contract, Unit of Assessment (subject area/panel), and academic employment function (determines code of practice route). Critical constraint: RES indicator must NOT be included -- it caused significant offence last REF cycle. RES is the inverse of REF qualifying contract; staff do not understand the classification and find it offensive. Nathan (Sarah's team) investigating UDF position; may need a staging UDF. Anne's guidance from last cycle was shared but Sarah considers it incoherent -- business change input needed to rewrite. Michelle identified as the business change contact. Scoping meeting agreed: Nathan to set up, include Kevin, Simon, Michelle, avoid Thursday 25 June. Marie to brief Michelle before Nathan sends the invite. End-of-July deadline is tight given very thin July capacity (w/c 6 July especially: Kevin phased return, Michael and Emma both absent).",
+      "summary": "Sarah Rowles added Roadmap item: share specific REF attributes with staff via ESS by end of July for appeals process. Nathan looking at it; UDF question to resolve.",
+      "description": "Sarah Rowles has added a new item to the HR Systems Roadmap: sharing specific REF attributes with staff via Employee Self-Service (ESS) by end of July 2026, to enable the REF appeals process. Simon Burford and Kevin Lelitte are named. Nathan (Sarah's team) is looking at it from the technical side. Anne is sharing last time's guidance, but Sarah has flagged this is NOT a like-for-like repeat. Key question in thread: will this require a new UDF to be set up and data loaded, or re-use an existing UDF? Athena Artuso noted that UDFs were set up in advance for future REF cycles, so that stage may be future-proof -- but it depends on what the specific REF attributes are. Sarah has explicitly flagged that the team is thin on the ground in July and this will need FA input, testing time, and business change support for user instructions.",
       "actions": [
         "[24 Jun 2026] Sarah Rowles flagged new Roadmap item -- REF attributes via ESS, end of July deadline, for REF appeals process.",
         "[24 Jun 2026] Managers Meeting: specific attributes confirmed -- REF qualifying contract, Unit of Assessment, academic employment function. RES indicator explicitly excluded (caused offence last cycle). Scoping meeting agreed: Nathan to set up with Kevin, Simon, Michelle. Marie to brief Michelle before invite goes out.",
