@@ -38,8 +38,7 @@
         "[TODO] Chase Cority for firm delivery date on CCC-19664 draft/save functionality.",
         "[TODO] Decide whether to pursue via sales/account route or accept as a known limitation and communicate to stakeholders."
       ],
-      "dateAdded": "2026-06-08",
-      "status": "Raised at Cority PUG 16 Jun — escalating for firm delivery date on CCC-19664; no timeline from Cority, not on their roadmap."
+      "dateAdded": "2026-06-08"
     },
     {
       "id": "t014",
@@ -57,8 +56,7 @@
         "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin."
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078716632D0000",
-      "status": "UAT signed off 23 Jun — Reenu proceeding to live deployment; awaiting Access Group confirmation email."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078716632D0000"
     },
     {
       "id": "t015",
@@ -66,8 +64,8 @@
       "tier": "today",
       "source": "Meeting with Laura Porter 03/06",
       "emailRef": "",
-      "summary": "Login screen updated on UOXU 25 Jun. Current Job Vacancies and Job Search screens blocked -- devs now handling; awaiting Maura McGlynn's Teams message to validate before LIVE.",
-      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages needed link updates: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page retired 23/24 June. E-Form save bug in Search Appointments V4 (case 69001555) was blocking updates -- Maura McGlynn (AG) applied a config fix on 23 June. Kevin was able to update the Login screen on UOXU on 25 June, but was unable to update Current Job Vacancies and Job Search screens. Devs are now handling the remaining UOXU screens; Kevin to validate before going live.",
+      "summary": "E-Form save bug (case 69001555) fixed by Maura McGlynn (AG) -- confirmed across Production, OXU and OXZ. URL updates now unblocked.",
+      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages needed link updates: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page retired 23/24 June. E-Form save bug in Search Appointments V4 (case 69001555) was blocking updates -- Maura McGlynn (AG) applied a config fix on 23 June; fix confirmed working across Production, OXU, and OXZ.",
       "actions": [
         "[03 Jun 2026] Meeting with Laura Porter -- reviewed three pages needing link updates.",
         "[23 Jun 2026] Urgent escalation -- unable to save changes in Search Appointments V4 E-Form Maintenance (case 69001555). Maura McGlynn (AG) applied a config fix -- reports changes saving in Production, OXU, and OXZ.",
@@ -76,8 +74,7 @@
         "[AWAITING] Maura McGlynn (AG) to send Teams message when remaining UOXU screens are ready for Kevin to validate before going LIVE."
       ],
       "dateAdded": "2026-06-03",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000",
-      "status": "Login screen on UOXU updated 25 Jun — unable to update Current Job Vacancies and Job Search screens; devs handling remaining UOXU screens, awaiting Maura's Teams message to validate before LIVE."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000"
     },
     {
       "id": "t003",
@@ -116,8 +113,7 @@
         "[AWAITING] Division Code resolution confirmed before proceeding."
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B30000",
-      "status": "40 REF2029 Pay Administered By codes still to set up in UOXU — draft load file sent to Conor O'Brien 17 Jun, awaiting Division Code resolution."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B30000"
     },
     {
       "id": "t006",
@@ -134,8 +130,7 @@
         "[TODO] Recommend alignment meeting to get whole team up to speed on SharePoint structure and org hierarchy documentation.",
         "[TODO] Touch base with Michael separately on this."
       ],
-      "dateAdded": "2026-06-08",
-      "status": "SharePoint guidance not updated when drive moved to SharePoint — written response to Simon needed, then team alignment meeting."
+      "dateAdded": "2026-06-08"
     },
     {
       "id": "t009",
@@ -150,8 +145,7 @@
         "[AWAITING] Marie Cooksey to formally sign Stage 7 before submission to Information Compliance.",
         "[25 Jun 2026] URGENT: 30 June deadline is 5 days away. Stage 7 is still sitting with Marie. If no movement by 26 June, escalate directly."
       ],
-      "dateAdded": "2026-06-08",
-      "status": "URGENT: DPIA Stage 7 awaiting Marie Cooksey's signature — 30 June deadline 5 days away, escalate directly if no movement by 26 Jun."
+      "dateAdded": "2026-06-08"
     },
     {
       "id": "t010",
@@ -165,8 +159,7 @@
         "[01 Jun] Decision: monitor for 2-3 more weeks, mark resolved if no issues.",
         "[AWAITING] Marie's return to schedule annual review."
       ],
-      "dateAdded": "2026-06-08",
-      "status": "Monitoring Odyssey for 2-3 weeks — no issues reported; annual review deferred until Marie returns."
+      "dateAdded": "2026-06-08"
     },
     {
       "id": "t012",
@@ -180,8 +173,7 @@
         "[Apr 2026] Case 68388326 raised -- vacancy alert email opening text not updating after config change.",
         "[PARKED] Re-test in OUXU and OUXZ, capture email output, attach to case 68388326. Action when at fuller hours."
       ],
-      "dateAdded": "2026-06-08",
-      "status": "Parked — vacancy alert email re-test (case 68388326) in OUXU/OUXZ pending fuller hours."
+      "dateAdded": "2026-06-08"
     },
     {
       "id": "t013",
@@ -196,8 +188,7 @@
         "[PARKED] Reply to Lindsey with update on Insight module reminder investigation. Action when at fuller hours."
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E430000",
-      "status": "Parked — reply to Lindsey Spriggs on Insight module automated reminders overdue since April 2026."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E430000"
     },
     {
       "id": "t016",
@@ -215,8 +206,7 @@
         "[25 Jun 2026] Kevin requested access to the Azure CR 126017 link from Tony Boydell to review the SBS user exclusion change. (email: Kevin (sent to: Tony Boydell; James Salas Guillen; Erika Braverman) - Re: DSE System - exclude SBS users )"
       ],
       "dateAdded": "2026-06-09",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EEB0000",
-      "status": "Azure CR 126017 (SBS exclusion from DSE feed) raised by Tony Boydell 23 Jun — Kevin to review and sign off; James managing contractors and email-less users."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EEB0000"
     },
     {
       "id": "t017",
@@ -231,8 +221,7 @@
         "[AWAITING] Brian (H&S) to sign off two funding requests.",
         "[TODO -- on return] Establish contact with Michael Hanson at ECO Online / Iris."
       ],
-      "dateAdded": "2026-06-09",
-      "status": "All Iris/ECO Online enhancements on hold pending H&S funding approval — new contact Michael Hanson not yet established."
+      "dateAdded": "2026-06-09"
     },
     {
       "id": "t1781099896490",
@@ -247,8 +236,7 @@
         "[11 Jun 2026] Sophie Levy chased for an update after two months with no contact.",
         "[PARKED] Reconnect with Sophie and provide update when at fuller hours."
       ],
-      "dateAdded": "2026-06-10",
-      "status": "Parked — Sophie Levy chased for update after two months with no contact; reconnect when at fuller hours."
+      "dateAdded": "2026-06-10"
     },
     {
       "id": "t1781204987882",
@@ -270,8 +258,7 @@
         "[TODO] Confirm Marie Cooksey sign-off on spend.",
         "[AWAITING] Access Group consultant to make contact and agree delivery timeline (within 3 weeks of approval)."
       ],
-      "dateAdded": "2026-06-11",
-      "status": "Approved 24 Jun, 2,800 flex points committed — Access Group consultant to contact within 3 weeks; Kevin to agree delivery timing with team factoring HEAT, July leave, and ~29 Sep expiry."
+      "dateAdded": "2026-06-11"
     },
     {
       "id": "t019",
@@ -290,8 +277,7 @@
         "[24 Jun 2026] Tracy asked us to hang fire with this — awaiting her response before continuing.",
         "[AWAITING] Tracy's response before any SQL work proceeds."
       ],
-      "dateAdded": "2026-06-15",
-      "status": "On hold per Tracy's instruction 24 Jun — awaiting her response before any SQL work proceeds on Pay Code 121/PAYPAY25."
+      "dateAdded": "2026-06-15"
     },
     {
       "id": "t020",
@@ -309,8 +295,7 @@
         "[TODO] Produce Portal-specific How-To guidance for org hierarchy management."
       ],
       "dateAdded": "2026-06-15",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000781E13A010000",
-      "status": "Awaiting Asta Palmer's comparison of COREPORTAL_ADMIN menu options before enabling org hierarchy migration across environments."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000781E13A010000"
     },
     {
       "id": "t021",
@@ -326,8 +311,7 @@
         "[AWAITING] Conor O'Brien / Access Group response to Simon's post-design proposal."
       ],
       "dateAdded": "2026-06-15",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1D0000",
-      "status": "Simon updated Conor O'Brien 23 Jun with post-design multi-company proposal — awaiting Access Group response."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1D0000"
     },
     {
       "id": "t022",
@@ -343,8 +327,7 @@
       ],
       "dateAdded": "2026-06-23",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE60000",
-      "done": true,
-      "status": "Resolved — Cority PUG minutes sent to Christopher Sanders 25 Jun; no further action required."
+      "done": true
     },
     {
       "id": "t023",
@@ -360,8 +343,7 @@
         "[23 Jun 2026] Task created manually -- inbox triage had incorrectly classified as FYI.",
         "[TODO] Open thread, read full context, and respond to Support Call# 11688462."
       ],
-      "dateAdded": "2026-06-23",
-      "status": "Response needed to Support Call# 11688462 (Ash VEA team) — Kevin named in thread; inbox triage had incorrectly classified as FYI."
+      "dateAdded": "2026-06-23"
     },
     {
       "id": "t024",
@@ -376,8 +358,7 @@
         "[23 Jun 2026] Reference request received from TSS Enquiries for Nikolas Sharkey -- 48+ hours outstanding.",
         "[TODO] Open email, complete and return reference for Nikolas Sharkey to TSS Enquiries immediately."
       ],
-      "dateAdded": "2026-06-23",
-      "status": "URGENT — Reference for Nikolas Sharkey 48+ hours outstanding; employment verification is time-critical and may block placement."
+      "dateAdded": "2026-06-23"
     },
     {
       "id": "t025",
@@ -395,8 +376,7 @@
         "[TODO] Notify Simon Burford and/or Marie Cooksey of the gap.",
         "[TODO] Confirm cover arrangements and communicate to team."
       ],
-      "dateAdded": "2026-06-23",
-      "status": "No first-line cover w/c 6 July — both Michael and Emma on leave; identify cover and notify Simon/Marie today."
+      "dateAdded": "2026-06-23"
     },
     {
       "id": "t026",
@@ -413,8 +393,7 @@
         "[25 Jun 2026] Kevin updated the ticket for case 69001655 with information for the Dev team and asked Sarah Murphy to progress it further. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)"
       ],
       "dateAdded": "2026-06-23",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
-      "status": "Escalated to Sarah Murphy 19 Jun; Kevin provided Dev team info 25 Jun — awaiting further progress on Task# 50959264."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000"
     },
     {
       "id": "t027",
@@ -428,8 +407,7 @@
         "[Jun 2026] P5 Incident# 11687334 -- Task# 50960484 assigned. Simon looped in Marie re LOD agreement.",
         "[TODO] Review thread -- determine if Kevin holds relevant information about LOD agreement and whether a response is needed."
       ],
-      "dateAdded": "2026-06-23",
-      "status": "P5 Incident# 11687334 — Simon looped in Marie re LOD agreement; Kevin to review thread and respond if relevant."
+      "dateAdded": "2026-06-23"
     },
     {
       "id": "t029",
@@ -446,8 +424,7 @@
         "[TODO] Review the evaluation weightings spreadsheet.",
         "[TODO] Use both to inform POC meeting notes before sending to Chris (t022)."
       ],
-      "dateAdded": "2026-06-23",
-      "status": "Helen Harbour sent SHSMS evaluation briefing (17 Jun, RED) and weightings spreadsheet (18 Jun) — both to review before POC with Christopher Sanders."
+      "dateAdded": "2026-06-23"
     },
     {
       "id": "t030",
@@ -464,8 +441,7 @@
         "[25 Jun 2026] Cority SFTP connection error confirmed on 22 June at 17:15; CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-06-22 17:15)"
       ],
       "dateAdded": "2026-06-23",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663360000",
-      "status": "Cority SFTP connection error 22 Jun — CHI team notified and working on resolution; James managing correspondence."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663360000"
     },
     {
       "id": "t031",
@@ -483,8 +459,7 @@
         "[TODO] Assess FA input and testing resource required -- flag capacity risk given thin July (especially w/c 6 Jul).",
         "[TODO] Ensure business change support (Michelle) is engaged for user instructions -- Anne's guidance from last cycle is not reusable."
       ],
-      "dateAdded": "2026-06-24",
-      "status": "End of July deadline — REF attributes via ESS scoping meeting to be set by Nathan (Kevin, Simon, Michelle); UDF question to resolve with Athena."
+      "dateAdded": "2026-06-24"
     },
     {
       "id": "t032",
@@ -500,8 +475,7 @@
         "[TODO] Follow-up with evaluation team by 2 July -- confirm what is required.",
         "[TODO] Raise dedicated project resource requirement formally with Marie before mid-July evaluation window opens."
       ],
-      "dateAdded": "2026-06-25",
-      "status": "Follow-up by 2 July — evaluator briefings 14 Jul, supplier responses ~21 Jul; dedicated project resource to be raised formally with Marie."
+      "dateAdded": "2026-06-25"
     },
     {
       "id": "t033",
@@ -522,8 +496,7 @@
         "[TODO] Agree revised delivery timeline with Desktop Services once VS2022 licensing sorted.",
         "[TODO] Update user guidance, account provisioning process, and first-line support docs before broader rollout."
       ],
-      "dateAdded": "2026-06-25",
-      "status": "Stalled since March — VS2022 trial licence is the blocker; do not migrate further users until licensing confirmed with Desktop Services."
+      "dateAdded": "2026-06-25"
     },
     {
       "id": "t034",
@@ -539,8 +512,7 @@
         "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL) or a system data issue in PeopleXD.",
         "[TODO] Confirm fix approach and communicate resolution to Simon Burford."
       ],
-      "dateAdded": "2026-06-25",
-      "status": "Sickness absence report not picking up open-ended absences — pay impact confirmed; investigating report fix vs system data quality issue."
+      "dateAdded": "2026-06-25"
     },
     {
       "id": "t035",
@@ -555,8 +527,7 @@
         "[24 Jun 2026] Raised at HR Systems Managers Meeting -- three areas outstanding (SBS, PEDS, GLAM). GLAM did not load rostering data at last minute. Blocking Sarah's UC dashboards and reports.",
         "[TODO] Set up resolution meeting -- Kevin, Simon, Marie, Michelle, and potentially Julie. Agenda: understand what wasn't loaded and why, agree approach, produce action list, address GLAM rostering."
       ],
-      "dateAdded": "2026-06-25",
-      "status": "GLAM did not load rostering data — three areas outstanding (SBS, PEDS, GLAM); resolution meeting needed with Kevin, Simon, Marie, Michelle, Julie."
+      "dateAdded": "2026-06-25"
     },
     {
       "id": "t036",
@@ -573,8 +544,7 @@
         "[TODO] Kevin to forward Matt Thomas email thread to Marie.",
         "[AWAITING] Marie to respond to Matt Thomas directly."
       ],
-      "dateAdded": "2026-06-25",
-      "status": "Matt Thomas emailed Marie twice (10 Jun, 19 Jun) about self-logging volunteering hours — Kevin to forward thread to Marie for direct response."
+      "dateAdded": "2026-06-25"
     },
     {
       "id": "t037",
@@ -589,8 +559,7 @@
         "[AWAITING] Anne to confirm she will cover Nathan's Ultrix licence.",
         "[TODO] Chase Anne if no confirmation received within a few days."
       ],
-      "dateAdded": "2026-06-25",
-      "status": "Awaiting Anne's confirmation she will cover Nathan's Ultrix licence — fee has increased significantly since earlier in the year."
+      "dateAdded": "2026-06-25"
     },
     {
       "id": "t038",
@@ -605,8 +574,7 @@
         "[AWAITING] SoundCloud team contact to be made; Kevin to be included in that conversation.",
         "[TODO] Once contact made, agree migration of WFM DPIA into SoundCloud as the pilot case."
       ],
-      "dateAdded": "2026-06-25",
-      "status": "SoundCloud being piloted at Oxford for DPIAs — WFM DPIA proposed as pilot case; awaiting team contact, Kevin to be included."
+      "dateAdded": "2026-06-25"
     },
     {
       "id": "t039",
@@ -621,8 +589,7 @@
         "[TODO] Identify who can cover training checks during Julie's two-week absence -- Esther flagged as option, confirm availability.",
         "[TODO] Marie to ask Morgan to connect with Julie after People Conference (25 Jun) re Power Automate training check tool."
       ],
-      "dateAdded": "2026-06-25",
-      "status": "Julie on two-week leave — Esther flagged for cover; Marie to connect Morgan with Julie after People Conference re Power Automate training check tool."
+      "dateAdded": "2026-06-25"
     }
   ]
 }
