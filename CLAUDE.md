@@ -4,23 +4,40 @@
 
 ---
 
-## MANDATORY BACKUP AND VERIFY PROTOCOL — BEFORE EVERY WRITE
+## MANDATORY — FOLLOW THIS BEFORE ANYTHING ELSE
+
+Before responding to any request in this repository — implementation, investigation, or conversation — complete these steps in order:
+
+1. Read `AGENT_MODEL.md` in this repository
+2. Read `CONSTITUTION.md` in this repository
+3. Identify which approval gates apply to this request
+4. Confirm the working surface is GitHub-only
+5. Only then proceed
+
+Do not skip, defer, or partially complete these steps. If either file cannot be read, stop and tell Kevin before doing anything else.
+
+---
+
+## MANDATORY — BACKUP AND VERIFY PROTOCOL — BEFORE EVERY WRITE
 
 **Every write to `index.html` or `data/tasks.json` requires all steps below, in order. No exceptions — not for single-line edits, not for bug fixes, not for anything.**
 
 ### Before making any change
 1. Identify the exact file(s) you will change.
-2. Create a timestamped backup in `Archive/`: `index_backup_YYYYMMDD_HHMM.html` or `tasks_backup_YYYYMMDD_HHMM.json`.
-3. Commit the backup immediately — before any edit.
-4. Read the backup back and confirm the git SHA matches the committed file.
-5. Only then make the requested change.
+2. GET the current live file via GitHub Contents API.
+3. Confirm the file size is non-zero before proceeding — if zero or unexpectedly small, stop and tell Kevin.
+4. Create a timestamped backup in `Archive/`: `index_backup_YYYYMMDD_HHMM.html` or `tasks_backup_YYYYMMDD_HHMM.json`.
+5. Commit the backup immediately — before any edit.
+6. GET the backup back from GitHub and confirm the returned SHA matches the committed file.
+7. Only then make the requested change.
 
 ### After making any change
-6. Read the changed file back and confirm the git SHA.
-7. If anything is wrong, restore from the verified backup before continuing.
+8. Read the changed file back and confirm the git SHA.
+9. If anything is wrong, restore from the verified backup before continuing.
 
 ### Rules
 - Backup before write — every change, no exceptions.
+- Verify file size before backup — never back up an empty or stub file.
 - Verify backup SHA before modifying.
 - Verify post-change SHA after writing.
 - Do not proceed on assumptions.
@@ -54,7 +71,7 @@
 - **Status:** Active — Module 1 live
 - **Repo:** https://github.com/begb0037admin/command-centre
 - **Live dashboard:** https://begb0037admin.github.io/command-centre/
-- **Last updated:** 2026-06-21
+- **Last updated:** 2026-06-25
 
 ## Bootstrap Order
 1. This file (orientation)
@@ -86,7 +103,7 @@ Tasks load from `data/tasks.json` on page open (cache-busted). The 'From your in
 - **API writes:** `https://api.github.com/repos/begb0037admin/command-centre/contents/{path}?ref=main`
 - PAT stored in Kevin's preferences — never commit to any file
 
-## Agent Model (v2.0 — see AGENT_MODEL.md)
+## Agent Model (v2.1 — see AGENT_MODEL.md)
 | Party | Role |
 |---|---|
 | Claude Code | Reasons, writes code, executes GitHub API writes, verifies live behaviour. |
@@ -138,7 +155,6 @@ When running the inbox pickup routine (docs/INBOX_PICKUP_ROUTINE.md):
 - Read refreshed_at from briefing.json
 - If the timestamp is more than 24 hours old, STOP and warn Kevin before proceeding
 - Never auto-update tasks from stale briefing data without Kevin explicit confirmation
-
 
 ## Inbox Pickup Routine
 Trigger phrases: "pick up inbox", "read inbox", "update from inbox", "inbox update", "sync inbox"
