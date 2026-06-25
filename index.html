@@ -763,7 +763,7 @@ async function deleteTask(e,id){
 }
 
 /* NOTES */
-async function saveNotes(id){
+async async function saveNotes(id){
   var task=tasks.find(function(t){return t.id===id;});
   if(!task)return;
   task.notes=document.getElementById('notes-'+id).value;
