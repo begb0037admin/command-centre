@@ -66,18 +66,17 @@
       "tier": "today",
       "source": "Meeting with Laura Porter 03/06",
       "emailRef": "",
-      "summary": "Login screen updated on UOXU 25 Jun. Current Job Vacancies and Job Search screens blocked -- devs now handling; awaiting Maura McGlynn's Teams message to validate before LIVE.",
-      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages needed link updates: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page retired 23/24 June. E-Form save bug in Search Appointments V4 (case 69001555) was blocking updates -- Maura McGlynn (AG) applied a config fix on 23 June. Kevin was able to update the Login screen on UOXU on 25 June, but was unable to update Current Job Vacancies and Job Search screens. Devs are now handling the remaining UOXU screens; Kevin to validate before going live.",
+      "summary": "E-Form save bug (case 69001555) fixed by Maura McGlynn (AG) -- confirmed across Production, OXU and OXZ. URL updates now unblocked.",
+      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages needed link updates: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page retired 23/24 June. E-Form save bug in Search Appointments V4 (case 69001555) was blocking updates -- Maura McGlynn (AG) applied a config fix on 23 June; fix confirmed working across Production, OXU, and OXZ.",
       "actions": [
         "[03 Jun 2026] Meeting with Laura Porter -- reviewed three pages needing link updates.",
         "[23 Jun 2026] Urgent escalation -- unable to save changes in Search Appointments V4 E-Form Maintenance (case 69001555). Maura McGlynn (AG) applied a config fix -- reports changes saving in Production, OXU, and OXZ.",
-        "[25 Jun 2026] Kevin updated Login screen on UOXU successfully -- 'Internal Mobility Principles' hyperlinked, spacing added after 'Existing University Staff' and 'New Applicants:' headings.",
-        "[25 Jun 2026] Unable to update Current Job Vacancies and Job Search screens on UOXU -- devs now handling remaining UOXU screens.",
-        "[AWAITING] Maura McGlynn (AG) to send Teams message when remaining UOXU screens are ready for Kevin to validate before going LIVE."
+        "[25 Jun 2026] Kevin reviewed full support case thread (case 69001555) -- E-Form save fix confirmed working. URL link updates now unblocked.",
+        "[TODO] Complete remaining URL updates on vacancy application pages (main ops intranet, professional services search, individual vacancy application pages)."
       ],
       "dateAdded": "2026-06-03",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000",
-      "status": "Login screen on UOXU updated 25 Jun — unable to update Current Job Vacancies and Job Search screens; devs handling remaining UOXU screens, awaiting Maura's Teams message to validate before LIVE."
+      "status": "E-Form save bug (case 69001555) confirmed fixed by Maura McGlynn (AG) across Production, OXU and OXZ — URL link updates now unblocked."
     },
     {
       "id": "t003",
