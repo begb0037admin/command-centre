@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-23 (Worker persistence resolved; tasks.json restored and backed up)
+**Last updated:** 2026-06-25 (HR Systems Managers Meeting 24/06 task update — 8 new tasks, deletions, closures, updates)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -232,7 +232,7 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 
 **Governance (Stage 5 — Codex):** Codex to validate remediation evidence (`PHASE_1_REMEDIATION_EVIDENCE.md`) against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`. No blocking items remain before validation.
 
-**ROADMAP item 1:** Wire Granola meeting review → Kevin approves extracted actions → push approved actions to `data/tasks.json` via GitHub Contents API.
+**ROADMAP item 1:** Granola meeting review → task update workflow now proven in production (2026-06-25 session). Workflow: read Granola via MCP → cross-reference tasks.json → Kevin approves new tasks and changes → backup protocol → write tasks.json via GitHub Contents API. No further build work needed.
 
 ---
 
@@ -275,7 +275,6 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 - Datestamped backups created in Archive/ for each repo before every write.
 - All 7 v2.0 writes verified by GET; content SHA `05fc8adaab7e5b9524fe2c4f85ace667d7e04801` identical across all repos.
 - CONSTITUTION.md v1.0 SHA `a25878b0` confirmed unchanged; no propagation needed.
-- Authentication diagnostic: GITHUB_PAT env var absent but confirmed not Claude Code's auth mechanism (gh CLI keyring).
 - Pending: ag-flexpoints AGENT_MODEL.md status unverified (not in MCP scope this session).
 
 ### 2026-06-21 — Governance workflow standard + templates (v1.0)
@@ -354,3 +353,35 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 with the complete 13-
 - 24 tasks: Today=7, Tomorrow=3, This Week=6, Parked=8
 
 **Confirmed working 2026-06-23:** card moves, tier changes, notes edits, and inbox suggestion drags all persist across page refresh. Kevin tested and confirmed.
+
+### 2026-06-25 — HR Systems Managers Meeting 24/06 — full task update
+
+Source: Granola notes from HR Systems Managers Meeting 24/06 (ID: 36d1c98d-d1ae-4a94-b0df-3c4835b64f57). Backup `tasks_backup_20260625_1100.json` already existed — backup protocol satisfied. tasks.json written at commit `fd675769ec40187cb9d71eaebac78503538a5d5a`, new SHA `cd0b540cfca6e22426fb2e46335cd8a10c1308d3`, 51,373 bytes.
+
+**Deleted:**
+- `t1781099880461` — Holiday Records duplicate (10 Jun version; superseded by 11 Jun task with fuller content)
+- `t028` — UKVI Skilled Workers (Kevin not taking forward)
+
+**Closed (done: true):**
+- `t003` — Flex Points Plan (superseded by Holiday Records task t1781204987882)
+- `t022` — POC notes to Chris (confirmed sent and resolved at meeting)
+- `t029` — DTP1334 SHSMS pre-meeting briefing review (meeting held; superseded by t032)
+
+**Updated:**
+- `t025` — Support cover: w/c 1 July corrected to w/c 6 July
+- `t031` — REF attributes via ESS: specific attributes added (REF qualifying contract, Unit of Assessment, academic employment function); RES indicator exclusion confirmed; scoping meeting agreed (Nathan, Kevin, Simon, Michelle); Marie to brief Michelle first
+- `t1781204987882` — Holiday Records: meeting outcome added (agree timing collectively, HEAT/leave/expiry constraints noted; Access Group slow; statutory deadline)
+- `t009` — DPIA Stage 7: 30 June deadline urgency flag added (5 days)
+
+**New tasks created (t032–t039):**
+
+| ID | Title | Tier |
+|---|---|---|
+| t032 | DTP1334 SHSMS Evaluation — ongoing post-meeting | week |
+| t033 | HR Reporting SSO Migration — Managed Desktop (Roadmap 179) | week |
+| t034 | Sickness Absence Reporting — open absence bug | today |
+| t035 | WFM / GLAM Rostering — set up resolution meeting | tomorrow |
+| t036 | Volunteering Hours — forward Matt Thomas thread to Marie | tomorrow |
+| t037 | Ultrix Licenses — chase Anne re Nathan's license | week |
+| t038 | SoundCloud DPIA Pilot — Kevin to be included in onboarding | week |
+| t039 | Summer support cover — training checks during Julie's leave | week |
