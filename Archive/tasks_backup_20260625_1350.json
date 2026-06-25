@@ -64,20 +64,17 @@
       "tier": "today",
       "source": "Meeting with Laura Porter 03/06",
       "emailRef": "",
-      "summary": "Login screen updated on UOXU 25 Jun. Current Job Vacancies and Job Search screens blocked -- devs now handling; awaiting Maura McGlynn's Teams message to validate before LIVE.",
-      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages needed link updates: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page retired 23/24 June. E-Form save bug in Search Appointments V4 (case 69001655) was blocking updates -- Maura McGlynn (AG) applied a config fix on 23 June. Kevin was able to update the Login screen on UOXU on 25 June, but was unable to update Current Job Vacancies and Job Search screens. Devs are now handling the remaining UOXU screens; Kevin to validate before going live. Case 69001655 is the related Access Group escalation case for this work.",
+      "summary": "E-Form save bug (case 69001555) fixed by Maura McGlynn (AG) -- confirmed across Production, OXU and OXZ. URL updates now unblocked.",
+      "description": "Internal Mobility Principles page moved to a new OxIntranet URL. Three pages needed link updates: main ops intranet page, professional services search page, and individual vacancy application pages. New URL confirmed live on 3 June. Old page retired 23/24 June. E-Form save bug in Search Appointments V4 (case 69001555) was blocking updates -- Maura McGlynn (AG) applied a config fix on 23 June; fix confirmed working across Production, OXU, and OXZ.",
       "actions": [
         "[03 Jun 2026] Meeting with Laura Porter -- reviewed three pages needing link updates.",
-        "[19 Jun 2026] Kevin escalated case 69001655 to Sarah Murphy (Access Group) for assistance with the URL linking work. (email: Kevin (sent to: Sarah Murphy) - Escalation Request – Case 69001655)",
-        "[23 Jun 2026] Urgent escalation -- unable to save changes in Search Appointments V4 E-Form Maintenance (case 69001655). Maura McGlynn (AG) applied a config fix -- reports changes saving in Production, OXU, and OXZ.",
-        "[25 Jun 2026] Kevin updated case 69001655 with Dev team information and asked Sarah Murphy to progress further. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)",
+        "[23 Jun 2026] Urgent escalation -- unable to save changes in Search Appointments V4 E-Form Maintenance (case 69001555). Maura McGlynn (AG) applied a config fix -- reports changes saving in Production, OXU, and OXZ.",
         "[25 Jun 2026] Kevin updated Login screen on UOXU successfully -- 'Internal Mobility Principles' hyperlinked, spacing added after 'Existing University Staff' and 'New Applicants:' headings.",
         "[25 Jun 2026] Unable to update Current Job Vacancies and Job Search screens on UOXU -- devs now handling remaining UOXU screens.",
         "[AWAITING] Maura McGlynn (AG) to send Teams message when remaining UOXU screens are ready for Kevin to validate before going LIVE."
       ],
       "dateAdded": "2026-06-03",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000",
-      "status": "Login screen on UOXU updated 25 Jun — unable to update Current Job Vacancies and Job Search screens; devs handling remaining UOXU screens, awaiting Maura's Teams message to validate before LIVE."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000"
     },
     {
       "id": "t003",
@@ -141,17 +138,14 @@
       "tier": "parked",
       "source": "",
       "emailRef": "",
-      "summary": "PeopleXD DPIA v0.2 complete through Stage 6; awaiting Marie Cooksey's Stage 7 signature. SoundCloud being piloted at Oxford for DPIAs -- WFM DPIA proposed as pilot case.",
-      "description": "PeopleXD Data Protection Impact Assessment (DPIA) is at v0.2 and complete through Stages 1-6. Stage 7 (sign-off) requires Marie Cooksey's signature before it can be sent to the Information Compliance Team (DPO review). Preliminary DPO review comments have been addressed. Separately, SoundCloud is being piloted at Oxford for third-party security assessments and DPIAs -- the WFM DPIA (already completed by Kevin using AI support) has been proposed as the pilot case to avoid a later migration.",
+      "summary": "DPIA v0.2 complete through Stage 6; awaiting Marie Cooksey's Stage 7 signature before DPO submission.",
+      "description": "PeopleXD Data Protection Impact Assessment (DPIA) is at v0.2 and complete through Stages 1-6. Stage 7 (sign-off) requires Marie Cooksey's signature before it can be sent to the Information Compliance Team (DPO review). Preliminary DPO review comments have been addressed.",
       "actions": [
         "[Apr 2026] DPIA v0.2 completed -- Stages 1-6 substantially complete, preliminary DPO comments addressed.",
-        "[AWAITING] Marie Cooksey to formally sign Stage 7 before submission to Information Compliance. Chase as and when.",
-        "[24 Jun 2026] Raised at HR Systems Managers Meeting -- SoundCloud being piloted at Oxford for DPIAs and security assessments. Proposal to use WFM DPIA as pilot case to avoid later migration. Kevin to be included in SoundCloud team contact.",
-        "[AWAITING] SoundCloud team contact to be made; Kevin to be included in that conversation.",
-        "[TODO] Once SoundCloud contact made, agree migration of WFM DPIA into SoundCloud as the pilot case."
+        "[AWAITING] Marie Cooksey to formally sign Stage 7 before submission to Information Compliance.",
+        "[25 Jun 2026] URGENT: 30 June deadline is 5 days away. Stage 7 is still sitting with Marie. If no movement by 26 June, escalate directly."
       ],
-      "dateAdded": "2026-06-08",
-      "status": "Awaiting Marie Cooksey's Stage 7 signature (chase as and when). SoundCloud being piloted at Oxford for DPIAs — WFM DPIA proposed as pilot case; awaiting team contact."
+      "dateAdded": "2026-06-08"
     },
     {
       "id": "t010",
@@ -394,11 +388,12 @@
       "description": "Marie Cooksey forwarded an OSM notification on 17 June: Owner Required for Task# 50959264 linked to ServiceReq# 30412906. Kevin is expected to accept ownership or reassign it.",
       "actions": [
         "[17 Jun 2026] Marie Cooksey forwarded OSM Owner Required notification -- Task# 50959264 / ServiceReq# 30412906.",
-        "[TODO] Open email, review Task# 50959264 in OSM, and accept or reassign ownership."
+        "[TODO] Open email, review Task# 50959264 in OSM, and accept or reassign ownership.",
+        "[25 Jun 2026] Kevin escalated case 69001655 to Sarah Murphy on 19 June, requesting assistance with the ownership/task assignment issue. (email: Kevin (sent to: Sarah Murphy) - Escalation Request – Case 69001655)",
+        "[25 Jun 2026] Kevin updated the ticket for case 69001655 with information for the Dev team and asked Sarah Murphy to progress it further. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)"
       ],
       "dateAdded": "2026-06-23",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
-      "status": "OSM task ownership notification forwarded by Marie 17 Jun — review Task# 50959264 in OSM and accept or reassign."
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000"
     },
     {
       "id": "t027",
@@ -563,6 +558,21 @@
         "[24 Jun 2026] Raised at HR Systems Managers Meeting -- confirmation outstanding from Anne that she will cover Nathan's Ultrix licence. Fee has increased significantly since earlier in the year.",
         "[AWAITING] Anne to confirm she will cover Nathan's Ultrix licence.",
         "[TODO] Chase Anne if no confirmation received within a few days."
+      ],
+      "dateAdded": "2026-06-25"
+    },
+    {
+      "id": "t038",
+      "title": "SoundCloud DPIA Pilot -- Kevin to be included in onboarding",
+      "tier": "week",
+      "source": "HR Systems Managers Meeting 24/06",
+      "emailRef": "",
+      "summary": "New tool piloted at Oxford for DPIAs and security assessments. Proposal: use WFM DPIA as pilot case. Kevin to be included in SoundCloud team contact.",
+      "description": "A Data Protection Network session flagged SoundCloud -- a new system being piloted at Oxford for third-party security assessments and DPIAs. Proposal discussed at the HR Systems Managers Meeting: migrate the WFM DPIA (already completed by Kevin using AI support) into SoundCloud as a pilot case. This avoids a later migration and positions Kevin well to feed into lessons learned at each stage of the pilot. Two-stage approach: AI-assisted interim (current state) transitioning to SoundCloud full implementation. Contact is being made with the SoundCloud team and Kevin is to be included in that conversation.",
+      "actions": [
+        "[24 Jun 2026] Raised at HR Systems Managers Meeting -- SoundCloud being piloted at Oxford for DPIAs and security assessments. Proposal to use WFM DPIA as pilot case. Kevin to be included in SoundCloud team contact.",
+        "[AWAITING] SoundCloud team contact to be made; Kevin to be included in that conversation.",
+        "[TODO] Once contact made, agree migration of WFM DPIA into SoundCloud as the pilot case."
       ],
       "dateAdded": "2026-06-25"
     },
