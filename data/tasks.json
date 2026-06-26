@@ -209,7 +209,8 @@
         "[23 Jun 2026] Tony Boydell drafted Azure CR 126017 to exclude SBS users from DSE feed. James and Kevin both need to review.",
         "[TODO] Kevin to review and sign off Azure CR 126017 (SBS exclusion from DSE feed).",
         "[AWAITING] James to progress contractor manual addition and email-less user resolution with supplier.",
-        "[25 Jun 2026] Kevin requested access to the Azure CR 126017 link from Tony Boydell to review the SBS user exclusion change. (email: Kevin (sent to: Tony Boydell; James Salas Guillen; Erika Braverman) - Re: DSE System - exclude SBS users )"
+        "[25 Jun 2026] Kevin requested access to the Azure CR 126017 link from Tony Boydell to review the SBS user exclusion change. (email: Kevin (sent to: Tony Boydell; James Salas Guillen; Erika Braverman) - Re: DSE System - exclude SBS users )",
+        "[26 Jun 2026] Reviewed CR 126017. State: Approved (Sprint 45 - ORMS, Card and CRM Halo). Requirement: exclude staff where Primary appointment.universityOrgLevel3 = \"MQ\" (Said Business School) from DSE CSV extract. Acceptance criteria confirmed: SSO users with MQ primary appointment excluded; non-MQ users included. BA/PO: Tony Boydell (Azure Integration Platform, People Data)."
       ],
       "dateAdded": "2026-06-09",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EEB0000"
