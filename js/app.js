@@ -426,7 +426,10 @@ async function loadInboxSuggestions(){
         +'<div class="sg-meta">From '+escHtml(s.email_from)+' &middot; &quot;'+escHtml(s.email_subject)+'&quot; &middot; '+escHtml(s.received||'')+'</div>'
         +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">&#128231; Open email</button>'
         +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')" >Dismiss</button>'
-        +'<span class="sg-hint">drag into Today / Tomorrow / This Week to add</span></div></div>';
+        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'today\')">&plus; Today</button>'
+        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'tomorrow\')">&plus; Tomorrow</button>'
+        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'week\')">&plus; This Week</button>'
+        +'</div></div>';
     });
     h+='</div>';
     host.innerHTML=h;
