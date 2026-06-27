@@ -617,6 +617,18 @@
       "notes": "",
       "entryId": "",
       "dateAdded": "2026-06-27"
+    },
+    {
+      "id": "task-1782599630157",
+      "title": "Review UOX case 69001655 catch-up from Maura McGlynn",
+      "tier": "today",
+      "source": "Maura McGlynn",
+      "summary": "",
+      "description": "Maura McGlynn sent a catch-up email on case 69001655 and indicated a Devs call may be arranged. Kevin needs to review the full email content and assess next steps, as this case has been escalated and is currently in progress with the development team.",
+      "actions": [],
+      "notes": "",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078847C7120000",
+      "dateAdded": "2026-06-27"
     }
   ]
 }
