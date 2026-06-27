@@ -605,6 +605,18 @@
       ],
       "dateAdded": "2026-06-25",
       "status": "Scoped 25 Jun — build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded."
+    },
+    {
+      "id": "task-1782599584762",
+      "title": "Gate 2.0 equivalence test task",
+      "tier": "week",
+      "source": "manual",
+      "summary": "",
+      "description": "",
+      "actions": [],
+      "notes": "",
+      "entryId": "",
+      "dateAdded": "2026-06-27"
     }
   ]
 }
