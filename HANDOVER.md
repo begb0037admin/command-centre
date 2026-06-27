@@ -262,10 +262,9 @@ Work-inbox follows the identical pattern once command-centre Phase 3 is confirme
 
 ## Next Action
 
-**CLOUDFLARE_PHASE_SPLIT_MIGRATE — Phase 2 (functional equivalence check):**
-Kevin to verify the 25-item checklist on the live dashboard at `begb0037admin.github.io/command-centre/`. Covers: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, clock, crest. Sign-off triggers Gate 2.0.
+**CLOUDFLARE_PHASE_SPLIT_MIGRATE — Phase 3 (next):** Cloudflare Pages migration. Requires Kevin to connect `begb0037admin/command-centre` repo in Cloudflare dashboard. CORS update to `cc-tasks-writer` follows.
 
-**After Gate 2.0:** Phase 3 — Cloudflare Pages migration. Requires Kevin to connect `begb0037admin/command-centre` repo in Cloudflare dashboard. CORS update to `cc-tasks-writer` follows.
+**Phase 2 (functional equivalence check) — deferred to after Phase 3:** Single 25-item check on the Cloudflare Pages URL covers both gates in one pass. No value in checking GitHub Pages separately first.
 
 **Parked feature (after split confirmed stable):** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards that appends a dated action entry to an existing task and dismisses the card.
 
