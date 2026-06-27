@@ -410,6 +410,7 @@ async function loadInboxSuggestions(){
     var d=sgDismissed();
     var newTasks=(data.new_tasks||[]).filter(function(s){return !d['n_'+s.entry_id]&&!suggestionCovered(s)});
     window.sgList=newTasks;
+    var navBadge=document.getElementById('badge-inbox');if(navBadge)navBadge.textContent=newTasks.length;
     if(!newTasks.length){host.innerHTML='';return;}
     var stale=false;
     try{stale=(Date.now()-new Date((data.generated_at||'').replace(' ','T')).getTime())>24*3600*1000}catch(e){}
@@ -459,6 +460,7 @@ function setTier(val,label){
   document.getElementById('qa-tier-label').textContent=label;
   document.querySelectorAll('.sb-qa-sel-list li').forEach(function(li){li.classList.toggle('selected',li.textContent===label);});
   document.getElementById('qa-tier-list').classList.remove('open');
+  showView('board');
   filterBoard(val);
 }
 function filterBoard(tier){
