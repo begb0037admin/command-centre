@@ -413,7 +413,8 @@
         "[Jun 2026] P5 Incident# 11687334 -- Task# 50960484 assigned. Simon looped in Marie re LOD agreement.",
         "[TODO] Review thread -- determine if Kevin holds relevant information about LOD agreement and whether a response is needed."
       ],
-      "dateAdded": "2026-06-23"
+      "dateAdded": "2026-06-23",
+      "done": true
     },
     {
       "id": "t029",
