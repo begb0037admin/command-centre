@@ -435,7 +435,7 @@
     {
       "id": "t030",
       "title": "Cority SFTP production feed error -- 22 June",
-      "tier": "week",
+      "tier": "tomorrow",
       "source": "Cority Integration Platform 22/06",
       "emailRef": "[ERROR] Cority Employee Import Log File - 2026-06-22 17:15",
       "summary": "Cority production data feed SFTP connection failed 22 Jun. James managing -- Kevin to confirm resolved.",
