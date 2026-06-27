@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-27 (cc.lelitte.co.uk live — primary URL confirmed)
+**Last updated:** 2026-06-27 (cross-domain links fixed; CONSTITUTION.md v2.0; CLAUDE.md effort governance added)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -27,16 +27,16 @@
 - Three priority tiers: Today / Tomorrow / This Week / Parked
 - Sidebar: Oxford navy, 320px, real OUO.jpg crest (base64), live task counts per tier, week-start date, Add Task button
 - Collapsible task drawers: chevron toggle, action bullet list (→), source/emailRef/date metadata grid, editable notes with Save button, Move To tier controls
-- Quick-add panel: floating, title + tier picker + source + emailRef + notes, defaults source to "Manual", Esc to close
+- Quick-add panel: floating, title + tier picker + source + emailRef + notes, defaults source to “Manual”, Esc to close
 - Done state: checkbox tick fades + strikes through card, persists in localStorage (`commandCentre_done_v1`)
 - Hide/Show Done toggle in header
 - Time-aware greeting: Good morning / afternoon / evening, Kevin
 - Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser ✅ **Confirmed working 2026-06-23**
-- 'From your inbox' suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
-- **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. "All" returns to the four-column grid. Add button targets the focused tier.
+- ‘From your inbox’ suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
+- **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. “All” returns to the four-column grid. Add button targets the focused tier.
 - **Badge CSS normalised** — NEW (green) and UPDATED (blue) badges match Work Inbox exactly
-- **Emoji removed** from all three "Open email" button locations
-- **Save-status toast** — centred bottom toast: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
+- **Emoji removed** from all three “Open email” button locations
+- **Save-status toast** — centred bottom toast: “Saving…” (blue), “Saved ✓” (green, 3s auto-dismiss), “Save failed ✗ (HTTP XXX)” (red, tap to dismiss). Sidebar “Last save” row.
 
 ### Known Limitations (by design — v1)
 - Done state in localStorage is keyed by task ID — if `tasks.json` is regenerated with new IDs, done state resets.
@@ -219,7 +219,7 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 (blob `fba303449462c5
 
 ## CLOUDFLARE_PHASE_SPLIT_MIGRATE — Governance Artefacts
 
-**Status: Phase 3 COMPLETE — Cloudflare Workers deployment live at `command-centre.kevinlelitte.workers.dev`. Phase 2 functional equivalence check pending (Kevin).**
+**Status: Phase 3 COMPLETE — cc.lelitte.co.uk and wi.lelitte.co.uk both live. Phase 2 functional equivalence check (browser-level) pending Kevin sign-off (Gate 2.0).**
 
 ### Governance Chain
 
@@ -256,23 +256,17 @@ Remediated plan at `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_PLA
 - **Phase 2** — 25-item functional equivalence verification on GitHub Pages (Gate 2.0 — Kevin sign-off)
 - **Phase 3** — Cloudflare Pages migration, dual-origin transition, CORS update (Gates 3.0–3.6 — Kevin approval at each)
 
-Work-inbox follows the identical pattern once command-centre Phase 3 is confirmed stable.
+Work-inbox followed the identical pattern once command-centre Phase 3 was confirmed stable.
 
 ---
 
 ## Next Action
 
-**Phase 2 (functional equivalence check) — next:** Run 25-item checklist on `https://cc.lelitte.co.uk`. Covers: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, clock, crest. Sign-off triggers Gate 2.0.
+**Phase 2 (functional equivalence check) — next:** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, clock, crest. Source-level check passed 2026-06-27 — see session note. Browser sign-off by Kevin closes Gate 2.0.
 
-**After Gate 2.0:** Mirror file split to work-inbox → deploy to `wi.lelitte.co.uk`. Then remaining dashboards (hris-launcher, hr-fa-knowledge-base, hris-dashboard).
+**After Gate 2.0:** Remaining dashboards custom domain rollout — hris-launcher (`hris.lelitte.co.uk`), hr-fa-knowledge-base (`kb.lelitte.co.uk`), hris-dashboard (`hris-dash.lelitte.co.uk`).
 
-**Parked feature:** "Merge suggestion into existing task" — "+ Add to task" button appends dated action entry to existing task.
-
-**CONSTITUTION.md:** Add effort-level signalling principle.
-
-**Parked feature (after split confirmed stable):** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards that appends a dated action entry to an existing task and dismisses the card.
-
-**CONSTITUTION.md update (pending):** Add effort-level signalling principle — before any complex write (JS logic splits, architectural changes, debugging), agent signals recommended effort level to Kevin before proceeding.
+**Parked feature:** “Merge suggestion into existing task” — “+ Add to task” button on suggestion cards appends a dated action entry to an existing task and dismisses the card.
 
 **Phase 1 Stage 5 (outstanding — Codex):**
 Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`.
@@ -289,20 +283,20 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 ### 2026-06-22 — Sidebar styling audit: stale banner, task counts, context bar
 
 **Command Centre:**
-- Stale "Watch — stale today" banner moved from sidebar to main content area, above the tier grid. Oxford blue tint (`#eff6ff` / `#bfdbfe` / `#1e3a8a`). Two-column layout: task list with red age pills (left) + stats panel — count, oldest, average age, stalled 2w+ (right). Title and age pills in `#dc2626`. Subtitle: "These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done."
+- Stale “Watch — stale today” banner moved from sidebar to main content area, above the tier grid. Oxford blue tint (`#eff6ff` / `#bfdbfe` / `#1e3a8a`). Two-column layout: task list with red age pills (left) + stats panel — count, oldest, average age, stalled 2w+ (right). Title and age pills in `#dc2626`. Subtitle: “These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done.”
 - Live task counts widget added to sidebar (Today / Tomorrow / This week / Actions due). Reads directly from in-memory `tasks` array; updates on every `renderBoard()` call — no fetch, no caching issues.
 - Banner and counts are fully dynamic: move a card → banner and sidebar update instantly.
 - All changes approved by Kevin and live on main.
 
 **Work Inbox:**
 - Context bar restyled to Oxford blue tint matching Command Centre stale banner.
-- "Context" label bumped to 17px, colour `#1d4ed8` to stand out.
+- “Context” label bumped to 17px, colour `#1d4ed8` to stand out.
 - Context paragraph split sentence-per-line with red dash bullets.
 - Tasks widget: label bumped to 13px, live heartbeat dot (green=success, red=fail), 30s polling via proxy URL.
 
 ### 2026-06-22 — Tier focus mode
 - Sidebar tier dropdown now filters the board: selecting a tier collapses all others and expands the selected one full-width.
-- "All" option added to return to normal four-column view.
+- “All” option added to return to normal four-column view.
 - Commit: `f82178e`
 
 ### 2026-06-18 — Badge alignment + UI polish
@@ -333,6 +327,34 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 ### 2026-06-25 — HR Systems Managers Meeting 24/06 — full task update
 - Source: Granola (ID: 36d1c98d-d1ae-4a94-b0df-3c4835b64f57). tasks.json commit `fd675769`. 8 new tasks (t032–t039), 2 deleted, 3 closed, 4 updated.
 
+### 2026-06-25 — CLOUDFLARE_PHASE_SPLIT_MIGRATE governance — APPROVED
+
+**Objective:** Split 65KB `index.html` monolith into `index.html` shell + `css/styles.css` + `js/app.js` + `js/api.js`. Migrate hosting from GitHub Pages to Cloudflare Pages. Repeat for work-inbox once proven.
+
+**Governance cycle completed this session:**
+
+| Stage | Outcome |
+|---|---|
+| Pre-execution plan challenge (Codex) | GAPS FOUND — 10 items (2 FAIL, 8 PARTIAL) |
+| Seat B challenge (Kevin) — V2, V6, V7 | All three accepted by Codex |
+| Stage 4 Remediation — R1–R10 | All 10 items addressed in remediated plan |
+| Stage 5 Validation (Codex) | ALL PASS |
+| Stage 6 Governance Decision | **APPROVED by Kevin** — commit `8baeecc98302e3f6a988cddda6859ec6046cd4bc` |
+
+**Key decisions made:**
+- V6: Pre-execution plan challenge is valid as additive governance (not a formal Stage violation)
+- V2: `*.pages.dev` preview URL is not a separate approval gate
+- V7: `github-proxy` CORS narrowed to smoke-test only; `cc-tasks-writer` is the only CORS-locked Worker
+- Repo visibility: default keep public; Kevin decides at Gate 3.6
+- CLAUDE.md hard rule update governed at Gate 0.3 before any file split
+
+**Open risks at session close:**
+- Full baseline capture (CORS allowlist, GitHub Pages settings) deferred to Phase 0.2 at start of Stage 1
+- Phase 1 Stage 5 (Codex validation of AGENT_MODEL v2.1 propagation) still outstanding
+- work-inbox migration follows command-centre — not started
+
+**Next session entry point:** Read approved plan, begin Phase 0.1. Gate 0.3 requires Kevin approval before first write.
+
 ### 2026-06-27 (continued) — Phase 3 complete: Cloudflare Workers deployment
 
 **Deployed:** `command-centre.kevinlelitte.workers.dev` — Cloudflare Workers static assets deployment connected to `begb0037admin/command-centre` (main branch). Auto-deploys on every push to main.
@@ -349,17 +371,15 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 | Dashboard | URL |
 |---|---|
 | Command Centre | `cc.lelitte.co.uk` ✅ live |
-| Work Inbox | `wi.lelitte.co.uk` 🔲 pending (after file split) |
+| Work Inbox | `wi.lelitte.co.uk` ✅ live |
 | HRIS Launcher | `hris.lelitte.co.uk` 🔲 pending |
 | HR FA Knowledge Base | `kb.lelitte.co.uk` 🔲 pending |
 | HRIS Dashboard | `hris-dash.lelitte.co.uk` 🔲 pending |
 
-**Outstanding:**
-- Phase 2 functional equivalence checklist (on `cc.lelitte.co.uk`)
-- work-inbox file split → `wi.lelitte.co.uk`
-- Remaining dashboards custom domain rollout
-- "Merge suggestion into existing task" feature
-- CONSTITUTION.md effort-level signalling principle
+**Open risks:**
+- Phase 2 sign-off (Gate 2.0) not yet completed — browser-level functional testing needed (Kevin)
+- Phase 3 (Cloudflare Pages migration) complete — cc.lelitte.co.uk live ✅
+- work-inbox split complete — wi.lelitte.co.uk live ✅
 
 ### 2026-06-27 — CLOUDFLARE_PHASE_SPLIT_MIGRATE Stage 1 execution complete
 
@@ -397,37 +417,38 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 | `badge-inbox` — sidebar nav badge now shows real suggestion count (was stuck at 0) | `aeebd6a4` |
 | Suggestion cards — added + Today / + Tomorrow / + This Week buttons (drag hint was non-functional) | `eb964bc4` |
 
-**Phase 2 status:** Kevin confirmed dashboard "looks fine" visually. Full 25-item functional equivalence checklist deferred to next session.
+**Phase 2 status:** Kevin confirmed dashboard “looks fine” visually. Full 25-item functional equivalence checklist deferred to next session.
 
-**Open risks:**
-- Phase 2 sign-off (Gate 2.0) not yet completed
-- Phase 3 (Cloudflare Pages migration) not started — requires Kevin to connect repo in Cloudflare dashboard
-- work-inbox split follows command-centre Phase 3 confirmation
+### 2026-06-27 — Cross-domain links, CONSTITUTION.md v2.0, CLAUDE.md effort governance
 
-### 2026-06-25 — CLOUDFLARE_PHASE_SPLIT_MIGRATE governance — APPROVED
+**Cross-domain links fixed in command-centre/index.html:**
+- Sidebar “Work Inbox” nav link: updated from `begb0037admin.github.io/work-inbox/` to `https://wi.lelitte.co.uk/` ✅
+- Inbox view “Open full inbox →”: updated from `begb0037admin.github.io/work-inbox/` to `https://wi.lelitte.co.uk/` ✅
+- Backup before write: `Archive/index_backup_20260627_2138.html` (SHA `f9ef0a99`)
+- Post-write SHA: `42ba97f9` (commit `b7fcd77e`)
 
-**Objective:** Split 65KB `index.html` monolith into `index.html` shell + `css/styles.css` + `js/app.js` + `js/api.js`. Migrate hosting from GitHub Pages to Cloudflare Pages. Repeat for work-inbox once proven.
+**work-inbox/js/app.js — CC button in priority cards:** updated from `begb0037admin.github.io/command-centre/` to `https://cc.lelitte.co.uk/` (commit `63205623`).
 
-**Governance cycle completed this session:**
+**CONSTITUTION.md v2.0 — all 7 repos:** Section 10 (Effort Level Governance) added. Reasoning seat must signal before high-effort tasks and wait for Kevin to raise effort level. Never unilateral. Version history updated. Kevin approved 2026-06-27.
 
-| Stage | Outcome |
-|---|---|
-| Pre-execution plan challenge (Codex) | GAPS FOUND — 10 items (2 FAIL, 8 PARTIAL) |
-| Seat B challenge (Kevin) — V2, V6, V7 | All three accepted by Codex |
-| Stage 4 Remediation — R1–R10 | All 10 items addressed in remediated plan |
-| Stage 5 Validation (Codex) | ALL PASS |
-| Stage 6 Governance Decision | **APPROVED by Kevin** — commit `8baeecc98302e3f6a988cddda6859ec6046cd4bc` |
+**CLAUDE.md — all 7 repos:** Effort Level Governance section added referencing CONSTITUTION.md Section 10 (v2.0, 2026-06-27). Bootstraps every AI session with the principle.
 
-**Key decisions made:**
-- V6: Pre-execution plan challenge is valid as additive governance (not a formal Stage violation)
-- V2: `*.pages.dev` preview URL is not a separate approval gate
-- V7: `github-proxy` CORS narrowed to smoke-test only; `cc-tasks-writer` is the only CORS-locked Worker
-- Repo visibility: default keep public; Kevin decides at Gate 3.6
-- CLAUDE.md hard rule update governed at Gate 0.3 before any file split
+**Source-level equivalence check (2026-06-27):**
 
-**Open risks at session close:**
-- Full baseline capture (CORS allowlist, GitHub Pages settings) deferred to Phase 0.2 at start of Stage 1
-- Phase 1 Stage 5 (Codex validation of AGENT_MODEL v2.1 propagation) still outstanding
-- work-inbox migration follows command-centre — not started
+| Check | CC (cc.lelitte.co.uk) | WI (wi.lelitte.co.uk) |
+|---|---|---|
+| HTML shell loads (via GitHub API) | ✅ | ✅ |
+| CSS reference correct | ✅ `css/styles.css` | ✅ `css/styles.css` |
+| JS load order correct | ✅ `api.js` → `app.js` | ✅ `app.js` (single file) |
+| Oxford crest (base64) present | ✅ | ✅ |
+| Sidebar structure present | ✅ | ✅ |
+| Cross-domain link to wi.lelitte.co.uk | ✅ (nav + inbox toolbar) | n/a |
+| Cross-domain link to cc.lelitte.co.uk | n/a | ✅ (CC button in priority cards) |
+| Four tier columns present | ✅ | n/a |
+| Calendar/absences sidebar | n/a | ✅ |
+| Tasks widget + live dot | n/a | ✅ |
+| Cache-control meta tags | n/a | ✅ |
+| Archive + import panels | n/a | ✅ |
+| Save toast element | ✅ | n/a |
 
-**Next session entry point:** Read approved plan, begin Phase 0.1. Gate 0.3 requires Kevin approval before first write.
+Note: Live URL fetch (lelitte.co.uk + GitHub Pages) returned 403 from cloud environment — expected (proxy blocks browser-less fetches). Browser-level Gate 2.0 check requires Kevin to open `https://cc.lelitte.co.uk` and verify task load, tier moves, quick-add, notes edit, done state, suggestions, tier focus mode, sidebar resize.
