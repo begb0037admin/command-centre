@@ -20,7 +20,7 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 
 ## MANDATORY — BACKUP AND VERIFY PROTOCOL — BEFORE EVERY WRITE
 
-**Every write to `index.html` or `data/tasks.json` requires all steps below, in order. No exceptions — not for single-line edits, not for bug fixes, not for anything.**
+**Every write to `index.html`, `css/styles.css`, `js/app.js`, `js/api.js`, or `data/tasks.json` requires all steps below, in order. No exceptions — not for single-line edits, not for bug fixes, not for anything.**
 
 ### Before making any change
 1. Identify the exact file(s) you will change.
@@ -49,7 +49,7 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 
 ## UI APPROVAL GATE — BEFORE EVERY VISUAL PUSH
 
-**Every visual change to `index.html` must be screenshotted and approved before it goes to main. No exceptions — not for small tweaks, not for "obvious" fixes.**
+**Every visual change to the dashboard must be screenshotted and approved before it goes to main. No exceptions — not for small tweaks, not for "obvious" fixes.**
 
 1. Implement the change locally.
 2. Take a screenshot and send it to Kevin.
@@ -71,7 +71,7 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 - **Status:** Active — Module 1 live
 - **Repo:** https://github.com/begb0037admin/command-centre
 - **Live dashboard:** https://begb0037admin.github.io/command-centre/
-- **Last updated:** 2026-06-25
+- **Last updated:** 2026-06-27
 
 ## Bootstrap Order
 1. This file (orientation)
@@ -82,7 +82,10 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 ## Architecture
 | Component | Description |
 |---|---|
-| `index.html` | Single-file dashboard. Oxford navy sidebar (340px), blue-grey main area (#f5f7fb). No framework, no build step. |
+| `index.html` | Shell — `<head>`, layout divs, `<link>` and `<script src>` tags only. No inline styles or scripts. |
+| `css/styles.css` | All dashboard styles extracted from the former monolith. |
+| `js/api.js` | Data layer — constants, global state, loadTasks, fetchTasksRemote, mergeRemote, persistTasks, showSaveToast. Loads before app.js. |
+| `js/app.js` | UI layer — all rendering, task interaction, drag/drop, suggestions, sidebar, init. |
 | `data/tasks.json` | Task data store. Fields: id, title, tier, source, emailRef, notes, actions[], dateAdded. |
 
 ## Data Flow
@@ -110,11 +113,12 @@ Tasks load from `data/tasks.json` on page open (cache-busted). The 'From your in
 | Kevin | Approval authority — new tasks, tier changes, destructive ops, constitution changes. |
 
 ## Hard Rules
-- Single `index.html` — no framework, no build step
+- No framework, no build step — static files only
 - No credentials in any committed file
 - All GitHub writes by Claude Code via Contents API — fresh SHA before every PUT
 - One write at a time — verify result before the next
 - tasks.json is the source of truth for task content — not session memory
+- Load order: `styles.css` → `api.js` → `app.js` — never change without testing
 
 ## Domain
 **WORK (Kevin's domain).** Do not mix with Hope's personal domain (AIMM, Personal Finance) unless a Cross-Domain Code Brief has been issued.
