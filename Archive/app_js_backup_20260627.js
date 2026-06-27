@@ -1,0 +1,10 @@
+var WRITER='https://cc-tasks-writer.kevinlelitte.workers.dev';
+var PROXY='https://github-proxy.lelitte.co.uk/command-centre';
+var INBOX_RAW='https://raw.githubusercontent.com/begb0037admin/work-inbox/main';
+var TIERS=['today','tomorrow','week','parked'];
+var DONE_KEY='commandCentre_done_v1';
+var DISMISS_KEY='cc_sg_dismissed_v1';
+var SHOW_DONE_KEY='cc_show_done_v1';
+var tasks=[];
+var dragId=null;
+var sgDragIdx=null;
