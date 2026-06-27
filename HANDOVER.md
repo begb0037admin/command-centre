@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-27 (CLOUDFLARE_PHASE_SPLIT_MIGRATE Stage 1 execution complete — file split live)
+**Last updated:** 2026-06-27 (Phase 3 complete — Cloudflare Workers deployment live, CORS updated)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -219,7 +219,7 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 (blob `fba303449462c5
 
 ## CLOUDFLARE_PHASE_SPLIT_MIGRATE — Governance Artefacts
 
-**Status: Stage 1 COMPLETE — file split live on GitHub Pages. Phase 2 functional equivalence check pending (Kevin).**
+**Status: Phase 3 COMPLETE — Cloudflare Workers deployment live at `command-centre.kevinlelitte.workers.dev`. Phase 2 functional equivalence check pending (Kevin).**
 
 ### Governance Chain
 
@@ -262,9 +262,9 @@ Work-inbox follows the identical pattern once command-centre Phase 3 is confirme
 
 ## Next Action
 
-**CLOUDFLARE_PHASE_SPLIT_MIGRATE — Phase 3 (next):** Cloudflare Pages migration. Requires Kevin to connect `begb0037admin/command-centre` repo in Cloudflare dashboard. CORS update to `cc-tasks-writer` follows.
+**Phase 2 (functional equivalence check) — next:** Run 25-item checklist on `https://command-centre.kevinlelitte.workers.dev`. Covers: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, clock, crest. Sign-off triggers Gate 2.0.
 
-**Phase 2 (functional equivalence check) — deferred to after Phase 3:** Single 25-item check on the Cloudflare Pages URL covers both gates in one pass. No value in checking GitHub Pages separately first.
+**After Gate 2.0:** Decide whether to retire GitHub Pages and/or add custom domain (e.g. `command-centre.lelitte.co.uk`). Then mirror the file split to work-inbox.
 
 **Parked feature (after split confirmed stable):** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards that appends a dated action entry to an existing task and dismisses the card.
 
@@ -328,6 +328,23 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 
 ### 2026-06-25 — HR Systems Managers Meeting 24/06 — full task update
 - Source: Granola (ID: 36d1c98d-d1ae-4a94-b0df-3c4835b64f57). tasks.json commit `fd675769`. 8 new tasks (t032–t039), 2 deleted, 3 closed, 4 updated.
+
+### 2026-06-27 (continued) — Phase 3 complete: Cloudflare Workers deployment
+
+**Deployed:** `command-centre.kevinlelitte.workers.dev` — Cloudflare Workers static assets deployment connected to `begb0037admin/command-centre` (main branch). Auto-deploys on every push to main.
+
+**CORS updated:** `cc-tasks-writer` `CORS_ORIGINS` set extended to include `https://command-centre.kevinlelitte.workers.dev`. Task saves confirmed working (Saved ✓ toast) from Cloudflare URL.
+
+**Both URLs now live and functional:**
+- GitHub Pages: `https://begb0037admin.github.io/command-centre/`
+- Cloudflare: `https://command-centre.kevinlelitte.workers.dev`
+
+**Outstanding:**
+- Phase 2 functional equivalence checklist (on Cloudflare URL)
+- Decision: retire GitHub Pages / add custom domain
+- work-inbox file split (follows command-centre confirmation)
+- "Merge suggestion into existing task" feature
+- CONSTITUTION.md effort-level signalling principle
 
 ### 2026-06-27 — CLOUDFLARE_PHASE_SPLIT_MIGRATE Stage 1 execution complete
 
