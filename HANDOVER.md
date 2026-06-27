@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-27 (Phase 3 complete — Cloudflare Workers deployment live, CORS updated)
+**Last updated:** 2026-06-27 (cc.lelitte.co.uk live — primary URL confirmed)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -262,9 +262,13 @@ Work-inbox follows the identical pattern once command-centre Phase 3 is confirme
 
 ## Next Action
 
-**Phase 2 (functional equivalence check) — next:** Run 25-item checklist on `https://command-centre.kevinlelitte.workers.dev`. Covers: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, clock, crest. Sign-off triggers Gate 2.0.
+**Phase 2 (functional equivalence check) — next:** Run 25-item checklist on `https://cc.lelitte.co.uk`. Covers: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, clock, crest. Sign-off triggers Gate 2.0.
 
-**After Gate 2.0:** Decide whether to retire GitHub Pages and/or add custom domain (e.g. `command-centre.lelitte.co.uk`). Then mirror the file split to work-inbox.
+**After Gate 2.0:** Mirror file split to work-inbox → deploy to `wi.lelitte.co.uk`. Then remaining dashboards (hris-launcher, hr-fa-knowledge-base, hris-dashboard).
+
+**Parked feature:** "Merge suggestion into existing task" — "+ Add to task" button appends dated action entry to existing task.
+
+**CONSTITUTION.md:** Add effort-level signalling principle.
 
 **Parked feature (after split confirmed stable):** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards that appends a dated action entry to an existing task and dismisses the card.
 
@@ -339,10 +343,21 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 - GitHub Pages: `https://begb0037admin.github.io/command-centre/`
 - Cloudflare: `https://command-centre.kevinlelitte.workers.dev`
 
+**Custom domain:** `cc.lelitte.co.uk` — added to Worker Domains, CORS updated in `cc-tasks-writer` (origins now include `https://cc.lelitte.co.uk`). Task saves confirmed working. This is now the primary URL.
+
+**Domain plan (all dashboards):**
+| Dashboard | URL |
+|---|---|
+| Command Centre | `cc.lelitte.co.uk` ✅ live |
+| Work Inbox | `wi.lelitte.co.uk` 🔲 pending (after file split) |
+| HRIS Launcher | `hris.lelitte.co.uk` 🔲 pending |
+| HR FA Knowledge Base | `kb.lelitte.co.uk` 🔲 pending |
+| HRIS Dashboard | `hris-dash.lelitte.co.uk` 🔲 pending |
+
 **Outstanding:**
-- Phase 2 functional equivalence checklist (on Cloudflare URL)
-- Decision: retire GitHub Pages / add custom domain
-- work-inbox file split (follows command-centre confirmation)
+- Phase 2 functional equivalence checklist (on `cc.lelitte.co.uk`)
+- work-inbox file split → `wi.lelitte.co.uk`
+- Remaining dashboards custom domain rollout
 - "Merge suggestion into existing task" feature
 - CONSTITUTION.md effort-level signalling principle
 
