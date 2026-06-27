@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-25 (CLOUDFLARE_PHASE_SPLIT_MIGRATE governance complete — APPROVED, Stage 1 pending)
+**Last updated:** 2026-06-27 (CLOUDFLARE_PHASE_SPLIT_MIGRATE Stage 1 execution complete — file split live)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -9,7 +9,10 @@
 
 | Component | Description |
 |---|---|
-| `index.html` | Single-file dashboard. Oxford navy sidebar (340px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. |
+| `index.html` | Shell — HTML structure only. Oxford navy sidebar (340px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. Loads css/styles.css → js/api.js → js/app.js. |
+| `css/styles.css` | All styles extracted from former monolithic index.html. |
+| `js/api.js` | Data layer — constants, task state, loadTasks(), fetchTasksRemote(), mergeRemote(), persistTasks(), showSaveToast(). No DOM dependencies at load time. |
+| `js/app.js` | UI layer — all rendering, interaction, drag/drop, suggestions, sidebar resize, clock, init. Load order: after api.js. |
 | `data/tasks.json` | Task data. Fields: id, title, tier (today/week/parked), source, emailRef, notes, actions[], dateAdded. |
 | `governance/` | Governance workflow standard (v1.1), phase templates, and phase evidence artefacts. |
 | `docs/project/generated/` | Approved Codex artefact path. All Codex-produced review artefacts are committed here. |
@@ -48,8 +51,11 @@
 
 | File | Path |
 |---|---|
-| Dashboard | `index.html` (repo root) |
 | Task data | `data/tasks.json` |
+| Dashboard shell | `index.html` (repo root) |
+| Styles | `css/styles.css` |
+| Data layer | `js/api.js` |
+| UI layer | `js/app.js` |
 | Oxford crest | Embedded as base64 in `index.html` (source: OUO.jpg) |
 | Inbox suggestions | `data/inbox_suggestions.json` (written by work-inbox fetch_inbox.py Phase 3.5) |
 | Triage ledger | `data/triage_ledger.json` (dedup tracker for Phase 3.6 auto-updates) |
@@ -213,7 +219,7 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 (blob `fba303449462c5
 
 ## CLOUDFLARE_PHASE_SPLIT_MIGRATE — Governance Artefacts
 
-**Status: APPROVED — Stage 1 execution pending (next session)**
+**Status: Stage 1 COMPLETE — file split live on GitHub Pages. Phase 2 functional equivalence check pending (Kevin).**
 
 ### Governance Chain
 
@@ -256,8 +262,14 @@ Work-inbox follows the identical pattern once command-centre Phase 3 is confirme
 
 ## Next Action
 
-**CLOUDFLARE_PHASE_SPLIT_MIGRATE — Stage 1 (next session):**
-Read the approved plan at `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_PLAN_REMEDIATED_20260625.md`. Begin at Phase 0.1 (governance review). Proceed through Phase 0.2 (restore-point capture) before any write. Gate 0.3 requires Kevin approval for CLAUDE.md architecture update before any file is split.
+**CLOUDFLARE_PHASE_SPLIT_MIGRATE — Phase 2 (functional equivalence check):**
+Kevin to verify the 25-item checklist on the live dashboard at `begb0037admin.github.io/command-centre/`. Covers: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, clock, crest. Sign-off triggers Gate 2.0.
+
+**After Gate 2.0:** Phase 3 — Cloudflare Pages migration. Requires Kevin to connect `begb0037admin/command-centre` repo in Cloudflare dashboard. CORS update to `cc-tasks-writer` follows.
+
+**Parked feature (after split confirmed stable):** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards that appends a dated action entry to an existing task and dismisses the card.
+
+**CONSTITUTION.md update (pending):** Add effort-level signalling principle — before any complex write (JS logic splits, architectural changes, debugging), agent signals recommended effort level to Kevin before proceeding.
 
 **Phase 1 Stage 5 (outstanding — Codex):**
 Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`.
@@ -317,6 +329,49 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 
 ### 2026-06-25 — HR Systems Managers Meeting 24/06 — full task update
 - Source: Granola (ID: 36d1c98d-d1ae-4a94-b0df-3c4835b64f57). tasks.json commit `fd675769`. 8 new tasks (t032–t039), 2 deleted, 3 closed, 4 updated.
+
+### 2026-06-27 — CLOUDFLARE_PHASE_SPLIT_MIGRATE Stage 1 execution complete
+
+**File split live on GitHub Pages.** 65KB monolithic `index.html` split into 4 files via atomic GitHub Git Tree API commit.
+
+**Gates completed this session:**
+
+| Gate | Action | Commit |
+|---|---|---|
+| 0.3 | CLAUDE.md architecture update — approved by Kevin | `dc79a95a` |
+| 1.0 | File split push — approved by Kevin | `d8c328f7` |
+
+**Archive backups (created before first write):**
+
+| File | Archive path | Backup SHA |
+|---|---|---|
+| `index.html` | `Archive/index_backup_20260627.html` | `b4e0d5d8d1546c9cc28bb5161fc60b0daebc63cd` |
+| `data/tasks.json` | `Archive/tasks_backup_20260627.json` | `9f2dc00346eccc183af18131dc251706b382e460` |
+| `js/app.js` | `Archive/app_js_backup_20260627.js` | `1dd68dba33f78ae10000b91a6dd7e19a6234b43d` |
+
+**Live file SHAs post-split:**
+
+| File | SHA |
+|---|---|
+| `index.html` | `2cd53ad4713ad2ee66366556a65fae9486fae718` |
+| `css/styles.css` | `15328f7389ff59d9b4a760370a58bbde23845b37` |
+| `js/api.js` | `ed97d9b1` |
+| `js/app.js` | `43e54c75bd275f3e0eb5f18b427892adb7e214dd` |
+
+**Fixes applied this session (pre-existing bugs, not caused by split):**
+
+| Fix | Commit |
+|---|---|
+| `setTier()` — now calls `showView('board')` before `filterBoard()` so tier filter works from inbox view | `aeebd6a4` |
+| `badge-inbox` — sidebar nav badge now shows real suggestion count (was stuck at 0) | `aeebd6a4` |
+| Suggestion cards — added + Today / + Tomorrow / + This Week buttons (drag hint was non-functional) | `eb964bc4` |
+
+**Phase 2 status:** Kevin confirmed dashboard "looks fine" visually. Full 25-item functional equivalence checklist deferred to next session.
+
+**Open risks:**
+- Phase 2 sign-off (Gate 2.0) not yet completed
+- Phase 3 (Cloudflare Pages migration) not started — requires Kevin to connect repo in Cloudflare dashboard
+- work-inbox split follows command-centre Phase 3 confirmation
 
 ### 2026-06-25 — CLOUDFLARE_PHASE_SPLIT_MIGRATE governance — APPROVED
 
