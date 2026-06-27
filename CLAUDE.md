@@ -112,6 +112,9 @@ Tasks load from `data/tasks.json` on page open (cache-busted). The 'From your in
 | Claude Code | Reasons, writes code, executes GitHub API writes, verifies live behaviour. |
 | Kevin | Approval authority — new tasks, tier changes, destructive ops, constitution changes. |
 
+## Effort Level Governance
+Before any task where higher effort is warranted, signal to Kevin: what the task is, why higher effort is needed, and an explicit request to raise the effort level. Wait — do not proceed until Kevin raises it. Signal when the high-effort phase is done; Kevin decides when to return to normal. Never change effort level unilaterally. See CONSTITUTION.md Section 10 (v2.0, 2026-06-27).
+
 ## Hard Rules
 - No framework, no build step — static files only
 - No credentials in any committed file
