@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-28 (live clock removed from CC sidebar — moved to WI)
+**Last updated:** 2026-06-28 (sidebar reorder, Oxford crest restored, Daily Focus card margin fix)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -37,6 +37,7 @@
 - **Badge CSS normalised** — NEW (green) and UPDATED (blue) badges match Work Inbox exactly
 - **Emoji removed** from all three "Open email" button locations
 - **Save-status toast** — centred bottom toast: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
+- **Sidebar nav order (2026-06-28):** Daily Focus widget → From your inbox → Tasks counts → Links → My Links
 
 ### Known Limitations (by design — v1)
 - Done state in localStorage is keyed by task ID — if `tasks.json` is regenerated with new IDs, done state resets.
@@ -56,7 +57,7 @@
 | Styles | `css/styles.css` |
 | Data layer | `js/api.js` |
 | UI layer | `js/app.js` |
-| Oxford crest | Embedded as base64 in `index.html` (source: OUO.jpg) |
+| Oxford crest | Embedded as base64 in `index.html` (source: OUO.jpg) — full 10,416-char JPEG, restored 2026-06-28 |
 | Inbox suggestions | `data/inbox_suggestions.json` (written by work-inbox fetch_inbox.py Phase 3.5) |
 | Triage ledger | `data/triage_ledger.json` (dedup tracker for Phase 3.6 auto-updates) |
 | Archive | `Archive/tasks_backup_YYYYMMDD.json` (auto-created before every write) |
@@ -460,3 +461,25 @@ Note: Live URL fetch (lelitte.co.uk + GitHub Pages) returned 403 from cloud envi
 - Archive backup stub committed before write: `Archive/index_backup_20260628_0600.txt` (restore point: main SHA `2126c329`)
 - Clock functionality relocated to work-inbox sidebar — see work-inbox HANDOVER.md
 - Approved by Kevin 2026-06-28. Merged to main via PR #5 (squash commit `e6f8ce64`).
+
+### 2026-06-28 — Sidebar reorder, Oxford crest restored, Daily Focus card margin fix
+
+**Sidebar nav reorder (approved by Kevin):**
+- New order: Daily Focus widget → From your inbox → Tasks counts → Links → My Links
+- Previous order: From your inbox → Tasks counts → Daily Focus → Links
+- Change: HTML-only reorder in `<nav class="sb-nav">` — no JS changes required
+- Merged to main via PR #6 (squash commit `dab40e84`)
+
+**Oxford crest restored:**
+- Root cause: the base64 JPEG was truncated from 10,416 chars to 8,243 chars during the PR #5 squash merge (clock removal). Truncated JPEG renders as broken/incomplete image.
+- Fix: full 10,416-char base64 restored in `index.html`
+- The crest now renders correctly — confirmed in screenshot before push
+
+**Daily Focus card margin fix (`css/styles.css`):**
+- `.sb-stale-stats` margin changed from `4px 10px 8px` to `4px 0 8px`
+- Removes left/right margin so the Daily Focus card aligns flush with sidebar nav link elements (consistent left and right margin across all sidebar items)
+
+**Archive backups created before writes:**
+- `Archive/index_backup_20260628_1200.html` — index.html before reorder + crest fix
+- `Archive/styles_backup_20260628_1200.css` — styles.css before margin fix
+- `Archive/index_backup_20260628_1200_full_crest.html` — reference copy with full crest + new nav order
