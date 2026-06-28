@@ -515,13 +515,14 @@
       "tier": "today",
       "source": "HR Systems Managers Meeting 24/06 (Simon Burford)",
       "emailRef": "",
-      "summary": "Existing report not picking up unclosed absences. Pay impact: staff gone into half pay. Investigate root cause and push Michelle to gather user stories from requester before any fix is scoped.",
+      "summary": "Existing report not picking up unclosed absences. Pay impact: staff gone into half pay. Email sent to Michelle 26 Jun — awaiting her return from annual leave.",
       "description": "The existing sickness absence report is not picking up open-ended (unclosed) absences. This occurs when staff return to work but the absence record in PeopleXD is not closed. As a result, individuals have gone into half pay. Issue flagged by Simon Burford at the HR Systems Managers Meeting on 24 June and again raised at SK 1-1 on 26 June. Linked to an existing Michelle ticket raised ~6 May, originally logged as an enhancement but possibly a bug. Root issue unclear: may be user education (running wrong report -- Tim Depot 4 vs 3; TD4 is designed for defined date ranges, not open-ended absences) or a genuine system gap. A task number was shared at the Managers Meeting. Kevin to investigate root cause AND push Michelle to gather user stories from the requester before any fix is scoped or backlog prioritised.",
       "actions": [
         "[24 Jun 2026] Issue raised at HR Systems Managers Meeting by Simon Burford -- sickness absence report not picking up open-ended absences. Pay impact confirmed: individuals gone into half pay. Task number shared in meeting.",
         "[26 Jun 2026] Raised again at SK 1-1 -- linked to existing Michelle ticket (~6 May). May be user education (wrong report: TD4 vs TD3) or a genuine bug. Michelle needs to go back to the requester and gather user stories before any fix is scoped.",
+        "[26 Jun 2026] Kevin forwarded sickness absence thread to Michelle — confirmed TIMDEP03 is the correct report for open-ended absences, guidance should resolve the concern. Michelle currently on annual leave. (email: Kevin (sent) - Fw: Owner Required - Task# 50945166 for ServiceReq# 30404938)",
         "[TODO] Retrieve and log the task number shared at the Managers Meeting.",
-        "[TODO] Email Michelle -- send summary of discussion, push her to gather user stories from the requester before any fix or backlog prioritisation.",
+        "[AWAITING] Michelle to return from annual leave and gather user stories from the requester before any fix or backlog prioritisation is agreed.",
         "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL), user education issue, or system data problem in PeopleXD.",
         "[TODO] Confirm fix approach and communicate resolution to Simon Burford."
       ],
