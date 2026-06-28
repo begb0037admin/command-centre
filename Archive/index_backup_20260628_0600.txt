@@ -1,0 +1,1 @@
+Backup reference: index.html and js/app.js at main SHA 2126c3297e85e15d424293183e4925bfa5ccc172 (2026-06-28). Restore from that commit if needed.
