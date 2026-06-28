@@ -344,13 +344,14 @@
       "tier": "today",
       "source": "Email 22/06 Marie Cooksey / Anna Carter-Windle",
       "emailRef": "Support Call# 11688462",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663350000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EF60000",
       "summary": "Response required to Support Call# 11688462 re Ash VEA team. Kevin named in thread, response expected.",
       "description": "Support Call# 11688462 concerns the Ash VEA team. Multiple emails received 22 June from Marie Cooksey and Anna Carter-Windle. Kevin is named in the emails and a response is expected. Inbox AI triage incorrectly classified as FYI based on subject line alone without reading the body.",
       "actions": [
         "[22 Jun 2026] Emails received from Marie Cooksey and Anna Carter-Windle on Support Call# 11688462 -- Kevin named, response expected.",
         "[23 Jun 2026] Task created manually -- inbox triage had incorrectly classified as FYI.",
-        "[TODO] Open thread, read full context, and respond to Support Call# 11688462."
+        "[TODO] Open thread, read full context, and respond to Support Call# 11688462.",
+        "[28 Jun 2026] Kevin replied to Cathy Hamer and Linda Pope on Support Call# 11688462 regarding the Ash VEA team issue, providing his response. (email: Kevin (sent to: Cathy Hamer; Linda Pope) - Re: Support Call# 11688462: Ash VEA team)"
       ],
       "dateAdded": "2026-06-23"
     },
@@ -375,7 +376,7 @@
       "tier": "today",
       "source": "Julie Hickman 23/06",
       "emailRef": "RE: Support cover for first two weeks in July",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1C0000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EF30000",
       "summary": "Both Michael AND Emma off w/c 1 July. No first-line support cover that week. Plan needed today.",
       "description": "Julie Hickman confirmed on 23 June that both Michael O'Sullivan AND Emma are on leave during the week commencing 6 July 2026. This leaves no first-line HR Systems support cover for that week. Kevin needs to decide who covers, what can be deferred, and whether Simon Burford or Marie Cooksey need to be informed or involved.",
       "actions": [
@@ -383,7 +384,8 @@
         "[24 Jun 2026] Raised at HR Systems Managers Meeting -- Kevin was working on a plan at FA catch-up that morning.",
         "[TODO] Identify who can provide first-line support cover w/c 6 July.",
         "[TODO] Notify Simon Burford and/or Marie Cooksey of the gap.",
-        "[TODO] Confirm cover arrangements and communicate to team."
+        "[TODO] Confirm cover arrangements and communicate to team.",
+        "[28 Jun 2026] Kevin notified Marie Cooksey that Asta will be taking compassionate leave on 30 June, which further reduces support cover capacity during the critical transition week. (email: Kevin (sent to: Marie Cooksey) - Compassionate leave for Asta on 30 June)"
       ],
       "dateAdded": "2026-06-23"
     },
