@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-27 (cross-domain links fixed; CONSTITUTION.md v2.0; CLAUDE.md effort governance added)
+**Last updated:** 2026-06-28 (live clock removed from CC sidebar — moved to WI)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -12,7 +12,7 @@
 | `index.html` | Shell — HTML structure only. Oxford navy sidebar (340px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. Loads css/styles.css → js/api.js → js/app.js. |
 | `css/styles.css` | All styles extracted from former monolithic index.html. |
 | `js/api.js` | Data layer — constants, task state, loadTasks(), fetchTasksRemote(), mergeRemote(), persistTasks(), showSaveToast(). No DOM dependencies at load time. |
-| `js/app.js` | UI layer — all rendering, interaction, drag/drop, suggestions, sidebar resize, clock, init. Load order: after api.js. |
+| `js/app.js` | UI layer — all rendering, interaction, drag/drop, suggestions, sidebar resize, init. Load order: after api.js. |
 | `data/tasks.json` | Task data. Fields: id, title, tier (today/week/parked), source, emailRef, notes, actions[], dateAdded. |
 | `governance/` | Governance workflow standard (v1.1), phase templates, and phase evidence artefacts. |
 | `docs/project/generated/` | Approved Codex artefact path. All Codex-produced review artefacts are committed here. |
@@ -27,16 +27,16 @@
 - Three priority tiers: Today / Tomorrow / This Week / Parked
 - Sidebar: Oxford navy, 320px, real OUO.jpg crest (base64), live task counts per tier, week-start date, Add Task button
 - Collapsible task drawers: chevron toggle, action bullet list (→), source/emailRef/date metadata grid, editable notes with Save button, Move To tier controls
-- Quick-add panel: floating, title + tier picker + source + emailRef + notes, defaults source to “Manual”, Esc to close
+- Quick-add panel: floating, title + tier picker + source + emailRef + notes, defaults source to "Manual", Esc to close
 - Done state: checkbox tick fades + strikes through card, persists in localStorage (`commandCentre_done_v1`)
 - Hide/Show Done toggle in header
 - Time-aware greeting: Good morning / afternoon / evening, Kevin
 - Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser ✅ **Confirmed working 2026-06-23**
-- ‘From your inbox’ suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
-- **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. “All” returns to the four-column grid. Add button targets the focused tier.
+- 'From your inbox' suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
+- **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. "All" returns to the four-column grid. Add button targets the focused tier.
 - **Badge CSS normalised** — NEW (green) and UPDATED (blue) badges match Work Inbox exactly
-- **Emoji removed** from all three “Open email” button locations
-- **Save-status toast** — centred bottom toast: “Saving…” (blue), “Saved ✓” (green, 3s auto-dismiss), “Save failed ✗ (HTTP XXX)” (red, tap to dismiss). Sidebar “Last save” row.
+- **Emoji removed** from all three "Open email" button locations
+- **Save-status toast** — centred bottom toast: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
 
 ### Known Limitations (by design — v1)
 - Done state in localStorage is keyed by task ID — if `tasks.json` is regenerated with new IDs, done state resets.
@@ -262,11 +262,11 @@ Work-inbox followed the identical pattern once command-centre Phase 3 was confir
 
 ## Next Action
 
-**Phase 2 (functional equivalence check) — next:** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, clock, crest. Source-level check passed 2026-06-27 — see session note. Browser sign-off by Kevin closes Gate 2.0.
+**Phase 2 (functional equivalence check) — next:** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, crest. Source-level check passed 2026-06-27 — see session note. Browser sign-off by Kevin closes Gate 2.0.
 
 **After Gate 2.0:** Remaining dashboards custom domain rollout — hris-launcher (`hris.lelitte.co.uk`), hr-fa-knowledge-base (`kb.lelitte.co.uk`), hris-dashboard (`hris-dash.lelitte.co.uk`).
 
-**Parked feature:** “Merge suggestion into existing task” — “+ Add to task” button on suggestion cards appends a dated action entry to an existing task and dismisses the card.
+**Parked feature:** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards appends a dated action entry to an existing task and dismisses the card.
 
 **Phase 1 Stage 5 (outstanding — Codex):**
 Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`.
@@ -283,20 +283,20 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 ### 2026-06-22 — Sidebar styling audit: stale banner, task counts, context bar
 
 **Command Centre:**
-- Stale “Watch — stale today” banner moved from sidebar to main content area, above the tier grid. Oxford blue tint (`#eff6ff` / `#bfdbfe` / `#1e3a8a`). Two-column layout: task list with red age pills (left) + stats panel — count, oldest, average age, stalled 2w+ (right). Title and age pills in `#dc2626`. Subtitle: “These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done.”
+- Stale "Watch — stale today" banner moved from sidebar to main content area, above the tier grid. Oxford blue tint (`#eff6ff` / `#bfdbfe` / `#1e3a8a`). Two-column layout: task list with red age pills (left) + stats panel — count, oldest, average age, stalled 2w+ (right). Title and age pills in `#dc2626`. Subtitle: "These tasks have been in your Today list for 3+ days. Move them on, park them, or mark done."
 - Live task counts widget added to sidebar (Today / Tomorrow / This week / Actions due). Reads directly from in-memory `tasks` array; updates on every `renderBoard()` call — no fetch, no caching issues.
 - Banner and counts are fully dynamic: move a card → banner and sidebar update instantly.
 - All changes approved by Kevin and live on main.
 
 **Work Inbox:**
 - Context bar restyled to Oxford blue tint matching Command Centre stale banner.
-- “Context” label bumped to 17px, colour `#1d4ed8` to stand out.
+- "Context" label bumped to 17px, colour `#1d4ed8` to stand out.
 - Context paragraph split sentence-per-line with red dash bullets.
 - Tasks widget: label bumped to 13px, live heartbeat dot (green=success, red=fail), 30s polling via proxy URL.
 
 ### 2026-06-22 — Tier focus mode
 - Sidebar tier dropdown now filters the board: selecting a tier collapses all others and expands the selected one full-width.
-- “All” option added to return to normal four-column view.
+- "All" option added to return to normal four-column view.
 - Commit: `f82178e`
 
 ### 2026-06-18 — Badge alignment + UI polish
@@ -417,13 +417,13 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 | `badge-inbox` — sidebar nav badge now shows real suggestion count (was stuck at 0) | `aeebd6a4` |
 | Suggestion cards — added + Today / + Tomorrow / + This Week buttons (drag hint was non-functional) | `eb964bc4` |
 
-**Phase 2 status:** Kevin confirmed dashboard “looks fine” visually. Full 25-item functional equivalence checklist deferred to next session.
+**Phase 2 status:** Kevin confirmed dashboard "looks fine" visually. Full 25-item functional equivalence checklist deferred to next session.
 
 ### 2026-06-27 — Cross-domain links, CONSTITUTION.md v2.0, CLAUDE.md effort governance
 
 **Cross-domain links fixed in command-centre/index.html:**
-- Sidebar “Work Inbox” nav link: updated from `begb0037admin.github.io/work-inbox/` to `https://wi.lelitte.co.uk/` ✅
-- Inbox view “Open full inbox →”: updated from `begb0037admin.github.io/work-inbox/` to `https://wi.lelitte.co.uk/` ✅
+- Sidebar "Work Inbox" nav link: updated from `begb0037admin.github.io/work-inbox/` to `https://wi.lelitte.co.uk/` ✅
+- Inbox view "Open full inbox →": updated from `begb0037admin.github.io/work-inbox/` to `https://wi.lelitte.co.uk/` ✅
 - Backup before write: `Archive/index_backup_20260627_2138.html` (SHA `f9ef0a99`)
 - Post-write SHA: `42ba97f9` (commit `b7fcd77e`)
 
@@ -452,3 +452,11 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 | Save toast element | ✅ | n/a |
 
 Note: Live URL fetch (lelitte.co.uk + GitHub Pages) returned 403 from cloud environment — expected (proxy blocks browser-less fetches). Browser-level Gate 2.0 check requires Kevin to open `https://cc.lelitte.co.uk` and verify task load, tier moves, quick-add, notes edit, done state, suggestions, tier focus mode, sidebar resize.
+
+### 2026-06-28 — Live clock removed from CC sidebar
+
+- Removed `<div class="sb-clock" id="sb-clock">` from `index.html` sidebar (was at bottom of sidebar, before resize handle)
+- Removed `/* CLOCK */` block from `js/app.js` (`updateClock()` function + `setInterval`) — clock was displaying HH:MM:SS and day/date at sidebar bottom
+- Archive backup stub committed before write: `Archive/index_backup_20260628_0600.txt` (restore point: main SHA `2126c329`)
+- Clock functionality relocated to work-inbox sidebar — see work-inbox HANDOVER.md
+- Approved by Kevin 2026-06-28. Merged to main via PR #5 (squash commit `e6f8ce64`).
