@@ -16,7 +16,7 @@
         "[10 Jun 2026] Done - confirmed by Kevin. Closed.",
         "[10 Jun 2026] Kevin shared a KPI presentation with Michael O'Sullivan on 9 June, indicating progress on team coordination work as part of the return briefing cycle.",
         "[19 Jun 2026] Kevin checked with the team on 15 June regarding support cover during early July while on leave.",
-        "[23 Jun 2026] Julie has provided notice that both Michael and Emma are on leave during the week commencing 1 July.",
+        "[23 Jun 2026] Julie has provided notice that both Michael and Emma are on leave simultaneously during the week commencing 1 July.",
         "[23 Jun 2026] Kevin sent a follow-up request to Michael O'Sullivan asking him to confirm case creation email impact following new starter setup."
       ],
       "dateAdded": "2026-06-08",
@@ -515,12 +515,14 @@
       "tier": "today",
       "source": "HR Systems Managers Meeting 24/06 (Simon Burford)",
       "emailRef": "",
-      "summary": "Existing report not picking up unclosed absences. Pay impact: staff gone into half pay. Kevin to investigate: report fix or system issue.",
-      "description": "The existing sickness absence report is not picking up open-ended (unclosed) absences. This occurs when staff return to work but the absence record in PeopleXD is not closed. As a result, individuals have gone into half pay. Issue flagged by Simon Burford at the HR Systems Managers Meeting on 24 June. A task number was shared in the meeting. Kevin to investigate whether this is a report fix (SQL/RDL) or a system data quality issue requiring a data correction process.",
+      "summary": "Existing report not picking up unclosed absences. Pay impact: staff gone into half pay. Investigate root cause and push Michelle to gather user stories from requester before any fix is scoped.",
+      "description": "The existing sickness absence report is not picking up open-ended (unclosed) absences. This occurs when staff return to work but the absence record in PeopleXD is not closed. As a result, individuals have gone into half pay. Issue flagged by Simon Burford at the HR Systems Managers Meeting on 24 June and again raised at SK 1-1 on 26 June. Linked to an existing Michelle ticket raised ~6 May, originally logged as an enhancement but possibly a bug. Root issue unclear: may be user education (running wrong report -- Tim Depot 4 vs 3; TD4 is designed for defined date ranges, not open-ended absences) or a genuine system gap. A task number was shared at the Managers Meeting. Kevin to investigate root cause AND push Michelle to gather user stories from the requester before any fix is scoped or backlog prioritised.",
       "actions": [
         "[24 Jun 2026] Issue raised at HR Systems Managers Meeting by Simon Burford -- sickness absence report not picking up open-ended absences. Pay impact confirmed: individuals gone into half pay. Task number shared in meeting.",
-        "[TODO] Retrieve and log the task number shared at the meeting.",
-        "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL) or a system data issue in PeopleXD.",
+        "[26 Jun 2026] Raised again at SK 1-1 -- linked to existing Michelle ticket (~6 May). May be user education (wrong report: TD4 vs TD3) or a genuine bug. Michelle needs to go back to the requester and gather user stories before any fix is scoped.",
+        "[TODO] Retrieve and log the task number shared at the Managers Meeting.",
+        "[TODO] Email Michelle -- send summary of discussion, push her to gather user stories from the requester before any fix or backlog prioritisation.",
+        "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL), user education issue, or system data problem in PeopleXD.",
         "[TODO] Confirm fix approach and communicate resolution to Simon Burford."
       ],
       "dateAdded": "2026-06-25"
@@ -631,6 +633,49 @@
       "notes": "",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078847C7120000",
       "dateAdded": "2026-06-27"
+    },
+    {
+      "id": "t041",
+      "title": "Michael O'Sullivan -- Excellence Award nomination",
+      "tier": "today",
+      "source": "SK 1-1 26/06",
+      "emailRef": "",
+      "summary": "Nominating Michael for Excellence Award for dual contribution: clinical pay project delivery + BAU. Deadline: 3 July.",
+      "description": "Nominating Michael O'Sullivan for an Excellence Award covering his dual contribution: project delivery on the clinical pay changes and BAU work including staff and price change implementation. Michael has been nominated before -- confirmed acceptable to nominate again given the multi-year project scope. Strategy: pull a quote from the project lead (she said the project would not have happened without him), add BAU stats and examples, and submit by 3 July deadline.",
+      "actions": [
+        "[26 Jun 2026] Raised at SK 1-1 -- nominate Michael for Excellence Award. Deadline 3 July. Strategy: quote from project lead + BAU stats.",
+        "[TODO] Draft nomination -- compile clinical pay project stats, BAU examples (staff and price change implementation), and quote from project lead.",
+        "[TODO] Submit by 3 July deadline."
+      ],
+      "dateAdded": "2026-06-28"
+    },
+    {
+      "id": "t043",
+      "title": "Escalate SQL Server 2022 access -- trial licence on flaky server",
+      "tier": "week",
+      "source": "SK 1-1 26/06",
+      "emailRef": "",
+      "summary": "SQL Server 2022 trial licence on a flaky server is blocking sickness absence report investigation. Needs escalating again.",
+      "description": "SQL Server 2022 access is currently broken -- it is on a trial licence running on a flaky server. This is blocking the sickness absence report investigation (t034) and other report work. The issue has been escalated before without resolution. Needs escalating again to get a proper fix. Note: this is SQL Server access, separate from the Visual Studio 2022 licensing issue in t033 (SSO migration).",
+      "actions": [
+        "[26 Jun 2026] Raised at SK 1-1 -- SQL Server 2022 trial licence on flaky server blocking report investigation. Has been escalated before without resolution.",
+        "[TODO] Escalate SQL Server 2022 access issue again -- push for a proper fix, not another trial extension."
+      ],
+      "dateAdded": "2026-06-28"
+    },
+    {
+      "id": "t044",
+      "title": "Send Cority PUG notes to James",
+      "tier": "today",
+      "source": "H&S Roadmap 22/06",
+      "emailRef": "",
+      "summary": "Send Cority PUG meeting notes to James so he can add items to the Cority roadmap log.",
+      "description": "Action from H&S Roadmap 22/06. Kevin committed to sending the Cority PUG notes to James that day. James needs them to add a couple of items to the Cority roadmap log. Separate from t022 (sending POC meeting notes to Christopher Sanders, which is complete).",
+      "actions": [
+        "[22 Jun 2026] Committed at H&S Roadmap meeting to send Cority PUG notes to James -- a couple of items to be added to Cority roadmap log.",
+        "[TODO] Send Cority PUG meeting notes to James Salas Guillen."
+      ],
+      "dateAdded": "2026-06-28"
     }
   ]
 }
