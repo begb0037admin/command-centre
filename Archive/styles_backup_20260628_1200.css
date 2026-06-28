@@ -116,7 +116,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .done-toggle-btn:hover{background:#e2e8f0;color:#334155}
 .done-toggle-btn.showing{background:#f0fdf4;border-color:#bbf7d0;color:#15803d}
 /* SIDEBAR STALE STATS */
-.sb-stale-stats{margin:4px 0 8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 14px 10px;text-align:center}
+.sb-stale-stats{margin:4px 10px 8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 14px 10px;text-align:center}
 .sb-stale-num{font-size:26px;font-weight:800;color:#bf6060;line-height:1}
 .sb-stale-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin:3px 0 10px;line-height:1.3}
 .sb-stale-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-top:1px solid rgba(255,255,255,.08);font-size:12px}
