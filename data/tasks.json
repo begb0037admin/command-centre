@@ -356,21 +356,6 @@
       "dateAdded": "2026-06-23"
     },
     {
-      "id": "t024",
-      "title": "Provide reference for Nikolas Sharkey -- URGENT",
-      "tier": "today",
-      "source": "TSS Enquiries 23/06",
-      "emailRef": "Urgent Reference Request for Nikolas Sharkey",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C140000",
-      "summary": "TSS Enquiries requesting urgent reference for Nikolas Sharkey. 48+ hours outstanding -- time-critical.",
-      "description": "TSS Enquiries (Temporary Staffing Service) has requested an urgent reference from Kevin for Nikolas Sharkey, who is being considered for temporary vacancies at the University of Oxford. Kevin is listed as a referee. Received 23 June at 12:11. Now over 48 hours without a response -- employment verification references are time-critical and can block the candidate's placement.",
-      "actions": [
-        "[23 Jun 2026] Reference request received from TSS Enquiries for Nikolas Sharkey -- 48+ hours outstanding.",
-        "[TODO] Open email, complete and return reference for Nikolas Sharkey to TSS Enquiries immediately."
-      ],
-      "dateAdded": "2026-06-23"
-    },
-    {
       "id": "t025",
       "title": "Support cover w/c 6 July -- plan needed today",
       "tier": "week",
@@ -386,6 +371,21 @@
         "[TODO] Notify Simon Burford and/or Marie Cooksey of the gap.",
         "[TODO] Confirm cover arrangements and communicate to team.",
         "[28 Jun 2026] Kevin notified Marie Cooksey that Asta will be taking compassionate leave on 30 June, which further reduces support cover capacity during the critical transition week. (email: Kevin (sent to: Marie Cooksey) - Compassionate leave for Asta on 30 June)"
+      ],
+      "dateAdded": "2026-06-23"
+    },
+    {
+      "id": "t024",
+      "title": "Provide reference for Nikolas Sharkey -- URGENT",
+      "tier": "today",
+      "source": "TSS Enquiries 23/06",
+      "emailRef": "Urgent Reference Request for Nikolas Sharkey",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C140000",
+      "summary": "TSS Enquiries requesting urgent reference for Nikolas Sharkey. 48+ hours outstanding -- time-critical.",
+      "description": "TSS Enquiries (Temporary Staffing Service) has requested an urgent reference from Kevin for Nikolas Sharkey, who is being considered for temporary vacancies at the University of Oxford. Kevin is listed as a referee. Received 23 June at 12:11. Now over 48 hours without a response -- employment verification references are time-critical and can block the candidate's placement.",
+      "actions": [
+        "[23 Jun 2026] Reference request received from TSS Enquiries for Nikolas Sharkey -- 48+ hours outstanding.",
+        "[TODO] Open email, complete and return reference for Nikolas Sharkey to TSS Enquiries immediately."
       ],
       "dateAdded": "2026-06-23"
     },
