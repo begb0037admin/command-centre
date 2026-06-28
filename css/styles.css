@@ -88,6 +88,10 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .tier-count{margin-left:auto;font-size:11.5px;color:var(--text-muted);font-weight:600}
 .tier-col.drag-over{outline:2px dashed var(--oxford);outline-offset:-2px;background:#f0f4fa}
 .tier-col.sug-drag-over{outline:2px dashed #4ade80;outline-offset:-2px;background:#f0fdf4}
+.drag-handle{cursor:grab;color:rgba(0,0,0,.22);font-size:14px;padding:0 3px 0 0;flex-shrink:0;user-select:none;line-height:1;margin-top:2px}
+.drag-handle:hover{color:rgba(0,33,71,.5)}
+.task-card.drop-before::before{content:'';display:block;height:2px;background:var(--oxford);border-radius:1px;margin:0 8px 4px}
+.task-card.drop-after::after{content:'';display:block;height:2px;background:var(--oxford);border-radius:1px;margin:4px 8px 0}
 .tier-grid.focused .tier-col{display:none}
 .tier-grid.focused .tier-col.focus-active{display:block;grid-column:1/-1}
 

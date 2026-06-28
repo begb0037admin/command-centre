@@ -227,8 +227,12 @@ function cardHTML(t){
   var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
   var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\'">' +tierLabel(tier)+'</button>';}).join('');
 
-  return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'">'
+  return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'"'
+    +' ondragover="onCardDragOver(event,\''+t.id+'\',\''+t.tier+'\')"'
+    +' ondragleave="onCardDragLeave(event,\''+t.id+'\')"'
+    +' ondrop="onCardDropOnCard(event,\''+t.id+'\',\''+t.tier+'\')">'
     +'<div class="card-top">'
+    +'<div class="drag-handle" title="Drag to reorder">⣿</div>'
     +'<div class="task-check '+checkedCls+'" onclick="toggleDone(event,\''+t.id+'\')" ></div>'
     +'<div class="task-title" onclick="toggleDrawer(\''+t.id+'\')" id="title-'+t.id+'">'+escHtml(t.title)+src+'</div>'
     +'<div class="card-meta-row">'+badge+emailBtn+editBtn+'</div>'
@@ -366,10 +370,12 @@ function onCardDragStart(e){
 }
 function onCardDragEnd(e){
   e.currentTarget.classList.remove('dragging');
+  clearDragStyles();
   dragId=null;
 }
 function clearDragStyles(){
   TIERS.forEach(function(t){var el=document.getElementById('tier-'+t);if(el){el.classList.remove('drag-over','sug-drag-over');}});
+  document.querySelectorAll('.task-card.drop-before,.task-card.drop-after').forEach(function(c){c.classList.remove('drop-before','drop-after');});
 }
 function onDragOver(e,tier){
   if(dragId||sgDragIdx!==null){
@@ -385,12 +391,48 @@ async function onDrop(e,tier){
   document.getElementById('tier-'+tier).classList.remove('drag-over','sug-drag-over');
   if(dragId){
     var task=tasks.find(function(t){return t.id===dragId;});
-    if(task&&task.tier!==tier){task.tier=tier;renderBoard();await persistTasks('Move task to '+tier+': '+task.title);}
+    if(task){
+      tasks.splice(tasks.indexOf(task),1);
+      task.tier=tier;
+      tasks.push(task);
+      renderBoard();
+      await persistTasks('Move task to '+tier+': '+task.title);
+    }
     dragId=null;
   } else if(sgDragIdx!==null){
     await promoteSuggestion(sgDragIdx,tier);
     sgDragIdx=null;
   }
+}
+function onCardDragOver(e,id,tier){
+  if(!dragId||dragId===id)return;
+  e.preventDefault();
+  e.stopPropagation();
+  e.dataTransfer.dropEffect='move';
+  document.querySelectorAll('.task-card.drop-before,.task-card.drop-after').forEach(function(c){c.classList.remove('drop-before','drop-after');});
+  var rect=e.currentTarget.getBoundingClientRect();
+  e.currentTarget.classList.add(e.clientY<rect.top+rect.height/2?'drop-before':'drop-after');
+  document.getElementById('tier-'+tier).classList.add('drag-over');
+}
+function onCardDragLeave(e,id){
+  e.currentTarget.classList.remove('drop-before','drop-after');
+}
+async function onCardDropOnCard(e,targetId,targetTier){
+  e.preventDefault();
+  e.stopPropagation();
+  var targetCard=e.currentTarget;
+  var before=targetCard.classList.contains('drop-before');
+  clearDragStyles();
+  if(!dragId||dragId===targetId){dragId=null;return;}
+  var draggedTask=tasks.find(function(t){return t.id===dragId;});
+  if(!draggedTask){dragId=null;return;}
+  tasks.splice(tasks.indexOf(draggedTask),1);
+  var targetIdx=tasks.findIndex(function(t){return t.id===targetId;});
+  draggedTask.tier=targetTier;
+  tasks.splice(before?targetIdx:targetIdx+1,0,draggedTask);
+  dragId=null;
+  renderBoard();
+  await persistTasks('Reorder: '+draggedTask.title);
 }
 
 /* SUGGESTION coverage check */
