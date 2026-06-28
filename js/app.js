@@ -113,7 +113,7 @@ function renderBoard(){
     function focusZone(key,label,bodyHtml){
       var collapsed=localStorage.getItem('focus_'+key)==='0'?' collapsed':'';
       var rot=collapsed?' style="transform:rotate(-90deg)"':'';
-      return '<div class="focus-zone"><div class="focus-zone-label" onclick="toggleFocusZone(this,\''+key+'\')">'+label+'<span class="focus-chevron"'+rot+'>&#9662;</span></div><div class="focus-zone-body'+collapsed+'">'+bodyHtml+'</div></div>';
+      return '<div class="focus-zone"><div class="focus-zone-label" onclick="toggleFocusZone(this,\''+key+'\')">' +label+'<span class="focus-chevron"'+rot+'>&#9662;</span></div><div class="focus-zone-body'+collapsed+'">'+bodyHtml+'</div></div>';
     }
     /* ACT NOW — [TODO]s from Today tasks */
     var todos=[];
@@ -225,7 +225,7 @@ function cardHTML(t){
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
   var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+escHtml(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
   var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
-  var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\')">' +tierLabel(tier)+'</button>';}).join('');
+  var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\'">' +tierLabel(tier)+'</button>';}).join('');
 
   return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'">'
     +'<div class="card-top">'
@@ -417,13 +417,13 @@ async function loadInboxSuggestions(){
     var tierChip={today:'<span class="sg-tier sg-tier-today">&#128308; Today</span>',tomorrow:'<span class="sg-tier sg-tier-tomorrow">&#128992; Tomorrow</span>',week:'<span class="sg-tier sg-tier-week">&#128993; This Week</span>'};
     var h='<div class="section sg-section"><div class="section-header"><span class="section-dot" style="background:#378add"></span><span class="section-title">From your inbox</span><span class="section-count">'+newTasks.length+'</span><span class="section-rule"></span></div>';
     h+='<div class="sg-stamp'+(stale?' sg-stale':'')+'">'
-      +'Suggested '+escHtml(data.generated_at||'')+(stale?' &mdash; stale, briefing needs a refresh':'')
-      +' &middot; drag a card into a list below to add it as a task</div>';
+      +'Suggested '+escHtml(data.generated_at||'')+(stale?' — stale, briefing needs a refresh':'')
+      +' · drag a card into a list below to add it as a task</div>';
     newTasks.forEach(function(s,i){
       h+='<div class="sg-card" draggable="true" ondragstart="sgDragIdx='+i+'" ondragend="sgDragIdx=null;clearDragStyles()">'
         +'<div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
         +'<div class="sg-desc">'+escHtml(s.description)+'</div>'
-        +'<div class="sg-meta">From '+escHtml(s.email_from)+' &middot; &quot;'+escHtml(s.email_subject)+'&quot; &middot; '+escHtml(s.received||'')+'</div>'
+        +'<div class="sg-meta">From '+escHtml(s.email_from)+' · “'+escHtml(s.email_subject)+'” · '+escHtml(s.received||'')+'</div>'
         +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">&#128231; Open email</button>'
         +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')" >Dismiss</button>'
         +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'today\')">&plus; Today</button>'
@@ -493,18 +493,6 @@ function toggleFocusZone(label,key){
   chevron.style.transform=isOpen?'rotate(-90deg)':'';
   localStorage.setItem('focus_'+key,isOpen?'0':'1');
 }
-
-/* CLOCK */
-function updateClock(){
-  var el=document.getElementById('sb-clock');
-  if(!el)return;
-  var n=new Date();
-  var time=n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-  var date=n.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-  el.innerHTML=time+'<br>'+date;
-}
-updateClock();
-setInterval(updateClock,1000);
 
 /* SIDEBAR RESIZE */
 (function(){
