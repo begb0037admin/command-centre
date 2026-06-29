@@ -1,9 +1,9 @@
 # AGENT_MODEL.md
 # Runtime Operating Model
 
-Version : 2.3
+Version : 2.4
 Status  : Ratified
-Updated : 2026-06-29 (v2.3 — file delivery standard added)
+Updated : 2026-06-29 (v2.4 — AIMM governance status updated)
 Author  : Kevin Lelitte, HR Systems, University of Oxford
 
 Governed by: CONSTITUTION.md
@@ -243,21 +243,22 @@ The following repositories are currently governed by this model.
 This table reflects current governance scope and may change
 without constitutional amendment.
 
-| Repository           | Status         | Notes                    |
-|----------------------|----------------|--------------------------|
-| clockify             | Active         | Gold standard / template |
-| command-centre       | Active         | Task dashboard (Module 1)|
-| work-inbox           | Active         | Inbox briefing pipeline  |
-| hris-dashboard       | Active         | Complex — handle last    |
-| hris-launcher        | Active         |                          |
-| hr-fa-knowledge-base | Active         |                          |
-| meeting-records      | Active         |                          |
-| hr-projects          | Active         |                          |
-| hris-change-requests | Active         |                          |
-| ag-flexpoints        | Active         |                          |
-| desktop-tutorial     | Decommissioned | Deletion pending         |
-| aimm                 | Out of scope   | Personal domain — Hope   |
-| personal-finance     | Out of scope   | Personal domain — Hope   |
+| Repository           | Status         | Notes                                        |
+|----------------------|----------------|----------------------------------------------|
+| clockify             | Active         | Gold standard / template                     |
+| command-centre       | Active         | Task dashboard (Module 1)                    |
+| work-inbox           | Active         | Inbox briefing pipeline                      |
+| hris-dashboard       | Active         | Complex — handle last                        |
+| hris-launcher        | Active         |                                              |
+| hr-fa-knowledge-base | Active         |                                              |
+| meeting-records      | Active         |                                              |
+| hr-projects          | Active         |                                              |
+| hris-change-requests | Active         |                                              |
+| ag-flexpoints        | Active         |                                              |
+| desktop-tutorial     | Decommissioned | Deletion pending                             |
+| aimm                 | Active         | Personal domain — governed independently     |
+|                      |                | (own CONSTITUTION.md + AGENT_MODEL.md v1.0)  |
+| personal-finance     | Out of scope   | Personal domain — Hope                       |
 
 ---
 
@@ -294,3 +295,9 @@ without constitutional amendment.
 |         |            | (.bat, .ps1, scripts) delivered via |
 |         |            | SendUserFile — never as code blocks |
 |         |            | or GitHub links.                    |
+| 2.4     | 2026-06-29 | Section 8: AIMM status changed from |
+|         |            | Out of scope to Active (personal    |
+|         |            | domain — governed independently).   |
+|         |            | AIMM now has own CONSTITUTION.md    |
+|         |            | and AGENT_MODEL.md v1.0 as part of  |
+|         |            | AIMM_SPLIT_MIGRATE Stage 0.         |
