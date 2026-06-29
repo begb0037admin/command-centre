@@ -1,9 +1,9 @@
 # AGENT_MODEL.md
 # Runtime Operating Model
 
-Version : 2.1
+Version : 2.2
 Status  : Ratified
-Updated : 2026-06-21 (v2.1 — scope table correction)
+Updated : 2026-06-29 (v2.2 — Cowork local machine scope clarified)
 Author  : Kevin Lelitte, HR Systems, University of Oxford
 
 Governed by: CONSTITUTION.md
@@ -43,7 +43,8 @@ Two machines are in scope for work operations.
 Operator : Kevin Lelitte
 OS       : Windows
 Runs     : Claude Code (primary agent), Outlook COM scripts via
-           Task Scheduler (fetch_inbox.py)
+           Task Scheduler (fetch_inbox.py), Cowork Chrome extension
+           (local Windows execution — see Section 3)
 
 **Personal machine (Hope)**
 Operator : Hope (personal domain)
@@ -78,17 +79,18 @@ point; when invoked, supersedes all in-flight decisions. Is no
 longer required to run scripts or paste output — Claude Code
 executes directly — but retains the right to do either.
 
-**Seat C — Execution Seat → Claude Code**
-Implements approved changes directly: GitHub Contents API writes,
-git operations, and script execution on the local machine where a
-task requires it.
+**Seat C — Execution Seat → Claude Code (GitHub) / Cowork (local Windows)**
+Claude Code implements all GitHub API writes. Cowork executes
+tasks that require local Windows machine access: Task Scheduler,
+registry, filesystem, and browser automation on the admin machine.
+Claude Code produces the brief; Cowork executes it. See Section 3.
 
 **Seat D — Verification Seat → Claude Code**
 Verifies live behaviour by fetching deployed pages and data
 (GitHub Pages, raw content, API state) and by browser inspection
 where needed. Kevin remains the final visual check on dashboards.
 
-One agent holding Seats A, C, and D does not collapse the
+One agent holding Seats A, C (GitHub), and D does not collapse the
 boundaries — it removes the brief-passing overhead between them.
 The boundaries survive as the approval gates below.
 
@@ -112,8 +114,25 @@ verification — Claude Code executes without asking.
 ## Section 3 — Execution Protocol
 
 The v1.x dispatch notation (🔵 RUN SCRIPT / 🟡 COWORK BRIEF /
-🔴 CHROME BRIEF) is retired. Claude Code reasons and executes in
-one loop.
+🔴 CHROME BRIEF) is retired for GitHub writes. Claude Code reasons
+and executes GitHub operations in one loop.
+
+**Cowork retains scope for local Windows machine tasks.**
+Retiring the v1.x dispatch notation applies to GitHub writes only.
+Tasks requiring local Windows execution — Task Scheduler
+configuration, registry edits, filesystem operations, browser
+automation on the admin machine — are still routed to Cowork via
+a surgical brief. Claude Code cannot execute these remotely.
+When a task requires local machine execution:
+1. Claude Code produces a surgical brief (fully self-contained,
+   no questions, executable AFK).
+2. Cowork executes the brief on the admin machine.
+3. Claude Code verifies the outcome via GitHub or dashboard state
+   where possible.
+
+If Cowork generates a PowerShell script for a GitHub write instead
+of executing it directly, redirect it: GitHub writes go to Claude
+Code, not Cowork.
 
 The constitutional sequencing rules survive unchanged:
 
@@ -218,7 +237,7 @@ This table reflects current governance scope and may change
 without constitutional amendment.
 
 | Repository           | Status         | Notes                    |
-|----------------------|----------------|---------------------------|
+|----------------------|----------------|--------------------------|
 | clockify             | Active         | Gold standard / template |
 | command-centre       | Active         | Task dashboard (Module 1)|
 | work-inbox           | Active         | Inbox briefing pipeline  |
@@ -253,3 +272,12 @@ without constitutional amendment.
 | 2.1     | 2026-06-21 | Section 8 updated: hris-change-     |
 |         |            | requests and ag-flexpoints added    |
 |         |            | as Active. Scope table now complete.|
+| 2.2     | 2026-06-29 | Section 3: Cowork local machine     |
+|         |            | scope clarified. Retiring v1.x      |
+|         |            | dispatch applies to GitHub writes   |
+|         |            | only. Cowork retains scope for      |
+|         |            | local Windows tasks (Task           |
+|         |            | Scheduler, registry, filesystem,    |
+|         |            | browser automation). Section 1 and  |
+|         |            | Section 2 (Seat C) updated to       |
+|         |            | reflect split execution scope.      |
