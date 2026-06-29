@@ -1,9 +1,9 @@
 # AGENT_MODEL.md
 # Runtime Operating Model
 
-Version : 2.2
+Version : 2.3
 Status  : Ratified
-Updated : 2026-06-29 (v2.2 — Cowork local machine scope clarified)
+Updated : 2026-06-29 (v2.3 — file delivery standard added)
 Author  : Kevin Lelitte, HR Systems, University of Oxford
 
 Governed by: CONSTITUTION.md
@@ -150,7 +150,7 @@ The constitutional sequencing rules survive unchanged:
 
 ---
 
-## Section 4 — Write Standards
+## Section 4 — Write and Delivery Standards
 
 All GitHub writes follow these rules:
 
@@ -172,6 +172,13 @@ All GitHub writes follow these rules:
   keyring (Claude Code).
 - **Large outputs** are written to files in the repo, not pasted
   into chat.
+
+**File delivery standard:**
+- Whenever producing an executable file (.bat, .ps1, or any
+  runnable script) for Kevin to run locally, write it to scratchpad
+  and deliver it via SendUserFile — never as a code block in chat,
+  never as a GitHub link. Direct download is always the right
+  delivery method.
 
 ---
 
@@ -281,3 +288,9 @@ without constitutional amendment.
 |         |            | browser automation). Section 1 and  |
 |         |            | Section 2 (Seat C) updated to       |
 |         |            | reflect split execution scope.      |
+| 2.3     | 2026-06-29 | Section 4 renamed to Write and      |
+|         |            | Delivery Standards. File delivery   |
+|         |            | standard added: executable files    |
+|         |            | (.bat, .ps1, scripts) delivered via |
+|         |            | SendUserFile — never as code blocks |
+|         |            | or GitHub links.                    |
