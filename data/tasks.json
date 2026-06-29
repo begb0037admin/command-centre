@@ -658,14 +658,14 @@
     {
       "id": "t043",
       "title": "Escalate SQL Server 2022 access -- trial licence on flaky server",
-      "tier": "week",
+      "tier": "parked",
       "source": "SK 1-1 26/06",
       "emailRef": "",
-      "summary": "SQL Server 2022 trial licence on a flaky server is blocking sickness absence report investigation. Needs escalating again.",
+      "summary": "SQL Server 2022 trial licence on a flaky server is blocking sickness absence report investigation. Parked indefinitely.",
       "description": "SQL Server 2022 access is currently broken -- it is on a trial licence running on a flaky server. This is blocking the sickness absence report investigation (t034) and other report work. The issue has been escalated before without resolution. Needs escalating again to get a proper fix. Note: this is SQL Server access, separate from the Visual Studio 2022 licensing issue in t033 (SSO migration).",
       "actions": [
         "[26 Jun 2026] Raised at SK 1-1 -- SQL Server 2022 trial licence on flaky server blocking report investigation. Has been escalated before without resolution.",
-        "[TODO] Escalate SQL Server 2022 access issue again -- push for a proper fix, not another trial extension."
+        "[29 Jun 2026] Parked indefinitely on Kevin's instruction."
       ],
       "dateAdded": "2026-06-28"
     },
