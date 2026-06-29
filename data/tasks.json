@@ -110,7 +110,7 @@
       "summary": "40 REF2029 pay admin codes to set up in UOXU; change request raised, awaiting Division Code resolution.",
       "description": "Pay admin buy codes need to be set up in PeopleXD for DTP1092. Simon created Division 901, ZSD901, Z90101, Z901, Z902 in UOXU on 10 Jun. Division Code linkage to Company Code was blocked pending Conor O'Brien config session (happened 12 Jun). Draft load file sent to Conor 17 Jun. 40 Pay Administered By codes still need setting up in UOXU.",
       "actions": [
-        "[10 Jun 2026] Simon created Division 901, ZSD901, Z90101, Z901 (Colleges), Z902 (Permanent Private Halls) in UOXU.",
+        "[10 Jun 2026] Simon created Division 901, ZSD901, Z90101, Z90101, Z901 (Colleges), Z902 (Permanent Private Halls) in UOXU.",
         "[12 Jun 2026] Config session with Conor O'Brien re Division Code blocker.",
         "[17 Jun 2026] Kevin sent draft REF2029 load file to Conor O'Brien.",
         "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
@@ -650,10 +650,10 @@
       "description": "Nominating Michael O'Sullivan for an Excellence Award covering his dual contribution: project delivery on the clinical pay changes and BAU work including staff and price change implementation. Michael has been nominated before -- confirmed acceptable to nominate again given the multi-year project scope. Strategy: pull a quote from the project lead (she said the project would not have happened without him), add BAU stats and examples, and submit by 3 July deadline.",
       "actions": [
         "[26 Jun 2026] Raised at SK 1-1 -- nominate Michael for Excellence Award. Deadline 3 July. Strategy: quote from project lead + BAU stats.",
-        "[TODO] Draft nomination -- compile clinical pay project stats, BAU examples (staff and price change implementation), and quote from project lead.",
-        "[TODO] Submit by 3 July deadline."
+        "[29 Jun 2026] Nomination submitted -- marked complete by Kevin."
       ],
-      "dateAdded": "2026-06-28"
+      "dateAdded": "2026-06-28",
+      "done": true
     },
     {
       "id": "t043",
