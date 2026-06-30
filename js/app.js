@@ -241,9 +241,10 @@ function cardHTML(t){
     +'<div class="task-drawer" id="drawer-'+t.id+'">'
     +desc
     +actions
-    +'<div class="dl">Notes</div>'
-    +'<textarea class="notes-edit" id="notes-'+t.id+'" placeholder="Add notes…">'+escHtml(t.notes||'')+'</textarea>'
-    +'<button class="save-notes-btn" onclick="saveNotes(\''+t.id+'\')" >Save notes</button>'
+    +'<div class="dl">Update with AI</div>'
+    +'<textarea class="ai-input" id="ai-input-'+t.id+'" placeholder="Paste raw text here — Teams message, email, portal update — AI will summarise and add to Actions."></textarea>'
+    +'<button class="ai-log-btn" id="ai-btn-'+t.id+'" onclick="aiLog(\''+t.id+'\')" >Update with AI</button>'
+    +'<div class="ai-status" id="ai-status-'+t.id+'"></div>'
     +'<div class="drawer-moves">'+moveBtns+'<button class="delete-btn" onclick="deleteTask(event,\''+t.id+'\')" >Delete</button></div>'
     +'</div>'
     +'</div>';
@@ -354,12 +355,49 @@ async function deleteTask(e,id){
   await persistTasks('Delete task '+id);
 }
 
-/* NOTES */
-async function saveNotes(id){
+/* AI UPDATE */
+async function aiLog(id){
   var task=tasks.find(function(t){return t.id===id;});
   if(!task)return;
-  task.notes=document.getElementById('notes-'+id).value;
-  await persistTasks('Update notes: '+task.title);
+  var inputEl=document.getElementById('ai-input-'+id);
+  var statusEl=document.getElementById('ai-status-'+id);
+  var btn=document.getElementById('ai-btn-'+id);
+  var rawText=inputEl?inputEl.value.trim():'';
+  if(!rawText){if(statusEl)statusEl.textContent='Paste some text first.';return;}
+  if(btn){btn.disabled=true;btn.textContent='Processing…';}
+  if(statusEl)statusEl.textContent='';
+  try{
+    var workerBase=typeof WORKER_URL!=='undefined'?WORKER_URL:'https://cc-tasks-writer.kevinlelitte.workers.dev';
+    var res=await fetch(workerBase+'/ai-log',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        taskId:id,
+        taskTitle:task.title,
+        taskDescription:task.description||'',
+        existingActions:task.actions||[],
+        rawText:rawText
+      })
+    });
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    var data=await res.json();
+    if(!data.entry)throw new Error('No entry returned');
+    var remote=await fetchTasksRemote();
+    var merged=mergeRemote(remote);
+    var t2=merged.find(function(x){return x.id===id;});
+    if(!t2)throw new Error('Task not found after refresh');
+    if(!Array.isArray(t2.actions))t2.actions=[];
+    t2.actions.push(data.entry);
+    tasks=merged;
+    renderBoard();
+    if(inputEl)inputEl.value='';
+    if(statusEl)statusEl.textContent='Added: '+data.entry;
+    await persistTasks('AI log update: '+task.title);
+  }catch(e){
+    if(statusEl)statusEl.textContent='Error: '+e.message;
+  }finally{
+    if(btn){btn.disabled=false;btn.textContent='Update with AI';}
+  }
 }
 
 /* DRAG (tasks) */
@@ -460,12 +498,12 @@ async function loadInboxSuggestions(){
     var h='<div class="section sg-section"><div class="section-header"><span class="section-dot" style="background:#378add"></span><span class="section-title">From your inbox</span><span class="section-count">'+newTasks.length+'</span><span class="section-rule"></span></div>';
     h+='<div class="sg-stamp'+(stale?' sg-stale':'')+'">'
       +'Suggested '+escHtml(data.generated_at||'')+(stale?' — stale, briefing needs a refresh':'')
-      +' · drag a card into a list below to add it as a task</div>';
+      +' \xb7 drag a card into a list below to add it as a task</div>';
     newTasks.forEach(function(s,i){
       h+='<div class="sg-card" draggable="true" ondragstart="sgDragIdx='+i+'" ondragend="sgDragIdx=null;clearDragStyles()">'
         +'<div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
         +'<div class="sg-desc">'+escHtml(s.description)+'</div>'
-        +'<div class="sg-meta">From '+escHtml(s.email_from)+' · “'+escHtml(s.email_subject)+'” · '+escHtml(s.received||'')+'</div>'
+        +'<div class="sg-meta">From '+escHtml(s.email_from)+' \xb7 "'+escHtml(s.email_subject)+'" \xb7 '+escHtml(s.received||'')+'</div>'
         +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">&#128231; Open email</button>'
         +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')" >Dismiss</button>'
         +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'today\')">&plus; Today</button>'
