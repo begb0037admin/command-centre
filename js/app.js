@@ -108,7 +108,7 @@ function renderBoard(){
   var ft=document.getElementById('focus-tasks');
   if(ft){
     var nowMs=new Date().setHours(0,0,0,0);
-    var todayTasks=tasks.filter(function(t){return t.tier==='today';});
+    var todayTasks=tasks.filter(function(t){return t.tier==='today'&&!t.done;});
     var html='';
     function focusZone(key,label,bodyHtml){
       var collapsed=localStorage.getItem('focus_'+key)==='0'?' collapsed':'';
@@ -126,7 +126,7 @@ function renderBoard(){
     }
     /* WAITING ON — [AWAITING]s from all tasks */
     var awaits=[];
-    tasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
+    tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
     if(awaits.length){
       var b='';var showA=Math.min(awaits.length,4);
       awaits.slice(0,showA).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
@@ -148,7 +148,7 @@ function renderStaleBanner(){
   var banner=document.getElementById('stale-banner');
   var sbStats=document.getElementById('sb-stale-stats');
   var nowMs=new Date().setHours(0,0,0,0);
-  var todayTasks=tasks.filter(function(t){return t.tier==='today';});
+  var todayTasks=tasks.filter(function(t){return t.tier==='today'&&!t.done;});
   var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
   var ages=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
   /* Sidebar compact stats */
@@ -188,7 +188,7 @@ function renderStaleBanner(){
   }
   /* Col 3: Waiting on ([AWAITING] from all tasks) */
   var awaits=[];
-  tasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
+  tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
   var col3='';
   if(awaits.length){
     var showA=Math.min(awaits.length,5);var b='';
