@@ -128,9 +128,8 @@ function renderBoard(){
     var awaits=[];
     tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
     if(awaits.length){
-      var b='';var showA=Math.min(awaits.length,4);
-      awaits.slice(0,showA).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
-      if(awaits.length>showA)b+='<div class="focus-more">+'+(awaits.length-showA)+' more</div>';
+      var b='';
+      awaits.forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
       html+=focusZone('waitingon','Waiting on',b);
     }
     if(!html)html='<div class="focus-empty">No tasks yet</div>';
@@ -191,9 +190,8 @@ function renderStaleBanner(){
   tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
   var col3='';
   if(awaits.length){
-    var showA=Math.min(awaits.length,5);var b='';
-    awaits.slice(0,showA).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
-    if(awaits.length>showA)b+='<div class="focus-more">+'+(awaits.length-showA)+' more</div>';
+    var b='';
+    awaits.forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
     col3='<div class="bar-col"><div class="bar-col-title">Waiting on</div>'+b+'</div>';
   }
   var hasContent=col1||col2||col3;
