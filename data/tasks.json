@@ -55,14 +55,12 @@
       "[25 Jun 2026] Kevin updated Login screen on UOXU successfully -- 'Internal Mobility Principles' hyperlinked, spacing added after 'Existing University Staff' and 'New Applicants:' headings.",
       "[25 Jun 2026] Unable to update Current Job Vacancies and Job Search screens on UOXU -- devs now handling remaining UOXU screens.",
       "[AWAITING] Maura McGlynn (AG) to send Teams message when remaining UOXU screens are ready for Kevin to validate before going LIVE.",
-      "[30 Jun 2026] Kevin confirmed to Laura Porter that IM Principles URL changes have been made and verified on test environment. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)",
-      "[01 Jul 2026] Kevin confirmed to Laura Porter that all IM Principles URL changes are now live across the required pages. Task completed following successful validation on test environment and approval from Laura Porter."
+      "[30 Jun 2026] Kevin confirmed to Laura Porter that IM Principles URL changes have been made and verified on test environment. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)"
     ],
     "dateAdded": "2026-06-03",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF30000",
     "status": "Login screen on UOXU updated 25 Jun — unable to update Current Job Vacancies and Job Search screens; devs handling remaining UOXU screens, awaiting Maura's Teams message to validate before LIVE.",
-    "notes": "[Gate 2.0 test 22:28:53]",
-    "done": true
+    "notes": "[Gate 2.0 test 22:28:53]"
   },
   {
     "id": "t003",
@@ -84,42 +82,6 @@
     "dateAdded": "2026-06-08",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167640000",
     "done": true
-  },
-  {
-    "id": "t005",
-    "title": "College Data in PXD Project -- set up REF2029 pay admin codes in UOXU",
-    "tier": "tomorrow",
-    "source": "SK 1-1 08/06",
-    "emailRef": "",
-    "summary": "40 REF2029 pay admin codes to set up in UOXU; change request raised, awaiting Division Code resolution.",
-    "description": "Pay admin buy codes need to be set up in PeopleXD for DTP1092. Simon created Division 901, ZSD901, Z90101, Z901, Z902 in UOXU on 10 Jun. Division Code linkage to Company Code was blocked pending Conor O'Brien config session (happened 12 Jun). Draft load file sent to Conor 17 Jun. 40 Pay Administered By codes still need setting up in UOXU.",
-    "actions": [
-      "[10 Jun 2026] Simon created Division 901, ZSD901, Z90101, Z90101 (Colleges), Z902 (Permanent Private Halls) in UOXU.",
-      "[12 Jun 2026] Config session with Conor O'Brien re Division Code blocker.",
-      "[17 Jun 2026] Kevin sent draft REF2029 load file to Conor O'Brien.",
-      "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
-      "[AWAITING] Division Code resolution confirmed before proceeding."
-    ],
-    "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B30000"
-  },
-  {
-    "id": "t029",
-    "title": "DTP1334 SHSMS Evaluation -- review Helen Harbour briefing and weightings",
-    "tier": "tomorrow",
-    "source": "Helen Harbour 17-18/06",
-    "emailRef": "DTP1334 SHSMS Evaluation Briefing - placeholder",
-    "summary": "Helen Harbour sent SHSMS evaluation briefing (17 Jun, RED) and weightings spreadsheet (18 Jun). Review before progressing POC documentation with Chris.",
-    "description": "Helen Harbour sent two emails in the week of 17-18 June related to DTP1334: a SHSMS Evaluation Briefing placeholder document and a Strategic H&S Modular System requirements evaluation weightings spreadsheet (Sonhal Mistry also involved). Both are directly relevant to the POC work Kevin needs to do with Christopher Sanders (t022).",
-    "actions": [
-      "[17 Jun 2026] Helen Harbour sent DTP1334 SHSMS Evaluation Briefing placeholder -- RED, act today (now overdue).",
-      "[18 Jun 2026] Helen Harbour sent Strategic H&S Modular System requirements evaluation weightings (Sonhal Mistry also on thread).",
-      "[TODO] Review Helen's evaluation briefing document.",
-      "[TODO] Review the evaluation weightings spreadsheet.",
-      "[TODO] Use both to inform POC meeting notes before sending to Chris (t022).",
-      "[30 Jun 2026] Kevin's review comments sent to Chris and James flagging compliance weighting issues and RIDDOR inconsistency in requirement 1.2; Chris confirms Caroline Gow (procurement) and Neil Carveth (H&S SME) will assess compliance requirements separately in tender process and verify H&S compliance requirements respectively."
-    ],
-    "dateAdded": "2026-06-23"
   },
   {
     "id": "t006",
@@ -354,6 +316,41 @@
       "[TODO] Set up resolution meeting -- Kevin, Simon, Marie, Michelle, and potentially Julie. Agenda: understand what wasn't loaded and why, agree approach, produce action list, address GLAM rostering."
     ],
     "dateAdded": "2026-06-25"
+  },
+  {
+    "id": "t005",
+    "title": "College Data in PXD Project -- set up REF2029 pay admin codes in UOXU",
+    "tier": "today",
+    "source": "SK 1-1 08/06",
+    "emailRef": "",
+    "summary": "40 REF2029 pay admin codes to set up in UOXU; change request raised, awaiting Division Code resolution.",
+    "description": "Pay admin buy codes need to be set up in PeopleXD for DTP1092. Simon created Division 901, ZSD901, Z90101, Z901, Z902 in UOXU on 10 Jun. Division Code linkage to Company Code was blocked pending Conor O'Brien config session (happened 12 Jun). Draft load file sent to Conor 17 Jun. 40 Pay Administered By codes still need setting up in UOXU.",
+    "actions": [
+      "[10 Jun 2026] Simon created Division 901, ZSD901, Z90101, Z90101 (Colleges), Z902 (Permanent Private Halls) in UOXU.",
+      "[12 Jun 2026] Config session with Conor O'Brien re Division Code blocker.",
+      "[17 Jun 2026] Kevin sent draft REF2029 load file to Conor O'Brien.",
+      "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
+      "[AWAITING] Division Code resolution confirmed before proceeding."
+    ],
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B30000"
+  },
+  {
+    "id": "t029",
+    "title": "DTP1334 SHSMS Evaluation -- review Helen Harbour briefing and weightings",
+    "tier": "today",
+    "source": "Helen Harbour 17-18/06",
+    "emailRef": "DTP1334 SHSMS Evaluation Briefing - placeholder",
+    "summary": "Helen Harbour sent SHSMS evaluation briefing (17 Jun, RED) and weightings spreadsheet (18 Jun). Review before progressing POC documentation with Chris.",
+    "description": "Helen Harbour sent two emails in the week of 17-18 June related to DTP1334: a SHSMS Evaluation Briefing placeholder document and a Strategic H&S Modular System requirements evaluation weightings spreadsheet (Sonhal Mistry also involved). Both are directly relevant to the POC work Kevin needs to do with Christopher Sanders (t022).",
+    "actions": [
+      "[17 Jun 2026] Helen Harbour sent DTP1334 SHSMS Evaluation Briefing placeholder -- RED, act today (now overdue).",
+      "[18 Jun 2026] Helen Harbour sent Strategic H&S Modular System requirements evaluation weightings (Sonhal Mistry also on thread).",
+      "[TODO] Review Helen's evaluation briefing document.",
+      "[TODO] Review the evaluation weightings spreadsheet.",
+      "[TODO] Use both to inform POC meeting notes before sending to Chris (t022)."
+    ],
+    "dateAdded": "2026-06-23"
   },
   {
     "id": "t023",
@@ -661,6 +658,6 @@
     "dateAdded": "2026-06-08",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF50000",
     "notes": "",
-    "done": true
+    "done": false
   }
 ]
