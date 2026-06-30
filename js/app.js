@@ -390,6 +390,7 @@ async function aiLog(id){
     t2.actions.push(data.entry);
     tasks=merged;
     renderBoard();
+    toggleDrawer(id);
     if(inputEl)inputEl.value='';
     if(statusEl)statusEl.textContent='Added: '+data.entry;
     await persistTasks('AI log update: '+task.title);
