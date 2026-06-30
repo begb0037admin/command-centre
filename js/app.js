@@ -288,7 +288,6 @@ function toggleDone(e,id){
   updateDoneToggleBtn();
   if(t.done&&!getShowDone()){card.style.transition='opacity .3s';card.style.opacity='0';setTimeout(function(){renderBoard();},320);}
   persistTasks('Done state: '+id+(t.done?' checked':' unchecked'));
-  if(t.done)syncDoneToInbox(t.id,t.entryId);
 }
 
 /* DRAWER */

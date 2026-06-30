@@ -68,45 +68,6 @@ function showSaveToast(state,text){
     t._timer=setTimeout(function(){t.className='';},2500);
   }
 }
-/* ONE-WAY SYNC: CC task marked done -> tick matching item in today's Work Inbox briefing */
-async function syncDoneToInbox(taskId,entryId){
-  if(!taskId&&!entryId)return;
-  try{
-    console.log('[CC-WI sync] starting for taskId='+taskId);
-    var bRes=await fetch(INBOX_RAW+'/data/briefing.json?t='+Date.now());
-    console.log('[CC-WI sync] briefing fetch status='+bRes.status);
-    if(!bRes.ok)return;
-    var briefing=await bRes.json();
-    var dateKey=(briefing.date||'').replace(/ /g,'_');
-    if(!dateKey)return;
-    var tickKey=null;
-    var priMap=[['prioritiesToday','pt'],['prioritiesTomorrow','ptom'],['prioritiesWeek','pw']];
-    for(var p=0;p<priMap.length&&!tickKey;p++){
-      var arr=briefing[priMap[p][0]]||[];
-      for(var i=0;i<arr.length;i++){
-        if(arr[i].id===taskId){tickKey=dateKey+'_pri_'+priMap[p][1]+'_'+i;break;}
-      }
-    }
-    if(!tickKey&&entryId){
-      var inboxSecs=['urgent','needs','fyi','low'];
-      for(var s=0;s<inboxSecs.length&&!tickKey;s++){
-        var sarr=briefing[inboxSecs[s]]||[];
-        for(var j=0;j<sarr.length;j++){
-          if(sarr[j].entry_id===entryId){tickKey=dateKey+'_'+inboxSecs[s]+'_'+j;break;}
-        }
-      }
-    }
-    console.log('[CC-WI sync] tickKey='+tickKey);
-    if(!tickKey)return;
-    var tRes=await fetch(INBOX_RAW+'/data/ticks.json?t='+Date.now());
-    var ticksDoc=tRes.ok?await tRes.json():{ticks:{}};
-    var ticks=ticksDoc.ticks||{};
-    if(ticks[tickKey]){console.log('[CC-WI sync] already ticked, skipping');return;}
-    ticks[tickKey]=true;
-    var wRes=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({target:'inbox-state',message:'Tick sync from command-centre: '+tickKey,doc:{ticks:ticks,updated_at:new Date().toISOString()}})});
-    console.log('[CC-WI sync] writer response status='+wRes.status);
-  }catch(e){console.warn('[CC-WI sync] failed',e);}
-}
 
 async function persistTasks(msg){
   showSaveToast('saving','Saving…');
