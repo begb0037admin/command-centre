@@ -117,13 +117,13 @@ function renderBoard(){
     }
     /* ACT NOW — [TODO]s from Today tasks */
     var todos=[];
-    todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push(a.replace('[TODO]','').trim());});});
+    todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push({id:t.id,text:a.replace('[TODO]','').trim()});});});
     if(todos.length){
       var b='';var show=Math.min(todos.length,5);
-      todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
+      todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+a.text+'</div>';});
       if(todos.length>show){
         b+='<div class="focus-await-extra" style="display:none">';
-        todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
+        todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+a.text+'</div>';});
         b+='</div>';
         b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
       }
@@ -131,13 +131,13 @@ function renderBoard(){
     }
     /* WAITING ON — [AWAITING]s from all tasks */
     var awaits=[];
-    tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
+    tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push({id:t.id,text:a.replace('[AWAITING]','').trim()});});});
     if(awaits.length){
       var b='';var show=Math.min(awaits.length,5);
-      awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
+      awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+a.text+'</div>';});
       if(awaits.length>show){
         b+='<div class="focus-await-extra" style="display:none">';
-        awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
+        awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+a.text+'</div>';});
         b+='</div>';
         b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
       }
@@ -188,14 +188,14 @@ function renderStaleBanner(){
   }
   /* Col 2: Act now ([TODO] from today tasks) */
   var todos=[];
-  todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push(a.replace('[TODO]','').trim());});});
+  todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push({id:t.id,text:a.replace('[TODO]','').trim()});});});
   var col2='';
   if(todos.length){
     var show=Math.min(todos.length,6);var b='';
-    todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+    todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
     if(todos.length>show){
       b+='<div class="focus-await-extra" style="display:none">';
-      todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+      todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
       b+='</div>';
       b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
     }
@@ -203,14 +203,14 @@ function renderStaleBanner(){
   }
   /* Col 3: Waiting on ([AWAITING] from all tasks) */
   var awaits=[];
-  tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
+  tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push({id:t.id,text:a.replace('[AWAITING]','').trim()});});});
   var col3='';
   if(awaits.length){
     var show=Math.min(awaits.length,7);var b='';
-    awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+    awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
     if(awaits.length>show){
       b+='<div class="focus-await-extra" style="display:none">';
-      awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+      awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
       b+='</div>';
       b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
     }
@@ -594,6 +594,20 @@ function toggleFocusZone(label,key){
   body.classList.toggle('collapsed',isOpen);
   chevron.style.transform=isOpen?'rotate(-90deg)':'';
   localStorage.setItem('focus_'+key,isOpen?'0':'1');
+}
+
+/* CLICK ITEM -> JUMP TO CARD */
+function goToCard(id){
+  var card=document.getElementById('card-'+id);
+  if(!card)return;
+  card.scrollIntoView({behavior:'smooth',block:'center'});
+  var tierEl=card.closest('.task-list');
+  var tier=tierEl?tierEl.id.replace('list-',''):(card.dataset.tier||'today');
+  card.classList.remove('deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked');
+  void card.offsetWidth;
+  card.classList.add('deep-linked-'+tier);
+  var drawer=document.getElementById('drawer-'+id);
+  if(drawer&&!drawer.classList.contains('open'))toggleDrawer(id);
 }
 
 /* WAITING ON / ACT NOW EXPAND-COLLAPSE */

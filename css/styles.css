@@ -34,8 +34,10 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .focus-chevron{font-size:10px;transition:transform .2s;display:inline-block}
 .focus-zone-body{overflow:hidden;transition:opacity .15s}
 .focus-zone-body.collapsed{display:none}
-.focus-act-item{font-size:11.5px;color:rgba(255,255,255,.82);padding:2px 0 2px 9px;border-left:2px solid #ef4444;line-height:1.35;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:default}
-.focus-await-item{font-size:11px;color:rgba(255,255,255,.55);padding:2px 0 2px 9px;border-left:2px solid #f59e0b;line-height:1.35;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.focus-act-item{font-size:11.5px;color:rgba(255,255,255,.82);padding:2px 0 2px 9px;border-left:2px solid #ef4444;line-height:1.35;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.focus-act-item:hover{color:#fff}
+.focus-await-item{font-size:11px;color:rgba(255,255,255,.55);padding:2px 0 2px 9px;border-left:2px solid #f59e0b;line-height:1.35;margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.focus-await-item:hover{color:rgba(255,255,255,.85)}
 .focus-stale-item{font-size:11px;color:rgba(255,255,255,.6);padding:2px 0 2px 9px;border-left:2px solid rgba(249,115,22,.6);line-height:1.35;margin-bottom:3px;display:flex;align-items:center;gap:6px;overflow:hidden}
 .focus-stale-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .stale-age{font-size:9px;font-weight:700;color:#f97316;background:rgba(249,115,22,.15);border-radius:4px;padding:1px 4px;flex-shrink:0}
