@@ -588,10 +588,12 @@
         "[TODO] Each card: title, status field, Email tag (openmail:// if entryId set), CC tag (Command Centre link).",
         "[TODO] Exclude done tasks (commandCentre_done_v1 localStorage) and Parked tier.",
         "[TODO] Visual distinction from inbox email cards -- CC-sourced label.",
-        "[TODO] Screenshot and get Kevin approval before pushing to main."
+        "[TODO] Screenshot and get Kevin approval before pushing to main.",
+        "[30 Jun 2026] Kevin has raised a support portal email update request with Sarah Murphy, likely related to Work Inbox priority panel rendering. (email: Kevin (sent to: Sarah Murphy) - Request for support portal email update)"
       ],
       "dateAdded": "2026-06-25",
-      "status": "Scoped 25 Jun — build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded."
+      "status": "Scoped 25 Jun — build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded.",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EEA0000"
     },
     {
       "id": "task-1782599584762",
