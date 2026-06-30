@@ -1,7 +1,7 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-28 (sidebar reorder, Oxford crest restored, Daily Focus card margin fix)
-**Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
+**Last updated:** 2026-06-30 (t046 added, Cloudflare CI fix, Phase 3.7 flagged, AI Update button scoped)
+**Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
 
 ---
 
@@ -19,10 +19,11 @@
 
 ---
 
-## Current State (fully working as of 2026-06-23)
+## Current State (fully working as of 2026-06-30)
 
 ### Working
 - GitHub Pages live — `begb0037admin.github.io/command-centre/`
+- Cloudflare Workers live — `cc.lelitte.co.uk` (primary URL)
 - `data/tasks.json` loads on page open (cache-busted with `?_=Date.now()`)
 - Three priority tiers: Today / Tomorrow / This Week / Parked
 - Sidebar: Oxford navy, 320px, real OUO.jpg crest (base64), live task counts per tier, week-start date, Add Task button
@@ -31,13 +32,14 @@
 - Done state: checkbox tick fades + strikes through card, persists in localStorage (`commandCentre_done_v1`)
 - Hide/Show Done toggle in header
 - Time-aware greeting: Good morning / afternoon / evening, Kevin
-- Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser ✅ **Confirmed working 2026-06-23**
+- Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser ✅ Confirmed working
 - 'From your inbox' suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
 - **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. "All" returns to the four-column grid. Add button targets the focused tier.
 - **Badge CSS normalised** — NEW (green) and UPDATED (blue) badges match Work Inbox exactly
 - **Emoji removed** from all three "Open email" button locations
 - **Save-status toast** — centred bottom toast: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
 - **Sidebar nav order (2026-06-28):** Daily Focus widget → From your inbox → Tasks counts → Links → My Links
+- **Cloudflare CI (non-production branches):** Disabled — no more CI noise on PR branches
 
 ### Known Limitations (by design — v1)
 - Done state in localStorage is keyed by task ID — if `tasks.json` is regenerated with new IDs, done state resets.
@@ -263,9 +265,13 @@ Work-inbox followed the identical pattern once command-centre Phase 3 was confir
 
 ## Next Action
 
-**Phase 2 (functional equivalence check) — next:** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, crest. Source-level check passed 2026-06-27 — see session note. Browser sign-off by Kevin closes Gate 2.0.
+**Phase 2 (functional equivalence check):** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, crest. Source-level check passed 2026-06-27. Browser sign-off by Kevin closes Gate 2.0.
 
 **After Gate 2.0:** Remaining dashboards custom domain rollout — hris-launcher (`hris.lelitte.co.uk`), hr-fa-knowledge-base (`kb.lelitte.co.uk`), hris-dashboard (`hris-dash.lelitte.co.uk`).
+
+**AI "Update with AI" button — awaiting effort level raise:** Feature scoped 2026-06-30. Kevin to raise effort level before implementation begins. See session note below for full scope.
+
+**Phase 3.7 fix (fetch_inbox.py):** JSON parse error in AI summaries phase — flagged for roadmap. Needs investigation in a future session.
 
 **Parked feature:** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards appends a dated action entry to an existing task and dismisses the card.
 
@@ -275,6 +281,36 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 ---
 
 ## Session Notes
+
+### 2026-06-30 — t046 added; Cloudflare CI fix; Phase 3.7 flagged; AI Update button scoped
+
+**t046 — PACS org structure — college entities L2 to L3 impact assessment:**
+- Backup created before write: `Archive/tasks_backup_20260630_1010.json` (commit `2f7f71a55bf7f1fb72f99ea56e6f36aa027d7843`, SHA `3cda25b7`)
+- t046 appended to `data/tasks.json` (commit `050446451eb1d3e155bbdd6f5b81e4138a23ab01`, SHA `8c880247`); tier: week
+- Full backup-and-verify protocol followed per CLAUDE.md
+- t046 deferred until after fetch_inbox.py Phase 3.6 completed (SHA conflict avoidance)
+
+**Inbox run (2026-06-30 morning):**
+- Phase 3.6 applied 4 auto-updates: t015, t024, t014, task-1782599584762
+- New task added by Phase 3.6: task-1782599630157 "Review UOX case 69001655 catch-up from Maura McGlynn" (tier: today)
+
+**Cloudflare CI fix:**
+- Root cause: "Builds for non-production branches: Enabled" in Cloudflare Workers settings caused `npx wrangler versions upload` to run on every PR branch. PR branches lack `wrangler.jsonc` (only the auto-managed `cloudflare/workers-autoconfig` branch carries it), so every PR deploy failed.
+- Fix: Kevin disabled "Builds for non-production branches" via Cloudflare Settings → Branch Control. Confirmed via screenshot.
+- Main branch deploys to `cc.lelitte.co.uk` unaffected. No code changes required.
+- `wrangler.jsonc` lives on `cloudflare/workers-autoconfig` branch (auto-managed by Cloudflare) — do not modify.
+
+**Phase 3.7 warning (fetch_inbox.py):**
+- Terminal output showed WARNING: "Unterminated string starting at: line 15 column 11 (char 3363)" — JSON parse error in AI summaries phase.
+- Root cause: AI-generated text likely contains unescaped quotes or special characters breaking JSON serialisation.
+- `tasks.json` unaffected — Phase 3.6 writes are separate and working correctly. Flagged for roadmap investigation.
+
+**AI "Update with AI" button — scoped, not started:**
+- Feature: remove Notes field from task cards; replace with AI text input area. Kevin pastes raw text (Teams message, email, portal update, etc.), clicks one button; Worker endpoint calls Claude haiku with task context + raw text → formats as `[DD Mon YYYY] ...` dated action entry → appends to `tasks.json` actions array.
+- Requires: `js/app.js` UI changes (remove Notes, add AI input area + button); new `/ai-log` endpoint on `cc-tasks-writer` Worker; `ANTHROPIC_API_KEY` as Worker secret.
+- Effort level: high — awaiting Kevin to raise before implementation begins.
+
+**PR #9 closed:** Was open on branch `claude/hope-handover-command-centre-uk4o0m` with a draft HANDOVER update. Closed without merging — HANDOVER.md updates go directly to main per branch and merge protocol.
 
 ### 2026-06-08 — Module 1 build (Hope cross-domain)
 - Kevin hit token cap mid-session; Hope completed build under Cross-Domain Code Brief
