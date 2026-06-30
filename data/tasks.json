@@ -337,26 +337,6 @@
       "dateAdded": "2026-06-25"
     },
     {
-      "id": "t014",
-      "title": "Chemistry bulk delete -- get details from Julie, pass to Reenu",
-      "tier": "today",
-      "source": "Case 68974493",
-      "emailRef": "68974493 / 67938206",
-      "summary": "UAT signed off 23 Jun — Reenu proceeding to live. Awaiting confirmation email.",
-      "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie).",
-      "actions": [
-        "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
-        "[02 Jun 2026] Marie handed case to Kevin as lead.",
-        "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
-        "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live.",
-        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin.",
-        "[30 Jun 2026] Kevin confirmed to Julie that Chemistry bulk deletion has been actioned and is now live. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)"
-      ],
-      "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF50000",
-      "notes": "Tuesday, 30 June 202608:57\nReenu Delaney\n\nHi Kevin,\nI hope you're keeping well.\nI'm just checking in to see if you've had a chance to review the live changes and whether you're happy to proceed with signing off on the project.\nPlease let me know if you have any questions."
-    },
-    {
       "id": "t023",
       "title": "Respond to Support Call# 11688462 -- Ash VEA team",
       "tier": "today",
@@ -651,6 +631,26 @@
         "[TODO] Report back to Simon so the management team can pull together a formal response to Katherine Corr (PACS)."
       ],
       "dateAdded": "2026-06-29"
+    },
+    {
+      "id": "t014",
+      "title": "Chemistry bulk delete -- get details from Julie, pass to Reenu",
+      "tier": "today",
+      "source": "Case 68974493",
+      "emailRef": "68974493 / 67938206",
+      "summary": "UAT signed off 23 Jun — Reenu proceeding to live. Awaiting confirmation email.",
+      "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie).",
+      "actions": [
+        "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
+        "[02 Jun 2026] Marie handed case to Kevin as lead.",
+        "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
+        "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live.",
+        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin.",
+        "[30 Jun 2026] Kevin confirmed to Julie that Chemistry bulk deletion has been actioned and is now live. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)"
+      ],
+      "dateAdded": "2026-06-08",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF50000",
+      "notes": "Tuesday, 30 June 202608:57\nReenu Delaney\n\nHi Kevin,\nI hope you're keeping well.\nI'm just checking in to see if you've had a chance to review the live changes and whether you're happy to proceed with signing off on the project.\nPlease let me know if you have any questions."
     }
   ]
 }
