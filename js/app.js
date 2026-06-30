@@ -121,7 +121,12 @@ function renderBoard(){
     if(todos.length){
       var b='';var show=Math.min(todos.length,5);
       todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
-      if(todos.length>show)b+='<div class="focus-more">+'+(todos.length-show)+' more</div>';
+      if(todos.length>show){
+        b+='<div class="focus-await-extra" style="display:none">';
+        todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
+        b+='</div>';
+        b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
+      }
       html+=focusZone('actnow','Act now',b);
     }
     /* WAITING ON — [AWAITING]s from all tasks */
@@ -188,7 +193,12 @@ function renderStaleBanner(){
   if(todos.length){
     var show=Math.min(todos.length,6);var b='';
     todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
-    if(todos.length>show)b+='<div class="focus-more">+'+(todos.length-show)+' more</div>';
+    if(todos.length>show){
+      b+='<div class="focus-await-extra" style="display:none">';
+      todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+      b+='</div>';
+      b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
+    }
     col2='<div class="bar-col"><div class="bar-col-title">Act now</div>'+b+'</div>';
   }
   /* Col 3: Waiting on ([AWAITING] from all tasks) */
