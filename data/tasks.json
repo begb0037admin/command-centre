@@ -93,7 +93,7 @@
       "summary": "40 REF2029 pay admin codes to set up in UOXU; change request raised, awaiting Division Code resolution.",
       "description": "Pay admin buy codes need to be set up in PeopleXD for DTP1092. Simon created Division 901, ZSD901, Z90101, Z901, Z902 in UOXU on 10 Jun. Division Code linkage to Company Code was blocked pending Conor O'Brien config session (happened 12 Jun). Draft load file sent to Conor 17 Jun. 40 Pay Administered By codes still need setting up in UOXU.",
       "actions": [
-        "[10 Jun 2026] Simon created Division 901, ZSD901, Z90101, Z901 (Colleges), Z902 (Permanent Private Halls) in UOXU.",
+        "[10 Jun 2026] Simon created Division 901, ZSD901, Z90101, Z90101 (Colleges), Z902 (Permanent Private Halls) in UOXU.",
         "[12 Jun 2026] Config session with Conor O'Brien re Division Code blocker.",
         "[17 Jun 2026] Kevin sent draft REF2029 load file to Conor O'Brien.",
         "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
@@ -130,7 +130,7 @@
       "actions": [
         "[Apr 2026] DPIA v0.2 completed -- Stages 1-6 substantially complete, preliminary DPO comments addressed.",
         "[AWAITING] Marie Cooksey to formally sign Stage 7 before submission to Information Compliance. Chase as and when.",
-        "[24 Jun 2026] Raised at HR Systems Managers Meeting -- SoundCloud being piloted at Oxford for DPIAs and security assessments. Proposal to use WFM DPIA as pilot case to avoid later migration. Kevin to be included in SoundCloud team contact.",
+        "[24 Jun 2026] Raised at HR Systems Roadmap Meeting -- SoundCloud being piloted at Oxford for DPIAs and security assessments. Proposal to use WFM DPIA as pilot case to avoid later migration. Kevin to be included in SoundCloud team contact.",
         "[AWAITING] SoundCloud team contact to be made; Kevin to be included in that conversation.",
         "[TODO] Once SoundCloud contact made, agree migration of WFM DPIA into SoundCloud as the pilot case."
       ],
@@ -354,7 +354,7 @@
       ],
       "dateAdded": "2026-06-08",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF50000",
-      "notes": "Tuesday, 30 June 202608:57\nReenu Delaney\n\nHi Kevin,\nI hope you’re keeping well.\nI’m just checking in to see if you’ve had a chance to review the live changes and whether you’re happy to proceed with signing off on the project.\nPlease let me know if you have any questions."
+      "notes": "Tuesday, 30 June 202608:57\nReenu Delaney\n\nHi Kevin,\nI hope you're keeping well.\nI'm just checking in to see if you've had a chance to review the live changes and whether you're happy to proceed with signing off on the project.\nPlease let me know if you have any questions."
     },
     {
       "id": "t023",
@@ -636,6 +636,21 @@
       "notes": "",
       "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078847C7120000",
       "dateAdded": "2026-06-27"
+    },
+    {
+      "id": "t046",
+      "title": "PACS org structure -- college entities L2 to L3 impact assessment",
+      "tier": "week",
+      "source": "Teams -- Simon Burford, 29 Jun 2026",
+      "emailRef": "",
+      "summary": "",
+      "description": "Katherine Corr (PACS team) is proposing to adjust how Oxford Colleges are recorded in the org structure -- moving them from L2 to L3 (with an appropriate L2 parent) so they can be used in PXD to record researcher personal data for REF and in the new DARS system. Currently Colleges, Societies and Halls are all set up at L2. Simon Burford asked Kevin on 29 Jun to work with James and Chris to establish the impact from a PeopleXD / H&S Systems point of view, then report back so the management team can pull together a formal response. Martin McGovern (ORMS) and Robert Bradley (IAM) have both confirmed the change would be fine for their respective systems.",
+      "actions": [
+        "[29 Jun 2026] Simon Burford asked Kevin to assess the impact with James and Chris. Kevin confirmed he would pick it up.",
+        "[TODO] Work with James and Chris to assess impact on PeopleXD and H&S systems of moving Colleges from L2 to L3 in org structure.",
+        "[TODO] Report back to Simon so the management team can pull together a formal response to Katherine Corr (PACS)."
+      ],
+      "dateAdded": "2026-06-29"
     }
   ]
 }
