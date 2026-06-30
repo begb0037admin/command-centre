@@ -173,6 +173,12 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .notes-edit{width:100%;font-family:inherit;font-size:12px;border:1.5px solid #dde2ec;border-radius:5px;padding:5px 7px;resize:vertical;outline:none;min-height:44px;color:var(--text-dark);line-height:1.5}
 .notes-edit:focus{border-color:var(--oxford)}
 .save-notes-btn{font-family:inherit;font-size:10.5px;font-weight:600;background:var(--oxford);color:#fff;border:none;border-radius:5px;padding:3px 11px;margin-top:5px;cursor:pointer}
+.ai-input{width:100%;font-family:inherit;font-size:12px;border:1.5px solid #dde2ec;border-radius:5px;padding:5px 7px;resize:vertical;outline:none;min-height:64px;color:var(--text-dark);line-height:1.5}
+.ai-input:focus{border-color:#6366f1}
+.ai-log-btn{font-family:inherit;font-size:10.5px;font-weight:600;background:#6366f1;color:#fff;border:none;border-radius:5px;padding:3px 11px;margin-top:5px;cursor:pointer;transition:background .15s}
+.ai-log-btn:hover{background:#4f46e5}
+.ai-log-btn:disabled{background:#a5b4fc;cursor:wait}
+.ai-status{font-size:11px;color:var(--text-muted);margin-top:5px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
 .title-edit-input{font-family:inherit;font-size:13px;font-weight:600;border:1.5px solid var(--oxford);border-radius:5px;padding:2px 7px;flex:1;min-width:0;outline:none;color:var(--text-dark)}
 
 /* INBOX PANEL */
