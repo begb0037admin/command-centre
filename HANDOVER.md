@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-30 (AI "Update with AI" button UI live; Worker endpoint code committed; Worker setup awaiting Kevin)
+**Last updated:** 2026-06-30 (evening) — WI done sync; CC→ button window reuse; hashchange card selection
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
 
 ---
@@ -40,6 +40,7 @@
 - **Save-status toast** — centred bottom toast: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
 - **Sidebar nav order (2026-06-28):** Daily Focus widget → From your inbox → Tasks counts → Links → My Links
 - **Cloudflare CI (non-production branches):** Disabled — no more CI noise on PR branches
+- **hashchange listener (2026-06-30):** `window.addEventListener('hashchange', ...)` fires `goToCard(id)` whenever the URL hash changes in-page. Allows WI's `CC →` button to select + animate the correct card when CC is already open in a tab.
 
 ### Known Limitations (by design — v1)
 - Done state in localStorage is keyed by task ID — if `tasks.json` is regenerated with new IDs, done state resets.
@@ -283,6 +284,25 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 ---
 
 ## Session Notes
+
+### 2026-06-30 (evening) — WI done sync; CC→ button window reuse; hashchange card selection
+
+**CC→WI done sync (WI-side, one-way):**
+- WI `js/app.js` polls `data/tasks.json` in command-centre every 30 seconds via the github-proxy Worker.
+- When a CC task matching a WI priority item title is found with `done: true`, the WI item is auto-ticked and synced to `data/ticks.json` via cc-tasks-writer.
+- One-way only: CC → WI. Confirmed working by Kevin.
+
+**CC→ button window reuse fix (work-inbox/js/app.js):**
+- Root cause: `window.open(url, 'command-centre')` only reuses a tab the browser opened via `window.open` — a tab navigated to manually has no window name.
+- Fix: module-level `_ccWindow` variable. `openCC(id)` checks `_ccWindow && !_ccWindow.closed`; if true, navigates in place via `_ccWindow.location.href` + `.focus()`; otherwise opens new tab and stores reference.
+- Backup before write: `Archive/app_js_backup_20260630_2110.js` (commit `2d9833d5`, SHA `…`)
+- work-inbox `js/app.js` SHA after fix: `44867d67`. Confirmed working by Kevin.
+
+**hashchange listener (command-centre/js/app.js):**
+- Root cause: CC init block reads `window.location.hash` once on load. Setting `_ccWindow.location.href` fires `hashchange` in the CC tab — but CC had no listener, so `goToCard()` was never called.
+- Fix: appended `window.addEventListener('hashchange', function(){ var id=window.location.hash.replace('#',''); if(id) goToCard(id); });` to `js/app.js`.
+- Backup before write: `Archive/app_js_backup_20260630_2115.js` (commit `8e3d84dd`)
+- New `js/app.js` SHA: `12e0b1be` (commit `8b3c880`). Confirmed working by Kevin.
 
 ### 2026-06-30 — t046 added; Cloudflare CI fix; Phase 3.7 flagged; AI Update button scoped
 
