@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-28 (sidebar reorder, Oxford crest restored, Daily Focus card margin fix)
+**Last updated:** 2026-06-30 (Worker investigation — no bug found; t046 recoverable; rollback stable)
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/
 
 ---
@@ -19,7 +19,7 @@
 
 ---
 
-## Current State (fully working as of 2026-06-23)
+## Current State (as of 2026-06-30)
 
 ### Working
 - GitHub Pages live — `begb0037admin.github.io/command-centre/`
@@ -31,13 +31,16 @@
 - Done state: checkbox tick fades + strikes through card, persists in localStorage (`commandCentre_done_v1`)
 - Hide/Show Done toggle in header
 - Time-aware greeting: Good morning / afternoon / evening, Kevin
-- Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser ✅ **Confirmed working 2026-06-23**
+- Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser ✅ **Worker code inspected 2026-06-30 — correctly coded, no bug**
 - 'From your inbox' suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
 - **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. "All" returns to the four-column grid. Add button targets the focused tier.
 - **Badge CSS normalised** — NEW (green) and UPDATED (blue) badges match Work Inbox exactly
 - **Emoji removed** from all three "Open email" button locations
 - **Save-status toast** — centred bottom toast: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
 - **Sidebar nav order (2026-06-28):** Daily Focus widget → From your inbox → Tasks counts → Links → My Links
+
+### Current task count
+- 45 tasks (t001–t045) — t046 removed by rollback 2026-06-30, recoverable (see session note below)
 
 ### Known Limitations (by design — v1)
 - Done state in localStorage is keyed by task ID — if `tasks.json` is regenerated with new IDs, done state resets.
@@ -263,6 +266,8 @@ Work-inbox followed the identical pattern once command-centre Phase 3 was confir
 
 ## Next Action
 
+**Immediate (awaiting Kevin decision):** Restore t046 (PACS org structure task) — see session note 2026-06-30 below. Content is in `Archive/tasks_backup_20260630_0943.json`. Requires Kevin's explicit approval before write.
+
 **Phase 2 (functional equivalence check) — next:** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, crest. Source-level check passed 2026-06-27 — see session note. Browser sign-off by Kevin closes Gate 2.0.
 
 **After Gate 2.0:** Remaining dashboards custom domain rollout — hris-launcher (`hris.lelitte.co.uk`), hr-fa-knowledge-base (`kb.lelitte.co.uk`), hris-dashboard (`hris-dash.lelitte.co.uk`).
@@ -483,3 +488,38 @@ Note: Live URL fetch (lelitte.co.uk + GitHub Pages) returned 403 from cloud envi
 - `Archive/index_backup_20260628_1200.html` — index.html before reorder + crest fix
 - `Archive/styles_backup_20260628_1200.css` — styles.css before margin fix
 - `Archive/index_backup_20260628_1200_full_crest.html` — reference copy with full crest + new nav order
+
+### 2026-06-30 — Blank dashboard incident: Worker investigation, rollback, corrected diagnosis
+
+**What happened:**
+Dashboard went blank after t046 (PACS org structure task) was added via drag-and-drop from the inbox suggestion panel (commit `8f9faf08`, 2026-06-30 06:43). Kevin's prior session (hit usage limit) suspected the Cloudflare Worker had a double-encoding bug and performed a rollback to the pre-t046 45-task state (commit `3cebfaa8`, 07:01).
+
+**Worker investigation (2026-06-30, Hope failover session):**
+
+The Worker source code (`cc-tasks-writer.kevinlelitte.workers.dev`) was retrieved and inspected. Key encoding line:
+```javascript
+const content = btoa(unescape(encodeURIComponent(JSON.stringify(doc, null, 2))));
+```
+This is **correct** — encodes once, using the standard UTF-8-safe pattern for the GitHub Contents API. No double-encoding. Worker code confirmed clean.
+
+**Key finding — corrected diagnosis:**
+- Commit `8f9faf08` (the "bad" commit) was fetched from GitHub and verified: `data/tasks.json` contains **valid JSON with 46 tasks** (blob SHA `06bb098fa4fd5b8bfae011701dbf7abcdc0a7352`)
+- `Archive/tasks_backup_20260630_0943.json` contains **the same valid JSON** (same blob SHA) — the "corrupted backup" was actually a clean 46-task file
+- The Worker did **not** double-encode the file. The original diagnosis was incorrect.
+- The blank dashboard had a different cause (most likely transient: a failed loadTasks() fetch returning null, or a concurrent fetch_inbox.py Phase 3.6 write mid-load). The Worker write itself was clean.
+
+**Current state after rollback:**
+- `data/tasks.json` on main: 45 tasks (t001–t045) — SHA `2e2a179d639b1df412f4dd3b3a614301e983bb58` ✅ valid JSON, dashboard working
+- t046 (PACS org structure — college entities L2 to L3 impact assessment, source: Teams Simon Burford 29 Jun) was removed by the rollback
+- t046 content is fully preserved in `Archive/tasks_backup_20260630_0943.json` and can be restored
+
+**t046 summary (for Kevin's reference):**
+- Title: PACS org structure — college entities L2 to L3 impact assessment
+- Tier: week
+- Source: Teams — Simon Burford, 29 Jun 2026
+- Context: Katherine Corr (PACS) proposes moving Colleges from L2 to L3 in org structure. Simon asked Kevin to assess impact with James and Chris on PeopleXD / H&S Systems, then report back.
+- Actions: [29 Jun] picked up by Kevin; [TODO] assess impact with James and Chris; [TODO] report back to Simon
+
+**Decision required from Kevin:** Approve restore of t046? Will be written to `data/tasks.json` via standard backup-then-write protocol once Kevin says yes.
+
+**No Worker fix needed.** The Worker is correctly coded and can be used normally, including drag-and-drop from the suggestion panel.
