@@ -55,10 +55,11 @@
         "[25 Jun 2026] Kevin updated case 69001655 with Dev team information and asked Sarah Murphy to progress further. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)",
         "[25 Jun 2026] Kevin updated Login screen on UOXU successfully -- 'Internal Mobility Principles' hyperlinked, spacing added after 'Existing University Staff' and 'New Applicants:' headings.",
         "[25 Jun 2026] Unable to update Current Job Vacancies and Job Search screens on UOXU -- devs now handling remaining UOXU screens.",
-        "[AWAITING] Maura McGlynn (AG) to send Teams message when remaining UOXU screens are ready for Kevin to validate before going LIVE."
+        "[AWAITING] Maura McGlynn (AG) to send Teams message when remaining UOXU screens are ready for Kevin to validate before going LIVE.",
+        "[30 Jun 2026] Kevin confirmed to Laura Porter that IM Principles URL changes have been made and verified on test environment. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)"
       ],
       "dateAdded": "2026-06-03",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000787631D200000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF30000",
       "status": "Login screen on UOXU updated 25 Jun — unable to update Current Job Vacancies and Job Search screens; devs handling remaining UOXU screens, awaiting Maura's Teams message to validate before LIVE.",
       "notes": "[Gate 2.0 test 22:28:53]"
     },
@@ -348,10 +349,11 @@
         "[02 Jun 2026] Marie handed case to Kevin as lead.",
         "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
         "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live.",
-        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin."
+        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin.",
+        "[30 Jun 2026] Kevin confirmed to Julie that Chemistry bulk deletion has been actioned and is now live. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)"
       ],
       "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078716632D0000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF50000",
       "notes": "Tuesday, 30 June 202608:57\nReenu Delaney\n\nHi Kevin,\nI hope you’re keeping well.\nI’m just checking in to see if you’ve had a chance to review the live changes and whether you’re happy to proceed with signing off on the project.\nPlease let me know if you have any questions."
     },
     {
@@ -394,12 +396,13 @@
       "tier": "today",
       "source": "TSS Enquiries 23/06",
       "emailRef": "Urgent Reference Request for Nikolas Sharkey",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C140000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF40000",
       "summary": "TSS Enquiries requesting urgent reference for Nikolas Sharkey. 48+ hours outstanding -- time-critical.",
       "description": "TSS Enquiries (Temporary Staffing Service) has requested an urgent reference from Kevin for Nikolas Sharkey, who is being considered for temporary vacancies at the University of Oxford. Kevin is listed as a referee. Received 23 June at 12:11. Now over 48 hours without a response -- employment verification references are time-critical and can block the candidate's placement.",
       "actions": [
         "[23 Jun 2026] Reference request received from TSS Enquiries for Nikolas Sharkey -- 48+ hours outstanding.",
-        "[TODO] Open email, complete and return reference for Nikolas Sharkey to TSS Enquiries immediately."
+        "[TODO] Open email, complete and return reference for Nikolas Sharkey to TSS Enquiries immediately.",
+        "[30 Jun 2026] Kevin submitted the reference for Nikolas Sharkey via link after the 48-hour delay. (email: Kevin (sent to: Todd Graf) - Re: Reference Request for Nikolas Sharkey)"
       ],
       "dateAdded": "2026-06-23",
       "done": true
@@ -615,9 +618,11 @@
       "source": "manual",
       "summary": "",
       "description": "",
-      "actions": [],
+      "actions": [
+        "[30 Jun 2026] Kevin updated the ticket (case 69001655) with information for the Dev team and asked Sarah Murphy to escalate. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)"
+      ],
       "notes": "",
-      "entryId": "",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
       "dateAdded": "2026-06-27"
     },
     {
