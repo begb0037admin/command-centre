@@ -602,6 +602,7 @@ function toggleFocusZone(label,key){
 })();
 
 /* INIT */
+localStorage.setItem(SHOW_DONE_KEY,'0');
 loadTasks().then(function(){
   var hash=window.location.hash.replace('#','');
   if(hash){
