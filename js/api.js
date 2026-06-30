@@ -68,6 +68,33 @@ function showSaveToast(state,text){
     t._timer=setTimeout(function(){t.className='';},2500);
   }
 }
+/* ONE-WAY SYNC: CC task marked done -> tick matching item in today's Work Inbox briefing */
+async function syncDoneToInbox(entryId){
+  if(!entryId)return;
+  try{
+    var bRes=await fetch(INBOX_RAW+'/data/briefing.json?t='+Date.now());
+    if(!bRes.ok)return;
+    var briefing=await bRes.json();
+    var dateKey=(briefing.date||'').replace(/ /g,'_');
+    if(!dateKey)return;
+    var sections=['urgent','needs','fyi','low'];
+    var tickKey=null;
+    for(var s=0;s<sections.length&&!tickKey;s++){
+      var arr=briefing[sections[s]]||[];
+      for(var i=0;i<arr.length;i++){
+        if(arr[i].entry_id===entryId){tickKey=dateKey+'_'+sections[s]+'_'+i;break;}
+      }
+    }
+    if(!tickKey)return;
+    var tRes=await fetch(INBOX_RAW+'/data/ticks.json?t='+Date.now());
+    var ticksDoc=tRes.ok?await tRes.json():{ticks:{}};
+    var ticks=ticksDoc.ticks||{};
+    if(ticks[tickKey])return;
+    ticks[tickKey]=true;
+    await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({target:'inbox-state',message:'Tick sync from command-centre: '+tickKey,doc:{ticks:ticks,updated_at:new Date().toISOString()}})});
+  }catch(e){console.warn('Inbox tick sync failed',e);}
+}
+
 async function persistTasks(msg){
   showSaveToast('saving','Saving…');
   try{
