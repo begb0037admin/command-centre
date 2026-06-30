@@ -665,3 +665,9 @@ loadTasks().then(function(){
     },400);
   }
 });
+
+/* HASHCHANGE — fires when WI navigates this tab to a new hash via _ccWindow.location.href */
+window.addEventListener('hashchange',function(){
+  var id=window.location.hash.replace('#','');
+  if(id) goToCard(id);
+});
