@@ -616,9 +616,11 @@
       "source": "Maura McGlynn",
       "summary": "",
       "description": "Maura McGlynn sent a catch-up email on case 69001655 and indicated a Devs call may be arranged. Kevin needs to review the full email content and assess next steps, as this case has been escalated and is currently in progress with the development team.",
-      "actions": [],
+      "actions": [
+        "[30 Jun 2026] Kevin updated case 69001655 ticket with information for the Dev team and is awaiting Sarah Murphy's next steps. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)"
+      ],
       "notes": "",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078847C7120000",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
       "dateAdded": "2026-06-27"
     },
     {
