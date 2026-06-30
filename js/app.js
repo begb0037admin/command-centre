@@ -223,7 +223,7 @@ function cardHTML(t){
 
   var descPreview=t.summary?'<div class="card-desc" onclick="toggleDrawer(\''+t.id+'\')">' +escHtml(t.summary)+'</div>':'';
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
-  var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+escHtml(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
+  var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+boldActs(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
   var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
   var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\'">' +tierLabel(tier)+'</button>';}).join('');
 
@@ -251,6 +251,7 @@ function cardHTML(t){
 }
 
 function escHtml(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+function boldActs(s){return escHtml(s).replace(/\[[^\]]+\]/g,'<strong>$&</strong>');}
 function tierLabel(t){return{today:'Today',tomorrow:'Tomorrow',week:'This Week',parked:'Parked'}[t]||t;}
 function scrollToTier(tier){var el=document.getElementById('tier-'+tier);if(el)el.scrollIntoView({behavior:'smooth'});}
 
@@ -390,7 +391,7 @@ async function aiLog(id){
     t2.actions.push(data.entry);
     tasks=merged;
     var drawer=document.getElementById('drawer-'+id);
-    if(drawer){var da=drawer.querySelector('.da');if(da)da.textContent=Array.isArray(t2.actions)?t2.actions.join('\n'):t2.actions;}
+    if(drawer){var da=drawer.querySelector('.da');if(da)da.innerHTML=boldActs(Array.isArray(t2.actions)?t2.actions.join('\n'):t2.actions);}
     if(inputEl)inputEl.value='';
     if(statusEl)statusEl.textContent='Added: '+data.entry;
     await persistTasks('AI log update: '+task.title);
