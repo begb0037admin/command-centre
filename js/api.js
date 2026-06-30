@@ -69,20 +69,31 @@ function showSaveToast(state,text){
   }
 }
 /* ONE-WAY SYNC: CC task marked done -> tick matching item in today's Work Inbox briefing */
-async function syncDoneToInbox(entryId){
-  if(!entryId)return;
+async function syncDoneToInbox(taskId,entryId){
+  if(!taskId&&!entryId)return;
   try{
     var bRes=await fetch(INBOX_RAW+'/data/briefing.json?t='+Date.now());
     if(!bRes.ok)return;
     var briefing=await bRes.json();
     var dateKey=(briefing.date||'').replace(/ /g,'_');
     if(!dateKey)return;
-    var sections=['urgent','needs','fyi','low'];
     var tickKey=null;
-    for(var s=0;s<sections.length&&!tickKey;s++){
-      var arr=briefing[sections[s]]||[];
+    /* 1. Search priorities (CC task id match) — covers today/tomorrow/week panels in WI */
+    var priMap=[['prioritiesToday','pt'],['prioritiesTomorrow','ptom'],['prioritiesWeek','pw']];
+    for(var p=0;p<priMap.length&&!tickKey;p++){
+      var arr=briefing[priMap[p][0]]||[];
       for(var i=0;i<arr.length;i++){
-        if(arr[i].entry_id===entryId){tickKey=dateKey+'_'+sections[s]+'_'+i;break;}
+        if(arr[i].id===taskId){tickKey=dateKey+'_pri_'+priMap[p][1]+'_'+i;break;}
+      }
+    }
+    /* 2. Fall back: search inbox sections by entry_id */
+    if(!tickKey&&entryId){
+      var inboxSecs=['urgent','needs','fyi','low'];
+      for(var s=0;s<inboxSecs.length&&!tickKey;s++){
+        var sarr=briefing[inboxSecs[s]]||[];
+        for(var j=0;j<sarr.length;j++){
+          if(sarr[j].entry_id===entryId){tickKey=dateKey+'_'+inboxSecs[s]+'_'+j;break;}
+        }
       }
     }
     if(!tickKey)return;
