@@ -196,7 +196,7 @@ function renderStaleBanner(){
   tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
   var col3='';
   if(awaits.length){
-    var show=Math.min(awaits.length,6);var b='';
+    var show=Math.min(awaits.length,7);var b='';
     awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
     if(awaits.length>show){
       b+='<div class="focus-await-extra" style="display:none">';
