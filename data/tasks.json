@@ -339,6 +339,21 @@
       "done": true
     },
     {
+      "id": "t035",
+      "title": "WFM / GLAM Rostering -- set up resolution meeting",
+      "tier": "today",
+      "source": "HR Systems Managers Meeting 24/06",
+      "emailRef": "",
+      "summary": "GLAM pulled out at last minute. Three waves outstanding (SBS, PEDS, GLAM). Blocking Sarah's UC dashboards. Set up meeting: Kevin, Simon, Marie, Michelle, Julie.",
+      "description": "GLAM decided at the last minute they did not have capacity to load rostering data into WFM. One wave was loaded, one was not. Three areas are now outstanding: SBS, PEDS, GLAM. This is blocking Sarah from running UC dashboards and reports. Handover notes from Michael were shared on 23 June. A separate resolution meeting is needed to establish what wasn't loaded and why, agree an approach, and produce an action plan. Meeting attendees: Kevin, Simon, Marie, Michelle, and potentially Julie given her proximity to the project. Note: WFM adoption is split -- staff who never used TeamSeer are positive; those who did are making direct comparisons, but TeamSeer was never calculating correctly. The recommendation is to bring vocal blockers like Steph Sparks into future system procurement from the start.",
+      "actions": [
+        "[23 Jun 2026] Michael shared handover notes on WFM rostering status.",
+        "[24 Jun 2026] Raised at HR Systems Managers Meeting -- three areas outstanding (SBS, PEDS, GLAM). GLAM did not load rostering data at last minute. Blocking Sarah's UC dashboards and reports.",
+        "[TODO] Set up resolution meeting -- Kevin, Simon, Marie, Michelle, and potentially Julie. Agenda: understand what wasn't loaded and why, agree approach, produce action list, address GLAM rostering."
+      ],
+      "dateAdded": "2026-06-25"
+    },
+    {
       "id": "t023",
       "title": "Respond to Support Call# 11688462 -- Ash VEA team",
       "tier": "today",
@@ -521,21 +536,6 @@
         "[TODO] Retrieve and log the task number shared at the meeting.",
         "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL) or a system data issue in PeopleXD.",
         "[TODO] Confirm fix approach and communicate resolution to Simon Burford."
-      ],
-      "dateAdded": "2026-06-25"
-    },
-    {
-      "id": "t035",
-      "title": "WFM / GLAM Rostering -- set up resolution meeting",
-      "tier": "tomorrow",
-      "source": "HR Systems Managers Meeting 24/06",
-      "emailRef": "",
-      "summary": "GLAM pulled out at last minute. Three waves outstanding (SBS, PEDS, GLAM). Blocking Sarah's UC dashboards. Set up meeting: Kevin, Simon, Marie, Michelle, Julie.",
-      "description": "GLAM decided at the last minute they did not have capacity to load rostering data into WFM. One wave was loaded, one was not. Three areas are now outstanding: SBS, PEDS, GLAM. This is blocking Sarah from running UC dashboards and reports. Handover notes from Michael were shared on 23 June. A separate resolution meeting is needed to establish what wasn't loaded and why, agree an approach, and produce an action plan. Meeting attendees: Kevin, Simon, Marie, Michelle, and potentially Julie given her proximity to the project. Note: WFM adoption is split -- staff who never used TeamSeer are positive; those who did are making direct comparisons, but TeamSeer was never calculating correctly. The recommendation is to bring vocal blockers like Steph Sparks into future system procurement from the start.",
-      "actions": [
-        "[23 Jun 2026] Michael shared handover notes on WFM rostering status.",
-        "[24 Jun 2026] Raised at HR Systems Managers Meeting -- three areas outstanding (SBS, PEDS, GLAM). GLAM did not load rostering data at last minute. Blocking Sarah's UC dashboards and reports.",
-        "[TODO] Set up resolution meeting -- Kevin, Simon, Marie, Michelle, and potentially Julie. Agenda: understand what wasn't loaded and why, agree approach, produce action list, address GLAM rostering."
       ],
       "dateAdded": "2026-06-25"
     },
