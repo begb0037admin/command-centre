@@ -101,10 +101,10 @@ function renderBoard(){
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
   var badgeTotal=document.getElementById('badge-total'); if(badgeTotal) badgeTotal.textContent=tasks.length;
-  var tcToday=document.getElementById('tc-today'); if(tcToday) tcToday.textContent=tasks.filter(function(t){return t.tier==='today';}).length;
-  var tcTom=document.getElementById('tc-tomorrow'); if(tcTom) tcTom.textContent=tasks.filter(function(t){return t.tier==='tomorrow';}).length;
-  var tcWeek=document.getElementById('tc-week'); if(tcWeek) tcWeek.textContent=tasks.filter(function(t){return t.tier==='week';}).length;
-  var tcAct=document.getElementById('tc-actions'); if(tcAct) tcAct.textContent=tasks.filter(function(t){return(t.actions||[]).some(function(a){return a.includes('[TODO]');});}).length;
+  var tcToday=document.getElementById('tc-today'); if(tcToday) tcToday.textContent=tasks.filter(function(t){return t.tier==='today'&&!t.done;}).length;
+  var tcTom=document.getElementById('tc-tomorrow'); if(tcTom) tcTom.textContent=tasks.filter(function(t){return t.tier==='tomorrow'&&!t.done;}).length;
+  var tcWeek=document.getElementById('tc-week'); if(tcWeek) tcWeek.textContent=tasks.filter(function(t){return t.tier==='week'&&!t.done;}).length;
+  var tcAct=document.getElementById('tc-actions'); if(tcAct) tcAct.textContent=tasks.filter(function(t){return!t.done&&(t.actions||[]).some(function(a){return a.includes('[TODO]');});}).length;
   var ft=document.getElementById('focus-tasks');
   if(ft){
     var nowMs=new Date().setHours(0,0,0,0);
@@ -389,8 +389,8 @@ async function aiLog(id){
     if(!Array.isArray(t2.actions))t2.actions=[];
     t2.actions.push(data.entry);
     tasks=merged;
-    renderBoard();
-    toggleDrawer(id);
+    var drawer=document.getElementById('drawer-'+id);
+    if(drawer){var da=drawer.querySelector('.da');if(da)da.textContent=Array.isArray(t2.actions)?t2.actions.join('\n'):t2.actions;}
     if(inputEl)inputEl.value='';
     if(statusEl)statusEl.textContent='Added: '+data.entry;
     await persistTasks('AI log update: '+task.title);
