@@ -128,8 +128,14 @@ function renderBoard(){
     var awaits=[];
     tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
     if(awaits.length){
-      var b='';
-      awaits.forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
+      var b='';var show=Math.min(awaits.length,5);
+      awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
+      if(awaits.length>show){
+        b+='<div class="focus-await-extra" style="display:none">';
+        awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+a+'</div>';});
+        b+='</div>';
+        b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
+      }
       html+=focusZone('waitingon','Waiting on',b);
     }
     if(!html)html='<div class="focus-empty">No tasks yet</div>';
@@ -190,8 +196,14 @@ function renderStaleBanner(){
   tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push(a.replace('[AWAITING]','').trim());});});
   var col3='';
   if(awaits.length){
-    var b='';
-    awaits.forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+    var show=Math.min(awaits.length,6);var b='';
+    awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+    if(awaits.length>show){
+      b+='<div class="focus-await-extra" style="display:none">';
+      awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.replace(/"/g,'&quot;')+'">'+escHtml(a)+'</div>';});
+      b+='</div>';
+      b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
+    }
     col3='<div class="bar-col"><div class="bar-col-title">Waiting on</div>'+b+'</div>';
   }
   var hasContent=col1||col2||col3;
@@ -572,6 +584,15 @@ function toggleFocusZone(label,key){
   body.classList.toggle('collapsed',isOpen);
   chevron.style.transform=isOpen?'rotate(-90deg)':'';
   localStorage.setItem('focus_'+key,isOpen?'0':'1');
+}
+
+/* WAITING ON / ACT NOW EXPAND-COLLAPSE */
+function toggleMoreItems(btn){
+  var extra=btn.previousElementSibling;
+  if(!extra||!extra.classList.contains('focus-await-extra'))return;
+  var expanded=extra.style.display!=='none';
+  extra.style.display=expanded?'none':'';
+  btn.textContent=expanded?btn.getAttribute('data-more'):'Show less';
 }
 
 /* SIDEBAR RESIZE */
