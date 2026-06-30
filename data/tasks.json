@@ -385,7 +385,8 @@
         "[23 Jun 2026] Reference request received from TSS Enquiries for Nikolas Sharkey -- 48+ hours outstanding.",
         "[TODO] Open email, complete and return reference for Nikolas Sharkey to TSS Enquiries immediately."
       ],
-      "dateAdded": "2026-06-23"
+      "dateAdded": "2026-06-23",
+      "done": true
     },
     {
       "id": "t026",
