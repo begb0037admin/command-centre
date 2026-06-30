@@ -72,13 +72,14 @@ function showSaveToast(state,text){
 async function syncDoneToInbox(taskId,entryId){
   if(!taskId&&!entryId)return;
   try{
+    console.log('[CC-WI sync] starting for taskId='+taskId);
     var bRes=await fetch(INBOX_RAW+'/data/briefing.json?t='+Date.now());
+    console.log('[CC-WI sync] briefing fetch status='+bRes.status);
     if(!bRes.ok)return;
     var briefing=await bRes.json();
     var dateKey=(briefing.date||'').replace(/ /g,'_');
     if(!dateKey)return;
     var tickKey=null;
-    /* 1. Search priorities (CC task id match) — covers today/tomorrow/week panels in WI */
     var priMap=[['prioritiesToday','pt'],['prioritiesTomorrow','ptom'],['prioritiesWeek','pw']];
     for(var p=0;p<priMap.length&&!tickKey;p++){
       var arr=briefing[priMap[p][0]]||[];
@@ -86,7 +87,6 @@ async function syncDoneToInbox(taskId,entryId){
         if(arr[i].id===taskId){tickKey=dateKey+'_pri_'+priMap[p][1]+'_'+i;break;}
       }
     }
-    /* 2. Fall back: search inbox sections by entry_id */
     if(!tickKey&&entryId){
       var inboxSecs=['urgent','needs','fyi','low'];
       for(var s=0;s<inboxSecs.length&&!tickKey;s++){
@@ -96,14 +96,16 @@ async function syncDoneToInbox(taskId,entryId){
         }
       }
     }
+    console.log('[CC-WI sync] tickKey='+tickKey);
     if(!tickKey)return;
     var tRes=await fetch(INBOX_RAW+'/data/ticks.json?t='+Date.now());
     var ticksDoc=tRes.ok?await tRes.json():{ticks:{}};
     var ticks=ticksDoc.ticks||{};
-    if(ticks[tickKey])return;
+    if(ticks[tickKey]){console.log('[CC-WI sync] already ticked, skipping');return;}
     ticks[tickKey]=true;
-    await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({target:'inbox-state',message:'Tick sync from command-centre: '+tickKey,doc:{ticks:ticks,updated_at:new Date().toISOString()}})});
-  }catch(e){console.warn('Inbox tick sync failed',e);}
+    var wRes=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({target:'inbox-state',message:'Tick sync from command-centre: '+tickKey,doc:{ticks:ticks,updated_at:new Date().toISOString()}})});
+    console.log('[CC-WI sync] writer response status='+wRes.status);
+  }catch(e){console.warn('[CC-WI sync] failed',e);}
 }
 
 async function persistTasks(msg){
