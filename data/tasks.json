@@ -337,6 +337,23 @@
       "dateAdded": "2026-06-25"
     },
     {
+      "id": "t029",
+      "title": "DTP1334 SHSMS Evaluation -- review Helen Harbour briefing and weightings",
+      "tier": "today",
+      "source": "Helen Harbour 17-18/06",
+      "emailRef": "DTP1334 SHSMS Evaluation Briefing - placeholder",
+      "summary": "Helen Harbour sent SHSMS evaluation briefing (17 Jun, RED) and weightings spreadsheet (18 Jun). Review before progressing POC documentation with Chris.",
+      "description": "Helen Harbour sent two emails in the week of 17-18 June related to DTP1334: a SHSMS Evaluation Briefing placeholder document and a Strategic H&S Modular System requirements evaluation weightings spreadsheet (Sonhal Mistry also involved). Both are directly relevant to the POC work Kevin needs to do with Christopher Sanders (t022).",
+      "actions": [
+        "[17 Jun 2026] Helen Harbour sent DTP1334 SHSMS Evaluation Briefing placeholder -- RED, act today (now overdue).",
+        "[18 Jun 2026] Helen Harbour sent Strategic H&S Modular System requirements evaluation weightings (Sonhal Mistry also on thread).",
+        "[TODO] Review Helen's evaluation briefing document.",
+        "[TODO] Review the evaluation weightings spreadsheet.",
+        "[TODO] Use both to inform POC meeting notes before sending to Chris (t022)."
+      ],
+      "dateAdded": "2026-06-23"
+    },
+    {
       "id": "t023",
       "title": "Respond to Support Call# 11688462 -- Ash VEA team",
       "tier": "today",
@@ -417,23 +434,6 @@
       ],
       "dateAdded": "2026-06-23",
       "done": true
-    },
-    {
-      "id": "t029",
-      "title": "DTP1334 SHSMS Evaluation -- review Helen Harbour briefing and weightings",
-      "tier": "tomorrow",
-      "source": "Helen Harbour 17-18/06",
-      "emailRef": "DTP1334 SHSMS Evaluation Briefing - placeholder",
-      "summary": "Helen Harbour sent SHSMS evaluation briefing (17 Jun, RED) and weightings spreadsheet (18 Jun). Review before progressing POC documentation with Chris.",
-      "description": "Helen Harbour sent two emails in the week of 17-18 June related to DTP1334: a SHSMS Evaluation Briefing placeholder document and a Strategic H&S Modular System requirements evaluation weightings spreadsheet (Sonhal Mistry also involved). Both are directly relevant to the POC work Kevin needs to do with Christopher Sanders (t022).",
-      "actions": [
-        "[17 Jun 2026] Helen Harbour sent DTP1334 SHSMS Evaluation Briefing placeholder -- RED, act today (now overdue).",
-        "[18 Jun 2026] Helen Harbour sent Strategic H&S Modular System requirements evaluation weightings (Sonhal Mistry also on thread).",
-        "[TODO] Review Helen's evaluation briefing document.",
-        "[TODO] Review the evaluation weightings spreadsheet.",
-        "[TODO] Use both to inform POC meeting notes before sending to Chris (t022)."
-      ],
-      "dateAdded": "2026-06-23"
     },
     {
       "id": "t030",
