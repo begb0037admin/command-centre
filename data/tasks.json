@@ -41,24 +41,6 @@
       "dateAdded": "2026-06-08"
     },
     {
-      "id": "t014",
-      "title": "Chemistry bulk delete -- get details from Julie, pass to Reenu",
-      "tier": "today",
-      "source": "Case 68974493",
-      "emailRef": "68974493 / 67938206",
-      "summary": "UAT signed off 23 Jun — Reenu proceeding to live. Awaiting confirmation email.",
-      "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie).",
-      "actions": [
-        "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
-        "[02 Jun 2026] Marie handed case to Kevin as lead.",
-        "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
-        "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live.",
-        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin."
-      ],
-      "dateAdded": "2026-06-08",
-      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078716632D0000"
-    },
-    {
       "id": "t015",
       "title": "Web pages and URL linking -- job posting updates",
       "tier": "week",
@@ -352,6 +334,24 @@
         "[TODO] Set up resolution meeting -- Kevin, Simon, Marie, Michelle, and potentially Julie. Agenda: understand what wasn't loaded and why, agree approach, produce action list, address GLAM rostering."
       ],
       "dateAdded": "2026-06-25"
+    },
+    {
+      "id": "t014",
+      "title": "Chemistry bulk delete -- get details from Julie, pass to Reenu",
+      "tier": "today",
+      "source": "Case 68974493",
+      "emailRef": "68974493 / 67938206",
+      "summary": "UAT signed off 23 Jun — Reenu proceeding to live. Awaiting confirmation email.",
+      "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie).",
+      "actions": [
+        "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
+        "[02 Jun 2026] Marie handed case to Kevin as lead.",
+        "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
+        "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live.",
+        "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin."
+      ],
+      "dateAdded": "2026-06-08",
+      "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078716632D0000"
     },
     {
       "id": "t023",
