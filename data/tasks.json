@@ -630,21 +630,6 @@
     "done": true
   },
   {
-    "id": "t046",
-    "title": "PACS org structure -- college entities L2 to L3 impact assessment",
-    "tier": "week",
-    "source": "Teams -- Simon Burford, 29 Jun 2026",
-    "emailRef": "",
-    "summary": "",
-    "description": "Katherine Corr (PACS team) is proposing to adjust how Oxford Colleges are recorded in the org structure -- moving them from L2 to L3 (with an appropriate L2 parent) so they can be used in PXD to record researcher personal data for REF and in the new DARS system. Currently Colleges, Societies and Halls are all set up at L2. Simon Burford asked Kevin on 29 Jun to work with James and Chris to establish the impact from a PeopleXD / H&S Systems point of view, then report back so the management team can pull together a formal response. Martin McGovern (ORMS) and Robert Bradley (IAM) have both confirmed the change would be fine for their respective systems.",
-    "actions": [
-      "[29 Jun 2026] Simon Burford asked Kevin to assess the impact with James and Chris. Kevin confirmed he would pick it up.",
-      "[TODO] Work with James and Chris to assess impact on PeopleXD and H&S systems of moving Colleges from L2 to L3 in org structure.",
-      "[TODO] Report back to Simon so the management team can pull together a formal response to Katherine Corr (PACS)."
-    ],
-    "dateAdded": "2026-06-29"
-  },
-  {
     "id": "t014",
     "title": "Chemistry bulk delete -- get details from Julie, pass to Reenu",
     "tier": "today",
@@ -666,5 +651,20 @@
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF50000",
     "notes": "",
     "done": true
+  },
+  {
+    "id": "t046",
+    "title": "PACS org structure -- college entities L2 to L3 impact assessment",
+    "tier": "tomorrow",
+    "source": "Teams -- Simon Burford, 29 Jun 2026",
+    "emailRef": "",
+    "summary": "",
+    "description": "Katherine Corr (PACS team) is proposing to adjust how Oxford Colleges are recorded in the org structure -- moving them from L2 to L3 (with an appropriate L2 parent) so they can be used in PXD to record researcher personal data for REF and in the new DARS system. Currently Colleges, Societies and Halls are all set up at L2. Simon Burford asked Kevin on 29 Jun to work with James and Chris to establish the impact from a PeopleXD / H&S Systems point of view, then report back so the management team can pull together a formal response. Martin McGovern (ORMS) and Robert Bradley (IAM) have both confirmed the change would be fine for their respective systems.",
+    "actions": [
+      "[29 Jun 2026] Simon Burford asked Kevin to assess the impact with James and Chris. Kevin confirmed he would pick it up.",
+      "[TODO] Work with James and Chris to assess impact on PeopleXD and H&S systems of moving Colleges from L2 to L3 in org structure.",
+      "[TODO] Report back to Simon so the management team can pull together a formal response to Katherine Corr (PACS)."
+    ],
+    "dateAdded": "2026-06-29"
   }
 ]
