@@ -1,20 +1,51 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-07-01 (Hope session, failover — Kevin unavailable, see AGENT_MODEL.md Section 6) — Daily Focus / cross-dashboard sidebar redesign: mockups approved, not yet implemented
+**Last updated:** 2026-07-01 (Hope session, failover — Kevin unavailable, see AGENT_MODEL.md Section 6) — sidebar redesign BUILT on branch (both dashboards); approved mockups confirmed (cc-full-v5.html / wi-full-v5.html); main-area redesign NOT YET BUILT
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
 
 ---
 
-## Session 2026-07-01 (Hope, failover) — Daily Focus / cross-dashboard sidebar redesign — MOCKUPS APPROVED, AWAITING GO-AHEAD TO IMPLEMENT
+## Session 2026-07-01 (Hope, failover) — Daily Focus / cross-dashboard sidebar redesign
 
 **Full spec:** `docs/DAILY_FOCUS_CROSS_DASHBOARD_REDESIGN.md` — read this before touching any sidebar/main-area code for this feature. Do not re-derive the design from chat history.
-**Approved mockups (final, reference artefacts, not live code):** `docs/mockups/cc-full-v5.html` (this repo), `work-inbox/docs/mockups/wi-full-v5.html`.
+**Approved mockups (final, confirmed by Hope 2026-07-01):** `docs/mockups/cc-full-v5.html` (this repo) and `work-inbox/docs/mockups/wi-full-v5.html`. These are the reference artefacts for the entire build. Do not use any other mockup file.
 
-**One-line summary:** Both dashboards move to one shared sidebar template. The Daily Focus widget becomes cross-dashboard — CC's shows Work Inbox data, WI's shows Command Centre data. Absences becomes its own shared widget (sourced from work-inbox briefing.json, shown on both sidebars). Main-area layout also changes on both dashboards (separate, larger piece of work — see spec doc Section 5, flag effort level before starting that part).
+**One-line summary:** Both dashboards move to one shared sidebar template. The Daily Focus widget is cross-dashboard — CC's shows Work Inbox data, WI's shows Command Centre data. Absences is its own widget. From your inbox badge on both. Links section on both.
 
-**Status: NOT IMPLEMENTED.** Everything above is documentation and approved-but-inert reference HTML. No changes have been made to `index.html`, `css/styles.css`, `js/api.js`, or `js/app.js`. **Do not begin implementation without Kevin's (or an authorised failover operator's) explicit go-ahead** — this was an explicit instruction at the end of the mockup session.
+### Sidebar — COMPLETE on branch (both dashboards)
 
-**Next action:** wait for approval, then implement per the spec doc, following the normal backup/verify protocol and UI approval gate for every visual push.
+The sidebar redesign is fully implemented on `claude/session-handoff-kevin-x0s645` for both `command-centre` and `work-inbox`. Nothing is on main yet — UI approval gate applies before any merge.
+
+Sidebar elements built (identical structure, both apps):
+- User block (kevin.lelitte@admin.ox.ac.uk)
+- Live clock + date
+- Filter dropdown (All tiers / Today / Tomorrow / This Week / Parked)
+- Daily Focus ticker (cross-dashboard data — CC shows WI briefing data, WI shows CC task data)
+- From your inbox widget + badge
+- Absences section
+- Links section
+
+Backups committed to Archive/ before any changes:
+- `Archive/index_backup_20260701_1544.html`, `styles_backup_20260701_1544.css`, `api_backup_20260701_1544.js`, `app_backup_20260701_1544.js`
+
+### Main area — NOT YET BUILT
+
+The main board area is still the old layout (4-column tier-grid + old stale-banner). This is the next piece of work.
+
+| Dashboard | What is needed | Approved reference |
+|---|---|---|
+| Command Centre | Replace `#stale-banner` + 4-column `tier-grid` with `.intel-panel` (3 white cards: Watch / Act now / Waiting on) + single-column stacked tier sections with white card style | `docs/mockups/cc-full-v5.html` |
+| Work Inbox | Add 3-block `.main-cal-panel` (Today cal / Tomorrow cal / mini month grids) above main content; restyle priority cards to match CC card style | `work-inbox/docs/mockups/wi-full-v5.html` |
+
+Full implementation detail in spec doc Section 5.
+
+### Governance for next session
+
+- **Signal effort level** to operator before starting main-area work — it is multi-file, structurally invasive, cross-repo. Per CONSTITUTION.md Section 10, signal and wait for explicit go-ahead before proceeding.
+- **UI approval gate** — screenshot every visual change, show operator, wait for explicit "approved" before any push to main.
+- **Backup/verify protocol** — mandatory before every write to `index.html`, `css/styles.css`, `js/app.js`, `js/api.js`. Today's backups exist; create new timestamped ones before next write.
+- **One change at a time.** Verify before the next.
+- **Branch:** all work on `claude/session-handoff-kevin-x0s645`. Do not push to main without visual approval.
 
 ---
 
@@ -77,6 +108,8 @@
 | Inbox suggestions | `data/inbox_suggestions.json` (written by work-inbox fetch_inbox.py Phase 3.5) |
 | Triage ledger | `data/triage_ledger.json` (dedup tracker for Phase 3.6 auto-updates) |
 | Archive | `Archive/tasks_backup_YYYYMMDD.json` (auto-created before every write) |
+| Approved mockup | `docs/mockups/cc-full-v5.html` |
+| Cross-dashboard redesign spec | `docs/DAILY_FOCUS_CROSS_DASHBOARD_REDESIGN.md` |
 | Governance standard | `governance/GOVERNANCE_WORKFLOW_STANDARD.md` (v1.1) |
 | Phase 1 Evidence Package | `governance/evidence/PHASE_1_EVIDENCE_PACKAGE.md` |
 | Phase 1 Review Request | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` |
@@ -277,7 +310,10 @@ Work-inbox followed the identical pattern once command-centre Phase 3 was confir
 
 ## Next Action
 
-**Phase 2 (functional equivalence check):** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, crest. Source-level check passed 2026-06-27. Browser sign-off by Kevin closes Gate 2.0.
+**Immediate — main-area redesign (cross-dashboard redesign, Phase 2):**
+Signal effort level to operator before starting. Build in small surgical chunks — CC main area first, then WI main area. Screenshot each chunk before any push to main. Reference: `docs/mockups/cc-full-v5.html` (CC) and `work-inbox/docs/mockups/wi-full-v5.html` (WI). Full spec in `docs/DAILY_FOCUS_CROSS_DASHBOARD_REDESIGN.md` Section 5.
+
+**Phase 2 (functional equivalence check — Cloudflare migration):** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, crest. Source-level check passed 2026-06-27. Browser sign-off by Kevin closes Gate 2.0.
 
 **After Gate 2.0:** Remaining dashboards custom domain rollout — hris-launcher (`hris.lelitte.co.uk`), hr-fa-knowledge-base (`kb.lelitte.co.uk`), hris-dashboard (`hris-dash.lelitte.co.uk`).
 
@@ -378,10 +414,6 @@ Each trigger must read the previous meeting prep doc from the repo AND the previ
 - **Worker endpoint code (committed, not yet live):** `cloudflare-worker/ai-log-endpoint.js` SHA: `58e22a54` (commit `88490353`).
 - **Outstanding — Kevin action required:** Cloudflare → Workers → cc-tasks-writer → Edit code → add `handleAiLog` function → add route → add `ANTHROPIC_API_KEY` secret → Save and Deploy.
 - **UI approval gate:** Visual change pushed without prior screenshot approval per CLAUDE.md. Kevin to view `cc.lelitte.co.uk`, confirm, say "approved".
-
-### 2026-06-30 (afternoon) — AI "Update with AI" button — UI half complete
-
-*(Detail carried above — see 2026-06-30 note.)*
 
 ### 2026-06-08 — Module 1 build (Hope cross-domain)
 - Kevin hit token cap mid-session; Hope completed build under Cross-Domain Code Brief
