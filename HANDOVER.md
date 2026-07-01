@@ -1,7 +1,20 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-07-01 (Hope session) — Automated meeting prep triggers created; failed on first run; full review and brief in meeting-records HANDOVER.md
+**Last updated:** 2026-07-01 (Hope session, failover — Kevin unavailable, see AGENT_MODEL.md Section 6) — Daily Focus / cross-dashboard sidebar redesign: mockups approved, not yet implemented
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
+
+---
+
+## Session 2026-07-01 (Hope, failover) — Daily Focus / cross-dashboard sidebar redesign — MOCKUPS APPROVED, AWAITING GO-AHEAD TO IMPLEMENT
+
+**Full spec:** `docs/DAILY_FOCUS_CROSS_DASHBOARD_REDESIGN.md` — read this before touching any sidebar/main-area code for this feature. Do not re-derive the design from chat history.
+**Approved mockups (final, reference artefacts, not live code):** `docs/mockups/cc-full-v5.html` (this repo), `work-inbox/docs/mockups/wi-full-v5.html`.
+
+**One-line summary:** Both dashboards move to one shared sidebar template. The Daily Focus widget becomes cross-dashboard — CC's shows Work Inbox data, WI's shows Command Centre data. Absences becomes its own shared widget (sourced from work-inbox briefing.json, shown on both sidebars). Main-area layout also changes on both dashboards (separate, larger piece of work — see spec doc Section 5, flag effort level before starting that part).
+
+**Status: NOT IMPLEMENTED.** Everything above is documentation and approved-but-inert reference HTML. No changes have been made to `index.html`, `css/styles.css`, `js/api.js`, or `js/app.js`. **Do not begin implementation without Kevin's (or an authorised failover operator's) explicit go-ahead** — this was an explicit instruction at the end of the mockup session.
+
+**Next action:** wait for approval, then implement per the spec doc, following the normal backup/verify protocol and UI approval gate for every visual push.
 
 ---
 
