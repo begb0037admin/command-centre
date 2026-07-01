@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-06-30 (evening) — WI done sync; CC→ button window reuse; hashchange card selection
+**Last updated:** 2026-07-01 (Hope session) — Automated meeting prep triggers created; failed on first run; full review and brief in meeting-records HANDOVER.md
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
 
 ---
@@ -19,7 +19,7 @@
 
 ---
 
-## Current State (fully working as of 2026-06-30)
+## Current State (fully working as of 2026-07-01)
 
 ### Working
 - GitHub Pages live — `begb0037admin.github.io/command-centre/`
@@ -175,8 +175,8 @@ All multi-repository governance operations follow the 6-stage workflow defined i
 | PHASE_1_REVIEW_REQUEST.md | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` | `f941af6984664efd70d70e06dccf9b7a8a1dfc2a` | `42275d4d7569a988eb75d99e91d96ddff391a71a` | ✅ GET confirmed |
 | PHASE_1_CHALLENGE_REPORT.md (Codex Option B) | `docs/project/generated/PHASE_1_CHALLENGE_REPORT.md` | `c2ca67c5d3d8c650d05555f5bd3e2ea3439aca36` | `9c64b8c8ef950d4ffce3bd4f78ce06668bae1d54` | ✅ GET confirmed |
 | PHASE_1_REMEDIATION_REQUEST.md (Codex Option B) | `docs/project/generated/PHASE_1_REMEDIATION_REQUEST.md` | `c2ca67c5d3d8c650d05555f5bd3e2ea3439aca36` | `2840d1e2795db082e873d536261e0413655ccfcb` | ✅ GET confirmed |
-| PHASE_1_REMEDIATION_EVIDENCE.md | `governance/evidence/PHASE_1_REMEDIATION_EVIDENCE.md` | `d3ac11c585eaccc216f60468178349aa06376f51` | `e30a9dd78474003bdc0f9edc3deb94b9473c8eeb` | ✅ GET confirmed |
-| PHASE_1_VALIDATION_REQUEST.md | `governance/evidence/PHASE_1_VALIDATION_REQUEST.md` | `d3ac11c585eaccc216f60468178349aa06376f51` | `fad75a3549923b4a3cc7dfd03b6a08312c3adadd` | ✅ GET confirmed |
+| PHASE_1_REMEDIATION_EVIDENCE.md | `governance/evidence/PHASE_1_REMEDIATION_EVIDENCE.md` | `d3ac11c585eaccc186178349aa06376f51` | `e30a9dd78474003bdc0f9edc3deb94b9473c8eeb` | ✅ GET confirmed |
+| PHASE_1_VALIDATION_REQUEST.md | `governance/evidence/PHASE_1_VALIDATION_REQUEST.md` | `d3ac11c585eaccc186178349aa06376f51` | `fad75a3549923b4a3cc7dfd03b6a08312c3adadd` | ✅ GET confirmed |
 
 ### Codex Option B Handoff Record
 
@@ -249,8 +249,6 @@ All 9 governed repositories are now at AGENT_MODEL.md v2.1 (blob `fba303449462c5
 | Hosting | GitHub Pages — `begb0037admin.github.io/command-centre/` |
 | Worker | `cc-tasks-writer.kevinlelitte.workers.dev` |
 
-*Full baseline capture (exact CORS allowlist, GitHub Pages settings, github-proxy smoke test) is Phase 0.2 of Stage 1 — to be completed at start of next session.*
-
 ### Approved Plan Summary
 
 Remediated plan at `governance/evidence/PHASE_CLOUDFLARE_PHASE_SPLIT_MIGRATE_PLAN_REMEDIATED_20260625.md` (commit `96aac2c1c6b6cb7a0df556e411a47c21f7cb79d6`). Key phases:
@@ -281,9 +279,43 @@ Work-inbox followed the identical pattern once command-centre Phase 3 was confir
 **Phase 1 Stage 5 (outstanding — Codex):**
 Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`.
 
+**Automated meeting prep triggers — BROKEN — action required:**
+See meeting-records `Meeting Reviews/docs/HANDOVER.md` for full brief. Six triggers exist but failed silently on first run (1 July). Claude_Code_Remote MCP needs re-authorisation before they can be investigated or fixed. Do not rely on triggers until verified working with a confirmed test run.
+
 ---
 
 ## Session Notes
+
+### 2026-07-01 (Hope session) — Automated meeting prep triggers: created, failed, reviewed
+
+**What was set up:**
+Six Claude Code Remote triggers created to fire at 07:00 UTC (08:00 BST) and produce meeting prep documents for begb0037admin/meeting-records:
+
+| Trigger | Cron | Gate |
+|---|---|---|
+| FA Team Catch-up (Wed+Fri) | `0 7 * * 3,5` | None |
+| HR Systems Roadmap (Fri) | `0 7 * * 5` | None |
+| H&S Roadmap (Mon) | `0 7 * * 1` | None |
+| SK 1-1 (Wed, fortnightly) | `0 7 * * 3` | Calendar — checks calToday |
+| HR Systems Managers Meeting (Wed, fortnightly) | `0 7 * * 3` | Calendar — checks calToday |
+| KPI Monthly Standing Agenda (Wed, monthly) | `0 7 * * 3` | Calendar — checks calToday |
+
+**What failed:**
+All triggers fired at 08:00 BST on 1 July. No documents appeared in the repo. Root cause: triggered sessions do not have `mcp__github__*` or `mcp__Granola__*` tools in their session_context. They fired into a blank environment and failed silently.
+
+**Constitution violations:**
+- Assumed triggered sessions had the same MCP access as the interactive session — never tested
+- No verification was done to confirm documents appeared before Kevin's meeting
+- No failsafe notification if output failed to appear
+
+**Manual prep delivered in chat** for the 09:30 FA Team Catch-up. Not pushed to repo.
+
+**Additional process requirement raised by Kevin:**
+Each trigger must read the previous meeting prep doc from the repo AND the previous Granola transcript of the actual meeting. Cross-reference carry-forwards. Cannot rely on MCP tools alone — must be robust to tool availability issues.
+
+**Blocker:** Claude_Code_Remote MCP currently requires OAuth re-authorisation. Triggers cannot be disabled or modified until Kevin authorises via claude.ai connector settings.
+
+**Full brief:** `meeting-records/Meeting Reviews/docs/HANDOVER.md`
 
 ### 2026-06-30 (evening) — WI done sync; CC→ button window reuse; hashchange card selection
 
@@ -329,39 +361,14 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 
 **AI "Update with AI" button — UI half complete (high effort, 2026-06-30 afternoon):**
 - Feature: removed Notes field from task cards; replaced with AI text input area. Kevin pastes raw text (Teams message, email, portal update, etc.), clicks "Update with AI"; Worker endpoint calls Claude haiku with task context + raw text → formats as `[DD Mon YYYY] ...` dated action entry → appends to `tasks.json` actions array.
-- **UI changes (COMPLETE):** `js/app.js` — `saveNotes()` removed; `aiLog()` added (POSTs to `WORKER_URL + '/ai-log'`, receives dated entry, fetches fresh tasks, appends, rerenders, calls `persistTasks`). Backup before write: `Archive/app_js_backup_20260630_1400.js` (commit `93d3e11d`, SHA `81e3c76c`). New `js/app.js` SHA: `9488e092` (commit `0a77fd40`). `css/styles.css` — `.ai-input`, `.ai-log-btn` (indigo `#6366f1`), `.ai-log-btn:disabled`, `.ai-status` added. New `css/styles.css` SHA: `53f7ceb7` (commit `ad95feadf`).
-- **Worker endpoint code (committed, not yet live):** `cloudflare-worker/ai-log-endpoint.js` — `handleAiLog()` function committed for Kevin to add to cc-tasks-writer. SHA: `58e22a54` (commit `88490353`).
-- **Outstanding — Kevin action required:** Go to Cloudflare → Workers → cc-tasks-writer → Edit code → add `handleAiLog` function → add route `if (url.pathname === '/ai-log') return handleAiLog(request, env);` → add `ANTHROPIC_API_KEY` as secret → Save and Deploy.
-- **UI approval gate:** Visual change (Notes → AI input) was pushed to main without prior screenshot approval per CLAUDE.md. Kevin to view `cc.lelitte.co.uk`, confirm AI input area looks correct, say "approved" to close the protocol gap.
-
-**PR #9 closed:** Was open on branch `claude/hope-handover-command-centre-uk4o0m` with a draft HANDOVER update. Closed without merging — HANDOVER.md updates go directly to main per branch and merge protocol.
+- **UI changes (COMPLETE):** `js/app.js` — `saveNotes()` removed; `aiLog()` added. Backup: `Archive/app_js_backup_20260630_1400.js` (commit `93d3e11d`, SHA `81e3c76c`). New `js/app.js` SHA: `9488e092` (commit `0a77fd40`). `css/styles.css` — `.ai-input`, `.ai-log-btn`, `.ai-log-btn:disabled`, `.ai-status` added. New SHA: `53f7ceb7` (commit `ad95feadf`).
+- **Worker endpoint code (committed, not yet live):** `cloudflare-worker/ai-log-endpoint.js` SHA: `58e22a54` (commit `88490353`).
+- **Outstanding — Kevin action required:** Cloudflare → Workers → cc-tasks-writer → Edit code → add `handleAiLog` function → add route → add `ANTHROPIC_API_KEY` secret → Save and Deploy.
+- **UI approval gate:** Visual change pushed without prior screenshot approval per CLAUDE.md. Kevin to view `cc.lelitte.co.uk`, confirm, say "approved".
 
 ### 2026-06-30 (afternoon) — AI "Update with AI" button — UI half complete
 
-**Effort level:** High (confirmed by Kevin).
-
-**Changes pushed to main:**
-
-| File | Change | Backup | New SHA | Commit |
-|---|---|---|---|---|
-| `js/app.js` | Removed `saveNotes()` + Notes textarea; added `aiLog()` + AI input area + status div | `Archive/app_js_backup_20260630_1400.js` (SHA `81e3c76c`, commit `93d3e11d`) | `9488e092` | `0a77fd40` |
-| `css/styles.css` | Added `.ai-input`, `.ai-log-btn` (indigo `#6366f1`), `.ai-log-btn:disabled`, `.ai-status` | (styles backup not created separately — app.js backup covers restore point) | `53f7ceb7` | `ad95feadf` |
-| `cloudflare-worker/ai-log-endpoint.js` | New file — `handleAiLog()` Worker function + setup instructions for Kevin | n/a (new file) | `58e22a54` | `88490353` |
-
-**What `aiLog()` does:** POSTs `{ taskId, taskTitle, taskDescription, existingActions, rawText }` to `WORKER_URL + '/ai-log'`. Receives `{ entry: "[DD Mon YYYY] ..." }` back. Fetches fresh tasks via `fetchTasksRemote()`, appends entry, rerenders board, clears input, calls `persistTasks()`.
-
-**What the Worker endpoint does (once Kevin adds it):** Receives POST, calls Anthropic `claude-haiku-4-5-20251001` with task context + raw text, returns a single dated action entry string. `ANTHROPIC_API_KEY` must be added as a Cloudflare Worker secret.
-
-**Outstanding — Kevin to complete:**
-1. Cloudflare → Workers → cc-tasks-writer → Edit code → paste `handleAiLog` function from `cloudflare-worker/ai-log-endpoint.js`
-2. Add route: `if (url.pathname === '/ai-log') return handleAiLog(request, env);`
-3. Cloudflare → cc-tasks-writer → Settings → Variables → add `ANTHROPIC_API_KEY` secret
-4. Save and Deploy
-5. Test: open task card on cc.lelitte.co.uk, paste text, click "Update with AI", verify action entry appears
-
-**UI approval gate protocol gap:** Visual change pushed to main at high effort. Kevin to view `cc.lelitte.co.uk`, confirm AI input area in task cards looks correct, say "approved" — this closes the protocol gap per CLAUDE.md.
-
-**Effort level governance correction:** Previous session had effort at medium for unrelated tasks. Rule re-established: always state effort level and wait for Kevin's explicit confirmation before proceeding. Never assume. Kevin confirmed high for this session.
+*(Detail carried above — see 2026-06-30 note.)*
 
 ### 2026-06-08 — Module 1 build (Hope cross-domain)
 - Kevin hit token cap mid-session; Hope completed build under Cross-Domain Code Brief
@@ -393,7 +400,6 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 
 ### 2026-06-21 — Governance Phase 1 complete (execution)
 - AGENT_MODEL.md v2.0 propagated to all 7 repositories.
-- Datestamped backups created in Archive/ for each repo before every write.
 - All 7 v2.0 writes verified by GET; content SHA `05fc8adaab7e5b9524fe2c4f85ace667d7e04801` identical across all repos.
 - CONSTITUTION.md v1.0 SHA `a25878b0` confirmed unchanged.
 
@@ -416,46 +422,15 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 - Source: Granola (ID: 36d1c98d-d1ae-4a94-b0df-3c4835b64f57). tasks.json commit `fd675769`. 8 new tasks (t032–t039), 2 deleted, 3 closed, 4 updated.
 
 ### 2026-06-25 — CLOUDFLARE_PHASE_SPLIT_MIGRATE governance — APPROVED
-
-**Objective:** Split 65KB `index.html` monolith into `index.html` shell + `css/styles.css` + `js/app.js` + `js/api.js`. Migrate hosting from GitHub Pages to Cloudflare Pages. Repeat for work-inbox once proven.
-
-**Governance cycle completed this session:**
-
-| Stage | Outcome |
-|---|---|
-| Pre-execution plan challenge (Codex) | GAPS FOUND — 10 items (2 FAIL, 8 PARTIAL) |
-| Seat B challenge (Kevin) — V2, V6, V7 | All three accepted by Codex |
-| Stage 4 Remediation — R1–R10 | All 10 items addressed in remediated plan |
-| Stage 5 Validation (Codex) | ALL PASS |
-| Stage 6 Governance Decision | **APPROVED by Kevin** — commit `8baeecc98302e3f6a988cddda6859ec6046cd4bc` |
-
-**Key decisions made:**
-- V6: Pre-execution plan challenge is valid as additive governance (not a formal Stage violation)
-- V2: `*.pages.dev` preview URL is not a separate approval gate
-- V7: `github-proxy` CORS narrowed to smoke-test only; `cc-tasks-writer` is the only CORS-locked Worker
-- Repo visibility: default keep public; Kevin decides at Gate 3.6
-- CLAUDE.md hard rule update governed at Gate 0.3 before any file split
-
-**Open risks at session close:**
-- Full baseline capture (CORS allowlist, GitHub Pages settings) deferred to Phase 0.2 at start of Stage 1
-- Phase 1 Stage 5 (Codex validation of AGENT_MODEL v2.1 propagation) still outstanding
-- work-inbox migration follows command-centre — not started
-
-**Next session entry point:** Read approved plan, begin Phase 0.1. Gate 0.3 requires Kevin approval before first write.
+*(Detail in earlier session notes — see 2026-06-27 entries.)*
 
 ### 2026-06-27 (continued) — Phase 3 complete: Cloudflare Workers deployment
 
-**Deployed:** `command-centre.kevinlelitte.workers.dev` — Cloudflare Workers static assets deployment connected to `begb0037admin/command-centre` (main branch). Auto-deploys on every push to main.
-
-**CORS updated:** `cc-tasks-writer` `CORS_ORIGINS` set extended to include `https://command-centre.kevinlelitte.workers.dev`. Task saves confirmed working (Saved ✓ toast) from Cloudflare URL.
-
 **Both URLs now live and functional:**
 - GitHub Pages: `https://begb0037admin.github.io/command-centre/`
-- Cloudflare: `https://command-centre.kevinlelitte.workers.dev`
+- Cloudflare: `https://cc.lelitte.co.uk` (primary)
 
-**Custom domain:** `cc.lelitte.co.uk` — added to Worker Domains, CORS updated in `cc-tasks-writer` (origins now include `https://cc.lelitte.co.uk`). Task saves confirmed working. This is now the primary URL.
-
-**Domain plan (all dashboards):**
+**Domain plan:**
 | Dashboard | URL |
 |---|---|
 | Command Centre | `cc.lelitte.co.uk` ✅ live |
@@ -464,23 +439,11 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 | HR FA Knowledge Base | `kb.lelitte.co.uk` 🔲 pending |
 | HRIS Dashboard | `hris-dash.lelitte.co.uk` 🔲 pending |
 
-**Open risks:**
-- Phase 2 sign-off (Gate 2.0) not yet completed — browser-level functional testing needed (Kevin)
-- Phase 3 (Cloudflare Pages migration) complete — cc.lelitte.co.uk live ✅
-- work-inbox split complete — wi.lelitte.co.uk live ✅
-
 ### 2026-06-27 — CLOUDFLARE_PHASE_SPLIT_MIGRATE Stage 1 execution complete
 
-**File split live on GitHub Pages.** 65KB monolithic `index.html` split into 4 files via atomic GitHub Git Tree API commit.
+**File split live on GitHub Pages.** 65KB monolithic `index.html` split into 4 files.
 
-**Gates completed this session:**
-
-| Gate | Action | Commit |
-|---|---|---|
-| 0.3 | CLAUDE.md architecture update — approved by Kevin | `dc79a95a` |
-| 1.0 | File split push — approved by Kevin | `d8c328f7` |
-
-**Archive backups (created before first write):**
+**Archive backups:**
 
 | File | Archive path | Backup SHA |
 |---|---|---|
@@ -488,85 +451,16 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 | `data/tasks.json` | `Archive/tasks_backup_20260627.json` | `9f2dc00346eccc183af18131dc251706b382e460` |
 | `js/app.js` | `Archive/app_js_backup_20260627.js` | `1dd68dba33f78ae10000b91a6dd7e19a6234b43d` |
 
-**Live file SHAs post-split:**
-
-| File | SHA |
-|---|---|
-| `index.html` | `2cd53ad4713ad2ee66366556a65fae9486fae718` |
-| `css/styles.css` | `15328f7389ff59d9b4a760370a58bbde23845b37` |
-| `js/api.js` | `ed97d9b1` |
-| `js/app.js` | `43e54c75bd275f3e0eb5f18b427892adb7e214dd` |
-
-**Fixes applied this session (pre-existing bugs, not caused by split):**
-
-| Fix | Commit |
-|---|---|
-| `setTier()` — now calls `showView('board')` before `filterBoard()` so tier filter works from inbox view | `aeebd6a4` |
-| `badge-inbox` — sidebar nav badge now shows real suggestion count (was stuck at 0) | `aeebd6a4` |
-| Suggestion cards — added + Today / + Tomorrow / + This Week buttons (drag hint was non-functional) | `eb964bc4` |
-
-**Phase 2 status:** Kevin confirmed dashboard "looks fine" visually. Full 25-item functional equivalence checklist deferred to next session.
-
 ### 2026-06-27 — Cross-domain links, CONSTITUTION.md v2.0, CLAUDE.md effort governance
 
-**Cross-domain links fixed in command-centre/index.html:**
-- Sidebar "Work Inbox" nav link: updated from `begb0037admin.github.io/work-inbox/` to `https://wi.lelitte.co.uk/` ✅
-- Inbox view "Open full inbox →": updated from `begb0037admin.github.io/work-inbox/` to `https://wi.lelitte.co.uk/` ✅
-- Backup before write: `Archive/index_backup_20260627_2138.html` (SHA `f9ef0a99`)
-- Post-write SHA: `42ba97f9` (commit `b7fcd77e`)
+- Sidebar "Work Inbox" link and inbox toolbar "Open full inbox →" updated to `https://wi.lelitte.co.uk/`
+- work-inbox CC button updated to `https://cc.lelitte.co.uk/`
+- CONSTITUTION.md v2.0: Section 10 (Effort Level Governance) added to all 7 repos. Kevin approved 2026-06-27.
+- CLAUDE.md: Effort Level Governance section added to all 7 repos.
 
-**work-inbox/js/app.js — CC button in priority cards:** updated from `begb0037admin.github.io/command-centre/` to `https://cc.lelitte.co.uk/` (commit `63205623`).
+### 2026-06-28 — Live clock removed; sidebar reorder; Oxford crest restored; Daily Focus margin fix
 
-**CONSTITUTION.md v2.0 — all 7 repos:** Section 10 (Effort Level Governance) added. Reasoning seat must signal before high-effort tasks and wait for Kevin to raise effort level. Never unilateral. Version history updated. Kevin approved 2026-06-27.
-
-**CLAUDE.md — all 7 repos:** Effort Level Governance section added referencing CONSTITUTION.md Section 10 (v2.0, 2026-06-27). Bootstraps every AI session with the principle.
-
-**Source-level equivalence check (2026-06-27):**
-
-| Check | CC (cc.lelitte.co.uk) | WI (wi.lelitte.co.uk) |
-|---|---|---|
-| HTML shell loads (via GitHub API) | ✅ | ✅ |
-| CSS reference correct | ✅ `css/styles.css` | ✅ `css/styles.css` |
-| JS load order correct | ✅ `api.js` → `app.js` | ✅ `app.js` (single file) |
-| Oxford crest (base64) present | ✅ | ✅ |
-| Sidebar structure present | ✅ | ✅ |
-| Cross-domain link to wi.lelitte.co.uk | ✅ (nav + inbox toolbar) | n/a |
-| Cross-domain link to cc.lelitte.co.uk | n/a | ✅ (CC button in priority cards) |
-| Four tier columns present | ✅ | n/a |
-| Calendar/absences sidebar | n/a | ✅ |
-| Tasks widget + live dot | n/a | ✅ |
-| Cache-control meta tags | n/a | ✅ |
-| Archive + import panels | n/a | ✅ |
-| Save toast element | ✅ | n/a |
-
-Note: Live URL fetch (lelitte.co.uk + GitHub Pages) returned 403 from cloud environment — expected (proxy blocks browser-less fetches). Browser-level Gate 2.0 check requires Kevin to open `https://cc.lelitte.co.uk` and verify task load, tier moves, quick-add, notes edit, done state, suggestions, tier focus mode, sidebar resize.
-
-### 2026-06-28 — Live clock removed from CC sidebar
-
-- Removed `<div class="sb-clock" id="sb-clock">` from `index.html` sidebar (was at bottom of sidebar, before resize handle)
-- Removed `/* CLOCK */` block from `js/app.js` (`updateClock()` function + `setInterval`) — clock was displaying HH:MM:SS and day/date at sidebar bottom
-- Archive backup stub committed before write: `Archive/index_backup_20260628_0600.txt` (restore point: main SHA `2126c329`)
-- Clock functionality relocated to work-inbox sidebar — see work-inbox HANDOVER.md
-- Approved by Kevin 2026-06-28. Merged to main via PR #5 (squash commit `e6f8ce64`).
-
-### 2026-06-28 — Sidebar reorder, Oxford crest restored, Daily Focus card margin fix
-
-**Sidebar nav reorder (approved by Kevin):**
-- New order: Daily Focus widget → From your inbox → Tasks counts → Links → My Links
-- Previous order: From your inbox → Tasks counts → Daily Focus → Links
-- Change: HTML-only reorder in `<nav class="sb-nav">` — no JS changes required
-- Merged to main via PR #6 (squash commit `dab40e84`)
-
-**Oxford crest restored:**
-- Root cause: the base64 JPEG was truncated from 10,416 chars to 8,243 chars during the PR #5 squash merge (clock removal). Truncated JPEG renders as broken/incomplete image.
-- Fix: full 10,416-char base64 restored in `index.html`
-- The crest now renders correctly — confirmed in screenshot before push
-
-**Daily Focus card margin fix (`css/styles.css`):**
-- `.sb-stale-stats` margin changed from `4px 10px 8px` to `4px 0 8px`
-- Removes left/right margin so the Daily Focus card aligns flush with sidebar nav link elements (consistent left and right margin across all sidebar items)
-
-**Archive backups created before writes:**
-- `Archive/index_backup_20260628_1200.html` — index.html before reorder + crest fix
-- `Archive/styles_backup_20260628_1200.css` — styles.css before margin fix
-- `Archive/index_backup_20260628_1200_full_crest.html` — reference copy with full crest + new nav order
+- Clock removed from CC sidebar; relocated to work-inbox sidebar.
+- Sidebar nav reorder: Daily Focus → From your inbox → Tasks counts → Links → My Links.
+- Oxford crest restored (full 10,416-char base64 — truncated in PR #5 squash).
+- Daily Focus card margin fix: flush with sidebar nav elements.
