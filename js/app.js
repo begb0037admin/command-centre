@@ -513,6 +513,7 @@ async function loadInboxSuggestions(){
     var newTasks=(data.new_tasks||[]).filter(function(s){return !d['n_'+s.entry_id]&&!suggestionCovered(s)});
     window.sgList=newTasks;
     var navBadge=document.getElementById('badge-inbox');if(navBadge)navBadge.textContent=newTasks.length;
+    var navText=document.getElementById('inbox-widget-text');if(navText)navText.textContent=newTasks.length+' new suggestion'+(newTasks.length===1?'':'s');
     if(!newTasks.length){host.innerHTML='';return;}
     var stale=false;
     try{stale=(Date.now()-new Date((data.generated_at||'').replace(' ','T')).getTime())>24*3600*1000}catch(e){}
@@ -538,6 +539,59 @@ async function loadInboxSuggestions(){
   }catch(e){host.innerHTML='';}
 }
 loadInboxSuggestions();
+
+/* CLOCK */
+function updateCcClock(){
+  var n=new Date();
+  var timeEl=document.getElementById('cc-clock');
+  if(timeEl)timeEl.textContent=n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  var dateEl=document.getElementById('cc-date');
+  if(dateEl)dateEl.textContent=n.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+}
+updateCcClock();
+setInterval(updateCcClock,1000);
+
+/* TIER FILTER DROPDOWN (sidebar) */
+function applyTierFilter(val){
+  showView('board');
+  filterBoard(val);
+}
+
+/* WORK INBOX DAILY FOCUS WIDGET (cross-dashboard: shows Work Inbox data) */
+function formatWiRefreshed(raw){
+  /* briefing.json refreshed_at is like "Wednesday 01 July · 12:00" -- reformat to "Weds 1 July 12:00" */
+  if(!raw)return '—';
+  var m=raw.match(/^(\w+)\s+0?(\d+)\s+(\w+)\D*(\d{1,2}:\d{2})/);
+  if(!m)return raw;
+  var dayShort={Monday:'Mon',Tuesday:'Tue',Wednesday:'Weds',Thursday:'Thu',Friday:'Fri',Saturday:'Sat',Sunday:'Sun'}[m[1]]||m[1];
+  return dayShort+' '+m[2]+' '+m[3]+' '+m[4];
+}
+async function loadWorkInboxWidget(){
+  var urls=['https://github-proxy.lelitte.co.uk/work-inbox/data/briefing.json?t='+Date.now(),INBOX_RAW+'/data/briefing.json?t='+Date.now()];
+  var data=null;
+  for(var i=0;i<urls.length;i++){
+    try{var r=await fetch(urls[i]);if(r.ok){data=await r.json();break;}}catch(e){}
+  }
+  if(!data)return;
+  var set=function(id,val){var el=document.getElementById(id);if(el)el.textContent=val;};
+  set('wi-today',(data.prioritiesToday||[]).length);
+  set('wi-tomorrow',(data.prioritiesTomorrow||[]).length);
+  set('wi-week',(data.prioritiesWeek||[]).length);
+  set('wi-parked',(data.fyi||[]).length);
+  set('wi-refreshed',formatWiRefreshed(data.refreshed_at));
+  set('wi-urgent',(data.urgent||[]).length+' emails');
+  set('wi-needs',(data.needs||[]).length+' emails');
+  var absEl=document.getElementById('absencesSidebar');
+  if(absEl){
+    if(data.absences&&data.absences.length){
+      absEl.innerHTML='<ul class="abs-list">'+data.absences.map(function(a){return '<li>'+escHtml(a)+'</li>';}).join('')+'</ul>';
+    } else {
+      absEl.innerHTML='<span class="abs-none">None recorded</span>';
+    }
+  }
+}
+loadWorkInboxWidget();
+setInterval(loadWorkInboxWidget,300000);
 
 function openTaskEmail(entryId,e){
   if(e)e.stopPropagation();
