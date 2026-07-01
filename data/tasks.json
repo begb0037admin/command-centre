@@ -216,6 +216,27 @@
     "dateAdded": "2026-06-09"
   },
   {
+    "id": "t033",
+    "title": "HR Reporting SSO Migration -- Managed Desktop (Roadmap 179)",
+    "tier": "parked",
+    "source": "Email thread Jan-Jun 2026 / HR Systems Managers Meeting 24/06",
+    "emailRef": "Fw: Managed Desktop upgrade to the SSO login",
+    "summary": "Stalled since March. April deadline passed. Visual Studio 2022 fixes the blocker but licensing not confirmed. Do not migrate further users until VS2022 licensed.",
+    "description": "Migration of HRIS HR Reporting and Tableau users from CONNECT accounts to SSO on the Oxford Managed Desktop. Roadmap item 179. Lead: Kevin, Team: Asta. Project started November 2025 following initial call with IT Services (John Jones, Richard Jessett, Sadiq Abbasi, Desktop Services). Trial user list agreed February 2026: Simon Burford ADMN2716, David Sanders UOHS0054, Asta Palmer OUIT0422, Kevin Lelitte BEGB0037. Henry Acheampong ADMN5896 excluded at Kevin's request. Kevin migrated successfully March 2026 -- no issues. Stuart (Desktop Services) instructed to proceed with remaining users excluding Henry. Project stalled since March 2026; April 2026 deadline passed. Technical blocker identified at Managers Meeting 24 June: Visual Studio 2022 resolves the compatibility issue but is currently on a trial licence only. Do not migrate further users until VS2022 licensing is confirmed. Contacts: Desktop Services dstprojects@it.ox.ac.uk, Sadiq Abbasi, John Jones, Richard Jessett.",
+    "actions": [
+      "[Nov 2025] Initial call with IT Services (John Jones, Richard Jessett, Sadiq Abbasi) -- SSO strategy for HRIS managed desktop users outlined.",
+      "[Feb 2026] Asta sent trial user list to Desktop Services: Simon Burford ADMN2716, David Sanders UOHS0054, Henry Acheampong ADMN5896, Asta Palmer OUIT0422, Kevin Lelitte BEGB0037.",
+      "[Mar 2026] Kevin's account (BEGB0037) unblocked from 'Do Not Migrate' group by Richard Jessett. Kevin migrated successfully -- no issues. Instructed Stuart to proceed with remaining users excluding Henry Acheampong ADMN5896.",
+      "[19 Jun 2026] Project bumped by Kevin -- stalled since March, no progress recorded. April 2026 deadline passed.",
+      "[24 Jun 2026] HR Systems Managers Meeting: Visual Studio 2022 identified as fix for compatibility issue. Currently on trial licence only -- do not migrate further users until VS2022 licensing confirmed.",
+      "[AWAITING] Visual Studio 2022 licensing confirmed before further migrations proceed.",
+      "[TODO] Confirm with Asta current status of remaining trial users (Simon Burford ADMN2716, David Sanders UOHS0054, Asta Palmer OUIT0422).",
+      "[TODO] Agree revised delivery timeline with Desktop Services once VS2022 licensing sorted.",
+      "[TODO] Update user guidance, account provisioning process, and first-line support docs before broader rollout."
+    ],
+    "dateAdded": "2026-06-25"
+  },
+  {
     "id": "t1781099896490",
     "title": "Follow up on Scoping Session with Sophie Levy",
     "tier": "parked",
@@ -492,27 +513,6 @@
     "dateAdded": "2026-06-25",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF60000",
     "done": true
-  },
-  {
-    "id": "t033",
-    "title": "HR Reporting SSO Migration -- Managed Desktop (Roadmap 179)",
-    "tier": "week",
-    "source": "Email thread Jan-Jun 2026 / HR Systems Managers Meeting 24/06",
-    "emailRef": "Fw: Managed Desktop upgrade to the SSO login",
-    "summary": "Stalled since March. April deadline passed. Visual Studio 2022 fixes the blocker but licensing not confirmed. Do not migrate further users until VS2022 licensed.",
-    "description": "Migration of HRIS HR Reporting and Tableau users from CONNECT accounts to SSO on the Oxford Managed Desktop. Roadmap item 179. Lead: Kevin, Team: Asta. Project started November 2025 following initial call with IT Services (John Jones, Richard Jessett, Sadiq Abbasi, Desktop Services). Trial user list agreed February 2026: Simon Burford ADMN2716, David Sanders UOHS0054, Asta Palmer OUIT0422, Kevin Lelitte BEGB0037. Henry Acheampong ADMN5896 excluded at Kevin's request. Kevin migrated successfully March 2026 -- no issues. Stuart (Desktop Services) instructed to proceed with remaining users excluding Henry. Project stalled since March 2026; April 2026 deadline passed. Technical blocker identified at Managers Meeting 24 June: Visual Studio 2022 resolves the compatibility issue but is currently on a trial licence only. Do not migrate further users until VS2022 licensing is confirmed. Contacts: Desktop Services dstprojects@it.ox.ac.uk, Sadiq Abbasi, John Jones, Richard Jessett.",
-    "actions": [
-      "[Nov 2025] Initial call with IT Services (John Jones, Richard Jessett, Sadiq Abbasi) -- SSO strategy for HRIS managed desktop users outlined.",
-      "[Feb 2026] Asta sent trial user list to Desktop Services: Simon Burford ADMN2716, David Sanders UOHS0054, Henry Acheampong ADMN5896, Asta Palmer OUIT0422, Kevin Lelitte BEGB0037.",
-      "[Mar 2026] Kevin's account (BEGB0037) unblocked from 'Do Not Migrate' group by Richard Jessett. Kevin migrated successfully -- no issues. Instructed Stuart to proceed with remaining users excluding Henry Acheampong ADMN5896.",
-      "[19 Jun 2026] Project bumped by Kevin -- stalled since March, no progress recorded. April 2026 deadline passed.",
-      "[24 Jun 2026] HR Systems Managers Meeting: Visual Studio 2022 identified as fix for compatibility issue. Currently on trial licence only -- do not migrate further users until VS2022 licensing confirmed.",
-      "[AWAITING] Visual Studio 2022 licensing confirmed before further migrations proceed.",
-      "[TODO] Confirm with Asta current status of remaining trial users (Simon Burford ADMN2716, David Sanders UOHS0054, Asta Palmer OUIT0422).",
-      "[TODO] Agree revised delivery timeline with Desktop Services once VS2022 licensing sorted.",
-      "[TODO] Update user guidance, account provisioning process, and first-line support docs before broader rollout."
-    ],
-    "dateAdded": "2026-06-25"
   },
   {
     "id": "t034",
