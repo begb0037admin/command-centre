@@ -70,9 +70,8 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 - **Owner:** Kevin Lelitte, HR Systems Manager/Director, University of Oxford
 - **Status:** Active — Module 1 live
 - **Repo:** https://github.com/begb0037admin/command-centre
-- **Live dashboard (primary):** https://cc.lelitte.co.uk/
-- **Live dashboard (GitHub Pages):** https://begb0037admin.github.io/command-centre/
-- **Last updated:** 2026-06-30
+- **Live dashboard:** https://begb0037admin.github.io/command-centre/
+- **Last updated:** 2026-06-27
 
 ## Bootstrap Order
 1. This file (orientation)
@@ -103,7 +102,6 @@ Tasks load from `data/tasks.json` on page open (cache-busted). The 'From your in
 - **Repo:** `begb0037admin/command-centre`
 - **Branch:** `main`
 - **Pages:** enabled — deploys from root of main
-- **Cloudflare:** `cc.lelitte.co.uk` — primary URL; served via Cloudflare Workers static assets, auto-deploys from main
 - **Proxy reads:** `https://github-proxy.lelitte.co.uk/command-centre/`
 - **API writes:** `https://api.github.com/repos/begb0037admin/command-centre/contents/{path}?ref=main`
 - PAT stored in Kevin's preferences — never commit to any file
@@ -124,7 +122,7 @@ Before any task where higher effort is warranted, signal to Kevin: what the task
 - One write at a time — verify result before the next
 - tasks.json is the source of truth for task content — not session memory
 - Load order: `styles.css` → `api.js` → `app.js` — never change without testing
-- **File delivery:** When providing any file for Kevin to download (.bat, .py, .json, .csv, etc.) always use `SendUserFile` to attach it directly in chat. Never give a raw GitHub URL and expect Kevin to download from there.
+- All mockups and visual designs are produced as Claude Artifacts — never committed to the repository (see CONSTITUTION.md Section 11)
 
 ## Domain
 **WORK (Kevin's domain).** Do not mix with Hope's personal domain (AIMM, Personal Finance) unless a Cross-Domain Code Brief has been issued.
