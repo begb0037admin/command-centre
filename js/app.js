@@ -120,10 +120,10 @@ function renderBoard(){
     todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push({id:t.id,text:a.replace('[TODO]','').trim()});});});
     if(todos.length){
       var b='';var show=Math.min(todos.length,5);
-      todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+a.text+'</div>';});
+      todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ a.text+'</div>';});
       if(todos.length>show){
         b+='<div class="focus-await-extra" style="display:none">';
-        todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+a.text+'</div>';});
+        todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ a.text+'</div>';});
         b+='</div>';
         b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
       }
@@ -134,10 +134,10 @@ function renderBoard(){
     tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push({id:t.id,text:a.replace('[AWAITING]','').trim()});});});
     if(awaits.length){
       var b='';var show=Math.min(awaits.length,5);
-      awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+a.text+'</div>';});
+      awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ a.text+'</div>';});
       if(awaits.length>show){
         b+='<div class="focus-await-extra" style="display:none">';
-        awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+a.text+'</div>';});
+        awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ a.text+'</div>';});
         b+='</div>';
         b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
       }
@@ -192,10 +192,10 @@ function renderStaleBanner(){
   var col2='';
   if(todos.length){
     var show=Math.min(todos.length,6);var b='';
-    todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
+    todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ escHtml(a.text)+'</div>';});
     if(todos.length>show){
       b+='<div class="focus-await-extra" style="display:none">';
-      todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
+      todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ escHtml(a.text)+'</div>';});
       b+='</div>';
       b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
     }
@@ -207,10 +207,10 @@ function renderStaleBanner(){
   var col3='';
   if(awaits.length){
     var show=Math.min(awaits.length,7);var b='';
-    awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
+    awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ escHtml(a.text)+'</div>';});
     if(awaits.length>show){
       b+='<div class="focus-await-extra" style="display:none">';
-      awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
+      awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ escHtml(a.text)+'</div>';});
       b+='</div>';
       b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
     }
@@ -245,7 +245,7 @@ function cardHTML(t){
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
   var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+boldActs(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
   var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
-  var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\'">' +tierLabel(tier)+'</button>';}).join('');
+  var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\')">' +tierLabel(tier)+'</button>';}).join('');
 
   return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'"'
     +' ondragover="onCardDragOver(event,\''+t.id+'\',\''+t.tier+'\')"'
@@ -528,9 +528,9 @@ async function loadInboxSuggestions(){
         +'<div class="sg-meta">From '+escHtml(s.email_from)+' \xb7 "'+escHtml(s.email_subject)+'" \xb7 '+escHtml(s.received||'')+'</div>'
         +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">&#128231; Open email</button>'
         +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')" >Dismiss</button>'
-        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'today\')">&plus; Today</button>'
-        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'tomorrow\')">&plus; Tomorrow</button>'
-        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'week\')">&plus; This Week</button>'
+        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'today\')">+ Today</button>'
+        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'tomorrow\')">+ Tomorrow</button>'
+        +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'week\')">+ This Week</button>'
         +'</div></div>';
     });
     h+='</div>';
@@ -614,7 +614,7 @@ function goToCard(id){
 function toggleMoreItems(btn){
   var extra=btn.previousElementSibling;
   if(!extra||!extra.classList.contains('focus-await-extra'))return;
-  var expanded=extra.style.display!=='none';
+  var expanded=extra.style.display!=='';
   extra.style.display=expanded?'none':'';
   btn.textContent=expanded?btn.getAttribute('data-more'):'Show less';
 }
@@ -664,10 +664,4 @@ loadTasks().then(function(){
       }
     },400);
   }
-});
-
-/* HASHCHANGE — fires when WI navigates this tab to a new hash via _ccWindow.location.href */
-window.addEventListener('hashchange',function(){
-  var id=window.location.hash.replace('#','');
-  if(id) goToCard(id);
 });

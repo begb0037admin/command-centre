@@ -63,10 +63,47 @@ function showSaveToast(state,text){
   t.textContent=text;
   clearTimeout(t._timer);
   if(state==='error'){
-    t.onclick=function(){t.className='';};
+    t.onclick=function(){t.className='';}
   } else {
     t._timer=setTimeout(function(){t.className='';},2500);
   }
+}
+/* ONE-WAY SYNC: CC task marked done -> tick matching item in today's Work Inbox briefing */
+async function syncDoneToInbox(taskId,entryId){
+  if(!taskId&&!entryId)return;
+  try{
+    var bRes=await fetch(INBOX_RAW+'/data/briefing.json?t='+Date.now());
+    if(!bRes.ok)return;
+    var briefing=await bRes.json();
+    var dateKey=(briefing.date||'').replace(/ /g,'_');
+    if(!dateKey)return;
+    var tickKey=null;
+    /* 1. Search priorities (CC task id match) — covers today/tomorrow/week panels in WI */
+    var priMap=[['prioritiesToday','pt'],['prioritiesTomorrow','ptom'],['prioritiesWeek','pw']];
+    for(var p=0;p<priMap.length&&!tickKey;p++){
+      var arr=briefing[priMap[p][0]]||[];
+      for(var i=0;i<arr.length;i++){
+        if(arr[i].id===taskId){tickKey=dateKey+'_pri_'+priMap[p][1]+'_'+i;break;}
+      }
+    }
+    /* 2. Fall back: search inbox sections by entry_id */
+    if(!tickKey&&entryId){
+      var inboxSecs=['urgent','needs','fyi','low'];
+      for(var s=0;s<inboxSecs.length&&!tickKey;s++){
+        var sarr=briefing[inboxSecs[s]]||[];
+        for(var j=0;j<sarr.length;j++){
+          if(sarr[j].entry_id===entryId){tickKey=dateKey+'_'+inboxSecs[s]+'_'+j;break;}
+        }
+      }
+    }
+    if(!tickKey)return;
+    var tRes=await fetch(INBOX_RAW+'/data/ticks.json?t='+Date.now());
+    var ticksDoc=tRes.ok?await tRes.json():{ticks:{}};
+    var ticks=ticksDoc.ticks||{};
+    if(ticks[tickKey])return;
+    ticks[tickKey]=true;
+    await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({target:'inbox-state',message:'Tick sync from command-centre: '+tickKey,doc:{ticks:ticks,updated_at:new Date().toISOString()}})});
+  }catch(e){console.warn('Inbox tick sync failed',e);}
 }
 
 async function persistTasks(msg){
@@ -74,7 +111,7 @@ async function persistTasks(msg){
   try{
     var res=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({doc:{tasks:tasks},message:msg})});
     if(!res.ok){
-      showSaveToast('error','Save failed — HTTP '+res.status+' (tap to dismiss)');
+      showSaveToast('error','Save failed — HTTP '+res.status+' (tap to dismiss)');
       console.warn('Writer error',res.status);
     } else {
       showSaveToast('success','Saved ✓');
@@ -84,4 +121,3 @@ async function persistTasks(msg){
     console.warn('Writer fetch failed',e);
   }
 }
-
