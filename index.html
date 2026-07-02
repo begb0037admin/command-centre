@@ -43,37 +43,20 @@
       <button type="submit" class="btn btn-primary">Add</button>
     </form>
   </div>
-  <div class="user-block"><a class="user-link" href="mailto:kevin.lelitte@admin.ox.ac.uk">kevin.lelitte@admin.ox.ac.uk</a></div>
-  <div class="date-block"><div class="wi-clock" id="cc-clock">—</div><div class="date-val" id="cc-date">—</div></div>
-  <div class="filter-block">
-    <select class="filter-select" id="tierSelect" onchange="applyTierFilter(this.value)">
-      <option value="all">All tiers</option>
-      <option value="today">Today</option>
-      <option value="tomorrow">Tomorrow</option>
-      <option value="week">This Week</option>
-      <option value="parked">Parked</option>
-    </select>
-  </div>
   <nav class="sb-nav">
-    <div class="inbox-ticker">
-      <div class="ticker-label">Daily Focus</div>
-      <div class="ticker-stats">
-        <div class="ticker-stat"><span class="ticker-num red" id="wi-today">0</span><span class="ticker-sub">Today</span></div>
-        <div class="ticker-stat"><span class="ticker-num gold" id="wi-tomorrow">0</span><span class="ticker-sub">Tmrw</span></div>
-        <div class="ticker-stat"><span class="ticker-num green" id="wi-week">0</span><span class="ticker-sub">Week</span></div>
-        <div class="ticker-stat"><span class="ticker-num" id="wi-parked">0</span><span class="ticker-sub">Parked</span></div>
-      </div>
-      <div class="ticker-divider"></div>
-      <div class="ticker-age-row"><span class="ticker-age-label">Last refreshed</span><span class="ticker-age-val" id="wi-refreshed">—</span></div>
-      <div class="ticker-age-row"><span class="ticker-age-label">Urgent</span><span class="ticker-age-val red" id="wi-urgent">—</span></div>
-      <div class="ticker-age-row"><span class="ticker-age-label">Needs action</span><span class="ticker-age-val gold" id="wi-needs">—</span></div>
+    <div class="sb-section">Daily Focus</div>
+    <div id="sb-stale-stats"></div>
+    <a onclick="showView('inbox')" id="nav-inbox">
+      From your inbox
+      <span class="tier-badge" id="badge-inbox">0</span>
+    </a>
+    <div class="sb-section">Tasks</div>
+    <div class="task-counts-panel" id="task-counts">
+      <div class="task-counts-row"><span class="task-counts-name">Today</span><span class="task-counts-val" id="tc-today">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">Tomorrow</span><span class="task-counts-val" id="tc-tomorrow">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">This week</span><span class="task-counts-val" id="tc-week">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">Actions due</span><span class="task-counts-val" id="tc-actions">0</span></div>
     </div>
-    <div class="inbox-widget" onclick="showView('inbox')" id="nav-inbox">
-      <div class="inbox-widget-left"><span class="inbox-widget-label">From your inbox</span><span class="inbox-widget-val" id="inbox-widget-text">0 new suggestions</span></div>
-      <span class="inbox-widget-badge" id="badge-inbox">0</span>
-    </div>
-    <div class="sb-section">Absences</div>
-    <div class="abs-wrap" id="absencesSidebar"><span class="abs-none">Loading…</span></div>
     <div class="sb-section">Links</div>
     <a href="https://wi.lelitte.co.uk/" target="_blank">Work Inbox</a>
     <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank">HRIS Dashboard</a>
@@ -104,25 +87,27 @@
 
   <!-- Board View -->
   <div class="content-area" id="view-board">
-    <div class="intel-panel" id="intel-panel"></div>
+    <div id="stale-banner"></div>
     <div class="board-toolbar">
       <button class="done-toggle-btn" id="done-toggle-btn" onclick="toggleShowDone()"></button>
     </div>
-    <div class="tier-section" id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
-      <div class="sec-head"><span class="sec-dot" style="background:#ef4444"></span><span class="sec-lbl">Today</span><span class="sec-rule"></span><span class="sec-count" id="count-today">0</span></div>
-      <div class="task-list" id="list-today"></div>
-    </div>
-    <div class="tier-section" id="tier-tomorrow" ondragover="onDragOver(event,'tomorrow')" ondragleave="onDragLeave(event,'tomorrow')" ondrop="onDrop(event,'tomorrow')">
-      <div class="sec-head"><span class="sec-dot" style="background:#f97316"></span><span class="sec-lbl">Tomorrow</span><span class="sec-rule"></span><span class="sec-count" id="count-tomorrow">0</span></div>
-      <div class="task-list" id="list-tomorrow"></div>
-    </div>
-    <div class="tier-section" id="tier-week" ondragover="onDragOver(event,'week')" ondragleave="onDragLeave(event,'week')" ondrop="onDrop(event,'week')">
-      <div class="sec-head"><span class="sec-dot" style="background:#f59e0b"></span><span class="sec-lbl">This Week</span><span class="sec-rule"></span><span class="sec-count" id="count-week">0</span></div>
-      <div class="task-list" id="list-week"></div>
-    </div>
-    <div class="tier-section" id="tier-parked" ondragover="onDragOver(event,'parked')" ondragleave="onDragLeave(event,'parked')" ondrop="onDrop(event,'parked')">
-      <div class="sec-head"><span class="sec-dot" style="background:#94a3b8"></span><span class="sec-lbl">Parked</span><span class="sec-rule"></span><span class="sec-count" id="count-parked">0</span></div>
-      <div class="task-list" id="list-parked"></div>
+    <div class="tier-grid">
+      <div class="tier-col tier-today" id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
+        <div class="tier-header"><span class="tier-dot dot-today"></span><span class="tier-title">Today</span><span class="tier-count" id="count-today">0</span></div>
+        <div class="task-list" id="list-today"></div>
+      </div>
+      <div class="tier-col tier-tomorrow" id="tier-tomorrow" ondragover="onDragOver(event,'tomorrow')" ondragleave="onDragLeave(event,'tomorrow')" ondrop="onDrop(event,'tomorrow')">
+        <div class="tier-header"><span class="tier-dot dot-tomorrow"></span><span class="tier-title">Tomorrow</span><span class="tier-count" id="count-tomorrow">0</span></div>
+        <div class="task-list" id="list-tomorrow"></div>
+      </div>
+      <div class="tier-col tier-week" id="tier-week" ondragover="onDragOver(event,'week')" ondragleave="onDragLeave(event,'week')" ondrop="onDrop(event,'week')">
+        <div class="tier-header"><span class="tier-dot dot-week"></span><span class="tier-title">This Week</span><span class="tier-count" id="count-week">0</span></div>
+        <div class="task-list" id="list-week"></div>
+      </div>
+      <div class="tier-col tier-parked" id="tier-parked" ondragover="onDragOver(event,'parked')" ondragleave="onDragLeave(event,'parked')" ondrop="onDrop(event,'parked')">
+        <div class="tier-header"><span class="tier-dot dot-parked"></span><span class="tier-title">Parked</span><span class="tier-count" id="count-parked">0</span></div>
+        <div class="task-list" id="list-parked"></div>
+      </div>
     </div>
   </div>
 

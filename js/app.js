@@ -147,20 +147,21 @@ function renderBoard(){
     ft.innerHTML=html;
   }
   renderStaleBanner();
-  document.querySelectorAll('.task-card[draggable]').forEach(function(card){
+  document.querySelectorAll('.task-card').forEach(function(card){
     card.addEventListener('dragstart',onCardDragStart);
     card.addEventListener('dragend',onCardDragEnd);
   });
 }
 
-/* INTEL PANEL + SIDEBAR STATS */
+/* STALE BANNER + SIDEBAR STATS */
 function renderStaleBanner(){
-  var panel=document.getElementById('intel-panel');
+  var banner=document.getElementById('stale-banner');
   var sbStats=document.getElementById('sb-stale-stats');
   var nowMs=new Date().setHours(0,0,0,0);
   var todayTasks=tasks.filter(function(t){return t.tier==='today'&&!t.done;});
   var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
   var ages=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
+  /* Sidebar compact stats */
   if(sbStats){
     if(stale.length){
       var maxAge=Math.max.apply(null,ages);
@@ -175,85 +176,88 @@ function renderStaleBanner(){
         +'</div>';
     } else {sbStats.innerHTML='';}
   }
-  if(!panel) return;
-  /* Block 1: Watch — stale today */
-  var blk1='';
+  if(!banner) return;
+  /* Col 1: Watch stale today */
+  var col1='';
   if(stale.length){
     var rows='';
-    stale.forEach(function(t,i){rows+='<div class="intel-item" onclick="goToCard(\''+t.id+'\')"><span class="intel-days">'+ages[i]+'d</span><span class="intel-item-text">'+escHtml(t.title)+'</span></div>';});
-    blk1='<div class="intel-block watch"><div class="intel-header">Watch — stale today <span>In Today 3+ days — move on, park, or mark done</span></div>'
+    stale.forEach(function(t,i){rows+='<div class="stale-row"><span class="stale-age">'+ages[i]+'d</span>'+escHtml(t.title)+'</div>';});
+    col1='<div class="bar-col"><div class="bar-col-title">Watch — stale today</div>'
+      +'<div class="bar-col-sub">In Today 3+ days — move on, park, or mark done.</div>'
       +rows+'</div>';
   }
-  /* Block 2: Act now ([TODO] from today tasks) */
+  /* Col 2: Act now ([TODO] from today tasks) */
   var todos=[];
   todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push({id:t.id,text:a.replace('[TODO]','').trim()});});});
-  var blk2='';
+  var col2='';
   if(todos.length){
-    var showN=Math.min(todos.length,4);var b='';
-    todos.slice(0,showN).forEach(function(a){b+='<div class="intel-item" style="display:block" onclick="goToCard(\''+a.id+'\')">'
-      +'<div style="font-size:12px;font-weight:600;color:var(--text-dark);margin-bottom:3px">'+escHtml(a.text)+'</div></div>';});
-    if(todos.length>showN){b+='<div class="intel-more" onclick="this.previousSibling&&this.previousSibling.style&&(this.style.display=\'none\')">+ '+(todos.length-showN)+' more actions</div>';}
-    blk2='<div class="intel-block act"><div class="intel-header">Act now</div>'+b+'</div>';
+    var show=Math.min(todos.length,6);var b='';
+    todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
+    if(todos.length>show){
+      b+='<div class="focus-await-extra" style="display:none">';
+      todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
+      b+='</div>';
+      b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
+    }
+    col2='<div class="bar-col"><div class="bar-col-title">Act now</div>'+b+'</div>';
   }
-  /* Block 3: Waiting on ([AWAITING] from all tasks) */
+  /* Col 3: Waiting on ([AWAITING] from all tasks) */
   var awaits=[];
   tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push({id:t.id,text:a.replace('[AWAITING]','').trim()});});});
-  var blk3='';
+  var col3='';
   if(awaits.length){
-    var showN=Math.min(awaits.length,5);var b='';
-    awaits.slice(0,showN).forEach(function(a){b+='<div class="intel-item" style="display:block" onclick="goToCard(\''+a.id+'\')">'
-      +'<span style="font-size:11.5px;color:var(--text-muted)">'+escHtml(a.text)+'</span></div>';});
-    if(awaits.length>showN){b+='<div class="intel-more">+ '+(awaits.length-showN)+' more</div>';}
-    blk3='<div class="intel-block wait"><div class="intel-header">Waiting on</div>'+b+'</div>';
+    var show=Math.min(awaits.length,7);var b='';
+    awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
+    if(awaits.length>show){
+      b+='<div class="focus-await-extra" style="display:none">';
+      awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
+      b+='</div>';
+      b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
+    }
+    col3='<div class="bar-col"><div class="bar-col-title">Waiting on</div>'+b+'</div>';
   }
-  var hasContent=blk1||blk2||blk3;
-  if(!hasContent){panel.innerHTML='';return;}
-  panel.innerHTML=(blk1||'')+(blk2||'')+(blk3||'');
+  var hasContent=col1||col2||col3;
+  if(!hasContent){banner.style.display='none';return;}
+  banner.innerHTML=(col1||'')+(col2||'')+(col3||'');
+  banner.style.display='flex';
 }
 
 /* CARD HTML */
 function cardHTML(t){
   var done=!!t.done;
-  var checkedCls=done?'done':'';
+  var checkedCls=done?'checked':'';
   var doneCls=done?'done-card':'';
 
-  /* Source + NEW/UPDATED badge inline in title */
-  var titleBadge='';
+  /* NEW/UPDATED badge */
+  var badge='';
   if(t.dateAdded||t.lastUpdated){
     var cutoff=Date.now()-4*24*3600*1000;
     var addedTs=t.dateAdded?new Date(t.dateAdded).getTime():0;
     var updatedTs=t.lastUpdated?new Date(t.lastUpdated).getTime():0;
-    if(updatedTs>cutoff)titleBadge='<span class="badge badge-gold">UPDATED</span>';
-    else if(addedTs>cutoff)titleBadge='<span class="badge" style="background:#dcfce7;color:#15803d">NEW</span>';
-  }
-  if(t.source&&!titleBadge){
-    var bCls=/meeting|granola|1-1|recurring/i.test(t.source)?'badge-mtg':'badge-email';
-    titleBadge='<span class="badge '+bCls+'">'+escHtml(t.source)+'</span>';
+    if(updatedTs>cutoff)badge='<span class="new-badge badge-updated">UPDATED</span>';
+    else if(addedTs>cutoff)badge='<span class="new-badge badge-new">NEW</span>';
   }
 
-  var emailIcon=t.entryId?'<span class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</span>':'';
-  var editIcon='<span class="card-icon" title="Rename" onclick="startRename(event,\''+t.id+'\')">&#9998;</span>';
+  var emailBtn=t.entryId?'<button class="open-email-btn" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')" style="display:inline-flex">&#9993;</button>':'';
+  var editBtn='<button class="edit-title-btn" title="Rename" onclick="startRename(event,\''+t.id+'\')" style="display:inline-flex">&#9998;</button>';
 
-  var descText=t.summary||(t.description?t.description.substring(0,150)+(t.description.length>150?'…':''):'');
-  var descEl=descText?'<div class="card-desc">'+escHtml(descText)+'</div>':'';
-
+  var descPreview=t.summary?'<div class="card-desc" onclick="toggleDrawer(\''+t.id+'\')">' +escHtml(t.summary)+'</div>':'';
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
   var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+boldActs(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
+  var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
   var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\'">' +tierLabel(tier)+'</button>';}).join('');
 
   return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'"'
     +' ondragover="onCardDragOver(event,\''+t.id+'\',\''+t.tier+'\')"'
     +' ondragleave="onCardDragLeave(event,\''+t.id+'\')"'
     +' ondrop="onCardDropOnCard(event,\''+t.id+'\',\''+t.tier+'\')">'
-    +'<div class="card-ph-row">'
-    +'<span class="card-drag" title="Drag to reorder">⠇</span>'
-    +'<button class="card-done '+checkedCls+'" onclick="toggleDone(event,\''+t.id+'\')"></button>'
-    +'<div class="card-body" onclick="toggleDrawer(\''+t.id+'\')">'
-    +'<div class="card-title '+(done?'done':'')+'" id="title-'+t.id+'">'+escHtml(t.title)+titleBadge+'</div>'
-    +descEl
+    +'<div class="card-top">'
+    +'<div class="drag-handle" title="Drag to reorder">⣿</div>'
+    +'<div class="task-check '+checkedCls+'" onclick="toggleDone(event,\''+t.id+'\')" ></div>'
+    +'<div class="task-title" onclick="toggleDrawer(\''+t.id+'\')" id="title-'+t.id+'">'+escHtml(t.title)+src+'</div>'
+    +'<div class="card-meta-row">'+badge+emailBtn+editBtn+'</div>'
     +'</div>'
-    +'<div class="card-actions">'+emailIcon+editIcon+'</div>'
-    +'</div>'
+    +descPreview
     +'<div class="task-drawer" id="drawer-'+t.id+'">'
     +desc
     +actions
@@ -278,9 +282,9 @@ function toggleDone(e,id){
   if(!t)return;
   t.done=!t.done;
   var card=document.getElementById('card-'+id);
-  var chk=card.querySelector('.card-done');
-  if(t.done){card.classList.add('done-card');chk.classList.add('done');}
-  else{card.classList.remove('done-card');chk.classList.remove('done');}
+  var chk=card.querySelector('.task-check');
+  if(t.done){card.classList.add('done-card');chk.classList.add('checked');}
+  else{card.classList.remove('done-card');chk.classList.remove('checked');}
   updateDoneToggleBtn();
   if(t.done&&!getShowDone()){card.style.transition='opacity .3s';card.style.opacity='0';setTimeout(function(){renderBoard();},320);}
   persistTasks('Done state: '+id+(t.done?' checked':' unchecked'));
@@ -509,7 +513,6 @@ async function loadInboxSuggestions(){
     var newTasks=(data.new_tasks||[]).filter(function(s){return !d['n_'+s.entry_id]&&!suggestionCovered(s)});
     window.sgList=newTasks;
     var navBadge=document.getElementById('badge-inbox');if(navBadge)navBadge.textContent=newTasks.length;
-    var navText=document.getElementById('inbox-widget-text');if(navText)navText.textContent=newTasks.length+' new suggestion'+(newTasks.length===1?'':'s');
     if(!newTasks.length){host.innerHTML='';return;}
     var stale=false;
     try{stale=(Date.now()-new Date((data.generated_at||'').replace(' ','T')).getTime())>24*3600*1000}catch(e){}
@@ -535,59 +538,6 @@ async function loadInboxSuggestions(){
   }catch(e){host.innerHTML='';}
 }
 loadInboxSuggestions();
-
-/* CLOCK */
-function updateCcClock(){
-  var n=new Date();
-  var timeEl=document.getElementById('cc-clock');
-  if(timeEl)timeEl.textContent=n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-  var dateEl=document.getElementById('cc-date');
-  if(dateEl)dateEl.textContent=n.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-}
-updateCcClock();
-setInterval(updateCcClock,1000);
-
-/* TIER FILTER DROPDOWN (sidebar) */
-function applyTierFilter(val){
-  showView('board');
-  filterBoard(val);
-}
-
-/* WORK INBOX DAILY FOCUS WIDGET (cross-dashboard: shows Work Inbox data) */
-function formatWiRefreshed(raw){
-  /* briefing.json refreshed_at is like "Wednesday 01 July · 12:00" -- reformat to "Weds 1 July 12:00" */
-  if(!raw)return '—';
-  var m=raw.match(/^(\w+)\s+0?(\d+)\s+(\w+)\D*(\d{1,2}:\d{2})/);
-  if(!m)return raw;
-  var dayShort={Monday:'Mon',Tuesday:'Tue',Wednesday:'Weds',Thursday:'Thu',Friday:'Fri',Saturday:'Sat',Sunday:'Sun'}[m[1]]||m[1];
-  return dayShort+' '+m[2]+' '+m[3]+' '+m[4];
-}
-async function loadWorkInboxWidget(){
-  var urls=['https://github-proxy.lelitte.co.uk/work-inbox/data/briefing.json?t='+Date.now(),INBOX_RAW+'/data/briefing.json?t='+Date.now()];
-  var data=null;
-  for(var i=0;i<urls.length;i++){
-    try{var r=await fetch(urls[i]);if(r.ok){data=await r.json();break;}}catch(e){}
-  }
-  if(!data)return;
-  var set=function(id,val){var el=document.getElementById(id);if(el)el.textContent=val;};
-  set('wi-today',(data.prioritiesToday||[]).length);
-  set('wi-tomorrow',(data.prioritiesTomorrow||[]).length);
-  set('wi-week',(data.prioritiesWeek||[]).length);
-  set('wi-parked',(data.fyi||[]).length);
-  set('wi-refreshed',formatWiRefreshed(data.refreshed_at));
-  set('wi-urgent',(data.urgent||[]).length+' emails');
-  set('wi-needs',(data.needs||[]).length+' emails');
-  var absEl=document.getElementById('absencesSidebar');
-  if(absEl){
-    if(data.absences&&data.absences.length){
-      absEl.innerHTML='<ul class="abs-list">'+data.absences.map(function(a){return '<li>'+escHtml(a)+'</li>';}).join('')+'</ul>';
-    } else {
-      absEl.innerHTML='<span class="abs-none">None recorded</span>';
-    }
-  }
-}
-loadWorkInboxWidget();
-setInterval(loadWorkInboxWidget,300000);
 
 function openTaskEmail(entryId,e){
   if(e)e.stopPropagation();
@@ -619,10 +569,16 @@ function setTier(val,label){
   filterBoard(val);
 }
 function filterBoard(tier){
+  var grid=document.querySelector('.tier-grid');
+  if(!grid) return;
   if(tier==='all'){
-    TIERS.forEach(function(t){var el=document.getElementById('tier-'+t);if(el)el.style.display='';});
+    grid.classList.remove('focused');
+    document.querySelectorAll('.tier-col').forEach(function(c){c.classList.remove('focus-active');});
   } else {
-    TIERS.forEach(function(t){var el=document.getElementById('tier-'+t);if(el)el.style.display=(t===tier)?'':'none';});
+    grid.classList.add('focused');
+    document.querySelectorAll('.tier-col').forEach(function(c){c.classList.remove('focus-active');});
+    var col=document.getElementById('tier-'+tier);
+    if(col) col.classList.add('focus-active');
   }
 }
 document.addEventListener('click',function(e){
