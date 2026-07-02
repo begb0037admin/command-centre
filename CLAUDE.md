@@ -124,6 +124,7 @@ Before any task where higher effort is warranted, signal to Kevin: what the task
 - One write at a time — verify result before the next
 - tasks.json is the source of truth for task content — not session memory
 - Load order: `styles.css` → `api.js` → `app.js` — never change without testing
+- **File delivery:** When providing any file for Kevin to download (.bat, .py, .json, .csv, etc.) always use `SendUserFile` to attach it directly in chat. Never give a raw GitHub URL and expect Kevin to download from there.
 
 ## Domain
 **WORK (Kevin's domain).** Do not mix with Hope's personal domain (AIMM, Personal Finance) unless a Cross-Domain Code Brief has been issued.
