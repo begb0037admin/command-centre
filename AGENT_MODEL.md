@@ -1,9 +1,9 @@
 # AGENT_MODEL.md
 # Runtime Operating Model
 
-Version : 2.4
+Version : 2.5
 Status  : Ratified
-Updated : 2026-06-29 (v2.4 — AIMM governance status updated)
+Updated : 2026-07-02 (v2.5 — mockup and visual design delivery standard)
 Author  : Kevin Lelitte, HR Systems, University of Oxford
 
 Governed by: CONSTITUTION.md
@@ -180,6 +180,11 @@ All GitHub writes follow these rules:
   never as a GitHub link. Direct download is always the right
   delivery method.
 
+**Mockup and visual design delivery standard:**
+- All mockups, visual designs, and prototype interfaces are produced
+  as Claude Artifacts and never committed to any repository. See
+  CONSTITUTION.md Section 11.
+
 ---
 
 ## Section 5 — Session Discipline
@@ -301,3 +306,10 @@ without constitutional amendment.
 |         |            | AIMM now has own CONSTITUTION.md    |
 |         |            | and AGENT_MODEL.md v1.0 as part of  |
 |         |            | AIMM_SPLIT_MIGRATE Stage 0.         |
+| 2.5     | 2026-07-02 | Section 4: Mockup and visual design |
+|         |            | delivery standard added. All        |
+|         |            | mockups produced as Claude          |
+|         |            | Artifacts — never committed to any  |
+|         |            | repository. See CONSTITUTION.md     |
+|         |            | Section 11. Decision: Kevin         |
+|         |            | Lelitte 2026-07-02.                 |
