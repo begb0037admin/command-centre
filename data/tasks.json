@@ -55,10 +55,11 @@
       "[25 Jun 2026] Kevin updated Login screen on UOXU successfully -- 'Internal Mobility Principles' hyperlinked, spacing added after 'Existing University Staff' and 'New Applicants:' headings.",
       "[25 Jun 2026] Unable to update Current Job Vacancies and Job Search screens on UOXU -- devs now handling remaining UOXU screens.",
       "[AWAITING] Maura McGlynn (AG) to send Teams message when remaining UOXU screens are ready for Kevin to validate before going LIVE.",
-      "[30 Jun 2026] Kevin confirmed to Laura Porter that IM Principles URL changes have been made and verified on test environment. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)"
+      "[30 Jun 2026] Kevin confirmed to Laura Porter that IM Principles URL changes have been made and verified on test environment. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)",
+      "[02 Jul 2026] Kevin confirmed to Laura Porter that the IM Principles URL changes are now live. (email: Kevin (sent to: Laura Porter) - Re: IM Principles - change to URL)"
     ],
     "dateAdded": "2026-06-03",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF30000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF70000",
     "status": "Login screen on UOXU updated 25 Jun — unable to update Current Job Vacancies and Job Search screens; devs handling remaining UOXU screens, awaiting Maura's Teams message to validate before LIVE.",
     "notes": "[Gate 2.0 test 22:28:53]",
     "done": true
@@ -162,9 +163,11 @@
       "[TODO] Review the evaluation weightings spreadsheet.",
       "[TODO] Use both to inform POC meeting notes before sending to Chris (t022).",
       "[30 Jun 2026] Kevin reviewed Helen's briefing and weightings against requirements catalogue; identified that compliance requirements (legal/regulatory) should be assessed separately from operational weightings, and flagged incident reporting (1.2) classification as inconsistent with RIDDOR obligations — to be raised with Helen and Caroline by Chris and James.",
-      "[30 Jun 2026] Christopher Sanders confirmed that compliance-related requirements will be flagged and assessed separately in the tender process with Caroline Gow; Neil Carveth (H&S SME) will verify the compliance requirements list. Incident reporting (1.2) clarified as a \"could\" requirement since system migration is out of current project scope but a potential future consideration."
+      "[30 Jun 2026] Christopher Sanders confirmed that compliance-related requirements will be flagged and assessed separately in the tender process with Caroline Gow; Neil Carveth (H&S SME) will verify the compliance requirements list. Incident reporting (1.2) clarified as a \"could\" requirement since system migration is out of current project scope but a potential future consideration.",
+      "[02 Jul 2026] Kevin sent written comments on the H&S Management System project requirements to Christopher Sanders and James Salas Guillen ahead of the meeting he could not attend. (email: Kevin (sent to: Christopher Sanders; James Salas Guillen) - Re: Strategic H&S modular system project requirements)"
     ],
-    "dateAdded": "2026-06-23"
+    "dateAdded": "2026-06-23",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF60000"
   },
   {
     "id": "t013",
@@ -514,9 +517,11 @@
       "[TODO] Attend scoping meeting when Nathan arranges (avoid Thu 25 Jun).",
       "[TODO] Confirm with Nathan/Athena whether existing UDFs cover the required attributes or if new setup is needed.",
       "[TODO] Assess FA input and testing resource required -- flag capacity risk given thin July (especially w/c 6 Jul).",
-      "[TODO] Ensure business change support (Michelle) is engaged for user instructions -- Anne's guidance from last cycle is not reusable."
+      "[TODO] Ensure business change support (Michelle) is engaged for user instructions -- Anne's guidance from last cycle is not reusable.",
+      "[02 Jul 2026] Nathan Kirwan has sent a draft UDF for recording REF outcomes 2025/26 for Kevin's review as needed. (email: Nathan Kirwan - Copy of Test UDF for REF Outcomes)"
     ],
-    "dateAdded": "2026-06-24"
+    "dateAdded": "2026-06-24",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078B27E4F90000"
   },
   {
     "id": "t032",
