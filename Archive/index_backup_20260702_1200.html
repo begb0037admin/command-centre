@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Centre — Kevin Lelitte</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="save-toast"></div>
+<div class="shell">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-head">
+    <div class="sb-brand">
+      <img class="sb-crest" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEBUSExEWFhUXFxoXFhgYGR8eFxkbHxoXHhYWHyEbHSkgHh8lGx0eITEjJSstLzEuHx8zODMsNygtLisBCgoKDg0OGxAQGy4lHyUrKzUrLS8tNSstLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLf/AABEIAOAA4AMBIgACEQEDEQH/xAAbAAEBAAMBAQEAAAAAAAAAAAAABgQFBwMCAf/EAEwQAAIBAwIEAgcDBwgIBQUAAAECAwAEEQUhBhIxQRNRBxQiMmFxgRUiMzNCUmFxgRWRoSMzQlJyscFDVXKClLLS8DZTY3SSosTRNVSTo+EWFyQlNP/EABkBAQEBAQEBAAAAAAAAAAAAAAACAwEEBf/EACgRAAICAgEDBAICAwAAAAAAAAABAhEhMRIDQVEyYXGBEyKx8JGh4f/aAAwDAQACEQMRAD8A5LSlK+oeAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSveys5JnEcUbSOeiopZvuHb41WQ+ji5Vee8nt7JP9tIC/wBFU/xqXJLZ1RbIylWn2XocW0mo3Nww6iCHkX75Af30a90AdLO+f4tKq/3WrnPwmVw8si6VZi+0A9bO+T4rMrf3mr9Ol6HL+b1C5tyenjw86j5mMD99Ofsxw8Mi6VZy+jm4dS9nPb3qj/UyASf8LH+NSl9ZSwuY5onjcfoupU/j1Hxrqmno44tGPSlKokUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFKUoBSlKAUpSgFbzhzi28stoJj4Z96JxzRNnrlT0z5jBrR0rjSezqbWje8R8XXl7tPNlBjESDliGOnsjr9c1oqUokloNtilKV04KUpQClKUApSlAKUpQClKUB//9k=" alt="University of Oxford">
+      <div class="sidebar-brand-text">
+        <span class="sb-univ-of">University of</span>
+        <span class="sb-oxford">Oxford</span>
+        <span class="sb-app-name">Command Centre</span>
+      </div>
+    </div>
+  </div>
+  <div class="sb-qa">
+    <form onsubmit="quickAdd(event)">
+      <input type="text" id="qa-input" placeholder="Add a task…" autocomplete="off">
+      <div class="sb-qa-select" id="qa-tier-wrap">
+        <div class="sb-qa-sel-btn" onclick="toggleTierDrop()">
+          <span id="qa-tier-label">This Week</span><span>&#9662;</span>
+        </div>
+        <ul class="sb-qa-sel-list" id="qa-tier-list">
+          <li onclick="setTier('all','All')">All</li>
+          <li onclick="setTier('today','Today')">Today</li>
+          <li onclick="setTier('tomorrow','Tomorrow')">Tomorrow</li>
+          <li class="selected" onclick="setTier('week','This Week')">This Week</li>
+          <li onclick="setTier('parked','Parked')">Parked</li>
+        </ul>
+        <input type="hidden" id="qa-tier" value="week">
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-section">Tasks</div>
+    <a onclick="showView('inbox')" id="nav-inbox">
+      From your inbox
+      <span class="tier-badge" id="badge-inbox">0</span>
+    </a>
+    <div class="sb-section">Tasks</div>
+    <div class="task-counts-panel" id="task-counts">
+      <div class="task-counts-row"><span class="task-counts-name">Today</span><span class="task-counts-val" id="tc-today">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">Tomorrow</span><span class="task-counts-val" id="tc-tomorrow">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">This week</span><span class="task-counts-val" id="tc-week">0</span></div>
+      <div class="task-counts-row"><span class="task-counts-name">Actions due</span><span class="task-counts-val" id="tc-actions">0</span></div>
+    </div>
+    <div class="sb-section">Daily Focus</div>
+    <div id="sb-stale-stats"></div>
+    <div class="sb-section">Links</div>
+    <a href="https://wi.lelitte.co.uk/" target="_blank">Work Inbox</a>
+    <a href="https://begb0037admin.github.io/hris-dashboard/" target="_blank">HRIS Dashboard</a>
+    <a href="https://begb0037admin.github.io/hris-launcher/" target="_blank">HRIS Launcher</a>
+    <a href="https://myaccess.theaccessgroup.com/dashboard/" target="_blank">Access Group Support</a>
+    <a href="https://begb0037admin.github.io/hr-fa-knowledge-base/" target="_blank">FA Knowledge Base</a>
+    <a href="https://oxford.saasiteu.com/Account/SelectRole?returnUrl=%2fModules%2fSelfService%2f%23home&NoDefaultProvider=True" target="_blank">OSM IT Services</a>
+    <div class="sb-section ql-section-header">My Links<button class="ql-add-btn" onclick="showAddLink()" title="Add link">+</button></div>
+    <div id="ql-add-form" style="display:none;padding:0 8px 8px">
+      <input id="ql-label" class="ql-form-input" type="text" placeholder="Label">
+      <input id="ql-url" class="ql-form-input" type="text" placeholder="https://">
+      <div class="ql-form-btns">
+        <button class="ql-save-btn" onclick="saveCustomLink()">Save</button>
+        <button class="ql-cancel-btn" onclick="hideAddLink()">Cancel</button>
+      </div>
+    </div>
+    <div id="custom-links"></div>
+  </nav>
+  <div class="sb-resize-handle" id="sb-resize"></div>
+</aside>
+
+<!-- MAIN -->
+<div class="main-area">
+  <header class="top-bar">
+    <div class="top-bar-title" id="view-title">Task Board</div>
+    <span id="last-updated" style="font-size:12px;color:#94a3b8;white-space:nowrap">—</span>
+  </header>
+
+  <!-- Board View -->
+  <div class="content-area" id="view-board">
+    <div id="stale-banner"></div>
+    <div class="board-toolbar">
+      <button class="done-toggle-btn" id="done-toggle-btn" onclick="toggleShowDone()"></button>
+    </div>
+    <div class="tier-grid">
+      <div class="tier-col tier-today" id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
+        <div class="tier-header"><span class="tier-dot dot-today"></span><span class="tier-title">Today</span><span class="tier-count" id="count-today">0</span></div>
+        <div class="task-list" id="list-today"></div>
+      </div>
+      <div class="tier-col tier-tomorrow" id="tier-tomorrow" ondragover="onDragOver(event,'tomorrow')" ondragleave="onDragLeave(event,'tomorrow')" ondrop="onDrop(event,'tomorrow')">
+        <div class="tier-header"><span class="tier-dot dot-tomorrow"></span><span class="tier-title">Tomorrow</span><span class="tier-count" id="count-tomorrow">0</span></div>
+        <div class="task-list" id="list-tomorrow"></div>
+      </div>
+      <div class="tier-col tier-week" id="tier-week" ondragover="onDragOver(event,'week')" ondragleave="onDragLeave(event,'week')" ondrop="onDrop(event,'week')">
+        <div class="tier-header"><span class="tier-dot dot-week"></span><span class="tier-title">This Week</span><span class="tier-count" id="count-week">0</span></div>
+        <div class="task-list" id="list-week"></div>
+      </div>
+      <div class="tier-col tier-parked" id="tier-parked" ondragover="onDragOver(event,'parked')" ondragleave="onDragLeave(event,'parked')" ondrop="onDrop(event,'parked')">
+        <div class="tier-header"><span class="tier-dot dot-parked"></span><span class="tier-title">Parked</span><span class="tier-count" id="count-parked">0</span></div>
+        <div class="task-list" id="list-parked"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inbox View -->
+  <div class="content-area" id="view-inbox" style="display:none">
+    <div class="inbox-panel active">
+      <div class="inbox-toolbar">
+        <span style="font-size:12.5px;color:var(--text-muted)">Drag a card into a tier to add it as a task, or dismiss it.</span>
+        <a href="https://wi.lelitte.co.uk/" target="_blank">Open full inbox &rarr;</a>
+      </div>
+      <div id="inboxSuggestions"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script></body>
+</html>
