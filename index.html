@@ -104,27 +104,25 @@
 
   <!-- Board View -->
   <div class="content-area" id="view-board">
-    <div id="stale-banner"></div>
+    <div class="intel-panel" id="intel-panel"></div>
     <div class="board-toolbar">
       <button class="done-toggle-btn" id="done-toggle-btn" onclick="toggleShowDone()"></button>
     </div>
-    <div class="tier-grid">
-      <div class="tier-col tier-today" id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
-        <div class="tier-header"><span class="tier-dot dot-today"></span><span class="tier-title">Today</span><span class="tier-count" id="count-today">0</span></div>
-        <div class="task-list" id="list-today"></div>
-      </div>
-      <div class="tier-col tier-tomorrow" id="tier-tomorrow" ondragover="onDragOver(event,'tomorrow')" ondragleave="onDragLeave(event,'tomorrow')" ondrop="onDrop(event,'tomorrow')">
-        <div class="tier-header"><span class="tier-dot dot-tomorrow"></span><span class="tier-title">Tomorrow</span><span class="tier-count" id="count-tomorrow">0</span></div>
-        <div class="task-list" id="list-tomorrow"></div>
-      </div>
-      <div class="tier-col tier-week" id="tier-week" ondragover="onDragOver(event,'week')" ondragleave="onDragLeave(event,'week')" ondrop="onDrop(event,'week')">
-        <div class="tier-header"><span class="tier-dot dot-week"></span><span class="tier-title">This Week</span><span class="tier-count" id="count-week">0</span></div>
-        <div class="task-list" id="list-week"></div>
-      </div>
-      <div class="tier-col tier-parked" id="tier-parked" ondragover="onDragOver(event,'parked')" ondragleave="onDragLeave(event,'parked')" ondrop="onDrop(event,'parked')">
-        <div class="tier-header"><span class="tier-dot dot-parked"></span><span class="tier-title">Parked</span><span class="tier-count" id="count-parked">0</span></div>
-        <div class="task-list" id="list-parked"></div>
-      </div>
+    <div class="tier-section" id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
+      <div class="sec-head"><span class="sec-dot" style="background:#ef4444"></span><span class="sec-lbl">Today</span><span class="sec-rule"></span><span class="sec-count" id="count-today">0</span></div>
+      <div class="task-list" id="list-today"></div>
+    </div>
+    <div class="tier-section" id="tier-tomorrow" ondragover="onDragOver(event,'tomorrow')" ondragleave="onDragLeave(event,'tomorrow')" ondrop="onDrop(event,'tomorrow')">
+      <div class="sec-head"><span class="sec-dot" style="background:#f97316"></span><span class="sec-lbl">Tomorrow</span><span class="sec-rule"></span><span class="sec-count" id="count-tomorrow">0</span></div>
+      <div class="task-list" id="list-tomorrow"></div>
+    </div>
+    <div class="tier-section" id="tier-week" ondragover="onDragOver(event,'week')" ondragleave="onDragLeave(event,'week')" ondrop="onDrop(event,'week')">
+      <div class="sec-head"><span class="sec-dot" style="background:#f59e0b"></span><span class="sec-lbl">This Week</span><span class="sec-rule"></span><span class="sec-count" id="count-week">0</span></div>
+      <div class="task-list" id="list-week"></div>
+    </div>
+    <div class="tier-section" id="tier-parked" ondragover="onDragOver(event,'parked')" ondragleave="onDragLeave(event,'parked')" ondrop="onDrop(event,'parked')">
+      <div class="sec-head"><span class="sec-dot" style="background:#94a3b8"></span><span class="sec-lbl">Parked</span><span class="sec-rule"></span><span class="sec-count" id="count-parked">0</span></div>
+      <div class="task-list" id="list-parked"></div>
     </div>
   </div>
 

@@ -147,21 +147,20 @@ function renderBoard(){
     ft.innerHTML=html;
   }
   renderStaleBanner();
-  document.querySelectorAll('.task-card').forEach(function(card){
+  document.querySelectorAll('.task-card[draggable]').forEach(function(card){
     card.addEventListener('dragstart',onCardDragStart);
     card.addEventListener('dragend',onCardDragEnd);
   });
 }
 
-/* STALE BANNER + SIDEBAR STATS */
+/* INTEL PANEL + SIDEBAR STATS */
 function renderStaleBanner(){
-  var banner=document.getElementById('stale-banner');
+  var panel=document.getElementById('intel-panel');
   var sbStats=document.getElementById('sb-stale-stats');
   var nowMs=new Date().setHours(0,0,0,0);
   var todayTasks=tasks.filter(function(t){return t.tier==='today'&&!t.done;});
   var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
   var ages=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
-  /* Sidebar compact stats */
   if(sbStats){
     if(stale.length){
       var maxAge=Math.max.apply(null,ages);
@@ -176,88 +175,85 @@ function renderStaleBanner(){
         +'</div>';
     } else {sbStats.innerHTML='';}
   }
-  if(!banner) return;
-  /* Col 1: Watch stale today */
-  var col1='';
+  if(!panel) return;
+  /* Block 1: Watch — stale today */
+  var blk1='';
   if(stale.length){
     var rows='';
-    stale.forEach(function(t,i){rows+='<div class="stale-row"><span class="stale-age">'+ages[i]+'d</span>'+escHtml(t.title)+'</div>';});
-    col1='<div class="bar-col"><div class="bar-col-title">Watch — stale today</div>'
-      +'<div class="bar-col-sub">In Today 3+ days — move on, park, or mark done.</div>'
+    stale.forEach(function(t,i){rows+='<div class="intel-item" onclick="goToCard(\''+t.id+'\')"><span class="intel-days">'+ages[i]+'d</span><span class="intel-item-text">'+escHtml(t.title)+'</span></div>';});
+    blk1='<div class="intel-block watch"><div class="intel-header">Watch — stale today <span>In Today 3+ days — move on, park, or mark done</span></div>'
       +rows+'</div>';
   }
-  /* Col 2: Act now ([TODO] from today tasks) */
+  /* Block 2: Act now ([TODO] from today tasks) */
   var todos=[];
   todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push({id:t.id,text:a.replace('[TODO]','').trim()});});});
-  var col2='';
+  var blk2='';
   if(todos.length){
-    var show=Math.min(todos.length,6);var b='';
-    todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
-    if(todos.length>show){
-      b+='<div class="focus-await-extra" style="display:none">';
-      todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
-      b+='</div>';
-      b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
-    }
-    col2='<div class="bar-col"><div class="bar-col-title">Act now</div>'+b+'</div>';
+    var showN=Math.min(todos.length,4);var b='';
+    todos.slice(0,showN).forEach(function(a){b+='<div class="intel-item" style="display:block" onclick="goToCard(\''+a.id+'\')">'
+      +'<div style="font-size:12px;font-weight:600;color:var(--text-dark);margin-bottom:3px">'+escHtml(a.text)+'</div></div>';});
+    if(todos.length>showN){b+='<div class="intel-more" onclick="this.previousSibling&&this.previousSibling.style&&(this.style.display=\'none\')">+ '+(todos.length-showN)+' more actions</div>';}
+    blk2='<div class="intel-block act"><div class="intel-header">Act now</div>'+b+'</div>';
   }
-  /* Col 3: Waiting on ([AWAITING] from all tasks) */
+  /* Block 3: Waiting on ([AWAITING] from all tasks) */
   var awaits=[];
   tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push({id:t.id,text:a.replace('[AWAITING]','').trim()});});});
-  var col3='';
+  var blk3='';
   if(awaits.length){
-    var show=Math.min(awaits.length,7);var b='';
-    awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
-    if(awaits.length>show){
-      b+='<div class="focus-await-extra" style="display:none">';
-      awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+escHtml(a.text)+'</div>';});
-      b+='</div>';
-      b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
-    }
-    col3='<div class="bar-col"><div class="bar-col-title">Waiting on</div>'+b+'</div>';
+    var showN=Math.min(awaits.length,5);var b='';
+    awaits.slice(0,showN).forEach(function(a){b+='<div class="intel-item" style="display:block" onclick="goToCard(\''+a.id+'\')">'
+      +'<span style="font-size:11.5px;color:var(--text-muted)">'+escHtml(a.text)+'</span></div>';});
+    if(awaits.length>showN){b+='<div class="intel-more">+ '+(awaits.length-showN)+' more</div>';}
+    blk3='<div class="intel-block wait"><div class="intel-header">Waiting on</div>'+b+'</div>';
   }
-  var hasContent=col1||col2||col3;
-  if(!hasContent){banner.style.display='none';return;}
-  banner.innerHTML=(col1||'')+(col2||'')+(col3||'');
-  banner.style.display='flex';
+  var hasContent=blk1||blk2||blk3;
+  if(!hasContent){panel.innerHTML='';return;}
+  panel.innerHTML=(blk1||'')+(blk2||'')+(blk3||'');
 }
 
 /* CARD HTML */
 function cardHTML(t){
   var done=!!t.done;
-  var checkedCls=done?'checked':'';
+  var checkedCls=done?'done':'';
   var doneCls=done?'done-card':'';
 
-  /* NEW/UPDATED badge */
-  var badge='';
+  /* Source + NEW/UPDATED badge inline in title */
+  var titleBadge='';
   if(t.dateAdded||t.lastUpdated){
     var cutoff=Date.now()-4*24*3600*1000;
     var addedTs=t.dateAdded?new Date(t.dateAdded).getTime():0;
     var updatedTs=t.lastUpdated?new Date(t.lastUpdated).getTime():0;
-    if(updatedTs>cutoff)badge='<span class="new-badge badge-updated">UPDATED</span>';
-    else if(addedTs>cutoff)badge='<span class="new-badge badge-new">NEW</span>';
+    if(updatedTs>cutoff)titleBadge='<span class="badge badge-gold">UPDATED</span>';
+    else if(addedTs>cutoff)titleBadge='<span class="badge" style="background:#dcfce7;color:#15803d">NEW</span>';
+  }
+  if(t.source&&!titleBadge){
+    var bCls=/meeting|granola|1-1|recurring/i.test(t.source)?'badge-mtg':'badge-email';
+    titleBadge='<span class="badge '+bCls+'">'+escHtml(t.source)+'</span>';
   }
 
-  var emailBtn=t.entryId?'<button class="open-email-btn" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')" style="display:inline-flex">&#9993;</button>':'';
-  var editBtn='<button class="edit-title-btn" title="Rename" onclick="startRename(event,\''+t.id+'\')" style="display:inline-flex">&#9998;</button>';
+  var emailIcon=t.entryId?'<span class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</span>':'';
+  var editIcon='<span class="card-icon" title="Rename" onclick="startRename(event,\''+t.id+'\')">&#9998;</span>';
 
-  var descPreview=t.summary?'<div class="card-desc" onclick="toggleDrawer(\''+t.id+'\')">' +escHtml(t.summary)+'</div>':'';
+  var descText=t.summary||(t.description?t.description.substring(0,150)+(t.description.length>150?'…':''):'');
+  var descEl=descText?'<div class="card-desc">'+escHtml(descText)+'</div>':'';
+
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
   var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+boldActs(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
-  var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
   var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\'">' +tierLabel(tier)+'</button>';}).join('');
 
   return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'"'
     +' ondragover="onCardDragOver(event,\''+t.id+'\',\''+t.tier+'\')"'
     +' ondragleave="onCardDragLeave(event,\''+t.id+'\')"'
     +' ondrop="onCardDropOnCard(event,\''+t.id+'\',\''+t.tier+'\')">'
-    +'<div class="card-top">'
-    +'<div class="drag-handle" title="Drag to reorder">⣿</div>'
-    +'<div class="task-check '+checkedCls+'" onclick="toggleDone(event,\''+t.id+'\')" ></div>'
-    +'<div class="task-title" onclick="toggleDrawer(\''+t.id+'\')" id="title-'+t.id+'">'+escHtml(t.title)+src+'</div>'
-    +'<div class="card-meta-row">'+badge+emailBtn+editBtn+'</div>'
+    +'<div class="card-ph-row">'
+    +'<span class="card-drag" title="Drag to reorder">⠇</span>'
+    +'<button class="card-done '+checkedCls+'" onclick="toggleDone(event,\''+t.id+'\')"></button>'
+    +'<div class="card-body" onclick="toggleDrawer(\''+t.id+'\')">'
+    +'<div class="card-title '+(done?'done':'')+'" id="title-'+t.id+'">'+escHtml(t.title)+titleBadge+'</div>'
+    +descEl
     +'</div>'
-    +descPreview
+    +'<div class="card-actions">'+emailIcon+editIcon+'</div>'
+    +'</div>'
     +'<div class="task-drawer" id="drawer-'+t.id+'">'
     +desc
     +actions
@@ -282,9 +278,9 @@ function toggleDone(e,id){
   if(!t)return;
   t.done=!t.done;
   var card=document.getElementById('card-'+id);
-  var chk=card.querySelector('.task-check');
-  if(t.done){card.classList.add('done-card');chk.classList.add('checked');}
-  else{card.classList.remove('done-card');chk.classList.remove('checked');}
+  var chk=card.querySelector('.card-done');
+  if(t.done){card.classList.add('done-card');chk.classList.add('done');}
+  else{card.classList.remove('done-card');chk.classList.remove('done');}
   updateDoneToggleBtn();
   if(t.done&&!getShowDone()){card.style.transition='opacity .3s';card.style.opacity='0';setTimeout(function(){renderBoard();},320);}
   persistTasks('Done state: '+id+(t.done?' checked':' unchecked'));
@@ -623,16 +619,10 @@ function setTier(val,label){
   filterBoard(val);
 }
 function filterBoard(tier){
-  var grid=document.querySelector('.tier-grid');
-  if(!grid) return;
   if(tier==='all'){
-    grid.classList.remove('focused');
-    document.querySelectorAll('.tier-col').forEach(function(c){c.classList.remove('focus-active');});
+    TIERS.forEach(function(t){var el=document.getElementById('tier-'+t);if(el)el.style.display='';});
   } else {
-    grid.classList.add('focused');
-    document.querySelectorAll('.tier-col').forEach(function(c){c.classList.remove('focus-active');});
-    var col=document.getElementById('tier-'+tier);
-    if(col) col.classList.add('focus-active');
+    TIERS.forEach(function(t){var el=document.getElementById('tier-'+t);if(el)el.style.display=(t===tier)?'':'none';});
   }
 }
 document.addEventListener('click',function(e){
