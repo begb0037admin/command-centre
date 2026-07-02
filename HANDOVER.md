@@ -1,51 +1,33 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-07-01 (Hope session, failover — Kevin unavailable, see AGENT_MODEL.md Section 6) — sidebar redesign BUILT on branch (both dashboards); approved mockups confirmed (cc-full-v5.html / wi-full-v5.html); main-area redesign NOT YET BUILT
+**Last updated:** 2026-07-02 (Kevin session) — v5 main-area redesign COMPLETE and LIVE on main. Both CC and WI v5 redesigns approved by Kevin and merged to main.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
 
 ---
 
-## Session 2026-07-01 (Hope, failover) — Daily Focus / cross-dashboard sidebar redesign
+## Session 2026-07-02 — v5 main-area redesign shipped
 
-**Full spec:** `docs/DAILY_FOCUS_CROSS_DASHBOARD_REDESIGN.md` — read this before touching any sidebar/main-area code for this feature. Do not re-derive the design from chat history.
-**Approved mockups (final, confirmed by Hope 2026-07-01):** `docs/mockups/cc-full-v5.html` (this repo) and `work-inbox/docs/mockups/wi-full-v5.html`. These are the reference artefacts for the entire build. Do not use any other mockup file.
+**All v5 Daily Focus / cross-dashboard redesign work is now on main and live.**
 
-**One-line summary:** Both dashboards move to one shared sidebar template. The Daily Focus widget is cross-dashboard — CC's shows Work Inbox data, WI's shows Command Centre data. Absences is its own widget. From your inbox badge on both. Links section on both.
+Screenshots approved by Kevin before merge. Work was on branch `claude/daily-focus-redesign-9ttqkc`, merged to main via fast-forward on 2026-07-02.
 
-### Sidebar — COMPLETE on branch (both dashboards)
+### What is live (CC)
 
-The sidebar redesign is fully implemented on `claude/session-handoff-kevin-x0s645` for both `command-centre` and `work-inbox`. Nothing is on main yet — UI approval gate applies before any merge.
+- **Sidebar** — Oxford navy, user block, live clock, filter dropdown, Daily Focus ticker (WI briefing data), From your inbox badge, Absences, Links
+- **Intel panel** — 3-column `.intel-panel` with Watch / Act now / Waiting on blocks (replaces old stale banner)
+- **Board toolbar** — Quick add + filter controls
+- **Tier sections** — Single-column stacked `.tier-section` cards with `.sec-head > .sec-dot + .sec-lbl + .sec-rule + .sec-count`
+- **Task cards** — `.card-ph-row` with drag handle, circle done button, title/desc, action icons; collapsible `.task-drawer` below
 
-Sidebar elements built (identical structure, both apps):
-- User block (kevin.lelitte@admin.ox.ac.uk)
-- Live clock + date
-- Filter dropdown (All tiers / Today / Tomorrow / This Week / Parked)
-- Daily Focus ticker (cross-dashboard data — CC shows WI briefing data, WI shows CC task data)
-- From your inbox widget + badge
-- Absences section
-- Links section
+### Reference artefacts
 
-Backups committed to Archive/ before any changes:
-- `Archive/index_backup_20260701_1544.html`, `styles_backup_20260701_1544.css`, `api_backup_20260701_1544.js`, `app_backup_20260701_1544.js`
+- Approved mockup: `docs/mockups/cc-full-v5.html`
+- Spec: `docs/DAILY_FOCUS_CROSS_DASHBOARD_REDESIGN.md`
+- Pre-v5 backups: `Archive/index_backup_20260701_1544.html`, `styles_backup_20260701_1544.css`, `api_backup_20260701_1544.js`, `app_backup_20260701_1544.js`
 
-### Main area — NOT YET BUILT
+### Next actions
 
-The main board area is still the old layout (4-column tier-grid + old stale-banner). This is the next piece of work.
-
-| Dashboard | What is needed | Approved reference |
-|---|---|---|
-| Command Centre | Replace `#stale-banner` + 4-column `tier-grid` with `.intel-panel` (3 white cards: Watch / Act now / Waiting on) + single-column stacked tier sections with white card style | `docs/mockups/cc-full-v5.html` |
-| Work Inbox | Add 3-block `.main-cal-panel` (Today cal / Tomorrow cal / mini month grids) above main content; restyle priority cards to match CC card style | `work-inbox/docs/mockups/wi-full-v5.html` |
-
-Full implementation detail in spec doc Section 5.
-
-### Governance for next session
-
-- **Signal effort level** to operator before starting main-area work — it is multi-file, structurally invasive, cross-repo. Per CONSTITUTION.md Section 10, signal and wait for explicit go-ahead before proceeding.
-- **UI approval gate** — screenshot every visual change, show operator, wait for explicit "approved" before any push to main.
-- **Backup/verify protocol** — mandatory before every write to `index.html`, `css/styles.css`, `js/app.js`, `js/api.js`. Today's backups exist; create new timestamped ones before next write.
-- **One change at a time.** Verify before the next.
-- **Branch:** all work on `claude/session-handoff-kevin-x0s645`. Do not push to main without visual approval.
+Nothing outstanding from this feature. Pick up from ROADMAP.md for next items.
 
 ---
 
