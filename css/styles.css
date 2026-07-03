@@ -3,7 +3,7 @@
   --oxford:#002147;--sidebar-bg:#002147;--main-bg:#f5f7fb;--card-bg:#fff;
   --today:#ef4444;--tomorrow:#eab308;--week:#22c55e;--parked:#94a3b8;
   --text-dark:#1a2740;--text-muted:#7a8a9e;--text-very-muted:#b0b8c8;
-  --sidebar-width:340px;
+  --sidebar-width:310px;
 }
 html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);color:var(--text-dark)}
 .shell{display:flex;min-height:100vh}
@@ -18,7 +18,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .sb-resize-handle:hover,.sb-resize-handle.dragging{background:rgba(255,255,255,.18)}
 .sb-head{padding:20px 20px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
 .sb-brand{display:flex;align-items:center;gap:16px}
-.sb-crest{width:80px;height:80px;flex-shrink:0;object-fit:contain}
+.sb-crest{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .sidebar-brand-text{display:inline-flex;flex-direction:column}
 .sb-univ-of{font-size:9.5px;font-weight:400;letter-spacing:.30em;text-transform:uppercase;color:rgba(255,255,255,.70);line-height:1.5;white-space:nowrap}
 .sb-oxford{font-size:26px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:#ffffff;line-height:1.1;white-space:nowrap}
@@ -252,3 +252,60 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .ql-remove-btn{background:none;border:none;color:rgba(255,255,255,.25);font-size:14px;cursor:pointer;padding:0 2px;flex-shrink:0;display:none;line-height:1}
 .ql-link-row:hover .ql-remove-btn{display:block}
 .ql-remove-btn:hover{color:#f87171}
+
+/* V5 SIDEBAR — logo/brand block */
+.sidebar-logo{padding:18px 18px 16px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:14px}
+.sb-brand{display:flex;flex-direction:column}
+.sb-univ{font-size:9px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.sb-app{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-top:3px}
+
+/* V5 SIDEBAR — date/clock block */
+.date-block{padding:10px 20px 11px;border-bottom:1px solid rgba(255,255,255,.08)}
+.wi-clock{font-size:20px;font-weight:700;color:#fff;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.date-val{font-size:12px;color:rgba(255,255,255,.62);margin-top:2px}
+
+/* V5 SIDEBAR — tier filter */
+.filter-block{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:8px;align-items:center}
+.filter-select{flex:1;font-family:inherit;font-size:12.5px;font-weight:500;color:#fff;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.18);border-radius:7px;padding:6px 28px 6px 10px;outline:none;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.5)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center}
+.filter-select:focus{border-color:rgba(255,255,255,.38)}
+.filter-select option{background:#002147;color:#fff}
+
+/* V5 SIDEBAR — ticker / daily focus */
+.inbox-ticker{padding:14px 16px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.ticker-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px}
+.ticker-stats{display:flex;gap:4px;margin-bottom:10px}
+.ticker-stat{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px 4px;text-align:center;cursor:pointer;transition:background .15s,border-color .15s}
+.ticker-stat:hover{background:rgba(255,255,255,.13)}
+.ticker-stat.selected{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3)}
+.ticker-num{display:block;font-size:20px;font-weight:800;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.ticker-num.red{color:#f87171}
+.ticker-num.gold{color:#fbbf24}
+.ticker-num.green{color:#4ade80}
+.ticker-sub{display:block;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:3px}
+.ticker-divider{height:1px;background:rgba(255,255,255,.08);margin:8px 0}
+.ticker-age-row{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;padding:2px 0}
+.ticker-age-label{color:rgba(255,255,255,.45)}
+.ticker-age-val{font-weight:600;color:rgba(255,255,255,.8)}
+.ticker-age-val.red{color:#f87171}
+.ticker-age-val.gold{color:#fbbf24}
+
+/* V5 SIDEBAR — inbox widget */
+.inbox-widget{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.08);cursor:pointer;transition:background .15s}
+.inbox-widget:hover{background:rgba(255,255,255,.06)}
+.inbox-widget-left{display:flex;flex-direction:column;gap:2px}
+.inbox-widget-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.inbox-widget-val{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.8)}
+.inbox-widget-badge{background:#ef4444;color:#fff;font-size:11px;font-weight:700;border-radius:10px;padding:1px 7px;min-width:20px;text-align:center}
+
+/* V5 SIDEBAR — absences */
+.abs-wrap{padding:6px 12px 10px}
+.abs-list{list-style:none;padding:0;margin:0}
+.abs-list li{font-size:11.5px;color:rgba(255,255,255,.7);padding:3px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.4}
+.abs-list li:last-child{border-bottom:none}
+.abs-none{font-size:11.5px;color:rgba(255,255,255,.28);font-style:italic}
+
+/* V5 SIDEBAR — links */
+.sb-links{padding:2px 12px 8px}
+.sb-link{display:block;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:5px 4px;border-radius:5px;transition:color .15s,background .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-link:hover{color:#fff;background:rgba(255,255,255,.07)}
+.sb-link:last-child{margin-bottom:0}
