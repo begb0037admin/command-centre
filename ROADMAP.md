@@ -142,6 +142,32 @@ Fix:
 
 ---
 
+### ⚠️ URGENT — hr-fa-knowledge-base: H&S Systems KB Expansion (James's Role)
+
+**The KB currently has no coverage of the Health & Safety systems managed by James Salas Guillen.** This is a gap — the KB cannot assist with any H&S queries. Priority work once the regression above is fixed.
+
+**Systems to source documents for:**
+
+| System | Notes |
+|---|---|
+| **Cority** | H&S management system. James's primary system — largest ticket volume. Source: Cority help centre / vendor docs. |
+| **IRIS / Eco Online** | H&S compliance platform. Source: IRIS/Eco Online help centre / vendor docs. |
+| **Odyssey** | H&S system (occupational health). Source: vendor documentation. |
+| **DSE** | Display Screen Equipment assessments. Source: Access Group help centre or Oxford HR policy docs. |
+| **Risk Base** | Risk management platform. Source: Risk Base vendor docs / help centre. |
+
+**Approach — same scrape pattern as existing KB:**
+- Identify each vendor's public help centre or documentation site
+- Use `access_group_scraper.py` (or a new equivalent scraper) with `--deep` to harvest full article text
+- Add to `build_index.py` merge and rebuild `data/kb.json`
+- Do NOT attempt without first checking whether each site is publicly accessible (some may require login)
+
+**Note:** Fix the KB regression (item above) before starting this work — the index rebuild must start from a clean 2,303-document baseline.
+
+**Detail:** `begb0037admin/hr-fa-knowledge-base/` — new session should read HANDOVER.md and CLAUDE.md first.
+
+---
+
 ### hris-dashboard — Linda Voice (TTS + STT) 🎤
 
 Add voice input and output to the Linda AI panel in the HRIS Team Open Tickets dashboard.
