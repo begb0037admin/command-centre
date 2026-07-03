@@ -49,18 +49,18 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 
 ## UI APPROVAL GATE — BEFORE EVERY VISUAL PUSH
 
-**Every visual change to the dashboard must be screenshotted and approved before it goes to main. No exceptions — not for small tweaks, not for "obvious" fixes.**
+**Every visual change to the dashboard must be screenshotted and approved before it goes to main. No exceptions — not for small tweaks, not for “obvious” fixes.**
 
 1. Implement the change locally.
 2. Take a screenshot and send it to Kevin.
-3. Wait for Kevin to explicitly say **"approved"**.
+3. Wait for Kevin to explicitly say **“approved”**.
 4. Only then commit and push to main.
 
 ### Rules
-- "It looks right" is not approval — wait for Kevin's word.
+- “It looks right” is not approval — wait for Kevin's word.
 - If the stop hook fires before approval, commit to a holding branch rather than pushing to main.
 - One visual change per approval cycle — do not bundle unrelated changes into one screenshot.
-- If Kevin says anything other than "approved" (e.g. "not approved", requests a change), do not push.
+- If Kevin says anything other than “approved” (e.g. “not approved”, requests a change), do not push.
 
 ---
 
@@ -76,7 +76,7 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 ## Bootstrap Order
 1. This file (orientation)
 2. `HANDOVER.md` (current state, known issues, next action)
-3. `ROADMAP.md` (outstanding items and future modules)
+3. `ROADMAP.md` — **Global Roadmap** (cross-repo backlog for all Kevin Lelitte projects)
 4. Confirm with Kevin which task to tackle before doing anything
 
 ## Architecture
@@ -174,6 +174,9 @@ Data sources:
 - Task store: `begb0037admin/command-centre` → `data/tasks.json`
 
 Both fetched via GitHub API with the standard PAT.
+
+## Global Roadmap
+`ROADMAP.md` in this repo IS the Global Roadmap — the authoritative cross-repo backlog for all Kevin Lelitte HR Systems projects. When any project or session says "update the Global Roadmap", write to `begb0037admin/command-centre/ROADMAP.md`.
 
 ## Branch and Merge Protocol
 Always push directly to main. If a branch must be used, merge it to main immediately upon completion — never leave files on a branch.
