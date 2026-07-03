@@ -1,6 +1,6 @@
 # command-centre — Roadmap
 
-**Last updated:** 2026-06-25
+**Last updated:** 2026-07-03
 **Module 1 status:** ✅ Complete and live
 
 ---
@@ -103,6 +103,20 @@ A second panel or tab giving:
 ## Module 3 — Calendar Integration (future)
 
 Pull today's calendar events from Granola or Outlook COM and display in sidebar below the task counts. Surface meeting-sourced tasks automatically.
+
+---
+
+## Cross-Project Backlog
+
+### hris-dashboard — Linda Voice (TTS + STT) 🎤
+
+Add voice input and output to the Linda AI panel in the HRIS Team Open Tickets dashboard.
+
+- **STT (Speech-to-Text):** Mic button → Scribe v2 via `/stt` route on `hr-kb-ai.kevinlelitte.workers.dev`
+- **TTS (Text-to-Speech):** Linda responses read aloud via ElevenLabs `/tts` route on same Worker
+- **No new Worker or secrets needed** — both routes and `ELEVENLABS_API_KEY` already live in `hr-kb-ai` (used by HR FA Knowledge Base)
+- **Reference implementation:** `begb0037admin/hr-fa-knowledge-base/index.html` — mic + listen button pattern to port across
+- **Detail:** `begb0037admin/hris-dashboard/ROADMAP.md`
 
 ---
 
