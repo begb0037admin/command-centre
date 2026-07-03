@@ -108,6 +108,40 @@ Pull today's calendar events from Granola or Outlook COM and display in sidebar 
 
 ## Cross-Project Backlog
 
+### ⚠️ URGENT — hr-fa-knowledge-base: KB Regression + Access Group Guide PDF Scrape
+
+**The KB is currently broken and must be fixed before any other KB work.**
+
+#### Step 1 — Fix the regression (do this first)
+
+The KB has regressed from **2,303 → 2,208 documents** due to a failed guide PDF scrape attempt that overwrote `downloads/manifest.csv` with 0 rows. The PDFs are still physically present — only the manifest references were lost.
+
+Fix:
+1. Restore `downloads/manifest.csv` from git commit `2a574d8` (944 rows, all collection PDFs)
+2. Rebuild the index — no re-scraping needed, PDFs are already there
+3. Verify `data/kb.json` returns to 2,303+ documents before proceeding
+
+#### Step 2 — Resume guide PDF scrape (after regression fixed)
+
+**Goal:** Download individual step-by-step PDF guides from 11 PeopleXD module guide index articles and index them — so Kevin can ask "how do I configure the Organisational Structure?" and get actual guide content.
+
+**Why previous attempts failed:** The DOM structure of the guide index articles was never inspected before writing selectors. Three attempts, 0 PDFs downloaded.
+
+**How to proceed correctly:**
+- Run the diagnostic print block in `scrapers/access_group_scraper.py` (`harvest_guide_pdfs()`) with `--guides-only --limit 1`
+- Read the output to determine actual link patterns before writing any selector
+- Full diagnostic code and failure analysis in `begb0037admin/hr-fa-knowledge-base/HANDOVER.md`
+
+**Key facts:**
+- Scraper infrastructure (`harvest_guide_pdfs()`, `--guides`, `--guides-only` flags) already in place
+- 11 guide index article IDs already in `GUIDE_INDEX_ARTICLES` in the scraper
+- Estimated 50–150 additional documents once working
+- Self-hosted runner required (cloud agents cannot reach Access Group portal)
+
+**Detail:** `begb0037admin/hr-fa-knowledge-base/HANDOVER.md`
+
+---
+
 ### hris-dashboard — Linda Voice (TTS + STT) 🎤
 
 Add voice input and output to the Linda AI panel in the HRIS Team Open Tickets dashboard.
