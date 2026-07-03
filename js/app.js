@@ -154,73 +154,62 @@ function renderBoard(){
   });
 }
 
-/* STALE BANNER + SIDEBAR STATS */
+/* INTEL PANEL (Stage 2 — replaces stale banner) */
 function renderStaleBanner(){
-  var banner=document.getElementById('stale-banner');
-  var sbStats=document.getElementById('sb-stale-stats');
+  var panel=document.getElementById('intel-panel');
+  if(!panel)return;
   var nowMs=new Date().setHours(0,0,0,0);
   var todayTasks=tasks.filter(function(t){return t.tier==='today'&&!t.done;});
   var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
   var ages=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
-  /* Sidebar compact stats */
-  if(sbStats){
-    if(stale.length){
-      var maxAge=Math.max.apply(null,ages);
-      var avgAge=Math.round(ages.reduce(function(s,a){return s+a;},0)/ages.length);
-      var over2w=ages.filter(function(a){return a>=14;}).length;
-      sbStats.innerHTML='<div class="sb-stale-stats">'
-        +'<div class="sb-stale-num">'+stale.length+'</div>'
-        +'<div class="sb-stale-label">Tasks stalled<br>in Today</div>'
-        +'<div class="sb-stale-row"><span class="sb-stale-row-label">Oldest</span><span class="sb-stale-row-val">'+maxAge+' days</span></div>'
-        +'<div class="sb-stale-row"><span class="sb-stale-row-label">Avg age</span><span class="sb-stale-row-val">'+avgAge+' days</span></div>'
-        +'<div class="sb-stale-row"><span class="sb-stale-row-label">2+ weeks</span><span class="sb-stale-row-val">'+over2w+' task'+(over2w!==1?'s':'')+'</span></div>'
-        +'</div>';
-    } else {sbStats.innerHTML='';}
-  }
-  if(!banner) return;
-  /* Col 1: Watch stale today */
-  var col1='';
-  if(stale.length){
-    var rows='';
-    stale.forEach(function(t,i){rows+='<div class="stale-row"><span class="stale-age">'+ages[i]+'d</span>'+escHtml(t.title)+'</div>';});
-    col1='<div class="bar-col"><div class="bar-col-title">Watch — stale today</div>'
-      +'<div class="bar-col-sub">In Today 3+ days — move on, park, or mark done.</div>'
-      +rows+'</div>';
-  }
-  /* Col 2: Act now ([TODO] from today tasks) */
   var todos=[];
   todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push({id:t.id,text:a.replace('[TODO]','').trim()});});});
-  var col2='';
-  if(todos.length){
-    var show=Math.min(todos.length,6);var b='';
-    todos.slice(0,show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ escHtml(a.text)+'</div>';});
-    if(todos.length>show){
-      b+='<div class="focus-await-extra" style="display:none">';
-      todos.slice(show).forEach(function(a){b+='<div class="focus-act-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ escHtml(a.text)+'</div>';});
-      b+='</div>';
-      b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(todos.length-show)+' more">+'+(todos.length-show)+' more</div>';
-    }
-    col2='<div class="bar-col"><div class="bar-col-title">Act now</div>'+b+'</div>';
-  }
-  /* Col 3: Waiting on ([AWAITING] from all tasks) */
   var awaits=[];
   tasks.filter(function(t){return!t.done;}).forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[AWAITING]')===0)awaits.push({id:t.id,text:a.replace('[AWAITING]','').trim()});});});
-  var col3='';
-  if(awaits.length){
-    var show=Math.min(awaits.length,7);var b='';
-    awaits.slice(0,show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ escHtml(a.text)+'</div>';});
-    if(awaits.length>show){
-      b+='<div class="focus-await-extra" style="display:none">';
-      awaits.slice(show).forEach(function(a){b+='<div class="focus-await-item" title="'+a.text.replace(/"/g,'&quot;')+'" onclick="goToCard(\''+a.id+'\')">'+ escHtml(a.text)+'</div>';});
-      b+='</div>';
-      b+='<div class="focus-more" onclick="toggleMoreItems(this)" data-more="+'+(awaits.length-show)+' more">+'+(awaits.length-show)+' more</div>';
-    }
-    col3='<div class="bar-col"><div class="bar-col-title">Waiting on</div>'+b+'</div>';
+  if(!stale.length&&!todos.length&&!awaits.length){panel.style.display='none';return;}
+  /* Col 1: Watch — stale today */
+  var w='<div class="intel-block watch">'
+    +'<div class="intel-header">Watch — Stale today <span>In Today 3+ days — move on, park, or mark done</span></div>';
+  if(stale.length){
+    var show1=Math.min(stale.length,6);
+    stale.slice(0,show1).forEach(function(t,i){
+      w+='<div class="intel-item" onclick="goToCard(\''+t.id+'\')" title="'+escHtml(t.title)+'">'
+        +'<span class="intel-days">'+ages[i]+'d</span>'
+        +'<span class="intel-item-text">'+escHtml(t.title)+'</span></div>';
+    });
+    if(stale.length>show1)w+='<div class="intel-more">+'+(stale.length-show1)+' more</div>';
+  } else {
+    w+='<div class="intel-empty">No stale tasks ✔</div>';
   }
-  var hasContent=col1||col2||col3;
-  if(!hasContent){banner.style.display='none';return;}
-  banner.innerHTML=(col1||'')+(col2||'')+(col3||'');
-  banner.style.display='flex';
+  w+='</div>';
+  /* Col 2: Act now ([TODO] from today tasks) */
+  var a='<div class="intel-block act"><div class="intel-header">Act now</div>';
+  if(todos.length){
+    var show2=Math.min(todos.length,6);
+    todos.slice(0,show2).forEach(function(x){
+      a+='<div class="intel-item" onclick="goToCard(\''+x.id+'\')" title="'+escHtml(x.text)+'">'
+        +'<span class="intel-item-text">'+escHtml(x.text)+'</span></div>';
+    });
+    if(todos.length>show2)a+='<div class="intel-more">+'+(todos.length-show2)+' more</div>';
+  } else {
+    a+='<div class="intel-empty">No pending actions</div>';
+  }
+  a+='</div>';
+  /* Col 3: Waiting on ([AWAITING] from all tasks) */
+  var wt='<div class="intel-block wait"><div class="intel-header">Waiting on</div>';
+  if(awaits.length){
+    var show3=Math.min(awaits.length,6);
+    awaits.slice(0,show3).forEach(function(x){
+      wt+='<div class="intel-item" onclick="goToCard(\''+x.id+'\')" title="'+escHtml(x.text)+'">'
+        +'<span class="intel-item-text">'+escHtml(x.text)+'</span></div>';
+    });
+    if(awaits.length>show3)wt+='<div class="intel-more">+'+(awaits.length-show3)+' more</div>';
+  } else {
+    wt+='<div class="intel-empty">Nothing waiting</div>';
+  }
+  wt+='</div>';
+  panel.innerHTML='<div class="intel-panel">'+w+a+wt+'</div>';
+  panel.style.display='';
 }
 
 /* CARD HTML */

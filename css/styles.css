@@ -309,3 +309,21 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .sb-link{display:block;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.65);text-decoration:none;padding:5px 4px;border-radius:5px;transition:color .15s,background .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sb-link:hover{color:#fff;background:rgba(255,255,255,.07)}
 .sb-link:last-child{margin-bottom:0}
+
+/* INTEL PANEL (Stage 2) */
+.intel-panel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
+.intel-block{background:#fff;border:1px solid #e5e9f2;border-radius:10px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,33,71,.05)}
+.intel-header{font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;padding-bottom:9px;border-bottom:1px solid #e5e9f2}
+.intel-header span{font-size:9px;font-weight:400;color:var(--text-very-muted);text-transform:none;letter-spacing:0;margin-left:6px}
+.intel-item{display:flex;gap:8px;align-items:flex-start;padding:6px 8px 6px 12px;border-bottom:1px solid #f0f3f8;font-size:12.5px;color:var(--text-dark);cursor:pointer;border-radius:5px;margin:0 -8px;border-left:3px solid transparent;transition:background .12s,border-left-color .12s;line-height:1.4}
+.intel-item:last-of-type{border-bottom:none}
+.intel-block.watch .intel-item:hover{background:#fef2f2;border-left-color:#ef4444}
+.intel-block.act .intel-item:hover{background:#fffbeb;border-left-color:#eab308}
+.intel-block.wait .intel-item:hover{background:#f0fdf4;border-left-color:#22c55e}
+.intel-days{font-size:10px;font-weight:700;color:#ef4444;min-width:22px;padding-top:2px;flex-shrink:0}
+.intel-item-text{line-height:1.4;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.intel-more{font-size:11px;color:var(--text-muted);margin-top:8px;cursor:pointer;padding-left:12px}
+.intel-more:hover{color:#3b82f6}
+.intel-empty{font-size:11.5px;color:var(--text-very-muted);font-style:italic;padding:4px 0}
+@media(max-width:1060px){.intel-panel{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.intel-panel{grid-template-columns:1fr}}
