@@ -1,5 +1,6 @@
-# command-centre — Roadmap
+# Global Roadmap
 
+**Scope:** Cross-repo backlog for all Kevin Lelitte HR Systems projects (`begb0037admin`). Items from individual repos are tracked here.
 **Last updated:** 2026-07-03
 **Module 1 status:** ✅ Complete and live
 
@@ -29,7 +30,7 @@ Two root causes identified and fixed:
 1. **Schema mismatch** — `persistTasks()` was sending `{content:{tasks:[]}}` but the Worker reads `{doc}`. Fixed: dashboard now sends `{doc:{tasks:[]}}` (commit `0641890`).
 2. **Cloudflare secret name mismatch** — Worker code reads `env.HRIS_GITHUB_PAT` but the secret was stored as `GITHUB_PAT`. Fixed: Kevin added `HRIS_GITHUB_PAT` to Cloudflare Worker secrets (2026-06-23).
 
-**Also added:** Save-status toast in `persistTasks()` — "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
+**Also added:** Save-status toast in `persistTasks()` — “Saving…” (blue), “Saved ✓” (green, 3s auto-dismiss), “Save failed ✗ (HTTP XXX)” (red, tap to dismiss). Sidebar “Last save” row.
 
 Confirmed working 2026-06-23: card moves, tier changes, notes edits, and inbox suggestion drags all persist across page refresh.
 
@@ -48,13 +49,13 @@ Until Granola write-back is live, add GitHub API write-on-add for tasks created 
 
 **Prerequisite:** File split & Cloudflare Pages migration complete (see migration plan dated 2026-06-25). Do not begin this module until migration is confirmed stable.
 
-**Summary:** Replace the unused "From your inbox" suggestions panel with an embedded AI chat interface. Kevin types freeform notes and updates in the dashboard; Claude processes them and appends properly dated action entries to the relevant task — no separate Claude session required.
+**Summary:** Replace the unused “From your inbox” suggestions panel with an embedded AI chat interface. Kevin types freeform notes and updates in the dashboard; Claude processes them and appends properly dated action entries to the relevant task — no separate Claude session required.
 
 ### What gets built
 
 | Component | Detail |
-|---|---|
-| "Ask Claude" nav item | Replaces "From your inbox" in the sidebar nav |
+|---|—---|
+| “Ask Claude” nav item | Replaces “From your inbox” in the sidebar nav |
 | Chat panel (main area) | Multi-turn conversational UI — same view-switching pattern as existing panels |
 | `js/chat.js` | Chat UI logic and thread management (clean new file in modular codebase) |
 | Worker `/chat` route | New route on `cc-tasks-writer` — receives message + tasks context, calls Anthropic API, returns reply + action entries to append |
@@ -71,14 +72,14 @@ Until Granola write-back is live, add GitHub API write-on-add for tasks created 
 
 ### Also removed in this phase
 
-- "From your inbox" nav item, panel HTML, and all inbox suggestions JS/fetch logic
+- “From your inbox” nav item, panel HTML, and all inbox suggestions JS/fetch logic
 - Phase 3.5 of `fetch_inbox.py` (inbox suggestions generation — confirmed unused in practice)
 - `data/inbox_suggestions.json` archived
 
 ### Governance gates
 
 | Gate | Requirement |
-|---|---|
+|---|—---|
 | Before build | Migration confirmed stable on Cloudflare Pages |
 | UI change | Screenshot of chat panel approved by Kevin before push to main |
 | Worker change | Kevin approves `/chat` route addition and `ANTHROPIC_API_KEY` secret |
