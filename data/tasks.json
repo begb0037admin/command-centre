@@ -376,10 +376,11 @@
       "[12 Jun 2026] Config session with Conor O'Brien re Division Code blocker.",
       "[17 Jun 2026] Kevin sent draft REF2029 load file to Conor O'Brien.",
       "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
-      "[AWAITING] Division Code resolution confirmed before proceeding."
+      "[AWAITING] Division Code resolution confirmed before proceeding.",
+      "[03 Jul 2026] Tony Boydell sent Acceptance Criteria for Company 10/Company 90 User Scenarios, advancing the testing phase of the DTP1092 PXD Company 90 setup work. (email: Tony Boydell - Re: DTP1092 PXD Company 90 Testing)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077FA8E3B30000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB90000",
     "done": true
   },
   {
@@ -558,9 +559,11 @@
       "[24 Jun 2026] Issue raised at HR Systems Managers Meeting by Simon Burford -- sickness absence report not picking up open-ended absences. Pay impact confirmed: individuals gone into half pay. Task number shared in meeting.",
       "[TODO] Retrieve and log the task number shared at the meeting.",
       "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL) or a system data issue in PeopleXD.",
-      "[TODO] Confirm fix approach and communicate resolution to Simon Burford."
+      "[TODO] Confirm fix approach and communicate resolution to Simon Burford.",
+      "[03 Jul 2026] Sarah Rowles' email to Henry about OSM request for manager access to UOXU is linked to the sickness absence reporting investigation that Kevin flagged at the HR Systems Managers Meeting. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)"
     ],
-    "dateAdded": "2026-06-25"
+    "dateAdded": "2026-06-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB70000"
   },
   {
     "id": "t036",
