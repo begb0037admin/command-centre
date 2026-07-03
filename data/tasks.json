@@ -165,10 +165,11 @@
       "[TODO] Use both to inform POC meeting notes before sending to Chris (t022).",
       "[30 Jun 2026] Kevin reviewed Helen's briefing and weightings against requirements catalogue; identified that compliance requirements (legal/regulatory) should be assessed separately from operational weightings, and flagged incident reporting (1.2) classification as inconsistent with RIDDOR obligations — to be raised with Helen and Caroline by Chris and James.",
       "[30 Jun 2026] Christopher Sanders confirmed that compliance-related requirements will be flagged and assessed separately in the tender process with Caroline Gow; Neil Carveth (H&S SME) will verify the compliance requirements list. Incident reporting (1.2) clarified as a \"could\" requirement since system migration is out of current project scope but a potential future consideration.",
-      "[02 Jul 2026] Kevin sent written comments on the H&S Management System project requirements to Christopher Sanders and James Salas Guillen ahead of the meeting he could not attend. (email: Kevin (sent to: Christopher Sanders; James Salas Guillen) - Re: Strategic H&S modular system project requirements)"
+      "[02 Jul 2026] Kevin sent written comments on the H&S Management System project requirements to Christopher Sanders and James Salas Guillen ahead of the meeting he could not attend. (email: Kevin (sent to: Christopher Sanders; James Salas Guillen) - Re: Strategic H&S modular system project requirements)",
+      "[03 Jul 2026] Christopher Sanders sent follow-up requirements relating to legal compliance from the SHSMS evaluation session, with weightings split by category. (email: Christopher Sanders - RE: Weightings spreadsheet)"
     ],
     "dateAdded": "2026-06-23",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF60000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078B27E4F60000"
   },
   {
     "id": "t013",
@@ -377,10 +378,11 @@
       "[17 Jun 2026] Kevin sent draft REF2029 load file to Conor O'Brien.",
       "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
       "[AWAITING] Division Code resolution confirmed before proceeding.",
-      "[03 Jul 2026] Tony Boydell sent Acceptance Criteria for Company 10/Company 90 User Scenarios, advancing the testing phase of the DTP1092 PXD Company 90 setup work. (email: Tony Boydell - Re: DTP1092 PXD Company 90 Testing)"
+      "[03 Jul 2026] Tony Boydell sent Acceptance Criteria for Company 10/Company 90 User Scenarios, advancing the testing phase of the DTP1092 PXD Company 90 setup work. (email: Tony Boydell - Re: DTP1092 PXD Company 90 Testing)",
+      "[03 Jul 2026] Crispin Muncaster flagged clarification and guidance needed on DTP1092 Company 90 testing; requests meeting slot. (email: Crispin Muncaster - DTP1092 PXD Company 90 Testing)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB90000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB80000",
     "done": true
   },
   {
