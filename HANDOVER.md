@@ -1,7 +1,26 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-07-04 (Kevin session) — v5 full redesign complete: vertical tier layout, v5 task cards, v5 sidebar (card widgets, gold absences, quick-add removed) all live on main.
+**Last updated:** 2026-07-04 (Kevin session) - crest standard migration approved: embedded base64 retired; dashboards now use file-based `images/oxford-crest.jpg` asset.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
+
+---
+
+## Session 2026-07-04 - Crest standard migration
+
+Kevin approved the permanent crest fix after repeated CRESS/crest breakages: retire embedded base64 and use the normal asset path `images/oxford-crest.jpg` across dashboards.
+
+### Standard now in force
+
+- `BRANDING.md` v2.0 is the canonical dashboard branding source.
+- `index.html` uses `<img class="sidebar-crest" src="images/oxford-crest.jpg" ...>`.
+- Base64-embedded crest data is retired and must not be reintroduced.
+- Sidebar crest classes are standardised around `.sidebar-logo`, `.sidebar-crest`, `.sidebar-brand-text`, `.sb-univ-of`, `.sb-oxford`, and `.sb-app-name`.
+
+### Backups
+
+| File | Backup |
+|---|---|
+| `HANDOVER.md` | `Archive/HANDOVER_backup_20260704_crest_migration.md` |
 
 ---
 
@@ -58,7 +77,7 @@ Screenshots approved by Kevin before merge. Work on branch `claude/daily-focus-r
 
 | Component | Description |
 |---|---|
-| `index.html` | Shell — HTML structure only. Oxford navy sidebar (310px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. Loads css/styles.css → js/api.js → js/app.js. |
+| `index.html` | Shell — HTML structure only. Oxford navy sidebar (340px), file-based Oxford crest, blue-grey main (#f5f7fb), Inter font. No framework, no build step. Loads css/styles.css → js/api.js → js/app.js. |
 | `css/styles.css` | All styles extracted from former monolithic index.html. |
 | `js/api.js` | Data layer — constants, task state, loadTasks(), fetchTasksRemote(), mergeRemote(), persistTasks(), showSaveToast(). No DOM dependencies at load time. |
 | `js/app.js` | UI layer — all rendering, interaction, drag/drop, suggestions, sidebar resize, init. Load order: after api.js. |
@@ -75,7 +94,7 @@ Screenshots approved by Kevin before merge. Work on branch `claude/daily-focus-r
 - Cloudflare Workers live — `cc.lelitte.co.uk` (primary URL)
 - `data/tasks.json` loads on page open (cache-busted with `?_=Date.now()`)
 - Four priority tiers: Today / Tomorrow / This Week / Parked — vertical stacked layout
-- Sidebar: Oxford navy, 310px, real OUO.jpg crest (base64), live clock, tier filter dropdown, Daily Focus ticker card widget (task counts + WI briefing stats), From your inbox badge card widget, Absences (gold #eab308), Links with border-bottom dividers, My Links
+- Sidebar: Oxford navy, 340px, real Oxford crest loaded from `images/oxford-crest.jpg`, live clock, tier filter dropdown, Daily Focus ticker card widget (task counts + WI briefing stats), From your inbox badge card widget, Absences (gold #eab308), Links with border-bottom dividers, My Links
 - Intel panel: 3-column Watch / Act now / Waiting on above the tier board
 - Task cards: v5 card-row structure — drag handle, circle done button, title/desc body, icon action buttons (email/rename); collapsible drawer with description, actions, AI input, move/delete controls
 - Done state: circle goes green ✓, title strikes through, fades out if "Show done" is off; persists in tasks.json
@@ -106,7 +125,7 @@ Screenshots approved by Kevin before merge. Work on branch `claude/daily-focus-r
 | Styles | `css/styles.css` |
 | Data layer | `js/api.js` |
 | UI layer | `js/app.js` |
-| Oxford crest | Embedded as base64 in `index.html` (source: OUO.jpg) — full 10,416-char JPEG |
+| Oxford crest | `images/oxford-crest.jpg`; embedded base64 is retired and must not be reintroduced |
 | Inbox suggestions | `data/inbox_suggestions.json` (written by work-inbox fetch_inbox.py Phase 3.5) |
 | Triage ledger | `data/triage_ledger.json` (dedup tracker for Phase 3.6 auto-updates) |
 | Archive | `Archive/tasks_backup_YYYYMMDD.json` (auto-created before every write) |

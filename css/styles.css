@@ -18,8 +18,8 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .sb-resize-handle{position:absolute;top:0;right:0;width:5px;height:100%;cursor:col-resize;z-index:50;background:transparent;transition:background .15s}
 .sb-resize-handle:hover,.sb-resize-handle.dragging{background:rgba(255,255,255,.18)}
 .sb-head{padding:20px 20px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
-.sb-brand{display:flex;align-items:center;gap:16px}
-.sb-crest{width:80px;height:80px;object-fit:contain;flex-shrink:0}
+.sidebar-logo{display:flex;align-items:center;gap:16px}
+.sidebar-crest{width:80px;height:80px;object-fit:contain;flex-shrink:0}
 .sidebar-brand-text{display:inline-flex;flex-direction:column}
 .sb-univ-of{font-size:9.5px;font-weight:400;letter-spacing:.30em;text-transform:uppercase;color:rgba(255,255,255,.70);line-height:1.5;white-space:nowrap}
 .sb-oxford{font-size:26px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:#ffffff;line-height:1.1;white-space:nowrap}
@@ -267,9 +267,9 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 
 /* V5 SIDEBAR — logo/brand block */
 .sidebar-logo{padding:20px 20px 18px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:16px}
-.sb-brand{display:flex;flex-direction:column}
-.sb-univ{font-size:9.5px;font-weight:400;letter-spacing:.30em;text-transform:uppercase;color:rgba(255,255,255,.70)}
-.sb-app{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-top:4px}
+.sidebar-brand-text{display:flex;flex-direction:column}
+.sb-univ-of{font-size:9.5px;font-weight:400;letter-spacing:.30em;text-transform:uppercase;color:rgba(255,255,255,.70)}
+.sb-app-name{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-top:4px}
 
 /* V5 SIDEBAR — date/clock block */
 .date-block{padding:12px 22px;border-bottom:1px solid rgba(255,255,255,.08)}

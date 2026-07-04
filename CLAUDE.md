@@ -76,8 +76,9 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 ## Bootstrap Order
 1. This file (orientation)
 2. `HANDOVER.md` (current state, known issues, next action)
-3. `ROADMAP.md` (outstanding items and future modules)
-4. Confirm with Kevin which task to tackle before doing anything
+3. `BRANDING.md` (dashboard visual standard)
+4. `ROADMAP.md` (outstanding items and future modules)
+5. Confirm with Kevin which task to tackle before doing anything
 
 ## Architecture
 | Component | Description |
@@ -96,7 +97,7 @@ Tasks load from `data/tasks.json` on page open (cache-busted). The 'From your in
 - Main background: `#f5f7fb` (matches hris-launcher)
 - Font: Inter (Google Fonts)
 - Tier colours: Today `#ef4444` / Tomorrow `#f97316` / This Week `#f59e0b` / Parked `#94a3b8`
-- Oxford crest embedded as base64 JPEG (OUO.jpg)
+- Oxford crest is a normal repo asset: `images/oxford-crest.jpg`
 
 ## GitHub
 - **Repo:** `begb0037admin/command-centre`
@@ -122,7 +123,7 @@ Before any task where higher effort is warranted, signal to Kevin: what the task
 - One write at a time — verify result before the next
 - tasks.json is the source of truth for task content — not session memory
 - Load order: `styles.css` → `api.js` → `app.js` — never change without testing
-- **NEVER strip, replace, or truncate the base64 Oxford crest in the `<img class="sb-crest">` tag** — the crest is embedded as base64 JPEG in `index.html`; do not replace it with an external file reference, do not delete it, do not truncate the data. A grey square in the sidebar means the base64 data was corrupted during an edit.
+- **NEVER embed the Oxford crest as base64.** The crest is `images/oxford-crest.jpg`; do not delete it, move it, rename it, or replace the `<img class="sidebar-crest">` source with a data URI.
 - All mockups and visual designs are produced as Claude Artifacts — never committed to the repository (see CONSTITUTION.md Section 11)
 
 ## Domain
