@@ -61,7 +61,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .sb-qa .btn-primary{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);color:#fff;padding:6px 14px;font-size:12px}
 
 /* MAIN */
-.main{margin-left:var(--sidebar-width);flex:1;padding:24px 32px 60px;min-width:0}
+.main{margin-left:var(--sidebar-width);width:calc(100% - var(--sidebar-width));padding:24px 32px 60px;min-width:0;overflow-x:hidden}
 .page-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .page-title{font-size:22px;font-weight:700;color:var(--oxford)}
 .header-date{font-size:13px;color:var(--text-muted);margin-top:3px}
@@ -326,7 +326,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 
 /* INTEL PANEL (Stage 2) */
 .intel-panel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
-.intel-block{background:#fff;border:1px solid #e5e9f2;border-radius:10px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,33,71,.05)}
+.intel-block{background:#fff;border:1px solid #e5e9f2;border-radius:10px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,33,71,.05);min-width:0}
 .intel-header{font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;padding-bottom:9px;border-bottom:1px solid #e5e9f2}
 .intel-header span{font-size:9px;font-weight:400;color:var(--text-very-muted);text-transform:none;letter-spacing:0;margin-left:6px}
 .intel-item{display:flex;gap:8px;align-items:flex-start;padding:6px 8px 6px 12px;border-bottom:1px solid #f0f3f8;font-size:12.5px;color:var(--text-dark);cursor:pointer;border-radius:5px;margin:0 -8px;border-left:3px solid transparent;transition:background .12s,border-left-color .12s;line-height:1.4}
