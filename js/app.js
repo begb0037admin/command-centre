@@ -674,14 +674,26 @@ async function loadSidebarBriefing(){
     var res=await fetch('https://raw.githubusercontent.com/begb0037admin/work-inbox/main/data/briefing.json?t='+Date.now());
     if(!res.ok)return;
     var d=await res.json();
-    var urgEl=document.getElementById('wi-urgent-count');if(urgEl)urgEl.textContent=d.urgent_count!=null?d.urgent_count:'—';
-    var needsEl=document.getElementById('wi-needs-count');if(needsEl)needsEl.textContent=d.needs_count!=null?d.needs_count:'—';
+    var _days=['Sun','Mon','Tues','Weds','Thurs','Fri','Sat'];
+    var _months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    function _setCount(id,n){
+      var el=document.getElementById(id);if(!el)return;
+      el.classList.remove('red','gold');
+      if(n==null){el.textContent='—';return;}
+      var v=parseInt(n,10);
+      if(isNaN(v)){el.textContent='—';return;}
+      el.textContent=v+' email'+(v===1?'':'s');
+      if(v>=2)el.classList.add('red');else if(v===1)el.classList.add('gold');
+    }
+    _setCount('wi-urgent-count',d.urgent_count);
+    _setCount('wi-needs-count',d.needs_count);
     var refEl=document.getElementById('wi-last-refreshed');
     if(refEl&&d.refreshed_at){
       try{
-        var t=new Date(d.refreshed_at.replace(' ','T'));
-        var mins=Math.round((Date.now()-t.getTime())/60000);
-        refEl.textContent=mins<60?(mins+'m ago'):(Math.floor(mins/60)+'h ago');
+        var _t=new Date(d.refreshed_at.replace(' ','T'));
+        var _hh=_t.getHours().toString().padStart(2,'0');
+        var _mm=_t.getMinutes().toString().padStart(2,'0');
+        refEl.textContent=_days[_t.getDay()]+' '+_t.getDate()+' '+_months[_t.getMonth()]+' '+_hh+':'+_mm;
       }catch(e){refEl.textContent=d.refreshed_at;}
     }
   }catch(e){}
