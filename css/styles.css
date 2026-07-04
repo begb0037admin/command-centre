@@ -4,7 +4,7 @@
   --border:#e8ecf4;
   --today:#ef4444;--tomorrow:#eab308;--week:#22c55e;--parked:#94a3b8;
   --text-dark:#1a2740;--text-muted:#7a8a9e;--text-very-muted:#b0b8c8;
-  --sidebar-width:310px;
+  --sidebar-width:340px;
 }
 html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);color:var(--text-dark)}
 .shell{display:flex;min-height:100vh}
@@ -19,14 +19,14 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .sb-resize-handle:hover,.sb-resize-handle.dragging{background:rgba(255,255,255,.18)}
 .sb-head{padding:20px 20px 18px;border-bottom:1px solid rgba(255,255,255,.1)}
 .sb-brand{display:flex;align-items:center;gap:16px}
-.sb-crest{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.sb-crest{width:80px;height:80px;object-fit:contain;flex-shrink:0}
 .sidebar-brand-text{display:inline-flex;flex-direction:column}
 .sb-univ-of{font-size:9.5px;font-weight:400;letter-spacing:.30em;text-transform:uppercase;color:rgba(255,255,255,.70);line-height:1.5;white-space:nowrap}
 .sb-oxford{font-size:26px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:#ffffff;line-height:1.1;white-space:nowrap}
 .sb-app-name{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#ffffff;margin-top:4px;line-height:1.4}
 .sb-nav{padding:16px 12px 0;flex:1}
 .sb-clock{padding:14px 16px 18px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.6}
-.sb-section{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:0 16px;margin:16px 0 5px}
+.sb-section{font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:14px 22px 6px;margin:0}
 .sb-section:first-child{margin-top:0}
 .focus-tasks{padding:0 10px 8px}
 .focus-zone{margin-bottom:11px}
@@ -257,7 +257,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .ql-save-btn:hover{background:rgba(255,255,255,.28)}
 .ql-cancel-btn{background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);font-size:11.5px;padding:4px 8px;border-radius:5px;cursor:pointer;font-family:inherit}
 .ql-cancel-btn:hover{color:rgba(255,255,255,.8)}
-.ql-link-row{display:flex;align-items:center;padding:6px 16px;border-radius:7px;transition:background .15s}
+.ql-link-row{display:flex;align-items:center;padding:6px 22px;border-radius:7px;transition:background .15s}
 .ql-link-row:hover{background:rgba(255,255,255,.1)}
 .ql-link-a{flex:1;font-size:13px;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .ql-link-row:hover .ql-link-a{color:#fff}
@@ -266,13 +266,13 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .ql-remove-btn:hover{color:#f87171}
 
 /* V5 SIDEBAR — logo/brand block */
-.sidebar-logo{padding:16px 16px 14px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:14px}
+.sidebar-logo{padding:20px 20px 18px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:16px}
 .sb-brand{display:flex;flex-direction:column}
-.sb-univ{font-size:9px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.6)}
-.sb-app{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-top:3px}
+.sb-univ{font-size:9.5px;font-weight:400;letter-spacing:.30em;text-transform:uppercase;color:rgba(255,255,255,.70)}
+.sb-app{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-top:4px}
 
 /* V5 SIDEBAR — date/clock block */
-.date-block{padding:10px 16px 11px;border-bottom:1px solid rgba(255,255,255,.08)}
+.date-block{padding:12px 22px;border-bottom:1px solid rgba(255,255,255,.08)}
 .wi-clock{font-size:20px;font-weight:700;color:#fff;letter-spacing:.04em;font-variant-numeric:tabular-nums}
 .date-val{font-size:12px;color:rgba(255,255,255,.62);margin-top:2px}
 
@@ -312,14 +312,14 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .inbox-widget-badge{font-size:11px;font-weight:700;background:#3b82f6;color:#fff;border-radius:20px;padding:3px 10px}
 
 /* V5 SIDEBAR — absences */
-.abs-wrap{padding:4px 16px 10px}
+.abs-wrap{padding:4px 22px 10px}
 .abs-list{list-style:none;padding:0;margin:0}
 .abs-list li{font-size:12px;font-weight:400;color:#eab308;padding:3px 0;line-height:1.4;padding-left:14px;text-indent:-14px}
 .abs-list li::before{content:'\2022';color:rgba(255,255,255,.4);margin-right:7px}
 .abs-none{font-size:11.5px;color:rgba(255,255,255,.28);font-style:italic}
 
 /* V5 SIDEBAR — links */
-.sb-links{padding:2px 16px 14px}
+.sb-links{padding:2px 22px 14px}
 .sb-link{display:block;font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .15s}
 .sb-link:hover{color:#60a5fa}
 .sb-link:last-child{border-bottom:none}
