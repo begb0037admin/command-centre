@@ -1,23 +1,50 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-07-02 (Kevin session) — v5 main-area redesign COMPLETE and LIVE on main. Both CC and WI v5 redesigns approved by Kevin and merged to main.
+**Last updated:** 2026-07-04 (Kevin session) — v5 full redesign complete: vertical tier layout, v5 task cards, v5 sidebar (card widgets, gold absences, quick-add removed) all live on main.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
 
 ---
 
-## Session 2026-07-02 — v5 main-area redesign shipped
+## Session 2026-07-04 — v5 Stage 3 complete: vertical tier layout + v5 task cards
 
-**All v5 Daily Focus / cross-dashboard redesign work is now on main and live.**
+**All three stages of the v5 redesign are now on main and live.**
 
-Screenshots approved by Kevin before merge. Work was on branch `claude/daily-focus-redesign-9ttqkc`, merged to main via fast-forward on 2026-07-02.
+Kevin approved the implementation Artifact before merge. Branch `claude/cc-redesign-5zghrg` merged to main via PR #12 on 2026-07-04.
+
+### What changed (Stage 3 — this session)
+
+- **Quick-add form removed** from sidebar (`sb-qa` div removed from `index.html`)
+- **Main area restructured**: `main-area` / `top-bar` / `tier-grid` (4-column) replaced with `.main` / `.page-header` + `.page-title` + `.header-date` / vertical `#tierGrid`
+- **Vertical tier sections**: Each tier is a `tier-section` with `.sec-head` (coloured dot + label + rule + count). IDs `sec-wrap-today` etc. for filter/scroll. Drop targets remain `id="tier-today"` etc. inside each section.
+- **v5 task cards**: `.card-row` flex wrapper with `.card-drag` (⠇ handle), `.card-done` (circle button, goes green ✓), `.card-body` (title + desc, clickable for drawer), `.card-actions` (`.card-icon` 26×26 bordered squares for email/rename)
+- **New CSS classes**: `card-row`, `card-drag`, `card-done`, `card-done.done`, `card-body`, `card-title`, `card-title.done`, `card-desc`, `card-actions`, `card-icon`; badge variants `badge-urgent`, `badge-gold`, `badge-mtg`, `badge-email`; `--border` CSS token; `[id^=tier-].drag-over` for vertical layout
+- **JS updates**: `cardHTML()` rewrites to v5 structure; `filterBoard()` toggles `sec-wrap-*` visibility; `toggleDone()` uses `.card-done.done` + `.card-title.done`; `scrollToTier()` targets `sec-wrap-*`
+- **Inbox-ticker** → card widget style (margin/border/border-radius, gap:0 stats, border-right dividers, 18px nums, `✔ Daily Focus` label)
+- **Inbox-widget** → card widget style (blue badge `#3b82f6` not red)
+- **Absences** → gold `#eab308` non-bold with bullet points
+- **Links** → border-bottom dividers, `#60a5fa` hover
+
+### Backups (Archive/)
+
+| File | Backup |
+|---|---|
+| `index.html` | `Archive/index_backup_20260704_0900.html` |
+| `css/styles.css` | `Archive/styles_backup_20260704_0900.css` |
+| `js/app.js` | `Archive/app_backup_20260704_0900.js` |
+
+---
+
+## Session 2026-07-02 — v5 Stages 1–2: sidebar + intel panel
+
+Screenshots approved by Kevin before merge. Work on branch `claude/daily-focus-redesign-9ttqkc`, merged to main 2026-07-02.
 
 ### What is live (CC)
 
-- **Sidebar** — Oxford navy, user block, live clock, filter dropdown, Daily Focus ticker (WI briefing data), From your inbox badge, Absences, Links
+- **Sidebar** — Oxford navy, user block, live clock, filter dropdown, Daily Focus ticker card widget (WI briefing data), From your inbox badge, Absences, Links
 - **Intel panel** — 3-column `.intel-panel` with Watch / Act now / Waiting on blocks (replaces old stale banner)
-- **Board toolbar** — Quick add + filter controls
-- **Tier sections** — Single-column stacked `.tier-section` cards with `.sec-head > .sec-dot + .sec-lbl + .sec-rule + .sec-count`
-- **Task cards** — `.card-ph-row` with drag handle, circle done button, title/desc, action icons; collapsible `.task-drawer` below
+- **Board toolbar** — done toggle controls
+- **Tier sections** — vertical stacked `.tier-section` cards with `.sec-head > .sec-dot + .sec-lbl + .sec-rule + .sec-count`
+- **Task cards** — `.card-row` with drag handle, circle done button, `.card-body` title/desc, `.card-actions` icon buttons; collapsible `.task-drawer` below
 
 ### Reference artefacts
 
@@ -25,54 +52,47 @@ Screenshots approved by Kevin before merge. Work was on branch `claude/daily-foc
 - Spec: `docs/DAILY_FOCUS_CROSS_DASHBOARD_REDESIGN.md`
 - Pre-v5 backups: `Archive/index_backup_20260701_1544.html`, `styles_backup_20260701_1544.css`, `api_backup_20260701_1544.js`, `app_backup_20260701_1544.js`
 
-### Next actions
-
-Nothing outstanding from this feature. Pick up from ROADMAP.md for next items.
-
 ---
 
 ## Architecture
 
 | Component | Description |
 |---|---|
-| `index.html` | Shell — HTML structure only. Oxford navy sidebar (340px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. Loads css/styles.css → js/api.js → js/app.js. |
+| `index.html` | Shell — HTML structure only. Oxford navy sidebar (310px), blue-grey main (#f5f7fb), Inter font. No framework, no build step. Loads css/styles.css → js/api.js → js/app.js. |
 | `css/styles.css` | All styles extracted from former monolithic index.html. |
 | `js/api.js` | Data layer — constants, task state, loadTasks(), fetchTasksRemote(), mergeRemote(), persistTasks(), showSaveToast(). No DOM dependencies at load time. |
 | `js/app.js` | UI layer — all rendering, interaction, drag/drop, suggestions, sidebar resize, init. Load order: after api.js. |
-| `data/tasks.json` | Task data. Fields: id, title, tier (today/week/parked), source, emailRef, notes, actions[], dateAdded. |
+| `data/tasks.json` | Task data. Fields: id, title, tier (today/tomorrow/week/parked), source, emailRef, notes, actions[], dateAdded. |
 | `governance/` | Governance workflow standard (v1.1), phase templates, and phase evidence artefacts. |
 | `docs/project/generated/` | Approved Codex artefact path. All Codex-produced review artefacts are committed here. |
 
 ---
 
-## Current State (fully working as of 2026-07-01)
+## Current State (fully working as of 2026-07-04)
 
 ### Working
 - GitHub Pages live — `begb0037admin.github.io/command-centre/`
 - Cloudflare Workers live — `cc.lelitte.co.uk` (primary URL)
 - `data/tasks.json` loads on page open (cache-busted with `?_=Date.now()`)
-- Three priority tiers: Today / Tomorrow / This Week / Parked
-- Sidebar: Oxford navy, 320px, real OUO.jpg crest (base64), live task counts per tier, week-start date, Add Task button
-- Collapsible task drawers: chevron toggle, action bullet list (→), source/emailRef/date metadata grid, editable notes with Save button, Move To tier controls
-- Quick-add panel: floating, title + tier picker + source + emailRef + notes, defaults source to "Manual", Esc to close
-- Done state: checkbox tick fades + strikes through card, persists in localStorage (`commandCentre_done_v1`)
-- Hide/Show Done toggle in header
-- Time-aware greeting: Good morning / afternoon / evening, Kevin
-- Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side; tasks.json writes, tier moves, notes edits and suggestion drags all persist from any machine/browser ✅ Confirmed working
+- Four priority tiers: Today / Tomorrow / This Week / Parked — vertical stacked layout
+- Sidebar: Oxford navy, 310px, real OUO.jpg crest (base64), live clock, tier filter dropdown, Daily Focus ticker card widget (task counts + WI briefing stats), From your inbox badge card widget, Absences (gold #eab308), Links with border-bottom dividers, My Links
+- Intel panel: 3-column Watch / Act now / Waiting on above the tier board
+- Task cards: v5 card-row structure — drag handle, circle done button, title/desc body, icon action buttons (email/rename); collapsible drawer with description, actions, AI input, move/delete controls
+- Done state: circle goes green ✓, title strikes through, fades out if "Show done" is off; persists in tasks.json
+- Hide/Show Done toggle
+- Cloudflare Worker write-back (`cc-tasks-writer.kevinlelitte.workers.dev`) — PAT held server-side ✅ Confirmed working
 - 'From your inbox' suggestion panel — drags AI-proposed tasks into tier lists; dismissals persist in localStorage
-- **Tier focus mode** — selecting a tier in the sidebar dropdown (Today/Tomorrow/This Week/Parked) collapses all other tier columns and expands the selected one full-width. "All" returns to the four-column grid. Add button targets the focused tier.
-- **Badge CSS normalised** — NEW (green) and UPDATED (blue) badges match Work Inbox exactly
-- **Emoji removed** from all three "Open email" button locations
-- **Save-status toast** — centred bottom toast: "Saving…" (blue), "Saved ✓" (green, 3s auto-dismiss), "Save failed ✗ (HTTP XXX)" (red, tap to dismiss). Sidebar "Last save" row.
-- **Sidebar nav order (2026-06-28):** Daily Focus widget → From your inbox → Tasks counts → Links → My Links
-- **Cloudflare CI (non-production branches):** Disabled — no more CI noise on PR branches
-- **hashchange listener (2026-06-30):** `window.addEventListener('hashchange', ...)` fires `goToCard(id)` whenever the URL hash changes in-page. Allows WI's `CC →` button to select + animate the correct card when CC is already open in a tab.
+- **Tier filter** — sidebar dropdown shows/hides `sec-wrap-*` sections; ticker stats are clickable to filter
+- **Badge CSS** — NEW (green) and UPDATED (amber) badges; badge variants for urgent/meeting/email context
+- **Save-status toast** — blue saving / green saved / red error (tap to dismiss)
+- **hashchange listener** — fires `goToCard(id)` when WI's CC→ button updates the URL hash
+- **Sidebar resize** — drag handle on right edge of sidebar
 
 ### Known Limitations (by design — v1)
-- Done state in localStorage is keyed by task ID — if `tasks.json` is regenerated with new IDs, done state resets.
+- Done state keyed by task ID — if `tasks.json` regenerated with new IDs, done state resets.
 
 ### GitHub Pages
-- Enabled manually by Kevin after first push (Settings → Pages → main / root)
+- Enabled manually by Kevin (Settings → Pages → main / root)
 - Deploy time ~1 min after push to main
 
 ---
@@ -86,7 +106,7 @@ Nothing outstanding from this feature. Pick up from ROADMAP.md for next items.
 | Styles | `css/styles.css` |
 | Data layer | `js/api.js` |
 | UI layer | `js/app.js` |
-| Oxford crest | Embedded as base64 in `index.html` (source: OUO.jpg) — full 10,416-char JPEG, restored 2026-06-28 |
+| Oxford crest | Embedded as base64 in `index.html` (source: OUO.jpg) — full 10,416-char JPEG |
 | Inbox suggestions | `data/inbox_suggestions.json` (written by work-inbox fetch_inbox.py Phase 3.5) |
 | Triage ledger | `data/triage_ledger.json` (dedup tracker for Phase 3.6 auto-updates) |
 | Archive | `Archive/tasks_backup_YYYYMMDD.json` (auto-created before every write) |
@@ -97,7 +117,6 @@ Nothing outstanding from this feature. Pick up from ROADMAP.md for next items.
 | Phase 1 Review Request | `governance/evidence/PHASE_1_REVIEW_REQUEST.md` |
 | Phase 1 Remediation Evidence | `governance/evidence/PHASE_1_REMEDIATION_EVIDENCE.md` |
 | Phase 1 Validation Request | `governance/evidence/PHASE_1_VALIDATION_REQUEST.md` |
-| Phase templates | `governance/templates/` (9 templates) |
 | Codex artefact path | `docs/project/generated/` |
 | Phase 1 Challenge Report (Codex) | `docs/project/generated/PHASE_1_CHALLENGE_REPORT.md` |
 | Phase 1 Remediation Request (Codex) | `docs/project/generated/PHASE_1_REMEDIATION_REQUEST.md` |
@@ -292,20 +311,11 @@ Work-inbox followed the identical pattern once command-centre Phase 3 was confir
 
 ## Next Action
 
-**Immediate — main-area redesign (cross-dashboard redesign, Phase 2):**
-Signal effort level to operator before starting. Build in small surgical chunks — CC main area first, then WI main area. Screenshot each chunk before any push to main. Reference: `docs/mockups/cc-full-v5.html` (CC) and `work-inbox/docs/mockups/wi-full-v5.html` (WI). Full spec in `docs/DAILY_FOCUS_CROSS_DASHBOARD_REDESIGN.md` Section 5.
-
 **Phase 2 (functional equivalence check — Cloudflare migration):** Browser-level test of `https://cc.lelitte.co.uk`. Check: task load, tier moves, quick-add, notes edit, done state, inbox suggestions (+ tier buttons, dismiss), tier focus mode, sidebar resize, crest. Source-level check passed 2026-06-27. Browser sign-off by Kevin closes Gate 2.0.
 
 **After Gate 2.0:** Remaining dashboards custom domain rollout — hris-launcher (`hris.lelitte.co.uk`), hr-fa-knowledge-base (`kb.lelitte.co.uk`), hris-dashboard (`hris-dash.lelitte.co.uk`).
 
-**AI "Update with AI" button — UI live; Worker setup outstanding:** UI half complete and on main (commit `0a77fd40`). Notes field removed; AI input area + button + status div live in all task cards. Worker endpoint code committed to `cloudflare-worker/ai-log-endpoint.js` (commit `88490353`). Kevin to: (1) add `handleAiLog` function + `/ai-log` route to cc-tasks-writer in Cloudflare dashboard; (2) add `ANTHROPIC_API_KEY` as Worker secret; (3) test end-to-end.
-
-**UI approval gate — protocol gap flagged:** The Notes→AI input visual change was pushed to main at high effort without a prior screenshot approval per CLAUDE.md. Kevin to view `cc.lelitte.co.uk`, confirm the AI input area looks correct, and say "approved". This closes the protocol gap.
-
-**Phase 3.7 fix (fetch_inbox.py):** JSON parse error in AI summaries phase — flagged for roadmap. Needs investigation in a future session.
-
-**Parked feature:** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards appends a dated action entry to an existing task and dismisses the card.
+**AI "Update with AI" button — UI live; Worker setup outstanding:** Worker endpoint code committed to `cloudflare-worker/ai-log-endpoint.js` (commit `88490353`). Kevin to: (1) add `handleAiLog` function + `/ai-log` route to cc-tasks-writer in Cloudflare dashboard; (2) add `ANTHROPIC_API_KEY` as Worker secret; (3) test end-to-end.
 
 **Phase 1 Stage 5 (outstanding — Codex):**
 Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_REQUEST.md` and produce `PHASE_1_VALIDATION_REPORT.md` in `docs/project/generated/`.
@@ -313,9 +323,25 @@ Codex to validate `PHASE_1_REMEDIATION_EVIDENCE.md` against `PHASE_1_VALIDATION_
 **Automated meeting prep triggers — BROKEN — action required:**
 See meeting-records `Meeting Reviews/docs/HANDOVER.md` for full brief. Six triggers exist but failed silently on first run (1 July). Claude_Code_Remote MCP needs re-authorisation before they can be investigated or fixed. Do not rely on triggers until verified working with a confirmed test run.
 
+**Parked feature:** "Merge suggestion into existing task" — "+ Add to task" button on suggestion cards appends a dated action entry to an existing task and dismisses the card.
+
 ---
 
 ## Session Notes
+
+### 2026-07-04 (Kevin session) — v5 Stage 3: vertical tier layout + v5 task cards
+
+**Changes shipped:**
+- Quick-add form (`sb-qa`) removed from sidebar
+- 4-column `tier-grid` replaced with vertical `tier-section` layout — `sec-head` (dot + label + rule + count) for each tier
+- Task cards rebuilt to v5 spec: `card-row` / `card-drag` / `card-done` (circle, goes green ✓ on done) / `card-body` (title + desc) / `card-actions` (card-icon buttons for email/rename)
+- Inbox-ticker → card widget (margin/border/radius); badge changed blue `#3b82f6`
+- Absences → gold `#eab308`, non-bold, bullet-prefixed
+- Links → border-bottom dividers, `#60a5fa` hover
+- CSS additions: `--border` token, `card-row/drag/done/body/title/desc/actions/icon`, `badge-urgent/gold/mtg/email`, `[id^=tier-].drag-over`, `dot-r/g/grn/sl`, `tier-section/sec-head/sec-dot/sec-lbl/sec-rule/sec-count`, `page-header/page-title/header-date`
+- JS updates: `cardHTML()`, `filterBoard()`, `toggleDone()`, `scrollToTier()`
+- Backups: `Archive/index_backup_20260704_0900.html`, `styles_backup_20260704_0900.css`, `app_backup_20260704_0900.js`
+- Branch: `claude/cc-redesign-5zghrg` → PR #12 → merged to main
 
 ### 2026-07-01 (Hope session) — Automated meeting prep triggers: created, failed, reviewed
 
@@ -395,7 +421,6 @@ Each trigger must read the previous meeting prep doc from the repo AND the previ
 - **UI changes (COMPLETE):** `js/app.js` — `saveNotes()` removed; `aiLog()` added. Backup: `Archive/app_js_backup_20260630_1400.js` (commit `93d3e11d`, SHA `81e3c76c`). New `js/app.js` SHA: `9488e092` (commit `0a77fd40`). `css/styles.css` — `.ai-input`, `.ai-log-btn`, `.ai-log-btn:disabled`, `.ai-status` added. New SHA: `53f7ceb7` (commit `ad95feadf`).
 - **Worker endpoint code (committed, not yet live):** `cloudflare-worker/ai-log-endpoint.js` SHA: `58e22a54` (commit `88490353`).
 - **Outstanding — Kevin action required:** Cloudflare → Workers → cc-tasks-writer → Edit code → add `handleAiLog` function → add route → add `ANTHROPIC_API_KEY` secret → Save and Deploy.
-- **UI approval gate:** Visual change pushed without prior screenshot approval per CLAUDE.md. Kevin to view `cc.lelitte.co.uk`, confirm, say "approved".
 
 ### 2026-06-08 — Module 1 build (Hope cross-domain)
 - Kevin hit token cap mid-session; Hope completed build under Cross-Domain Code Brief
