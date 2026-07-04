@@ -215,8 +215,9 @@ function renderStaleBanner(){
 /* CARD HTML */
 function cardHTML(t){
   var done=!!t.done;
-  var checkedCls=done?'checked':'';
+  var doneCircleCls=done?'done':'';
   var doneCls=done?'done-card':'';
+  var titleDoneCls=done?'done':'';
 
   /* NEW/UPDATED badge */
   var badge='';
@@ -228,26 +229,28 @@ function cardHTML(t){
     else if(addedTs>cutoff)badge='<span class="new-badge badge-new">NEW</span>';
   }
 
-  var emailBtn=t.entryId?'<button class="open-email-btn" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')" style="display:inline-flex">&#9993;</button>':'';
-  var editBtn='<button class="edit-title-btn" title="Rename" onclick="startRename(event,\''+t.id+'\')" style="display:inline-flex">&#9998;</button>';
+  var emailIcon=t.entryId?'<button class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</button>':'';
+  var editIcon='<button class="card-icon" title="Rename" onclick="startRename(event,\''+t.id+'\')">&#9998;</button>';
 
-  var descPreview=t.summary?'<div class="card-desc" onclick="toggleDrawer(\''+t.id+'\')">' +escHtml(t.summary)+'</div>':'';
+  var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
+  var descPreview=t.summary?'<div class="card-desc">'+escHtml(t.summary)+'</div>':'';
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
   var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+boldActs(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
-  var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
   var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\')">' +tierLabel(tier)+'</button>';}).join('');
 
   return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'"'
     +' ondragover="onCardDragOver(event,\''+t.id+'\',\''+t.tier+'\')"'
     +' ondragleave="onCardDragLeave(event,\''+t.id+'\')"'
     +' ondrop="onCardDropOnCard(event,\''+t.id+'\',\''+t.tier+'\')">'
-    +'<div class="card-top">'
-    +'<div class="drag-handle" title="Drag to reorder">⣿</div>'
-    +'<div class="task-check '+checkedCls+'" onclick="toggleDone(event,\''+t.id+'\')" ></div>'
-    +'<div class="task-title" onclick="toggleDrawer(\''+t.id+'\')" id="title-'+t.id+'">'+escHtml(t.title)+src+'</div>'
-    +'<div class="card-meta-row">'+badge+emailBtn+editBtn+'</div>'
-    +'</div>'
+    +'<div class="card-row">'
+    +'<span class="card-drag">⠇</span>'
+    +'<button class="card-done '+doneCircleCls+'" onclick="toggleDone(event,\''+t.id+'\')" title="Mark done"></button>'
+    +'<div class="card-body" onclick="toggleDrawer(\''+t.id+'\')">'
+    +'<div class="card-title '+titleDoneCls+'" id="title-'+t.id+'">'+escHtml(t.title)+src+badge+'</div>'
     +descPreview
+    +'</div>'
+    +'<div class="card-actions">'+emailIcon+editIcon+'</div>'
+    +'</div>'
     +'<div class="task-drawer" id="drawer-'+t.id+'">'
     +desc
     +actions
@@ -263,7 +266,7 @@ function cardHTML(t){
 function escHtml(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
 function boldActs(s){return escHtml(s).replace(/\[[^\]]+\]/g,'<strong>$&</strong>');}
 function tierLabel(t){return{today:'Today',tomorrow:'Tomorrow',week:'This Week',parked:'Parked'}[t]||t;}
-function scrollToTier(tier){var el=document.getElementById('tier-'+tier);if(el)el.scrollIntoView({behavior:'smooth'});}
+function scrollToTier(tier){var el=document.getElementById('sec-wrap-'+tier);if(el)el.scrollIntoView({behavior:'smooth'});}
 
 /* TOGGLE DONE */
 function toggleDone(e,id){
@@ -272,9 +275,11 @@ function toggleDone(e,id){
   if(!t)return;
   t.done=!t.done;
   var card=document.getElementById('card-'+id);
-  var chk=card.querySelector('.task-check');
-  if(t.done){card.classList.add('done-card');chk.classList.add('checked');}
-  else{card.classList.remove('done-card');chk.classList.remove('checked');}
+  var chk=card.querySelector('.card-done');
+  if(t.done){card.classList.add('done-card');if(chk)chk.classList.add('done');}
+  else{card.classList.remove('done-card');if(chk)chk.classList.remove('done');}
+  var titleEl=document.getElementById('title-'+id);
+  if(titleEl)titleEl.classList.toggle('done',t.done);
   updateDoneToggleBtn();
   if(t.done&&!getShowDone()){card.style.transition='opacity .3s';card.style.opacity='0';setTimeout(function(){renderBoard();},320);}
   persistTasks('Done state: '+id+(t.done?' checked':' unchecked'));
@@ -560,17 +565,10 @@ function setTier(val,label){
   filterBoard(val);
 }
 function filterBoard(tier){
-  var grid=document.querySelector('.tier-grid');
-  if(!grid) return;
-  if(tier==='all'){
-    grid.classList.remove('focused');
-    document.querySelectorAll('.tier-col').forEach(function(c){c.classList.remove('focus-active');});
-  } else {
-    grid.classList.add('focused');
-    document.querySelectorAll('.tier-col').forEach(function(c){c.classList.remove('focus-active');});
-    var col=document.getElementById('tier-'+tier);
-    if(col) col.classList.add('focus-active');
-  }
+  ['today','tomorrow','week','parked'].forEach(function(t){
+    var wrap=document.getElementById('sec-wrap-'+t);
+    if(wrap) wrap.style.display=(tier==='all'||tier===t)?'':'none';
+  });
 }
 document.addEventListener('click',function(e){
   var wrap=document.getElementById('qa-tier-wrap');
