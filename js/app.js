@@ -232,8 +232,15 @@ function cardHTML(t){
   var emailIcon=t.entryId?'<button class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</button>':'';
   var editIcon='<button class="card-icon" title="Rename" onclick="startRename(event,\''+t.id+'\')">&#9998;</button>';
 
-  var src=t.source?'<span class="source-chip">'+escHtml(t.source)+'</span>':'';
-  var descPreview=t.summary?'<div class="card-desc">'+escHtml(t.summary)+'</div>':'';
+  var src='';
+  if(t.source){
+    var sl=t.source.toLowerCase();
+    var sc=sl.indexOf('meeting')>=0||sl.indexOf('mtg')>=0?'badge-mtg':
+           sl.indexOf('email')>=0?'badge-email':'badge-mtg';
+    src='<span class="badge '+sc+'">'+escHtml(t.source)+'</span>';
+  }
+  var _dp=t.description||'';
+  var descPreview=_dp?'<div class="card-desc">'+escHtml(_dp.length>130?_dp.slice(0,130)+'…':_dp)+'</div>':'';
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
   var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+boldActs(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
   var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\')">' +tierLabel(tier)+'</button>';}).join('');
