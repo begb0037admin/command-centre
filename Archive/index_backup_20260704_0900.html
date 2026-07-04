@@ -26,6 +26,25 @@
     <div class="wi-clock" id="wi-clock-time">--:--:--</div>
     <div class="date-val" id="sidebarDate"></div>
   </div>
+  <div class="sb-qa">
+    <form onsubmit="quickAdd(event)">
+      <input type="text" id="qa-input" placeholder="Add a task…" autocomplete="off">
+      <div class="sb-qa-select" id="qa-tier-wrap">
+        <div class="sb-qa-sel-btn" onclick="toggleTierDrop()">
+          <span id="qa-tier-label">This Week</span><span>&#9662;</span>
+        </div>
+        <ul class="sb-qa-sel-list" id="qa-tier-list">
+          <li onclick="setTier('all','All')">All</li>
+          <li onclick="setTier('today','Today')">Today</li>
+          <li onclick="setTier('tomorrow','Tomorrow')">Tomorrow</li>
+          <li class="selected" onclick="setTier('week','This Week')">This Week</li>
+          <li onclick="setTier('parked','Parked')">Parked</li>
+        </ul>
+        <input type="hidden" id="qa-tier" value="week">
+      </div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
   <div class="filter-block">
     <select class="filter-select" id="tierSelect" onchange="applyFilter(this.value)">
       <option value="all">All tiers</option>
@@ -82,46 +101,40 @@
 </aside>
 
 <!-- MAIN -->
-<div class="main">
+<div class="main-area">
+  <header class="top-bar">
+    <div class="top-bar-title" id="view-title">Task Board</div>
+    <span id="last-updated" style="font-size:12px;color:#94a3b8;white-space:nowrap">—</span>
+  </header>
+
   <!-- Board View -->
-  <div id="view-board">
-    <div class="page-header">
-      <div><div class="page-title" id="view-title">Task Board</div><div class="header-date" id="last-updated">—</div></div>
-    </div>
+  <div class="content-area" id="view-board">
     <div id="intel-panel" style="display:none"></div>
-    <div style="display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-bottom:12px;">
-      <button class="done-toggle-btn" id="done-toggle-btn" onclick="toggleShowDone()" style="display:none"></button>
+    <div class="board-toolbar">
+      <button class="done-toggle-btn" id="done-toggle-btn" onclick="toggleShowDone()"></button>
     </div>
-    <div id="tierGrid">
-      <div class="tier-section" id="sec-wrap-today">
-        <div class="sec-head"><span class="sec-dot dot-r"></span><span class="sec-lbl">Today</span><span class="sec-rule"></span><span class="sec-count" id="count-today">0</span></div>
-        <div id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
-          <div id="list-today" class="task-list"></div>
-        </div>
+    <div class="tier-grid">
+      <div class="tier-col tier-today" id="tier-today" ondragover="onDragOver(event,'today')" ondragleave="onDragLeave(event,'today')" ondrop="onDrop(event,'today')">
+        <div class="tier-header"><span class="tier-dot dot-today"></span><span class="tier-title">Today</span><span class="tier-count" id="count-today">0</span></div>
+        <div class="task-list" id="list-today"></div>
       </div>
-      <div class="tier-section" id="sec-wrap-tomorrow">
-        <div class="sec-head"><span class="sec-dot dot-g"></span><span class="sec-lbl">Tomorrow</span><span class="sec-rule"></span><span class="sec-count" id="count-tomorrow">0</span></div>
-        <div id="tier-tomorrow" ondragover="onDragOver(event,'tomorrow')" ondragleave="onDragLeave(event,'tomorrow')" ondrop="onDrop(event,'tomorrow')">
-          <div id="list-tomorrow" class="task-list"></div>
-        </div>
+      <div class="tier-col tier-tomorrow" id="tier-tomorrow" ondragover="onDragOver(event,'tomorrow')" ondragleave="onDragLeave(event,'tomorrow')" ondrop="onDrop(event,'tomorrow')">
+        <div class="tier-header"><span class="tier-dot dot-tomorrow"></span><span class="tier-title">Tomorrow</span><span class="tier-count" id="count-tomorrow">0</span></div>
+        <div class="task-list" id="list-tomorrow"></div>
       </div>
-      <div class="tier-section" id="sec-wrap-week">
-        <div class="sec-head"><span class="sec-dot dot-grn"></span><span class="sec-lbl">This Week</span><span class="sec-rule"></span><span class="sec-count" id="count-week">0</span></div>
-        <div id="tier-week" ondragover="onDragOver(event,'week')" ondragleave="onDragLeave(event,'week')" ondrop="onDrop(event,'week')">
-          <div id="list-week" class="task-list"></div>
-        </div>
+      <div class="tier-col tier-week" id="tier-week" ondragover="onDragOver(event,'week')" ondragleave="onDragLeave(event,'week')" ondrop="onDrop(event,'week')">
+        <div class="tier-header"><span class="tier-dot dot-week"></span><span class="tier-title">This Week</span><span class="tier-count" id="count-week">0</span></div>
+        <div class="task-list" id="list-week"></div>
       </div>
-      <div class="tier-section" id="sec-wrap-parked">
-        <div class="sec-head"><span class="sec-dot dot-sl"></span><span class="sec-lbl">Parked</span><span class="sec-rule"></span><span class="sec-count" id="count-parked">0</span></div>
-        <div id="tier-parked" ondragover="onDragOver(event,'parked')" ondragleave="onDragLeave(event,'parked')" ondrop="onDrop(event,'parked')">
-          <div id="list-parked" class="task-list"></div>
-        </div>
+      <div class="tier-col tier-parked" id="tier-parked" ondragover="onDragOver(event,'parked')" ondragleave="onDragLeave(event,'parked')" ondrop="onDrop(event,'parked')">
+        <div class="tier-header"><span class="tier-dot dot-parked"></span><span class="tier-title">Parked</span><span class="tier-count" id="count-parked">0</span></div>
+        <div class="task-list" id="list-parked"></div>
       </div>
     </div>
   </div>
 
   <!-- Inbox View -->
-  <div id="view-inbox" style="display:none">
+  <div class="content-area" id="view-inbox" style="display:none">
     <div class="inbox-panel active">
       <div class="inbox-toolbar">
         <span style="font-size:12.5px;color:var(--text-muted)">Drag a card into a tier to add it as a task, or dismiss it.</span>
