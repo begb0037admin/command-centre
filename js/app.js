@@ -171,13 +171,13 @@ function renderStaleBanner(){
   var w='<div class="intel-block watch">'
     +'<div class="intel-header">Watch — Stale today <span>In Today 3+ days — move on, park, or mark done</span></div>';
   if(stale.length){
-    var show1=Math.min(stale.length,6);
-    stale.slice(0,show1).forEach(function(t,i){
+    w+='<div class="intel-scroll">';
+    stale.forEach(function(t,i){
       w+='<div class="intel-item" onclick="goToCard(\''+t.id+'\')" title="'+escHtml(t.title)+'">'
         +'<span class="intel-days">'+ages[i]+'d</span>'
         +'<span class="intel-item-text">'+escHtml(t.title)+'</span></div>';
     });
-    if(stale.length>show1)w+='<div class="intel-more">+'+(stale.length-show1)+' more</div>';
+    w+='</div>';
   } else {
     w+='<div class="intel-empty">No stale tasks ✔</div>';
   }
@@ -185,12 +185,12 @@ function renderStaleBanner(){
   /* Col 2: Act now ([TODO] from today tasks) */
   var a='<div class="intel-block act"><div class="intel-header">Act now</div>';
   if(todos.length){
-    var show2=Math.min(todos.length,6);
-    todos.slice(0,show2).forEach(function(x){
+    a+='<div class="intel-scroll">';
+    todos.forEach(function(x){
       a+='<div class="intel-item" onclick="goToCard(\''+x.id+'\')" title="'+escHtml(x.text)+'">'
         +'<span class="intel-item-text">'+escHtml(x.text)+'</span></div>';
     });
-    if(todos.length>show2)a+='<div class="intel-more">+'+(todos.length-show2)+' more</div>';
+    a+='</div>';
   } else {
     a+='<div class="intel-empty">No pending actions</div>';
   }
@@ -198,12 +198,12 @@ function renderStaleBanner(){
   /* Col 3: Waiting on ([AWAITING] from all tasks) */
   var wt='<div class="intel-block wait"><div class="intel-header">Waiting on</div>';
   if(awaits.length){
-    var show3=Math.min(awaits.length,6);
-    awaits.slice(0,show3).forEach(function(x){
+    wt+='<div class="intel-scroll">';
+    awaits.forEach(function(x){
       wt+='<div class="intel-item" onclick="goToCard(\''+x.id+'\')" title="'+escHtml(x.text)+'">'
         +'<span class="intel-item-text">'+escHtml(x.text)+'</span></div>';
     });
-    if(awaits.length>show3)wt+='<div class="intel-more">+'+(awaits.length-show3)+' more</div>';
+    wt+='</div>';
   } else {
     wt+='<div class="intel-empty">Nothing waiting</div>';
   }
@@ -250,7 +250,7 @@ function cardHTML(t){
     +' ondragleave="onCardDragLeave(event,\''+t.id+'\')"'
     +' ondrop="onCardDropOnCard(event,\''+t.id+'\',\''+t.tier+'\')">'
     +'<div class="card-row">'
-    +'<span class="card-drag">⠇</span>'
+    +'<span class="card-drag" onclick="event.stopPropagation()">⠇</span>'
     +'<button class="card-done '+doneCircleCls+'" onclick="toggleDone(event,\''+t.id+'\')" title="Mark done"></button>'
     +'<div class="card-body" onclick="toggleDrawer(\''+t.id+'\')">'
     +'<div class="card-title '+titleDoneCls+'" id="title-'+t.id+'">'+escHtml(t.title)+src+badge+'</div>'
@@ -425,38 +425,75 @@ async function aiLog(id){
 }
 
 /* DRAG (tasks) */
+var dragEl=null;
+var dragDropped=false;
+
 function onCardDragStart(e){
   dragId=e.currentTarget.dataset.id;
-  e.currentTarget.classList.add('dragging');
+  dragEl=e.currentTarget;
+  dragDropped=false;
   e.dataTransfer.effectAllowed='move';
+  e.dataTransfer.setData('text/plain',dragId);
+  setTimeout(function(){if(dragEl)dragEl.classList.add('dragging');},0);
 }
 function onCardDragEnd(e){
-  e.currentTarget.classList.remove('dragging');
+  if(dragEl)dragEl.classList.remove('dragging');
   clearDragStyles();
+  if(dragId&&!dragDropped)renderBoard();
   dragId=null;
+  dragEl=null;
+  dragDropped=false;
 }
 function clearDragStyles(){
   TIERS.forEach(function(t){var el=document.getElementById('tier-'+t);if(el){el.classList.remove('drag-over','sug-drag-over');}});
   document.querySelectorAll('.task-card.drop-before,.task-card.drop-after').forEach(function(c){c.classList.remove('drop-before','drop-after');});
 }
+function placeDraggedTaskFromDom(tier){
+  if(!dragId)return null;
+  var task=tasks.find(function(t){return t.id===dragId;});
+  if(!task)return null;
+  tasks.splice(tasks.indexOf(task),1);
+  task.tier=tier;
+  var list=document.getElementById('list-'+tier);
+  var ids=list?Array.from(list.querySelectorAll('.task-card')).map(function(c){return c.dataset.id;}):[];
+  var pos=ids.indexOf(dragId);
+  var nextId=pos>=0?ids.slice(pos+1).find(function(id){return id!==dragId;}):null;
+  var prevId=pos>=0?ids.slice(0,pos).reverse().find(function(id){return id!==dragId;}):null;
+  if(nextId){
+    var nextIdx=tasks.findIndex(function(t){return t.id===nextId;});
+    tasks.splice(nextIdx>=0?nextIdx:tasks.length,0,task);
+  } else if(prevId){
+    var prevIdx=tasks.findIndex(function(t){return t.id===prevId;});
+    tasks.splice(prevIdx>=0?prevIdx+1:tasks.length,0,task);
+  } else {
+    var lastIdx=-1;
+    tasks.forEach(function(t,i){if(t.tier===tier)lastIdx=i;});
+    tasks.splice(lastIdx+1,0,task);
+  }
+  return task;
+}
 function onDragOver(e,tier){
   if(dragId||sgDragIdx!==null){
     e.preventDefault();e.dataTransfer.dropEffect='move';
-    document.getElementById('tier-'+tier).classList.add(sgDragIdx!==null?'sug-drag-over':'drag-over');
+    var zone=document.getElementById('tier-'+tier);
+    if(zone)zone.classList.add(sgDragIdx!==null?'sug-drag-over':'drag-over');
+    if(dragId&&dragEl){
+      var list=document.getElementById('list-'+tier);
+      if(list&&!list.contains(dragEl))list.appendChild(dragEl);
+    }
   }
 }
 function onDragLeave(e,tier){
-  document.getElementById('tier-'+tier).classList.remove('drag-over','sug-drag-over');
+  var zone=document.getElementById('tier-'+tier);
+  if(zone&&!zone.contains(e.relatedTarget))zone.classList.remove('drag-over','sug-drag-over');
 }
 async function onDrop(e,tier){
   e.preventDefault();
   document.getElementById('tier-'+tier).classList.remove('drag-over','sug-drag-over');
   if(dragId){
-    var task=tasks.find(function(t){return t.id===dragId;});
+    var task=placeDraggedTaskFromDom(tier);
     if(task){
-      tasks.splice(tasks.indexOf(task),1);
-      task.tier=tier;
-      tasks.push(task);
+      dragDropped=true;
       renderBoard();
       await persistTasks('Move task to '+tier+': '+task.title);
     }
@@ -473,7 +510,11 @@ function onCardDragOver(e,id,tier){
   e.dataTransfer.dropEffect='move';
   document.querySelectorAll('.task-card.drop-before,.task-card.drop-after').forEach(function(c){c.classList.remove('drop-before','drop-after');});
   var rect=e.currentTarget.getBoundingClientRect();
-  e.currentTarget.classList.add(e.clientY<rect.top+rect.height/2?'drop-before':'drop-after');
+  var before=e.clientY<rect.top+rect.height/2;
+  e.currentTarget.classList.add(before?'drop-before':'drop-after');
+  if(dragEl&&dragEl!==e.currentTarget){
+    e.currentTarget.parentNode.insertBefore(dragEl,before?e.currentTarget:e.currentTarget.nextSibling);
+  }
   document.getElementById('tier-'+tier).classList.add('drag-over');
 }
 function onCardDragLeave(e,id){
@@ -482,19 +523,36 @@ function onCardDragLeave(e,id){
 async function onCardDropOnCard(e,targetId,targetTier){
   e.preventDefault();
   e.stopPropagation();
-  var targetCard=e.currentTarget;
-  var before=targetCard.classList.contains('drop-before');
   clearDragStyles();
-  if(!dragId||dragId===targetId){dragId=null;return;}
-  var draggedTask=tasks.find(function(t){return t.id===dragId;});
+  if(!dragId)return;
+  if(dragId===targetId){
+    var parent=e.currentTarget.parentNode;
+    var sameTier=parent&&parent.id&&parent.id.indexOf('list-')===0?parent.id.replace('list-',''):targetTier;
+    var sameTask=placeDraggedTaskFromDom(sameTier);
+    if(sameTask){
+      dragDropped=true;
+      dragId=null;
+      renderBoard();
+      await persistTasks('Reorder: '+sameTask.title);
+    }
+    return;
+  }
+  var draggedTask=placeDraggedTaskFromDom(targetTier);
   if(!draggedTask){dragId=null;return;}
-  tasks.splice(tasks.indexOf(draggedTask),1);
-  var targetIdx=tasks.findIndex(function(t){return t.id===targetId;});
-  draggedTask.tier=targetTier;
-  tasks.splice(before?targetIdx:targetIdx+1,0,draggedTask);
+  dragDropped=true;
   dragId=null;
   renderBoard();
   await persistTasks('Reorder: '+draggedTask.title);
+}
+
+function sgDragStart(e,i){
+  sgDragIdx=i;
+  e.dataTransfer.effectAllowed='move';
+  e.dataTransfer.setData('text/plain','suggestion:'+i);
+}
+function sgDragEnd(){
+  sgDragIdx=null;
+  clearDragStyles();
 }
 
 /* SUGGESTION coverage check */
@@ -503,12 +561,17 @@ function suggestionCovered(s){
   return tasks.some(function(t){return t.entryId===s.entry_id;});
 }
 
+function inboxDataUrl(file,stampKey){
+  var base=(typeof INBOX_RAW==='string'&&INBOX_RAW)?INBOX_RAW:'https://raw.githubusercontent.com/begb0037admin/work-inbox/main';
+  return base.replace(/\/$/,'')+'/data/'+file+'?'+(stampKey||'_')+'='+Date.now();
+}
+
 /* INBOX SUGGESTIONS */
 async function loadInboxSuggestions(){
   var host=document.getElementById('inboxSuggestions');
   if(!host)return;
   try{
-    var res=await fetch('https://raw.githubusercontent.com/begb0037admin/work-inbox/main/data/inbox_suggestions.json?_='+Date.now());
+    var res=await fetch(inboxDataUrl('inbox_suggestions.json','_'));
     if(!res.ok)throw new Error('fetch failed');
     var data=await res.json();
     var d=sgDismissed();
@@ -525,7 +588,7 @@ async function loadInboxSuggestions(){
       +'Suggested '+escHtml(data.generated_at||'')+(stale?' — stale, briefing needs a refresh':'')
       +' \xb7 drag a card into a list below to add it as a task</div>';
     newTasks.forEach(function(s,i){
-      h+='<div class="sg-card" draggable="true" ondragstart="sgDragIdx='+i+'" ondragend="sgDragIdx=null;clearDragStyles()">'
+      h+='<div class="sg-card" draggable="true" ondragstart="sgDragStart(event,'+i+')" ondragend="sgDragEnd()">'
         +'<div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
         +'<div class="sg-desc">'+escHtml(s.description)+'</div>'
         +'<div class="sg-meta">From '+escHtml(s.email_from)+' \xb7 "'+escHtml(s.email_subject)+'" \xb7 '+escHtml(s.received||'')+'</div>'
@@ -671,7 +734,7 @@ function clickStat(tier){
 /* SIDEBAR BRIEFING STATS */
 async function loadSidebarBriefing(){
   try{
-    var res=await fetch('https://raw.githubusercontent.com/begb0037admin/work-inbox/main/data/briefing.json?t='+Date.now());
+    var res=await fetch(inboxDataUrl('briefing.json','t'));
     if(!res.ok)return;
     var d=await res.json();
     var _days=['Sun','Mon','Tues','Weds','Thurs','Fri','Sat'];
@@ -685,12 +748,13 @@ async function loadSidebarBriefing(){
       el.textContent=v+' email'+(v===1?'':'s');
       if(v>=2)el.classList.add('red');else if(v===1)el.classList.add('gold');
     }
-    _setCount('wi-urgent-count',d.urgent_count);
-    _setCount('wi-needs-count',d.needs_count);
+    _setCount('wi-urgent-count',d.urgent_count!=null?d.urgent_count:(Array.isArray(d.urgent)?d.urgent.length:null));
+    _setCount('wi-needs-count',d.needs_count!=null?d.needs_count:(Array.isArray(d.needs)?d.needs.length:(Array.isArray(d.needs_action)?d.needs_action.length:null)));
     var refEl=document.getElementById('wi-last-refreshed');
     if(refEl&&d.refreshed_at){
       try{
         var _t=new Date(d.refreshed_at.replace(' ','T'));
+        if(isNaN(_t.getTime()))throw new Error('unparsed refreshed_at');
         var _hh=_t.getHours().toString().padStart(2,'0');
         var _mm=_t.getMinutes().toString().padStart(2,'0');
         refEl.textContent=_days[_t.getDay()]+' '+_t.getDate()+' '+_months[_t.getMonth()]+' '+_hh+':'+_mm;
@@ -703,12 +767,19 @@ async function loadSidebarBriefing(){
 async function loadSidebarAbsences(){
   var el=document.getElementById('absencesSidebar');if(!el)return;
   try{
-    var res=await fetch('https://raw.githubusercontent.com/begb0037admin/work-inbox/main/data/briefing.json?t='+Date.now());
+    var res=await fetch(inboxDataUrl('briefing.json','t'));
     if(!res.ok){el.innerHTML='<span class="abs-none">Unavailable</span>';return;}
     var d=await res.json();
-    var abs=(d.absences||d.calendar_highlights||[]).filter(function(a){return/absence|leave|holiday/i.test(a);});
-    if(!abs.length){el.innerHTML='<span class="abs-none">None today</span>';return;}
-    el.innerHTML='<ul class="abs-list">'+abs.slice(0,5).map(function(a){return'<li>'+a.replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];})+'</li>';}).join('')+'</ul>';
+    var abs=(d.absences||d.calendar_highlights||[]).filter(Boolean);
+    if(!abs.length){el.innerHTML='<span class="abs-none">None recorded</span>';return;}
+    function fmtAbsence(a){
+      var text=String(a).trim();
+      if(text&&!/ - |returns|today|tomorrow|next week|date unknown/i.test(text)){
+        text+=' - date unknown';
+      }
+      return text.replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
+    }
+    el.innerHTML='<ul class="abs-list">'+abs.map(function(a){return'<li>'+fmtAbsence(a)+'</li>';}).join('')+'</ul>';
   }catch(e){el.innerHTML='<span class="abs-none">Unavailable</span>';}
 }
 
