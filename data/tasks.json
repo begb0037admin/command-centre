@@ -375,22 +375,6 @@
     "done": true
   },
   {
-    "id": "t023",
-    "title": "Respond to Support Call# 11688462 -- Ash VEA team",
-    "tier": "today",
-    "source": "Email 22/06 Marie Cooksey / Anna Carter-Windle",
-    "emailRef": "Support Call# 11688462",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663350000",
-    "summary": "Response required to Support Call# 11688462 re Ash VEA team. Kevin named in thread, response expected.",
-    "description": "Support Call# 11688462 concerns the Ash VEA team. Multiple emails received 22 June from Marie Cooksey and Anna Carter-Windle. Kevin is named in the emails and a response is expected. Inbox AI triage incorrectly classified as FYI based on subject line alone without reading the body.",
-    "actions": [
-      "[22 Jun 2026] Emails received from Marie Cooksey and Anna Carter-Windle on Support Call# 11688462 -- Kevin named, response expected.",
-      "[23 Jun 2026] Task created manually -- inbox triage had incorrectly classified as FYI.",
-      "[TODO] Open thread, read full context, and respond to Support Call# 11688462."
-    ],
-    "dateAdded": "2026-06-23"
-  },
-  {
     "id": "t035",
     "title": "WFM / GLAM Rostering -- set up resolution meeting",
     "tier": "today",
@@ -554,6 +538,22 @@
     "dateAdded": "2026-06-25",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078D895C0D0000",
     "done": true
+  },
+  {
+    "id": "t023",
+    "title": "Respond to Support Call# 11688462 -- Ash VEA team",
+    "tier": "today",
+    "source": "Email 22/06 Marie Cooksey / Anna Carter-Windle",
+    "emailRef": "Support Call# 11688462",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663350000",
+    "summary": "Response required to Support Call# 11688462 re Ash VEA team. Kevin named in thread, response expected.",
+    "description": "Support Call# 11688462 concerns the Ash VEA team. Multiple emails received 22 June from Marie Cooksey and Anna Carter-Windle. Kevin is named in the emails and a response is expected. Inbox AI triage incorrectly classified as FYI based on subject line alone without reading the body.",
+    "actions": [
+      "[22 Jun 2026] Emails received from Marie Cooksey and Anna Carter-Windle on Support Call# 11688462 -- Kevin named, response expected.",
+      "[23 Jun 2026] Task created manually -- inbox triage had incorrectly classified as FYI.",
+      "[TODO] Open thread, read full context, and respond to Support Call# 11688462."
+    ],
+    "dateAdded": "2026-06-23"
   },
   {
     "id": "t034",
