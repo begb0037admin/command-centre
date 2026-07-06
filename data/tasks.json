@@ -603,7 +603,8 @@
       "[AWAITING] Anne to confirm she will cover Nathan's Ultrix licence.",
       "[TODO] Chase Anne if no confirmation received within a few days."
     ],
-    "dateAdded": "2026-06-25"
+    "dateAdded": "2026-06-25",
+    "done": true
   },
   {
     "id": "t039",
