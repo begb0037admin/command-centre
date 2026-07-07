@@ -261,9 +261,10 @@ function cardHTML(t){
     +'<div class="task-drawer" id="drawer-'+t.id+'">'
     +desc
     +actions
-    +'<div class="dl">Update with AI</div>'
-    +'<textarea class="ai-input" id="ai-input-'+t.id+'" placeholder="Paste raw text here — Teams message, email, portal update — AI will summarise and add to Actions."></textarea>'
-    +'<button class="ai-log-btn" id="ai-btn-'+t.id+'" onclick="aiLog(\''+t.id+'\')" >Update with AI</button>'
+    +'<div class="ai-chat-bar">'
+    +'<input class="ai-input" id="ai-input-'+t.id+'" type="text" placeholder="Add context, paste a Teams message, or ask what to do next..." onkeydown="aiInputKeydown(event,\''+t.id+'\')" />'
+    +'<button class="ai-log-btn" id="ai-btn-'+t.id+'" onclick="aiLog(\''+t.id+'\')" aria-label="Update with AI" title="Update with AI">&uarr;</button>'
+    +'</div>'
     +'<div class="ai-status" id="ai-status-'+t.id+'"></div>'
     +'<div class="drawer-moves">'+moveBtns+'<button class="delete-btn" onclick="deleteTask(event,\''+t.id+'\')" >Delete</button></div>'
     +'</div>'
@@ -379,6 +380,13 @@ async function deleteTask(e,id){
 }
 
 /* AI UPDATE */
+function aiInputKeydown(e,id){
+  if(e.key==='Enter'){
+    e.preventDefault();
+    aiLog(id);
+  }
+}
+
 async function aiLog(id){
   var task=tasks.find(function(t){return t.id===id;});
   if(!task)return;
@@ -387,7 +395,7 @@ async function aiLog(id){
   var btn=document.getElementById('ai-btn-'+id);
   var rawText=inputEl?inputEl.value.trim():'';
   if(!rawText){if(statusEl)statusEl.textContent='Paste some text first.';return;}
-  if(btn){btn.disabled=true;btn.textContent='Processing…';}
+  if(btn){btn.disabled=true;btn.textContent='...';}
   if(statusEl)statusEl.textContent='';
   try{
     var workerBase=typeof WORKER_URL!=='undefined'?WORKER_URL:'https://cc-tasks-writer.kevinlelitte.workers.dev';
@@ -420,7 +428,7 @@ async function aiLog(id){
   }catch(e){
     if(statusEl)statusEl.textContent='Error: '+e.message;
   }finally{
-    if(btn){btn.disabled=false;btn.textContent='Update with AI';}
+    if(btn){btn.disabled=false;btn.innerHTML='&uarr;';}
   }
 }
 
