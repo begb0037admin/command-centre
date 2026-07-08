@@ -1,8 +1,8 @@
 # CONSTITUTION.md
 # The Operating Constitution
 
-Version : 2.1
-Status  : Published — amended 2026-07-02
+Version : 2.2
+Status  : Published — amended 2026-07-08
 Ratified: 2026-06-06
 Author  : Kevin Lelitte, HR Systems, University of Oxford
 
@@ -251,6 +251,44 @@ it does not enter the repository.
 
 ---
 
+## Section 12 — Approved Mockup Archiving Standard
+
+When Kevin explicitly approves a mockup or visual design (by saying
+"approved" or equivalent), the approving session must immediately:
+
+1. Save the approved Artifact as a static HTML file in the
+   `design-archive/` directory of the relevant repository.
+   Filename format: `YYYY-MM-DD-description.html`
+   Example: `design-archive/2026-07-08-linda-ai-panel.html`
+
+2. Commit the file to the repository's main branch with a message
+   recording the approval.
+
+3. Update HANDOVER.md to reference the local file path — not the
+   Artifact URL. Artifact URLs become inaccessible to future
+   sessions (403). The local file is the authoritative reference.
+
+**Future sessions must read the local file. They must never:**
+- Attempt to fetch the Artifact URL
+- Guess, regenerate, or approximate design details from memory
+- Proceed without reading the archived file when implementing an
+  approved design
+
+**Rationale:** This section was added after repeated session failures
+caused by inaccessible Artifact URLs. The approved split-panel
+mockup (8 Jul 2026) returned 403 to subsequent sessions. This forced
+the session to guess at SVG paths and design details, producing
+wrong results across multiple attempts and wasting significant time.
+The canonical design reference must live in the repository, not in
+a URL that only the creating session can access.
+
+This section is a companion to Section 11, not a contradiction:
+Section 11 governs the design process (Artifacts only, no repo
+commits until approved). Section 12 governs the moment of approval
+(immediately archive to repo so the record is permanent).
+
+---
+
 ## Version History
 
 | Version | Date       | Change                              |
@@ -278,3 +316,15 @@ it does not enter the repository.
 |         |            | Claude Artifacts and never          |
 |         |            | committed until production-ready.   |
 |         |            | Decision: Kevin Lelitte 2026-07-02. |
+| 2.2     | 2026-07-08 | Section 12 added — Approved Mockup  |
+|         |            | Archiving Standard. Rationale:      |
+|         |            | approved Artifact URLs return 403   |
+|         |            | to future sessions, causing         |
+|         |            | sessions to guess at design details |
+|         |            | (SVG paths, colours, layout).       |
+|         |            | Repeated wrong results for Linda AI |
+|         |            | sparkle star. Fix: on approval,     |
+|         |            | immediately commit static HTML to   |
+|         |            | design-archive/ and reference local |
+|         |            | path in HANDOVER.md.                |
+|         |            | Decision: Kevin Lelitte 2026-07-08. |
