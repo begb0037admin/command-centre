@@ -183,7 +183,9 @@
     "actions": [
       "[13 Apr 2026] Lindsey Spriggs chased for update -- no reply sent.",
       "[PARKED] Reply to Lindsey with update on Insight module reminder investigation. Action when at fuller hours.",
-      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)"
+      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)",
+      "[11 Jul 2026] KB check: 'PeopleXD Reporting- iCues V1.0' describes iCues as trigger-based reports in CoreInsight that automatically send alerts to stakeholders when thresholds are breached or events occur -- likely the direct answer to whether automated reminders can be enabled in Insight. Guide: https://begb0037admin.github.io/hr-fa-knowledge-base/library/HR%20Knowledge%20Base/How%20To%20Guides/Core%20Guides/PeopleXD%20Reporting-%20iCues%20V1.0.pdf",
+      "[TODO] Read the iCues guide above and confirm whether it answers Lindsey's original automated-reminder question; reply to her once confirmed."
     ],
     "dateAdded": "2026-06-08",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB70000"
@@ -199,7 +201,12 @@
     "actions": [
       "[03 Feb 2026] Lindsey Spriggs (on behalf of Rachel Bray) asked whether PeopleXD/Insight could produce reports comparable to the manual CDR/PD survey questions, to feed Concordat Action Plan reporting for My Development departments.",
       "[11 Jul 2026] Identified via Copilot email review -- no reply found anywhere in the thread.",
-      "[TODO] Research feasibility of a PeopleXD/Insight report approximating the CAP survey questions (CDR completion + professional development engagement by department). KB guides to start from: 'PeopleXD Reporting- Insight Fundamentals V1.0' and 'PeopleXD Insight user guides'.",
+      "[11 Jul 2026] KB check: nothing exists in the knowledge base specifically for 'Concordat' reporting -- this report would need to be built from scratch, not adapted from an existing guide.",
+      "[11 Jul 2026] KB pointer -- how to build the report: 'PeopleXD Reporting- Insight Fundamentals V1.0' (table/pivot reports, filters, calculations). Guide: https://begb0037admin.github.io/hr-fa-knowledge-base/library/HR%20Knowledge%20Base/How%20To%20Guides/Core%20Guides/PeopleXD%20Reporting-%20Insight%20Fundamentals%20V1.0.pdf",
+      "[11 Jul 2026] KB pointer -- full Insight guide library, covers all Insight functions including security permissions: https://help-peoplexd.theaccessgroup.com/en/articles/12856633-peoplexd-insight-user-guides",
+      "[11 Jul 2026] KB pointer -- approval process for new/changed Insight reports (Product Ownership Group / Head of HR Systems sign-off, naming conventions, archiving): 'Insight reports v3.0'. Guide: https://begb0037admin.github.io/hr-fa-knowledge-base/library/HR%20Knowledge%20Base/Change%20Management/Insight%20reports%20v3.0.docx",
+      "[TODO] Research feasibility of a PeopleXD/Insight report approximating the CAP survey questions (CDR completion + professional development engagement by department) using the guides above.",
+      "[TODO] Once feasibility is confirmed, follow the Insight report change-request/approval process above before building.",
       "[TODO] Reply to Lindsey Spriggs and Rachel Bray with feasibility outcome."
     ],
     "dateAdded": "2026-07-11"
@@ -216,7 +223,8 @@
       "[12 Feb 2026] Action raised: Kevin to explore permission controls preventing departments from editing/cloning shared Insight templates, after CDR templates were cloned by another department.",
       "[17 Feb 2026] Lindsey replied 'Understood, thank you for the update!' -- appears resolved, but no record of the actual fix applied.",
       "[11 Jul 2026] Identified via Copilot email review -- flagging for the record since resolution detail is missing.",
-      "[TODO] If revisited, confirm what permission fix was actually applied. KB pointer: 'PeopleXD Insight user guides' hub covers Insight admin/security permission settings."
+      "[11 Jul 2026] KB check: no existing guide specifically on this template-cloning/permissions incident. The Access Group's full Insight guide library covers general admin/security permission settings: https://help-peoplexd.theaccessgroup.com/en/articles/12856633-peoplexd-insight-user-guides",
+      "[TODO] If revisited, confirm what permission fix was actually applied, using the guide above as a starting point."
     ],
     "dateAdded": "2026-07-11"
   },
