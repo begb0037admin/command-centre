@@ -176,5 +176,9 @@ Data sources:
 
 Both fetched via GitHub API with the standard PAT.
 
+## Copilot Task Research Routine
+Trigger: Kevin knows a task was raised by a specific sender but the email/task got lost — "copilot brief", "check with copilot", "find this in outlook".
+When triggered, follow `docs/COPILOT_TASK_RESEARCH.md` exactly: Claude drafts the Outlook Copilot search brief (never Kevin), Kevin runs it and pastes the result back, Claude separates live asks from resolved threads, cross-checks `hr-fa-knowledge-base`, then writes to `tasks.json` under the standard backup-and-verify protocol.
+
 ## Branch and Merge Protocol
 Always push directly to main. If a branch must be used, merge it to main immediately upon completion — never leave files on a branch.
