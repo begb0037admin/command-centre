@@ -183,7 +183,11 @@
     "actions": [
       "[13 Apr 2026] Lindsey Spriggs chased for update -- no reply sent.",
       "[PARKED] Reply to Lindsey with update on Insight module reminder investigation. Action when at fuller hours.",
-      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)"
+      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)",
+      "[11 Jul 2026] Identified via Copilot email review: Lindsey Spriggs (on behalf of Rachel Bray) asked 03 Feb 2026 whether PeopleXD/Insight could produce reports comparable to the manual CDR/PD survey ('Annual reporting data for the Concordat Action Plan - baseline data to Dec 2025') for departments using My Development, to feed the University's Concordat Action Plan reporting. No reply found anywhere in the thread.",
+      "[TODO] Research feasibility of a PeopleXD/Insight report approximating the CAP survey questions (CDR completion + professional development engagement by department). KB guides to start from: 'PeopleXD Reporting- Insight Fundamentals V1.0' and 'PeopleXD Insight user guides'. Then reply to Lindsey Spriggs and Rachel Bray.",
+      "[11 Jul 2026] Identified via Copilot email review: 12 Feb 2026 action 'Kevin to explore permission controls preventing departments from editing shared templates' (CDR template cloning issue) -- appears resolved by 17 Feb 2026 (Lindsey replied 'Understood, thank you for the update!') but no record here of what the resolution was.",
+      "[TODO] If revisited, confirm what permission fix was actually applied. KB pointer: 'PeopleXD Insight user guides' hub covers Insight admin/security permission settings."
     ],
     "dateAdded": "2026-06-08",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB70000"
