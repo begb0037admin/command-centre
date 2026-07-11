@@ -183,14 +183,42 @@
     "actions": [
       "[13 Apr 2026] Lindsey Spriggs chased for update -- no reply sent.",
       "[PARKED] Reply to Lindsey with update on Insight module reminder investigation. Action when at fuller hours.",
-      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)",
-      "[11 Jul 2026] Identified via Copilot email review: Lindsey Spriggs (on behalf of Rachel Bray) asked 03 Feb 2026 whether PeopleXD/Insight could produce reports comparable to the manual CDR/PD survey ('Annual reporting data for the Concordat Action Plan - baseline data to Dec 2025') for departments using My Development, to feed the University's Concordat Action Plan reporting. No reply found anywhere in the thread.",
-      "[TODO] Research feasibility of a PeopleXD/Insight report approximating the CAP survey questions (CDR completion + professional development engagement by department). KB guides to start from: 'PeopleXD Reporting- Insight Fundamentals V1.0' and 'PeopleXD Insight user guides'. Then reply to Lindsey Spriggs and Rachel Bray.",
-      "[11 Jul 2026] Identified via Copilot email review: 12 Feb 2026 action 'Kevin to explore permission controls preventing departments from editing shared templates' (CDR template cloning issue) -- appears resolved by 17 Feb 2026 (Lindsey replied 'Understood, thank you for the update!') but no record here of what the resolution was.",
-      "[TODO] If revisited, confirm what permission fix was actually applied. KB pointer: 'PeopleXD Insight user guides' hub covers Insight admin/security permission settings."
+      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)"
     ],
     "dateAdded": "2026-06-08",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB70000"
+  },
+  {
+    "id": "t1783738155402",
+    "title": "Concordat Action Plan reporting -- Lindsey Spriggs / Rachel Bray",
+    "tier": "parked",
+    "source": "",
+    "emailRef": "",
+    "summary": "PeopleXD/Insight report needed to approximate the CDR/PD survey used for the Concordat Action Plan; no reply sent since the 03 Feb ask.",
+    "description": "Lindsey Spriggs (on behalf of Rachel Bray) asked 03 Feb 2026 whether PeopleXD/Insight could produce a report comparable to the manual CDR/PD survey ('Annual reporting data for the Concordat Action Plan - baseline data to Dec 2025') used for departments not on My Development, to feed the University's Concordat Action Plan reporting for departments that do use My Development. No reply found anywhere in the thread.",
+    "actions": [
+      "[03 Feb 2026] Lindsey Spriggs (on behalf of Rachel Bray) asked whether PeopleXD/Insight could produce reports comparable to the manual CDR/PD survey questions, to feed Concordat Action Plan reporting for My Development departments.",
+      "[11 Jul 2026] Identified via Copilot email review -- no reply found anywhere in the thread.",
+      "[TODO] Research feasibility of a PeopleXD/Insight report approximating the CAP survey questions (CDR completion + professional development engagement by department). KB guides to start from: 'PeopleXD Reporting- Insight Fundamentals V1.0' and 'PeopleXD Insight user guides'.",
+      "[TODO] Reply to Lindsey Spriggs and Rachel Bray with feasibility outcome."
+    ],
+    "dateAdded": "2026-07-11"
+  },
+  {
+    "id": "t1783738155403",
+    "title": "Insight report template permissions -- confirm resolution -- Lindsey Spriggs",
+    "tier": "parked",
+    "source": "",
+    "emailRef": "",
+    "summary": "CDR template cloning/permission glitch from Feb 2026 looks resolved by 17 Feb but no record of what the fix was; confirm if revisited.",
+    "description": "12 Feb 2026 action: Kevin to explore permission controls preventing departments from editing/cloning shared Insight report templates, after CDR templates were cloned by another department due to a permissions glitch. Lindsey's 17 Feb reply ('Understood, thank you for the update!') suggests this was resolved, but there is no record of what fix was actually applied.",
+    "actions": [
+      "[12 Feb 2026] Action raised: Kevin to explore permission controls preventing departments from editing/cloning shared Insight templates, after CDR templates were cloned by another department.",
+      "[17 Feb 2026] Lindsey replied 'Understood, thank you for the update!' -- appears resolved, but no record of the actual fix applied.",
+      "[11 Jul 2026] Identified via Copilot email review -- flagging for the record since resolution detail is missing.",
+      "[TODO] If revisited, confirm what permission fix was actually applied. KB pointer: 'PeopleXD Insight user guides' hub covers Insight admin/security permission settings."
+    ],
+    "dateAdded": "2026-07-11"
   },
   {
     "id": "t016",
