@@ -17,11 +17,10 @@
       "[19 Jun 2026] Kevin checked with the team on 15 June regarding support cover during early July while on leave.",
       "[23 Jun 2026] Julie has provided notice that both Michael and Emma are on leave during the week commencing 1 July.",
       "[23 Jun 2026] Kevin sent a follow-up request to Michael O'Sullivan asking him to confirm case creation email impact following new starter setup.",
-      "[03 Jul 2026] Kevin sent Michael O'Sullivan an Awards for Excellence nomination to Simon Burford and Marie Cooksey, indicating ongoing team engagement and communication. (email: Kevin (sent to: Simon Burford; Marie Cooksey) - Awards for Excellence — Michael O'Sullivan nomination — please review)",
-      "[31 Jul 2026] Kevin sent Simon a personal update on his phased return status and physiotherapy progress (action log entry only). (email: Kevin (sent to: Simon Burford) - Re: Surgery update - Sign off another week)"
+      "[03 Jul 2026] Kevin sent Michael O'Sullivan an Awards for Excellence nomination to Simon Burford and Marie Cooksey, indicating ongoing team engagement and communication. (email: Kevin (sent to: Simon Burford; Marie Cooksey) - Awards for Excellence — Michael O'Sullivan nomination — please review)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A0EB860F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF10000",
     "done": true
   },
   {
@@ -184,9 +183,7 @@
     "actions": [
       "[13 Apr 2026] Lindsey Spriggs chased for update -- no reply sent.",
       "[PARKED] Reply to Lindsey with update on Insight module reminder investigation. Action when at fuller hours.",
-      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)",
-      "[11 Jul 2026] KB check: 'PeopleXD Reporting- iCues V1.0' describes iCues as trigger-based reports in CoreInsight that automatically send alerts to stakeholders when thresholds are breached or events occur -- likely the direct answer to whether automated reminders can be enabled in Insight. Guide: https://begb0037admin.github.io/hr-fa-knowledge-base/library/HR%20Knowledge%20Base/How%20To%20Guides/Core%20Guides/PeopleXD%20Reporting-%20iCues%20V1.0.pdf",
-      "[TODO] Read the iCues guide above and confirm whether it answers Lindsey's original automated-reminder question; reply to her once confirmed."
+      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)"
     ],
     "dateAdded": "2026-06-08",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB70000"
@@ -195,19 +192,14 @@
     "id": "t1783738155402",
     "title": "Concordat Action Plan reporting -- Lindsey Spriggs / Rachel Bray",
     "tier": "parked",
-    "source": "Copilot email review 11/07",
-    "emailRef": "Annual CDR and professional development data for the Concordat Action Plan",
+    "source": "",
+    "emailRef": "",
     "summary": "PeopleXD/Insight report needed to approximate the CDR/PD survey used for the Concordat Action Plan; no reply sent since the 03 Feb ask.",
     "description": "Lindsey Spriggs (on behalf of Rachel Bray) asked 03 Feb 2026 whether PeopleXD/Insight could produce a report comparable to the manual CDR/PD survey ('Annual reporting data for the Concordat Action Plan - baseline data to Dec 2025') used for departments not on My Development, to feed the University's Concordat Action Plan reporting for departments that do use My Development. No reply found anywhere in the thread.",
     "actions": [
       "[03 Feb 2026] Lindsey Spriggs (on behalf of Rachel Bray) asked whether PeopleXD/Insight could produce reports comparable to the manual CDR/PD survey questions, to feed Concordat Action Plan reporting for My Development departments.",
       "[11 Jul 2026] Identified via Copilot email review -- no reply found anywhere in the thread.",
-      "[11 Jul 2026] KB check: nothing exists in the knowledge base specifically for 'Concordat' reporting -- this report would need to be built from scratch, not adapted from an existing guide.",
-      "[11 Jul 2026] KB pointer -- how to build the report: 'PeopleXD Reporting- Insight Fundamentals V1.0' (table/pivot reports, filters, calculations). Guide: https://begb0037admin.github.io/hr-fa-knowledge-base/library/HR%20Knowledge%20Base/How%20To%20Guides/Core%20Guides/PeopleXD%20Reporting-%20Insight%20Fundamentals%20V1.0.pdf",
-      "[11 Jul 2026] KB pointer -- full Insight guide library, covers all Insight functions including security permissions: https://help-peoplexd.theaccessgroup.com/en/articles/12856633-peoplexd-insight-user-guides",
-      "[11 Jul 2026] KB pointer -- approval process for new/changed Insight reports (Product Ownership Group / Head of HR Systems sign-off, naming conventions, archiving): 'Insight reports v3.0'. Guide: https://begb0037admin.github.io/hr-fa-knowledge-base/library/HR%20Knowledge%20Base/Change%20Management/Insight%20reports%20v3.0.docx",
-      "[TODO] Research feasibility of a PeopleXD/Insight report approximating the CAP survey questions (CDR completion + professional development engagement by department) using the guides above.",
-      "[TODO] Once feasibility is confirmed, follow the Insight report change-request/approval process above before building.",
+      "[TODO] Research feasibility of a PeopleXD/Insight report approximating the CAP survey questions (CDR completion + professional development engagement by department). KB guides to start from: 'PeopleXD Reporting- Insight Fundamentals V1.0' and 'PeopleXD Insight user guides'.",
       "[TODO] Reply to Lindsey Spriggs and Rachel Bray with feasibility outcome."
     ],
     "dateAdded": "2026-07-11"
@@ -216,16 +208,15 @@
     "id": "t1783738155403",
     "title": "Insight report template permissions -- confirm resolution -- Lindsey Spriggs",
     "tier": "parked",
-    "source": "Copilot email review 11/07",
-    "emailRef": "RE: Action raised in CDR/Professional Development meeting this morning",
+    "source": "",
+    "emailRef": "",
     "summary": "CDR template cloning/permission glitch from Feb 2026 looks resolved by 17 Feb but no record of what the fix was; confirm if revisited.",
     "description": "12 Feb 2026 action: Kevin to explore permission controls preventing departments from editing/cloning shared Insight report templates, after CDR templates were cloned by another department due to a permissions glitch. Lindsey's 17 Feb reply ('Understood, thank you for the update!') suggests this was resolved, but there is no record of what fix was actually applied.",
     "actions": [
       "[12 Feb 2026] Action raised: Kevin to explore permission controls preventing departments from editing/cloning shared Insight templates, after CDR templates were cloned by another department.",
       "[17 Feb 2026] Lindsey replied 'Understood, thank you for the update!' -- appears resolved, but no record of the actual fix applied.",
       "[11 Jul 2026] Identified via Copilot email review -- flagging for the record since resolution detail is missing.",
-      "[11 Jul 2026] KB check: no existing guide specifically on this template-cloning/permissions incident. The Access Group's full Insight guide library covers general admin/security permission settings: https://help-peoplexd.theaccessgroup.com/en/articles/12856633-peoplexd-insight-user-guides",
-      "[TODO] If revisited, confirm what permission fix was actually applied, using the guide above as a starting point."
+      "[TODO] If revisited, confirm what permission fix was actually applied. KB pointer: 'PeopleXD Insight user guides' hub covers Insight admin/security permission settings."
     ],
     "dateAdded": "2026-07-11"
   },
@@ -244,11 +235,10 @@
       "[AWAITING] James to progress contractor manual addition and email-less user resolution with supplier.",
       "[25 Jun 2026] Kevin requested access to the Azure CR 126017 link from Tony Boydell to review the SBS user exclusion change. (email: Kevin (sent to: Tony Boydell; James Salas Guillen; Erika Braverman) - Re: DSE System - exclude SBS users )",
       "[26 Jun 2026] Reviewed CR 126017. State: Approved (Sprint 45 - ORMS, Card and CRM Halo). Requirement: exclude staff where Primary appointment.universityOrgLevel3 = \"MQ\" (Said Business School) from DSE CSV extract. Acceptance criteria confirmed: SSO users with MQ primary appointment excluded; non-MQ users included. BA/PO: Tony Boydell (Azure Integration Platform, People Data).",
-      "[04 Jul 2026] Kevin submitted his nomination for Michael O'Sullivan to the Awards for Excellence scheme, following his earlier draft email. (email: Kevin (sent to: Jonathan Roger) - Re: Nominations open for this year’s Awards for Excellence Scheme (deadline: 3 July 2026))",
-      "[31 Jul 2026] James confirms SBS user exclusion from DSE has been successfully tested in TEST environment with sample outputs verified. (email: James Salas Guillen - RE: DSE System - exclude SBS users )"
+      "[04 Jul 2026] Kevin submitted his nomination for Michael O'Sullivan to the Awards for Excellence scheme, following his earlier draft email. (email: Kevin (sent to: Jonathan Roger) - Re: Nominations open for this year’s Awards for Excellence Scheme (deadline: 3 July 2026))"
     ],
     "dateAdded": "2026-06-09",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A03490910000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078D895C0D0000"
   },
   {
     "id": "t017",
