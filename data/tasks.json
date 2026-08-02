@@ -738,7 +738,8 @@
     "actions": [],
     "notes": "",
     "entryId": "TEST-PROMOTE-0002",
-    "dateAdded": "2026-08-02"
+    "dateAdded": "2026-08-02",
+    "done": true
   },
   {
     "id": "task-1785704730734",
