@@ -446,7 +446,7 @@
   {
     "id": "t030",
     "title": "Cority SFTP production feed error -- 22 June",
-    "tier": "tomorrow",
+    "tier": "parked",
     "source": "Cority Integration Platform 22/06",
     "emailRef": "[ERROR] Cority Employee Import Log File - 2026-06-22 17:15",
     "summary": "Cority production data feed SFTP connection failed 22 Jun. James managing -- Kevin to confirm resolved.",
@@ -455,7 +455,8 @@
       "[22 Jun 2026] Cority Integration Platform reported SFTP connection error for employee import at 17:15.",
       "[MONITOR] James managing -- confirm production feed error has been resolved.",
       "[TODO] Check with James that 22 Jun SFTP error is resolved and feed running correctly.",
-      "[25 Jun 2026] Cority SFTP connection error confirmed on 22 June at 17:15; CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-06-22 17:15)"
+      "[25 Jun 2026] Cority SFTP connection error confirmed on 22 June at 17:15; CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-06-22 17:15)",
+      "[02 Aug 2026] Moved to Parked - CHI Team notified and working the SFTP fix; external, not an open action for Kevin."
     ],
     "dateAdded": "2026-06-23",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663360000"
@@ -474,9 +475,11 @@
       "[24 Jun 2026] Raised at HR Systems Managers Meeting -- Kevin was working on a plan at FA catch-up that morning.",
       "[TODO] Identify who can provide first-line support cover w/c 6 July.",
       "[TODO] Notify Simon Burford and/or Marie Cooksey of the gap.",
-      "[TODO] Confirm cover arrangements and communicate to team."
+      "[TODO] Confirm cover arrangements and communicate to team.",
+      "[02 Aug 2026] Closed - target date (w/c 6 July) has passed by four weeks; task as written is moot."
     ],
-    "dateAdded": "2026-06-23"
+    "dateAdded": "2026-06-23",
+    "done": true
   },
   {
     "id": "t040",
@@ -495,11 +498,13 @@
       "[TODO] Exclude done tasks (commandCentre_done_v1 localStorage) and Parked tier.",
       "[TODO] Visual distinction from inbox email cards -- CC-sourced label.",
       "[TODO] Screenshot and get Kevin approval before pushing to main.",
-      "[30 Jun 2026] Kevin has raised a support portal email update request with Sarah Murphy, likely related to Work Inbox priority panel rendering. (email: Kevin (sent to: Sarah Murphy) - Request for support portal email update)"
+      "[30 Jun 2026] Kevin has raised a support portal email update request with Sarah Murphy, likely related to Work Inbox priority panel rendering. (email: Kevin (sent to: Sarah Murphy) - Request for support portal email update)",
+      "[02 Aug 2026] Closed - delivered. Command Centre Today/This Week tasks render as cards in the Work Inbox priority panel via fetch_inbox.py's priorities_today/tomorrow/week pull and renderPriorityCards() in app.js."
     ],
     "dateAdded": "2026-06-25",
     "status": "Scoped 25 Jun — build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded.",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EEA0000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EEA0000",
+    "done": true
   },
   {
     "id": "t031",
@@ -586,7 +591,7 @@
   {
     "id": "t036",
     "title": "Volunteering Hours -- forward Matt Thomas thread to Marie",
-    "tier": "today",
+    "tier": "parked",
     "source": "HR Systems Managers Meeting 24/06",
     "emailRef": "",
     "summary": "Matt Thomas emailed Marie twice about self-logging volunteering hours in PXD (not possible). Kevin to forward thread; Marie to respond reiterating explanation.",
@@ -596,7 +601,8 @@
       "[19 Jun 2026] Matt Thomas emailed again on the same issue.",
       "[24 Jun 2026] Raised at HR Systems Managers Meeting -- Marie to respond reiterating that self-logging is not possible. Kevin to forward the thread to enable Marie's response.",
       "[TODO] Kevin to forward Matt Thomas email thread to Marie.",
-      "[AWAITING] Marie to respond to Matt Thomas directly."
+      "[AWAITING] Marie to respond to Matt Thomas directly.",
+      "[02 Aug 2026] Moved to Parked - last action shows this is awaiting Marie's response to Matt Thomas, not an open action for Kevin."
     ],
     "dateAdded": "2026-06-25"
   },
