@@ -727,18 +727,5 @@
     "notes": "",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8AC40000",
     "dateAdded": "2026-08-02"
-  },
-  {
-    "id": "task-1785704730734",
-    "title": "TEST - promote flow check (safe to delete)",
-    "tier": "week",
-    "source": "Test Harness",
-    "summary": "",
-    "description": "Test suggestion so the promote flow can be exercised end to end after the rollback fix. Not real work - promote it or dismiss it, either is fine. Safe to delete at any time.",
-    "actions": [],
-    "notes": "",
-    "entryId": "TEST-PROMOTE-0001",
-    "dateAdded": "2026-08-02",
-    "done": true
   }
 ]
