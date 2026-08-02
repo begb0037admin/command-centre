@@ -318,7 +318,10 @@ function cardHTML(t){
     +'<span class="card-drag" onclick="event.stopPropagation()">⠇</span>'
     +'<button class="card-done '+doneCircleCls+'" onclick="toggleDone(event,\''+t.id+'\')" title="Mark done"></button>'
     +'<div class="card-body" onclick="toggleDrawer(\''+t.id+'\')">'
-    +'<div class="card-title '+titleDoneCls+'" id="title-'+t.id+'">'+escHtml(t.title)+src+badge+staleBadge+'</div>'
+    +'<div class="card-title '+titleDoneCls+'" id="title-'+t.id+'">'
+    +'<span class="card-title-text">'+escHtml(t.title)+'</span>'
+    +((src||badge||staleBadge)?'<span class="card-title-pills">'+src+badge+staleBadge+'</span>':'')
+    +'</div>'
     +descPreview
     +'</div>'
     +'<div class="card-actions">'+emailIcon+editIcon+'</div>'
