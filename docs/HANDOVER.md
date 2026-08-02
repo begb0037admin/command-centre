@@ -1,3 +1,24 @@
+# Handover — 02 August 2026, continued (Drew) — cc-tasks-writer Worker fix, PROPOSED NOT DEPLOYED
+
+## TL;DR (this addendum)
+Kevin asked for the Cloudflare Worker patch for the 502 / "Failed to fetch" instability. Got the real Worker source from Kevin (it's not in any repo). Found the actual bug is worse than the working hypothesis: `handleTasks()` always re-reads tasks.json fresh immediately before writing, so GitHub's sha-based conflict check almost never fires — meaning the Worker isn't failing to save on conflict, it's **silently succeeding and overwriting** whatever `fetch_inbox.py`'s Phase 3.6 wrote in the minutes since the browser tab last loaded. Also found and fixed: an active bug corrupting every daily `Archive/` backup for non-ASCII characters (£, en/em dash, curly quotes), an unhandled-exception path that's the likely real cause of "Failed to fetch", blanket 502s masking the actual GitHub error, and `/ai-log` reflecting any Origin instead of using the CORS allow-list. Full corrected source committed as a reference copy — **not deployed**, Kevin deploys manually via the Cloudflare dashboard (neither Drew nor the coordinator has Cloudflare access).
+
+**File:** `cloudflare-worker/cc-tasks-writer-proposed.js` (commit `4ef2fbf5e`) — read the header comment block for the full change list and reasoning; don't just diff it blind.
+
+**Deployment (Kevin, manual):** Cloudflare dashboard → Workers & Pages → cc-tasks-writer → Edit code → replace entire file with `cc-tasks-writer-proposed.js` → Save and Deploy. Structure mirrors the original exactly (same function/constant names) so it's an easy side-by-side diff, not a from-scratch rewrite to review.
+
+**Verified independently (Node, not just read-through):** the diagnosed backup-corruption bug reproduces exactly as described with the old code's decode/re-encode pattern, and the fix (straight base64 passthrough, no round-trip) produces clean output. `mergeRemote()`'s three cases (remote-longer-actions-wins, local-longer-kept, remote-only-task-appended) all verified against a hand-built test case. Full corrected file passes `node --check` as valid ES module syntax.
+
+**What this fixes without any client change:** the daily backup corruption, the unhandled-exception → "Failed to fetch" path, blanket 502s, `/ai-log` CORS. Also narrows (but does not close) the silent-clobber window: the Worker's own GET-to-PUT race (a few hundred ms) is now caught and merged instead of silently overwriting.
+
+**What this does NOT fix without a further, NOT-YET-APPROVED client-side change:** the much larger "browser tab open for minutes, fetch_inbox.py wrote in the meantime" clobber window — closing that needs the client to send a `baseSha` (the sha of the tasks.json version its in-memory copy is based on) so the Worker can detect staleness before writing rather than reacting to a conflict that, per the finding above, essentially never occurs today. The Worker-side half of this is already written and live in the proposed file (`body.baseSha`, inert/no-op if absent) — only the client half (`js/api.js`, `js/app.js`) is outstanding, deliberately not written or pushed, since this is an architecture change needing Kevin's explicit go-ahead, not a bug fix. Full proposal sketch is in the `PHASE 2` comment block at the bottom of the proposed Worker file.
+
+**Also flagged, not fixed (out of scope, lower stakes):** `handleInboxState` (ticks.json) has the same fresh-GET-then-PUT shape as `handleTasks` did, so two browser tabs syncing ticks around the same time could plausibly clobber each other the same way. Ticks are booleans though — much lower stakes than losing a real action-log entry — and this wasn't reported as broken, so left alone.
+
+**Honest unverified list:** none of this has run against the real Worker — no Cloudflare access this session, same as always. The working hypothesis behind the whole fix (that `fetch_inbox.py`'s direct-to-GitHub writes are the concurrent writer causing the clobber) is still a hypothesis, not proven — strong circumstantial support (timing correlation with auto-promotion/triage-cap changes, and `fetch_inbox.py` demonstrably bypasses this Worker entirely per its own CLAUDE.md), but nobody has caught a live 409 or a live clobber in the act. Kevin confirmed the `HRIS_GITHUB_PAT` is set to never expire, so that's ruled out as a cause. The `baseSha`-via-ETag idea in the Phase 2 sketch is unverified — don't assume `github-proxy.lelitte.co.uk` forwards GitHub's ETag header until checked live.
+
+---
+
 # Handover — 02 August 2026 (Drew)
 
 ## TL;DR
