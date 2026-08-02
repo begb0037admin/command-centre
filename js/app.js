@@ -88,6 +88,22 @@ function showView(v){
 }
 
 /* RENDER */
+/* Board-level staleness summary. Individual badges show which cards have gone
+   quiet; this shows how much of the board has, which is the part that is easy
+   to miss when almost every card is affected. */
+function renderStaleSummary(){
+  var host=document.getElementById('staleSummary');
+  if(!host)return;
+  var live=tasks.filter(function(t){return !t.done;});
+  var quiet=live.filter(function(t){return staleDays(t)!==null;});
+  var urgentQuiet=quiet.filter(function(t){return t.tier==='today'||t.tier==='tomorrow';});
+  if(!quiet.length){host.style.display='none';host.innerHTML='';return;}
+  host.style.display='';
+  host.innerHTML='<strong>'+quiet.length+' of '+live.length+'</strong> open tasks have had no activity logged for a while'
+    +(urgentQuiet.length?' — including <strong>'+urgentQuiet.length+'</strong> still marked Today or Tomorrow':'')
+    +'. Tasks are marked quiet after 7 days (Today/Tomorrow), 21 days (This Week) or 45 days (Parked).';
+}
+
 function renderBoard(){
   var showDone=getShowDone();
   updateDoneToggleBtn();
@@ -100,6 +116,7 @@ function renderBoard(){
     var badge=document.getElementById('badge-'+tier);if(badge)badge.textContent=allItems.length;
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
+  renderStaleSummary();
   var badgeTotal=document.getElementById('badge-total'); if(badgeTotal) badgeTotal.textContent=tasks.length;
   var tcToday=document.getElementById('tc-today'); if(tcToday) tcToday.textContent=tasks.filter(function(t){return t.tier==='today'&&!t.done;}).length;
   var tcTom=document.getElementById('tc-tomorrow'); if(tcTom) tcTom.textContent=tasks.filter(function(t){return t.tier==='tomorrow'&&!t.done;}).length;
@@ -212,6 +229,44 @@ function renderStaleBanner(){
   panel.style.display='';
 }
 
+/* Most recent activity timestamp for a task.
+   Prefers explicit lastUpdated/dateAdded fields; otherwise reads the newest
+   [DD Mon YYYY] stamp from the action log, which is how the inbox feed and
+   manual edits actually record progress. Returns 0 when nothing is dated. */
+var CC_MONTHS={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+function lastActivityTs(t){
+  var best=0;
+  ['lastUpdated','dateAdded'].forEach(function(f){
+    if(t[f]){var v=new Date(t[f]).getTime();if(!isNaN(v)&&v>best)best=v;}
+  });
+  var acts=t.actions;
+  if(acts){
+    if(!Array.isArray(acts))acts=[acts];
+    acts.forEach(function(a){
+      var m=/^\s*\[(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\.?\s*(\d{4})?/.exec(String(a));
+      if(!m)return;
+      var mo=CC_MONTHS[m[2].toLowerCase()];
+      if(mo===undefined)return;
+      var yr=m[3]?parseInt(m[3],10):new Date().getFullYear();
+      var v=new Date(yr,mo,parseInt(m[1],10)).getTime();
+      if(!isNaN(v)&&v>best)best=v;
+    });
+  }
+  return best;
+}
+
+/* Days since last activity, but only once it exceeds what the task's own tier
+   implies. Returns null when the task is not overdue for attention. */
+var CC_STALE_DAYS={today:7,tomorrow:7,week:21,parked:45};
+function staleDays(t){
+  var ts=lastActivityTs(t);
+  if(!ts)return null;
+  var days=Math.floor((Date.now()-ts)/(24*3600*1000));
+  var threshold=CC_STALE_DAYS[t.tier];
+  if(threshold===undefined)threshold=21;
+  return days>=threshold?days:null;
+}
+
 /* CARD HTML */
 function cardHTML(t){
   var done=!!t.done;
@@ -227,6 +282,16 @@ function cardHTML(t){
     var updatedTs=t.lastUpdated?new Date(t.lastUpdated).getTime():0;
     if(updatedTs>cutoff)badge='<span class="new-badge badge-updated">UPDATED</span>';
     else if(addedTs>cutoff)badge='<span class="new-badge badge-new">NEW</span>';
+  }
+
+  /* STALE badge - judged against the tier, not a flat age.
+     A parked task sitting quiet for a month is working as intended; a task
+     still marked Today after weeks of silence is the thing worth surfacing,
+     so the urgent tiers get a much shorter fuse. */
+  var staleBadge='';
+  if(!done){
+    var days=staleDays(t);
+    if(days!==null)staleBadge='<span class="new-badge badge-stale" title="Marked '+tierLabel(t.tier)+' but no activity logged for '+days+' days">'+days+'D QUIET</span>';
   }
 
   var emailIcon=t.entryId?'<button class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</button>':'';
@@ -253,7 +318,7 @@ function cardHTML(t){
     +'<span class="card-drag" onclick="event.stopPropagation()">⠇</span>'
     +'<button class="card-done '+doneCircleCls+'" onclick="toggleDone(event,\''+t.id+'\')" title="Mark done"></button>'
     +'<div class="card-body" onclick="toggleDrawer(\''+t.id+'\')">'
-    +'<div class="card-title '+titleDoneCls+'" id="title-'+t.id+'">'+escHtml(t.title)+src+badge+'</div>'
+    +'<div class="card-title '+titleDoneCls+'" id="title-'+t.id+'">'+escHtml(t.title)+src+badge+staleBadge+'</div>'
     +descPreview
     +'</div>'
     +'<div class="card-actions">'+emailIcon+editIcon+'</div>'
