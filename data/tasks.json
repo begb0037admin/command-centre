@@ -750,6 +750,7 @@
     "actions": [],
     "notes": "",
     "entryId": "TEST-PROMOTE-0001",
-    "dateAdded": "2026-08-02"
+    "dateAdded": "2026-08-02",
+    "done": true
   }
 ]
