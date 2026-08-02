@@ -573,24 +573,6 @@
     "dateAdded": "2026-06-23"
   },
   {
-    "id": "t034",
-    "title": "Sickness Absence Reporting -- open absence bug",
-    "tier": "today",
-    "source": "HR Systems Managers Meeting 24/06 (Simon Burford)",
-    "emailRef": "",
-    "summary": "Existing report not picking up unclosed absences. Pay impact: staff gone into half pay. Kevin to investigate: report fix or system issue.",
-    "description": "The existing sickness absence report is not picking up open-ended (unclosed) absences. This occurs when staff return to work but the absence record in PeopleXD is not closed. As a result, individuals have gone into half pay. Issue flagged by Simon Burford at the HR Systems Managers Meeting on 24 June. A task number was shared in the meeting. Kevin to investigate whether this is a report fix (SQL/RDL) or a system data quality issue requiring a data correction process.",
-    "actions": [
-      "[24 Jun 2026] Issue raised at HR Systems Managers Meeting by Simon Burford -- sickness absence report not picking up open-ended absences. Pay impact confirmed: individuals gone into half pay. Task number shared in meeting.",
-      "[TODO] Retrieve and log the task number shared at the meeting.",
-      "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL) or a system data issue in PeopleXD.",
-      "[TODO] Confirm fix approach and communicate resolution to Simon Burford.",
-      "[03 Jul 2026] Sarah Rowles' email to Henry about OSM request for manager access to UOXU is linked to the sickness absence reporting investigation that Kevin flagged at the HR Systems Managers Meeting. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)"
-    ],
-    "dateAdded": "2026-06-25",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB70000"
-  },
-  {
     "id": "t036",
     "title": "Volunteering Hours -- forward Matt Thomas thread to Marie",
     "tier": "parked",
@@ -705,6 +687,24 @@
       "[TODO] Report back to Simon so the management team can pull together a formal response to Katherine Corr (PACS)."
     ],
     "dateAdded": "2026-06-29"
+  },
+  {
+    "id": "t034",
+    "title": "Sickness Absence Reporting -- open absence bug",
+    "tier": "tomorrow",
+    "source": "HR Systems Managers Meeting 24/06 (Simon Burford)",
+    "emailRef": "",
+    "summary": "Existing report not picking up unclosed absences. Pay impact: staff gone into half pay. Kevin to investigate: report fix or system issue.",
+    "description": "The existing sickness absence report is not picking up open-ended (unclosed) absences. This occurs when staff return to work but the absence record in PeopleXD is not closed. As a result, individuals have gone into half pay. Issue flagged by Simon Burford at the HR Systems Managers Meeting on 24 June. A task number was shared in the meeting. Kevin to investigate whether this is a report fix (SQL/RDL) or a system data quality issue requiring a data correction process.",
+    "actions": [
+      "[24 Jun 2026] Issue raised at HR Systems Managers Meeting by Simon Burford -- sickness absence report not picking up open-ended absences. Pay impact confirmed: individuals gone into half pay. Task number shared in meeting.",
+      "[TODO] Retrieve and log the task number shared at the meeting.",
+      "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL) or a system data issue in PeopleXD.",
+      "[TODO] Confirm fix approach and communicate resolution to Simon Burford.",
+      "[03 Jul 2026] Sarah Rowles' email to Henry about OSM request for manager access to UOXU is linked to the sickness absence reporting investigation that Kevin flagged at the HR Systems Managers Meeting. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)"
+    ],
+    "dateAdded": "2026-06-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EB70000"
   },
   {
     "id": "task-1785700344174",
