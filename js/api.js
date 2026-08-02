@@ -113,11 +113,14 @@ async function persistTasks(msg){
     if(!res.ok){
       showSaveToast('error','Save failed — HTTP '+res.status+' (tap to dismiss)');
       console.warn('Writer error',res.status);
+      return false;
     } else {
       showSaveToast('success','Saved ✓');
+      return true;
     }
   }catch(e){
     showSaveToast('error','Save failed — '+e.message+' (tap to dismiss)');
     console.warn('Writer fetch failed',e);
+    return false;
   }
 }
