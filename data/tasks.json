@@ -206,10 +206,11 @@
       "[26 Jun 2026] Reviewed CR 126017. State: Approved (Sprint 45 - ORMS, Card and CRM Halo). Requirement: exclude staff where Primary appointment.universityOrgLevel3 = \"MQ\" (Said Business School) from DSE CSV extract. Acceptance criteria confirmed: SSO users with MQ primary appointment excluded; non-MQ users included. BA/PO: Tony Boydell (Azure Integration Platform, People Data).",
       "[04 Jul 2026] Kevin submitted his nomination for Michael O'Sullivan to the Awards for Excellence scheme, following his earlier draft email. (email: Kevin (sent to: Jonathan Roger) - Re: Nominations open for this year’s Awards for Excellence Scheme (deadline: 3 July 2026))",
       "[31 Jul 2026] James confirms SBS user exclusion from DSE has been successfully tested in TEST environment with sample outputs verified. (email: James Salas Guillen - RE: DSE System - exclude SBS users )",
-      "[02 Aug 2026] James confirms funding approval for SBS exclusion from DSE upload and references progress on the change. (email: James Salas Guillen - RE: DSE System - exclude SBS users )"
+      "[02 Aug 2026] James confirms funding approval for SBS exclusion from DSE upload and references progress on the change. (email: James Salas Guillen - RE: DSE System - exclude SBS users )",
+      "[02 Aug 2026] Tony Boydell confirmed the SBS exclusion change has already been completed and sample outputs posted to TEST file share. (email: Tony Boydell - Re: DSE System - exclude SBS users )"
     ],
     "dateAdded": "2026-06-09",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A034908D0000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A034908F0000"
   },
   {
     "id": "t017",
