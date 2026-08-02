@@ -729,19 +729,6 @@
     "dateAdded": "2026-08-02"
   },
   {
-    "id": "task-1785704724770",
-    "title": "TEST - second promote check (safe to delete)",
-    "tier": "week",
-    "source": "Test Harness",
-    "summary": "",
-    "description": "Spare test suggestion in case the first errors on save. Different tier (today) so tier routing gets checked too. Not real work - safe to delete at any time.",
-    "actions": [],
-    "notes": "",
-    "entryId": "TEST-PROMOTE-0002",
-    "dateAdded": "2026-08-02",
-    "done": false
-  },
-  {
     "id": "task-1785704730734",
     "title": "TEST - promote flow check (safe to delete)",
     "tier": "week",
