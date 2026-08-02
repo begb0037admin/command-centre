@@ -694,9 +694,19 @@ async function promoteSuggestion(idx,tier){
   var newTask={id:'task-'+Date.now(),title:s.title,tier:tier,source:s.email_from||'inbox',summary:'',description:s.description||'',actions:[],notes:'',entryId:s.entry_id||'',dateAdded:new Date().toISOString().slice(0,10)};
   merged.push(newTask);
   tasks=merged;
-  dismissSuggestion('n_'+s.entry_id);
   renderBoard();
-  await persistTasks('Add task from inbox: '+newTask.title);
+  var ok=await persistTasks('Add task from inbox: '+newTask.title);
+  if(ok){
+    dismissSuggestion('n_'+s.entry_id);
+    showView('board');
+  } else {
+    /* Save failed (e.g. Worker 502) -- roll back the in-memory add so the
+       board does not show an unsaved task, and leave the suggestion card
+       in the list (dismissSuggestion was never called) instead of
+       silently losing it. */
+    tasks=tasks.filter(function(t){return t.id!==newTask.id;});
+    renderBoard();
+  }
   loadInboxSuggestions();
 }
 
