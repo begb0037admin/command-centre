@@ -134,8 +134,11 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .card-done.done{background:#22c55e;border-color:#22c55e}
 .card-done.done::after{content:'\2713';color:#fff;font-size:9px;font-weight:800;line-height:1}
 .card-body{flex:1;min-width:0;cursor:pointer}
-.card-title{font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:4px;transition:color .15s;line-height:1.35}
+.card-title{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:4px;transition:color .15s;line-height:1.35}
 .card-title.done{text-decoration:line-through;color:var(--text-muted);font-weight:500}
+.card-title-text{min-width:0}
+.card-title-pills{display:flex;flex-shrink:0;align-items:center;gap:6px;margin-left:auto}
+.card-title-pills .badge,.card-title-pills .new-badge{margin-left:0}
 .card-actions{display:flex;flex-shrink:0;gap:6px;align-items:center;padding-top:1px}
 .card-icon{width:26px;height:26px;border-radius:5px;border:1px solid #e5e9f2;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#94a3b8;font-size:12px;transition:background .15s,color .15s,border-color .15s;flex-shrink:0}
 .card-icon:hover{background:#eff6ff;color:#3b82f6;border-color:#bfdbfe}
