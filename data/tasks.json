@@ -747,5 +747,19 @@
     "actions": [
       "[03 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - SH&SM Project - HR Systems Tender Evaluation Response (pt. 2))."
     ]
+  },
+  {
+    "id": "t2608031500570",
+    "title": "DTP1092 College Staff into PXD - complete integrations testing by 14 Aug",
+    "tier": "week",
+    "source": "Inbox - Crispin Muncaster, 2026-08-03 14:18",
+    "emailRef": "DTP1092 College Staff into PXD - Integrations testing",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A2EC0F9D0000",
+    "summary": "",
+    "description": "Crispin Muncaster is requesting confirmation that integrations testing for the College Staff into PXD project can be completed by Friday 14 August 2026. This is a key deliverable for DTP1092 with Guy Williams and Simon involved on the IT side.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[03 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)."
+    ]
   }
 ]
