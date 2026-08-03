@@ -246,9 +246,11 @@
       "[AWAITING] Visual Studio 2022 licensing confirmed before further migrations proceed.",
       "[TODO] Confirm with Asta current status of remaining trial users (Simon Burford ADMN2716, David Sanders UOHS0054, Asta Palmer OUIT0422).",
       "[TODO] Agree revised delivery timeline with Desktop Services once VS2022 licensing sorted.",
-      "[TODO] Update user guidance, account provisioning process, and first-line support docs before broader rollout."
+      "[TODO] Update user guidance, account provisioning process, and first-line support docs before broader rollout.",
+      "[03 Aug 2026] Simon Burford reports Nexus team have populated six PeopleXD data access groups in Entra ID with user lists provided by Asta on 16 July, advancing the SSO migration work. (email: Simon Burford - FW: Creation of your 6 PeopleXD data access groups in Entra ID)"
     ],
-    "dateAdded": "2026-06-25"
+    "dateAdded": "2026-06-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8ACB0000"
   },
   {
     "id": "t1781099896490",
@@ -376,10 +378,11 @@
       "[AWAITING] Division Code resolution confirmed before proceeding.",
       "[03 Jul 2026] Tony Boydell sent Acceptance Criteria for Company 10/Company 90 User Scenarios, advancing the testing phase of the DTP1092 PXD Company 90 setup work. (email: Tony Boydell - Re: DTP1092 PXD Company 90 Testing)",
       "[03 Jul 2026] Crispin Muncaster flagged clarification and guidance needed on DTP1092 Company 90 testing; requests meeting slot. (email: Crispin Muncaster - DTP1092 PXD Company 90 Testing)",
-      "[03 Jul 2026] Crispin Muncaster has requested to move an earlier meeting slot for DTP1092 College staff in PXD work. (email: Crispin Muncaster - DTP1092 College staff in PXD)"
+      "[03 Jul 2026] Crispin Muncaster has requested to move an earlier meeting slot for DTP1092 College staff in PXD work. (email: Crispin Muncaster - DTP1092 College staff in PXD)",
+      "[03 Aug 2026] Crispin Muncaster forwards DTP1092 College Staff into PXD Integrations testing update from Guy Williams regarding progress on the college data project. (email: Crispin Muncaster - FW: DTP1092 College Staff into PXD - Integrations testing)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EBB0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8ACC0000",
     "done": true
   },
   {
@@ -729,5 +732,19 @@
     "notes": "",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8AC40000",
     "dateAdded": "2026-08-02"
+  },
+  {
+    "id": "t2608030857560",
+    "title": "Attend SH&SM Project HR Systems Tender Evaluation Response meeting",
+    "tier": "week",
+    "source": "Inbox - Christopher Sanders, 2026-07-27 11:00",
+    "emailRef": "SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8AC60000",
+    "summary": "",
+    "description": "Christopher Sanders has sent two emails (pt. 1 and pt. 2) with Microsoft Teams meeting links for SH&SM Project HR Systems Tender Evaluation Response. Kevin needs to participate in this evaluation discussion related to the Health & Safety Management System (DTP1334) project.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[03 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - SH&SM Project - HR Systems Tender Evaluation Response (pt. 2))."
+    ]
   }
 ]
