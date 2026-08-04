@@ -120,10 +120,12 @@
       "[TODO] Once SoundCloud contact made, agree migration of WFM DPIA into SoundCloud as the pilot case.",
       "[04 Jul 2026] Marie unavailable due to annual leave; Kevin to assess whether signature can be expedited or if chase should be deferred until her return.",
       "[02 Aug 2026] Marie confirmed that DPIA v0.2 should be routed through SoundCloud pilot before formal sign-off, to test for issues or duplication. Three related DPIAs are in scope: PeopleXD (main), WFM, and college data item. Kevin confirmed as lead for progressing this work through SoundCloud pilot.",
-      "[02 Aug 2026] Kevin awaiting SoundCloud pilot invitation to proceed with migrating the three in-scope DPIAs (PeopleXD, WFM, college data item) into the pilot platform for testing before formal sign-off."
+      "[02 Aug 2026] Kevin awaiting SoundCloud pilot invitation to proceed with migrating the three in-scope DPIAs (PeopleXD, WFM, college data item) into the pilot platform for testing before formal sign-off.",
+      "[04 Aug 2026] Marie's email acknowledges the DPIA work completed; Kevin should await her final sign-off to proceed to Information Compliance Team. (email: Marie Cooksey - RE: draft DPIA for college record to PXD)"
     ],
     "dateAdded": "2026-06-08",
-    "status": "Awaiting Marie Cooksey's Stage 7 signature (chase as and when). SoundCloud being piloted at Oxford for DPIAs — WFM DPIA proposed as pilot case; awaiting team contact."
+    "status": "Awaiting Marie Cooksey's Stage 7 signature (chase as and when). SoundCloud being piloted at Oxford for DPIAs — WFM DPIA proposed as pilot case; awaiting team contact.",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A381525B0000"
   },
   {
     "id": "t010",
@@ -740,12 +742,13 @@
     "tier": "week",
     "source": "Inbox - Christopher Sanders, 2026-07-27 11:00",
     "emailRef": "SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8AC60000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A2EC0F9D0000",
     "summary": "",
     "description": "Christopher Sanders has sent two emails (pt. 1 and pt. 2) with Microsoft Teams meeting links for SH&SM Project HR Systems Tender Evaluation Response. Kevin needs to participate in this evaluation discussion related to the Health & Safety Management System (DTP1334) project.",
     "origin": "inbox-auto",
     "actions": [
-      "[03 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - SH&SM Project - HR Systems Tender Evaluation Response (pt. 2))."
+      "[03 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)).",
+      "[04 Aug 2026] Crispin has confirmed the 14 August deadline for integrations testing completion. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)"
     ]
   },
   {
@@ -774,7 +777,8 @@
     "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
     "origin": "inbox-auto",
     "actions": [
-      "[04 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing)."
+      "[04 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing).",
+      "[04 Aug 2026] Crispin has sent the discussion request for testing assumptions and steps for integrations testing. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing)"
     ]
   }
 ]
