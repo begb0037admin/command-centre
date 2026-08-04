@@ -307,7 +307,8 @@
       "[TODO] Render updated report(s) in Visual Studio and deploy DEV -> TEST -> QA -> LIVE.",
       "[TODO] Verify output in LIVE environment before payroll run.",
       "[24 Jun 2026] Tracy asked us to hang fire with this — awaiting her response before continuing.",
-      "[AWAITING] Tracy's response before any SQL work proceeds."
+      "[AWAITING] Tracy's response before any SQL work proceeds.",
+      "[04 Aug 2026] Ticket closed by Tracy — no further action required. Pay Code 121 / PAYPAY25 SQL amendment task is complete and can be marked as closed."
     ],
     "dateAdded": "2026-06-15"
   },
