@@ -762,5 +762,19 @@
       "[03 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing).",
       "[04 Aug 2026] Crispin has confirmed integrations testing deadline of Friday 14 August 2026 is reasonable and is requesting confirmation from Kevin. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)"
     ]
+  },
+  {
+    "id": "t2608041500480",
+    "title": "Schedule DTP1092 integrations testing discussion with Crispin",
+    "tier": "tomorrow",
+    "source": "Inbox - Crispin Muncaster, 2026-08-04 10:31",
+    "emailRef": "DTP1092 College Staff into PXD - Testing",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A38152580000",
+    "summary": "",
+    "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[04 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing)."
+    ]
   }
 ]
