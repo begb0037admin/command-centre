@@ -310,7 +310,8 @@
       "[AWAITING] Tracy's response before any SQL work proceeds.",
       "[04 Aug 2026] Ticket closed by Tracy — no further action required. Pay Code 121 / PAYPAY25 SQL amendment task is complete and can be marked as closed."
     ],
-    "dateAdded": "2026-06-15"
+    "dateAdded": "2026-06-15",
+    "done": true
   },
   {
     "id": "t020",
