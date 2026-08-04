@@ -596,7 +596,8 @@
       "[AWAITING] Marie to respond to Matt Thomas directly.",
       "[02 Aug 2026] Moved to Parked - last action shows this is awaiting Marie's response to Matt Thomas, not an open action for Kevin."
     ],
-    "dateAdded": "2026-06-25"
+    "dateAdded": "2026-06-25",
+    "done": true
   },
   {
     "id": "t037",
