@@ -478,7 +478,7 @@
     "tier": "tomorrow",
     "source": "Julie Hickman 23/06",
     "emailRef": "RE: Support cover for first two weeks in July",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF535000787628C1C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A0EB860F0000",
     "summary": "Both Michael AND Emma off w/c 1 July. No first-line support cover that week. Plan needed today.",
     "description": "Julie Hickman confirmed on 23 June that both Michael O'Sullivan AND Emma are on leave during the week commencing 6 July 2026. This leaves no first-line HR Systems support cover for that week. Kevin needs to decide who covers, what can be deferred, and whether Simon Burford or Marie Cooksey need to be informed or involved.",
     "actions": [
@@ -487,7 +487,8 @@
       "[TODO] Identify who can provide first-line support cover w/c 6 July.",
       "[TODO] Notify Simon Burford and/or Marie Cooksey of the gap.",
       "[TODO] Confirm cover arrangements and communicate to team.",
-      "[02 Aug 2026] Closed - target date (w/c 6 July) has passed by four weeks; task as written is moot."
+      "[02 Aug 2026] Closed - target date (w/c 6 July) has passed by four weeks; task as written is moot.",
+      "[05 Aug 2026] Kevin signalled to Simon on 31 July that he is undergoing physiotherapy and provided a personal update on his recovery status. (email: Kevin (sent to: Simon Burford) - Re: Surgery update - Sign off another week)"
     ],
     "dateAdded": "2026-06-23",
     "done": true
