@@ -802,5 +802,33 @@
       "[06 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting).",
       "[06 Aug 2026] Crispin sent the integrations link for tomorrow's testing meeting (Friday 7 August). (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)"
     ]
+  },
+  {
+    "id": "t2608061800540",
+    "title": "Attend Oxford University Evo Pre project meeting in Simon's absence",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-06 16:44",
+    "emailRef": "FW: Oxford University Evo Pre project meeting ",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431F0000",
+    "summary": "",
+    "description": "Simon Burford is asking Kevin to attend the Oxford University Evo Pre project meeting in his absence. Julian Williams from IT Services will be attending. Kevin needs to confirm his availability and prepare to represent HR Systems on this project.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[06 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Oxford University Evo Pre project meeting )."
+    ]
+  },
+  {
+    "id": "t2608061800541",
+    "title": "Attend Incident Reporting PUG meeting",
+    "tier": "week",
+    "source": "Inbox - Christopher Sanders, 2026-08-06 15:11",
+    "emailRef": "Incident Reporting PUG",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431E0000",
+    "summary": "",
+    "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the Incident Reporting PUG. Kevin needs to attend this meeting to participate in the agenda discussion.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[06 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - Incident Reporting PUG)."
+    ]
   }
 ]
