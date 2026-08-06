@@ -777,14 +777,29 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-04 10:31",
     "emailRef": "DTP1092 College Staff into PXD - Testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A43D86D10000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A381525A0000",
     "summary": "",
     "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
     "origin": "inbox-auto",
     "actions": [
       "[04 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing).",
       "[04 Aug 2026] Crispin has sent the discussion request for testing assumptions and steps for integrations testing. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing)",
-      "[05 Aug 2026] Crispin has sent the integrations link in readiness for tomorrow's testing meeting. (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)"
+      "[05 Aug 2026] Crispin has sent the integrations link in readiness for tomorrow's testing meeting. (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)",
+      "[06 Aug 2026] Simon confirmed he can support Asta on Friday 7 August and is expecting Kevin to be back for the testing discussion. (email: Simon Burford - RE: Michael - Annual Leave)"
+    ]
+  },
+  {
+    "id": "t2608060900570",
+    "title": "Attend DTP1092 integrations testing meeting tomorrow (Friday 7 Aug)",
+    "tier": "tomorrow",
+    "source": "Inbox - Crispin Muncaster, 2026-08-05 09:20",
+    "emailRef": "DTP1092 College Staff to PXD - testing meeting",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A43D86D10000",
+    "summary": "",
+    "description": "Crispin Muncaster has sent the integrations link for tomorrow's testing meeting in readiness for the 14 August deadline. Kevin needs to attend and participate in the DTP1092 College Staff to PXD testing discussion.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[06 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)."
     ]
   }
 ]
