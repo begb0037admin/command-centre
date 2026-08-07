@@ -152,9 +152,11 @@
     "description": "Access Group support case open since April 2026. Kevin updated the vacancy notification config in Back Office but the opening text in outgoing emails is still not updating. AG support agent Iulian asked Kevin to re-test in both OUXU and OUXZ environments.",
     "actions": [
       "[Apr 2026] Case 68388326 raised -- vacancy alert email opening text not updating after config change.",
-      "[PARKED] Re-test in OUXU and OUXZ, capture email output, attach to case 68388326. Action when at fuller hours."
+      "[PARKED] Re-test in OUXU and OUXZ, capture email output, attach to case 68388326. Action when at fuller hours.",
+      "[07 Aug 2026] Julie Hickman has follow-up points on Patch Release 28.0.157 UAT update, including NI Number column addition to Employee Search; may be relevant to vacancy alert retest if UI changes affect the email config. (email: Julie Hickman - RE: Patch Release 28.0.157 – UAT Update)"
     ],
-    "dateAdded": "2026-06-08"
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431C0000"
   },
   {
     "id": "t029",
@@ -190,10 +192,11 @@
       "[13 Apr 2026] Lindsey Spriggs chased for update -- no reply sent.",
       "[PARKED] Reply to Lindsey with update on Insight module reminder investigation. Action when at fuller hours.",
       "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)",
-      "[03 Aug 2026] Lindsey Spriggs has sent draft agenda for CDR/PD working group meeting on 11 Aug; this is the forum where Kevin's action on Insight automated reminder functionality (originally due 17 Feb, chased 13 Apr) will be discussed or expected. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group - 11 Aug)"
+      "[03 Aug 2026] Lindsey Spriggs has sent draft agenda for CDR/PD working group meeting on 11 Aug; this is the forum where Kevin's action on Insight automated reminder functionality (originally due 17 Feb, chased 13 Apr) will be discussed or expected. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group - 11 Aug)",
+      "[07 Aug 2026] Lindsey Spriggs has sent a Teams meeting link for the bi-monthly CDR/PD working group, likely including the Insight module reminder functionality item (action #6 originally due 17 Feb 2026). (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A2EC0F9A0000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998630000"
   },
   {
     "id": "t016",
@@ -385,10 +388,11 @@
       "[03 Jul 2026] Tony Boydell sent Acceptance Criteria for Company 10/Company 90 User Scenarios, advancing the testing phase of the DTP1092 PXD Company 90 setup work. (email: Tony Boydell - Re: DTP1092 PXD Company 90 Testing)",
       "[03 Jul 2026] Crispin Muncaster flagged clarification and guidance needed on DTP1092 Company 90 testing; requests meeting slot. (email: Crispin Muncaster - DTP1092 PXD Company 90 Testing)",
       "[03 Jul 2026] Crispin Muncaster has requested to move an earlier meeting slot for DTP1092 College staff in PXD work. (email: Crispin Muncaster - DTP1092 College staff in PXD)",
-      "[03 Aug 2026] Crispin Muncaster forwards DTP1092 College Staff into PXD Integrations testing update from Guy Williams regarding progress on the college data project. (email: Crispin Muncaster - FW: DTP1092 College Staff into PXD - Integrations testing)"
+      "[03 Aug 2026] Crispin Muncaster forwards DTP1092 College Staff into PXD Integrations testing update from Guy Williams regarding progress on the college data project. (email: Crispin Muncaster - FW: DTP1092 College Staff into PXD - Integrations testing)",
+      "[07 Aug 2026] Simon Burford's email to Ewan and Matt references June discussions with Marie about data warehouse feeds for Company 90 configuration, directly relevant to REF2029 pay admin codes setup in UOXU. (email: Simon Burford - RE: Business rules for Data Warehouse)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8ACC0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43200000",
     "done": true
   },
   {
@@ -612,10 +616,12 @@
     "actions": [
       "[24 Jun 2026] Raised at HR Systems Managers Meeting -- confirmation outstanding from Anne that she will cover Nathan's Ultrix licence. Fee has increased significantly since earlier in the year.",
       "[AWAITING] Anne to confirm she will cover Nathan's Ultrix licence.",
-      "[TODO] Chase Anne if no confirmation received within a few days."
+      "[TODO] Chase Anne if no confirmation received within a few days.",
+      "[07 Aug 2026] Sarah Rowles has forwarded information about Clockify Free plan changes and options; this may be related to resource planning discussions but forwarded to Marie, not directly actionable for Kevin at this stage. (email: Sarah Rowles - FW: Clockify: Upcoming Free plan changes & options for your team)"
     ],
     "dateAdded": "2026-06-25",
-    "done": true
+    "done": true,
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43160000"
   },
   {
     "id": "t039",
@@ -795,13 +801,14 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-05 09:20",
     "emailRef": "DTP1092 College Staff to PXD - testing meeting",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A43D86D10000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43180000",
     "summary": "",
     "description": "Crispin Muncaster has sent the integrations link for tomorrow's testing meeting in readiness for the 14 August deadline. Kevin needs to attend and participate in the DTP1092 College Staff to PXD testing discussion.",
     "origin": "inbox-auto",
     "actions": [
       "[06 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting).",
-      "[06 Aug 2026] Crispin sent the integrations link for tomorrow's testing meeting (Friday 7 August). (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)"
+      "[06 Aug 2026] Crispin sent the integrations link for tomorrow's testing meeting (Friday 7 August). (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)",
+      "[07 Aug 2026] Crispin Muncaster has confirmed integrations testing meeting is set up with Nathan's test data in place for tomorrow's meeting. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)"
     ]
   },
   {
@@ -845,7 +852,50 @@
     "description": "Simon Burford has scheduled a regular catch-up for the sickness absence survey working group. Kevin needs to attend this meeting to stay current on the working group's progress.",
     "origin": "inbox-auto",
     "actions": [
-      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Sickness Absence Survey working group)."
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Sickness Absence Survey working group).",
+      "[07 Aug 2026] Simon Burford has scheduled the sickness absence survey working group catch-up meeting; Kevin needs to attend. (email: Simon Burford - Sickness Absence Survey working group)"
+    ]
+  },
+  {
+    "id": "t2608071501070",
+    "title": "Confirm availability for Multi Company Setup discussion with Conor (FP 68261303)",
+    "tier": "tomorrow",
+    "source": "Inbox - Simon Burford, 2026-08-07 12:23",
+    "emailRef": "RE: Multi Company Setup",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998610000",
+    "summary": "",
+    "description": "Simon Burford is on leave next week and has indicated Kevin will be back. Conor O'Brien (Access Group) needs confirmation of Kevin's availability to continue the multi-company configuration work for DTP1092. This is a continuation of existing task t021 but requires immediate confirmation of readiness.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Multi Company Setup)."
+    ]
+  },
+  {
+    "id": "t2608071501071",
+    "title": "Respond to Occupational Health appointment offer",
+    "tier": "tomorrow",
+    "source": "Inbox - enquiries@uohs.ox.ac.uk, 2026-08-07 11:54",
+    "emailRef": "PRIVATE & CONFIDENTIAL - Occupational Health",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A569985F0000",
+    "summary": "",
+    "description": "Occupational Health (enquiries@uohs.ox.ac.uk) has offered a revised appointment. Kevin needs to respond with his availability to confirm or reschedule.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health)."
+    ]
+  },
+  {
+    "id": "t2608071501072",
+    "title": "Confirm availability for Confidential OH Consultation with Maria Ignat",
+    "tier": "tomorrow",
+    "source": "Inbox - Maria Ignat, 2026-08-07 11:54",
+    "emailRef": "Confidential - OH Consultation ",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A569985E0000",
+    "summary": "",
+    "description": "Maria Ignat has sent a Teams meeting link for a confidential occupational health consultation. Kevin needs to confirm his attendance or reschedule if necessary.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Maria Ignat - Confidential - OH Consultation )."
     ]
   }
 ]
