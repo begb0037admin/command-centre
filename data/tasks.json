@@ -777,7 +777,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-04 10:31",
     "emailRef": "DTP1092 College Staff into PXD - Testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A381525A0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431E0000",
     "summary": "",
     "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
     "origin": "inbox-auto",
@@ -785,7 +785,8 @@
       "[04 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing).",
       "[04 Aug 2026] Crispin has sent the discussion request for testing assumptions and steps for integrations testing. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing)",
       "[05 Aug 2026] Crispin has sent the integrations link in readiness for tomorrow's testing meeting. (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)",
-      "[06 Aug 2026] Simon confirmed he can support Asta on Friday 7 August and is expecting Kevin to be back for the testing discussion. (email: Simon Burford - RE: Michael - Annual Leave)"
+      "[06 Aug 2026] Simon confirmed he can support Asta on Friday 7 August and is expecting Kevin to be back for the testing discussion. (email: Simon Burford - RE: Michael - Annual Leave)",
+      "[07 Aug 2026] Christopher Sanders has sent the Incident Reporting PUG meeting link; this is a separate PUG meeting Kevin needs to attend. (email: Christopher Sanders - Incident Reporting PUG)"
     ]
   },
   {
@@ -814,7 +815,8 @@
     "description": "Simon Burford is asking Kevin to attend the Oxford University Evo Pre project meeting in his absence. Julian Williams from IT Services will be attending. Kevin needs to confirm his availability and prepare to represent HR Systems on this project.",
     "origin": "inbox-auto",
     "actions": [
-      "[06 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Oxford University Evo Pre project meeting )."
+      "[06 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Oxford University Evo Pre project meeting ).",
+      "[07 Aug 2026] Simon has asked Kevin to attend the Oxford University Evo Pre project meeting in his absence, confirming the delegation. (email: Simon Burford - FW: Oxford University Evo Pre project meeting )"
     ]
   },
   {
