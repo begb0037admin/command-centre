@@ -348,10 +348,11 @@
       "[17 Jun 2026] Kevin sent Conor O'Brien a draft REF2029 load file and Pay Administered By values.",
       "[23 Jun 2026] Simon updated Conor O'Brien with post-design multi-company setup proposal.",
       "[AWAITING] Conor O'Brien / Access Group response to Simon's post-design proposal.",
-      "[07 Jul 2026] Crispin Muncaster provided an update on DTP1092 PXD Company 90 testing, relevant to multi-company setup (FP 68261303). (email: Crispin Muncaster - RE: DTP1092 PXD Company 90 Testing)"
+      "[07 Jul 2026] Crispin Muncaster provided an update on DTP1092 PXD Company 90 testing, relevant to multi-company setup (FP 68261303). (email: Crispin Muncaster - RE: DTP1092 PXD Company 90 Testing)",
+      "[07 Aug 2026] Conor O'Brien has additional work to discuss on multi-company setup and is awaiting confirmation of Kevin's availability next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)"
     ],
     "dateAdded": "2026-06-15",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EBA0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998620000",
     "done": true
   },
   {
@@ -867,7 +868,8 @@
     "description": "Simon Burford is on leave next week and has indicated Kevin will be back. Conor O'Brien (Access Group) needs confirmation of Kevin's availability to continue the multi-company configuration work for DTP1092. This is a continuation of existing task t021 but requires immediate confirmation of readiness.",
     "origin": "inbox-auto",
     "actions": [
-      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Multi Company Setup)."
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Multi Company Setup).",
+      "[07 Aug 2026] Simon confirmed Kevin will be back next week and can continue multi-company setup discussions with Conor. (email: Simon Burford - RE: Multi Company Setup)"
     ]
   },
   {
@@ -881,7 +883,8 @@
     "description": "Occupational Health (enquiries@uohs.ox.ac.uk) has offered a revised appointment. Kevin needs to respond with his availability to confirm or reschedule.",
     "origin": "inbox-auto",
     "actions": [
-      "[07 Aug 2026] Auto-created from inbox triage (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health)."
+      "[07 Aug 2026] Auto-created from inbox triage (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health).",
+      "[07 Aug 2026] Occupational Health has sent a revised appointment offer for Kevin to respond to with availability. (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health)"
     ]
   },
   {
@@ -895,7 +898,50 @@
     "description": "Maria Ignat has sent a Teams meeting link for a confidential occupational health consultation. Kevin needs to confirm his attendance or reschedule if necessary.",
     "origin": "inbox-auto",
     "actions": [
-      "[07 Aug 2026] Auto-created from inbox triage (email: Maria Ignat - Confidential - OH Consultation )."
+      "[07 Aug 2026] Auto-created from inbox triage (email: Maria Ignat - Confidential - OH Consultation ).",
+      "[07 Aug 2026] Maria Ignat has sent Teams meeting link for confidential occupational health consultation requiring Kevin's confirmation. (email: Maria Ignat - Confidential - OH Consultation )"
+    ]
+  },
+  {
+    "id": "t2608071801050",
+    "title": "Review volunteering leave pay code configuration work",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-07 16:21",
+    "emailRef": "Volunteering Leave",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998650000",
+    "summary": "",
+    "description": "Simon Burford has been working on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type. Kevin needs to review Simon's analysis and determine next steps for implementation in PeopleXD.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Volunteering Leave)."
+    ]
+  },
+  {
+    "id": "t2608071801051",
+    "title": "Investigate team calendar config issue with Asta",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-07 15:09",
+    "emailRef": "Team Calendar Config",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998640000",
+    "summary": "",
+    "description": "Simon encountered a missing option when trying to configure the Volunteering Leave pay code in UOXU. Kevin needs to work with Asta to diagnose and resolve the team calendar configuration problem.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Team Calendar Config)."
+    ]
+  },
+  {
+    "id": "t2608071801052",
+    "title": "Confirm UOXU/UOXC refresh approach for Company 90 testing",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-06 14:49",
+    "emailRef": "RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431D0000",
+    "summary": "",
+    "description": "Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for DTP1092 Company 90 configuration and testing. Kevin needs to confirm this approach.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)."
     ]
   }
 ]
