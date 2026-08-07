@@ -830,7 +830,22 @@
     "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the Incident Reporting PUG. Kevin needs to attend this meeting to participate in the agenda discussion.",
     "origin": "inbox-auto",
     "actions": [
-      "[06 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - Incident Reporting PUG)."
+      "[06 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - Incident Reporting PUG).",
+      "[07 Aug 2026] Christopher Sanders has sent the Microsoft Teams meeting link for the Incident Reporting PUG meeting. (email: Christopher Sanders - Incident Reporting PUG)"
+    ]
+  },
+  {
+    "id": "t2608071200560",
+    "title": "Attend sickness absence survey working group catch-up",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-07 11:04",
+    "emailRef": "Sickness Absence Survey working group",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A569985D0000",
+    "summary": "",
+    "description": "Simon Burford has scheduled a regular catch-up for the sickness absence survey working group. Kevin needs to attend this meeting to stay current on the working group's progress.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Sickness Absence Survey working group)."
     ]
   }
 ]
