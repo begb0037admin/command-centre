@@ -154,10 +154,11 @@
     "actions": [
       "[Apr 2026] Case 68388326 raised -- vacancy alert email opening text not updating after config change.",
       "[PARKED] Re-test in OUXU and OUXZ, capture email output, attach to case 68388326. Action when at fuller hours.",
-      "[07 Aug 2026] Julie Hickman has follow-up points on Patch Release 28.0.157 UAT update, including NI Number column addition to Employee Search; may be relevant to vacancy alert retest if UI changes affect the email config. (email: Julie Hickman - RE: Patch Release 28.0.157 – UAT Update)"
+      "[07 Aug 2026] Julie Hickman has follow-up points on Patch Release 28.0.157 UAT update, including NI Number column addition to Employee Search; may be relevant to vacancy alert retest if UI changes affect the email config. (email: Julie Hickman - RE: Patch Release 28.0.157 – UAT Update)",
+      "[10 Aug 2026] Julie Hickman thanked Michael for an update on P5 Task 50969697 (Incident 11693608), confirming progress on Access Group work. (email: Julie Hickman - RE: P5 Task assigned to your team - Task# 50969697 for Incident# 11693608)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431C0000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431B0000"
   },
   {
     "id": "t029",
@@ -233,9 +234,11 @@
     "actions": [
       "[08 Jun 2026] Status reviewed -- all enhancements on hold pending H&S office funding approval.",
       "[AWAITING] Brian (H&S) to sign off two funding requests.",
-      "[TODO -- on return] Establish contact with Michael Hanson at ECO Online / Iris."
+      "[TODO -- on return] Establish contact with Michael Hanson at ECO Online / Iris.",
+      "[10 Aug 2026] Sarah Rowles forwarded Clockify free plan changes notification; Marie is investigating future Clockify use ahead of September deadline. (email: Sarah Rowles - FW: Clockify: Upcoming Free plan changes & options for your team)"
     ],
-    "dateAdded": "2026-06-09"
+    "dateAdded": "2026-06-09",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43160000"
   },
   {
     "id": "t033",
@@ -758,7 +761,7 @@
     "tier": "week",
     "source": "Inbox - Christopher Sanders, 2026-07-27 11:00",
     "emailRef": "SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998650000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995620000",
     "summary": "",
     "description": "Christopher Sanders has sent two emails (pt. 1 and pt. 2) with Microsoft Teams meeting links for SH&SM Project HR Systems Tender Evaluation Response. Kevin needs to participate in this evaluation discussion related to the Health & Safety Management System (DTP1334) project.",
     "origin": "inbox-auto",
@@ -767,7 +770,8 @@
       "[04 Aug 2026] Crispin has confirmed the 14 August deadline for integrations testing completion. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)",
       "[10 Aug 2026] Crispin is out of office on annual leave until Monday 17 August, which may impact SH&SM Project meeting attendance. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
       "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning 17 August; testing work is proceeding with Guy Williams coordinating staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[10 Aug 2026] Guy Williams replied on 10 August confirming integration platforms (INT-STG, BT, AIP) are ready with current staging imports for testing. (email: Simon Burford - Volunteering Leave)"
+      "[10 Aug 2026] Guy Williams replied on 10 August confirming integration platforms (INT-STG, BT, AIP) are ready with current staging imports for testing. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Guy Williams confirms all integration platforms are current and ready; testing can proceed as planned for the 14 August deadline. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
@@ -829,13 +833,14 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-06 16:44",
     "emailRef": "FW: Oxford University Evo Pre project meeting ",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A381525A0000",
     "summary": "",
     "description": "Simon Burford is asking Kevin to attend the Oxford University Evo Pre project meeting in his absence. Julian Williams from IT Services will be attending. Kevin needs to confirm his availability and prepare to represent HR Systems on this project.",
     "origin": "inbox-auto",
     "actions": [
       "[06 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Oxford University Evo Pre project meeting ).",
-      "[07 Aug 2026] Simon has asked Kevin to attend the Oxford University Evo Pre project meeting in his absence, confirming the delegation. (email: Simon Burford - FW: Oxford University Evo Pre project meeting )"
+      "[07 Aug 2026] Simon has asked Kevin to attend the Oxford University Evo Pre project meeting in his absence, confirming the delegation. (email: Simon Burford - FW: Oxford University Evo Pre project meeting )",
+      "[10 Aug 2026] Simon Burford confirmed to Michael that he can support Asta on Friday 7 August and hopes Kevin will be back to support the following week on DTP1092 work. (email: Simon Burford - RE: Michael - Annual Leave)"
     ]
   },
   {
@@ -859,13 +864,14 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-07 11:04",
     "emailRef": "Sickness Absence Survey working group",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A569985D0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998630000",
     "summary": "",
     "description": "Simon Burford has scheduled a regular catch-up for the sickness absence survey working group. Kevin needs to attend this meeting to stay current on the working group's progress.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Sickness Absence Survey working group).",
-      "[07 Aug 2026] Simon Burford has scheduled the sickness absence survey working group catch-up meeting; Kevin needs to attend. (email: Simon Burford - Sickness Absence Survey working group)"
+      "[07 Aug 2026] Simon Burford has scheduled the sickness absence survey working group catch-up meeting; Kevin needs to attend. (email: Simon Burford - Sickness Absence Survey working group)",
+      "[10 Aug 2026] Lindsey Spriggs has sent the Teams meeting link for the bi-monthly CDR/PD working group; Kevin needs to attend this meeting. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)"
     ]
   },
   {
