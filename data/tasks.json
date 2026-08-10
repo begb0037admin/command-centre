@@ -606,10 +606,12 @@
       "[24 Jun 2026] Raised at HR Systems Managers Meeting -- Marie to respond reiterating that self-logging is not possible. Kevin to forward the thread to enable Marie's response.",
       "[TODO] Kevin to forward Matt Thomas email thread to Marie.",
       "[AWAITING] Marie to respond to Matt Thomas directly.",
-      "[02 Aug 2026] Moved to Parked - last action shows this is awaiting Marie's response to Matt Thomas, not an open action for Kevin."
+      "[02 Aug 2026] Moved to Parked - last action shows this is awaiting Marie's response to Matt Thomas, not an open action for Kevin.",
+      "[10 Aug 2026] Simon's volunteering leave analysis is directly relevant to the Matt Thomas issue about staff inability to log volunteering hours; Kevin should review this progress. (email: Simon Burford - Team Calendar Config)"
     ],
     "dateAdded": "2026-06-25",
-    "done": true
+    "done": true,
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998640000"
   },
   {
     "id": "t037",
@@ -816,7 +818,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-05 09:20",
     "emailRef": "DTP1092 College Staff to PXD - testing meeting",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998650000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995620000",
     "summary": "",
     "description": "Crispin Muncaster has sent the integrations link for tomorrow's testing meeting in readiness for the 14 August deadline. Kevin needs to attend and participate in the DTP1092 College Staff to PXD testing discussion.",
     "origin": "inbox-auto",
@@ -824,7 +826,8 @@
       "[06 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting).",
       "[06 Aug 2026] Crispin sent the integrations link for tomorrow's testing meeting (Friday 7 August). (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)",
       "[07 Aug 2026] Crispin Muncaster has confirmed integrations testing meeting is set up with Nathan's test data in place for tomorrow's meeting. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)",
-      "[10 Aug 2026] Guy Williams provided update on DTP1092 testing; Crispin is managing coordination of staging import scenarios with multiple platforms (INT-STG, BT, AIP) involved. (email: Simon Burford - Volunteering Leave)"
+      "[10 Aug 2026] Guy Williams provided update on DTP1092 testing; Crispin is managing coordination of staging import scenarios with multiple platforms (INT-STG, BT, AIP) involved. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Guy Williams responded to Crispin about HRIS Staging testing, confirming integration platform status for the testing work. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
@@ -927,13 +930,14 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-07 16:21",
     "emailRef": "Volunteering Leave",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998650000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998640000",
     "summary": "",
     "description": "Simon Burford has been working on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type. Kevin needs to review Simon's analysis and determine next steps for implementation in PeopleXD.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Volunteering Leave).",
-      "[10 Aug 2026] Simon has completed analysis of moving volunteering leave from 'Other Leave' reason code to standalone leave type; Kevin to review and determine next steps. (email: Simon Burford - Volunteering Leave)"
+      "[10 Aug 2026] Simon has completed analysis of moving volunteering leave from 'Other Leave' reason code to standalone leave type; Kevin to review and determine next steps. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Simon Burford has completed analysis on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type in PeopleXD. (email: Simon Burford - Team Calendar Config)"
     ]
   },
   {
@@ -942,13 +946,14 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-07 15:09",
     "emailRef": "Team Calendar Config",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998640000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998630000",
     "summary": "",
     "description": "Simon encountered a missing option when trying to configure the Volunteering Leave pay code in UOXU. Kevin needs to work with Asta to diagnose and resolve the team calendar configuration problem.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Team Calendar Config).",
-      "[10 Aug 2026] Simon encountered missing configuration option when setting up Volunteering Leave pay code in UOXU; Kevin to investigate with Asta. (email: Simon Burford - Team Calendar Config)"
+      "[10 Aug 2026] Simon encountered missing configuration option when setting up Volunteering Leave pay code in UOXU; Kevin to investigate with Asta. (email: Simon Burford - Team Calendar Config)",
+      "[10 Aug 2026] Simon Burford encountered a missing option when configuring Volunteering Leave pay code in UOXU; diagnosis and resolution needed with Asta on team calendar configuration. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)"
     ]
   },
   {
