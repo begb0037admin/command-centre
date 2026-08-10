@@ -752,7 +752,9 @@
     "source": "Julie Hickman",
     "summary": "",
     "description": "Julie Hickman has flagged outstanding actions related to Development Insight reports following a conversation with Ilona. Kevin needs to review what these actions are and what work is required.",
-    "actions": [],
+    "actions": [
+      "[10 Aug 2026] Julie Hickman has reached out regarding outstanding actions on Development Insight reports following conversation with Ilona. (email: Julie Hickman - Re: My Development Insight reports)"
+    ],
     "notes": "",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8AC40000",
     "dateAdded": "2026-08-02"
@@ -763,7 +765,7 @@
     "tier": "week",
     "source": "Inbox - Christopher Sanders, 2026-07-27 11:00",
     "emailRef": "SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995620000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43180000",
     "summary": "",
     "description": "Christopher Sanders has sent two emails (pt. 1 and pt. 2) with Microsoft Teams meeting links for SH&SM Project HR Systems Tender Evaluation Response. Kevin needs to participate in this evaluation discussion related to the Health & Safety Management System (DTP1334) project.",
     "origin": "inbox-auto",
@@ -773,7 +775,8 @@
       "[10 Aug 2026] Crispin is out of office on annual leave until Monday 17 August, which may impact SH&SM Project meeting attendance. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
       "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning 17 August; testing work is proceeding with Guy Williams coordinating staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[10 Aug 2026] Guy Williams replied on 10 August confirming integration platforms (INT-STG, BT, AIP) are ready with current staging imports for testing. (email: Simon Burford - Volunteering Leave)",
-      "[10 Aug 2026] Guy Williams confirms all integration platforms are current and ready; testing can proceed as planned for the 14 August deadline. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[10 Aug 2026] Guy Williams confirms all integration platforms are current and ready; testing can proceed as planned for the 14 August deadline. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[10 Aug 2026] Nathan Kirwan confirmed that test scenarios for DTP1092 testing have been set up in UOXU. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)"
     ]
   },
   {
@@ -818,7 +821,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-05 09:20",
     "emailRef": "DTP1092 College Staff to PXD - testing meeting",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995620000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629955C0000",
     "summary": "",
     "description": "Crispin Muncaster has sent the integrations link for tomorrow's testing meeting in readiness for the 14 August deadline. Kevin needs to attend and participate in the DTP1092 College Staff to PXD testing discussion.",
     "origin": "inbox-auto",
@@ -827,7 +830,8 @@
       "[06 Aug 2026] Crispin sent the integrations link for tomorrow's testing meeting (Friday 7 August). (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)",
       "[07 Aug 2026] Crispin Muncaster has confirmed integrations testing meeting is set up with Nathan's test data in place for tomorrow's meeting. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)",
       "[10 Aug 2026] Guy Williams provided update on DTP1092 testing; Crispin is managing coordination of staging import scenarios with multiple platforms (INT-STG, BT, AIP) involved. (email: Simon Burford - Volunteering Leave)",
-      "[10 Aug 2026] Guy Williams responded to Crispin about HRIS Staging testing, confirming integration platform status for the testing work. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[10 Aug 2026] Guy Williams responded to Crispin about HRIS Staging testing, confirming integration platform status for the testing work. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[10 Aug 2026] Crispin Muncaster is out of office on annual leave until Monday 17 August, affecting coordination of the DTP1092 testing meeting. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)"
     ]
   },
   {
@@ -930,14 +934,15 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-07 16:21",
     "emailRef": "Volunteering Leave",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998640000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43190000",
     "summary": "",
     "description": "Simon Burford has been working on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type. Kevin needs to review Simon's analysis and determine next steps for implementation in PeopleXD.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Volunteering Leave).",
       "[10 Aug 2026] Simon has completed analysis of moving volunteering leave from 'Other Leave' reason code to standalone leave type; Kevin to review and determine next steps. (email: Simon Burford - Volunteering Leave)",
-      "[10 Aug 2026] Simon Burford has completed analysis on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type in PeopleXD. (email: Simon Burford - Team Calendar Config)"
+      "[10 Aug 2026] Simon Burford has completed analysis on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type in PeopleXD. (email: Simon Burford - Team Calendar Config)",
+      "[10 Aug 2026] PA to HR Director is holding time for the next in-person People Forum; agenda to follow. (email: PA to HR Director - People Forum (In person))"
     ]
   },
   {
