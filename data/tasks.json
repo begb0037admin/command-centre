@@ -316,10 +316,12 @@
       "[TODO] Verify output in LIVE environment before payroll run.",
       "[24 Jun 2026] Tracy asked us to hang fire with this — awaiting her response before continuing.",
       "[AWAITING] Tracy's response before any SQL work proceeds.",
-      "[04 Aug 2026] Ticket closed by Tracy — no further action required. Pay Code 121 / PAYPAY25 SQL amendment task is complete and can be marked as closed."
+      "[04 Aug 2026] Ticket closed by Tracy — no further action required. Pay Code 121 / PAYPAY25 SQL amendment task is complete and can be marked as closed.",
+      "[10 Aug 2026] Julie requesting follow-up on NI Number Column addition and other UAT points from Patch Release 28.0.157; appears to be progress update on development work. (email: Julie Hickman - RE: Patch Release 28.0.157 – UAT Update)"
     ],
     "dateAdded": "2026-06-15",
-    "done": true
+    "done": true,
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431C0000"
   },
   {
     "id": "t020",
@@ -994,6 +996,20 @@
       "[10 Aug 2026] Auto-created from inbox triage (email: Conor O'Brien - RE: #External# RE: Multi Company Setup).",
       "[10 Aug 2026] Conor has sent updated Multi Company Setup work and notes both Simon and Kevin are on leave next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
       "[10 Aug 2026] Crispin provided new testing details and scenarios email on 10 August with full technical breakdown for integrations testing. (email: Simon Burford - Volunteering Leave)"
+    ]
+  },
+  {
+    "id": "t2608101804010",
+    "title": "Investigate Clockify role consolidation for Beth",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-10 17:05",
+    "emailRef": "Clockify",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995660000",
+    "summary": "",
+    "description": "Marie Cooksey is asking whether it is possible to combine Beth's two Clockify roles (HR Systems and Biology) into one. Kevin needs to investigate the Clockify platform capabilities and advise Marie on feasibility.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[10 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - Clockify)."
     ]
   }
 ]
