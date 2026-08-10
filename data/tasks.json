@@ -887,14 +887,15 @@
     "tier": "tomorrow",
     "source": "Inbox - Simon Burford, 2026-08-07 12:23",
     "emailRef": "RE: Multi Company Setup",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998600000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998620000",
     "summary": "",
     "description": "Simon Burford is on leave next week and has indicated Kevin will be back. Conor O'Brien (Access Group) needs confirmation of Kevin's availability to continue the multi-company configuration work for DTP1092. This is a continuation of existing task t021 but requires immediate confirmation of readiness.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Multi Company Setup).",
       "[07 Aug 2026] Simon confirmed Kevin will be back next week and can continue multi-company setup discussions with Conor. (email: Simon Burford - RE: Multi Company Setup)",
-      "[10 Aug 2026] Conor O'Brien sent follow-up noting he has additional work completed on Multi Company Setup and seeking availability for next week when Simon is on leave. (email: Conor O'Brien - Multi Company Setup)"
+      "[10 Aug 2026] Conor O'Brien sent follow-up noting he has additional work completed on Multi Company Setup and seeking availability for next week when Simon is on leave. (email: Conor O'Brien - Multi Company Setup)",
+      "[10 Aug 2026] Conor O'Brien has sent updated work on Multi Company Setup and is awaiting Kevin's availability to continue discussions this week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)"
     ]
   },
   {
