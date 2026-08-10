@@ -825,7 +825,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-05 09:20",
     "emailRef": "DTP1092 College Staff to PXD - testing meeting",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629955C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629955A0000",
     "summary": "",
     "description": "Crispin Muncaster has sent the integrations link for tomorrow's testing meeting in readiness for the 14 August deadline. Kevin needs to attend and participate in the DTP1092 College Staff to PXD testing discussion.",
     "origin": "inbox-auto",
@@ -835,7 +835,8 @@
       "[07 Aug 2026] Crispin Muncaster has confirmed integrations testing meeting is set up with Nathan's test data in place for tomorrow's meeting. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)",
       "[10 Aug 2026] Guy Williams provided update on DTP1092 testing; Crispin is managing coordination of staging import scenarios with multiple platforms (INT-STG, BT, AIP) involved. (email: Simon Burford - Volunteering Leave)",
       "[10 Aug 2026] Guy Williams responded to Crispin about HRIS Staging testing, confirming integration platform status for the testing work. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[10 Aug 2026] Crispin Muncaster is out of office on annual leave until Monday 17 August, affecting coordination of the DTP1092 testing meeting. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)"
+      "[10 Aug 2026] Crispin Muncaster is out of office on annual leave until Monday 17 August, affecting coordination of the DTP1092 testing meeting. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
+      "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning Monday 17 August; testing meeting tomorrow (11 Aug) may need rescheduling given his absence. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
