@@ -989,14 +989,15 @@
     "tier": "tomorrow",
     "source": "Inbox - Conor O'Brien, 2026-08-07 12:30",
     "emailRef": "RE: #External# RE: Multi Company Setup",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998650000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629955A0000",
     "summary": "",
     "description": "Conor O'Brien has sent updated work on the Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week. Kevin needs to review Conor's progress and confirm availability to continue discussions next week.",
     "origin": "inbox-auto",
     "actions": [
       "[10 Aug 2026] Auto-created from inbox triage (email: Conor O'Brien - RE: #External# RE: Multi Company Setup).",
       "[10 Aug 2026] Conor has sent updated Multi Company Setup work and notes both Simon and Kevin are on leave next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
-      "[10 Aug 2026] Crispin provided new testing details and scenarios email on 10 August with full technical breakdown for integrations testing. (email: Simon Burford - Volunteering Leave)"
+      "[10 Aug 2026] Crispin provided new testing details and scenarios email on 10 August with full technical breakdown for integrations testing. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Crispin Muncaster has provided update on Company 90 testing scenarios and is seeking help on HRIS staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
