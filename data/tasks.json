@@ -788,14 +788,15 @@
     "tier": "week",
     "source": "Inbox - Crispin Muncaster, 2026-08-03 14:18",
     "emailRef": "DTP1092 College Staff into PXD - Integrations testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629955A0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629955C0000",
     "summary": "",
     "description": "Crispin Muncaster is requesting confirmation that integrations testing for the College Staff into PXD project can be completed by Friday 14 August 2026. This is a key deliverable for DTP1092 with Guy Williams and Simon involved on the IT side.",
     "origin": "inbox-auto",
     "actions": [
       "[03 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing).",
       "[04 Aug 2026] Crispin has confirmed integrations testing deadline of Friday 14 August 2026 is reasonable and is requesting confirmation from Kevin. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)",
-      "[10 Aug 2026] Crispin has sent detailed testing scenarios for Company 90 and HRIS Staging imports configuration. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[10 Aug 2026] Crispin has sent detailed testing scenarios for Company 90 and HRIS Staging imports configuration. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[11 Aug 2026] Crispin Muncaster is out of office on annual leave, returning Monday 17 August; automatic reply confirms absence during testing period. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)"
     ]
   },
   {
@@ -1009,13 +1010,14 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-10 17:05",
     "emailRef": "Clockify",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995720000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995710000",
     "summary": "",
     "description": "Marie Cooksey is asking whether it is possible to combine Beth's two Clockify roles (HR Systems and Biology) into one. Kevin needs to investigate the Clockify platform capabilities and advise Marie on feasibility.",
     "origin": "inbox-auto",
     "actions": [
       "[10 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - Clockify).",
-      "[11 Aug 2026] Marie has reviewed the Clockify query and is waiting until Simon's return to understand impact on roadmap before proceeding. (email: Marie Cooksey - RE: Clockify)"
+      "[11 Aug 2026] Marie has reviewed the Clockify query and is waiting until Simon's return to understand impact on roadmap before proceeding. (email: Marie Cooksey - RE: Clockify)",
+      "[11 Aug 2026] Marie has confirmed preference for Jibble and agrees test account should be next step once funding clarity is established. (email: Marie Cooksey - RE: Clockify)"
     ]
   },
   {
@@ -1029,7 +1031,8 @@
     "description": "Marie Cooksey has sent a Microsoft Teams meeting link for H&S Systems Supplier Reviews. Kevin needs to attend this meeting to participate in the supplier evaluation process.",
     "origin": "inbox-auto",
     "actions": [
-      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - H&S Systems Supplier Reviews)."
+      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - H&S Systems Supplier Reviews).",
+      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for H&S Systems Supplier Reviews. (email: Marie Cooksey - H&S Systems Supplier Reviews)"
     ]
   },
   {
@@ -1043,7 +1046,22 @@
     "description": "Marie Cooksey has sent a Microsoft Teams meeting link for HR Systems Management. Kevin needs to attend to participate in management discussions.",
     "origin": "inbox-auto",
     "actions": [
-      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - HR Systems Management)."
+      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - HR Systems Management).",
+      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for HR Systems Management. (email: Marie Cooksey - HR Systems Management)"
+    ]
+  },
+  {
+    "id": "t2608111331410",
+    "title": "Review Cority Applicant Data Import update from James",
+    "tier": "week",
+    "source": "Inbox - James Salas Guillen, 2026-08-11 13:11",
+    "emailRef": "Cority - Applicant Data Import file",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995730000",
+    "summary": "",
+    "description": "James Salas Guillen has sent an update on the Cority Applicant Data Import following several uploads/imports in Production. Kevin needs to review and action as needed.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: James Salas Guillen - Cority - Applicant Data Import file)."
     ]
   }
 ]
