@@ -804,7 +804,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-04 10:31",
     "emailRef": "DTP1092 College Staff into PXD - Testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A2EC0F9C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43200000",
     "summary": "",
     "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
     "origin": "inbox-auto",
@@ -816,7 +816,8 @@
       "[07 Aug 2026] Christopher Sanders has sent the Incident Reporting PUG meeting link; this is a separate PUG meeting Kevin needs to attend. (email: Christopher Sanders - Incident Reporting PUG)",
       "[10 Aug 2026] Crispin sent detailed email outlining testing scenarios and assumptions for DTP1092 College Staff into PXD integrations testing, confirming 14 August deadline. (email: Simon Burford - Volunteering Leave)",
       "[10 Aug 2026] Crispin sent detailed testing scenarios and HRIS staging import details on 10 August, ready for discussion when Kevin returns. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[10 Aug 2026] DTP1092 College staff into PXD team meeting cancelled due to multiple invites being out of office. (email: Crispin Muncaster - Cancelled: DTP1092 College staff into PXD Team meeting)"
+      "[10 Aug 2026] DTP1092 College staff into PXD team meeting cancelled due to multiple invites being out of office. (email: Crispin Muncaster - Cancelled: DTP1092 College staff into PXD Team meeting)",
+      "[11 Aug 2026] Simon has been coordinating with the data warehouse team on ensuring only University of Oxford employees are included in feeds. (email: Simon Burford - RE: Business rules for Data Warehouse)"
     ]
   },
   {
@@ -877,14 +878,15 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-07 11:04",
     "emailRef": "Sickness Absence Survey working group",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998630000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629956E0000",
     "summary": "",
     "description": "Simon Burford has scheduled a regular catch-up for the sickness absence survey working group. Kevin needs to attend this meeting to stay current on the working group's progress.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Sickness Absence Survey working group).",
       "[07 Aug 2026] Simon Burford has scheduled the sickness absence survey working group catch-up meeting; Kevin needs to attend. (email: Simon Burford - Sickness Absence Survey working group)",
-      "[10 Aug 2026] Lindsey Spriggs has sent the Teams meeting link for the bi-monthly CDR/PD working group; Kevin needs to attend this meeting. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)"
+      "[10 Aug 2026] Lindsey Spriggs has sent the Teams meeting link for the bi-monthly CDR/PD working group; Kevin needs to attend this meeting. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
+      "[11 Aug 2026] Christopher Sanders forwarded the sickness absence survey working group meeting appointment from Simon Burford. (email: Christopher Sanders - FW: Sickness Absence Survey working group)"
     ]
   },
   {
@@ -1007,12 +1009,41 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-10 17:05",
     "emailRef": "Clockify",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995660000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995720000",
     "summary": "",
     "description": "Marie Cooksey is asking whether it is possible to combine Beth's two Clockify roles (HR Systems and Biology) into one. Kevin needs to investigate the Clockify platform capabilities and advise Marie on feasibility.",
     "origin": "inbox-auto",
     "actions": [
-      "[10 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - Clockify)."
+      "[10 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - Clockify).",
+      "[11 Aug 2026] Marie has reviewed the Clockify query and is waiting until Simon's return to understand impact on roadmap before proceeding. (email: Marie Cooksey - RE: Clockify)"
+    ]
+  },
+  {
+    "id": "t2608111309070",
+    "title": "Attend H&S Systems Supplier Reviews meeting",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-11 11:50",
+    "emailRef": "H&S Systems Supplier Reviews",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995700000",
+    "summary": "",
+    "description": "Marie Cooksey has sent a Microsoft Teams meeting link for H&S Systems Supplier Reviews. Kevin needs to attend this meeting to participate in the supplier evaluation process.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - H&S Systems Supplier Reviews)."
+    ]
+  },
+  {
+    "id": "t2608111309071",
+    "title": "Attend HR Systems Management meeting",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-11 11:49",
+    "emailRef": "HR Systems Management",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629956F0000",
+    "summary": "",
+    "description": "Marie Cooksey has sent a Microsoft Teams meeting link for HR Systems Management. Kevin needs to attend to participate in management discussions.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - HR Systems Management)."
     ]
   }
 ]
