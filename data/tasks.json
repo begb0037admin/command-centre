@@ -914,14 +914,15 @@
     "tier": "tomorrow",
     "source": "Inbox - enquiries@uohs.ox.ac.uk, 2026-08-07 11:54",
     "emailRef": "PRIVATE & CONFIDENTIAL - Occupational Health",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998610000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998620000",
     "summary": "",
     "description": "Occupational Health (enquiries@uohs.ox.ac.uk) has offered a revised appointment. Kevin needs to respond with his availability to confirm or reschedule.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health).",
       "[07 Aug 2026] Occupational Health has sent a revised appointment offer for Kevin to respond to with availability. (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health)",
-      "[10 Aug 2026] Simon confirmed he is on leave next week but Kevin should be back. (email: Simon Burford - RE: Multi Company Setup)"
+      "[10 Aug 2026] Simon confirmed he is on leave next week but Kevin should be back. (email: Simon Burford - RE: Multi Company Setup)",
+      "[11 Aug 2026] Conor O'Brien (Access Group) has sent updated work on Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)"
     ]
   },
   {
@@ -1072,13 +1073,14 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-11 13:39",
     "emailRef": "RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995740000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995750000",
     "summary": "",
     "description": "Marie Cooksey is seeking Kevin's input on whether GLAM should join the 38-day balance scheme alongside Maths and Chemistry. Kevin needs to provide thoughts/advice to inform the decision.",
     "origin": "inbox-auto",
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing).",
-      "[11 Aug 2026] Julie is asking Marie for thoughts on GLAM joining the 38-day balance scheme; Marie has copied Kevin in for input. (email: Marie Cooksey - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)"
+      "[11 Aug 2026] Julie is asking Marie for thoughts on GLAM joining the 38-day balance scheme; Marie has copied Kevin in for input. (email: Marie Cooksey - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)",
+      "[11 Aug 2026] Julie Hickman is asking Marie (copied to Kevin) for thoughts on whether GLAM should also join the 38-day balance scheme alongside Maths and Chemistry. (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)"
     ]
   },
   {
@@ -1106,7 +1108,8 @@
     "description": "Anne Mortimer has provided updated access links to the current version of the DPIA and DPS documents. Kevin needs to review any changes that have been made since Marie's and Information Compliance's previous review.",
     "origin": "inbox-auto",
     "actions": [
-      "[11 Aug 2026] Auto-created from inbox triage (email: Anne Mortimer - FW: draft DPIA for college record to PXD)."
+      "[11 Aug 2026] Auto-created from inbox triage (email: Anne Mortimer - FW: draft DPIA for college record to PXD).",
+      "[11 Aug 2026] Anne Mortimer has provided updated access links to the current DPIA and DPS documents for review. (email: Anne Mortimer - FW: draft DPIA for college record to PXD)"
     ]
   }
 ]
