@@ -819,14 +819,15 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-06 14:49",
     "emailRef": "RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43200000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995620000",
     "summary": "",
     "description": "Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for DTP1092 Company 90 configuration and testing. Kevin needs to confirm this approach.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP).",
       "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments for Company 90 testing; Kevin to confirm approach. (email: Simon Burford - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
-      "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for Company 90 testing. (email: Simon Burford - RE: Business rules for Data Warehouse)"
+      "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for Company 90 testing. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[12 Aug 2026] Guy Williams has provided technical guidance on integration platform environments (INT-STG, BT, AIP) that Kevin needs to confirm approach for Company 90 refresh. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ],
     "dateAdded": "2026-08-07"
   },
@@ -993,5 +994,47 @@
       "[12 Aug 2026] Marie is unwell and not working for the rest of today (Wednesday 12 August); Kevin should confirm urgent support coverage needs. (email: Marie Cooksey - Marie C not working)"
     ],
     "done": true
+  },
+  {
+    "id": "t2608121801280",
+    "title": "Review 38-day balance implementation timeline and decisions",
+    "tier": "week",
+    "source": "Inbox - Julie Hickman, 2026-08-12 17:09",
+    "emailRef": "38 day balance for departments update and decisions needed",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C750000",
+    "summary": "",
+    "description": "Julie Hickman has shared a OneDrive file with timeframe of tasks for 38-day balance departments. Kevin needs to review the document and understand the implementation schedule and any decisions required from HR Systems.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[12 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - 38 day balance for departments update and decisions needed)."
+    ]
+  },
+  {
+    "id": "t2608121801281",
+    "title": "Review PeopleXD uplift timeline from Jessica Oldershaw",
+    "tier": "week",
+    "source": "Inbox - Jessica Oldershaw, 2026-08-12 16:41",
+    "emailRef": "RE: Timeline for implementation of uplift",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C740000",
+    "summary": "",
+    "description": "Jessica Oldershaw has sent an update on the timeline for implementation of uplift, indicating we have reached a September decision point. Kevin needs to review the full email and confirm HR Systems readiness and any dependencies.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[12 Aug 2026] Auto-created from inbox triage (email: Jessica Oldershaw - RE: Timeline for implementation of uplift)."
+    ]
+  },
+  {
+    "id": "t2608121801282",
+    "title": "Review August 2026 organisational structure draft",
+    "tier": "week",
+    "source": "Inbox - Organisational Structure, 2026-08-12 16:24",
+    "emailRef": "RE: Organisational Structure Update - August 2026 - DRAFT",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C730000",
+    "summary": "",
+    "description": "An updated draft organisational structure has been circulated with changes effective through 12 August 2026. Kevin should review for any HR Systems implications or required actions.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[12 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT)."
+    ]
   }
 ]
