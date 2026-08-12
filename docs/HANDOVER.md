@@ -1,3 +1,58 @@
+# Handover — 12 August 2026, continued (Drew) — item 5 completion: Today/Tomorrow done-task purge
+
+## TL;DR
+Continued from the `cc-cleanup-items-5-8-build-12aug` checkpoint (commit `e672a94`), which purged done:true tasks from This Week + Parked (8 tasks, per Kevin's original approval scope) but flagged 9 more done tasks outside that scope: 5 in Today, 4 in Tomorrow. Kevin has now approved purging those too. Done, verified live, pushed.
+
+## Live re-verification before touching anything
+Did not trust the e672a94 checkpoint's 5+4 count blindly. Fetched `data/tasks.json` fresh via GitHub Contents API (sha `f039cb89...`, size 89,293 bytes, non-zero, confirmed before proceeding) and independently recounted `done:true` per tier from that fresh pull:
+- **Today: 5 done** — `t005`, `t024`, `t027`, `task-1782599630157`, `t014`
+- **Tomorrow: 4 done** — `t003`, `t021`, `t025`, `t040`
+- Week: 0 done, Parked: 0 done (confirms the earlier item-5 purge is still intact, no regression)
+
+Matched the checkpoint's count exactly — no drift since 12 Aug. Total live tasks before edit: 55 (tier counts: today=9, tomorrow=12, week=25, parked=9).
+
+## Backup-and-verify sequence (command-centre CLAUDE.md mandatory protocol, followed in full)
+1. GET live file — sha `f039cb895e595738c4b7ea71ceb4a32f04eeb258`, size 89,293 bytes, confirmed non-zero.
+2. Backup created: `Archive/tasks_backup_20260812_1403.json` — commit `e859a64` (content sha identical to live file's sha, confirming byte-for-byte backup).
+3. Backup verified live via a fresh GET after commit: sha and size matched exactly before any edit was made.
+4. Edit made and pushed — see below.
+5. Post-change sha verified live via a fresh GET after push.
+
+**Windows text-mode CRLF gotcha hit and caught mid-task** (per `drew/memory/windows-text-mode-write-crlf-corruption.md`): first attempt wrote the edited JSON with Python's text-mode `'w'`, which silently converted `
+`→`
+` and added a trailing newline not present in the original (89,293-byte original ends `}
+]` with no trailing newline; the corrupted draft ended `}
+]
+`). Caught by comparing raw tail bytes before pushing, not after — rebuilt using binary `'wb'` mode, confirmed zero `` bytes and exact original ending (`}
+]`) before the PUT.
+
+## Edit
+Removed the 9 confirmed `done:true` tasks from Today (5) and Tomorrow (4) only — This Week and Parked untouched (already clean from the prior purge), no other tier touched. Sanity-asserted in code that every removed ID was actually `done:true` and actually in `today`/`tomorrow` before allowing the write.
+
+**Before → after counts (independently re-verified via a fresh GitHub re-pull post-push, not from local memory of the edit):**
+- Total tasks: 55 → 46
+- Today: 9 (5 done) → 4 (0 done)
+- Tomorrow: 12 (4 done) → 8 (0 done)
+- Week: 25 (0 done, unchanged) — untouched
+- Parked: 9 (0 done, unchanged) — untouched
+- Confirmed none of the 9 removed IDs present in the fresh post-push pull.
+
+**Write commit:** `0bf382a` — `data/tasks.json` sha `f039cb89...` → `1a2bf1f5...`, size 89,293 → 73,135 bytes. Post-change sha verified live matches the PUT response exactly.
+
+## Codex status — DISCLOSED, NOT SKIPPED SILENTLY
+Probed Codex CLI (`codex exec -s read-only`) before starting the edit. Still out of usage: `ERROR: You've hit your usage limit... try again at Aug 18th, 2026 7:28 AM.` No Codex review pass (before-start, per-step, or end-to-end) touched this change. Same gap as the `cc-cleanup-items-5-8-build-12aug` session earlier the same day — not yet resolved, will still be out until 18 Aug per the error message.
+
+## Now-clean state
+All 4 tiers (Today, Tomorrow, This Week, Parked) show 0 `done:true` tasks in live `data/tasks.json` as of this checkpoint. The done-task-hygiene item from the `cc-this-week-parked-bloat-investigation-12aug` proposal (finding #1) is now fully addressed across all tiers, not just Week/Parked.
+
+## Next action
+None outstanding from this specific purge — all originally-flagged 17 done tasks across all 4 tiers are now clean. Remaining open items from the same 12 Aug investigation/build session, not part of this task's scope:
+- Item 8 (staleness-badge fix, `lastActivityTs()` ignoring routine inbound-email masking) — built and logic-verified but sitting on holding branch `holding/item8-staleness-badge-fix` (commit `7c7406a`), blocked on Kevin's screenshot approval (no screenshot tool available in recent sessions — check again with a fresh session before assuming still blocked).
+- Duplicate-task cleanup (existing live duplicates: Development Insight ×2, GLAM ×2) — item 6 only added prevention (fuzzy-dedup guard in `fetch_inbox.py`), did not merge/clean the existing pairs; still open if Kevin wants it done.
+- Once Codex usage resets (~18 Aug 2026), worth a retroactive read-only Codex pass over this session's `data/tasks.json` diff and the held item-8 `js/app.js` diff, given both shipped without one.
+
+---
+
 # Handover — 02 August 2026, continued (Drew) — cc-tasks-writer Worker fix, PROPOSED NOT DEPLOYED
 
 ## TL;DR (this addendum)
