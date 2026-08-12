@@ -899,7 +899,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Simon Burford, 2026-08-07 12:23",
     "emailRef": "RE: Multi Company Setup",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998620000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C700000",
     "summary": "",
     "description": "Simon Burford is on leave next week and has indicated Kevin will be back. Conor O'Brien (Access Group) needs confirmation of Kevin's availability to continue the multi-company configuration work for DTP1092. This is a continuation of existing task t021 but requires immediate confirmation of readiness.",
     "origin": "inbox-auto",
@@ -907,7 +907,8 @@
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Multi Company Setup).",
       "[07 Aug 2026] Simon confirmed Kevin will be back next week and can continue multi-company setup discussions with Conor. (email: Simon Burford - RE: Multi Company Setup)",
       "[10 Aug 2026] Conor O'Brien sent follow-up noting he has additional work completed on Multi Company Setup and seeking availability for next week when Simon is on leave. (email: Conor O'Brien - Multi Company Setup)",
-      "[10 Aug 2026] Conor O'Brien has sent updated work on Multi Company Setup and is awaiting Kevin's availability to continue discussions this week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)"
+      "[10 Aug 2026] Conor O'Brien has sent updated work on Multi Company Setup and is awaiting Kevin's availability to continue discussions this week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
+      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin should respond with availability. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder – Occupational Health)"
     ]
   },
   {
@@ -1113,6 +1114,20 @@
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: Anne Mortimer - FW: draft DPIA for college record to PXD).",
       "[11 Aug 2026] Anne Mortimer has provided updated access links to the current DPIA and DPS documents for review. (email: Anne Mortimer - FW: draft DPIA for college record to PXD)"
+    ]
+  },
+  {
+    "id": "t2608120903060",
+    "title": "Advise Marie on GLAM joining 38-day balance scheme",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-11 13:30",
+    "emailRef": "RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995740000",
+    "summary": "",
+    "description": "Marie Cooksey is seeking Kevin's input on whether GLAM should join the 38-day balance scheme alongside Maths and Chemistry. Kevin needs to provide thoughts/advice to inform the decision.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[12 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)."
     ]
   }
 ]
