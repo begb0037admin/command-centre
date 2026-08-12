@@ -1,7 +1,44 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-08-12 (Drew) - Kevin approved building all 4 items from the investigation below (purge done-hidden tasks / dedup on auto-create / dateAdded backfill / staleness-badge fix). Build session PAUSED before any of the 4 was applied — usage/session limits hit twice mid-session (once during the original build dispatch, once during the pause-checkpoint attempt itself). Only the mandatory pre-edit backup was taken (`Archive/tasks_backup_20260812_1244.json`, commit `a76106c`) — verified byte-for-byte identical to live `data/tasks.json` (sha `843dbf7`) at pause time. **No live task data has been touched. All 4 items are NOT STARTED.** See "Session 2026-08-12 (paused)" entry below for exact resume steps.
+**Last updated:** 2026-08-12 (Drew) - Resumed the paused cleanup build. Items 5, 6, 7 shipped and verified live on main. Item 8 is built and verified but held on branch `holding/item8-staleness-badge-fix`, NOT merged to main, pending Kevin's screenshot review and literal "approved" per the UI approval gate (no screenshot capability in this session's environment). See "Session 2026-08-12 (resumed — items 5/6/7 shipped, item 8 held for approval)" below for full detail, evidence, and the open flags for Kevin.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
+
+---
+
+## Session 2026-08-12 (resumed — items 5/6/7 shipped, item 8 held for approval) (Drew)
+
+**Scope:** Resumed from the "Session 2026-08-12 (paused)" checkpoint immediately below. Re-verified all live numbers fresh before touching anything (did not trust the checkpoint's figures blindly) — `data/tasks.json` sha was still `843dbf7`, identical to the paused checkpoint, confirming nothing had changed in the interim. Codex is still reported out of usage this session — **no Codex review pass (before-start, per-step, or end-to-end) has touched any of these 4 items.** This is a disclosed, real gap in review coverage, not a formality being skipped.
+
+**Open-question resolution (item 5 scope):** live re-check confirmed 17 `done:true` tasks exist across all 4 tiers (today=5, tomorrow=4, week=5, parked=3), but Kevin's original approval was specifically "This Week + Parked" (8 tasks). Per instruction, purged only those 8 and left the other 9 (5 today + 4 tomorrow) untouched. **Flagging to Kevin as a separate, unapproved item:** 9 `done:true` tasks remain live in Today/Tomorrow, hidden only by the client-side "Show done" toggle, same underlying hygiene issue as item 5 — decide separately whether these should also be purged.
+
+### Item 5 — purge done-hidden tasks (This Week + Parked only) — SHIPPED, verified live
+- Pre-edit backup reused (already fresh — reverified byte-identical to live before relying on it): `Archive/tasks_backup_20260812_1244.json`, commit `a76106c`.
+- Purged exactly the 8 tasks confirmed live: `t001, t015, t020, t032, t037` (week) + `t019, t022, t036` (parked).
+- Write commit: `9f1714a`. Post-write live GET confirms: 63→55 tasks total, week 30→25, parked 12→9, and none of the 8 purged IDs present. `data/tasks.json` sha now `f0332ad`.
+
+### Item 7 — backfill `dateAdded` on This Week tasks — SHIPPED, verified live
+- Fresh pre-edit backup: `Archive/tasks_backup_20260812_1249.json` (content sha `f0332ad`, verified byte-identical to live before editing).
+- Re-verified live: still 16 of 30 (pre-purge) / 16 of 25 (post-purge) This Week tasks missing `dateAdded` — same 16 IDs as the paused checkpoint, confirmed no overlap with the 8 purged in item 5.
+- Backfilled each from its own first action-log entry (`[DD Mon YYYY] Auto-created from inbox triage...`), converted to ISO `YYYY-MM-DD`. Cross-checked against each task's own ID (IDs encode `YYMMDD` at creation, e.g. `t2608120903060` → 12 Aug) — 16/16 matched exactly, no ambiguous cases.
+- Write commit: `194ae6f`. Post-write live GET confirms: 0 of 25 This Week tasks now missing `dateAdded`. `data/tasks.json` sha now `f039cb8`.
+- **Not in scope, flagged only:** Tomorrow still has 6/12 tasks missing `dateAdded`, Today has 1/9 — the task brief specified "This Week" only, so these were left alone. Parked already had 0 missing.
+
+### Item 8 — staleness badge no longer masked by routine auto-logged inbound email — BUILT AND VERIFIED, NOT MERGED (awaiting Kevin's approval)
+- Root cause (confirmed in the investigation entry further below): `lastActivityTs()` in `js/app.js` treats every dated action-log entry as genuine activity, including the ones Phase 3.6 auto-appends for routine inbound email (meeting reminders, forwards, out-of-office replies) — so a task with no real progress in months looks perpetually fresh.
+- Fix: `lastActivityTs()` now skips any action entry tagged `(email: ...)` **unless** the tag reads `(email: Kevin (sent to: ...)` — i.e. Kevin's own logged actions (he sent a reply) still count as genuine activity; routine inbound mail from anyone else does not. Entries with no `(email:` tag at all (manual/dashboard-typed notes) always count, unchanged.
+- **Verified with real logic, not assumption:** extracted the exact `lastActivityTs`/`staleDays` function block from both the original and fixed `js/app.js` and ran both against the live (post-item-7) `data/tasks.json` in Node. Before: 12 non-done tasks flagged stale (week=5, parked=2, today=3, tomorrow=2). After: 18 flagged (week=7, parked=6, today=3, tomorrow=2) — 6 tasks newly surfaced (`t012, t013, t016, t017, t031, t033`), all confirmed by inspection to have old `dateAdded` (June) with only third-party inbound mail since, no genuine Kevin-driven progress. Also confirmed the one live task whose most recent action is a Kevin-sent entry (`task-1782599584762`) still correctly counts that entry (fix does not blanket-exclude all `(email:` entries, only non-Kevin-sent ones).
+- **NOT merged to main.** Per this repo's UI approval gate (screenshot + Kevin's literal "approved" before any push to main, holding branch otherwise): this session has no screenshot/browser-rendering capability available, so a real screenshot cannot be produced here. Backed up live `js/app.js` first (`Archive/app_backup_20260812_1251.js`, content sha `501a0a3`, verified byte-identical before editing), then pushed the fix to branch **`holding/item8-staleness-badge-fix`** (commit `7c7406a`, `js/app.js` content sha `f018311`). `main`'s `js/app.js` is confirmed unchanged (still `501a0a3`).
+- **Next action for Kevin:** view the change (diff at `holding/item8-staleness-badge-fix` vs `main`, or check out the branch locally and open `index.html`) and say "approved" if the 6 newly-surfaced stale badges look right, so a future session can merge to main. This repo has no automatic Pages preview for non-main branches, so there is no live preview URL for this branch.
+
+### Item 6 — dedup check before task auto-creation — SHIPPED to work-inbox, verified live
+- Cross-repo item: fix lives in `begb0037admin/work-inbox` `fetch_inbox.py` Phase 3.6 (the auto-promotion loop), not in this repo.
+- Existing guard (ledger + entryId + exact-title match) already existed but missed near-duplicate titles — confirmed live duplicate pair `t2608111507360`/`t2608120903060` ("Advise on GLAM joining 38-day balance departments scheme" vs "Advise Marie on GLAM joining 38-day balance scheme") scored 0.83 on `difflib.SequenceMatcher`, well clear of the closest real false-positive pair in the live data (`t2608111309070` vs `t2608111309071`, "H&S Systems Supplier Reviews" vs "HR Systems Management", 0.68).
+- Added a fourth guard: fuzzy title-similarity check (`SequenceMatcher` ratio ≥ 0.8) against every existing task title before auto-promoting a new one; threshold chosen empirically against live data (see above), not guessed.
+- Verified: `py_compile` clean on the live-pulled pushed file (not just the local copy); unit-tested the extracted matching function against the known duplicate pair (caught) and known false-positive-risk pairs (not caught).
+- Write commit: `ce742fb`, `fetch_inbox.py` content sha now `f1e1af7`. Confirmed the live pushed file is byte-identical to the intended content and compiles.
+- **Not done, flagged only:** the two confirmed *existing* live duplicate pairs (Development Insight ×2, GLAM ×2) were not merged/removed — item 6 as scoped was "add a dedup check" (forward-looking prevention), not "clean up existing duplicates." Flag to Kevin if that cleanup is also wanted.
+
+**Codex gap, still unresolved, still disclosed:** none of items 5/6/7/8 has had any Codex review pass. Get one in once capacity is confirmed back.
 
 ---
 
