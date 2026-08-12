@@ -1,7 +1,42 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-08-12 (Drew) - "This Week"/"Parked" bloat investigated and root-caused live, NOT built. Real driver is data hygiene (done tasks left in the tier, duplicate auto-created tasks, missing dateAdded on 57% of This Week), not raw volume — This Week displays 25, Parked displays 9. An existing staleness-badge mechanism is real but gets defeated by routine auto-logged inbound email. Proposal made, awaiting Kevin's decision. See entry below.
+**Last updated:** 2026-08-12 (Drew) - Kevin approved building all 4 items from the investigation below (purge done-hidden tasks / dedup on auto-create / dateAdded backfill / staleness-badge fix). Build session PAUSED before any of the 4 was applied — usage/session limits hit twice mid-session (once during the original build dispatch, once during the pause-checkpoint attempt itself). Only the mandatory pre-edit backup was taken (`Archive/tasks_backup_20260812_1244.json`, commit `a76106c`) — verified byte-for-byte identical to live `data/tasks.json` (sha `843dbf7`) at pause time. **No live task data has been touched. All 4 items are NOT STARTED.** See "Session 2026-08-12 (paused)" entry below for exact resume steps.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
+
+---
+
+## Session 2026-08-12 (paused) — build of the 4 approved items dispatched, paused before any code/data change, resumable checkpoint (Drew)
+
+**Scope:** Kevin approved building all 4 items proposed in the investigation entry immediately below ("This Week/Parked bloat investigated and root-caused live"). A build session was dispatched same day. Mid-build, Kevin asked to pause for usage constraints; the dispatched session then hit its own session/usage limit before it could write a resume checkpoint. This entry is written directly by the coordinating session, verified against live GitHub state (not reconstructed from chat), to make sure a fresh session can resume cleanly with no ambiguity.
+
+**What actually happened, verified live via GitHub API/CLI, not assumed:**
+- `work-inbox`'s paired 4 items (the FYI/Parked cleanup) DID fully ship this same session, before the pause — see that repo's own `HANDOVER.md`, commits `2fc529b`/`9ef7e96`/`e693c7e`. Not this repo's concern, noted only for cross-reference since Kevin's brief covered both repos together.
+- For **this** repo, only one action was taken before the pause: the mandatory pre-edit backup (step 1 of the repo's own backup-and-verify sequence) — `Archive/tasks_backup_20260812_1244.json`, commit `a76106c`, `2026-08-12T11:44:02Z`. **Verified just now:** pulled both the live `data/tasks.json` (sha `843dbf7`) and this backup file fresh via the GitHub Contents API and diffed them byte-for-byte — **identical**. The backup is a faithful snapshot; no edit has been made to the live file since.
+- No other file in this repo was touched this session (confirmed: commit `a76106c` only added the one Archive file).
+
+**Per-item status — all 4 NOT STARTED:**
+
+| # | Item | Status | Notes |
+|---|---|---|---|
+| 5 | Purge the done-hidden tasks | NOT STARTED | Re-verified live counts just now (see below) — do not trust the investigation's original "8" figure blindly, it was scoped to This Week+Parked only; there are more done:true tasks elsewhere in the file. |
+| 6 | Dedup check before task auto-creation (work-inbox Phase 3.5/3.6 → this repo's `data/tasks.json` via `cc-tasks-writer`) | NOT STARTED | The fix belongs in `work-inbox/fetch_inbox.py` Phase 3.5/3.6, not in this repo's own files — cross-repo item, needs work-inbox touched too. |
+| 7 | Backfill/fix missing `dateAdded` on This Week tasks | NOT STARTED | Re-verified live just now: **16 of 30 This Week tasks (53%) missing `dateAdded`** — close to, but not identical to, the investigation's original 57% figure (data has moved slightly since; re-verify again on resume, don't reuse this number without a fresh check). |
+| 8 | Fix staleness badge masking by routine auto-logged inbound email | NOT STARTED | Root cause already identified in the investigation entry below (`lastActivityTs()` in `js/app.js` ~line 237, `CC_STALE_DAYS` ~line 260) — design not yet re-validated against today's live data, do that first on resume. |
+
+**Live re-verification done just now (fresh pull, not reused from the earlier investigation):**
+- `data/tasks.json`: 63 tasks total, sha `843dbf7`.
+- `done:true` tasks by tier: today=5, tomorrow=4, week=5, parked=3 (17 total across all 4 tiers). **The original investigation's "8" figure was This Week+Parked only (5+3=8)** — item 5's scope as Kevin approved it. The other 9 (5 today + 4 tomorrow) are done:true tasks in tiers not covered by the original investigation/approval — flag to Kevin on resume whether item 5 should also cover these, or stay scoped to This Week/Parked as originally proposed.
+- This Week (`tier:"week"`) tasks: 30 total, 16 missing `dateAdded` (53%).
+
+**Exact resume steps, in order:**
+1. Re-read this checkpoint and the investigation entry below in full before touching anything — don't reconstruct from chat history.
+2. Re-verify live `data/tasks.json` state fresh (don't reuse the numbers above without a new pull — time will have passed).
+3. Confirm the standing question above with Kevin if not already answered: does item 5's purge cover only This Week/Parked (8, original scope) or all done:true tasks regardless of tier (17, current live count)?
+4. Proceed item by item (5, then 7, then 8 — all single-repo; 6 last, since it also requires touching `work-inbox/fetch_inbox.py`), following this repo's own mandatory backup-and-verify sequence in full for every write to `data/tasks.json` or `js/app.js`: GET live file → confirm non-zero size → timestamped `Archive/` backup → commit backup → verify backup SHA → only then edit → verify post-change SHA. The `a76106c` backup above already covers step 1 of this sequence for whichever of items 5/7/8 touches `data/tasks.json` first — re-verify it's still fresh (matches live) before relying on it; if live data has changed since, take a fresh backup instead of reusing this one.
+5. Item 8 touches `js/app.js`, which affects visible UI (the staleness badge) — screenshot before pushing and wait for Kevin's literal word "approved," per the repo's UI approval gate. Do not push on "looks right."
+6. **Codex gap, carried forward and still unresolved:** none of these 4 items has had any Codex review pass yet (before-start, per-step, or end-to-end) — Codex was out of usage for the whole of today's session. This is a real, disclosed gap in review coverage, not a formality being skipped. Get a Codex pass in before or immediately after building, once capacity is confirmed back, rather than treating today's pause as having quietly closed that gap.
+
+**Not done, on purpose:** no code or data was written for any of the 4 items — this entry is a checkpoint only, deliberately not an attempt to sneak in a fix under time/usage pressure.
 
 ---
 
