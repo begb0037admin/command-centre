@@ -1,7 +1,31 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-07-04 (Kevin session) - crest standard migration approved: embedded base64 retired; dashboards now use file-based `images/oxford-crest.jpg` asset.
+**Last updated:** 2026-08-12 (Drew) - "This Week"/"Parked" bloat investigated and root-caused live, NOT built. Real driver is data hygiene (done tasks left in the tier, duplicate auto-created tasks, missing dateAdded on 57% of This Week), not raw volume — This Week displays 25, Parked displays 9. An existing staleness-badge mechanism is real but gets defeated by routine auto-logged inbound email. Proposal made, awaiting Kevin's decision. See entry below.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
+
+---
+
+## Session 2026-08-12 — "This Week"/"Parked" bloat investigated and root-caused live; investigate-and-propose only, nothing built or pushed (Drew)
+
+**Scope:** Kevin asked for the same investigate-first treatment given to work-inbox's FYI bloat the same day — is This Week/Parked growing unbounded, is anything aging out, are there duplicates. Investigate-and-propose only, no build, no push, per Kevin's brief.
+
+**Live numbers** (pulled `data/tasks.json` fresh via GitHub Contents API, 63 tasks total): raw tier counts week=30, tomorrow=12, parked=12, today=9. Excluding `done:true` (hidden from the board by the existing "Show done" toggle): **This Week displays 25, Parked displays 9** — not large in absolute terms, but real hygiene problems explain why Kevin still flagged it:
+
+1. **`done:true` tasks not purged**: 5 in This Week, 3 in Parked, still live in `tasks.json`, hidden only by a client-side toggle — no archiving removes them from the data store.
+2. **Duplicate tasks from the inbox auto-creation pipeline** (Phase 3.5/3.6 in `fetch_inbox.py`): 2 confirmed genuine duplicate pairs — "Review outstanding Development Insight reports actions..." created twice from two separate emails on the same topic, and "Advise [Marie] on GLAM joining 38-day balance scheme" created twice a day apart. No dedup check exists before auto-creating a task.
+3. **`dateAdded` missing on 17 of 30 This Week tasks (57%)** — the auto-created-by-inbox-pipeline IDs never got this field populated, which would undermine any future age-based cleanup rule for most of This Week's real contents.
+4. **A real staleness mechanism already exists** (`js/app.js` line 260: `CC_STALE_DAYS = {today:7, tomorrow:7, week:21, parked:45}`, an "XD QUIET" badge) — not something to build from scratch. Live count: 5 of 25 displayed This Week and 2 of 9 displayed Parked tasks currently show it. It's visual-only; nothing auto-archives once flagged.
+5. **That staleness signal is being defeated by routine auto-logged inbound email.** `lastActivityTs()` (`js/app.js` ~line 237) takes the newest of dateAdded/lastUpdated/the latest dated action-log entry — and Phase 3.6 auto-appends every related inbound email as a dated action. A task genuinely static for 2 months but still receiving related mail (meeting reminders, forwards) looks perpetually fresh. Quantified live: 2 old This Week tasks and 7 old Parked tasks are currently kept looking fresh this way.
+
+**Verified live**: full per-task dump of This Week/Parked (id, done, dateAdded, age, last action) against the live file; `lastActivityTs()`/`staleDays()` logic replicated exactly in Python against the same live data; title-word-overlap check across all 63 tasks for duplicates (2 genuine pairs confirmed, 1 heuristic false positive correctly excluded).
+
+**Proposed, not built:** (1) purge/archive `done:true` tasks after a grace period instead of leaving them in the live store; (2) add a dedup check in Phase 3.5/3.6 before auto-creating a task; (3) backfill/enforce `dateAdded` at creation time; (4) Kevin to decide whether the staleness clock should only reset on genuine Kevin-driven progress rather than every auto-logged inbound email; (5) optional manual weekly review ritual as a lighter alternative to auto-archiving.
+
+**Codex note:** Kevin reported Codex out of usage today. Investigate-only, nothing built or pushed, so the mandatory-Codex-on-builds rule wasn't triggered — flagged to Kevin that no Codex pass has reviewed this proposal.
+
+Full detail: `begb0037admin/drew` `memory/cc-this-week-parked-bloat-investigation-12aug.md`.
+
+**Next action:** awaiting Kevin's decision on which cleanup approach(es) to build.
 
 ---
 
