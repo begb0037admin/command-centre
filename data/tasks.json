@@ -889,13 +889,14 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-11 11:49",
     "emailRef": "HR Systems Management",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629956F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A88157F40000",
     "summary": "",
     "description": "Marie Cooksey has sent a Microsoft Teams meeting link for HR Systems Management. Kevin needs to attend to participate in management discussions.",
     "origin": "inbox-auto",
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - HR Systems Management).",
-      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for HR Systems Management. (email: Marie Cooksey - HR Systems Management)"
+      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for HR Systems Management. (email: Marie Cooksey - HR Systems Management)",
+      "[13 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan on 11 August, confirming attendance and participation in management discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)"
     ],
     "dateAdded": "2026-08-11"
   },
