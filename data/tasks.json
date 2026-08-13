@@ -987,14 +987,15 @@
     "tier": "today",
     "source": "Inbox - Marie Cooksey, 2026-08-12 10:19",
     "emailRef": "Marie C not working",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A6298D4F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B021B0000",
     "summary": "",
     "description": "Marie Cooksey is unwell and not working for the rest of today (Wednesday 12 August). Kevin should confirm what urgent support coverage is needed and delegate or handle critical items.",
     "origin": "inbox-auto",
     "actions": [
       "[12 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - Marie C not working).",
       "[12 Aug 2026] Marie is unwell and not working for the rest of today (Wednesday 12 August); Kevin should confirm urgent support coverage needs. (email: Marie Cooksey - Marie C not working)",
-      "[13 Aug 2026] Kevin sent email to Marie Cooksey indicating he would be back on Tuesday 11 August and providing a heads up on certain matters. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)"
+      "[13 Aug 2026] Kevin sent email to Marie Cooksey indicating he would be back on Tuesday 11 August and providing a heads up on certain matters. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
+      "[13 Aug 2026] Marie has now advised Beth to step away too due to sickness, leaving no helpdesk cover today; Sarah Rowles and Ant are managing coverage. (email: Marie Cooksey - RE: Reduced Help Desk Support)"
     ],
     "done": true
   },
