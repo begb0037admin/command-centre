@@ -837,7 +837,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Conor O'Brien, 2026-08-07 12:30",
     "emailRef": "RE: #External# RE: Multi Company Setup",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629955A0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998610000",
     "summary": "",
     "description": "Conor O'Brien has sent updated work on the Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week. Kevin needs to review Conor's progress and confirm availability to continue discussions next week.",
     "origin": "inbox-auto",
@@ -845,7 +845,8 @@
       "[10 Aug 2026] Auto-created from inbox triage (email: Conor O'Brien - RE: #External# RE: Multi Company Setup).",
       "[10 Aug 2026] Conor has sent updated Multi Company Setup work and notes both Simon and Kevin are on leave next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
       "[10 Aug 2026] Crispin provided new testing details and scenarios email on 10 August with full technical breakdown for integrations testing. (email: Simon Burford - Volunteering Leave)",
-      "[10 Aug 2026] Crispin Muncaster has provided update on Company 90 testing scenarios and is seeking help on HRIS staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[10 Aug 2026] Crispin Muncaster has provided update on Company 90 testing scenarios and is seeking help on HRIS staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[13 Aug 2026] Simon Burford has advised Conor that he is on leave next week but Kevin should be back and able to continue the Multi Company Setup discussions. (email: Simon Burford - RE: Multi Company Setup)"
     ]
   },
   {
@@ -985,13 +986,14 @@
     "tier": "today",
     "source": "Inbox - Marie Cooksey, 2026-08-12 10:19",
     "emailRef": "Marie C not working",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C710000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A6298D4F0000",
     "summary": "",
     "description": "Marie Cooksey is unwell and not working for the rest of today (Wednesday 12 August). Kevin should confirm what urgent support coverage is needed and delegate or handle critical items.",
     "origin": "inbox-auto",
     "actions": [
       "[12 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - Marie C not working).",
-      "[12 Aug 2026] Marie is unwell and not working for the rest of today (Wednesday 12 August); Kevin should confirm urgent support coverage needs. (email: Marie Cooksey - Marie C not working)"
+      "[12 Aug 2026] Marie is unwell and not working for the rest of today (Wednesday 12 August); Kevin should confirm urgent support coverage needs. (email: Marie Cooksey - Marie C not working)",
+      "[13 Aug 2026] Kevin sent email to Marie Cooksey indicating he would be back on Tuesday 11 August and providing a heads up on certain matters. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)"
     ],
     "done": true
   },
@@ -1006,7 +1008,8 @@
     "description": "Julie Hickman has shared a OneDrive file with timeframe of tasks for 38-day balance departments. Kevin needs to review the document and understand the implementation schedule and any decisions required from HR Systems.",
     "origin": "inbox-auto",
     "actions": [
-      "[12 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - 38 day balance for departments update and decisions needed)."
+      "[12 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - 38 day balance for departments update and decisions needed).",
+      "[13 Aug 2026] Julie Hickman has shared the OneDrive file with timeframe of tasks for 38-day balance departments that Kevin needs to review. (email: Julie Hickman - 38 day balance for departments update and decisions needed)"
     ]
   },
   {
@@ -1020,7 +1023,8 @@
     "description": "Jessica Oldershaw has sent an update on the timeline for implementation of uplift, indicating we have reached a September decision point. Kevin needs to review the full email and confirm HR Systems readiness and any dependencies.",
     "origin": "inbox-auto",
     "actions": [
-      "[12 Aug 2026] Auto-created from inbox triage (email: Jessica Oldershaw - RE: Timeline for implementation of uplift)."
+      "[12 Aug 2026] Auto-created from inbox triage (email: Jessica Oldershaw - RE: Timeline for implementation of uplift).",
+      "[13 Aug 2026] Jessica Oldershaw has sent an update indicating we have reached the September decision point on uplift implementation timeline. (email: Jessica Oldershaw - RE: Timeline for implementation of uplift)"
     ]
   },
   {
@@ -1034,7 +1038,8 @@
     "description": "An updated draft organisational structure has been circulated with changes effective through 12 August 2026. Kevin should review for any HR Systems implications or required actions.",
     "origin": "inbox-auto",
     "actions": [
-      "[12 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT)."
+      "[12 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT).",
+      "[13 Aug 2026] Updated draft organisational structure has been circulated with changes effective through 12 August 2026. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT)"
     ]
   }
 ]
