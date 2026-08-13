@@ -1004,13 +1004,14 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-12 17:09",
     "emailRef": "38 day balance for departments update and decisions needed",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C750000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A6298D4F0000",
     "summary": "",
     "description": "Julie Hickman has shared a OneDrive file with timeframe of tasks for 38-day balance departments. Kevin needs to review the document and understand the implementation schedule and any decisions required from HR Systems.",
     "origin": "inbox-auto",
     "actions": [
       "[12 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - 38 day balance for departments update and decisions needed).",
-      "[13 Aug 2026] Julie Hickman has shared the OneDrive file with timeframe of tasks for 38-day balance departments that Kevin needs to review. (email: Julie Hickman - 38 day balance for departments update and decisions needed)"
+      "[13 Aug 2026] Julie Hickman has shared the OneDrive file with timeframe of tasks for 38-day balance departments that Kevin needs to review. (email: Julie Hickman - 38 day balance for departments update and decisions needed)",
+      "[13 Aug 2026] Kevin confirmed his return to work on Tuesday 11 August (already back as of email date). (email: Kevin (sent to: Marie Cooksey) - Returning to Work)"
     ]
   },
   {
@@ -1019,13 +1020,14 @@
     "tier": "week",
     "source": "Inbox - Jessica Oldershaw, 2026-08-12 16:41",
     "emailRef": "RE: Timeline for implementation of uplift",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C740000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A981A27A0000",
     "summary": "",
     "description": "Jessica Oldershaw has sent an update on the timeline for implementation of uplift, indicating we have reached a September decision point. Kevin needs to review the full email and confirm HR Systems readiness and any dependencies.",
     "origin": "inbox-auto",
     "actions": [
       "[12 Aug 2026] Auto-created from inbox triage (email: Jessica Oldershaw - RE: Timeline for implementation of uplift).",
-      "[13 Aug 2026] Jessica Oldershaw has sent an update indicating we have reached the September decision point on uplift implementation timeline. (email: Jessica Oldershaw - RE: Timeline for implementation of uplift)"
+      "[13 Aug 2026] Jessica Oldershaw has sent an update indicating we have reached the September decision point on uplift implementation timeline. (email: Jessica Oldershaw - RE: Timeline for implementation of uplift)",
+      "[13 Aug 2026] Athena Artuso has provided input suggesting October implementation may be clearer than September decision point; Michael O'Sullivan also contributing breakdown to clarify timeline. (email: Athena Artuso - RE: Timeline for implementation of uplift)"
     ]
   },
   {
