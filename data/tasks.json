@@ -1078,5 +1078,19 @@
       "[13 Aug 2026] Auto-created from inbox triage (email: Caroline Gow - Caroline Gow shared \"Supplier Submission Clarifications V2.0\" with you).",
       "[14 Aug 2026] Caroline Gow has shared the Supplier Submission Clarifications V2.0 document containing supplier responses for Kevin to review ahead of the 21 August deadline. (email: Caroline Gow - Caroline Gow shared \"Supplier Submission Clarifications V2.0\" with you)"
     ]
+  },
+  {
+    "id": "t2608141501170",
+    "title": "Attend H&S Roadmap catch-up with Christopher Sanders",
+    "tier": "week",
+    "source": "Inbox - Christopher Sanders, 2026-08-14 13:13",
+    "emailRef": "H&S Roadmap",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AA5B58050000",
+    "summary": "",
+    "description": "Christopher Sanders has scheduled a regular catch-up to review open support tickets, health & safety roadmap, backlog items, blockers and concerns. Kevin needs to attend this meeting.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[14 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - H&S Roadmap)."
+    ]
   }
 ]
