@@ -1,3 +1,26 @@
+# Handover — 16 August 2026 (Drew) — cc-tasks-writer GitHub-identity isolation, CUTOVER COMPLETE
+
+## TL;DR
+Kevin gave explicit go-ahead the same day, supplied a fresh fine-grained `kevinlelitteadmin` token (confirmed write access to both `command-centre` and `work-inbox`, repo scope, fresh rate-limit bucket). Rotation done, verified live end-to-end through the actual production write paths, not just "the command exited 0." Old shared `begb0037admin` token intentionally left valid as a grace-period fallback, per the same discipline Zara used for `kevin-finance-ai`.
+
+## What was done, in order
+1. Confirmed baseline live version matched Kevin's stated restore point exactly: `69edef7c-562e-4580-9088-6d3f46dda7b4` (100%, created `2026-08-02T21:44:56.932Z`) via `wrangler deployments list --name cc-tasks-writer`.
+2. Confirmed `HRIS_GITHUB_PAT` present via `wrangler secret list --name cc-tasks-writer`.
+3. Ran `wrangler secret put HRIS_GITHUB_PAT --name cc-tasks-writer` with the new token piped via stdin (never echoed to a file or committed).
+4. Verified the rotation registered as its own deployment: version `61d6d5c8-c5ce-49bb-9d2f-2b88954c428b`, `Source: Secret Change`, 100%, created `2026-08-16T13:52:58.207Z` — immediately after the prior baseline, no other version in between.
+5. **Real functional check, both write paths the Worker serves** (not a synthetic test — actual POSTs to the live production Worker URL, same route the dashboard/work-inbox client code calls):
+   - `command-centre`: fetched live `data/tasks.json` (sha `eea8e24a...`, 61 tasks), POSTed the exact same tasks array straight back through `handleTasks` with message `"cc-tasks-writer PAT rotation verification (no data change) - 16 Aug 2026"`. Worker returned `{"ok":true,"merged":false,"attempts":1}` HTTP 200. Confirmed live: new commit `72f3f05` landed with that exact message, **and** the Worker's own daily-backup step fired for the first time today — `Archive/tasks_backup_20260816.json` created, commit `c9cc1df`, message `"Daily backup 20260816"`.
+   - `work-inbox`: same pattern against `data/ticks.json` via the `inbox-state` route — commit `38eff03` landed, message `"cc-tasks-writer PAT rotation verification (work-inbox side, no data change)"`.
+   - **Identity proof, the actual point of this cutover:** both new commits show `committer_login: kevinlelitteadmin` / `author_email: 201231673+kevinlelitteadmin@users.noreply.github.com` — directly contrasted against the immediately preceding commits on both repos, which show `committer_login: begb0037admin` / `author_email: begb0037@ox.ac.uk`. The identity split is live and real, not just "the secret changed."
+
+## Rollback path
+Old shared `begb0037admin` PAT is untouched and still valid — recommend Kevin leave it live for a few days as fallback, same as the finance Worker cutover. If the new token needs to be backed out: `wrangler secret put HRIS_GITHUB_PAT --name cc-tasks-writer` again with the old token value. This is a secret-only rollback, not a code rollback — the Worker code itself (`cc-tasks-writer-proposed.js`, live version `69edef7c...` prior to the secret change, now superseded by `61d6d5c8...` which is the same code with only the secret changed) was never touched.
+
+## Gotcha found this session, also pushed to Drew's confirmed-fact memory + agent-commons
+`wrangler` via this machine's Git Bash resolves its config/token store differently than the working PowerShell session that did the earlier audit. Git Bash sets `HOME=/c/Users/admin`, which some of wrangler's path resolution follows down a POSIX-style `$HOME/.wrangler` path — but the real, actively-refreshed OAuth token lives at `%APPDATA%\xdg.config\.wrangler\config\default.toml` (i.e. `AppData\Roaming`, not `$HOME/.wrangler`). Git Bash `wrangler whoami`/`wrangler deployments list` failed with "not authenticated" despite a valid, non-expired token sitting one directory tree over. Fixed by copying `default.toml` into the `$HOME/.wrangler/config/` path Git Bash's wrangler actually checks. Anyone running `wrangler` via Git Bash on this machine (not PowerShell) should expect this and check both locations before assuming a real login is needed.
+
+---
+
 # Handover — 16 August 2026 (Drew) — cc-tasks-writer GitHub-identity isolation, AUDIT ONLY, cutover not yet started
 
 ## TL;DR
