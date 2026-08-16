@@ -1,4 +1,42 @@
-# Handover — 12 August 2026, continued (Drew) — item 5 completion: Today/Tomorrow done-task purge
+# Handover — 16 August 2026 (Drew) — cc-tasks-writer GitHub-identity isolation, AUDIT ONLY, cutover not yet started
+
+## TL;DR
+Same-day sibling to Zara's `kevin-finance-ai` dedicated-token cutover (`begb0037admin/zara/memory/note_2026-08-16_dedicated_github_token_cutover_deployed.md`) — a repo-wide audit found `cc-tasks-writer` has the identical exposure: it writes `data/tasks.json` (command-centre) and (less obviously) also work-inbox, live, on the same shared `begb0037admin` GitHub API budget that took down kevin-personal-finance earlier today. Kevin approved doing the same isolation work here ("may be worth it for command centre"). This session did the full audit and found the GitHub-side setup is **already done** — nobody just noticed. Cutover itself (secret rotation) has **not** been run; needs Kevin's identity-approach decision + a token + explicit go-ahead, same discipline Zara used.
+
+## Confirmed live, not assumed from docs
+
+**Which Worker file is actually live:** `cloudflare-worker/cc-tasks-writer-proposed.js` (commit `4ef2fbf5e`, committed 2026-08-02T21:38:00Z) — the fix the 2 Aug HANDOVER entry described as "proposed, not deployed" **was in fact deployed shortly after**, same evening. Confirmed via `wrangler deployments list --name cc-tasks-writer`: current 100% live version is `69edef7c-562e-4580-9088-6d3f46dda7b4`, created `2026-08-02T21:44:56.932Z` — timestamp sits between the proposed-fix commit (21:38) and the `cc-tasks-writer-PREVIOUS.js` backup commit (21:52, whose own message says "the patched Worker was deployed... reconstructs [the prior code] from the full source Kevin pasted into the session immediately beforehand"). No deployment newer than 69edef7c exists. `cc-tasks-writer-PREVIOUS.js` is the pre-patch rollback reference, not live.
+
+**This is the restore point for any rollback:** live Worker version `69edef7c-562e-4580-9088-6d3f46dda7b4` (100%), code = `cc-tasks-writer-proposed.js`. A secret-only rotation doesn't create a new code version (per Zara's finding on the finance Worker — secret changes do version separately, `Source: Secret Change`), so rollback of a bad secret swap means re-`wrangler secret put`-ing the old value, not a code rollback.
+
+**Which secret carries the shared identity:** `env.HRIS_GITHUB_PAT` (confirmed via `wrangler secret list --name cc-tasks-writer`, two secrets present: `ANTHROPIC_API_KEY`, `HRIS_GITHUB_PAT`; confirmed via source grep, `cc-tasks-writer-proposed.js` lines 259/350 read `env.HRIS_GITHUB_PAT` for both the read and write GitHub Contents API calls).
+
+**Blast radius is wider than command-centre alone:** the Worker's own constants (`cc-tasks-writer-proposed.js` lines 115-117) are `OWNER='begb0037admin'`, `CC_REPO='command-centre'`, `WI_REPO='work-inbox'` — this one Worker, one secret, writes to **both** repos (matches CLAUDE.md's description of the PAT as "Contents RW, command-centre + work-inbox only"). Isolating this secret protects both dashboards' write path from the shared-budget problem, not just command-centre's.
+
+**GitHub-side isolation setup is already complete — found, not built:** `kevinlelitteadmin` (the same collaborator account Zara used for kevin-personal-finance) is **already an accepted collaborator with `write`/`push:true` on both `command-centre` and `work-inbox`** (confirmed live via `GET /repos/begb0037admin/{repo}/collaborators` on both repos; zero pending invitations on either). Nobody had to add it — either Kevin did this proactively or it happened as a side effect of other work. This means the only remaining step is a token + the `wrangler secret put HRIS_GITHUB_PAT --name cc-tasks-writer` rotation — no collaborator invite step needed.
+
+**Shared `begb0037admin` budget right now:** `GET /rate_limit` → `limit 5000, remaining 4991, used 9` — healthy at audit time (today's earlier incident was on kevin-personal-finance, not this Worker), but that's exactly the shared bucket this isolation removes as a future single point of failure for command-centre/work-inbox too.
+
+## Decision point for Kevin — not yet decided
+
+Two valid options for the actual token, judgement call flagged rather than picked unilaterally:
+1. **Reuse the exact classic PAT Zara validated for kevin-finance-ai** (`kevinlelitteadmin`, scope `repo`, ~90-day expiry). Classic PAT scope isn't repo-limited — it already covers every repo the account can access, which as of this audit includes both command-centre and work-inbox. Zero new token generation, fastest path.
+2. **Generate a separate token under the same `kevinlelitteadmin` account**, scoped narrower (fine-grained, Contents RW, command-centre + work-inbox only) — mirrors the existing `HRIS_GITHUB_PAT`'s own scope discipline more closely, and keeps kevin-finance-ai's credential and cc-tasks-writer's credential independently revocable/auditable even though both sit under the same collaborator identity. Costs Kevin one more manual PAT-generation step (same as before — inherently a human-only GitHub UI action, no agent can do it).
+
+Recommendation: option 2, for blast-radius/audit-clarity reasons, but option 1 is a legitimate zero-setup alternative if Kevin would rather not generate another token today. Either way this needs Kevin's explicit choice before proceeding — not decided by this session.
+
+## What has NOT been done
+- No token received or validated against the GitHub API yet.
+- No `wrangler secret put` run — production `HRIS_GITHUB_PAT` on `cc-tasks-writer` is untouched.
+- No dry-run performed yet (blocked on having a token to validate).
+- Old shared PAT should stay unrevoked for a grace period after cutover, same as Zara's recommendation for finance.
+
+## Next action
+Get Kevin's decision (reuse vs new token) and the token value (pasted in-session only, same as Zara's pattern — never written to a file or committed). Then: validate the token live against the GitHub API (identity, scope, push:true on both repos, fresh rate-limit bucket) exactly as Zara did before it goes near the Worker secret. State the restore point again at that moment. Get Kevin's fresh explicit go-ahead for the specific `wrangler secret put HRIS_GITHUB_PAT --name cc-tasks-writer` cutover. Run it. Verify with `wrangler deployments list --name cc-tasks-writer` (new Secret Change version at 100%) plus a live functional check — e.g. make a real quick-add/tier-move on the dashboard and confirm it round-trips into `data/tasks.json`, not just that the command exited 0.
+
+---
+
+
 
 ## TL;DR
 Continued from the `cc-cleanup-items-5-8-build-12aug` checkpoint (commit `e672a94`), which purged done:true tasks from This Week + Parked (8 tasks, per Kevin's original approval scope) but flagged 9 more done tasks outside that scope: 5 in Today, 4 in Tomorrow. Kevin has now approved purging those too. Done, verified live, pushed.
