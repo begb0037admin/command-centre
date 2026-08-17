@@ -50,9 +50,11 @@
       "[09 Jun 2026] Root cause confirmed: documents exist and are correctly placed; signposting is the issue.",
       "[TODO] Write response to Simon explaining the situation and confirming documents are accessible.",
       "[TODO] Recommend alignment meeting to get whole team up to speed on SharePoint structure and org hierarchy documentation.",
-      "[TODO] Touch base with Michael separately on this."
+      "[TODO] Touch base with Michael separately on this.",
+      "[17 Aug 2026] Julie Hickman has acknowledged Athena's work on intranet hyperlinks as a positive step toward resolving the documentation and guidance issues raised by Simon. (email: Julie Hickman - RE: Review of intranet hyperlinks)"
     ],
-    "dateAdded": "2026-06-08"
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7BD0000"
   },
   {
     "id": "t009",
@@ -840,7 +842,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Conor O'Brien, 2026-08-07 12:30",
     "emailRef": "RE: #External# RE: Multi Company Setup",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998610000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A88157F40000",
     "summary": "",
     "description": "Conor O'Brien has sent updated work on the Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week. Kevin needs to review Conor's progress and confirm availability to continue discussions next week.",
     "origin": "inbox-auto",
@@ -849,7 +851,8 @@
       "[10 Aug 2026] Conor has sent updated Multi Company Setup work and notes both Simon and Kevin are on leave next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
       "[10 Aug 2026] Crispin provided new testing details and scenarios email on 10 August with full technical breakdown for integrations testing. (email: Simon Burford - Volunteering Leave)",
       "[10 Aug 2026] Crispin Muncaster has provided update on Company 90 testing scenarios and is seeking help on HRIS staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[13 Aug 2026] Simon Burford has advised Conor that he is on leave next week but Kevin should be back and able to continue the Multi Company Setup discussions. (email: Simon Burford - RE: Multi Company Setup)"
+      "[13 Aug 2026] Simon Burford has advised Conor that he is on leave next week but Kevin should be back and able to continue the Multi Company Setup discussions. (email: Simon Burford - RE: Multi Company Setup)",
+      "[17 Aug 2026] Kevin has shared the KPI presentation for July 2026 with Michael O'Sullivan, indicating progress on documenting HR Systems performance metrics. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)"
     ]
   },
   {
@@ -876,13 +879,14 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-11 11:50",
     "emailRef": "H&S Systems Supplier Reviews",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995700000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629956F0000",
     "summary": "",
     "description": "Marie Cooksey has sent a Microsoft Teams meeting link for H&S Systems Supplier Reviews. Kevin needs to attend this meeting to participate in the supplier evaluation process.",
     "origin": "inbox-auto",
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - H&S Systems Supplier Reviews).",
-      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for H&S Systems Supplier Reviews. (email: Marie Cooksey - H&S Systems Supplier Reviews)"
+      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for H&S Systems Supplier Reviews. (email: Marie Cooksey - H&S Systems Supplier Reviews)",
+      "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the H&S Systems Supplier Reviews meeting Kevin needs to attend. (email: Marie Cooksey - HR Systems Management)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -892,14 +896,15 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-11 11:49",
     "emailRef": "HR Systems Management",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A88157F40000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995700000",
     "summary": "",
     "description": "Marie Cooksey has sent a Microsoft Teams meeting link for HR Systems Management. Kevin needs to attend to participate in management discussions.",
     "origin": "inbox-auto",
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - HR Systems Management).",
       "[11 Aug 2026] Meeting invitation received from Marie Cooksey for HR Systems Management. (email: Marie Cooksey - HR Systems Management)",
-      "[13 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan on 11 August, confirming attendance and participation in management discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)"
+      "[13 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan on 11 August, confirming attendance and participation in management discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
+      "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the HR Systems Management meeting Kevin needs to attend. (email: Marie Cooksey - H&S Systems Supplier Reviews)"
     ],
     "dateAdded": "2026-08-11"
   },
