@@ -289,10 +289,11 @@
       "[03 Jul 2026] Crispin Muncaster flagged clarification and guidance needed on DTP1092 Company 90 testing; requests meeting slot. (email: Crispin Muncaster - DTP1092 PXD Company 90 Testing)",
       "[03 Jul 2026] Crispin Muncaster has requested to move an earlier meeting slot for DTP1092 College staff in PXD work. (email: Crispin Muncaster - DTP1092 College staff in PXD)",
       "[03 Aug 2026] Crispin Muncaster forwards DTP1092 College Staff into PXD Integrations testing update from Guy Williams regarding progress on the college data project. (email: Crispin Muncaster - FW: DTP1092 College Staff into PXD - Integrations testing)",
-      "[07 Aug 2026] Simon Burford's email to Ewan and Matt references June discussions with Marie about data warehouse feeds for Company 90 configuration, directly relevant to REF2029 pay admin codes setup in UOXU. (email: Simon Burford - RE: Business rules for Data Warehouse)"
+      "[07 Aug 2026] Simon Burford's email to Ewan and Matt references June discussions with Marie about data warehouse feeds for Company 90 configuration, directly relevant to REF2029 pay admin codes setup in UOXU. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[17 Aug 2026] Simon clarifies that Company 90 WFM setup was temporary; requests to ignore Company 90 for now in balance period configuration work. (email: Simon Burford - RE: Balance Period End Matrix)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43200000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C10000",
     "done": true
   },
   {
@@ -827,7 +828,7 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-06 14:49",
     "emailRef": "RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C10000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C50000",
     "summary": "",
     "description": "Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for DTP1092 Company 90 configuration and testing. Kevin needs to confirm this approach.",
     "origin": "inbox-auto",
@@ -836,7 +837,8 @@
       "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments for Company 90 testing; Kevin to confirm approach. (email: Simon Burford - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
       "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for Company 90 testing. (email: Simon Burford - RE: Business rules for Data Warehouse)",
       "[12 Aug 2026] Guy Williams has provided technical guidance on integration platform environments (INT-STG, BT, AIP) that Kevin needs to confirm approach for Company 90 refresh. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[17 Aug 2026] Simon clarifies that Company 90 should be ignored for now as it was set up only for WFM workgroup attachment purposes. (email: Simon Burford - RE: Balance Period End Matrix)"
+      "[17 Aug 2026] Simon clarifies that Company 90 should be ignored for now as it was set up only for WFM workgroup attachment purposes. (email: Simon Burford - RE: Balance Period End Matrix)",
+      "[17 Aug 2026] Simon continues discussion with Andrew Goff on testing approach for DTP1092 College Staff into PXD, noting the need to test the actual solution before go-live. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ],
     "dateAdded": "2026-08-07"
   },
@@ -1018,14 +1020,15 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-12 17:09",
     "emailRef": "38 day balance for departments update and decisions needed",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A6298D4F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7CA0000",
     "summary": "",
     "description": "Julie Hickman has shared a OneDrive file with timeframe of tasks for 38-day balance departments. Kevin needs to review the document and understand the implementation schedule and any decisions required from HR Systems.",
     "origin": "inbox-auto",
     "actions": [
       "[12 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - 38 day balance for departments update and decisions needed).",
       "[13 Aug 2026] Julie Hickman has shared the OneDrive file with timeframe of tasks for 38-day balance departments that Kevin needs to review. (email: Julie Hickman - 38 day balance for departments update and decisions needed)",
-      "[13 Aug 2026] Kevin confirmed his return to work on Tuesday 11 August (already back as of email date). (email: Kevin (sent to: Marie Cooksey) - Returning to Work)"
+      "[13 Aug 2026] Kevin confirmed his return to work on Tuesday 11 August (already back as of email date). (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
+      "[17 Aug 2026] Julie has scheduled a Teams meeting for planning for departments moving to 38-day balance, providing follow-up discussion on the implementation timeline document previously shared. (email: Julie Hickman - Planning for depts move to 38 day balance )"
     ]
   },
   {
@@ -1103,6 +1106,20 @@
     "actions": [
       "[14 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - H&S Roadmap).",
       "[14 Aug 2026] Confirmation email received from Christopher Sanders for the H&S Roadmap catch-up meeting scheduled for Friday 14 August. (email: Christopher Sanders - H&S Roadmap)"
+    ]
+  },
+  {
+    "id": "t2608171727070",
+    "title": "Attend HSMS Tender Session (final) on Microsoft Teams",
+    "tier": "today",
+    "source": "Inbox - Christopher Sanders, 2026-08-17 12:09",
+    "emailRef": "HSMS Tender Session (the final one)",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C70000",
+    "summary": "",
+    "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the final HSMS (Health & Safety Management System) tender session. This is a meeting attendance commitment that requires Kevin's participation today.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[17 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - HSMS Tender Session (the final one))."
     ]
   }
 ]
