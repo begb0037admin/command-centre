@@ -744,7 +744,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Simon Burford, 2026-08-07 12:23",
     "emailRef": "RE: Multi Company Setup",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C700000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C50000",
     "summary": "",
     "description": "Simon Burford is on leave next week and has indicated Kevin will be back. Conor O'Brien (Access Group) needs confirmation of Kevin's availability to continue the multi-company configuration work for DTP1092. This is a continuation of existing task t021 but requires immediate confirmation of readiness.",
     "origin": "inbox-auto",
@@ -753,7 +753,8 @@
       "[07 Aug 2026] Simon confirmed Kevin will be back next week and can continue multi-company setup discussions with Conor. (email: Simon Burford - RE: Multi Company Setup)",
       "[10 Aug 2026] Conor O'Brien sent follow-up noting he has additional work completed on Multi Company Setup and seeking availability for next week when Simon is on leave. (email: Conor O'Brien - Multi Company Setup)",
       "[10 Aug 2026] Conor O'Brien has sent updated work on Multi Company Setup and is awaiting Kevin's availability to continue discussions this week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
-      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin should respond with availability. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder – Occupational Health)"
+      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin should respond with availability. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder – Occupational Health)",
+      "[17 Aug 2026] Simon Burford continues DTP1092 testing discussions; Simon raising questions about testing approach with Andrew Goff and IT Services on HRIS staging imports. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
@@ -939,14 +940,15 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-11 13:39",
     "emailRef": "RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995750000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A88157F40000",
     "summary": "",
     "description": "Marie Cooksey is seeking Kevin's input on whether GLAM should join the 38-day balance scheme alongside Maths and Chemistry. Kevin needs to provide thoughts/advice to inform the decision.",
     "origin": "inbox-auto",
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing).",
       "[11 Aug 2026] Julie is asking Marie for thoughts on GLAM joining the 38-day balance scheme; Marie has copied Kevin in for input. (email: Marie Cooksey - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)",
-      "[11 Aug 2026] Julie Hickman is asking Marie (copied to Kevin) for thoughts on whether GLAM should also join the 38-day balance scheme alongside Maths and Chemistry. (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)"
+      "[11 Aug 2026] Julie Hickman is asking Marie (copied to Kevin) for thoughts on whether GLAM should also join the 38-day balance scheme alongside Maths and Chemistry. (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)",
+      "[17 Aug 2026] Kevin shared KPI presentation (July 2026) with Michael O'Sullivan, providing data context for ongoing discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -1057,13 +1059,14 @@
     "tier": "week",
     "source": "Inbox - Organisational Structure, 2026-08-12 16:24",
     "emailRef": "RE: Organisational Structure Update - August 2026 - DRAFT",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A8967C730000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C00000",
     "summary": "",
     "description": "An updated draft organisational structure has been circulated with changes effective through 12 August 2026. Kevin should review for any HR Systems implications or required actions.",
     "origin": "inbox-auto",
     "actions": [
       "[12 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT).",
-      "[13 Aug 2026] Updated draft organisational structure has been circulated with changes effective through 12 August 2026. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT)"
+      "[13 Aug 2026] Updated draft organisational structure has been circulated with changes effective through 12 August 2026. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT)",
+      "[17 Aug 2026] Simon forwarded organisational structure update confirming changes to PACS org structure moving colleges and societies from L2 to L3, effective through 12 August 2026. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)"
     ]
   },
   {
