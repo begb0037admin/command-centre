@@ -541,10 +541,12 @@
     "actions": [
       "[29 Jun 2026] Simon Burford asked Kevin to assess the impact with James and Chris. Kevin confirmed he would pick it up.",
       "[TODO] Work with James and Chris to assess impact on PeopleXD and H&S systems of moving Colleges from L2 to L3 in org structure.",
-      "[TODO] Report back to Simon so the management team can pull together a formal response to Katherine Corr (PACS)."
+      "[TODO] Report back to Simon so the management team can pull together a formal response to Katherine Corr (PACS).",
+      "[17 Aug 2026] Simon Burford forwards notification of PACS organisational structure changes moving colleges and societies from L2 to L3, effective through 12 August 2026. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)"
     ],
     "dateAdded": "2026-06-29",
-    "done": true
+    "done": true,
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C00000"
   },
   {
     "id": "t034",
@@ -662,7 +664,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-05 09:20",
     "emailRef": "DTP1092 College Staff to PXD - testing meeting",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A6298D4F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C50000",
     "summary": "",
     "description": "Crispin Muncaster has sent the integrations link for tomorrow's testing meeting in readiness for the 14 August deadline. Kevin needs to attend and participate in the DTP1092 College Staff to PXD testing discussion.",
     "origin": "inbox-auto",
@@ -675,7 +677,8 @@
       "[10 Aug 2026] Crispin Muncaster is out of office on annual leave until Monday 17 August, affecting coordination of the DTP1092 testing meeting. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
       "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning Monday 17 August; testing meeting tomorrow (11 Aug) may need rescheduling given his absence. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[10 Aug 2026] Julie Hickman has flagged several follow-up points from Patch Release 28.0.157 UAT testing that may require Kevin's attention on related systems work. (email: Julie Hickman - RE: Patch Release 28.0.157 – UAT Update)",
-      "[14 Aug 2026] Kevin sent email to Marie confirming his return to work on Tuesday 11 August following his absence. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)"
+      "[14 Aug 2026] Kevin sent email to Marie confirming his return to work on Tuesday 11 August following his absence. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
+      "[17 Aug 2026] Simon Burford's follow-up on 17 Aug confirms he wants to test the actual go-live solution first before proceeding with staging imports. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
@@ -824,7 +827,7 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-06 14:49",
     "emailRef": "RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995620000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C10000",
     "summary": "",
     "description": "Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for DTP1092 Company 90 configuration and testing. Kevin needs to confirm this approach.",
     "origin": "inbox-auto",
@@ -832,7 +835,8 @@
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP).",
       "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments for Company 90 testing; Kevin to confirm approach. (email: Simon Burford - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
       "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for Company 90 testing. (email: Simon Burford - RE: Business rules for Data Warehouse)",
-      "[12 Aug 2026] Guy Williams has provided technical guidance on integration platform environments (INT-STG, BT, AIP) that Kevin needs to confirm approach for Company 90 refresh. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[12 Aug 2026] Guy Williams has provided technical guidance on integration platform environments (INT-STG, BT, AIP) that Kevin needs to confirm approach for Company 90 refresh. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[17 Aug 2026] Simon clarifies that Company 90 should be ignored for now as it was set up only for WFM workgroup attachment purposes. (email: Simon Burford - RE: Balance Period End Matrix)"
     ],
     "dateAdded": "2026-08-07"
   },
