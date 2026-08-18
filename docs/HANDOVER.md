@@ -1,3 +1,24 @@
+# Handover — 18 August 2026, ~21:30 (Drew) — HIGH PRIORITY / URGENT: task `t2608111331410` escalated, "Cority - Applicant Data Import file" thread (James Salas Guillen / Simon Burford)
+
+## Scope
+Kevin asked for full retrieval/unpack of this thread (same treatment as the Organisational Structure Update item earlier this session), then mid-task escalated it to HIGH PRIORITY/URGENT and asked for everything — full content, all attachments opened and read, all correspondents, full history. Adam separately found the existing auto-created task `t2608111331410` (11 Aug 2026, tier `week`) before a duplicate was created, so this session **updated that task in place** rather than creating a new one. Full chronological unpack and all 5 verbatim message bodies live in this repo's own `data/tasks.json` task `t2608111331410` (`description` field); matching entry in work-inbox's `HANDOVER.md` (commit `cc0ebdab25ddd1d533e794a16edeaf55045f9873`) has the same narrative.
+
+## What was done here
+Full mandatory backup-and-verify sequence run for `data/tasks.json`: GET live file (non-zero, 121082 bytes, 69 tasks, sha `cd75197f`) → timestamped backup `Archive/tasks_backup_20260818_2025.json` (commit `de0a8e5519e34fb5ccd7ffac4614fa9744cd6365`) → backup re-fetched, sha confirmed `cd75197f09bffafa9f2162b069e35415a2bf8cf6` matching the pre-write live file exactly → only then wrote the update using that fresh sha (commit `126165de444337c780abd9b469c3c96798ac9532`, new content sha `df75cb7d24297477453a008632b8b25b9edbb429`) → live file re-fetched afterward, confirmed 69 tasks (no count drift), title/tier/priority/description/actions on `t2608111331410` all verified present exactly as pushed.
+
+Task changes: title prefixed `URGENT --`; `tier` changed `week` → `today`; new `priority: "urgent"` field added (this task's schema previously had no priority field — this is the first use of one on this task, added per Kevin's explicit instruction, not a repo-wide schema change); `summary` and `description` fully rewritten with all 5 verbatim message bodies (James Salas Guillen / Simon Burford, 11–18 Aug 2026) plus attachment findings; `actions` appended (not overwritten) with the escalation record, a `[TODO]` for Kevin's two open items from Simon's final message, and a `[MONITOR]` noting Adam's separate cross-reference against CORITY-FEASIBILITY.md.
+
+## Attachment handling — real data-sensitivity note
+One attachment across the thread (`image004.png` on Simon Burford's first reply) is a screenshot of the actual live `RECSUP20_Applicant Cority Interface File_V1.csv` open in Notepad++, showing real applicant personal data (names, DOB, addresses, phone numbers, emails) in production, not test data. Opened and viewed directly to confirm this. Deliberately **not reproduced verbatim** in either this file or `data/tasks.json` — duplicating real applicants' PII into a second data store was judged unnecessary exposure risk with no added decision value. Flagged as a fact for Kevin/Adam's awareness; not assessed as a compliance question here — outside Drew's retrieval-only scope.
+
+## Not done
+No reply drafted or sent (Lauren's parallel task). No Cority H&S feasibility assessment made — Adam's cross-reference against CORITY-FEASIBILITY.md is a separate dispatch, not started here.
+
+## Next action
+Kevin to answer Simon Burford's two open questions (null-value export format, UTF-8 encoding) and what he knows of Lee's handover regarding this report's undocumented origin. Adam to cross-reference once dispatched. No further command-centre or work-inbox engineering action required on this item.
+
+---
+
 # Handover — 18 August 2026 (Drew) — HIGH PRIORITY / URGENT: task-1787072363309 logged, "Organisational Structure Update - August 2026 - DRAFT" thread (Simon Burford / Sarah Rowles)
 
 ## Scope
