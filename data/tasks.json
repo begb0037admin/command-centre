@@ -220,12 +220,13 @@
     "tier": "parked",
     "source": "Inbox 2026-06-08 15:58",
     "emailRef": "RE: Scoping Session update",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500077D9F1E2E0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F690000",
     "summary": "Sophie Levy has had no contact in two months and needs a current update on the scoping work.",
     "description": "Sophie Levy has not heard from Kevin in two months and is seeking an update. She references April 2026 information and needs clarity on project status.",
     "actions": [
       "[11 Jun 2026] Sophie Levy chased for an update after two months with no contact.",
-      "[PARKED] Reconnect with Sophie and provide update when at fuller hours."
+      "[PARKED] Reconnect with Sophie and provide update when at fuller hours.",
+      "[18 Aug 2026] Sarah Rowles reminder that tomorrow's HR Systems Team meeting is the Roadmap session; confirm any AOB or apologies needed. (email: Sarah Rowles - HR Systems Team Meeting - Roadmap)"
     ],
     "dateAdded": "2026-06-10"
   },
@@ -940,7 +941,7 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-11 13:39",
     "emailRef": "RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A88157F40000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C90000",
     "summary": "",
     "description": "Marie Cooksey is seeking Kevin's input on whether GLAM should join the 38-day balance scheme alongside Maths and Chemistry. Kevin needs to provide thoughts/advice to inform the decision.",
     "origin": "inbox-auto",
@@ -948,7 +949,8 @@
       "[11 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing).",
       "[11 Aug 2026] Julie is asking Marie for thoughts on GLAM joining the 38-day balance scheme; Marie has copied Kevin in for input. (email: Marie Cooksey - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)",
       "[11 Aug 2026] Julie Hickman is asking Marie (copied to Kevin) for thoughts on whether GLAM should also join the 38-day balance scheme alongside Maths and Chemistry. (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)",
-      "[17 Aug 2026] Kevin shared KPI presentation (July 2026) with Michael O'Sullivan, providing data context for ongoing discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)"
+      "[17 Aug 2026] Kevin shared KPI presentation (July 2026) with Michael O'Sullivan, providing data context for ongoing discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
+      "[18 Aug 2026] Julie Hickman has had an initial conversation with Becky Fitzek at GLAM which was productive; provides new information on GLAM's readiness to join 38-day balance scheme. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -1025,7 +1027,7 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-12 17:09",
     "emailRef": "38 day balance for departments update and decisions needed",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7CA0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A981A2760000",
     "summary": "",
     "description": "Julie Hickman has shared a OneDrive file with timeframe of tasks for 38-day balance departments. Kevin needs to review the document and understand the implementation schedule and any decisions required from HR Systems.",
     "origin": "inbox-auto",
@@ -1033,7 +1035,8 @@
       "[12 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - 38 day balance for departments update and decisions needed).",
       "[13 Aug 2026] Julie Hickman has shared the OneDrive file with timeframe of tasks for 38-day balance departments that Kevin needs to review. (email: Julie Hickman - 38 day balance for departments update and decisions needed)",
       "[13 Aug 2026] Kevin confirmed his return to work on Tuesday 11 August (already back as of email date). (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
-      "[17 Aug 2026] Julie has scheduled a Teams meeting for planning for departments moving to 38-day balance, providing follow-up discussion on the implementation timeline document previously shared. (email: Julie Hickman - Planning for depts move to 38 day balance )"
+      "[17 Aug 2026] Julie has scheduled a Teams meeting for planning for departments moving to 38-day balance, providing follow-up discussion on the implementation timeline document previously shared. (email: Julie Hickman - Planning for depts move to 38 day balance )",
+      "[18 Aug 2026] Michael O'Sullivan has provided NHS Pension tier new pay ranges update; Athena notes the team only needs employer contribution rates for statutory reporting. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)"
     ]
   },
   {
@@ -1127,6 +1130,20 @@
     "actions": [
       "[17 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - HSMS Tender Session (the final one)).",
       "[17 Aug 2026] Meeting reminder received for final HSMS tender session scheduled for today. (email: Christopher Sanders - HSMS Tender Session (the final one))"
+    ]
+  },
+  {
+    "id": "t2608180901160",
+    "title": "Confirm appointment availability with Chris Little",
+    "tier": "tomorrow",
+    "source": "Inbox - Chris Little, 2026-08-18 08:50",
+    "emailRef": "Re: Appointment request",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F680000",
+    "summary": "",
+    "description": "Chris Little has offered two morning slots on 11 or 12 September for an appointment. Kevin needs to confirm which date works for him.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Chris Little - Re: Appointment request)."
     ]
   }
 ]
