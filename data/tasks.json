@@ -1,5 +1,24 @@
 [
   {
+    "id": "task-1787072363309",
+    "title": "URGENT -- Organisational Structure Update - August 2026 - DRAFT (Simon Burford / Sarah Rowles thread)",
+    "tier": "today",
+    "source": "orgstructure@admin.ox.ac.uk / Simon Burford (HR Systems Analysis and Insights Manager) / Sarah Rowles -- email thread",
+    "emailRef": "Organisational Structure Update - August 2026 - DRAFT",
+    "summary": "Draft PACS org-structure changes (Colleges/Societies moved L2->L3, Subsidiary Companies update) circulated 12 Aug with an errors/omissions deadline of Wed 19 Aug 2026 -- tomorrow. Simon Burford forwarded internally 17 Aug flagging possible PeopleXD/H&S-dashboard mapping and HESA impact; Sarah Rowles replied same day asking Simon when it goes live, given her planned HESA generate on Mon 24 Aug. Neither question has been answered and Kevin has not yet responded on this thread.",
+    "description": "orgstructure@admin.ox.ac.uk circulated a draft University PACS Organisational Structure update on 12 Aug 2026 (16:22 UTC), covering a wholesale move of College/Society entities from PACS level 2 to level 3, and a large Subsidiary Companies correction. Explicit deadline in the original notice: report any errors or omissions no later than Wednesday 19 August 2026. System Administrators were told not to make changes until a final version is published. On 17 Aug 2026 (10:22 UTC) Simon Burford (HR Systems Analysis and Insights Manager, HR Systems, People Department, simon.burford@admin.ox.ac.uk) forwarded the notice to Kevin, Christopher Sanders, James Salas Guillen, Michael O'Sullivan and David Johnson (cc Marie Cooksey, Sarah Rowles, Athena Artuso), assessing limited PeopleXD impact but proposing 3 new management units (0C01 Kellogg, 0C02 St Cross, 0C03 Reuben) to properly align the Societies area, and flagging a knock-on risk to org-structure mapping tables in the data warehouse -- specifically including the H&S mapping David Johnson and Christopher Sanders built for the H&S dashboard -- plus a possible HESA reporting impact (societies now returned for HESA). On 17 Aug 2026 (11:28 UTC) Sarah Rowles replied-all to Simon (cc Marie Cooksey, Athena Artuso; Kevin still a recipient) asking when this goes into the live environment, since dept code drives the Exemption Rules for the HESA Module and she has a full HESA generate (the last one) planned for Monday 24 August 2026; she noted Societies currently pass the Exemption Rules so should be unaffected, but flagged the rules may need updating for next year. No reply from Simon, Kevin, or anyone else has been found in the mailbox since Sarah's 17 Aug 11:28 message, as of an 18 Aug live Outlook COM search of Inbox and Sent Items. This is a content/judgment decision for Kevin, not an engineering task -- logged here for visibility given the imminent 19 Aug deadline.",
+    "actions": [
+      "[12 Aug 2026] orgstructure@admin.ox.ac.uk circulated the draft PACS org-structure update; errors/omissions deadline set for Wed 19 Aug 2026.",
+      "[17 Aug 2026] Simon Burford forwarded internally, proposing 3 new PeopleXD management units for Colleges/Societies alignment and flagging H&S-dashboard mapping + HESA reporting risk.",
+      "[17 Aug 2026] Sarah Rowles replied to Simon asking for the live-environment date, given her planned 24 Aug HESA generate.",
+      "[TODO] Kevin to decide whether/how to respond before the 19 Aug 2026 deadline -- either to orgstructure@admin.ox.ac.uk directly (errors/omissions) or within the internal Simon/Sarah discussion (HR Systems' position on the Societies management-unit restructuring).",
+      "[AWAITING] Simon Burford's answer to Sarah Rowles' question on go-live timing -- not yet received as of 18 Aug 2026."
+    ],
+    "notes": "Retrieval + logging task only, no reply drafted or sent (Kevin's explicit instruction). Only one Simon appears in this thread (Simon Burford) -- no ambiguity to flag.",
+    "dateAdded": "2026-08-18",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C60000"
+  },
+  {
     "id": "t002",
     "title": "Smart notes escalation -- Cority ticket 00476764",
     "tier": "week",
