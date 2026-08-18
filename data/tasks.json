@@ -819,19 +819,24 @@
   {
     "id": "t2608071801050",
     "title": "Review volunteering leave pay code configuration work",
-    "tier": "week",
+    "tier": "tomorrow",
     "source": "Inbox - Simon Burford, 2026-08-07 16:21",
     "emailRef": "Volunteering Leave",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F110000",
     "summary": "",
-    "description": "Simon Burford has been working on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type. Kevin needs to review Simon's analysis and determine next steps for implementation in PeopleXD.",
+    "description": "Simon Burford has been working on moving Volunteering Leave from a reason code under the manager-only-bookable 'Other Leave' pay code to its own standalone leave type so employees can book it directly. Origin: Access Group Support Case 69049424 (2 Jul 2026) confirmed two options -- open 'Other Leave' to all employees, or create a new standalone Volunteering Leave pay code (Access Group's recommended, cleanest approach, but with reporting-split, no-historic-migration, and workflow-config costs). Simon's 6 Jul summary to Marie Cooksey/Kevin asked Kevin to prioritise this against the FA team's POG backlog. On 18 Aug, Michael O'Sullivan flagged that the TIMDEP04 Absence Reasons report (currently run against 'Other Leave' filtered by reason code VOLPO) will need updating to include Volunteering Leave as its own Absence Type once implemented; Julie Hickman offered to update user guidance; Marie Cooksey confirmed HR Systems owns the technical/SME-wording side while Reward/Alex Betts' team owns staff engagement and communication. Kevin needs to review Simon's analysis, decide the FA team prioritisation, and determine next steps for implementation in PeopleXD.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Volunteering Leave).",
       "[10 Aug 2026] Simon has completed analysis of moving volunteering leave from 'Other Leave' reason code to standalone leave type; Kevin to review and determine next steps. (email: Simon Burford - Volunteering Leave)",
       "[10 Aug 2026] Simon Burford has completed analysis on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type in PeopleXD. (email: Simon Burford - Team Calendar Config)",
       "[10 Aug 2026] PA to HR Director is holding time for the next in-person People Forum; agenda to follow. (email: PA to HR Director - People Forum (In person))",
-      "[18 Aug 2026] Michael O'Sullivan has responded with information that TIMDEP04 Absence Reasons report may need updating to include the Volunteering Leave Absence Type; this provides technical guidance for Simon's volunteering leave configuration work. (email: Michael O'Sullivan - RE: Volunteering Leave)"
+      "[18 Aug 2026] Michael O'Sullivan has responded with information that TIMDEP04 Absence Reasons report may need updating to include the Volunteering Leave Absence Type; this provides technical guidance for Simon's volunteering leave configuration work. (email: Michael O'Sullivan - RE: Volunteering Leave)",
+      "[18 Aug 2026] Marie Cooksey clarified the engagement/ownership split, per her prior agreement with Sarah Clarke: HR Systems (Marie's team) owns technical system changes and SME support on User Guide wording; Reward and Alex Betts' team own engagement and notification of changes to staff. (email: Marie Cooksey - RE: Volunteering Leave, 18:33)",
+      "[18 Aug 2026] Full retrieval and background check completed by Drew at Kevin's request ahead of his 19 Aug 1-1 with Simon Burford. Confirmed live via Outlook COM that the issue traces back to Access Group Support Case 69049424 (2 Jul 2026), where Simon first asked how to let employees book Volunteering Leave directly, and Simon's 6 Jul summary to Marie/Kevin recommending the standalone-pay-code option and asking Kevin to prioritise this against the FA team's POG backlog -- that prioritisation decision is still outstanding.",
+      "[TODO] Kevin to decide FA team prioritisation/timeline for the standalone Volunteering Leave pay code build, and to review Michael O'Sullivan's TIMDEP04 report-update point.",
+      "[AWAITING] Kevin has an unsent draft (\"Fw: Volunteering Leave\", 18 Aug 15:03, sitting in Deleted Items with no recipient) -- he has not yet replied on this thread. Reply is being drafted separately by Lauren.",
+      "[18 Aug 2026] Tier moved week -> tomorrow ahead of Kevin's 19 Aug 1-1 with Simon Burford on this topic."
     ],
     "dateAdded": "2026-08-07"
   },
