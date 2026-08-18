@@ -330,22 +330,6 @@
     "dateAdded": "2026-06-25"
   },
   {
-    "id": "t026",
-    "title": "Owner Required -- Task# 50959264 / ServiceReq# 30412906",
-    "tier": "today",
-    "source": "Marie Cooksey 17/06",
-    "emailRef": "FW: Owner Required - Task# 50959264 for ServiceReq# 30412906",
-    "summary": "Marie forwarded an OSM task ownership request to Kevin on 17 Jun. Overdue -- 7 days without action.",
-    "description": "Marie Cooksey forwarded an OSM notification on 17 June: Owner Required for Task# 50959264 linked to ServiceReq# 30412906. Kevin is expected to accept ownership or reassign it.",
-    "actions": [
-      "[17 Jun 2026] Marie Cooksey forwarded OSM Owner Required notification -- Task# 50959264 / ServiceReq# 30412906.",
-      "[TODO] Open email, review Task# 50959264 in OSM, and accept or reassign ownership."
-    ],
-    "dateAdded": "2026-06-23",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
-    "status": "OSM task ownership notification forwarded by Marie 17 Jun — review Task# 50959264 in OSM and accept or reassign."
-  },
-  {
     "id": "t027",
     "title": "P5 Incident# 11687334 -- LOD agreement question",
     "tier": "today",
@@ -448,6 +432,22 @@
     ],
     "dateAdded": "2026-06-24",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43160000"
+  },
+  {
+    "id": "t026",
+    "title": "Owner Required -- Task# 50959264 / ServiceReq# 30412906",
+    "tier": "today",
+    "source": "Marie Cooksey 17/06",
+    "emailRef": "FW: Owner Required - Task# 50959264 for ServiceReq# 30412906",
+    "summary": "Marie forwarded an OSM task ownership request to Kevin on 17 Jun. Overdue -- 7 days without action.",
+    "description": "Marie Cooksey forwarded an OSM notification on 17 June: Owner Required for Task# 50959264 linked to ServiceReq# 30412906. Kevin is expected to accept ownership or reassign it.",
+    "actions": [
+      "[17 Jun 2026] Marie Cooksey forwarded OSM Owner Required notification -- Task# 50959264 / ServiceReq# 30412906.",
+      "[TODO] Open email, review Task# 50959264 in OSM, and accept or reassign ownership."
+    ],
+    "dateAdded": "2026-06-23",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
+    "status": "OSM task ownership notification forwarded by Marie 17 Jun — review Task# 50959264 in OSM and accept or reassign."
   },
   {
     "id": "t023",
