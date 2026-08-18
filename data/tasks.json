@@ -644,7 +644,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-04 10:31",
     "emailRef": "DTP1092 College Staff into PXD - Testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AA0D4F3C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C50000",
     "summary": "",
     "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
     "origin": "inbox-auto",
@@ -658,7 +658,8 @@
       "[10 Aug 2026] Crispin sent detailed testing scenarios and HRIS staging import details on 10 August, ready for discussion when Kevin returns. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[10 Aug 2026] DTP1092 College staff into PXD team meeting cancelled due to multiple invites being out of office. (email: Crispin Muncaster - Cancelled: DTP1092 College staff into PXD Team meeting)",
       "[11 Aug 2026] Simon has been coordinating with the data warehouse team on ensuring only University of Oxford employees are included in feeds. (email: Simon Burford - RE: Business rules for Data Warehouse)",
-      "[14 Aug 2026] Andrew Goff (IT Services) has confirmed next step is to remove the restriction on user accounts (API_USER and API_USER2) for the test environment as part of DTP1092 integrations testing. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[14 Aug 2026] Andrew Goff (IT Services) has confirmed next step is to remove the restriction on user accounts (API_USER and API_USER2) for the test environment as part of DTP1092 integrations testing. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[18 Aug 2026] Simon has raised clarification questions about DTP1092 testing assumptions regarding API_USER account restrictions that need resolution before final integrations testing. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
@@ -925,13 +926,14 @@
     "tier": "week",
     "source": "Inbox - James Salas Guillen, 2026-08-11 13:11",
     "emailRef": "Cority - Applicant Data Import file",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995730000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F720000",
     "summary": "",
     "description": "James Salas Guillen has sent an update on the Cority Applicant Data Import following several uploads/imports in Production. Kevin needs to review and action as needed.",
     "origin": "inbox-auto",
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: James Salas Guillen - Cority - Applicant Data Import file).",
-      "[11 Aug 2026] James has provided an update on the Cority Applicant Data Import following Production uploads/imports; Kevin should review and action as needed. (email: James Salas Guillen - Cority - Applicant Data Import file)"
+      "[11 Aug 2026] James has provided an update on the Cority Applicant Data Import following Production uploads/imports; Kevin should review and action as needed. (email: James Salas Guillen - Cority - Applicant Data Import file)",
+      "[18 Aug 2026] Simon has provided technical details on the Cority Applicant Data Import file format issue when saved as CSV in Notepad++. (email: Simon Burford - RE: Cority - Applicant Data Import file)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -1138,12 +1140,13 @@
     "tier": "tomorrow",
     "source": "Inbox - Chris Little, 2026-08-18 08:50",
     "emailRef": "Re: Appointment request",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F680000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E30000",
     "summary": "",
     "description": "Chris Little has offered two morning slots on 11 or 12 September for an appointment. Kevin needs to confirm which date works for him.",
     "origin": "inbox-auto",
     "actions": [
-      "[18 Aug 2026] Auto-created from inbox triage (email: Chris Little - Re: Appointment request)."
+      "[18 Aug 2026] Auto-created from inbox triage (email: Chris Little - Re: Appointment request).",
+      "[18 Aug 2026] Kevin has confirmed availability and replied to Chris Little that Friday 11 September works for the appointment. (email: Kevin (sent to: Chris Little) - Re: Appointment request)"
     ]
   },
   {
@@ -1164,5 +1167,47 @@
     "notes": "",
     "dateAdded": "2026-08-18",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EE70000"
+  },
+  {
+    "id": "t2608181201060",
+    "title": "Confirm ER pension rates for annual Financial Statements",
+    "tier": "week",
+    "source": "Inbox - Kevin Lelitte, 2026-08-18 10:24",
+    "emailRef": "Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F6F0000",
+    "summary": "",
+    "description": "Simon Burford's email (forwarded by Kevin as a bump) concerns confirmation of employer pension rates needed for the university's annual Financial Statements. This appears to be an outstanding item requiring Kevin's input or sign-off.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL)."
+    ]
+  },
+  {
+    "id": "t2608181201061",
+    "title": "Resolve GLAM rostering requirements - Botanic Gardens and Ashmolean Security",
+    "tier": "week",
+    "source": "Inbox - Kevin Lelitte, 2026-08-18 10:23",
+    "emailRef": "Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F6D0000",
+    "summary": "",
+    "description": "Kevin has flagged an email from Anna Carter-Windle regarding GLAM's rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security. This requires follow-up action to clarify requirements and next steps with the team.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )."
+    ]
+  },
+  {
+    "id": "t2608181201062",
+    "title": "Follow up on EcoOnline supplier engagement",
+    "tier": "week",
+    "source": "Inbox - Kevin Lelitte, 2026-08-18 10:23",
+    "emailRef": "Fw: EcoOnline /University of Oxford",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F6C0000",
+    "summary": "",
+    "description": "Kevin has bumped an email from Joanne Grant at EcoOnline regarding University engagement. This appears to require a response or action from Kevin to progress the relationship or proposal discussion.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford)."
+    ]
   }
 ]
