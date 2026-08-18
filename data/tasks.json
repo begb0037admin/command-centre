@@ -645,7 +645,7 @@
     "tier": "week",
     "source": "Inbox - Crispin Muncaster, 2026-08-03 14:18",
     "emailRef": "DTP1092 College Staff into PXD - Integrations testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629955C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000",
     "summary": "",
     "description": "Crispin Muncaster is requesting confirmation that integrations testing for the College Staff into PXD project can be completed by Friday 14 August 2026. This is a key deliverable for DTP1092 with Guy Williams and Simon involved on the IT side.",
     "origin": "inbox-auto",
@@ -653,7 +653,8 @@
       "[03 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing).",
       "[04 Aug 2026] Crispin has confirmed integrations testing deadline of Friday 14 August 2026 is reasonable and is requesting confirmation from Kevin. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)",
       "[10 Aug 2026] Crispin has sent detailed testing scenarios for Company 90 and HRIS Staging imports configuration. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[11 Aug 2026] Crispin Muncaster is out of office on annual leave, returning Monday 17 August; automatic reply confirms absence during testing period. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)"
+      "[11 Aug 2026] Crispin Muncaster is out of office on annual leave, returning Monday 17 August; automatic reply confirms absence during testing period. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
+      "[18 Aug 2026] Michael O'Sullivan is forwarding notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm that may impact services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
     ],
     "dateAdded": "2026-08-03"
   },
@@ -951,7 +952,7 @@
     "tier": "week",
     "source": "Inbox - James Salas Guillen, 2026-08-11 13:11",
     "emailRef": "Cority - Applicant Data Import file",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F760000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F7C0000",
     "summary": "",
     "description": "James Salas Guillen has sent an update on the Cority Applicant Data Import following several uploads/imports in Production. Kevin needs to review and action as needed.",
     "origin": "inbox-auto",
@@ -959,7 +960,8 @@
       "[11 Aug 2026] Auto-created from inbox triage (email: James Salas Guillen - Cority - Applicant Data Import file).",
       "[11 Aug 2026] James has provided an update on the Cority Applicant Data Import following Production uploads/imports; Kevin should review and action as needed. (email: James Salas Guillen - Cority - Applicant Data Import file)",
       "[18 Aug 2026] Simon has provided technical details on the Cority Applicant Data Import file format issue when saved as CSV in Notepad++. (email: Simon Burford - RE: Cority - Applicant Data Import file)",
-      "[18 Aug 2026] Simon Burford has added further questions about column headings and CSV formatting for the Cority Applicant Data Import file. (email: Simon Burford - RE: Cority - Applicant Data Import file)"
+      "[18 Aug 2026] Simon Burford has added further questions about column headings and CSV formatting for the Cority Applicant Data Import file. (email: Simon Burford - RE: Cority - Applicant Data Import file)",
+      "[18 Aug 2026] Simon Burford is exploring automated CSV export options for the Cority Applicant Data Import, building on James Salas Guillen's earlier responses. (email: Simon Burford - RE: Cority - Applicant Data Import file)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -1073,7 +1075,7 @@
     "tier": "week",
     "source": "Inbox - Jessica Oldershaw, 2026-08-12 16:41",
     "emailRef": "RE: Timeline for implementation of uplift",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B021F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007A98186EA0000",
     "summary": "",
     "description": "Jessica Oldershaw has sent an update on the timeline for implementation of uplift, indicating we have reached a September decision point. Kevin needs to review the full email and confirm HR Systems readiness and any dependencies.",
     "origin": "inbox-auto",
@@ -1081,7 +1083,8 @@
       "[12 Aug 2026] Auto-created from inbox triage (email: Jessica Oldershaw - RE: Timeline for implementation of uplift).",
       "[13 Aug 2026] Jessica Oldershaw has sent an update indicating we have reached the September decision point on uplift implementation timeline. (email: Jessica Oldershaw - RE: Timeline for implementation of uplift)",
       "[13 Aug 2026] Athena Artuso has provided input suggesting October implementation may be clearer than September decision point; Michael O'Sullivan also contributing breakdown to clarify timeline. (email: Athena Artuso - RE: Timeline for implementation of uplift)",
-      "[13 Aug 2026] Tracy Roberts has added payroll processing stats and monthly implementation details to the uplift timeline discussion. (email: Tracy Roberts - RE: Timeline for implementation of uplift)"
+      "[13 Aug 2026] Tracy Roberts has added payroll processing stats and monthly implementation details to the uplift timeline discussion. (email: Tracy Roberts - RE: Timeline for implementation of uplift)",
+      "[18 Aug 2026] Michael O'Sullivan has provided detailed analysis of uplift timeline and resource implications for FA team, recommending October implementation. (email: Michael O'Sullivan - RE: Timeline for implementation of uplift)"
     ]
   },
   {
@@ -1247,12 +1250,13 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-17 13:09",
     "emailRef": "User guidance for staff on grades 39Q, 30S, 38S and 36S - leave entitlement calculations",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C80000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7CA0000",
     "summary": "",
     "description": "Julie Hickman has requested help creating user guidance for staff on leave entitlement calculations for new grades (39Q, 30S, 38S, 36S) following a meeting with Maths and Chemistry departments. This is part of the 38-day balance implementation.",
     "origin": "inbox-auto",
     "actions": [
-      "[18 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - User guidance for staff on grades 39Q, 30S, 38S and 36S - leave entitlement calculations)."
+      "[18 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - User guidance for staff on grades 39Q, 30S, 38S and 36S - leave entitlement calculations).",
+      "[18 Aug 2026] Julie Hickman has scheduled a Teams meeting for planning departments' move to 38-day balance scheme. (email: Julie Hickman - Planning for depts move to 38 day balance )"
     ]
   }
 ]
