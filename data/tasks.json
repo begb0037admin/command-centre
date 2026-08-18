@@ -644,7 +644,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-04 10:31",
     "emailRef": "DTP1092 College Staff into PXD - Testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C50000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C10000",
     "summary": "",
     "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
     "origin": "inbox-auto",
@@ -659,7 +659,8 @@
       "[10 Aug 2026] DTP1092 College staff into PXD team meeting cancelled due to multiple invites being out of office. (email: Crispin Muncaster - Cancelled: DTP1092 College staff into PXD Team meeting)",
       "[11 Aug 2026] Simon has been coordinating with the data warehouse team on ensuring only University of Oxford employees are included in feeds. (email: Simon Burford - RE: Business rules for Data Warehouse)",
       "[14 Aug 2026] Andrew Goff (IT Services) has confirmed next step is to remove the restriction on user accounts (API_USER and API_USER2) for the test environment as part of DTP1092 integrations testing. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[18 Aug 2026] Simon has raised clarification questions about DTP1092 testing assumptions regarding API_USER account restrictions that need resolution before final integrations testing. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[18 Aug 2026] Simon has raised clarification questions about DTP1092 testing assumptions regarding API_USER account restrictions that need resolution before final integrations testing. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[18 Aug 2026] Simon Burford clarified Company 90 setup for WFM integration; ignore for now as it was created only to attach a new default workgroup. (email: Simon Burford - RE: Balance Period End Matrix)"
     ]
   },
   {
@@ -668,7 +669,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-05 09:20",
     "emailRef": "DTP1092 College Staff to PXD - testing meeting",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C00000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AA0D4F3C0000",
     "summary": "",
     "description": "Crispin Muncaster has sent the integrations link for tomorrow's testing meeting in readiness for the 14 August deadline. Kevin needs to attend and participate in the DTP1092 College Staff to PXD testing discussion.",
     "origin": "inbox-auto",
@@ -683,7 +684,8 @@
       "[10 Aug 2026] Julie Hickman has flagged several follow-up points from Patch Release 28.0.157 UAT testing that may require Kevin's attention on related systems work. (email: Julie Hickman - RE: Patch Release 28.0.157 – UAT Update)",
       "[14 Aug 2026] Kevin sent email to Marie confirming his return to work on Tuesday 11 August following his absence. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
       "[17 Aug 2026] Simon Burford's follow-up on 17 Aug confirms he wants to test the actual go-live solution first before proceeding with staging imports. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[17 Aug 2026] Simon forwarded notification of August 2026 PACS organisational structure changes moving colleges and societies from L2 to L3; directly related to college data in PXD project. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)"
+      "[17 Aug 2026] Simon forwarded notification of August 2026 PACS organisational structure changes moving colleges and societies from L2 to L3; directly related to college data in PXD project. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)",
+      "[18 Aug 2026] Andrew Goff confirmed the next step for DTP1092 testing is to remove the API_USER account restrictions; currently blocked with no identified owner. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
@@ -926,14 +928,15 @@
     "tier": "week",
     "source": "Inbox - James Salas Guillen, 2026-08-11 13:11",
     "emailRef": "Cority - Applicant Data Import file",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F720000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F760000",
     "summary": "",
     "description": "James Salas Guillen has sent an update on the Cority Applicant Data Import following several uploads/imports in Production. Kevin needs to review and action as needed.",
     "origin": "inbox-auto",
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: James Salas Guillen - Cority - Applicant Data Import file).",
       "[11 Aug 2026] James has provided an update on the Cority Applicant Data Import following Production uploads/imports; Kevin should review and action as needed. (email: James Salas Guillen - Cority - Applicant Data Import file)",
-      "[18 Aug 2026] Simon has provided technical details on the Cority Applicant Data Import file format issue when saved as CSV in Notepad++. (email: Simon Burford - RE: Cority - Applicant Data Import file)"
+      "[18 Aug 2026] Simon has provided technical details on the Cority Applicant Data Import file format issue when saved as CSV in Notepad++. (email: Simon Burford - RE: Cority - Applicant Data Import file)",
+      "[18 Aug 2026] Simon Burford has added further questions about column headings and CSV formatting for the Cority Applicant Data Import file. (email: Simon Burford - RE: Cority - Applicant Data Import file)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -1179,7 +1182,8 @@
     "description": "Simon Burford's email (forwarded by Kevin as a bump) concerns confirmation of employer pension rates needed for the university's annual Financial Statements. This appears to be an outstanding item requiring Kevin's input or sign-off.",
     "origin": "inbox-auto",
     "actions": [
-      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL)."
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL).",
+      "[18 Aug 2026] Kevin bumped the original email from Simon (28 May) requesting confirmation of employer pension rates for the university's annual Financial Statements; still outstanding. (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL)"
     ]
   },
   {
@@ -1193,7 +1197,8 @@
     "description": "Kevin has flagged an email from Anna Carter-Windle regarding GLAM's rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security. This requires follow-up action to clarify requirements and next steps with the team.",
     "origin": "inbox-auto",
     "actions": [
-      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )."
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ).",
+      "[18 Aug 2026] Kevin bumped the original email from Anna Carter-Windle (28 May) regarding GLAM rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security; still requires follow-up. (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )"
     ]
   },
   {
@@ -1207,7 +1212,22 @@
     "description": "Kevin has bumped an email from Joanne Grant at EcoOnline regarding University engagement. This appears to require a response or action from Kevin to progress the relationship or proposal discussion.",
     "origin": "inbox-auto",
     "actions": [
-      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford)."
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford).",
+      "[18 Aug 2026] Kevin bumped the original email from Joanne Grant (28 May) regarding EcoOnline/University engagement; still requires follow-up. (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford)"
+    ]
+  },
+  {
+    "id": "t2608181501150",
+    "title": "Create user guidance for staff on grades 39Q, 30S, 38S, 36S leave entitlements",
+    "tier": "week",
+    "source": "Inbox - Julie Hickman, 2026-08-17 13:09",
+    "emailRef": "User guidance for staff on grades 39Q, 30S, 38S and 36S - leave entitlement calculations",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C80000",
+    "summary": "",
+    "description": "Julie Hickman has requested help creating user guidance for staff on leave entitlement calculations for new grades (39Q, 30S, 38S, 36S) following a meeting with Maths and Chemistry departments. This is part of the 38-day balance implementation.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - User guidance for staff on grades 39Q, 30S, 38S and 36S - leave entitlement calculations)."
     ]
   }
 ]
