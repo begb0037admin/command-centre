@@ -1,3 +1,30 @@
+# Handover — 18 August 2026 (Drew) — outstanding item logged: task-1787044968753, Laura Porter / auto job-alert notification email text changes
+
+## Scope
+Kevin pasted a full email thread directly in chat and asked for it to be logged as an outstanding, pending-on-us item in both work-inbox and command-centre. This entry covers the command-centre side; see work-inbox's own `HANDOVER.md` (18 Aug 2026 entry) for that repo's matching log.
+
+## What was added
+New task `task-1787044968753`, tier `week`, title "Auto job-alert notification email -- text changes (Laura Porter)". Full backup-and-verify sequence followed in full for `data/tasks.json`:
+1. Fresh GET of live file — sha `e387fabb1df0b4b19e106eacf1014aed81c9fca8`, 105671 bytes, non-zero, confirmed.
+2. Timestamped backup pushed first: `Archive/tasks_backup_20260818_0921.json`, commit `a73aa64d`, content sha `e387fabb...` — confirmed byte-identical to the live pre-change file.
+3. Backup re-GET verified — sha matched.
+4. Race-guard re-GET of live sha immediately before the real write — unchanged (`e387fabb...`).
+5. sha-guarded `PUT` of the new 64-task array, commit `5ca8e4ad`, new content sha `2b7070bd...`.
+6. Fresh post-push GET, byte-diffed clean against the intended target content; confirmed all 63 pre-existing tasks structurally unchanged, only the new task appended.
+
+An Outlook EntryID was found and included (not left blank): searched the live Outlook inbox for the "Auto job alert notification email - text changes" subject, found the real thread (2 messages, Laura Porter, 2 Jul and 8 Jul 2026), used the most recent message's EntryID per the schema's own "most recent linked email" convention.
+
+## Why this task, this tier
+Laura/Phil approved the wording changes in Feb 2026. Implementation has been stuck since 8 Jul 2026 on an Access Group backend config issue that wouldn't apply to outgoing emails despite saving correctly. Kevin raised a fresh Access Group ticket, took 2 weeks' leave, told Laura "end of July" — that self-imposed date has now passed with no visible follow-up. Laura's own last message set no deadline and she is not the blocker; logged as `[TODO]` (pending on Kevin's own follow-up — check the ticket, get Laura the screenshot), not `[AWAITING]`. Tiered `week` rather than `parked`: this is stalled on Kevin's own action, not blocked on someone else, so it belongs with active-attention items rather than the passive/blocked-on-others tier `parked` is generally used for in this data (cf. `t009`, blocked on Marie's signature).
+
+## Work-inbox side
+Same outstanding item also logged as a new dated entry prepended to work-inbox's own `HANDOVER.md` (18 Aug 2026), following that repo's own established convention — confirmed live by reading its last dozen entries that the active mechanism is a dated prose entry at the top of the file, not a separate JSON/tracking file. No new persistence mechanism was built in either repo; Phase 3.9 (work-inbox's prior carry-forward attempt, reverted 17 Aug 2026 at Kevin's request) was deliberately not touched or resurrected.
+
+## Next action
+None outstanding for this logging task itself — done and verified live in both repos. The actual underlying item (`task-1787044968753`) needs Kevin's own follow-up: check the Access Group ticket, confirm the fix works, send Laura the screenshot.
+
+---
+
 # Handover — 16 August 2026 (Drew) — cc-tasks-writer GitHub-identity isolation, CUTOVER COMPLETE
 
 ## TL;DR
