@@ -644,7 +644,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Crispin Muncaster, 2026-08-04 10:31",
     "emailRef": "DTP1092 College Staff into PXD - Testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C10000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C40000",
     "summary": "",
     "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
     "origin": "inbox-auto",
@@ -660,7 +660,8 @@
       "[11 Aug 2026] Simon has been coordinating with the data warehouse team on ensuring only University of Oxford employees are included in feeds. (email: Simon Burford - RE: Business rules for Data Warehouse)",
       "[14 Aug 2026] Andrew Goff (IT Services) has confirmed next step is to remove the restriction on user accounts (API_USER and API_USER2) for the test environment as part of DTP1092 integrations testing. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[18 Aug 2026] Simon has raised clarification questions about DTP1092 testing assumptions regarding API_USER account restrictions that need resolution before final integrations testing. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[18 Aug 2026] Simon Burford clarified Company 90 setup for WFM integration; ignore for now as it was created only to attach a new default workgroup. (email: Simon Burford - RE: Balance Period End Matrix)"
+      "[18 Aug 2026] Simon Burford clarified Company 90 setup for WFM integration; ignore for now as it was created only to attach a new default workgroup. (email: Simon Burford - RE: Balance Period End Matrix)",
+      "[18 Aug 2026] Andrew Goff (IT Services) explains that the API_USER restriction lift was Guy's recommendation; technical discussion on DTP1092 testing assumptions and approach. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
   {
@@ -801,7 +802,7 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-07 16:21",
     "emailRef": "Volunteering Leave",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43190000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F110000",
     "summary": "",
     "description": "Simon Burford has been working on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type. Kevin needs to review Simon's analysis and determine next steps for implementation in PeopleXD.",
     "origin": "inbox-auto",
@@ -809,7 +810,8 @@
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Volunteering Leave).",
       "[10 Aug 2026] Simon has completed analysis of moving volunteering leave from 'Other Leave' reason code to standalone leave type; Kevin to review and determine next steps. (email: Simon Burford - Volunteering Leave)",
       "[10 Aug 2026] Simon Burford has completed analysis on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type in PeopleXD. (email: Simon Burford - Team Calendar Config)",
-      "[10 Aug 2026] PA to HR Director is holding time for the next in-person People Forum; agenda to follow. (email: PA to HR Director - People Forum (In person))"
+      "[10 Aug 2026] PA to HR Director is holding time for the next in-person People Forum; agenda to follow. (email: PA to HR Director - People Forum (In person))",
+      "[18 Aug 2026] Michael O'Sullivan has responded with information that TIMDEP04 Absence Reasons report may need updating to include the Volunteering Leave Absence Type; this provides technical guidance for Simon's volunteering leave configuration work. (email: Michael O'Sullivan - RE: Volunteering Leave)"
     ],
     "dateAdded": "2026-08-07"
   },
@@ -819,14 +821,15 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-07 15:09",
     "emailRef": "Team Calendar Config",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998630000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C10000",
     "summary": "",
     "description": "Simon encountered a missing option when trying to configure the Volunteering Leave pay code in UOXU. Kevin needs to work with Asta to diagnose and resolve the team calendar configuration problem.",
     "origin": "inbox-auto",
     "actions": [
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Team Calendar Config).",
       "[10 Aug 2026] Simon encountered missing configuration option when setting up Volunteering Leave pay code in UOXU; Kevin to investigate with Asta. (email: Simon Burford - Team Calendar Config)",
-      "[10 Aug 2026] Simon Burford encountered a missing option when configuring Volunteering Leave pay code in UOXU; diagnosis and resolution needed with Asta on team calendar configuration. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)"
+      "[10 Aug 2026] Simon Burford encountered a missing option when configuring Volunteering Leave pay code in UOXU; diagnosis and resolution needed with Asta on team calendar configuration. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
+      "[18 Aug 2026] Simon Burford clarifies that Company 90 should be ignored for now as it was only set up for WFM workgroup configuration; this provides guidance on the team calendar configuration work with Asta. (email: Simon Burford - RE: Balance Period End Matrix)"
     ],
     "dateAdded": "2026-08-07"
   },
@@ -836,7 +839,7 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-06 14:49",
     "emailRef": "RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C50000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F100000",
     "summary": "",
     "description": "Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for DTP1092 Company 90 configuration and testing. Kevin needs to confirm this approach.",
     "origin": "inbox-auto",
@@ -846,7 +849,8 @@
       "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for Company 90 testing. (email: Simon Burford - RE: Business rules for Data Warehouse)",
       "[12 Aug 2026] Guy Williams has provided technical guidance on integration platform environments (INT-STG, BT, AIP) that Kevin needs to confirm approach for Company 90 refresh. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[17 Aug 2026] Simon clarifies that Company 90 should be ignored for now as it was set up only for WFM workgroup attachment purposes. (email: Simon Burford - RE: Balance Period End Matrix)",
-      "[17 Aug 2026] Simon continues discussion with Andrew Goff on testing approach for DTP1092 College Staff into PXD, noting the need to test the actual solution before go-live. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[17 Aug 2026] Simon continues discussion with Andrew Goff on testing approach for DTP1092 College Staff into PXD, noting the need to test the actual solution before go-live. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[18 Aug 2026] Michael O'Sullivan confirms that the clone from UOXP into UOXC was completed successfully and all post-clone activities are complete; this resolves the environment refresh work for Company 90 testing. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)"
     ],
     "dateAdded": "2026-08-07"
   },
@@ -1074,7 +1078,8 @@
     "actions": [
       "[12 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT).",
       "[13 Aug 2026] Updated draft organisational structure has been circulated with changes effective through 12 August 2026. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT)",
-      "[17 Aug 2026] Simon forwarded organisational structure update confirming changes to PACS org structure moving colleges and societies from L2 to L3, effective through 12 August 2026. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)"
+      "[17 Aug 2026] Simon forwarded organisational structure update confirming changes to PACS org structure moving colleges and societies from L2 to L3, effective through 12 August 2026. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)",
+      "[18 Aug 2026] Simon Burford has forwarded notification of changes to the PACS organisational structure moving colleges and societies to level 3 from level 2; this is the update that Kevin needs to review for HR Systems implications. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)"
     ]
   },
   {
@@ -1165,11 +1170,12 @@
       "[Feb 2026] Wording changes approved by Laura Porter and Philip Taylor (HR).",
       "[08 Jul 2026] Kevin raised a fresh Access Group support ticket after the config change saved correctly but failed to apply to outgoing notification emails; went on 2 weeks' leave, telling Laura he'd pick it up towards the end of July and send a screenshot for sign-off before pushing to Live.",
       "[08 Jul 2026] Laura replied wishing Kevin a good holiday and said to touch base when he's back -- no deadline set, not the blocker.",
-      "[TODO] Check the Access Group support ticket status, confirm the config change actually applies to outgoing notification emails, then send Laura the screenshot for sign-off before pushing to Live."
+      "[TODO] Check the Access Group support ticket status, confirm the config change actually applies to outgoing notification emails, then send Laura the screenshot for sign-off before pushing to Live.",
+      "[18 Aug 2026] Michael O'Sullivan has forwarded FYI notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm; this may impact job alert notification email testing if scheduled. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
     ],
     "notes": "",
     "dateAdded": "2026-08-18",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078D888EE70000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000"
   },
   {
     "id": "t2608181201060",
