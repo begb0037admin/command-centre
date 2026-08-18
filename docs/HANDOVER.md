@@ -1,3 +1,19 @@
+# Handover — 18 August 2026 (Drew) — HIGH PRIORITY / URGENT: task-1787072363309 logged, "Organisational Structure Update - August 2026 - DRAFT" thread (Simon Burford / Sarah Rowles)
+
+## Scope
+Kevin flagged this thread "ultra urgent" directly. Retrieval and logging only — no reply drafted or sent. Full chronological unpack and command-centre write-up live in this repo's own `data/tasks.json` task `task-1787072363309`; matching entry in work-inbox's `HANDOVER.md` (commit `91ce237b737cf72038c7fea01f1b0d4d4474cdee`) has the full narrative.
+
+## What was done here
+Full mandatory backup-and-verify sequence run for `data/tasks.json`: GET live file (non-zero, 116038 bytes, 68 tasks) → timestamped backup `Archive/tasks_backup_20260818_1758.json` (commit `9e619ec975dfee46a4b9c50a4fff4bc18ffcb741`) → backup GET-back and SHA-verified (`ca4b7a86f8b72ce30f4f6ae3032c8ddd540f9529`, byte-identical to pre-change live file) → edit applied (new task prepended, tier `today` given the 19 Aug deadline in the thread) → PUT (commit `16bf87f8dd06947df0c8a671628d41b31e338eba`) → post-change GET and byte-for-byte verification against the intended write (SHA `ead84bc710efc7a5c729c16f5223ce8c8efa18e4`, confirmed 69 tasks, new task present).
+
+## Status
+Thread is OPEN, time-sensitive (errors/omissions deadline 19 Aug 2026, tomorrow). No reply from Kevin found in Sent Items as of this live search. Only one Simon in this thread (Simon Burford, simon.burford@admin.ox.ac.uk) — no ambiguity.
+
+## Next action
+Kevin's own decision how/whether to respond before the 19 Aug deadline. No further engineering action needed on this item.
+
+---
+
 # Handover — 18 August 2026 (Drew) — outstanding item logged: task-1787044968753, Laura Porter / auto job-alert notification email text changes
 
 ## Scope
