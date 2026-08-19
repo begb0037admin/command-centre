@@ -12,11 +12,12 @@
       "[17 Aug 2026] Simon Burford forwarded internally, proposing 3 new PeopleXD management units for Colleges/Societies alignment and flagging H&S-dashboard mapping + HESA reporting risk.",
       "[17 Aug 2026] Sarah Rowles replied to Simon asking for the live-environment date, given her planned 24 Aug HESA generate.",
       "[TODO] Kevin to decide whether/how to respond before the 19 Aug 2026 deadline -- either to orgstructure@admin.ox.ac.uk directly (errors/omissions) or within the internal Simon/Sarah discussion (HR Systems' position on the Societies management-unit restructuring).",
-      "[AWAITING] Simon Burford's answer to Sarah Rowles' question on go-live timing -- not yet received as of 18 Aug 2026."
+      "[AWAITING] Simon Burford's answer to Sarah Rowles' question on go-live timing -- not yet received as of 18 Aug 2026.",
+      "[19 Aug 2026] Michael O'Sullivan has forwarded a PeopleXD platform maintenance notice for Friday 28 August between 8-10 pm that will impact services during the org structure implementation period. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
     ],
     "notes": "Retrieval + logging task only, no reply drafted or sent (Kevin's explicit instruction). Only one Simon appears in this thread (Simon Burford) -- no ambiguity to flag.",
     "dateAdded": "2026-08-18",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C60000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000"
   },
   {
     "id": "t002",
@@ -420,11 +421,12 @@
       "[TODO] Visual distinction from inbox email cards -- CC-sourced label.",
       "[TODO] Screenshot and get Kevin approval before pushing to main.",
       "[30 Jun 2026] Kevin has raised a support portal email update request with Sarah Murphy, likely related to Work Inbox priority panel rendering. (email: Kevin (sent to: Sarah Murphy) - Request for support portal email update)",
-      "[02 Aug 2026] Closed - delivered. Command Centre Today/This Week tasks render as cards in the Work Inbox priority panel via fetch_inbox.py's priorities_today/tomorrow/week pull and renderPriorityCards() in app.js."
+      "[02 Aug 2026] Closed - delivered. Command Centre Today/This Week tasks render as cards in the Work Inbox priority panel via fetch_inbox.py's priorities_today/tomorrow/week pull and renderPriorityCards() in app.js.",
+      "[19 Aug 2026] Michael O'Sullivan has identified discrepancies in the KPI presentation slides (Incident Tasks count on Slide 4 differs from Slide 3). (email: Michael O'Sullivan - RE: Kevin Lelitte shared \"KPI presentation - July 2026\" with you)"
     ],
     "dateAdded": "2026-06-25",
     "status": "Scoped 25 Jun — build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded.",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EEA0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007A98186E90000",
     "done": true
   },
   {
@@ -583,10 +585,11 @@
       "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL) or a system data issue in PeopleXD.",
       "[TODO] Confirm fix approach and communicate resolution to Simon Burford.",
       "[03 Jul 2026] Sarah Rowles' email to Henry about OSM request for manager access to UOXU is linked to the sickness absence reporting investigation that Kevin flagged at the HR Systems Managers Meeting. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)",
-      "[14 Aug 2026] Athena Artuso confirms that only Employer Contribution Rates for NHS Pension tiers are relevant for statutory reporting purposes. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)"
+      "[14 Aug 2026] Athena Artuso confirms that only Employer Contribution Rates for NHS Pension tiers are relevant for statutory reporting purposes. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)",
+      "[19 Aug 2026] Michael O'Sullivan is flagging potential changes to NHS pension tier bandings that may impact reporting and require configuration updates. (email: Michael O'Sullivan - FW: Support Call# 11701239: NHS Pension tiers new pay ranges)"
     ],
     "dateAdded": "2026-06-25",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A981A2760000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007A8968C280000",
     "done": true
   },
   {
@@ -864,7 +867,7 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-06 14:49",
     "emailRef": "RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F100000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007A8968C290000",
     "summary": "",
     "description": "Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for DTP1092 Company 90 configuration and testing. Kevin needs to confirm this approach.",
     "origin": "inbox-auto",
@@ -875,7 +878,8 @@
       "[12 Aug 2026] Guy Williams has provided technical guidance on integration platform environments (INT-STG, BT, AIP) that Kevin needs to confirm approach for Company 90 refresh. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[17 Aug 2026] Simon clarifies that Company 90 should be ignored for now as it was set up only for WFM workgroup attachment purposes. (email: Simon Burford - RE: Balance Period End Matrix)",
       "[17 Aug 2026] Simon continues discussion with Andrew Goff on testing approach for DTP1092 College Staff into PXD, noting the need to test the actual solution before go-live. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[18 Aug 2026] Michael O'Sullivan confirms that the clone from UOXP into UOXC was completed successfully and all post-clone activities are complete; this resolves the environment refresh work for Company 90 testing. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)"
+      "[18 Aug 2026] Michael O'Sullivan confirms that the clone from UOXP into UOXC was completed successfully and all post-clone activities are complete; this resolves the environment refresh work for Company 90 testing. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
+      "[19 Aug 2026] Michael O'Sullivan confirms the decision to proceed with clone from UOXP into UOXC only, scheduled by Access Group. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)"
     ],
     "dateAdded": "2026-08-07"
   },
@@ -1085,7 +1089,7 @@
     "tier": "week",
     "source": "Inbox - Jessica Oldershaw, 2026-08-12 16:41",
     "emailRef": "RE: Timeline for implementation of uplift",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007A98186EA0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AA0D4B4F0000",
     "summary": "",
     "description": "Jessica Oldershaw has sent an update on the timeline for implementation of uplift, indicating we have reached a September decision point. Kevin needs to review the full email and confirm HR Systems readiness and any dependencies.",
     "origin": "inbox-auto",
@@ -1094,7 +1098,8 @@
       "[13 Aug 2026] Jessica Oldershaw has sent an update indicating we have reached the September decision point on uplift implementation timeline. (email: Jessica Oldershaw - RE: Timeline for implementation of uplift)",
       "[13 Aug 2026] Athena Artuso has provided input suggesting October implementation may be clearer than September decision point; Michael O'Sullivan also contributing breakdown to clarify timeline. (email: Athena Artuso - RE: Timeline for implementation of uplift)",
       "[13 Aug 2026] Tracy Roberts has added payroll processing stats and monthly implementation details to the uplift timeline discussion. (email: Tracy Roberts - RE: Timeline for implementation of uplift)",
-      "[18 Aug 2026] Michael O'Sullivan has provided detailed analysis of uplift timeline and resource implications for FA team, recommending October implementation. (email: Michael O'Sullivan - RE: Timeline for implementation of uplift)"
+      "[18 Aug 2026] Michael O'Sullivan has provided detailed analysis of uplift timeline and resource implications for FA team, recommending October implementation. (email: Michael O'Sullivan - RE: Timeline for implementation of uplift)",
+      "[19 Aug 2026] Michael O'Sullivan has provided detailed information on the Balance Period End Matrix process for annual leave year-end configuration for Company 1. (email: Michael O'Sullivan - RE: Balance Period End Matrix)"
     ]
   },
   {
