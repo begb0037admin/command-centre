@@ -377,10 +377,11 @@
       "[MONITOR] James managing -- confirm production feed error has been resolved.",
       "[TODO] Check with James that 22 Jun SFTP error is resolved and feed running correctly.",
       "[25 Jun 2026] Cority SFTP connection error confirmed on 22 June at 17:15; CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-06-22 17:15)",
-      "[02 Aug 2026] Moved to Parked - CHI Team notified and working the SFTP fix; external, not an open action for Kevin."
+      "[02 Aug 2026] Moved to Parked - CHI Team notified and working the SFTP fix; external, not an open action for Kevin.",
+      "[19 Aug 2026] Cority Integration Platform reported another SFTP connection error on 14 August at 17:00; the CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-14 17:00)"
     ],
     "dateAdded": "2026-06-23",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663360000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2900008DFB9C6852DC5A43B72538034BBFF5350007AA5BBE7E0000"
   },
   {
     "id": "t025",
@@ -1071,7 +1072,7 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-12 17:09",
     "emailRef": "38 day balance for departments update and decisions needed",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A981A2760000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AA0D4B4F0000",
     "summary": "",
     "description": "Julie Hickman has shared a OneDrive file with timeframe of tasks for 38-day balance departments. Kevin needs to review the document and understand the implementation schedule and any decisions required from HR Systems.",
     "origin": "inbox-auto",
@@ -1080,7 +1081,8 @@
       "[13 Aug 2026] Julie Hickman has shared the OneDrive file with timeframe of tasks for 38-day balance departments that Kevin needs to review. (email: Julie Hickman - 38 day balance for departments update and decisions needed)",
       "[13 Aug 2026] Kevin confirmed his return to work on Tuesday 11 August (already back as of email date). (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
       "[17 Aug 2026] Julie has scheduled a Teams meeting for planning for departments moving to 38-day balance, providing follow-up discussion on the implementation timeline document previously shared. (email: Julie Hickman - Planning for depts move to 38 day balance )",
-      "[18 Aug 2026] Michael O'Sullivan has provided NHS Pension tier new pay ranges update; Athena notes the team only needs employer contribution rates for statutory reporting. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)"
+      "[18 Aug 2026] Michael O'Sullivan has provided NHS Pension tier new pay ranges update; Athena notes the team only needs employer contribution rates for statutory reporting. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)",
+      "[19 Aug 2026] Michael O'Sullivan provided context on the Balance Period End Matrix process for annual leave year-end and system calendar extension procedures. (email: Michael O'Sullivan - RE: Balance Period End Matrix)"
     ]
   },
   {
@@ -1089,7 +1091,7 @@
     "tier": "week",
     "source": "Inbox - Jessica Oldershaw, 2026-08-12 16:41",
     "emailRef": "RE: Timeline for implementation of uplift",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AA0D4B4F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000",
     "summary": "",
     "description": "Jessica Oldershaw has sent an update on the timeline for implementation of uplift, indicating we have reached a September decision point. Kevin needs to review the full email and confirm HR Systems readiness and any dependencies.",
     "origin": "inbox-auto",
@@ -1099,7 +1101,8 @@
       "[13 Aug 2026] Athena Artuso has provided input suggesting October implementation may be clearer than September decision point; Michael O'Sullivan also contributing breakdown to clarify timeline. (email: Athena Artuso - RE: Timeline for implementation of uplift)",
       "[13 Aug 2026] Tracy Roberts has added payroll processing stats and monthly implementation details to the uplift timeline discussion. (email: Tracy Roberts - RE: Timeline for implementation of uplift)",
       "[18 Aug 2026] Michael O'Sullivan has provided detailed analysis of uplift timeline and resource implications for FA team, recommending October implementation. (email: Michael O'Sullivan - RE: Timeline for implementation of uplift)",
-      "[19 Aug 2026] Michael O'Sullivan has provided detailed information on the Balance Period End Matrix process for annual leave year-end configuration for Company 1. (email: Michael O'Sullivan - RE: Balance Period End Matrix)"
+      "[19 Aug 2026] Michael O'Sullivan has provided detailed information on the Balance Period End Matrix process for annual leave year-end configuration for Company 1. (email: Michael O'Sullivan - RE: Balance Period End Matrix)",
+      "[19 Aug 2026] Michael O'Sullivan provided an update on PeopleXD platform maintenance scheduled for Friday 28 August between 8-10pm that may impact services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
     ]
   },
   {
@@ -1235,13 +1238,14 @@
     "tier": "week",
     "source": "Inbox - Kevin Lelitte, 2026-08-18 10:23",
     "emailRef": "Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F6D0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F110000",
     "summary": "",
     "description": "Kevin has flagged an email from Anna Carter-Windle regarding GLAM's rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security. This requires follow-up action to clarify requirements and next steps with the team.",
     "origin": "inbox-auto",
     "actions": [
       "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ).",
-      "[18 Aug 2026] Kevin bumped the original email from Anna Carter-Windle (28 May) regarding GLAM rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security; still requires follow-up. (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )"
+      "[18 Aug 2026] Kevin bumped the original email from Anna Carter-Windle (28 May) regarding GLAM rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security; still requires follow-up. (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )",
+      "[19 Aug 2026] Kevin bumped this email on 18 Aug, indicating it remains an open action requiring follow-up. (email: Michael O'Sullivan - RE: Volunteering Leave)"
     ]
   },
   {
