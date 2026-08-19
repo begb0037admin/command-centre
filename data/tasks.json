@@ -256,7 +256,7 @@
     "tier": "week",
     "source": "Inbox 2026-06-11 15:01 / Quote 24/06",
     "emailRef": "RE: #External# PeopleXD Insight Reporting - Quote Request for Holiday Records Reports",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000784F08A3A0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077C2A011C0000",
     "summary": "Approved 24 Jun. 2,800 flex points committed. Awaiting Access Group scheduling. Discuss timing at Managers Meeting.",
     "description": "Access Group Project Scope Document (case 69001638) received and approved 24 June 2026. Scope: 3 Holiday Records reports built by Payroll Consultant (2.5 days, 1,750pts) and WFM Consultant (1.5 days, 1,050pts). Total 2,800 flex points. Reports: Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Access Group T&C: consultant will make contact within 3 weeks of approval to agree delivery timelines. 3-month grace period applies to flex point expiry (29 Jun expiry = use by ~29 Sep 2026). Asta Palmer to be involved in delivery.",
     "actions": [
@@ -268,7 +268,8 @@
       "[TODO] Kevin to reach out to team and agree delivery timing collectively -- factor in HEAT, July leave, statutory returns season, and ~29 Sep flex point expiry.",
       "[TODO] Confirm Asta Palmer's involvement in delivery.",
       "[TODO] Confirm Marie Cooksey sign-off on spend.",
-      "[AWAITING] Access Group consultant to make contact and agree delivery timeline (within 3 weeks of approval)."
+      "[AWAITING] Access Group consultant to make contact and agree delivery timeline (within 3 weeks of approval).",
+      "[19 Aug 2026] Kevin replied to Alan Quirke and Marie Cooksey approving the Holiday Records 3 Reports project and confirming it is ready to schedule with Access Group. (email: Kevin (sent to: 'Alan Quirke'; Marie Cooksey) - RE: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)"
     ],
     "dateAdded": "2026-06-11"
   },
@@ -499,9 +500,11 @@
     "actions": [
       "[24 Jun 2026] Raised at HR Systems Managers Meeting -- Julie on leave for two weeks; training check cover needed. Esther flagged as an option.",
       "[TODO] Identify who can cover training checks during Julie's two-week absence -- Esther flagged as option, confirm availability.",
-      "[TODO] Marie to ask Morgan to connect with Julie after People Conference (25 Jun) re Power Automate training check tool."
+      "[TODO] Marie to ask Morgan to connect with Julie after People Conference (25 Jun) re Power Automate training check tool.",
+      "[19 Aug 2026] Marie Cooksey advised that Beth is also stepping away unwell, leaving no helpdesk cover; Sarah Rowles is coordinating alternative support. (email: Marie Cooksey - RE: Reduced Help Desk Support)"
     ],
-    "dateAdded": "2026-06-25"
+    "dateAdded": "2026-06-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B021B0000"
   },
   {
     "id": "task-1782599584762",
@@ -1189,13 +1192,14 @@
     "tier": "tomorrow",
     "source": "Inbox - Chris Little, 2026-08-18 08:50",
     "emailRef": "Re: Appointment request",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E30000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077C2A011B0000",
     "summary": "",
     "description": "Chris Little has offered two morning slots on 11 or 12 September for an appointment. Kevin needs to confirm which date works for him.",
     "origin": "inbox-auto",
     "actions": [
       "[18 Aug 2026] Auto-created from inbox triage (email: Chris Little - Re: Appointment request).",
-      "[18 Aug 2026] Kevin has confirmed availability and replied to Chris Little that Friday 11 September works for the appointment. (email: Kevin (sent to: Chris Little) - Re: Appointment request)"
+      "[18 Aug 2026] Kevin has confirmed availability and replied to Chris Little that Friday 11 September works for the appointment. (email: Kevin (sent to: Chris Little) - Re: Appointment request)",
+      "[19 Aug 2026] Kevin confirmed receipt of appointment details from Chris Little for 11 September. (email: Kevin (sent to: 'Chris Little') - RE: Appointment request)"
     ]
   },
   {
@@ -1224,13 +1228,14 @@
     "tier": "week",
     "source": "Inbox - Kevin Lelitte, 2026-08-18 10:24",
     "emailRef": "Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F6F0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E80000",
     "summary": "",
     "description": "Simon Burford's email (forwarded by Kevin as a bump) concerns confirmation of employer pension rates needed for the university's annual Financial Statements. This appears to be an outstanding item requiring Kevin's input or sign-off.",
     "origin": "inbox-auto",
     "actions": [
       "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL).",
-      "[18 Aug 2026] Kevin bumped the original email from Simon (28 May) requesting confirmation of employer pension rates for the university's annual Financial Statements; still outstanding. (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL)"
+      "[18 Aug 2026] Kevin bumped the original email from Simon (28 May) requesting confirmation of employer pension rates for the university's annual Financial Statements; still outstanding. (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL)",
+      "[19 Aug 2026] Kevin bumped Simon Burford's email on 18 Aug regarding confirmation of employer pension rates for annual Financial Statements. (email: Kevin (sent to: Kevin Lelitte) - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL)"
     ]
   },
   {
@@ -1255,13 +1260,14 @@
     "tier": "week",
     "source": "Inbox - Kevin Lelitte, 2026-08-18 10:23",
     "emailRef": "Fw: EcoOnline /University of Oxford",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F6C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E60000",
     "summary": "",
     "description": "Kevin has bumped an email from Joanne Grant at EcoOnline regarding University engagement. This appears to require a response or action from Kevin to progress the relationship or proposal discussion.",
     "origin": "inbox-auto",
     "actions": [
       "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford).",
-      "[18 Aug 2026] Kevin bumped the original email from Joanne Grant (28 May) regarding EcoOnline/University engagement; still requires follow-up. (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford)"
+      "[18 Aug 2026] Kevin bumped the original email from Joanne Grant (28 May) regarding EcoOnline/University engagement; still requires follow-up. (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford)",
+      "[19 Aug 2026] Kevin bumped the EcoOnline supplier engagement email on 18 Aug, flagging it for follow-up action. (email: Kevin (sent to: Kevin Lelitte) - Fw: EcoOnline /University of Oxford)"
     ]
   },
   {
@@ -1277,6 +1283,20 @@
     "actions": [
       "[18 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - User guidance for staff on grades 39Q, 30S, 38S and 36S - leave entitlement calculations).",
       "[18 Aug 2026] Julie Hickman has scheduled a Teams meeting for planning departments' move to 38-day balance scheme. (email: Julie Hickman - Planning for depts move to 38 day balance )"
+    ]
+  },
+  {
+    "id": "t2608191200560",
+    "title": "Review intranet hyperlinks with Athena Artuso",
+    "tier": "week",
+    "source": "Inbox - Athena Artuso, 2026-08-13 16:53",
+    "emailRef": "Review of intranet hyperlinks",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B02210000",
+    "summary": "",
+    "description": "Athena Artuso has sent a request to review intranet hyperlinks. Kevin needs to understand the scope and provide input or approve the changes.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[19 Aug 2026] Auto-created from inbox triage (email: Athena Artuso - Review of intranet hyperlinks)."
     ]
   }
 ]
