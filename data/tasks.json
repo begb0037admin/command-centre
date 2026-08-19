@@ -1244,14 +1244,15 @@
     "tier": "week",
     "source": "Inbox - Kevin Lelitte, 2026-08-18 10:23",
     "emailRef": "Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F110000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E70000",
     "summary": "",
     "description": "Kevin has flagged an email from Anna Carter-Windle regarding GLAM's rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security. This requires follow-up action to clarify requirements and next steps with the team.",
     "origin": "inbox-auto",
     "actions": [
       "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ).",
       "[18 Aug 2026] Kevin bumped the original email from Anna Carter-Windle (28 May) regarding GLAM rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security; still requires follow-up. (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )",
-      "[19 Aug 2026] Kevin bumped this email on 18 Aug, indicating it remains an open action requiring follow-up. (email: Michael O'Sullivan - RE: Volunteering Leave)"
+      "[19 Aug 2026] Kevin bumped this email on 18 Aug, indicating it remains an open action requiring follow-up. (email: Michael O'Sullivan - RE: Volunteering Leave)",
+      "[19 Aug 2026] Kevin bumped the GLAM rostering requirements email for Botanic Gardens and Ashmolean Security, signalling need for follow-up. (email: Kevin (sent to: Kevin Lelitte) - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )"
     ]
   },
   {
@@ -1296,7 +1297,8 @@
     "description": "Athena Artuso has sent a request to review intranet hyperlinks. Kevin needs to understand the scope and provide input or approve the changes.",
     "origin": "inbox-auto",
     "actions": [
-      "[19 Aug 2026] Auto-created from inbox triage (email: Athena Artuso - Review of intranet hyperlinks)."
+      "[19 Aug 2026] Auto-created from inbox triage (email: Athena Artuso - Review of intranet hyperlinks).",
+      "[19 Aug 2026] Athena Artuso sent request for intranet hyperlinks review. (email: Athena Artuso - Review of intranet hyperlinks)"
     ]
   }
 ]
