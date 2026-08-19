@@ -469,7 +469,8 @@
     ],
     "dateAdded": "2026-06-23",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
-    "status": "OSM task ownership notification forwarded by Marie 17 Jun — review Task# 50959264 in OSM and accept or reassign."
+    "status": "OSM task ownership notification forwarded by Marie 17 Jun — review Task# 50959264 in OSM and accept or reassign.",
+    "done": true
   },
   {
     "id": "t023",
