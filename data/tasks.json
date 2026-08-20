@@ -1204,7 +1204,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Chris Little, 2026-08-18 08:50",
     "emailRef": "Re: Appointment request",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E20000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E40000",
     "summary": "",
     "description": "Chris Little has offered two morning slots on 11 or 12 September for an appointment. Kevin needs to confirm which date works for him.",
     "origin": "inbox-auto",
@@ -1212,7 +1212,8 @@
       "[18 Aug 2026] Auto-created from inbox triage (email: Chris Little - Re: Appointment request).",
       "[18 Aug 2026] Kevin has confirmed availability and replied to Chris Little that Friday 11 September works for the appointment. (email: Kevin (sent to: Chris Little) - Re: Appointment request)",
       "[19 Aug 2026] Kevin confirmed receipt of appointment details from Chris Little for 11 September. (email: Kevin (sent to: 'Chris Little') - RE: Appointment request)",
-      "[20 Aug 2026] Kevin has initiated contact with Chris Little to request an appointment on 11 or 12 September. (email: Kevin (sent to: hand.shouldersurgery@gmail.com) - Appointment request)"
+      "[20 Aug 2026] Kevin has initiated contact with Chris Little to request an appointment on 11 or 12 September. (email: Kevin (sent to: hand.shouldersurgery@gmail.com) - Appointment request)",
+      "[20 Aug 2026] Kevin forwarded Chris Little's reply to his own inbox as a reminder. (email: Kevin (sent to: Kevin Lelitte) - Fw: Appointment request)"
     ]
   },
   {
@@ -1399,7 +1400,22 @@
     "description": "Simon Burford forwarded a request asking Kevin to estimate the Functional Analysis effort required to implement identification of internal candidates in the application form. This is a scoping/estimation task.",
     "origin": "inbox-auto",
     "actions": [
-      "[20 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates)."
+      "[20 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates).",
+      "[20 Aug 2026] Simon Burford requests functional analysis effort estimate for internal candidate identification feature in application form. (email: Simon Burford - FW: Application form - identification of internal candidates)"
+    ]
+  },
+  {
+    "id": "t2608201801130",
+    "title": "Complete DTP1334 SHSMS supplier evaluation by Friday 21 Aug",
+    "tier": "tomorrow",
+    "source": "Inbox - Helen Harbour, 2026-08-20 16:24",
+    "emailRef": "Fw: Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F420000",
+    "summary": "",
+    "description": "Helen Harbour is checking that Kevin will complete and return the supplier requirements evaluations for the Strategic Health & Safety Management System project by the Friday 21 August deadline. Kevin needs to review supplier submissions and clarifications and return his evaluation.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[20 Aug 2026] Auto-created from inbox triage (email: Helen Harbour - Fw: Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August)."
     ]
   }
 ]
