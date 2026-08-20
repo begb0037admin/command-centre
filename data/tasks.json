@@ -1086,7 +1086,7 @@
     "tier": "week",
     "source": "Inbox - Julie Hickman, 2026-08-12 17:09",
     "emailRef": "38 day balance for departments update and decisions needed",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F870000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F400000",
     "summary": "",
     "description": "Julie Hickman has shared a OneDrive file with timeframe of tasks for 38-day balance departments. Kevin needs to review the document and understand the implementation schedule and any decisions required from HR Systems.",
     "origin": "inbox-auto",
@@ -1097,7 +1097,8 @@
       "[17 Aug 2026] Julie has scheduled a Teams meeting for planning for departments moving to 38-day balance, providing follow-up discussion on the implementation timeline document previously shared. (email: Julie Hickman - Planning for depts move to 38 day balance )",
       "[18 Aug 2026] Michael O'Sullivan has provided NHS Pension tier new pay ranges update; Athena notes the team only needs employer contribution rates for statutory reporting. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)",
       "[19 Aug 2026] Michael O'Sullivan provided context on the Balance Period End Matrix process for annual leave year-end and system calendar extension procedures. (email: Michael O'Sullivan - RE: Balance Period End Matrix)",
-      "[19 Aug 2026] Julie Hickman provided contact details for 38-day balance department leads: Chemistry (Jenna Boyce, Alexia Leakey), Maths (Emma Harte), GLAM (Becky Fitzek). (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+      "[19 Aug 2026] Julie Hickman provided contact details for 38-day balance department leads: Chemistry (Jenna Boyce, Alexia Leakey), Maths (Emma Harte), GLAM (Becky Fitzek). (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[20 Aug 2026] Julie Hickman provided update that Chemistry estimates approximately 110 existing work groups to convert for 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
     ]
   },
   {
@@ -1361,13 +1362,14 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-19 15:51",
     "emailRef": "FW: Application form - identification of internal candidates",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F8A0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F830000",
     "summary": "",
     "description": "Simon Burford forwarded a request asking Kevin to estimate how much work it would be from a Functional Analysis point of view to implement identification of internal candidates in the application form. This is a scoping/estimation task.",
     "origin": "inbox-auto",
     "actions": [
       "[19 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates).",
-      "[20 Aug 2026] Simon is requesting Kevin's estimation of effort required from Functional Analysis perspective to implement internal candidate identification in the application form. (email: Simon Burford - FW: Application form - identification of internal candidates)"
+      "[20 Aug 2026] Simon is requesting Kevin's estimation of effort required from Functional Analysis perspective to implement internal candidate identification in the application form. (email: Simon Burford - FW: Application form - identification of internal candidates)",
+      "[20 Aug 2026] Simon Burford forwarded request for effort estimation on internal candidate identification in application form from Functional Analysis perspective. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
     ]
   },
   {
@@ -1376,13 +1378,28 @@
     "tier": "week",
     "source": "Inbox - Organisational Structure, 2026-08-19 16:34",
     "emailRef": "RE: Org Structure Update",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F880000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000",
     "summary": "",
     "description": "The Organisational Structure team has sent specific details about the org structure update for Kevin and Simon to action. Kevin needs to review the specifics and determine what changes or actions are required in HR Systems.",
     "origin": "inbox-auto",
     "actions": [
       "[20 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Org Structure Update).",
-      "[20 Aug 2026] Org Structure team has sent specific details about the org structure update for Kevin and Simon to action. (email: Organisational Structure - RE: Org Structure Update)"
+      "[20 Aug 2026] Org Structure team has sent specific details about the org structure update for Kevin and Simon to action. (email: Organisational Structure - RE: Org Structure Update)",
+      "[20 Aug 2026] Julie Hickman sent reminder about Kudoboard for Beth's farewell messages - ongoing team coordination activity. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)"
+    ]
+  },
+  {
+    "id": "t2608201500590",
+    "title": "Estimate effort for internal candidate identification in application form",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-19 15:51",
+    "emailRef": "FW: Application form - identification of internal candidates",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F8A0000",
+    "summary": "",
+    "description": "Simon Burford forwarded a request asking Kevin to estimate the Functional Analysis effort required to implement identification of internal candidates in the application form. This is a scoping/estimation task.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[20 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates)."
     ]
   }
 ]
