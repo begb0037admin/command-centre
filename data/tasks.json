@@ -952,7 +952,7 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-11 11:49",
     "emailRef": "HR Systems Management",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995700000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000",
     "summary": "",
     "description": "Marie Cooksey has sent a Microsoft Teams meeting link for HR Systems Management. Kevin needs to attend to participate in management discussions.",
     "origin": "inbox-auto",
@@ -960,7 +960,8 @@
       "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - HR Systems Management).",
       "[11 Aug 2026] Meeting invitation received from Marie Cooksey for HR Systems Management. (email: Marie Cooksey - HR Systems Management)",
       "[13 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan on 11 August, confirming attendance and participation in management discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
-      "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the HR Systems Management meeting Kevin needs to attend. (email: Marie Cooksey - H&S Systems Supplier Reviews)"
+      "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the HR Systems Management meeting Kevin needs to attend. (email: Marie Cooksey - H&S Systems Supplier Reviews)",
+      "[20 Aug 2026] PeopleXD platform maintenance scheduled for Friday 28 August 2026 between 8-10 pm; Kevin should note this downtime window for planning purposes. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -1198,14 +1199,15 @@
     "tier": "tomorrow",
     "source": "Inbox - Chris Little, 2026-08-18 08:50",
     "emailRef": "Re: Appointment request",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077C2A011B0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E20000",
     "summary": "",
     "description": "Chris Little has offered two morning slots on 11 or 12 September for an appointment. Kevin needs to confirm which date works for him.",
     "origin": "inbox-auto",
     "actions": [
       "[18 Aug 2026] Auto-created from inbox triage (email: Chris Little - Re: Appointment request).",
       "[18 Aug 2026] Kevin has confirmed availability and replied to Chris Little that Friday 11 September works for the appointment. (email: Kevin (sent to: Chris Little) - Re: Appointment request)",
-      "[19 Aug 2026] Kevin confirmed receipt of appointment details from Chris Little for 11 September. (email: Kevin (sent to: 'Chris Little') - RE: Appointment request)"
+      "[19 Aug 2026] Kevin confirmed receipt of appointment details from Chris Little for 11 September. (email: Kevin (sent to: 'Chris Little') - RE: Appointment request)",
+      "[20 Aug 2026] Kevin has initiated contact with Chris Little to request an appointment on 11 or 12 September. (email: Kevin (sent to: hand.shouldersurgery@gmail.com) - Appointment request)"
     ]
   },
   {
@@ -1359,6 +1361,20 @@
     "origin": "inbox-auto",
     "actions": [
       "[19 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates)."
+    ]
+  },
+  {
+    "id": "t2608200721490",
+    "title": "Review org structure specifics from Organisational Structure team",
+    "tier": "week",
+    "source": "Inbox - Organisational Structure, 2026-08-19 16:34",
+    "emailRef": "RE: Org Structure Update",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F880000",
+    "summary": "",
+    "description": "The Organisational Structure team has sent specific details about the org structure update for Kevin and Simon to action. Kevin needs to review the specifics and determine what changes or actions are required in HR Systems.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[20 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Org Structure Update)."
     ]
   }
 ]
