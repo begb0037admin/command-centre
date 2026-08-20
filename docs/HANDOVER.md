@@ -1,3 +1,37 @@
+# Handover — 20 August 2026, ~14:54 (Drew) — task-1787072363309 fixed: title-squeeze render bug + stale DRAFT status, Kevin-approved, DEPLOYED
+
+## What was reported
+Kevin flagged a rendering bug on the "URGENT -- Organisational Structure Update - August 2026 - DRAFT (Simon Burford / Sarah Rowles thread)" card on the live dashboard.
+
+## Root cause, confirmed live (headless Playwright against the production Pages URL)
+Not a JS error, not malformed JSON -- pure CSS layout squeeze. `css/styles.css` gives `.card-title-pills` (the source badge) `flex-shrink:0` and `.badge{white-space:nowrap}`, while `.card-title-text` (the title) has `min-width:0` so it absorbs all the shrinkage. This task's `source` field was 116 characters (`"orgstructure@admin.ox.ac.uk / Simon Burford (HR Systems Analysis and Insights Manager) / Sarah Rowles -- email thread"`) -- far longer than the short-label convention every other task uses -- so the unwrapping badge claimed ~500px of an ~840px row, squeezing the title into a single-word-per-line vertical column. Verified precisely via DOM measurement (pills 503.8px / title 321.2px on an 837px row) and reproduced/fixed client-side-only in a headless browser before writing anything, screenshotted before/after for Kevin's approval gate.
+
+## Second issue surfaced mid-investigation, Kevin gave direction to fix too
+Flagged that the task's `actions` log already showed a FINAL org-structure version was received 19 Aug, but the title/summary/description still framed it as an open 12 Aug DRAFT with an "upcoming" 19 Aug deadline -- stale as of today (20 Aug). Kevin forwarded the actual FINAL email content (Katherine Corr, orgstructure@admin.ox.ac.uk, 19 Aug 16:36, subject "RE: Organisational Structure Update - August 2026 - FINAL") and asked for the task to be brought current.
+
+## Fix, approved by Kevin via two screenshot rounds (v1 then v2) before any write
+1. `title`: dropped the redundant `(Simon Burford / Sarah Rowles thread)` parenthetical (already conveyed by the source badge) and DRAFT -> FINAL: now `"URGENT -- Organisational Structure Update - August 2026 - FINAL"`.
+2. `source`: shortened to `"orgstructure@admin.ox.ac.uk / Simon Burford / Sarah Rowles -- email thread"` (77 chars, drops only the parenthetical job title) -- this is what actually fixes the render; kept deliberately short rather than adding Katherine Corr to avoid re-triggering the same overflow.
+3. `description`: original 12/17 Aug narrative kept intact for history, FINAL content appended as a second paragraph (FINAL sent by Katherine Corr 19 Aug 16:36, effective through 19 Aug, one correction -- duplicate Oxuniprint Ltd subsidiary entity XP removed, minor name changes to 8HP0/E7, full schedule covers Medical Sciences/UAS/Colleges&Halls L2->L3 plus Subsidiary Companies cleanup, file migrated to SharePoint on the intranet, local system owners -- card database, Salto, Oracle etc. -- need to reflect changes and log via the Teams group). Also honestly notes Simon Burford's PeopleXD/H&S-dashboard question and Sarah Rowles' HESA go-live question remained unanswered in-thread as of the FINAL circulation -- not fabricated as resolved.
+4. `summary`: rewritten to the same FINAL content, condensed (898 chars). Confirmed via grep of `js/app.js` that `summary` is not rendered anywhere in the UI -- updated anyway since it's part of the task's data record.
+5. `actions` and `notes` left untouched (the 19 Aug FINAL-received/maintenance-notice entries already logged by an earlier session stay as-is, not duplicated).
+
+## Backup-and-verify sequence, run in full (command-centre CLAUDE.md mandatory protocol)
+1. Fresh GET of live `data/tasks.json` -- sha `066c021fdfc7ab6c2a9ee9ebdfc253d7340ea4e3`, 154497 bytes, non-zero, 74 tasks, confirmed.
+2. Timestamped backup pushed first: `Archive/tasks_backup_20260820_1453.json`, commit `aa5a25789cbe84938f39fe5ada5a559f22c06ff7` -- content sha `066c021fdfc7ab6c2a9ee9ebdfc253d7340ea4e3`, byte-identical to the live pre-change file (git content-addressing on the unchanged bytes, confirmed independently via a fresh GET-back).
+3. Race-guard re-GET of live sha immediately before the real write -- unchanged (`066c021f...`).
+4. Verified the edit was scoped to exactly this one task before writing: loaded the live JSON with Python, confirmed `json.dumps(data, indent=2, ensure_ascii=False)` round-trips the *unmodified* file byte-for-byte identical to the original (154497 == 154497, confirmed), then applied only the 4 field changes and re-diffed -- single unified-diff hunk, nothing else in the 74-task array touched.
+5. sha-guarded `PUT`, commit `99c9dc47f20784877f6e38545b8bf6d3af3ad8e0`, new content sha `5d9ecdad94a0a8814af96dd8b4c25743516f6570`, 155501 bytes.
+6. Fresh post-push GET: byte-identical to the intended write, live file sha confirmed matches the PUT response's content sha exactly (`5d9ecdad...`), task count still 74 (no drift), target task's title/source/description-length/summary-length all verified present exactly as pushed.
+
+## Also found, not fixed -- flagged to Kevin, no action taken without his direction
+Four different tasks now reference "organisational structure" (`task-1787072363309`, `t046`, `t2608121801282`, `t2608200721490`) across 3 tiers, one marked done. Data-hygiene/dedup question, not a rendering bug -- not touched.
+
+## Next action
+None outstanding on this fix -- done and verified live. The underlying dedup question above is Kevin's call if he wants it actioned.
+
+---
+
 # Handover — 18 August 2026, ~21:30 (Drew) — HIGH PRIORITY / URGENT: task `t2608111331410` escalated, "Cority - Applicant Data Import file" thread (James Salas Guillen / Simon Burford)
 
 ## Scope
@@ -148,7 +182,8 @@ Matched the checkpoint's count exactly — no drift since 12 Aug. Total live tas
 ` and added a trailing newline not present in the original (89,293-byte original ends `}
 ]` with no trailing newline; the corrupted draft ended `}
 ]
-`). Caught by comparing raw tail bytes before pushing, not after — rebuilt using binary `'wb'` mode, confirmed zero `` bytes and exact original ending (`}
+`). Caught by comparing raw tail bytes before pushing, not after — rebuilt using binary `'wb'` mode, confirmed zero `
+` bytes and exact original ending (`}
 ]`) before the PUT.
 
 ## Edit
