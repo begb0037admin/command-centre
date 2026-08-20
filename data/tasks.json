@@ -115,29 +115,6 @@
     "dateAdded": "2026-06-08"
   },
   {
-    "id": "t2608191643001",
-    "title": "38-day balance rollout — Work Group Holiday Scheme updates by department",
-    "tier": "parked",
-    "source": "Granola — \"Planning for depts move to 38 day balance\", 19/08/2026",
-    "emailRef": "",
-    "summary": "",
-    "description": "New \"38-day balance\" leave/absence type rolling out via PeopleXD/WFM: departments move from their current holiday scheme (bank holidays and fixed closure dates pre-loaded) to a simple 38-day balance, where staff book bank holidays and closures themselves. Removes significant admin burden for new appointments and manual balance calculations. Roughly 9 holiday schemes currently in use across the university; policy hasn't been updated to match how the system calculates leave, so the annual leave dashboard exists as a workaround bridge — a policy change would be the proper fix but none is expected soon.\n\nDepartment status (per the 19 Aug Granola meeting):\n- Chemistry: keen to proceed, on WFM since October, a full year of admin pain. Main contact Jenna Boyce. Chemistry HR will pre-book bank holidays and fixed closure dates on staff's behalf this round.\n- Maths: only on WFM since April, HR team still learning the system; recommendation is to advise them to pause and review after a full leave year rather than move now.\n- GLAM: large department, many staff types, complex rosters/shift patterns (some staff on concentrated shifts, e.g. 4-day 9-hour, with managers currently recording leave at 7.23 hrs rather than actual shift length). Not all GLAM staff need moving — some are likely moving to rostering instead. GLAM has asked for a ballpark on how many work groups can be updated; no commitment given yet, pending Chemistry's confirmed workgroup count. GLAM offered to pay for the work; no charging mechanism exists yet so it's too late to charge this year — needs a proper process for future years.\n- Biology: declining for this year — came in too late (likely heard about the approach via Anna's promotional sessions).\n\nMechanics: HR teams send a list of affected work groups (code + description); Kevin updates the Holiday Scheme attached to each work group, swapping to the scheme with no bank holidays/fixed closure dates. Nothing to create — pure data update. Michael estimated ~1-2 minutes per work group at a realistic pace. Kevin will personally do the Work Group updates once resourcing/timing is confirmed.\n\nTiming: must align with annual leave rollover (7 October); work can begin 5 October once the previous year is locked. Deadline for departments to submit their work group lists is 28 August. Priority order is first department to submit data gets done first. Risk flagged: departments may try to change balances themselves without understanding the work-group link — staff won't be able to book bank holidays if their work group still has the old scheme attached, which will surface quickly as a support query; first-line support (Emma) needs briefing to handle this without escalating.\n\nThis is being treated as a pilot, not a standard service offering. GLAM's separate, larger rostering problem (Ashmolean/Botanic Gardens area) is not in scope here and is not currently resourced — see related tasks t035 and t2608181201061.\n\nJulie is on leave from Fri 21 Aug to Wed 2 Sep 2026 (confirmed in the meeting — leave starts the day after the meeting); Marie Cooksey covers as department contact in her absence.",
-    "actions": [
-      "[19 Aug 2026] Task created from Granola meeting \"Planning for depts move to 38 day balance\" (19/08/2026).",
-      "[TODO] Julie to send a summary email covering all departments' status and timeline, copying Kevin and Simon, to use as the shared thread going forward — once Chemistry's workgroup count is known.",
-      "[TODO] Confirm how many GLAM work groups there's capacity to update, in addition to Chemistry and Maths — hold on committing to GLAM until Chemistry's submitted workgroup count is known.",
-      "[TODO] Confirm scheme codes for each department — not yet documented.",
-      "[TODO] Confirm who does the testing to prove scenarios are covered.",
-      "[TODO] Julie (or Marie Cooksey while Julie is on leave) to advise Maths to pause until next leave year.",
-      "[TODO] Decline Biology for this year — stress the process hasn't been fully tested and there's no resource available.",
-      "[TODO] Kevin to update work groups for confirmed departments from 5 October (once the 7 October rollover is locked), working in priority order by submission date — liaise with Michael on mechanics.",
-      "[TODO] Brief first-line support (Emma) ahead of the October rollover to handle staff queries about being unable to book bank holidays where the work group still carries the old scheme.",
-      "[AWAITING] Department work-group lists (code + description) due 28 Aug 2026.",
-      "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence."
-    ],
-    "dateAdded": "2026-08-19"
-  },
-  {
     "id": "t012",
     "title": "Vacancy alert email retest -- case 68388326",
     "tier": "parked",
@@ -1388,6 +1365,29 @@
       "[20 Aug 2026] Org Structure team has sent specific details about the org structure update for Kevin and Simon to action. (email: Organisational Structure - RE: Org Structure Update)",
       "[20 Aug 2026] Julie Hickman sent reminder about Kudoboard for Beth's farewell messages - ongoing team coordination activity. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)"
     ]
+  },
+  {
+    "id": "t2608191643001",
+    "title": "38-day balance rollout — Work Group Holiday Scheme updates by department",
+    "tier": "week",
+    "source": "Granola — \"Planning for depts move to 38 day balance\", 19/08/2026",
+    "emailRef": "",
+    "summary": "",
+    "description": "New \"38-day balance\" leave/absence type rolling out via PeopleXD/WFM: departments move from their current holiday scheme (bank holidays and fixed closure dates pre-loaded) to a simple 38-day balance, where staff book bank holidays and closures themselves. Removes significant admin burden for new appointments and manual balance calculations. Roughly 9 holiday schemes currently in use across the university; policy hasn't been updated to match how the system calculates leave, so the annual leave dashboard exists as a workaround bridge — a policy change would be the proper fix but none is expected soon.\n\nDepartment status (per the 19 Aug Granola meeting):\n- Chemistry: keen to proceed, on WFM since October, a full year of admin pain. Main contact Jenna Boyce. Chemistry HR will pre-book bank holidays and fixed closure dates on staff's behalf this round.\n- Maths: only on WFM since April, HR team still learning the system; recommendation is to advise them to pause and review after a full leave year rather than move now.\n- GLAM: large department, many staff types, complex rosters/shift patterns (some staff on concentrated shifts, e.g. 4-day 9-hour, with managers currently recording leave at 7.23 hrs rather than actual shift length). Not all GLAM staff need moving — some are likely moving to rostering instead. GLAM has asked for a ballpark on how many work groups can be updated; no commitment given yet, pending Chemistry's confirmed workgroup count. GLAM offered to pay for the work; no charging mechanism exists yet so it's too late to charge this year — needs a proper process for future years.\n- Biology: declining for this year — came in too late (likely heard about the approach via Anna's promotional sessions).\n\nMechanics: HR teams send a list of affected work groups (code + description); Kevin updates the Holiday Scheme attached to each work group, swapping to the scheme with no bank holidays/fixed closure dates. Nothing to create — pure data update. Michael estimated ~1-2 minutes per work group at a realistic pace. Kevin will personally do the Work Group updates once resourcing/timing is confirmed.\n\nTiming: must align with annual leave rollover (7 October); work can begin 5 October once the previous year is locked. Deadline for departments to submit their work group lists is 28 August. Priority order is first department to submit data gets done first. Risk flagged: departments may try to change balances themselves without understanding the work-group link — staff won't be able to book bank holidays if their work group still has the old scheme attached, which will surface quickly as a support query; first-line support (Emma) needs briefing to handle this without escalating.\n\nThis is being treated as a pilot, not a standard service offering. GLAM's separate, larger rostering problem (Ashmolean/Botanic Gardens area) is not in scope here and is not currently resourced — see related tasks t035 and t2608181201061.\n\nJulie is on leave from Fri 21 Aug to Wed 2 Sep 2026 (confirmed in the meeting — leave starts the day after the meeting); Marie Cooksey covers as department contact in her absence.",
+    "actions": [
+      "[19 Aug 2026] Task created from Granola meeting \"Planning for depts move to 38 day balance\" (19/08/2026).",
+      "[TODO] Julie to send a summary email covering all departments' status and timeline, copying Kevin and Simon, to use as the shared thread going forward — once Chemistry's workgroup count is known.",
+      "[TODO] Confirm how many GLAM work groups there's capacity to update, in addition to Chemistry and Maths — hold on committing to GLAM until Chemistry's submitted workgroup count is known.",
+      "[TODO] Confirm scheme codes for each department — not yet documented.",
+      "[TODO] Confirm who does the testing to prove scenarios are covered.",
+      "[TODO] Julie (or Marie Cooksey while Julie is on leave) to advise Maths to pause until next leave year.",
+      "[TODO] Decline Biology for this year — stress the process hasn't been fully tested and there's no resource available.",
+      "[TODO] Kevin to update work groups for confirmed departments from 5 October (once the 7 October rollover is locked), working in priority order by submission date — liaise with Michael on mechanics.",
+      "[TODO] Brief first-line support (Emma) ahead of the October rollover to handle staff queries about being unable to book bank holidays where the work group still carries the old scheme.",
+      "[AWAITING] Department work-group lists (code + description) due 28 Aug 2026.",
+      "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence."
+    ],
+    "dateAdded": "2026-08-19"
   },
   {
     "id": "t2608201500590",
