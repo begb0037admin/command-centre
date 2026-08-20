@@ -622,10 +622,11 @@
     "summary": "",
     "description": "Julie Hickman has flagged outstanding actions related to Development Insight reports following a conversation with Ilona. Kevin needs to review what these actions are and what work is required.",
     "actions": [
-      "[10 Aug 2026] Julie Hickman has reached out regarding outstanding actions on Development Insight reports following conversation with Ilona. (email: Julie Hickman - Re: My Development Insight reports)"
+      "[10 Aug 2026] Julie Hickman has reached out regarding outstanding actions on Development Insight reports following conversation with Ilona. (email: Julie Hickman - Re: My Development Insight reports)",
+      "[20 Aug 2026] Kevin declined a meeting with Otter Ho on the Cross-Team Process Improvement Working Group due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)"
     ],
     "notes": "",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8AC40000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39ED0000",
     "dateAdded": "2026-08-02"
   },
   {
@@ -858,7 +859,7 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-07 15:09",
     "emailRef": "Team Calendar Config",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C10000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F110000",
     "summary": "",
     "description": "Simon encountered a missing option when trying to configure the Volunteering Leave pay code in UOXU. Kevin needs to work with Asta to diagnose and resolve the team calendar configuration problem.",
     "origin": "inbox-auto",
@@ -866,7 +867,8 @@
       "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Team Calendar Config).",
       "[10 Aug 2026] Simon encountered missing configuration option when setting up Volunteering Leave pay code in UOXU; Kevin to investigate with Asta. (email: Simon Burford - Team Calendar Config)",
       "[10 Aug 2026] Simon Burford encountered a missing option when configuring Volunteering Leave pay code in UOXU; diagnosis and resolution needed with Asta on team calendar configuration. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
-      "[18 Aug 2026] Simon Burford clarifies that Company 90 should be ignored for now as it was only set up for WFM workgroup configuration; this provides guidance on the team calendar configuration work with Asta. (email: Simon Burford - RE: Balance Period End Matrix)"
+      "[18 Aug 2026] Simon Burford clarifies that Company 90 should be ignored for now as it was only set up for WFM workgroup configuration; this provides guidance on the team calendar configuration work with Asta. (email: Simon Burford - RE: Balance Period End Matrix)",
+      "[20 Aug 2026] Michael O'Sullivan has responded that the TIMDEP04 Absence Reasons report may need updating to include the new Volunteering Leave absence type. (email: Michael O'Sullivan - RE: Volunteering Leave)"
     ],
     "dateAdded": "2026-08-07"
   },
@@ -1374,7 +1376,8 @@
     "description": "The Organisational Structure team has sent specific details about the org structure update for Kevin and Simon to action. Kevin needs to review the specifics and determine what changes or actions are required in HR Systems.",
     "origin": "inbox-auto",
     "actions": [
-      "[20 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Org Structure Update)."
+      "[20 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Org Structure Update).",
+      "[20 Aug 2026] Org Structure team has sent specific details about the org structure update for Kevin and Simon to action. (email: Organisational Structure - RE: Org Structure Update)"
     ]
   }
 ]
