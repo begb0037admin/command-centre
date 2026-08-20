@@ -84,7 +84,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 [id^=tier-]{min-height:72px;padding:8px;border-radius:8px;transition:background .12s,outline-color .12s}
 [id^=tier-].drag-over{outline:2px dashed rgba(55,138,221,.35);outline-offset:2px;background:rgba(55,138,221,.06)}
 [id^=tier-].sug-drag-over{outline:2px dashed rgba(74,222,128,.55);outline-offset:2px;background:#f0fdf4}
-@media(max-width:640px){.shell{flex-direction:column}.sidebar{width:100%;height:auto;position:static}}
+@media(max-width:640px){.shell{flex-direction:column}.sidebar{width:100%;height:auto;position:static}.main{margin-left:0;width:100%}}
 
 /* TASK COUNTS WIDGET */
 .task-counts-panel{padding:4px 10px 10px}
