@@ -934,6 +934,26 @@
     "dateAdded": "2026-08-10"
   },
   {
+    "id": "task-1787044968753",
+    "title": "Auto job-alert notification email -- text changes (Laura Porter)",
+    "tier": "week",
+    "source": "Laura Porter (Talent Mobility Specialist, People Dept) -- email thread",
+    "emailRef": "Auto job alert notification email - text changes",
+    "summary": "Approved wording changes to the auto job-alert vacancy notification email stuck on an Access Group config issue since Jul 2026; pending on Kevin checking the support ticket and sending Laura the sign-off screenshot, not on Laura or Access Group.",
+    "description": "Text changes to the auto job-alert vacancy notification email (internal vs external wording, an unsubscribe text tweak), requested by Laura Porter (Talent Mobility Specialist, People Department) and approved by Laura and Philip Taylor (HR) in Feb 2026. Implementation stalled on a backend issue: Access Group (PeopleXD/back-office supplier) could not get the config change to actually apply to outgoing notification emails, despite it saving correctly and Access Group's own side showing it as correct. Kevin raised a fresh Access Group support ticket on 8 Jul 2026, then took 2 weeks' leave, telling Laura he'd pick it up towards the end of July and send her a screenshot for sign-off before pushing to Live once verified working. Laura's 8 Jul reply set no deadline -- she wished him a good holiday and said to touch base when he's back. This is pending on Kevin's own follow-up, not Laura's or Access Group's -- neither of them is currently the blocker.",
+    "actions": [
+      "[28 Jan 2026] Laura Porter (Talent Mobility Specialist) raised requested text changes to the auto job-alert vacancy notification email.",
+      "[Feb 2026] Wording changes approved by Laura Porter and Philip Taylor (HR).",
+      "[08 Jul 2026] Kevin raised a fresh Access Group support ticket after the config change saved correctly but failed to apply to outgoing notification emails; went on 2 weeks' leave, telling Laura he'd pick it up towards the end of July and send a screenshot for sign-off before pushing to Live.",
+      "[08 Jul 2026] Laura replied wishing Kevin a good holiday and said to touch base when he's back -- no deadline set, not the blocker.",
+      "[TODO] Check the Access Group support ticket status, confirm the config change actually applies to outgoing notification emails, then send Laura the screenshot for sign-off before pushing to Live.",
+      "[18 Aug 2026] Michael O'Sullivan has forwarded FYI notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm; this may impact job alert notification email testing if scheduled. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
+    ],
+    "notes": "",
+    "dateAdded": "2026-08-18",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000"
+  },
+  {
     "id": "t2608111309070",
     "title": "Attend H&S Systems Supplier Reviews meeting",
     "tier": "week",
@@ -1100,26 +1120,6 @@
       "[19 Aug 2026] Julie Hickman provided contact details for 38-day balance department leads: Chemistry (Jenna Boyce, Alexia Leakey), Maths (Emma Harte), GLAM (Becky Fitzek). (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[20 Aug 2026] Julie Hickman provided update that Chemistry estimates approximately 110 existing work groups to convert for 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
     ]
-  },
-  {
-    "id": "task-1787044968753",
-    "title": "Auto job-alert notification email -- text changes (Laura Porter)",
-    "tier": "week",
-    "source": "Laura Porter (Talent Mobility Specialist, People Dept) -- email thread",
-    "emailRef": "Auto job alert notification email - text changes",
-    "summary": "Approved wording changes to the auto job-alert vacancy notification email stuck on an Access Group config issue since Jul 2026; pending on Kevin checking the support ticket and sending Laura the sign-off screenshot, not on Laura or Access Group.",
-    "description": "Text changes to the auto job-alert vacancy notification email (internal vs external wording, an unsubscribe text tweak), requested by Laura Porter (Talent Mobility Specialist, People Department) and approved by Laura and Philip Taylor (HR) in Feb 2026. Implementation stalled on a backend issue: Access Group (PeopleXD/back-office supplier) could not get the config change to actually apply to outgoing notification emails, despite it saving correctly and Access Group's own side showing it as correct. Kevin raised a fresh Access Group support ticket on 8 Jul 2026, then took 2 weeks' leave, telling Laura he'd pick it up towards the end of July and send her a screenshot for sign-off before pushing to Live once verified working. Laura's 8 Jul reply set no deadline -- she wished him a good holiday and said to touch base when he's back. This is pending on Kevin's own follow-up, not Laura's or Access Group's -- neither of them is currently the blocker.",
-    "actions": [
-      "[28 Jan 2026] Laura Porter (Talent Mobility Specialist) raised requested text changes to the auto job-alert vacancy notification email.",
-      "[Feb 2026] Wording changes approved by Laura Porter and Philip Taylor (HR).",
-      "[08 Jul 2026] Kevin raised a fresh Access Group support ticket after the config change saved correctly but failed to apply to outgoing notification emails; went on 2 weeks' leave, telling Laura he'd pick it up towards the end of July and send a screenshot for sign-off before pushing to Live.",
-      "[08 Jul 2026] Laura replied wishing Kevin a good holiday and said to touch base when he's back -- no deadline set, not the blocker.",
-      "[TODO] Check the Access Group support ticket status, confirm the config change actually applies to outgoing notification emails, then send Laura the screenshot for sign-off before pushing to Live.",
-      "[18 Aug 2026] Michael O'Sullivan has forwarded FYI notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm; this may impact job alert notification email testing if scheduled. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
-    ],
-    "notes": "",
-    "dateAdded": "2026-08-18",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000"
   },
   {
     "id": "t2608121801281",
