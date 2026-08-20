@@ -337,32 +337,98 @@ async function handleTasks(body, env, hdrs) {
 }
 
 // ---------------------------------------------------------------------------
-// handleInboxState — work-inbox's data/ticks.json write path. Scope
-// deliberately unchanged beyond the same error-propagation hardening as
-// handleTasks: no merge logic added here. Ticks are booleans (idempotent,
-// low-stakes vs. losing a real action-log entry) and this path wasn't
-// reported as broken. It has the same "fresh GET right before PUT" shape as
-// handleTasks did, so it's plausible two browser tabs syncing ticks around
-// the same time could clobber each other the same way -- flagging this as a
-// similar-shaped, lower-priority residual risk, not fixing it here.
+// mergeTicks -- ticks.json's own conflict-merge, added Phase 2 (20 Aug 2026)
+// to bring handleInboxState up to the same protection level as handleTasks
+// below (3-attempt retry, merge-on-409/422). This was previously flagged
+// here as a "similar-shaped, lower-priority residual risk, not fixing it
+// here" -- now in scope because command-centre's own syncDoneToInbox() adds
+// a genuine second concurrent writer against work-inbox's own dashboard
+// (see js/api.js), not just two work-inbox browser tabs.
+//
+// Deliberately NOT a straight boolean-union merge: work-inbox's toggleTick()
+// (js/app.js) is a real toggle (ticks[k] = !ticks[k]), and purgeOldTicks()
+// genuinely deletes keys -- both real user actions this route must not
+// silently undo by resurrecting a stale `true`. Ticks carry no per-key
+// timestamp, so true last-writer-wins per key isn't possible from this data
+// alone. Instead: remote is the base, the incoming request's own ticks win
+// on top of it for any key it actually carries (so THIS request's own most
+// recent action always lands as written, including an explicit false), and
+// any key present ONLY in remote (added by a different session in the
+// split-second between THIS request's own read and write) is kept rather
+// than dropped -- the same "when genuinely uncertain, keep the disputed
+// item, visible and correctable, over silently and permanently losing it"
+// bias already established and shipped for mergeRemote() (tasks.json)
+// above. Matching known limitation, stated the same way: a delete/purge on
+// the incoming side cannot override a key that still exists on the remote
+// side in this exact race window, since "absent" and "never seen" look
+// identical with no per-key tombstone. Same accepted trade-off, not a new
+// one -- and the same narrow scope as handleTasks' own fix: this closes the
+// Worker's own GET-to-PUT race, not the much larger "browser tab open for
+// minutes" window (that still needs client baseSha, per the PHASE 2 section
+// at the bottom of this file, not built for either route).
+// ---------------------------------------------------------------------------
+function mergeTicks(localDoc, remoteDoc) {
+  const remoteTicks = (remoteDoc && typeof remoteDoc === 'object' && remoteDoc.ticks) || {};
+  const localTicks = (localDoc && typeof localDoc === 'object' && localDoc.ticks) || {};
+  return {
+    ...localDoc,
+    ticks: { ...remoteTicks, ...localTicks },
+    updated_at: localDoc.updated_at || new Date().toISOString(),
+  };
+}
+
+// ---------------------------------------------------------------------------
+// handleInboxState — work-inbox's data/ticks.json write path. Same retry/
+// merge shape as handleTasks: up to 3 attempts, bounded so sustained
+// contention reports rather than loops forever; merges (via mergeTicks
+// above) on attempt > 1, i.e. only after this Worker's own PUT has already
+// hit a 409/422 -- the one conflict shape detectable with zero client
+// changes, same as handleTasks.
 // ---------------------------------------------------------------------------
 async function handleInboxState(body, env, hdrs) {
   const pat = env.HRIS_GITHUB_PAT;
   const { doc, message } = body;
   if (!doc) return jsonResponse(400, { error: 'Missing doc' }, hdrs);
 
-  const current = await ghGet(pat, WI_REPO, 'data/ticks.json');
-  if (!current.ok && current.status !== 404) {
-    return githubErrorResponse(current.status, 'read ticks.json', current.error, hdrs);
-  }
-  const sha = current.ok ? current.data.sha : undefined;
+  const MAX_ATTEMPTS = 3;
+  let attempt = 0;
 
-  const writeRes = await ghPut(pat, WI_REPO, 'data/ticks.json', JSON.stringify(doc, null, 2), message || 'Tick sync', sha);
-  if (!writeRes.ok) {
+  while (attempt < MAX_ATTEMPTS) {
+    attempt++;
+
+    const current = await ghGet(pat, WI_REPO, 'data/ticks.json');
+    if (!current.ok && current.status !== 404) {
+      return githubErrorResponse(current.status, 'read ticks.json', current.error, hdrs);
+    }
+    const sha = current.ok ? current.data.sha : undefined;
+
+    let docToWrite = doc;
+    if (attempt > 1 && current.ok) {
+      let remoteDoc;
+      try {
+        remoteDoc = JSON.parse(decodeBase64Utf8(current.data.content));
+      } catch (e) {
+        return jsonResponse(500, { error: 'Could not parse remote ticks.json during conflict merge: ' + e.message }, hdrs);
+      }
+      docToWrite = mergeTicks(doc, remoteDoc);
+    }
+
+    const writeRes = await ghPut(pat, WI_REPO, 'data/ticks.json', JSON.stringify(docToWrite, null, 2), message || 'Tick sync', sha);
+
+    if (writeRes.ok) {
+      return jsonResponse(200, { ok: true, merged: attempt > 1, attempts: attempt }, hdrs);
+    }
+
+    if (writeRes.status === 409 || writeRes.status === 422) continue;
+
     const errText = await writeRes.text().catch(() => '');
     return githubErrorResponse(writeRes.status, 'write ticks.json', errText, hdrs);
   }
-  return jsonResponse(200, { ok: true }, hdrs);
+
+  return jsonResponse(409, {
+    ok: false,
+    error: `Gave up after ${MAX_ATTEMPTS} attempts -- ticks.json is under sustained concurrent writes. No write was made with a stale version, so nothing was overwritten incorrectly, but this write did not land. Safe to retry.`,
+  }, hdrs);
 }
 
 // ---------------------------------------------------------------------------
