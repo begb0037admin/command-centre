@@ -1,3 +1,45 @@
+# Handover — 21 August 2026, ~17:05 UTC (Drew) — Phase 3 MERGED + Worker DEPLOYED, verified live
+
+## What shipped
+- Merged `phase3-donesync-21aug` (tip `c25eadf5f`) into `main` — merge commit `8f782c7e0f32fd35c9a1dfbfbbc0d8ca4fa7f587`. Touched `js/api.js`, `cloudflare-worker/cc-tasks-writer-proposed.js`, `cloudflare-worker/test_phase3_donesync.mjs`, `docs/HANDOVER.md`.
+- Deployed the merged `cc-tasks-writer-proposed.js` to the live Cloudflare Worker `cc-tasks-writer` via `wrangler deploy` — new version `d50c44a6-fdd8-4063-9c42-f1a0ac761c68`, message "Phase 3: baseSha race-fix for handleInboxState (ticks.json) + bidirectional done-sync...".
+
+## Worker deploy mechanism — resolved, not previously confirmed
+Kevin's question: does `wrangler deploy` actually work for CODE on this Worker (only secret rotation had been confirmed before today), or is manual dashboard paste still required? **Resolved with real evidence, not assumption:**
+1. The Worker's OWN live script (fetched via `GET /accounts/.../workers/scripts/cc-tasks-writer` before touching anything) already carried esbuild `__name`/`__defProp` bundling artifacts on the "Phase 2" version deployed 20 Aug — circumstantial evidence a wrangler deploy had already happened, not conclusive on its own.
+2. **Decisive test, zero risk to production**: built a disposable throwaway Worker (`drew-wrangler-secret-test`), set a test secret via `wrangler secret put`, confirmed it functional, then deployed a SECOND, different script body via `wrangler deploy` with no `wrangler.toml` and no bindings declared on the command line. The secret survived BOTH in `wrangler secret list` AND functionally (worker returned the exact 18-char secret value unchanged) after the code-only redeploy. Deleted the throwaway worker once proven.
+3. Confirmed this Worker (`cc-tasks-writer`) has exactly 2 bindings, both secrets (`ANTHROPIC_API_KEY`, `HRIS_GITHUB_PAT`), no KV/D1/other bindings a bare `wrangler deploy` could silently drop — checked via the Cloudflare API's script-settings endpoint before deploying.
+4. Deployed for real: `wrangler deploy cloudflare-worker/cc-tasks-writer-proposed.js --name cc-tasks-writer --compatibility-date 2024-09-01 --message "..."`. Post-deploy, both secrets confirmed still present (`wrangler secret list`) and functionally verified via the live round-trip tests below.
+
+**Conclusion for future sessions: `wrangler deploy --name cc-tasks-writer --compatibility-date 2024-09-01` is a confirmed-working, safe path for future code-only deploys to this Worker.** No `wrangler.toml` exists or is needed; don't create one casually — a toml declaring an empty binding list could behave differently to a bare CLI deploy. This session only confirmed the no-toml, bare-CLI path.
+
+## Live verification, not just "it deployed"
+- `wrangler deployments list --name cc-tasks-writer` shows the new version at 100%, dated 2026-08-21T17:00:56Z, message intact.
+- Fetched the live served script content directly (`GET /workers/scripts/cc-tasks-writer`) post-deploy: confirmed `knownStaleClient`/`baseSha` handling present in BOTH `handleTasks` and `handleInboxState`, and confirmed it differs (byte-diff) from the pre-deploy restore-point bundle.
+- **Live functional round-trip, both routes, non-destructive** (same pattern as the 16 Aug PAT-rotation verification):
+  - `data/tasks.json` (command-centre): GET live (77 tasks, sha `f1bda744...`), POSTed back through `handleTasks` with matching `baseSha` → `{"ok":true,"merged":false,"attempts":1,"sha":"780bb712...","doneSynced":[]}`. Real new commit landed: `39b7d0dd`, correct isolated identity `kevinlelitteadmin`.
+  - `data/ticks.json` (work-inbox): GET live (sha `1fc9b147...`), POSTed back through the `inbox-state` route with matching `baseSha` → `{"ok":true,"merged":false,"attempts":1,"sha":"1fc9b147...","doneSynced":[]}`. Sha came back unchanged because the content round-tripped byte-identical — GitHub's Contents API made no new commit for a genuinely no-op write (contrast with the CC side, which DID produce a new commit due to JSON re-serialization differences) — both are the expected outcome for their respective inputs, not a stub response.
+  - **Checked before running the ticks.json round-trip**: `ticks.json` already carried real `id_t002`/`id_t006`/`id_t016`/`id_t031` keys (true) from Kevin's own live activity earlier today (12:13–12:16 UTC), matching the 21 Aug scoping report's finding #5. Confirmed all four tasks are ALREADY `done:true` in live `tasks.json` before running the test, so the round-trip's `doneSynced:[]` result is a genuine no-op (no fresh transition to sync), not a masked side effect.
+
+## Backup-and-verify sequence, this session
+| File | Pre-merge live SHA | Backup path | Backup SHA re-verified |
+|---|---|---|---|
+| `js/api.js` | `463e42d1fc3a678b495819119a94051bc3ac5424` (4789 bytes) | `Archive/api_backup_20260821_1425.js` | byte-identical, re-GET confirmed |
+| `cloudflare-worker/cc-tasks-writer-proposed.js` | `b2c4753951ad288811e8e0d932275e802a31f22a` (30681 bytes) | `Archive/cc-tasks-writer-proposed_backup_20260821_1425.js` | byte-identical, re-GET confirmed |
+| `docs/HANDOVER.md` | `33b1fe8d2e81bc7ae0c5f8a215064b9a9216500a` (64059 bytes) | `Archive/HANDOVER_backup_20260821_1425.md` | byte-identical, re-GET confirmed |
+
+Plus the Worker's own pre-deploy live bundle saved locally this session (`RESTORE_POINT_pre-phase3-live-bundle.js`, scratchpad only, not committed — the Archive backup above is the durable copy of the source; the served bundle is regenerable from it via the same `wrangler deploy` command).
+
+## Revert plan — two independent paths, both validated
+1. **Worker code only**: `wrangler rollback --name cc-tasks-writer --version-id f597a375-ef5b-4448-b594-802e7412f713` — one command, restores the exact pre-Phase-3 "Phase 2" version. Command syntax confirmed available (`wrangler rollback --help`) but not executed (nothing to roll back from as of this entry).
+2. **Repo code**: `git revert` of merge commit `8f782c7e0f32fd35c9a1dfbfbbc0d8ca4fa7f587` on `main`, or a sha-guarded PUT of `Archive/api_backup_20260821_1425.js`'s content back onto `js/api.js`. Reverting the client (`js/api.js`) alone without rolling back the Worker is safe — the Worker already treats a missing `baseSha` as "no staleness check possible" (its pre-Phase-3 behaviour).
+3. Reverting the Worker alone without touching client code is also safe — an old client simply never sends `baseSha`, which the current (or rolled-back) Worker both handle as optional/absent.
+
+## Branch cleanup
+`phase3-donesync-21aug` deleted from both `command-centre` and `work-inbox` after this entry, now that main is confirmed live and matches in both repos.
+
+---
+
 # Handover — 21 August 2026, ~15:15 UTC (Drew) — Phase 3: ticks.json race-window closed + bidirectional done-sync — STAGED, NOT MERGED
 
 ## Scope
