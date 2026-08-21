@@ -1420,5 +1420,19 @@
       "[20 Aug 2026] Auto-created from inbox triage (email: Helen Harbour - Fw: Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August).",
       "[21 Aug 2026] Helen Harbour sent a final check-in confirming the Friday 21 August deadline for supplier evaluation returns. (email: Helen Harbour - Fw: Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August)"
     ]
+  },
+  {
+    "id": "t2608211201050",
+    "title": "Review sickness absence data completeness with Sarah Rowles",
+    "tier": "week",
+    "source": "Inbox - Sarah Rowles, 2026-08-21 11:09",
+    "emailRef": "Sickness Absence Data Catch-up",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AE972F550000",
+    "summary": "",
+    "description": "Sarah Rowles has sent data completeness analysis for the DWHS sickness absence dataset (OUTPUT_SicknessDataChecks_20260811.xlsx). Kevin needs to review the findings and discuss any data quality issues or follow-up actions required.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[21 Aug 2026] Auto-created from inbox triage (email: Sarah Rowles - Sickness Absence Data Catch-up)."
+    ]
   }
 ]
