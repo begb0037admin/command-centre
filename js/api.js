@@ -11,6 +11,24 @@ var tasks=[];
 var dragId=null;
 var sgDragIdx=null;
 
+/* BASE SHA (Phase 3, 21 Aug 2026) -- what tasks.json's blob sha was the
+   moment we last loaded/saved it, so the Worker can tell "nothing changed
+   server-side since this page loaded, safe to write directly" from
+   "something changed, must merge" BEFORE attempting a write, instead of
+   only reacting to a 409 that (per the Worker's own Phase 1 finding)
+   almost never actually happens for this exact failure mode. Verified live
+   this session that raw.githubusercontent.com's ETag header is NOT usable
+   for this (it's a 64-hex SHA-256 of the raw bytes, not GitHub's 40-hex
+   blob SHA-1) -- so this is captured via one direct, unauthenticated
+   GitHub Contents API call, once per page load, not on every poll. */
+var _tasksBaseSha=null;
+async function refreshTasksBaseSha(){
+  try{
+    var r=await fetch('https://api.github.com/repos/begb0037admin/command-centre/contents/data/tasks.json?ref=main&t='+Date.now(),{headers:{'Accept':'application/vnd.github.v3+json'}});
+    if(r.ok){var j=await r.json();_tasksBaseSha=j.sha||null;}
+  }catch(e){/* best-effort -- baseSha capture is an enhancement, page must still work without it */}
+}
+
 /* LOAD TASKS */
 async function loadTasks(){
   var t=Date.now();
@@ -25,6 +43,7 @@ async function loadTasks(){
   if(lu){var n=new Date();lu.textContent='Updated '+n.toLocaleDateString('en-GB',{day:'numeric',month:'short'})+' '+n.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});}
   renderBoard();
   renderCustomLinks();
+  refreshTasksBaseSha();
 }
 
 /* FETCH REMOTE (for merge guard) */
@@ -68,53 +87,41 @@ function showSaveToast(state,text){
     t._timer=setTimeout(function(){t.className='';},2500);
   }
 }
-/* ONE-WAY SYNC: CC task marked done -> tick matching item in today's Work Inbox briefing */
-async function syncDoneToInbox(taskId,entryId){
-  if(!taskId&&!entryId)return;
-  try{
-    var bRes=await fetch(INBOX_RAW+'/data/briefing.json?t='+Date.now());
-    if(!bRes.ok)return;
-    var briefing=await bRes.json();
-    var dateKey=(briefing.date||'').replace(/ /g,'_');
-    if(!dateKey)return;
-    var tickKey=null;
-    /* 1. Search priorities (CC task id match) — covers today/tomorrow/week panels in WI */
-    var priMap=[['prioritiesToday','pt'],['prioritiesTomorrow','ptom'],['prioritiesWeek','pw']];
-    for(var p=0;p<priMap.length&&!tickKey;p++){
-      var arr=briefing[priMap[p][0]]||[];
-      for(var i=0;i<arr.length;i++){
-        if(arr[i].id===taskId){tickKey=dateKey+'_pri_'+priMap[p][1]+'_'+i;break;}
-      }
-    }
-    /* 2. Fall back: search inbox sections by entry_id */
-    if(!tickKey&&entryId){
-      var inboxSecs=['urgent','needs','fyi','low'];
-      for(var s=0;s<inboxSecs.length&&!tickKey;s++){
-        var sarr=briefing[inboxSecs[s]]||[];
-        for(var j=0;j<sarr.length;j++){
-          if(sarr[j].entry_id===entryId){tickKey=dateKey+'_'+inboxSecs[s]+'_'+j;break;}
-        }
-      }
-    }
-    if(!tickKey)return;
-    var tRes=await fetch(INBOX_RAW+'/data/ticks.json?t='+Date.now());
-    var ticksDoc=tRes.ok?await tRes.json():{ticks:{}};
-    var ticks=ticksDoc.ticks||{};
-    if(ticks[tickKey])return;
-    ticks[tickKey]=true;
-    await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({target:'inbox-state',message:'Tick sync from command-centre: '+tickKey,doc:{ticks:ticks,updated_at:new Date().toISOString()}})});
-  }catch(e){console.warn('Inbox tick sync failed',e);}
-}
+/* Phase 3 (21 Aug 2026): the old client-side one-way "CC done -> tick WI"
+   sync (syncDoneToInbox, formerly here) is REMOVED, not repaired. Decision,
+   documented per the task brief:
+   - It computed WI tick keys as date-scoped positions
+     (dateKey+'_pri_'+tier+'_'+i / dateKey+'_'+section+'_'+j) -- the
+     pre-17-Aug scheme. Work-inbox's own tick keys have since moved to
+     stable 'eid_<entry_id>'/'id_<ccTaskId>' identifiers precisely because
+     the old scheme silently detached from its card on any reorder/reshuffle
+     (the 17 Aug tick-resurrection incident). Reviving this function as-is
+     would have re-shipped that exact bug for every sync-driven tick.
+   - It was also already dead code -- confirmed live, toggleDone() never
+     called it -- so "repair" would mean rewriting it entirely against the
+     current key scheme, which is exactly what the Worker-side
+     syncTaskDoneToTicks() (cloudflare-worker/cc-tasks-writer-proposed.js)
+     now does instead, from ONE place shared by both repos' write paths
+     rather than a second, divergence-prone client implementation that also
+     depended on a fragile direct cross-origin fetch of work-inbox's
+     briefing.json/ticks.json from this page.
+   Done-state sync (both directions, reversible) now happens server-side in
+   the Worker as a side effect of persistTasks()/work-inbox's pushTicks() --
+   see that file's DONE-SYNC section. Nothing else in this file needs to
+   drive it. */
 
 async function persistTasks(msg){
   showSaveToast('saving','Saving…');
   try{
-    var res=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({doc:{tasks:tasks},message:msg})});
-    if(!res.ok){
+    var res=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({doc:{tasks:tasks},message:msg,baseSha:_tasksBaseSha})});
+    var body=null;
+    try{body=await res.json();}catch(e){}
+    if(!res.ok||!(body&&body.ok)){
       showSaveToast('error','Save failed — HTTP '+res.status+' (tap to dismiss)');
-      console.warn('Writer error',res.status);
+      console.warn('Writer error',res.status,body&&body.error);
       return false;
     } else {
+      if(body.sha)_tasksBaseSha=body.sha;
       showSaveToast('success','Saved ✓');
       return true;
     }

@@ -1,5 +1,14 @@
 // cc-tasks-writer Worker — corrected source, proposed by Drew, 2 Aug 2026.
-// NOT YET DEPLOYED. Kevin deploys manually via Cloudflare dashboard:
+// STATUS NOTE (21 Aug 2026): the "NOT YET DEPLOYED" line below is stale --
+// this file (with the Phase 2 mergeTicks additions) was confirmed live via
+// `wrangler deployments list --name cc-tasks-writer` (version `f597a375`,
+// see drew/memory/wi-phase2-silentfail-finish-ticksretry-correction-21aug.md).
+// Kept for history; deploy mechanism for code changes (as opposed to secret
+// rotation, which is confirmed to go via `wrangler secret put`) is still
+// Kevin pasting this file into the Cloudflare dashboard and clicking Save
+// and Deploy, per the original instruction just below, unless a future
+// session confirms `wrangler deploy` also works for this Worker.
+// Kevin deploys manually via Cloudflare dashboard:
 // Workers & Pages -> cc-tasks-writer -> Edit code -> replace entire file
 // with this -> Save and Deploy.
 //
@@ -103,6 +112,36 @@
 // cloudflare-worker/ai-log-endpoint.js in this repo, which I read directly
 // this session — Kevin's paste truncated it for brevity but I did not
 // reconstruct or guess any of it).
+//
+// ============================================================================
+// PHASE 3 ADDITIONS (21 Aug 2026) — race-window close + done-sync
+// ============================================================================
+//
+// 7. RACE-WINDOW GAP CLOSED FOR ticks.json — handleInboxState now accepts
+//    the same optional `baseSha` the client can send that handleTasks
+//    already handled (Phase 2, section 1 above), and merges via mergeTicks
+//    whenever the client's baseSha is stale relative to the freshly-read
+//    remote sha — not just on this Worker's own 409 retry. This closes the
+//    same "browser tab open for minutes" gap for ticks.json that PHASE 2
+//    at the bottom of this file already documented as open for BOTH
+//    routes. Client-side capture/send is now built too (js/api.js this
+//    repo, js/app.js work-inbox) — see each file's own comments. Both
+//    handleTasks and handleInboxState now also return the new blob `sha`
+//    in their success JSON body, so a client never needs a second fetch
+//    just to refresh its own baseSha after a save.
+//
+// 8. DONE-SYNC — marking a task done/undone in command-centre now pushes a
+//    matching flag-and-hide (never delete) to work-inbox's ticks.json, and
+//    vice versa, for the tiers/items that structurally exist in both
+//    systems. See ccDoneSyncKey/syncTaskDoneToTicks (CC->WI) and
+//    findTaskByEntryId/findTaskById/syncTickToTaskDone (WI->CC) below for
+//    the exact key scheme and the anti-echo/loop-safety argument. This
+//    only runs AFTER the primary write for that request has already
+//    succeeded, is fully best-effort (a failure here never rolls back or
+//    fails the primary write), and only acts on a genuine value TRANSITION
+//    relative to the freshest possible remote read — never on the raw
+//    payload — which is what makes it loop-safe without needing a separate
+//    tag/marker field (booleans have no room for one).
 //
 // ============================================================================
 
@@ -253,6 +292,150 @@ function mergeRemote(localTasks, remoteTasks) {
 }
 
 // ---------------------------------------------------------------------------
+// DONE-SYNC — Phase 3 (21 Aug 2026). Marking a task done/undone in either
+// command-centre (tasks.json) or work-inbox (ticks.json) reversibly flags
+// the same item done/hidden in the other, where a structural counterpart
+// exists. Flag-and-hide only, matching how "done" already works in both
+// systems today — never deletion.
+//
+// KEY SCHEME (read live from work-inbox/js/app.js this session, not
+// guessed): a WI Priorities-board card's own stable tick key is either
+// 'eid_<entry_id>' (a raw-email-sourced item, from _priGetKey()) or
+// 'id_<ccTaskId>' (mirrored from a live command-centre task). Confirmed via
+// work-inbox/fetch_inbox.py (~line 1574-1580, the "Command Centre loaded"
+// block): the mirrored entry it builds for prioritiesToday/Tomorrow/Week
+// carries `id` (the CC task's own id) but never `entry_id`/`entryId` — so
+// EVERY CC task mirrored into WI's priorities board is keyed 'id_<task.id>'
+// there, regardless of whether that task separately also has its own
+// `entryId` field (which reflects the last EMAIL to touch the task, not a
+// stable link to a specific WI card). Only tasks with tier in
+// {today,tomorrow,week} are mirrored at all (fetch_inbox.py ~line
+// 1582-1587) — 'parked' has no WI counterpart, so parked tasks are
+// structurally out of scope for this sync in both directions (finding 7 of
+// the 21 Aug scoping report, drew/memory/wi-cc-phase3-donesync-scoping-21aug.md).
+//
+// ANTI-ECHO / PING-PONG PREVENTION: not an explicit tag on the data itself
+// (done/tick values are plain booleans in both files — no room to attach
+// one without a schema change to data Kevin already relies on elsewhere).
+// Instead, both sync directions act ONLY on a genuine value TRANSITION
+// relative to a freshly-read copy of the OTHER file (read fresh, in this
+// same request, immediately before the derived write) — never on the raw
+// incoming request payload. Once both files agree, any later request that
+// resends the same value is a no-op in both directions, so a loop cannot
+// run more than one hop per real user action: this is enforced by
+// construction (the derived-write helpers below call a plain internal
+// function directly, never the other route's own handler, so there is no
+// code path by which a derived write could itself trigger a further
+// derived write), not merely something that happens not to occur in
+// testing.
+// ---------------------------------------------------------------------------
+function ccDoneSyncKey(task) {
+  if (!task || task.tier === 'parked' || !task.id) return null;
+  return 'id_' + task.id;
+}
+
+// entry_id -> CC task match, used for the WI->CC 'eid_' direction. 0 or >1
+// matches is treated as "no safe counterpart" and skipped, never guessed —
+// same "when genuinely uncertain, don't force it" principle already used
+// for mergeRemote's own known limitation, further up this file.
+function findTaskByEntryId(tasks, entryId) {
+  const matches = (tasks || []).filter(t => t && t.entryId === entryId);
+  return matches.length === 1 ? matches[0] : null;
+}
+function findTaskById(tasks, id) {
+  return (tasks || []).find(t => t && t.id === id) || null;
+}
+
+// CC -> WI: after tasks.json is written, push any done-state TRANSITIONS to
+// ticks.json. `beforeTasks` = the tasks array as it stood on GitHub
+// immediately before this write (the SAME read this request already did
+// for its own sha check — not the client's original baseline, which may be
+// stale); `afterTasks` = what was actually just written. Best-effort: any
+// failure here is swallowed and reported back, never allowed to undo or
+// fail the tasks.json write that already succeeded.
+async function syncTaskDoneToTicks(pat, beforeTasks, afterTasks) {
+  const beforeMap = {};
+  (beforeTasks || []).forEach(t => { if (t && t.id) beforeMap[t.id] = !!t.done; });
+  const transitions = [];
+  (afterTasks || []).forEach(t => {
+    const key = ccDoneSyncKey(t);
+    if (!key) return; // parked, or no id at all -- no WI counterpart, skip
+    const was = beforeMap.hasOwnProperty(t.id) ? beforeMap[t.id] : false;
+    const now = !!t.done;
+    if (was !== now) transitions.push({ key, value: now, id: t.id });
+  });
+  if (!transitions.length) return { synced: [] };
+
+  const MAX_ATTEMPTS = 3; // own bounded retry -- this is a second, independent write in the same request
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const current = await ghGet(pat, WI_REPO, 'data/ticks.json');
+    if (!current.ok && current.status !== 404) return { synced: [], error: 'could not read ticks.json for done-sync' };
+    let remoteDoc = { ticks: {} };
+    if (current.ok) {
+      try { remoteDoc = JSON.parse(decodeBase64Utf8(current.data.content)); } catch (e) { return { synced: [], error: 'could not parse ticks.json for done-sync' }; }
+    }
+    const ticks = { ...(remoteDoc.ticks || {}) };
+    transitions.forEach(tr => { ticks[tr.key] = tr.value; });
+    const docToWrite = { ...remoteDoc, ticks, updated_at: new Date().toISOString() };
+    const sha = current.ok ? current.data.sha : undefined;
+    const writeRes = await ghPut(
+      pat, WI_REPO, 'data/ticks.json', JSON.stringify(docToWrite, null, 2),
+      'Done-sync from command-centre: ' + transitions.map(t => t.id + (t.value ? ' done' : ' undone')).join(', '),
+      sha
+    );
+    if (writeRes.ok) return { synced: transitions.map(t => t.id) };
+    if (writeRes.status === 409 || writeRes.status === 422) continue;
+    return { synced: [], error: 'ticks.json write failed during done-sync, status ' + writeRes.status };
+  }
+  return { synced: [], error: 'ticks.json done-sync did not land after retries -- tasks.json write itself already succeeded' };
+}
+
+// WI -> CC: after ticks.json is written, push any TRANSITIONS on a
+// recognised 'id_'/'eid_' key to command-centre's tasks.json done flag.
+// `beforeTicks`/`afterTicks` are plain {key:bool} maps -- before/after the
+// SAME write this request already performed. Any other key shape (the
+// legacy day-scoped keys, e.g. from renderItems' older cls_i ids) has no CC
+// counterpart at all -- not an error, just structurally out of scope, same
+// principle as the parked-tier skip above.
+async function syncTickToTaskDone(pat, beforeTicks, afterTicks) {
+  const before = beforeTicks || {};
+  const transitions = [];
+  Object.keys(afterTicks || {}).forEach(key => {
+    const now = !!afterTicks[key];
+    const was = !!before[key];
+    if (now === was) return;
+    if (key.indexOf('id_') === 0) transitions.push({ matchType: 'id', matchValue: key.slice(3), value: now });
+    else if (key.indexOf('eid_') === 0) transitions.push({ matchType: 'entryId', matchValue: key.slice(4), value: now });
+  });
+  if (!transitions.length) return { synced: [] };
+
+  const MAX_ATTEMPTS = 3;
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const current = await ghGet(pat, CC_REPO, 'data/tasks.json');
+    if (!current.ok) return { synced: [], error: 'could not read tasks.json for done-sync' };
+    let remoteParsed;
+    try { remoteParsed = JSON.parse(decodeBase64Utf8(current.data.content)); } catch (e) { return { synced: [], error: 'could not parse tasks.json for done-sync' }; }
+    const remoteTasks = Array.isArray(remoteParsed) ? remoteParsed : (remoteParsed.tasks || []);
+    const applied = [];
+    transitions.forEach(tr => {
+      const task = tr.matchType === 'id' ? findTaskById(remoteTasks, tr.matchValue) : findTaskByEntryId(remoteTasks, tr.matchValue);
+      if (!task) return; // no structural counterpart (deleted/purged/ambiguous entryId) -- skip, don't force it
+      if (!!task.done !== tr.value) { task.done = tr.value; applied.push(task.id); }
+    });
+    if (!applied.length) return { synced: [] };
+    const writeRes = await ghPut(
+      pat, CC_REPO, 'data/tasks.json', JSON.stringify(remoteTasks, null, 2),
+      'Done-sync from work-inbox: ' + applied.join(', '),
+      current.data.sha
+    );
+    if (writeRes.ok) return { synced: applied };
+    if (writeRes.status === 409 || writeRes.status === 422) continue;
+    return { synced: [], error: 'tasks.json write failed during done-sync, status ' + writeRes.status };
+  }
+  return { synced: [], error: 'tasks.json done-sync did not land after retries -- ticks.json write itself already succeeded' };
+}
+
+// ---------------------------------------------------------------------------
 // handleTasks — command-centre's data/tasks.json write path.
 // ---------------------------------------------------------------------------
 async function handleTasks(body, env, hdrs) {
@@ -318,7 +501,26 @@ async function handleTasks(body, env, hdrs) {
     const writeRes = await ghPut(pat, CC_REPO, 'data/tasks.json', JSON.stringify(tasksToWrite, null, 2), message || 'Update tasks', current.data.sha);
 
     if (writeRes.ok) {
-      return jsonResponse(200, { ok: true, merged: knownStaleClient || attempt > 1, attempts: attempt }, hdrs);
+      const putBody = await writeRes.json().catch(() => null);
+      const newSha = putBody && putBody.content && putBody.content.sha;
+
+      // Done-sync (Phase 3, best-effort, never allowed to fail this write):
+      // compare the remote tasks this request already read (before) against
+      // what was just written (after) and push any done-state transition to
+      // work-inbox's ticks.json. See the DONE-SYNC block above for the full
+      // key scheme and loop-safety argument.
+      let doneSynced = [], doneSyncError;
+      try {
+        const beforeParsed = JSON.parse(decodeBase64Utf8(current.data.content));
+        const beforeTasks = Array.isArray(beforeParsed) ? beforeParsed : (beforeParsed.tasks || []);
+        const syncResult = await syncTaskDoneToTicks(pat, beforeTasks, tasksToWrite);
+        doneSynced = syncResult.synced || [];
+        doneSyncError = syncResult.error;
+      } catch (e) {
+        doneSyncError = 'done-sync threw: ' + (e && e.message ? e.message : String(e));
+      }
+
+      return jsonResponse(200, { ok: true, merged: knownStaleClient || attempt > 1, attempts: attempt, sha: newSha, doneSynced, doneSyncError }, hdrs);
     }
 
     // 409 = stale sha (GitHub's documented conflict signal). 422 handled the
@@ -387,7 +589,14 @@ function mergeTicks(localDoc, remoteDoc) {
 // ---------------------------------------------------------------------------
 async function handleInboxState(body, env, hdrs) {
   const pat = env.HRIS_GITHUB_PAT;
-  const { doc, message } = body;
+  const { doc, message, baseSha } = body;
+  // baseSha is NEW (Phase 3, 21 Aug 2026) and OPTIONAL, mirroring handleTasks
+  // above. Today's client now sends it (js/app.js this repo -- see
+  // refreshTicksBaseSha/_ticksBaseSha), closing the same "browser tab open
+  // for minutes" gap for ticks.json that was previously only closed for
+  // tasks.json. Without it, everything below still works exactly as before,
+  // just with narrower conflict detection (only this Worker's own
+  // GET-to-PUT race, via attempt>1).
   if (!doc) return jsonResponse(400, { error: 'Missing doc' }, hdrs);
 
   const MAX_ATTEMPTS = 3;
@@ -402,8 +611,9 @@ async function handleInboxState(body, env, hdrs) {
     }
     const sha = current.ok ? current.data.sha : undefined;
 
+    const knownStaleClient = typeof baseSha === 'string' && current.ok && baseSha !== current.data.sha;
     let docToWrite = doc;
-    if (attempt > 1 && current.ok) {
+    if ((knownStaleClient || attempt > 1) && current.ok) {
       let remoteDoc;
       try {
         remoteDoc = JSON.parse(decodeBase64Utf8(current.data.content));
@@ -416,7 +626,25 @@ async function handleInboxState(body, env, hdrs) {
     const writeRes = await ghPut(pat, WI_REPO, 'data/ticks.json', JSON.stringify(docToWrite, null, 2), message || 'Tick sync', sha);
 
     if (writeRes.ok) {
-      return jsonResponse(200, { ok: true, merged: attempt > 1, attempts: attempt }, hdrs);
+      const putBody = await writeRes.json().catch(() => null);
+      const newSha = putBody && putBody.content && putBody.content.sha;
+
+      // Done-sync (Phase 3, best-effort, never allowed to fail this write):
+      // compare the remote ticks this request already read (before) against
+      // what was just written (after) and push any 'id_'/'eid_' transition
+      // to command-centre's tasks.json done flag.
+      let doneSynced = [], doneSyncError;
+      try {
+        const beforeTicks = current.ok ? ((JSON.parse(decodeBase64Utf8(current.data.content)).ticks) || {}) : {};
+        const afterTicks = docToWrite.ticks || {};
+        const syncResult = await syncTickToTaskDone(pat, beforeTicks, afterTicks);
+        doneSynced = syncResult.synced || [];
+        doneSyncError = syncResult.error;
+      } catch (e) {
+        doneSyncError = 'done-sync threw: ' + (e && e.message ? e.message : String(e));
+      }
+
+      return jsonResponse(200, { ok: true, merged: knownStaleClient || attempt > 1, attempts: attempt, sha: newSha, doneSynced, doneSyncError }, hdrs);
     }
 
     if (writeRes.status === 409 || writeRes.status === 422) continue;
@@ -536,8 +764,21 @@ export default {
 };
 
 // ============================================================================
-// PHASE 2 — PROPOSED, NOT IMPLEMENTED, NOT DEPLOYED. Needs Kevin's explicit
-// go-ahead on the approach before any of this touches command-centre.
+// PHASE 2 — ORIGINAL PROPOSAL (2 Aug). STATUS UPDATE 21 Aug 2026: the
+// client-side half sketched below IS NOW BUILT, for both repos, as part of
+// Phase 3 — see command-centre/js/api.js (_tasksBaseSha/refreshTasksBaseSha)
+// and work-inbox/js/app.js (_ticksBaseSha/refreshTicksBaseSha). Option (a)
+// below (ETag) was live-tested this session and does NOT work: `curl -I`
+// against both raw.githubusercontent.com endpoints confirms the ETag is a
+// 64-hex-char SHA-256 of the raw bytes, not GitHub's 40-hex-char blob SHA-1
+// that the Contents API `sha`/PUT-conflict-check actually uses — the two
+// are computed differently and are not interchangeable. Option (b) (direct
+// Contents API call) is what was actually built: one extra unauthenticated
+// `api.github.com/.../contents/...` call per page load (not per poll) to
+// capture sha+content together, refreshed from the Worker's own response
+// `sha` field after every successful save so no second fetch is needed
+// then. The original sketch (kept below for the reasoning) is otherwise
+// unchanged from 2 Aug.
 // ============================================================================
 //
 // To close the LARGER data-loss gap (finding 1's real scope — a browser tab
@@ -552,8 +793,8 @@ export default {
 // and acts on `body.baseSha` if present — this file needs NO further changes
 // for Phase 2 to work once the client sends it.
 //
-// Client-side (command-centre/js/api.js, command-centre/js/app.js) — NOT
-// written or pushed, sketch only:
+// Client-side (command-centre/js/api.js, command-centre/js/app.js) — NOW
+// BUILT, 21 Aug 2026, per option (b) below (see status update above):
 //
 //   1. Wherever the client currently loads tasks.json (`loadTasks()`,
 //      `fetchTasksRemote()` in js/api.js), it needs to also capture the sha
