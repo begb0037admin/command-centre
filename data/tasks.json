@@ -1351,14 +1351,15 @@
     "tier": "week",
     "source": "Inbox - Simon Burford, 2026-08-19 15:51",
     "emailRef": "FW: Application form - identification of internal candidates",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F830000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000",
     "summary": "",
     "description": "Simon Burford forwarded a request asking Kevin to estimate how much work it would be from a Functional Analysis point of view to implement identification of internal candidates in the application form. This is a scoping/estimation task.",
     "origin": "inbox-auto",
     "actions": [
       "[19 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates).",
       "[20 Aug 2026] Simon is requesting Kevin's estimation of effort required from Functional Analysis perspective to implement internal candidate identification in the application form. (email: Simon Burford - FW: Application form - identification of internal candidates)",
-      "[20 Aug 2026] Simon Burford forwarded request for effort estimation on internal candidate identification in application form from Functional Analysis perspective. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+      "[20 Aug 2026] Simon Burford forwarded request for effort estimation on internal candidate identification in application form from Functional Analysis perspective. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[21 Aug 2026] Julie Hickman has reminded the team to add messages to Beth's Kudoboard; this is informational follow-up to the farewell/gift task. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)"
     ]
   },
   {
