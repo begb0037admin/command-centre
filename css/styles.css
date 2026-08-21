@@ -348,11 +348,10 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .intel-block{background:#fff;border:1px solid #e5e9f2;border-radius:10px;padding:16px 18px;box-shadow:0 1px 3px rgba(0,33,71,.05);min-width:0;display:flex;flex-direction:column}
 .intel-header{font-size:10.5px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px;padding-bottom:9px;border-bottom:1px solid #e5e9f2}
 .intel-header span{font-size:9px;font-weight:400;color:var(--text-very-muted);text-transform:none;letter-spacing:0;margin-left:6px}
-.intel-scroll{max-height:198px;overflow-y:auto;overflow-x:hidden;padding-right:4px;margin-right:-6px;scrollbar-width:thin;scrollbar-color:#cbd5e1 transparent}
-.intel-scroll::-webkit-scrollbar{width:7px}
+.intel-scroll{max-height:198px;overflow-y:auto;overflow-x:hidden;padding-right:4px;margin-right:-6px;scrollbar-width:thin;scrollbar-color:#e5e7eb transparent}
+.intel-scroll::-webkit-scrollbar{width:4px}
 .intel-scroll::-webkit-scrollbar-track{background:transparent}
-.intel-scroll::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:999px}
-.intel-scroll::-webkit-scrollbar-thumb:hover{background:#94a3b8}
+.intel-scroll::-webkit-scrollbar-thumb{background:#e5e7eb;border-radius:4px}
 .intel-item{display:flex;gap:8px;align-items:flex-start;padding:6px 8px 6px 12px;border-bottom:1px solid #f0f3f8;font-size:12.5px;color:var(--text-dark);cursor:pointer;border-radius:5px;margin:0 -8px;border-left:3px solid transparent;transition:background .12s,border-left-color .12s;line-height:1.4}
 .intel-item:last-of-type{border-bottom:none}
 .intel-block.watch .intel-item:hover{background:#fef2f2;border-left-color:#ef4444}
@@ -365,3 +364,9 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .intel-empty{font-size:11.5px;color:var(--text-very-muted);font-style:italic;padding:4px 0}
 @media(max-width:1060px){.intel-panel{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.intel-panel{grid-template-columns:1fr}}
+.sidebar{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:4px}
+html{scrollbar-width:thin;scrollbar-color:#d1d5db transparent}
+html::-webkit-scrollbar{width:6px}
+html::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:4px}
