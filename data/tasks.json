@@ -433,6 +433,22 @@
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2900008DFB9C6852DC5A43B72538034BBFF5350007ACBD052C0000"
   },
   {
+    "id": "t2608171727070",
+    "title": "Attend HSMS Tender Session (final) on Microsoft Teams",
+    "tier": "parked",
+    "source": "Inbox - Christopher Sanders, 2026-08-17 12:09",
+    "emailRef": "HSMS Tender Session (the final one)",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C70000",
+    "summary": "",
+    "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the final HSMS (Health & Safety Management System) tender session. This is a meeting attendance commitment that requires Kevin's participation today.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[17 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - HSMS Tender Session (the final one)).",
+      "[17 Aug 2026] Meeting reminder received for final HSMS tender session scheduled for today. (email: Christopher Sanders - HSMS Tender Session (the final one))",
+      "[21 Aug 2026] Attended final HSMS tender session; next priorities are chasing Entra ID team on admin guide publication (target: 11 Sep handover to Brian), aggregating evaluator scores for supplier shortlist (early Sep), and scheduling resourcing meeting with Simon and Marie on return to confirm October resource and squad model ahead of 25 Sep revised roadmap deadline."
+    ]
+  },
+  {
     "id": "t025",
     "title": "Support cover w/c 6 July -- plan needed today",
     "tier": "tomorrow",
@@ -1203,22 +1219,6 @@
     "actions": [
       "[14 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - H&S Roadmap).",
       "[14 Aug 2026] Confirmation email received from Christopher Sanders for the H&S Roadmap catch-up meeting scheduled for Friday 14 August. (email: Christopher Sanders - H&S Roadmap)"
-    ]
-  },
-  {
-    "id": "t2608171727070",
-    "title": "Attend HSMS Tender Session (final) on Microsoft Teams",
-    "tier": "parked",
-    "source": "Inbox - Christopher Sanders, 2026-08-17 12:09",
-    "emailRef": "HSMS Tender Session (the final one)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C70000",
-    "summary": "",
-    "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the final HSMS (Health & Safety Management System) tender session. This is a meeting attendance commitment that requires Kevin's participation today.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[17 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - HSMS Tender Session (the final one)).",
-      "[17 Aug 2026] Meeting reminder received for final HSMS tender session scheduled for today. (email: Christopher Sanders - HSMS Tender Session (the final one))",
-      "[21 Aug 2026] Attended final HSMS tender session; next priorities are chasing Entra ID team on admin guide publication (target: 11 Sep handover to Brian), aggregating evaluator scores for supplier shortlist (early Sep), and scheduling resourcing meeting with Simon and Marie on return to confirm October resource and squad model ahead of 25 Sep revised roadmap deadline."
     ]
   },
   {
