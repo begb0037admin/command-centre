@@ -683,7 +683,7 @@
     "tier": "week",
     "source": "Inbox - Christopher Sanders, 2026-07-27 11:00",
     "emailRef": "SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43180000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ADFEA7630000",
     "summary": "",
     "description": "Christopher Sanders has sent two emails (pt. 1 and pt. 2) with Microsoft Teams meeting links for SH&SM Project HR Systems Tender Evaluation Response. Kevin needs to participate in this evaluation discussion related to the Health & Safety Management System (DTP1334) project.",
     "origin": "inbox-auto",
@@ -694,7 +694,8 @@
       "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning 17 August; testing work is proceeding with Guy Williams coordinating staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[10 Aug 2026] Guy Williams replied on 10 August confirming integration platforms (INT-STG, BT, AIP) are ready with current staging imports for testing. (email: Simon Burford - Volunteering Leave)",
       "[10 Aug 2026] Guy Williams confirms all integration platforms are current and ready; testing can proceed as planned for the 14 August deadline. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[10 Aug 2026] Nathan Kirwan confirmed that test scenarios for DTP1092 testing have been set up in UOXU. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)"
+      "[10 Aug 2026] Nathan Kirwan confirmed that test scenarios for DTP1092 testing have been set up in UOXU. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)",
+      "[21 Aug 2026] Kevin clarified that the Cority applicant data import report was originally built by Grace, not Lee, and has been handed over with documentation. (email: Kevin (sent to: Simon Burford; James Salas Guillen) - Re: Cority - Applicant Data Import file)"
     ],
     "dateAdded": "2026-08-03"
   },
