@@ -1,3 +1,37 @@
+# Handover — 21 August 2026, ~09:00 UTC (Drew) — Phase 2 item 3 MERGED to main, verified live — PHASE 2 CLOSED IN FULL
+
+## What shipped
+Kevin reviewed the staged before/after screenshots himself and gave literal approval to merge. Branch `phase2-item3-staleness-fix-21aug` (commit `1a79b25929742208c206c2b4c71074d76fbfb542`) merged into `main` — the staleness-clock root fix (see the 21 Aug ~08:50 entry immediately below for the full root-cause/fix writeup, not repeated here).
+
+## Pre-merge verification (this repo's own mandatory backup-and-verify protocol)
+- Fresh GET of live `main` `js/app.js` immediately before merging: sha `501a0a3477d02373d058409eea8d8a5837902474`, 40371 bytes — unchanged since the branch was staged (matches the pre-change sha recorded in the ~08:50 entry), confirming no drift and that the existing backup is still the correct restore point.
+- `compare/main...phase2-item3-staleness-fix-21aug`: branch 1 ahead / 2 behind main ("diverged"). Checked what the 2 extra main commits touched before merging (`compare/phase2-item3-staleness-fix-21aug...main --jq '.files[].filename'`): `data/tasks.json` (an automated inbox task update) and `docs/HANDOVER.md` (this file's own staging entry) — neither touches `js/app.js`, so no conflict risk.
+- Re-verified `Archive/app_backup_20260821_0750.js` (commit `dab76fdc4702667bc1a3c3a848612bb3422af4fc`) live: sha `501a0a3477d02373d058409eea8d8a5837902474`, byte-identical to pre-merge `main`.
+
+## Merge
+GitHub Merges API, `base=main`, `head=phase2-item3-staleness-fix-21aug` → merge commit `4467e25a88ab4351452274d80a19eb5bf2603d76`. Post-merge `main`'s `js/app.js` sha confirmed via direct GET: `3eea204c50e8d1fcf135eacaaf515a613212b512`, 42098 bytes — exact match to the branch's staged content.
+
+## Live deploy verification — byte-diff, not just "merge succeeded" or a status field
+Per agent-commons' documented cache-trap gotcha (raw.githubusercontent.com and `/pages/builds/latest` can serve/report stale right after a real change), did not stop at the Pages status:
+1. Polled `pages/builds/latest` — `building` → `built` (commit `4467e25a88ab4351452274d80a19eb5bf2603d76`) within ~50s of the merge.
+2. Downloaded the **actual served file** — `curl https://begb0037admin.github.io/command-centre/js/app.js?t=<cache-buster>` — and diffed it directly against the merged git blob (`contents/js/app.js?ref=main`, base64-decoded): `cmp` reports 0 byte differences, SHA-256 identical (`7bab5554...`) on both sides.
+3. Confirmed `lastActivityTs` present in the live served file (sanity grep).
+
+## Backup location
+`Archive/app_backup_20260821_0750.js` (commit `dab76fdc4702667bc1a3c3a848612bb3422af4fc`) — pre-fix `js/app.js`, sha `501a0a3477d02373d058409eea8d8a5837902474`, 40371 bytes. Correct restore point for this specific change.
+
+## Revert plan — validated against current live data this session, not just described
+If a live problem is reported: fetch current `main` sha for `js/app.js`, sha-guarded `PUT` of `Archive/app_backup_20260821_0750.js`'s content back onto `js/app.js`, commit message `"Revert to pre-Phase2-item3 staleness logic"`.
+**Validated, not just asserted:** extracted the exact pre-fix `lastActivityTs()`/`staleDays()` function pair from the backup and ran it in Node against a **fresh pull of today's actual live `data/tasks.json`** (76 tasks — not the dataset the original fix was verified against) — 0 exceptions thrown, executes cleanly end-to-end, flags 16 tasks stale under the old (reverted) logic. Confirms the revert path is safe to execute right now against real current data; it would silently reintroduce the known routine-inbound-email-masks-staleness bug, the expected tradeoff of reverting, not a new failure mode.
+
+## Branch cleanup
+`phase2-item3-staleness-fix-21aug` deleted after all of the above was confirmed. The change is carried forward permanently via merge commit `4467e25a88ab4351452274d80a19eb5bf2603d76`; the branch's original tip (`1a79b25929742208c206c2b4c71074d76fbfb542`) remains reachable through that commit's parent history for full traceability.
+
+## Phase 2 status
+This was the last open Phase 2 item. **Phase 2 is closed in full on this repo's side.** Work-inbox's matching half of the same fix is documented in that repo's own `HANDOVER.md`, same session, same verification standard. Reporting back to Kevin per his own instruction — this closes Phase 2 overall, triggering his stock-take before Phase 3 (merging the 2 duplicate task pairs; the original item8 concern is not separately open, superseded by this change).
+
+---
+
 # Handover — 21 August 2026, ~08:50 UTC (Drew) — Phase 2 item 3 CLOSED: staleness-clock root bug fixed, shared definition with work-inbox, STAGED pending screenshot approval
 
 ## What this closes
