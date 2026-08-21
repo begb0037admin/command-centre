@@ -1,3 +1,42 @@
+# Handover — 21 August 2026, ~10:05 UTC (Drew) — Task Board 2x2 tier-grid + collapse/expand, shipped to main
+
+## What shipped
+Kevin approved this UI change directly to the coordinator earlier in the day (screenshots shown, he typed "yes"); a prior Drew session designed/tested/screenshotted it but expired before pushing. This session rebuilt it from scratch against current live state (re-verified `#tierGrid`, the four `.sec-head` divs, and `toggleFocusZone` still existed as described — they did) and shipped it. Not a re-negotiation of the design — only re-verified against live code before writing.
+
+Two pieces, both live on `main` now:
+1. **2x2 grid** — `#tierGrid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}` (+ `@media(max-width:1024px)` single-column fallback), mirroring work-inbox's own `.inbox-grid` rule byte-for-byte on the grid properties. Today/Tomorrow now sit side by side on top, This Week/Parked side by side underneath. No markup reordering needed — `#tierGrid`'s four `.tier-section` children were already in that DOM order.
+2. **Collapse/expand per tier** — each `.sec-head` (Today/Tomorrow/This Week/Parked) got an `id`, `onclick="toggleTierSection('<tier>')"`, and a trailing `.sec-chevron` span, mirroring the existing `toggleFocusZone`/`.focus-chevron` sidebar pattern. New `js/app.js` functions `getTierCollapseState`/`applyTierCollapse`/`toggleTierSection`/`initTierCollapse`, localStorage key `commandCentre_tierCollapse_v1` (`{today,tomorrow,week,parked}` booleans), same var/get/save shape as `DONE_KEY`/`QL_KEY`. Collapse hides the card body via `.tier-section.sec-collapsed>[id^="tier-"]{display:none}` — a CSS rule keyed off a class toggled on the `.tier-section` wrapper (`#sec-wrap-<tier>`), **not** on the drop-zone divs themselves, so `#tier-today` etc. (and their `ondragover`/`ondragleave`/`ondrop` handlers) stay byte-identical to before. `initTierCollapse()` called once in the INIT block, after `renderCustomLinks()`, before `loadTasks()`.
+
+## Live-state drift caught mid-task
+Bootstrap fetch of `js/app.js` predated this session's own Phase 2 item 3 merge (see entry below) landing on `main`. Built the tier-collapse edit against the stale copy first, then re-GET'd `js/app.js` immediately before backup/write, found the SHA had moved (`3eea204c...`, 42098 bytes, containing the staleness-clock fix), and rebuilt the same two edits (TIER SECTION COLLAPSE block + `initTierCollapse()` call) on top of the *current* content instead of overwriting it. Diffed the rebased file against the fresh live pull before shipping — confirmed the diff contained only the two intended insertions, nothing else touched, no regression of the just-landed staleness fix.
+
+## Verification before shipping
+Local static-file test build (live `index.html`/`css/styles.css`/`js/app.js` pulled via Contents API into scratchpad, real live `data/tasks.json` loaded over the network — never written back), served via `python -m http.server`, screenshotted with real (non-fake) headless Chrome (`--headless=new --virtual-time-budget=6000` to let the async task fetch complete before capture — a plain `--screenshot` with no time budget captures before `loadTasks()` resolves, giving false all-zero counts).
+- **2x2 grid confirmed** with real live data (Today 6 cards / Tomorrow 9 / This Week 39 / Parked 9) — Today+Tomorrow row 1, This Week+Parked row 2, matching work-inbox's Priorities-tab layout.
+- **Collapse + chevron rotation confirmed** — toggled Tomorrow and Parked via a temporary local-preview-only inline script (never touching the real repo), screenshotted, chevron for Today (expanded) points down, Tomorrow (collapsed) points right (rotated -90deg) — pixel-zoomed crop confirms both states clearly.
+- **localStorage persistence confirmed** — used a persistent `--user-data-dir` across two *separate* headless Chrome invocations: run 1 set the collapsed state via the demo script; the demo script was then removed from `index.html` (reverted to the exact production HTML being shipped) and run 2, with no toggle call at all, still rendered Tomorrow collapsed — proving `initTierCollapse()` alone restores state from `commandCentre_tierCollapse_v1` on a cold page load, not just the demo script's own toggle.
+- **`.intel-panel` (WATCH/ACT NOW/WAITING ON) confirmed untouched** — visually identical across every screenshot; `diff` of the shipped `styles.css` against the pre-change live pull shows the only content-bearing hunk is the 4 lines inserted in the `/* V5 TIER SECTIONS */` block — the apparent second diff hunk further down is a pure line-number shift (identical text on both sides), not a change; `.intel-panel`'s own rules were never in the diff at all.
+- **Drop-zone divs (`#tier-today` etc.) confirmed byte-identical** — `diff` of shipped `index.html` against the pre-change live pull shows only the 4 `.sec-head` lines changed (id/onclick/chevron added); the `ondragover`/`ondragleave`/`ondrop` divs and their children are untouched in the diff output.
+
+## Backup-and-verify protocol (per this repo's CLAUDE.md, one file at a time)
+All three files backed up to `Archive/` immediately before their write, backup SHA verified against a fresh live GET before editing, and post-write SHA verified by reading the file back and diffing against the intended content — no assumptions at any step.
+
+| File | Pre-change live SHA | Backup commit | Backup file | Write commit | Post-write SHA |
+|---|---|---|---|---|---|
+| `index.html` | `025af1b5...` (7741 bytes) | `51a850a0` | `Archive/index_backup_20260821_0900.html` | `e656847a` | `fac59a94...` |
+| `css/styles.css` | `5bcf4ec2...` (31290 bytes) | `05df328a` | `Archive/styles_backup_20260821_0900.css` | `8c216dfc` | `29b91953...` |
+| `js/app.js` | `3eea204c...` (42098 bytes, current post-Phase-2-item-3 content) | `28a136c1` | `Archive/app_backup_20260821_0900.js` | `0b4ffb5d` | `13683bec...` |
+
+All three post-write SHAs verified by a direct GET-and-diff against the exact intended content — byte-identical, confirmed, not assumed.
+
+## Revert plan
+Sha-guarded `PUT` of each `Archive/*_backup_20260821_0900.*` file's content back onto its corresponding live file, in the same one-file-at-a-time order as above.
+
+## Next
+Report back to the coordinator with commit SHAs and verification summary. No further action pending on this item — Kevin's approval was already given on the design; this session only rebuilt and shipped what he'd already seen.
+
+---
+
 # Handover — 21 August 2026, ~09:00 UTC (Drew) — Phase 2 item 3 MERGED to main, verified live — PHASE 2 CLOSED IN FULL
 
 ## What shipped
