@@ -229,13 +229,32 @@ function renderStaleBanner(){
   panel.style.display='';
 }
 
-/* Most recent activity timestamp for a task.
+/* Most recent GENUINE activity timestamp for a task.
    Prefers explicit lastUpdated/dateAdded fields; otherwise reads the newest
-   [DD Mon YYYY] stamp from the action log, which is how the inbox feed and
-   manual edits actually record progress. Returns 0 when nothing is dated. */
+   [DD Mon YYYY] stamp from the action log. Phase 3.6 (fetch_inbox.py, in
+   work-inbox) auto-appends a dated action entry for every related inbound
+   email on a task's thread -- meeting reminders, forwards, chasing replies,
+   OOO notices -- tagged "(email: <sender> - <subject>)". Left unfiltered,
+   that means a task can receive routine, no-progress mail forever and never
+   go stale, no matter how long Kevin has actually ignored it. Fixed 21 Aug
+   2026 (Phase 2 item 3, work-inbox stability plan): an action entry tagged
+   "(email: ...)" only counts as genuine activity when it is Kevin's OWN
+   sent reply, tagged "(email: Kevin (sent to: ...)" by the same pipeline
+   (see fetch_inbox.py's sent-email handling) -- that's real progress on his
+   side. Untagged entries (manual dashboard notes/edits) always count, same
+   as before. Root-caused and verified against real live tasks.json data,
+   not assumed; see command-centre/HANDOVER.md, 21 Aug 2026 entry.
+   Edge case, also found and fixed via that live verification: a task whose
+   ENTIRE action log is routine inbound mail (never once actioned by Kevin)
+   and has no dateAdded/lastUpdated field would otherwise return 0 genuine
+   signal and silently drop out of staleness tracking altogether -- exactly
+   the worst case, not a safe one. Falls back to the earliest dated entry
+   (a creation-date proxy) so such a task still ages from when it first
+   appeared, instead of vanishing from the check.
+   Returns 0 only when nothing is dated at all. */
 var CC_MONTHS={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
 function lastActivityTs(t){
-  var best=0;
+  var best=0,earliest=Infinity,genuine=0;
   ['lastUpdated','dateAdded'].forEach(function(f){
     if(t[f]){var v=new Date(t[f]).getTime();if(!isNaN(v)&&v>best)best=v;}
   });
@@ -243,15 +262,23 @@ function lastActivityTs(t){
   if(acts){
     if(!Array.isArray(acts))acts=[acts];
     acts.forEach(function(a){
-      var m=/^\s*\[(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\.?\s*(\d{4})?/.exec(String(a));
+      var s=String(a);
+      var m=/^\s*\[(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\.?\s*(\d{4})?/.exec(s);
       if(!m)return;
       var mo=CC_MONTHS[m[2].toLowerCase()];
       if(mo===undefined)return;
       var yr=m[3]?parseInt(m[3],10):new Date().getFullYear();
       var v=new Date(yr,mo,parseInt(m[1],10)).getTime();
-      if(!isNaN(v)&&v>best)best=v;
+      if(isNaN(v))return;
+      if(v<earliest)earliest=v;
+      var hasEmailTag=/\(email:/i.test(s);
+      var isKevinSent=/\(email:\s*Kevin\s*\(sent to:/i.test(s);
+      if(hasEmailTag&&!isKevinSent)return;
+      if(v>genuine)genuine=v;
     });
   }
+  if(genuine>best)best=genuine;
+  if(!best&&earliest!==Infinity)best=earliest;
   return best;
 }
 
