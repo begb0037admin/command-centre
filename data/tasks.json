@@ -24,7 +24,7 @@
     "source": "SK 1-1 08/06",
     "emailRef": "",
     "summary": "Holiday Records 3 reports approved (2,800 flex points, case 69001638). Chemistry committed. T&C: 3-month grace period after expiry.",
-    "description": "2,935 flex points with expiry 29 June 2026. Chemistry bulk deletion (£525) committed. Holiday Records - 3 Reports Created (case 69001638) approved 24 June: 2,800 flex points total. Key T&C: where FlexPoints expire, customer has 3 months from date of expiry to utilise them -- 29 June expiry gives Oxford until ~29 September 2026.",
+    "description": "2,935 flex points with expiry 29 June 2026. Chemistry bulk deletion (Â£525) committed. Holiday Records - 3 Reports Created (case 69001638) approved 24 June: 2,800 flex points total. Key T&C: where FlexPoints expire, customer has 3 months from date of expiry to utilise them -- 29 June expiry gives Oxford until ~29 September 2026.",
     "actions": [
       "[10 Jun 2026] Athena to produce requirements document for Holiday Records reports.",
       "[15 Jun 2026] Kevin requested quote from Access Group for Holiday Records Reports (case 69001638).",
@@ -79,7 +79,7 @@
       "[21 Aug 2026] SoundCloud pilot contact was proposed on 24 Jun 2026 but no follow-up documented across 85 meetings through Aug 2026; Kevin to confirm whether SoundCloud team contact was made and, if not, chase initiation of pilot invitation for migrating the three in-scope DPIAs (PeopleXD, WFM, college data item)."
     ],
     "dateAdded": "2026-06-08",
-    "status": "Awaiting Marie Cooksey's Stage 7 signature (chase as and when). SoundCloud being piloted at Oxford for DPIAs — WFM DPIA proposed as pilot case; awaiting team contact.",
+    "status": "Awaiting Marie Cooksey's Stage 7 signature (chase as and when). SoundCloud being piloted at Oxford for DPIAs â€” WFM DPIA proposed as pilot case; awaiting team contact.",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A381525B0000",
     "done": false
   },
@@ -108,7 +108,7 @@
     "actions": [
       "[Apr 2026] Case 68388326 raised -- vacancy alert email opening text not updating after config change.",
       "[PARKED] Re-test in OUXU and OUXZ, capture email output, attach to case 68388326. Action when at fuller hours.",
-      "[07 Aug 2026] Julie Hickman has follow-up points on Patch Release 28.0.157 UAT update, including NI Number column addition to Employee Search; may be relevant to vacancy alert retest if UI changes affect the email config. (email: Julie Hickman - RE: Patch Release 28.0.157 – UAT Update)",
+      "[07 Aug 2026] Julie Hickman has follow-up points on Patch Release 28.0.157 UAT update, including NI Number column addition to Employee Search; may be relevant to vacancy alert retest if UI changes affect the email config. (email: Julie Hickman - RE: Patch Release 28.0.157 â€“ UAT Update)",
       "[10 Aug 2026] Julie Hickman thanked Michael for an update on P5 Task 50969697 (Incident 11693608), confirming progress on Access Group work. (email: Julie Hickman - RE: P5 Task assigned to your team - Task# 50969697 for Incident# 11693608)"
     ],
     "dateAdded": "2026-06-08",
@@ -128,7 +128,7 @@
       "[TODO] Review Helen's evaluation briefing document.",
       "[TODO] Review the evaluation weightings spreadsheet.",
       "[TODO] Use both to inform POC meeting notes before sending to Chris (t022).",
-      "[30 Jun 2026] Kevin reviewed Helen's briefing and weightings against requirements catalogue; identified that compliance requirements (legal/regulatory) should be assessed separately from operational weightings, and flagged incident reporting (1.2) classification as inconsistent with RIDDOR obligations — to be raised with Helen and Caroline by Chris and James.",
+      "[30 Jun 2026] Kevin reviewed Helen's briefing and weightings against requirements catalogue; identified that compliance requirements (legal/regulatory) should be assessed separately from operational weightings, and flagged incident reporting (1.2) classification as inconsistent with RIDDOR obligations â€” to be raised with Helen and Caroline by Chris and James.",
       "[30 Jun 2026] Christopher Sanders confirmed that compliance-related requirements will be flagged and assessed separately in the tender process with Caroline Gow; Neil Carveth (H&S SME) will verify the compliance requirements list. Incident reporting (1.2) clarified as a \"could\" requirement since system migration is out of current project scope but a potential future consideration.",
       "[02 Jul 2026] Kevin sent written comments on the H&S Management System project requirements to Christopher Sanders and James Salas Guillen ahead of the meeting he could not attend. (email: Kevin (sent to: Christopher Sanders; James Salas Guillen) - Re: Strategic H&S modular system project requirements)",
       "[03 Jul 2026] Christopher Sanders sent follow-up requirements relating to legal compliance from the SHSMS evaluation session, with weightings split by category. (email: Christopher Sanders - RE: Weightings spreadsheet)"
@@ -170,7 +170,7 @@
       "[AWAITING] James to progress contractor manual addition and email-less user resolution with supplier.",
       "[25 Jun 2026] Kevin requested access to the Azure CR 126017 link from Tony Boydell to review the SBS user exclusion change. (email: Kevin (sent to: Tony Boydell; James Salas Guillen; Erika Braverman) - Re: DSE System - exclude SBS users )",
       "[26 Jun 2026] Reviewed CR 126017. State: Approved (Sprint 45 - ORMS, Card and CRM Halo). Requirement: exclude staff where Primary appointment.universityOrgLevel3 = \"MQ\" (Said Business School) from DSE CSV extract. Acceptance criteria confirmed: SSO users with MQ primary appointment excluded; non-MQ users included. BA/PO: Tony Boydell (Azure Integration Platform, People Data).",
-      "[04 Jul 2026] Kevin submitted his nomination for Michael O'Sullivan to the Awards for Excellence scheme, following his earlier draft email. (email: Kevin (sent to: Jonathan Roger) - Re: Nominations open for this year’s Awards for Excellence Scheme (deadline: 3 July 2026))",
+      "[04 Jul 2026] Kevin submitted his nomination for Michael O'Sullivan to the Awards for Excellence scheme, following his earlier draft email. (email: Kevin (sent to: Jonathan Roger) - Re: Nominations open for this yearâ€™s Awards for Excellence Scheme (deadline: 3 July 2026))",
       "[31 Jul 2026] James confirms SBS user exclusion from DSE has been successfully tested in TEST environment with sample outputs verified. (email: James Salas Guillen - RE: DSE System - exclude SBS users )",
       "[02 Aug 2026] James confirms funding approval for SBS exclusion from DSE upload and references progress on the change. (email: James Salas Guillen - RE: DSE System - exclude SBS users )",
       "[02 Aug 2026] Tony Boydell confirmed the SBS exclusion change has already been completed and sample outputs posted to TEST file share. (email: Tony Boydell - Re: DSE System - exclude SBS users )"
@@ -254,7 +254,7 @@
       "[TODO] Confirm Asta Palmer's involvement in delivery.",
       "[TODO] Confirm Marie Cooksey sign-off on spend.",
       "[AWAITING] Access Group consultant to make contact and agree delivery timeline (within 3 weeks of approval).",
-      "[19 Aug 2026] Kevin replied to Alan Quirke and Marie Cooksey approving the Holiday Records 3 Reports project and confirming it is ready to schedule with Access Group. (email: Kevin (sent to: 'Alan Quirke'; Marie Cooksey) - RE: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)"
+      "[19 Aug 2026] Kevin replied to Alan Quirke and Marie Cooksey approving the Holiday Records 3 Reports project and confirming it is ready to schedule with Access Group. (email: Kevin (sent to: 'Alan Quirke'; Marie Cooksey) - RE: #External# PeopleXD Insight Reporting â€“ Quote Request for Holiday Records Reports)"
     ],
     "dateAdded": "2026-06-11"
   },
@@ -494,10 +494,10 @@
       "[30 Jun 2026] Kevin has raised a support portal email update request with Sarah Murphy, likely related to Work Inbox priority panel rendering. (email: Kevin (sent to: Sarah Murphy) - Request for support portal email update)",
       "[02 Aug 2026] Closed - delivered. Command Centre Today/This Week tasks render as cards in the Work Inbox priority panel via fetch_inbox.py's priorities_today/tomorrow/week pull and renderPriorityCards() in app.js.",
       "[19 Aug 2026] Michael O'Sullivan has identified discrepancies in the KPI presentation slides (Incident Tasks count on Slide 4 differs from Slide 3). (email: Michael O'Sullivan - RE: Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
-      "[20 Aug 2026] Kevin has declined the Cross-Team Process Improvement Working Group meeting due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)"
+      "[20 Aug 2026] Kevin has declined the Cross-Team Process Improvement Working Group meeting due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group â€“ 1st Meeting)"
     ],
     "dateAdded": "2026-06-25",
-    "status": "Scoped 25 Jun — build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded.",
+    "status": "Scoped 25 Jun â€” build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded.",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39ED0000",
     "done": true
   },
@@ -541,7 +541,7 @@
     ],
     "dateAdded": "2026-06-23",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
-    "status": "OSM task ownership notification forwarded by Marie 17 Jun — review Task# 50959264 in OSM and accept or reassign.",
+    "status": "OSM task ownership notification forwarded by Marie 17 Jun â€” review Task# 50959264 in OSM and accept or reassign.",
     "done": true
   },
   {
@@ -586,7 +586,7 @@
     "summary": "",
     "description": "",
     "actions": [
-      "[30 Jun 2026] Kevin updated the ticket (case 69001655) with information for the Dev team and asked Sarah Murphy to escalate. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)"
+      "[30 Jun 2026] Kevin updated the ticket (case 69001655) with information for the Dev team and asked Sarah Murphy to escalate. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request â€“ Case 69001655)"
     ],
     "notes": "",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
@@ -601,7 +601,7 @@
     "summary": "",
     "description": "Maura McGlynn sent a catch-up email on case 69001655 and indicated a Devs call may be arranged. Kevin needs to review the full email content and assess next steps, as this case has been escalated and is currently in progress with the development team.",
     "actions": [
-      "[30 Jun 2026] Kevin updated case 69001655 ticket with information for the Dev team and is awaiting Sarah Murphy's next steps. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request – Case 69001655)"
+      "[30 Jun 2026] Kevin updated case 69001655 ticket with information for the Dev team and is awaiting Sarah Murphy's next steps. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request â€“ Case 69001655)"
     ],
     "notes": "",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
@@ -614,13 +614,13 @@
     "tier": "today",
     "source": "Case 68974493",
     "emailRef": "68974493 / 67938206",
-    "summary": "UAT signed off 23 Jun — Reenu proceeding to live. Awaiting confirmation email.",
-    "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (£525, approved by Marie).",
+    "summary": "UAT signed off 23 Jun â€” Reenu proceeding to live. Awaiting confirmation email.",
+    "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (Â£525, approved by Marie).",
     "actions": [
       "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
       "[02 Jun 2026] Marie handed case to Kevin as lead.",
       "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
-      "[23 Jun 2026] Kevin signed off UAT — changes confirmed good, instructed Reenu to proceed to live.",
+      "[23 Jun 2026] Kevin signed off UAT â€” changes confirmed good, instructed Reenu to proceed to live.",
       "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin.",
       "[30 Jun 2026] Kevin confirmed to Julie that Chemistry bulk deletion has been actioned and is now live. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)",
       "[30 Jun 2026] Reenu Delaney confirmed live deployment complete and requested Kevin's sign-off on project closure. Kevin to review live changes and confirm final approval.",
@@ -680,7 +680,7 @@
     "actions": [
       "[10 Aug 2026] Lindsey Spriggs sent CDR/PD working group meeting reminder for tomorrow. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
       "[17 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan, indicating he is working on tracking and reporting tasks. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
-      "[20 Aug 2026] Kevin declined the Cross-Team Process Improvement Working Group 1st meeting due to schedule conflict, but no new action is required from Kevin regarding the Development Insight reports actions task itself. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)"
+      "[20 Aug 2026] Kevin declined the Cross-Team Process Improvement Working Group 1st meeting due to schedule conflict, but no new action is required from Kevin regarding the Development Insight reports actions task itself. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group â€“ 1st Meeting)"
     ],
     "notes": "",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39ED0000",
@@ -695,7 +695,7 @@
     "description": "Julie Hickman has flagged outstanding actions related to Development Insight reports following a conversation with Ilona. Kevin needs to review what these actions are and what work is required.",
     "actions": [
       "[10 Aug 2026] Julie Hickman has reached out regarding outstanding actions on Development Insight reports following conversation with Ilona. (email: Julie Hickman - Re: My Development Insight reports)",
-      "[20 Aug 2026] Kevin declined a meeting with Otter Ho on the Cross-Team Process Improvement Working Group due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[20 Aug 2026] Kevin declined a meeting with Otter Ho on the Cross-Team Process Improvement Working Group due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group â€“ 1st Meeting)",
       "[21 Aug 2026] Julie has circulated a Kudoboard for farewell messages for Beth; Kevin should add his message if not yet done. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)"
     ],
     "notes": "",
@@ -787,7 +787,7 @@
       "[10 Aug 2026] Guy Williams responded to Crispin about HRIS Staging testing, confirming integration platform status for the testing work. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[10 Aug 2026] Crispin Muncaster is out of office on annual leave until Monday 17 August, affecting coordination of the DTP1092 testing meeting. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
       "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning Monday 17 August; testing meeting tomorrow (11 Aug) may need rescheduling given his absence. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[10 Aug 2026] Julie Hickman has flagged several follow-up points from Patch Release 28.0.157 UAT testing that may require Kevin's attention on related systems work. (email: Julie Hickman - RE: Patch Release 28.0.157 – UAT Update)",
+      "[10 Aug 2026] Julie Hickman has flagged several follow-up points from Patch Release 28.0.157 UAT testing that may require Kevin's attention on related systems work. (email: Julie Hickman - RE: Patch Release 28.0.157 â€“ UAT Update)",
       "[14 Aug 2026] Kevin sent email to Marie confirming his return to work on Tuesday 11 August following his absence. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
       "[17 Aug 2026] Simon Burford's follow-up on 17 Aug confirms he wants to test the actual go-live solution first before proceeding with staging imports. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[17 Aug 2026] Simon forwarded notification of August 2026 PACS organisational structure changes moving colleges and societies from L2 to L3; directly related to college data in PXD project. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)",
@@ -846,7 +846,7 @@
       "[07 Aug 2026] Simon Burford has scheduled the sickness absence survey working group catch-up meeting; Kevin needs to attend. (email: Simon Burford - Sickness Absence Survey working group)",
       "[10 Aug 2026] Lindsey Spriggs has sent the Teams meeting link for the bi-monthly CDR/PD working group; Kevin needs to attend this meeting. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
       "[11 Aug 2026] Christopher Sanders forwarded the sickness absence survey working group meeting appointment from Simon Burford. (email: Christopher Sanders - FW: Sickness Absence Survey working group)",
-      "[19 Aug 2026] Kevin declined Cross-Team Process Improvement Working Group meeting due to scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)"
+      "[19 Aug 2026] Kevin declined Cross-Team Process Improvement Working Group meeting due to scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group â€“ 1st Meeting)"
     ],
     "dateAdded": "2026-08-07"
   },
@@ -865,7 +865,7 @@
       "[07 Aug 2026] Simon confirmed Kevin will be back next week and can continue multi-company setup discussions with Conor. (email: Simon Burford - RE: Multi Company Setup)",
       "[10 Aug 2026] Conor O'Brien sent follow-up noting he has additional work completed on Multi Company Setup and seeking availability for next week when Simon is on leave. (email: Conor O'Brien - Multi Company Setup)",
       "[10 Aug 2026] Conor O'Brien has sent updated work on Multi Company Setup and is awaiting Kevin's availability to continue discussions this week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
-      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin should respond with availability. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder – Occupational Health)",
+      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin should respond with availability. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder â€“ Occupational Health)",
       "[17 Aug 2026] Simon Burford continues DTP1092 testing discussions; Simon raising questions about testing approach with Andrew Goff and IT Services on HRIS staging imports. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
@@ -884,7 +884,7 @@
       "[07 Aug 2026] Occupational Health has sent a revised appointment offer for Kevin to respond to with availability. (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health)",
       "[10 Aug 2026] Simon confirmed he is on leave next week but Kevin should be back. (email: Simon Burford - RE: Multi Company Setup)",
       "[11 Aug 2026] Conor O'Brien (Access Group) has sent updated work on Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
-      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin needs to confirm attendance or reschedule. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder – Occupational Health)",
+      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin needs to confirm attendance or reschedule. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder â€“ Occupational Health)",
       "[17 Aug 2026] Simon Burford continuing to discuss DTP1092 College Staff into PXD testing approach with IT Services; technical discussion ongoing with Andrew Goff on API_USER restriction. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ]
   },
@@ -1329,18 +1329,18 @@
   },
   {
     "id": "t2608191643002",
-    "title": "GLAM HR Shared Service escalation — Ashmolean Visitor Experience Leave & Absence / Rostering",
+    "title": "GLAM HR Shared Service escalation â€” Ashmolean Visitor Experience Leave & Absence / Rostering",
     "tier": "week",
-    "source": "Kevin — reported 19/08/2026",
+    "source": "Kevin â€” reported 19/08/2026",
     "emailRef": "",
     "summary": "",
-    "description": "Cathy Hamer (HR Operations Manager, GLAM HR Shared Service) has requested a meeting (Teams or in person) with the support team regarding the Visitor Experience team at the Ashmolean. They have Leave & Absence module issues and say Rostering \"is not working for them at all\" — these issues were previously raised to the project team with no response. Cathy is getting a written summary of the issues from the department to share. Separately, GLAM needs support handling variable-hours staff, currently using XD plus spreadsheets as a workaround. Needs a response/meeting scheduled.\n\nSourcing note: the linked Granola meeting (\"Planning for depts move to 38 day balance\", 19 Aug 2026) does not mention Cathy Hamer, the Ashmolean Visitor Experience team, or this specific escalation — that meeting covers only the 38-day-balance holiday scheme work (see t2608191643001). The same-day \"FA Team Catch-up — 19/08\" Granola note is thematically adjacent: it references two GLAM areas (security team, front of house) where annual leave through WFM isn't working, notes the team is exploring whether rostering would help, and that Julie will follow up after her leave — but it doesn't name Cathy Hamer either. This task record follows Kevin's own report of the escalation.\n\nRelated existing tasks: t035 (\"WFM / GLAM Rostering — set up resolution meeting\") and t2608181201061 (\"Resolve GLAM rostering requirements - Botanic Gardens and Ashmolean Security\") cover adjacent/overlapping GLAM rostering ground. This task is specifically the Cathy Hamer / Visitor Experience escalation, distinct from those but likely to intersect — worth checking whether it should route through the existing WFM/GLAM Rostering resolution meeting rather than a new one.",
+    "description": "Cathy Hamer (HR Operations Manager, GLAM HR Shared Service) has requested a meeting (Teams or in person) with the support team regarding the Visitor Experience team at the Ashmolean. They have Leave & Absence module issues and say Rostering \"is not working for them at all\" â€” these issues were previously raised to the project team with no response. Cathy is getting a written summary of the issues from the department to share. Separately, GLAM needs support handling variable-hours staff, currently using XD plus spreadsheets as a workaround. Needs a response/meeting scheduled.\n\nSourcing note: the linked Granola meeting (\"Planning for depts move to 38 day balance\", 19 Aug 2026) does not mention Cathy Hamer, the Ashmolean Visitor Experience team, or this specific escalation â€” that meeting covers only the 38-day-balance holiday scheme work (see t2608191643001). The same-day \"FA Team Catch-up â€” 19/08\" Granola note is thematically adjacent: it references two GLAM areas (security team, front of house) where annual leave through WFM isn't working, notes the team is exploring whether rostering would help, and that Julie will follow up after her leave â€” but it doesn't name Cathy Hamer either. This task record follows Kevin's own report of the escalation.\n\nRelated existing tasks: t035 (\"WFM / GLAM Rostering â€” set up resolution meeting\") and t2608181201061 (\"Resolve GLAM rostering requirements - Botanic Gardens and Ashmolean Security\") cover adjacent/overlapping GLAM rostering ground. This task is specifically the Cathy Hamer / Visitor Experience escalation, distinct from those but likely to intersect â€” worth checking whether it should route through the existing WFM/GLAM Rostering resolution meeting rather than a new one.",
     "actions": [
       "[19 Aug 2026] Task created from Kevin's report of Cathy Hamer's (HR Operations Manager, GLAM HR Shared Service) request for a meeting (Teams or in person) with the support team re: Ashmolean Visitor Experience Leave & Absence and Rostering issues, previously raised to the project team with no response.",
       "[TODO] Schedule the requested meeting with Cathy Hamer (Teams or in person).",
       "[AWAITING] Written summary of the issues from the Ashmolean Visitor Experience department, being prepared by Cathy.",
       "[TODO] Address GLAM's need for support handling variable-hours staff, currently worked around via XD plus spreadsheets.",
-      "[MONITOR] Cross-reference against t035 and t2608181201061 — overlapping GLAM rostering ground; check whether this should route through the existing WFM/GLAM Rostering resolution meeting.",
+      "[MONITOR] Cross-reference against t035 and t2608181201061 â€” overlapping GLAM rostering ground; check whether this should route through the existing WFM/GLAM Rostering resolution meeting.",
       "[20 Aug 2026] Kevin has bumped the GLAM rostering requirement email from 28 May regarding Botanic Gardens Ticket Office and Ashmolean Security, indicating this needs follow-up action. (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )"
     ],
     "dateAdded": "2026-08-19",
@@ -1382,21 +1382,21 @@
   },
   {
     "id": "t2608191643001",
-    "title": "38-day balance rollout — Work Group Holiday Scheme updates by department",
+    "title": "38-day balance rollout â€” Work Group Holiday Scheme updates by department",
     "tier": "week",
-    "source": "Granola — \"Planning for depts move to 38 day balance\", 19/08/2026",
+    "source": "Granola â€” \"Planning for depts move to 38 day balance\", 19/08/2026",
     "emailRef": "",
     "summary": "",
-    "description": "New \"38-day balance\" leave/absence type rolling out via PeopleXD/WFM: departments move from their current holiday scheme (bank holidays and fixed closure dates pre-loaded) to a simple 38-day balance, where staff book bank holidays and closures themselves. Removes significant admin burden for new appointments and manual balance calculations. Roughly 9 holiday schemes currently in use across the university; policy hasn't been updated to match how the system calculates leave, so the annual leave dashboard exists as a workaround bridge — a policy change would be the proper fix but none is expected soon.\n\nDepartment status (per the 19 Aug Granola meeting):\n- Chemistry: keen to proceed, on WFM since October, a full year of admin pain. Main contact Jenna Boyce. Chemistry HR will pre-book bank holidays and fixed closure dates on staff's behalf this round.\n- Maths: only on WFM since April, HR team still learning the system; recommendation is to advise them to pause and review after a full leave year rather than move now.\n- GLAM: large department, many staff types, complex rosters/shift patterns (some staff on concentrated shifts, e.g. 4-day 9-hour, with managers currently recording leave at 7.23 hrs rather than actual shift length). Not all GLAM staff need moving — some are likely moving to rostering instead. GLAM has asked for a ballpark on how many work groups can be updated; no commitment given yet, pending Chemistry's confirmed workgroup count. GLAM offered to pay for the work; no charging mechanism exists yet so it's too late to charge this year — needs a proper process for future years.\n- Biology: declining for this year — came in too late (likely heard about the approach via Anna's promotional sessions).\n\nMechanics: HR teams send a list of affected work groups (code + description); Kevin updates the Holiday Scheme attached to each work group, swapping to the scheme with no bank holidays/fixed closure dates. Nothing to create — pure data update. Michael estimated ~1-2 minutes per work group at a realistic pace. Kevin will personally do the Work Group updates once resourcing/timing is confirmed.\n\nTiming: must align with annual leave rollover (7 October); work can begin 5 October once the previous year is locked. Deadline for departments to submit their work group lists is 28 August. Priority order is first department to submit data gets done first. Risk flagged: departments may try to change balances themselves without understanding the work-group link — staff won't be able to book bank holidays if their work group still has the old scheme attached, which will surface quickly as a support query; first-line support (Emma) needs briefing to handle this without escalating.\n\nThis is being treated as a pilot, not a standard service offering. GLAM's separate, larger rostering problem (Ashmolean/Botanic Gardens area) is not in scope here and is not currently resourced — see related tasks t035 and t2608181201061.\n\nJulie is on leave from Fri 21 Aug to Wed 2 Sep 2026 (confirmed in the meeting — leave starts the day after the meeting); Marie Cooksey covers as department contact in her absence.",
+    "description": "New \"38-day balance\" leave/absence type rolling out via PeopleXD/WFM: departments move from their current holiday scheme (bank holidays and fixed closure dates pre-loaded) to a simple 38-day balance, where staff book bank holidays and closures themselves. Removes significant admin burden for new appointments and manual balance calculations. Roughly 9 holiday schemes currently in use across the university; policy hasn't been updated to match how the system calculates leave, so the annual leave dashboard exists as a workaround bridge â€” a policy change would be the proper fix but none is expected soon.\n\nDepartment status (per the 19 Aug Granola meeting):\n- Chemistry: keen to proceed, on WFM since October, a full year of admin pain. Main contact Jenna Boyce. Chemistry HR will pre-book bank holidays and fixed closure dates on staff's behalf this round.\n- Maths: only on WFM since April, HR team still learning the system; recommendation is to advise them to pause and review after a full leave year rather than move now.\n- GLAM: large department, many staff types, complex rosters/shift patterns (some staff on concentrated shifts, e.g. 4-day 9-hour, with managers currently recording leave at 7.23 hrs rather than actual shift length). Not all GLAM staff need moving â€” some are likely moving to rostering instead. GLAM has asked for a ballpark on how many work groups can be updated; no commitment given yet, pending Chemistry's confirmed workgroup count. GLAM offered to pay for the work; no charging mechanism exists yet so it's too late to charge this year â€” needs a proper process for future years.\n- Biology: declining for this year â€” came in too late (likely heard about the approach via Anna's promotional sessions).\n\nMechanics: HR teams send a list of affected work groups (code + description); Kevin updates the Holiday Scheme attached to each work group, swapping to the scheme with no bank holidays/fixed closure dates. Nothing to create â€” pure data update. Michael estimated ~1-2 minutes per work group at a realistic pace. Kevin will personally do the Work Group updates once resourcing/timing is confirmed.\n\nTiming: must align with annual leave rollover (7 October); work can begin 5 October once the previous year is locked. Deadline for departments to submit their work group lists is 28 August. Priority order is first department to submit data gets done first. Risk flagged: departments may try to change balances themselves without understanding the work-group link â€” staff won't be able to book bank holidays if their work group still has the old scheme attached, which will surface quickly as a support query; first-line support (Emma) needs briefing to handle this without escalating.\n\nThis is being treated as a pilot, not a standard service offering. GLAM's separate, larger rostering problem (Ashmolean/Botanic Gardens area) is not in scope here and is not currently resourced â€” see related tasks t035 and t2608181201061.\n\nJulie is on leave from Fri 21 Aug to Wed 2 Sep 2026 (confirmed in the meeting â€” leave starts the day after the meeting); Marie Cooksey covers as department contact in her absence.",
     "actions": [
       "[19 Aug 2026] Task created from Granola meeting \"Planning for depts move to 38 day balance\" (19/08/2026).",
-      "[TODO] Julie to send a summary email covering all departments' status and timeline, copying Kevin and Simon, to use as the shared thread going forward — once Chemistry's workgroup count is known.",
-      "[TODO] Confirm how many GLAM work groups there's capacity to update, in addition to Chemistry and Maths — hold on committing to GLAM until Chemistry's submitted workgroup count is known.",
-      "[TODO] Confirm scheme codes for each department — not yet documented.",
+      "[TODO] Julie to send a summary email covering all departments' status and timeline, copying Kevin and Simon, to use as the shared thread going forward â€” once Chemistry's workgroup count is known.",
+      "[TODO] Confirm how many GLAM work groups there's capacity to update, in addition to Chemistry and Maths â€” hold on committing to GLAM until Chemistry's submitted workgroup count is known.",
+      "[TODO] Confirm scheme codes for each department â€” not yet documented.",
       "[TODO] Confirm who does the testing to prove scenarios are covered.",
       "[TODO] Julie (or Marie Cooksey while Julie is on leave) to advise Maths to pause until next leave year.",
-      "[TODO] Decline Biology for this year — stress the process hasn't been fully tested and there's no resource available.",
-      "[TODO] Kevin to update work groups for confirmed departments from 5 October (once the 7 October rollover is locked), working in priority order by submission date — liaise with Michael on mechanics.",
+      "[TODO] Decline Biology for this year â€” stress the process hasn't been fully tested and there's no resource available.",
+      "[TODO] Kevin to update work groups for confirmed departments from 5 October (once the 7 October rollover is locked), working in priority order by submission date â€” liaise with Michael on mechanics.",
       "[TODO] Brief first-line support (Emma) ahead of the October rollover to handle staff queries about being unable to book bank holidays where the work group still carries the old scheme.",
       "[AWAITING] Department work-group lists (code + description) due 28 Aug 2026.",
       "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence."
