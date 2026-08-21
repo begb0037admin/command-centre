@@ -1,3 +1,53 @@
+# Handover — 21 August 2026, ~08:50 UTC (Drew) — Phase 2 item 3 CLOSED: staleness-clock root bug fixed, shared definition with work-inbox, STAGED pending screenshot approval
+
+## What this closes
+Kevin's work-inbox stability plan, Phase 2 (Medium), item 3 — the last open item. Kevin chose option 3: fix the underlying staleness-clock bug first, then apply one consistent staleness definition across both dashboards, rather than building an auto-hide or manual-badge feature on top of an unfixed bug.
+
+## Root cause, confirmed live (not re-assumed from the 12 Aug investigation)
+`lastActivityTs()` in `js/app.js` treats every dated `[DD Mon YYYY]` entry in a task's `actions[]` log as genuine activity — including routine inbound email that `fetch_inbox.py` Phase 3.5/3.6 auto-appends for every related message on a thread (reminders, forwards, chasing replies, OOO notices), tagged `(email: <sender> - <subject>)`. A task that receives passive mail forever never goes stale, no matter how long Kevin has actually ignored it.
+
+## Fix
+An action entry tagged `(email: ...)` now only counts as genuine activity when it's Kevin's own sent reply, tagged `(email: Kevin (sent to: ...)` by the same pipeline (`fetch_inbox.py`'s sent-email handling, confirmed live by reading the actual tag-construction code, not assumed). Untagged entries (manual dashboard notes/edits) still always count, unchanged.
+
+**A second, real edge case found via live verification, not present in the 12 Aug branch's fix:** a task whose ENTIRE action history is routine inbound mail (never once actioned by Kevin) and has no `dateAdded`/`lastUpdated` field returns zero genuine signal under the tag-filter alone — the worst case (Kevin has never touched it) would silently vanish from staleness tracking rather than being flagged. Fixed with a fallback to the earliest dated entry (a creation-date proxy), so such a task still ages from when it first appeared. Caught this by running the fix against real live `data/tasks.json`, not by inspection — one real task (`t2608071501072`, "tomorrow" tier, 14 days old) flipped from flagged-under-old-logic to silently-unflagged-under-a-naive-tag-filter before this fallback was added; after the fallback, it's correctly flagged again and nothing that was previously flagged is ever un-flagged.
+
+## Decision: `holding/item8-staleness-badge-fix` (12 Aug, commit `7c7406a`) — SUPERSEDED, not resumed as-is, branch deleted
+Compared directly (`git compare main...holding/item8-staleness-badge-fix`): 94 commits behind current `main`, 1 ahead, single file (`js/app.js`) touched, and — checked byte-for-byte — the branch's entire file content differs from current live `main` by exactly the one `lastActivityTs()` hunk. The core regex logic (skip `(email:...)` unless `(email: Kevin (sent to:...`) was re-verified against the CURRENT `fetch_inbox.py` tag-construction code (lines ~1642–1860) and still matches exactly — it was sound, not stale.
+
+Reworked rather than merged, for two reasons: (1) the branch never handled the all-inbound-history-no-dateAdded edge case above, found only through today's live-data verification — porting it as-is would have re-shipped that gap; (2) this fix is now deliberately paired with a new equivalent in work-inbox (see below) sharing one documented definition — writing both today, on current `main`, keeps that pairing coherent rather than reviving a 9-day-old lone CC-only branch and bolting a second repo's logic on separately. The branch's tip (`7c7406af36fcc05f237a7d4f5fd4c15176048bf5`) is recorded here for full recoverability and has been deleted — its content is fully absorbed and improved upon by this change, and per this repo's own Branch and Merge Protocol, files should not sit on an abandoned branch indefinitely.
+
+## Shared definition (also see work-inbox's own HANDOVER.md entry, same day)
+"Genuine activity" = (a) any action-log entry without an `(email:...)` tag (manual dashboard notes/edits), (b) an entry tagged as Kevin's own sent reply, or (c) an explicit `dateAdded`/`lastUpdated` field. Routine inbound email logged automatically by the triage pipeline does not, by itself, reset the clock. Thresholds unchanged and now explicitly shared: `today`/`tomorrow` 7 days, `week` 21 days, `parked` 45 days (`CC_STALE_DAYS`) — work-inbox's new "Priorities This Week" badge reuses the `week` threshold (21 days) exactly, since it mirrors these same `tier:'week'` tasks.
+
+## Live verification against real data (not synthetic), before writing anything
+Extracted the exact function block from the intended edit and ran it in Node against a fresh pull of live `data/tasks.json` (63 non-done tasks):
+- OLD (current live) logic: 7 tasks flagged stale (`today`:2, `tomorrow`:1, `week`:2, `parked`:2).
+- NEW (fixed) logic: 20 tasks flagged stale (`today`:2, `tomorrow`:5, `week`:6, `parked`:7).
+- 13 newly flagged, **0 previously-flagged tasks lost their flag** (monotonic, confirmed by explicit diff of the two id sets) — the fallback above is what keeps this true.
+- `week` tier specifically (mirrors work-inbox's "Priorities This Week" default contents): 2 → 6.
+
+## Screenshot verification (UI approval gate, staged not merged)
+Built a local before/after test harness (live `index.html`/`css/styles.css`/`js/api.js`/`data/tasks.json`, swapping only `js/app.js`), served locally, screenshotted via Playwright (installed locally, no dedicated tool available this session). Confirmed visually: This Week/Parked cards that were previously silent (e.g. "Vacancy alert email retest -- case 68388326", "Insight module update -- Lindsey Spriggs", "Follow up on Scoping Session with Sophie Levy") now correctly show `XXD QUIET` red badges reflecting real weeks/months of silence, while genuinely recent items remain unbadged. No other visual element changed.
+
+## Backup-and-verify sequence, run in full (this repo's own mandatory protocol)
+1. Fresh GET of live `js/app.js` — sha `501a0a3477d02373d058409eea8d8a5837902474`, 40371 bytes, non-zero, confirmed.
+2. Timestamped backup pushed first (to `main`, per convention): `Archive/app_backup_20260821_0750.js`, commit `dab76fdc4702667bc1a3c3a848612bb3422af4fc` — content sha `501a0a3477d02373d058409eea8d8a5837902474`, byte-identical to the live pre-change file, confirmed via independent re-GET.
+3. Race-guard re-GET of live `js/app.js` immediately before the edit — unchanged (`501a0a34...`).
+4. Edit applied to `lastActivityTs()` only (see full new function body in the file itself; comment block documents the fix and both edge cases).
+5. Pushed to a NEW branch `phase2-item3-staleness-fix-21aug` (not `main`), sha-guarded against the pre-change sha above — commit `1a79b25929742208c206c2b4c71074d76fbfb542`, new content sha `3eea204c50e8d1fcf135eacaaf515a613212b512`, 42098 bytes.
+6. Fresh post-push GET from the branch: byte-identical to the intended edit, confirmed. `node --check` clean. `main`'s `js/app.js` confirmed still at the pre-change sha — untouched.
+
+## NOT merged to main — UI approval gate
+This is a visible dashboard change (new `XXD QUIET` badges can now appear on more tasks). Per this repo's mandatory UI approval gate, it is staged on branch `phase2-item3-staleness-fix-21aug` (commit `1a79b259`) with before/after screenshots ready, awaiting Kevin's literal **"approved"** before merging to `main`. This is the same "commit to a holding branch rather than push to main" fallback the 12 Aug session used for the same reason (no interactive screenshot channel to Kevin mid-session).
+
+## Revert plan (once merged — currently N/A since nothing is on main yet)
+If merged and a live problem is reported: restore `js/app.js` from `Archive/app_backup_20260821_0750.js` (content sha `501a0a3477d02373d058409eea8d8a5837902474`) via a sha-guarded PUT against whatever `main`'s tip is at that time — same pattern as every other revert in this file. Until merged, reverting is simply not merging the branch; `main` is untouched.
+
+## Next action
+Show Kevin the before/after screenshots (both repos, same session — see work-inbox's own HANDOVER.md entry). On his literal "approved": merge `phase2-item3-staleness-fix-21aug` into `main` (GitHub Merges API, checking for divergence first, same as every prior merge this week), poll Pages build to `built`, byte-diff the live served file against the merged blob, then this Phase 2 item — and Phase 2 overall — is closed. Report back to Kevin per his own instruction: this closes Phase 2, triggering his stock-take before Phase 3 (merging the 2 duplicate task pairs, and reassessing whether the original item8 branch's specific concern is still separately open — it isn't; this change supersedes it).
+
+---
+
 # Handover — 21 August 2026, ~06:56 UTC (Drew) — Scrollbar-styling fix, Kevin-approved, DEPLOYED
 
 ## What was done
