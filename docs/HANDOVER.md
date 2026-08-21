@@ -1,3 +1,25 @@
+# Handover — 21 August 2026, ~06:56 UTC (Drew) — Scrollbar-styling fix, Kevin-approved, DEPLOYED
+
+## What was done
+Replaced default browser scrollbars with a thin, low-contrast style matching hris-dashboard's existing scrollbar CSS (copied values, not invented), across every scrollable container in this dashboard: `.sidebar`, `html` (outer page scroll), and `.intel-scroll` (shared by the WATCH / ACT NOW / WAITING ON panels — the only inner-panel scroll container found via a full grep audit of this repo's CSS/JS/HTML). Companion fix landed in `begb0037admin/work-inbox` in the same session (its own scrollable containers: `.sidebar`, `html`, `.cal-col-body`, `.archive-panel`).
+
+Kevin reviewed before/after screenshots and approved directly in a Claude Code coordinator session ("great apprvoed"), then gave standing AFK authorization to proceed without further per-step check-ins. A prior Drew session did the design/audit/screenshot work; this session picked up execution only, after independently re-verifying the live CSS still matched the audited state before writing (see below).
+
+## Pre-write verification (live-state check, not assumed)
+Live `.intel-scroll` already carried some scrollbar styling (`scrollbar-width:thin`, `#cbd5e1`, 7px, hover-darken to `#94a3b8`) — introduced back in commit `c148ad478` (3 Jul 2026, Stage 2 Intel panel), not a recent drift. Checked full commit history on `css/styles.css`: nothing since has touched `.intel-scroll` specifically (last two touches, 20 Aug, were unrelated mobile-width fixes). Confirmed no pre-existing `.sidebar`/`html` scrollbar-width/color rules anywhere in the file (append-only, no collision). Since this is a full property-replace (not a diff), the end visual state is deterministic from the new CSS regardless of what was there before — proceeded.
+
+## Backup-and-verify sequence, run in full (command-centre CLAUDE.md mandatory protocol)
+1. Fresh GET of live `css/styles.css` — sha `f692aa97b315a3b5b0a6dfa51978ffb4356b3d56`, 30986 bytes, non-zero, confirmed.
+2. Timestamped backup pushed first: `Archive/styles_backup_20260821_0656.css`, commit `2d06b7ca36f3e791c2bf6b54422f0a4a1d2dfe77` — content sha `f692aa97b315a3b5b0a6dfa51978ffb4356b3d56`, byte-identical to live pre-change file, confirmed via independent re-GET.
+3. Edit applied: replaced `.intel-scroll` block (4 rules, dropped the hover-darken variant per the approved CSS), appended `.sidebar`/`html` scrollbar rules at end of file.
+4. sha-guarded `PUT`, commit `2e61df4e24d6e141caab8d0921193c8f6389daa9`, new content sha `5bcf4ec27f8733357d41a086a06aa089949e483c`, 31290 bytes.
+5. Fresh post-push GET: sha matches PUT response exactly, `.intel-scroll` and appended rules both confirmed present verbatim in the live file.
+
+## Next action
+None outstanding on this fix — done and verified live on both repos. UI approval gate already satisfied (Kevin approved via screenshots before this write); no further screenshot/re-approval needed per his explicit instruction.
+
+---
+
 # Handover — 20 August 2026, ~14:54 (Drew) — task-1787072363309 fixed: title-squeeze render bug + stale DRAFT status, Kevin-approved, DEPLOYED
 
 ## What was reported
