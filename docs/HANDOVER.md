@@ -1,3 +1,53 @@
+# Handover — 21 August 2026, ~17:13 UTC (Drew) — Duplicate-pair data cleanup — final item of stability plan, CLOSED
+
+## What this was
+The last outstanding item from the very first exhaustive sweep (originally scoped "Phase 3 (Low)"): merge the 2 confirmed genuine duplicate task pairs in `data/tasks.json`. A one-time data cleanup, not a code change — no `index.html`/`css/styles.css`/`js/app.js`/`js/api.js` touched. This closes out the whole work-inbox/command-centre stability plan (Phase 1 scroll-out/drag-drop, Phase 2 silent-failure toasts/race-fix/staleness-clock, Phase 3 done-sync — all already merged/deployed/verified per prior entries above).
+
+## Re-verification (done live before touching anything, not assumed from the original sweep)
+Pulled live `data/tasks.json` fresh (sha `780bb7123e5f1c774e04a0279231a7ccbb0cb307`) and re-read full descriptions, not just titles:
+1. **"Review outstanding Development Insight reports actions with Julie"** — `task-1785700344174` (dateAdded 02 Aug) and `task-1785704715215` (dateAdded 02 Aug). Descriptions byte-identical. Confirmed still a genuine duplicate.
+2. **GLAM 38-day-balance pair** — `t2608111507360` ("Advise on GLAM joining 38-day balance departments scheme", dateAdded 11 Aug) and `t2608120903060` ("Advise Marie on GLAM joining 38-day balance scheme", dateAdded 12 Aug). Descriptions byte-identical. Same IDs already named in `begb0037admin/drew` `memory/cc-cleanup-items-5-8-build-12aug.md` (item 6, 12 Aug) as the live duplicate pair used to calibrate the fuzzy-title dedup guard added to `fetch_inbox.py` that day — confirmed still present, unmerged, exactly as that entry left them.
+
+No other duplicate titles found anywhere else in the file (checked programmatically across all 77 live tasks before editing).
+
+## Tick/done-state check before merging (Phase 3 done-sync is live — checked for real, not assumed safe)
+Pulled live `work-inbox/data/ticks.json` (`updated_at: 2026-08-21T12:16:04.250Z`) and checked all 4 candidate task IDs and their `entryId`s against every `id_`/`eid_` key present:
+- `task-1785700344174` — no `entryId` field, no `id_task-1785700344174` key in ticks.json. No tick reference. Safe to remove.
+- `task-1785704715215` — **carries a live tick**: `eid_...7ADFE8F410000` (its own `entryId`, unique to this task — no other live task shares it) is `true` in ticks.json. This predates the Phase 3 done-sync deploy (ticks.json's `updated_at` 12:16 UTC vs. the Worker deploy ~17:00 UTC same day), so it's a pre-existing WI-side "done" state never synced back to `tasks.json.done` — unrelated to this cleanup, not fixed here (out of scope), but the important thing for this task: **kept this record and its exact `entryId` unchanged**, so the tick reference is not orphaned.
+- `t2608111507360` and `t2608120903060` — neither's `entryId` nor `id_`/`eid_` form appears anywhere in ticks.json. No tick state either side. Safe to merge/remove.
+- Neither task in either pair had `"done": true` in `tasks.json` itself.
+
+## What was kept vs. removed, and why
+1. **Development Insight pair** — kept `task-1785704715215`, removed `task-1785700344174`.
+   - Reason: more actions (3 vs 3, but more recent — latest action 21 Aug vs 20 Aug), its first action correctly sources the actual originating email (Julie Hickman's own "Re: My Development Insight reports"), and its `entryId` is the target of the live tick above — keeping it avoids orphaning that state.
+   - The two actions unique to the removed task (Lindsey Spriggs' CDR/PD reminder, the KPI-presentation share) were **merged in**, not lost — appended to the kept task's `actions[]` in chronological order, plus a new dated action recording the merge itself for audit trail.
+2. **GLAM pair** — kept `t2608111507360`, removed `t2608120903060`.
+   - Reason: 5 actions vs. 2, most recent action 18 Aug vs. 12 Aug. The removed task's 2 actions were the same 11–12 Aug email thread already fully captured (one day later, narrated from Marie's side instead of Julie's) — no new information, so nothing to merge in beyond a dated audit-trail note.
+
+`tasks.json` count: 77 → 75.
+
+## Backup-and-verify sequence (full mandatory protocol, both files)
+| File | Pre-edit live SHA | Backup path | Backup SHA re-verified |
+|---|---|---|---|
+| `data/tasks.json` | `780bb7123e5f1c774e04a0279231a7ccbb0cb307` (161983 bytes) | `Archive/tasks_backup_20260821_1713.json` | `780bb712...` (byte-identical, re-GET confirmed) |
+| `docs/HANDOVER.md` | `1bd854aea3265cd9e5a1c2ff184f3da642a070f8` (83835 bytes) | `Archive/HANDOVER_backup_20260821_1713.md` | `1bd854ae...` (byte-identical, re-GET confirmed) |
+
+`data/tasks.json` write: sha-guarded PUT against the confirmed-fresh sha above → new sha `10d3c6090331998be62e70255b26dfb0c5a733a2`, commit `dbb248a39b3b11ad03fa7d1d9f2aaac8cab982f6`.
+
+## Live verification after write
+- Re-GET of `data/tasks.json` via the Contents API: 75 tasks, both removed IDs absent, both kept tasks present and intact (kept Dev-Insight task has 6 actions — 5 substantive + 1 merge-audit note; kept GLAM task has 6 actions — 5 + 1 merge-audit note), zero duplicate titles anywhere in the file.
+- **Live proxy check** (`https://github-proxy.lelitte.co.uk/command-centre/data/tasks.json`, cache-busted) — the actual endpoint the dashboard's JS fetches from: 75 tasks, same result confirmed independently of the raw Contents API.
+- **Live dashboard screenshot** (`https://begb0037admin.github.io/command-centre/`, headless Chrome, real render): "Review outstanding Development Insight reports actions with Julie" appears exactly once under This Week. Header tier counts (Today 5 / Tomorrow 9 / Week 32 / Parked 9 = 55 shown, "Show done (20)") reconcile exactly against the raw done/non-done split in the merged file (12/15/38/10 raw = 75 total, minus 20 done = 55) — confirms the merge didn't disturb done-state counting anywhere.
+- **work-inbox side**: `data/briefing.json` (last refreshed 21 Aug 18:02, i.e. *before* this edit) still contains both removed IDs and both duplicate titles in its Priorities-board mirror. **This is expected, pre-existing propagation behaviour, not a break introduced here** — the WI-side title mirror is regenerated fresh from `tasks.json` by `fetch_inbox.py`'s CC-mirror block on its own schedule (6×/day), not live-pushed on a CC edit (that's a separate, narrower mechanism — the Phase 3 done/tick sync via the Worker — which has no bearing on these 4 IDs, confirmed above). It will self-correct at the next scheduled pipeline run with no action needed. Did not trigger an out-of-cycle pipeline run for this — a full 6-phase Outlook COM re-triage is a materially bigger, unrelated action than a low-risk data cleanup calls for.
+
+## Revert plan
+`Archive/tasks_backup_20260821_1713.json` is a byte-identical snapshot of live `tasks.json` immediately before this edit (verified above). To revert: GET this repo's current `data/tasks.json` sha, then `PUT` the Archive file's content back onto `data/tasks.json` against that sha. This restores both duplicate pairs exactly as they were, including `task-1785700344174`'s original 3 actions and `t2608120903060`'s original 2 actions — nothing was destructively altered before the backup was taken and verified. No Worker/code change was involved, so no `wrangler rollback` or client-code revert applies here.
+
+## Not done / next action
+Nothing outstanding. This was the last item of the stability plan Kevin approved. work-inbox's `briefing.json` mirror will pick up the corrected task list at its next scheduled `fetch_inbox.py` run (self-correcting, no manual step needed).
+
+---
+
 # Handover — 21 August 2026, ~17:05 UTC (Drew) — Phase 3 MERGED + Worker DEPLOYED, verified live
 
 ## What shipped
