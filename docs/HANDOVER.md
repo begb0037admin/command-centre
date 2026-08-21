@@ -1,4 +1,67 @@
-# Handover — 21 August 2026, ~10:05 UTC (Drew) — Task Board 2x2 tier-grid + collapse/expand, shipped to main
+# Handover — 21 August 2026, ~15:15 UTC (Drew) — Phase 3: ticks.json race-window closed + bidirectional done-sync — STAGED, NOT MERGED
+
+## Scope
+Kevin's work-inbox/command-centre stability plan, Phase 3, following his sign-off on the design questions raised in the 21 Aug scoping report (`begb0037admin/drew` `memory/wi-cc-phase3-donesync-scoping-21aug.md`). Two things, built in the required order (race-fix first, done-sync on top):
+
+1. **Closed the ticks.json race-window gap.** Phase 2 (20 Aug) closed this Worker's own millisecond GET-to-PUT race for both `tasks.json` (`handleTasks`) and `ticks.json` (`handleInboxState`, via `mergeTicks`), but the much larger "a browser tab was open for minutes while something else wrote in the meantime" gap only ever had a server-side `baseSha` check for `tasks.json` — the client-side half was written for `tasks.json` alone. `handleInboxState` now accepts the same optional `baseSha` and merges via `mergeTicks` whenever it's stale relative to the freshly-read remote sha, and both routes now return the new blob `sha` in their success response.
+2. **Bidirectional done-sync.** Marking a task done/undone in either system now reversibly flags it done/hidden in the other, for the tiers/items that structurally exist in both. Flag-and-hide only — never deletion, matching how "done" already works in both systems.
+
+## What shipped (all on branch `phase3-donesync-21aug`, NOT merged to main)
+
+### `cloudflare-worker/cc-tasks-writer-proposed.js` — this IS the live-deployed source
+Confirmed via a prior session's `wrangler deployments list` (see `drew/memory/wi-phase2-silentfail-finish-ticksretry-correction-21aug.md`) that this file, not just its stale 2 Aug "NOT YET DEPLOYED" header comment, is what's actually running — updated that header note in the same commit.
+
+- `handleInboxState` gained the `baseSha` parameter and `knownStaleClient` check, mirroring `handleTasks`. Both routes now also return `sha` (the new blob sha) in their `200` response.
+- New: `ccDoneSyncKey`, `findTaskByEntryId`, `findTaskById`, `syncTaskDoneToTicks` (CC→WI), `syncTickToTaskDone` (WI→CC). Full key-scheme and loop-safety reasoning is in the code comments immediately above `handleTasks` — not repeated here. Short version:
+  - **Key scheme** (read live from work-inbox's `_priGetKey()`, not guessed): a WI Priorities-board card is keyed `'id_<ccTaskId>'` if mirrored from a live CC task (fetch_inbox.py's CC-mirror block never carries `entry_id`/`entryId`, only `id` — confirmed by reading that code directly), or `'eid_<entry_id>'` for a raw-email-sourced item. CC→WI sync always targets `id_<task.id>`, skipped entirely when `tier==='parked'` (no WI counterpart exists — finding 7 of the scoping report). WI→CC sync parses the tick key's own prefix: `id_` → direct task-id match; `eid_` → match on `task.entryId`, skipped (not guessed) if 0 or >1 tasks share that entryId.
+  - **Anti-echo/ping-pong prevention**: not a tag on the data (booleans have no room for one) — both directions act only on a genuine value TRANSITION versus a freshly-read copy of the *other* file, read fresh in the same request immediately before the derived write. Once both files agree, a resend of the same value is a no-op in both directions; the derived-write helpers call a plain internal function directly, never the other route's own handler, so there is no code path for a derived write to trigger a further derived write. Loop-safe by construction, not just by luck — see the ping-pong test below.
+  - Both sync helpers are best-effort with their own bounded 3-attempt retry, and can never fail or roll back the primary write that already succeeded.
+
+### `js/api.js`
+- `_tasksBaseSha` / `refreshTasksBaseSha()`: one direct, unauthenticated GitHub Contents API call per page load (inside `loadTasks()`, not on any poll) to capture sha+content together. **Verified live this session, not assumed:** `curl -I` against `raw.githubusercontent.com/.../data/tasks.json` returns an `ETag` that is a 64-hex-char SHA-256 of the raw bytes — NOT GitHub's 40-hex-char blob SHA-1 that the Contents API's `sha` field and PUT conflict-check actually use. The two are computed differently and are not interchangeable, so the originally-sketched "cheap" option (a) in the Worker file's own PHASE 2 notes does not work; option (b) (direct Contents API call) is what's built.
+- `persistTasks()` now sends `baseSha` and updates `_tasksBaseSha` from the Worker's own returned `sha` afterwards (no second fetch needed).
+- **`syncDoneToInbox()` removed, not repaired** (decision documented in the commit body and inline in the file): it computed WI tick keys via the pre-17-Aug date-scoped position scheme (`dateKey+'_pri_'+tier+'_'+i`), which work-inbox moved away from specifically because it silently detaches from its card on any reorder (the 17 Aug tick-resurrection incident) — reviving it as-is would have re-shipped that exact bug for every sync-driven tick. It was also already dead code (confirmed live: `toggleDone()` never called it). Repairing it would have meant rewriting it entirely against the current `eid_`/`id_` scheme — which is exactly what the Worker-side `syncTaskDoneToTicks()` now does instead, from one place shared by both repos' write paths, rather than a second, divergence-prone client implementation that also depended on a fragile direct cross-origin fetch of work-inbox's `briefing.json` from this page.
+
+## Verification
+**Synthetic only, per the task's explicit constraint — no live `tasks.json`/`ticks.json` read or written by any of this testing.** `cloudflare-worker/test_phase3_donesync.mjs` (committed to this branch) imports the actual `cc-tasks-writer-proposed.js` — not a reimplementation — against an in-memory fake of the GitHub Contents API. 9/9 passing:
+1. CC task done (tier=today) → WI tick `id_<id>` set true.
+2. CC task done (tier=parked) → **no** sync target, ticks.json untouched (confirms the tier-scoping is real, not just asserted).
+3. WI tick `id_<taskId>` → CC task `done=true`, direct match.
+4. WI tick `eid_<entryId>` → CC task carrying that `entryId` → `done=true`.
+5. WI tick `eid_` matching 2 CC tasks → skipped, neither task touched (ambiguity handled, not guessed).
+6. Un-ticking `id_<taskId>` in WI → CC task flips back to `done=false`, task still exists (reversible, never deleted).
+7. **RACE**: a client with a stale `baseSha` for `ticks.json`, where a second writer landed in between → `merged:true`, the concurrent writer's key survives, the stale client's own explicit action still lands.
+8. **RACE**: same for `tasks.json` (a concurrent Phase 3.6 auto-add survives a stale-client merge), plus confirms done-sync still fires correctly off the merged result.
+9. **PING-PONG SAFETY**: resending an already-synced value (`true→true`) produces zero further writes — `tasks.json`'s blob sha is confirmed byte-for-byte unchanged.
+
+**Visual before/after, screenshotted and shown to Kevin for sign-off** (not yet given as of this entry): a local static-file harness (live `index.html`/`css/styles.css`/`js/app.js`/`js/api.js`, `PROXY` pointed at a local relative path, synthetic `data/tasks.json` only — command-centre's live data was never read or written by this harness) plus the equivalent work-inbox harness (`BRIEFING_API`/`TICKS_URL` pointed at local files, synthetic `briefing.json`), served via `python -m http.server` and screenshotted with real headless Chrome (`--headless=new --virtual-time-budget=6000`, matching the method established in the 21 Aug tier-grid session). Two synthetic demo tasks (`tDEMO001`/`tDEMO002`, tier `week`) mirrored into both harnesses:
+- **Before**: both cards visible/unchecked in both dashboards.
+- **After**: `data/tasks.json` in the CC harness set `tDEMO001.done=true` (simulating Kevin clicking done in command-centre); `data/ticks.json` in the WI harness set to **exactly** the content `syncTaskDoneToTicks()` is proven (by test 1 above) to produce (`{"id_tDEMO001":true}`) — i.e. the WI-side "after" state shown is the Worker's actual verified output, not a hand-guessed mockup. Result: `tDEMO001`'s card disappears from "Priority Actions – This Week" in work-inbox, exactly as `isTicked()`'s existing hide logic already does for any other tick — while `tDEMO002` stays untouched in both. CC's own "This Week" tier count and "Show done (1)" toggle updates correctly.
+
+**Observed, out of scope, not touched:** the WI Priorities-board header count next to "PRIORITY ACTIONS – THIS WEEK" is the raw `priSecs.pw.length` (`renderPriorityCards` caller, ~line 1049) — it does **not** subtract ticked/hidden items, unlike command-centre's own tier header (which does filter `done` tasks). This is pre-existing behaviour, unrelated to this session's change (confirmed by reading the render code — the count was never wired to tick state at all), and out of the scope Kevin asked for here. Flagging only, not fixed.
+
+**Interaction with the existing "done tasks aren't re-mirrored" behaviour**: `fetch_inbox.py`'s CC-mirror block already skips `done:true` tasks when building `prioritiesToday/Tomorrow/Week` (~line 1571). This session's sync is a genuinely separate, complementary mechanism — it makes the *already-open* WI page reflect a CC-side done action immediately (via ticks.json), whereas the fetch_inbox.py skip only takes effect the next time the pipeline runs (6×/day) and the page is reloaded. Both can be true at once with no conflict.
+
+## Backup-and-verify (both files, full mandatory sequence)
+| File | Pre-edit live SHA | Backup path | Backup commit | Backup SHA re-verified |
+|---|---|---|---|---|
+| `js/api.js` | `463e42d1fc3a678b495819119a94051bc3ac5424` (4789 bytes) | `Archive/api_backup_20260821_1404.js` | `2f74585de0725ac33813df8b43d4d8c823492fb0` | `463e42d1...` (byte-identical, re-GET confirmed) |
+| `cloudflare-worker/cc-tasks-writer-proposed.js` | `b2c4753951ad288811e8e0d932275e802a31f22a` (30681 bytes) | `Archive/cc-tasks-writer-proposed_backup_20260821_1404.js` | `57936ad62c0162eb61d6e2150f1309f272e6b35c` | `b2c4753951...` (byte-identical, re-GET confirmed) |
+
+Both backup commits landed directly on `main` (pure additions, no risk), per this repo's established practice of committing backups immediately while the actual edit goes to a holding branch. **`main`'s own copies of both files re-verified unchanged after the branch push**: `js/api.js` still `463e42d1...`, worker file still `b2c4753951...` — confirmed via a fresh GET, not assumed.
+
+## Branch / merge status
+Staged on `phase3-donesync-21aug` (this repo) — tip `b0c0a9facd432c19ad5b99f700e908230cec5cf3` — and the matching branch of the same name in `work-inbox` — tip `bc41de4f08ead5bffaf6f5b95c3ed7554f8da1e5`. **NOT merged to main in either repo.** Per this repo's UI approval gate, waiting on Kevin's literal "approved" on the before/after screenshots before any merge.
+
+## Revert plan — validated, not just described
+If Kevin does not approve, or a live problem is found after merge: sha-guarded `PUT` of `Archive/api_backup_20260821_1404.js`'s content back onto `js/api.js`, and `Archive/cc-tasks-writer-proposed_backup_20260821_1404.js`'s content back onto `cloudflare-worker/cc-tasks-writer-proposed.js`, each against `main`'s then-current sha. Both backups are confirmed byte-identical to the exact pre-change live content (see table above), so this is a clean revert with no partial-state risk. **If already deployed to the live Worker** (deployment itself is a separate manual step — see the file's own header note on the deploy mechanism): re-paste the reverted file content into the Cloudflare dashboard and redeploy, or `wrangler secret put`-style rollback does not apply here since no secret changed, only code — a straight redeploy of the reverted file is the correct path.
+
+## Not done / next action
+- Screenshots taken and described above; **awaiting Kevin's literal "approved"** before merging either branch to main or deploying the Worker change live.
+- No live `tasks.json`/`ticks.json` write of any kind was made by this session — everything above is either a branch commit or a synthetic/local test.
+- Once approved: merge both branches, then Kevin (or a session with confirmed `wrangler deploy` access for this Worker) deploys the updated `cc-tasks-writer-proposed.js` content live — the client-side `js/api.js`/`js/app.js` changes take effect immediately on merge (static GitHub Pages), but the *server-side* baseSha/done-sync logic needs that separate deploy step to actually run.
+
+
 
 ## What shipped
 Kevin approved this UI change directly to the coordinator earlier in the day (screenshots shown, he typed "yes"); a prior Drew session designed/tested/screenshotted it but expired before pushing. This session rebuilt it from scratch against current live state (re-verified `#tierGrid`, the four `.sec-head` divs, and `toggleFocusZone` still existed as described — they did) and shipped it. Not a re-negotiation of the design — only re-verified against live code before writing.
