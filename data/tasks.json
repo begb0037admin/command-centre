@@ -443,14 +443,15 @@
     "tier": "parked",
     "source": "Inbox - Christopher Sanders, 2026-08-17 12:09",
     "emailRef": "HSMS Tender Session (the final one)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C70000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ADFEA7630000",
     "summary": "",
     "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the final HSMS (Health & Safety Management System) tender session. This is a meeting attendance commitment that requires Kevin's participation today.",
     "origin": "inbox-auto",
     "actions": [
       "[17 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - HSMS Tender Session (the final one)).",
       "[17 Aug 2026] Meeting reminder received for final HSMS tender session scheduled for today. (email: Christopher Sanders - HSMS Tender Session (the final one))",
-      "[21 Aug 2026] Attended final HSMS tender session; next priorities are chasing Entra ID team on admin guide publication (target: 11 Sep handover to Brian), aggregating evaluator scores for supplier shortlist (early Sep), and scheduling resourcing meeting with Simon and Marie on return to confirm October resource and squad model ahead of 25 Sep revised roadmap deadline."
+      "[21 Aug 2026] Attended final HSMS tender session; next priorities are chasing Entra ID team on admin guide publication (target: 11 Sep handover to Brian), aggregating evaluator scores for supplier shortlist (early Sep), and scheduling resourcing meeting with Simon and Marie on return to confirm October resource and squad model ahead of 25 Sep revised roadmap deadline.",
+      "[21 Aug 2026] Kevin replied to Simon and James clarifying that the Cority Applicant Data Import report was originally built by Grace, not Lee, and has been handed over. (email: Kevin (sent to: Simon Burford; James Salas Guillen) - Re: Cority - Applicant Data Import file)"
     ]
   },
   {
@@ -1371,9 +1372,11 @@
       "[TODO] Kevin to update work groups for confirmed departments from 5 October (once the 7 October rollover is locked), working in priority order by submission date â€” liaise with Michael on mechanics.",
       "[TODO] Brief first-line support (Emma) ahead of the October rollover to handle staff queries about being unable to book bank holidays where the work group still carries the old scheme.",
       "[AWAITING] Department work-group lists (code + description) due 28 Aug 2026.",
-      "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence."
+      "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence.",
+      "[21 Aug 2026] Julie Hickman sent farewell message reminder for Beth, who is leaving the team. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)"
     ],
-    "dateAdded": "2026-08-19"
+    "dateAdded": "2026-08-19",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000"
   },
   {
     "id": "t2608201500590",
@@ -1417,6 +1420,20 @@
     "origin": "inbox-auto",
     "actions": [
       "[21 Aug 2026] Auto-created from inbox triage (email: Sarah Rowles - Sickness Absence Data Catch-up)."
+    ]
+  },
+  {
+    "id": "t2608211926550",
+    "title": "Resolve Cority Employee Import error 2026-08-21 17:00",
+    "tier": "today",
+    "source": "Inbox - Cority_Integration_Platform_Notifications@Cority.com, 2026-08-21 18:00",
+    "emailRef": "[ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2900008DFB9C6852DC5A43B72538034BBFF5350007AE97F9690000",
+    "summary": "",
+    "description": "Cority Integration Platform reported an SFTP connection error on 21 August at 17:00 during scheduled employee data import. Kevin needs to review the error log and confirm resolution with James Salas Guillen / Cority support, similar to the 22 June incident (t030).",
+    "origin": "inbox-auto",
+    "actions": [
+      "[21 Aug 2026] Auto-created from inbox triage (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)."
     ]
   }
 ]
