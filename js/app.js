@@ -768,6 +768,31 @@ function toggleFocusZone(label,key){
   localStorage.setItem('focus_'+key,isOpen?'0':'1');
 }
 
+/* TIER SECTION COLLAPSE */
+var TIER_COLLAPSE_KEY='commandCentre_tierCollapse_v1';
+function getTierCollapseState(){
+  try{return JSON.parse(localStorage.getItem(TIER_COLLAPSE_KEY)||'{}');}catch(e){return {};}
+}
+function applyTierCollapse(tier,collapsed){
+  var wrap=document.getElementById('sec-wrap-'+tier);
+  var chevron=document.getElementById('chev-'+tier);
+  if(wrap) wrap.classList.toggle('sec-collapsed',collapsed);
+  if(chevron) chevron.style.transform=collapsed?'rotate(-90deg)':'';
+}
+function toggleTierSection(tier){
+  var state=getTierCollapseState();
+  var collapsed=!state[tier];
+  state[tier]=collapsed;
+  localStorage.setItem(TIER_COLLAPSE_KEY,JSON.stringify(state));
+  applyTierCollapse(tier,collapsed);
+}
+function initTierCollapse(){
+  var state=getTierCollapseState();
+  ['today','tomorrow','week','parked'].forEach(function(t){
+    applyTierCollapse(t,!!state[t]);
+  });
+}
+
 /* CLICK ITEM -> JUMP TO CARD */
 function goToCard(id){
   var card=document.getElementById('card-'+id);
@@ -902,6 +927,7 @@ initClock();
 loadSidebarBriefing();
 loadSidebarAbsences();
 renderCustomLinks();
+initTierCollapse();
 loadTasks().then(function(){
   var hash=window.location.hash.replace('#','');
   if(hash){
