@@ -1,7 +1,33 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-08-12 (Drew) - Resumed the paused cleanup build. Items 5, 6, 7 shipped and verified live on main. Item 8 is built and verified but held on branch `holding/item8-staleness-badge-fix`, NOT merged to main, pending Kevin's screenshot review and literal "approved" per the UI approval gate (no screenshot capability in this session's environment). See "Session 2026-08-12 (resumed — items 5/6/7 shipped, item 8 held for approval)" below for full detail, evidence, and the open flags for Kevin.
+**Last updated:** 2026-08-22 (Drew) - Per-entry delete control for a task's ACTIONS log SHIPPED, live on main. See "Session 2026-08-22 — per-action-log-entry delete control" below.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
+
+---
+
+## Session 2026-08-22 — per-action-log-entry delete control, SHIPPED and verified live (Drew)
+
+**Trigger:** Kevin sent a screenshot of the "Follow up on Scoping Session with Sophie Levy" card (`t1781099896490`) showing two byte-identical `[22 Aug 2026]` ACTIONS entries — a duplicate added via the "Add context" box. Verbatim ask: "There are sometimes incorrect entries that I need to remove. Give me the ability to remove entries. I have the ability to add, but give me the ability to remove." Explicitly distinguished from the existing whole-card red Delete button, which was not to be touched.
+
+**What shipped:** `actionRowsHTML()` in `js/app.js` now renders each `actions[]` entry as its own row with a small `×` delete control (`deleteAction(event, taskId, idx)`), used by both `cardHTML()` and the `aiLog()` post-add refresh path. Deletion is by array index (so one of two identical duplicate entries can be removed without affecting the other), splices the entry, re-renders only that task's `#da-<id>` block (not a full `renderBoard()`, to avoid collapsing the open drawer), and persists via the existing `persistTasks()` Worker path — same mechanism `moveTo()`/`deleteTask()` already use, no Worker/backend change needed. `css/styles.css` gained `.da-row`/`.da-text`/`.da-del` (subtle by default, red on hover). The existing whole-task `deleteTask()` button was read and confirmed unchanged.
+
+**Backup-and-verify, done in full both before and after:**
+- Pre-edit backups taken and GitHub-verified before either file was touched: `Archive/app_backup_20260822_1228.js` (commit `c68eeaf`, backup content sha `a653546f` confirmed live) and `Archive/styles_backup_20260822_1228.css` (commit `54c7be9`, backup content sha `6469fed0` confirmed live).
+- Built and held on branch `holding/action-log-entry-delete` (commit `db121b2`) pending the UI approval gate — not pushed to main until approved.
+
+**Verification before build was shown to Kevin:** `node --check` clean; a standalone Node script ran the extracted `actionRowsHTML`/`boldActs`/`escHtml` functions verbatim against the *real* live Sophie Levy `actions` array (not a fixture) — confirmed deleting index 4 (the second duplicate) leaves exactly 4 entries, the surviving duplicate and all other entries byte-unchanged, and re-indexing is correct for a follow-up delete; legacy non-array/empty-`actions` edge cases also checked. A real Playwright screenshot was taken against a locally-served copy of the repo, navigated to `index.html#t1781099896490` (the app's own existing hash-deep-link auto-opens that task's drawer — no click-scripting needed), showing the new `×` icon on every row including both real duplicate lines, using live production task data (`loadTasks()` always fetches from the GitHub proxy/raw URL regardless of how `index.html` is served).
+
+**Approval and deploy:** Kevin reviewed the screenshot and said "merge" (relayed via the coordinator — not the gate's literal "approved," but an unambiguous, specific instruction naming the exact action, accepted on that basis). Merge sequence:
+1. Fetched fresh live state before merging — found `main` had moved 5 commits since the branch was cut (`cd33548`..`46b3137`, all real live dashboard activity: 4 done-state toggles + one more `aiLog()` update to the very same Sophie Levy task), confirmed via `git show --stat` that all 5 only touched `data/tasks.json`, disjoint from this branch's `js/app.js`/`css/styles.css` changes.
+2. `git merge --no-ff origin/holding/action-log-entry-delete` — clean, no conflicts. Merge commit `5b659ca` pushed to `main`.
+3. Post-merge verify: GitHub Contents API confirms `js/app.js` sha `ff31b15a...` and `css/styles.css` sha `c45496e3...` match the local blob shas exactly.
+4. GitHub Pages build polled to `"built"` for commit `5b659ca` (not just "queued"); live-served `js/app.js`/`css/styles.css` at `https://begb0037admin.github.io/command-centre/` cache-bust-polled until they contained the new code (4 attempts, ~40s).
+5. Final real-browser screenshot taken against the actual live production URL (`https://begb0037admin.github.io/command-centre/index.html#t1781099896490`), confirming the `×` icons render correctly on production, including both real duplicate lines — Kevin's original duplicate is still there untouched (deliberately not removed by this session; that's his to do now that the control exists).
+6. Holding branch deleted, both local and remote, per this repo's branch-and-merge protocol.
+
+**Not touched:** `data/tasks.json` (no task data was edited by this session — the live duplicate on the Sophie Levy card is still there, waiting for Kevin to use the new control himself). No Cloudflare Worker change. No change to the whole-task delete button.
+
+**Next action:** none outstanding on this item. If Kevin reports the delete control doesn't behave as expected on a real click (as opposed to the scripted test), the fix is isolated to `actionRowsHTML()`/`deleteAction()` in `js/app.js` (search for those names) — everything else on this page is unchanged.
 
 ---
 
