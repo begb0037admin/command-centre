@@ -334,7 +334,7 @@ function cardHTML(t){
   var _dp=t.description||'';
   var descPreview=_dp?'<div class="card-desc">'+escHtml(_dp.length>130?_dp.slice(0,130)+'…':_dp)+'</div>':'';
   var desc=t.description?'<div class="dl">Description</div><div class="dv">'+escHtml(t.description)+'</div>':'';
-  var actions=t.actions?'<div class="dl">Actions</div><div class="da">'+boldActs(Array.isArray(t.actions)?t.actions.join('\n'):t.actions)+'</div>':'';
+  var actions=t.actions?'<div class="dl">Actions</div><div class="da" id="da-'+t.id+'">'+actionRowsHTML(t.id,t.actions)+'</div>':'';
   var moveBtns=TIERS.filter(function(tier){return tier!==t.tier;}).map(function(tier){return '<button class="move-btn" onclick="moveTo(event,\''+t.id+'\',\''+tier+'\')">' +tierLabel(tier)+'</button>';}).join('');
 
   return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" draggable="true" data-id="'+t.id+'" data-tier="'+t.tier+'"'
@@ -368,6 +368,18 @@ function cardHTML(t){
 
 function escHtml(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
 function boldActs(s){return escHtml(s).replace(/\[[^\]]+\]/g,'<strong>$&</strong>');}
+
+/* One row per action-log entry, each with its own remove control so a single
+   bad/duplicate line can be deleted without touching the rest of the log or
+   the task itself. Indexed by array position (not content), so deleting one
+   of two byte-identical entries removes only the one clicked. */
+function actionRowsHTML(taskId,acts){
+  var arr=Array.isArray(acts)?acts:(acts?[acts]:[]);
+  return arr.map(function(a,i){
+    return '<div class="da-row"><span class="da-text">'+boldActs(String(a))+'</span>'
+      +'<button type="button" class="da-del" title="Remove this entry" aria-label="Remove this log entry" onclick="deleteAction(event,\''+taskId+'\','+i+')">&times;</button></div>';
+  }).join('');
+}
 function tierLabel(t){return{today:'Today',tomorrow:'Tomorrow',week:'This Week',parked:'Parked'}[t]||t;}
 function scrollToTier(tier){var el=document.getElementById('sec-wrap-'+tier);if(el)el.scrollIntoView({behavior:'smooth'});}
 
@@ -474,6 +486,20 @@ async function deleteTask(e,id){
   await persistTasks('Delete task '+id);
 }
 
+/* DELETE ONE ACTION-LOG ENTRY (not the whole task) */
+async function deleteAction(e,id,idx){
+  if(e)e.stopPropagation();
+  var t=tasks.find(function(x){return x.id===id;});
+  if(!t||!Array.isArray(t.actions))return;
+  var entry=t.actions[idx];
+  if(entry===undefined)return;
+  if(!confirm('Remove this log entry?\n\n'+entry))return;
+  t.actions.splice(idx,1);
+  var host=document.getElementById('da-'+id);
+  if(host)host.innerHTML=actionRowsHTML(id,t.actions);
+  await persistTasks('Remove action log entry: '+t.title);
+}
+
 /* AI UPDATE */
 function aiInputKeydown(e,id){
   if(e.key==='Enter'){
@@ -516,7 +542,7 @@ async function aiLog(id){
     t2.actions.push(data.entry);
     tasks=merged;
     var drawer=document.getElementById('drawer-'+id);
-    if(drawer){var da=drawer.querySelector('.da');if(da)da.innerHTML=boldActs(Array.isArray(t2.actions)?t2.actions.join('\n'):t2.actions);}
+    if(drawer){var da=drawer.querySelector('.da');if(da)da.innerHTML=actionRowsHTML(id,t2.actions);}
     if(inputEl)inputEl.value='';
     if(statusEl)statusEl.textContent='Added: '+data.entry;
     await persistTasks('AI log update: '+task.title);
