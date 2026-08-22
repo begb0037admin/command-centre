@@ -782,7 +782,8 @@
       "[17 Aug 2026] Simon Burford's follow-up on 17 Aug confirms he wants to test the actual go-live solution first before proceeding with staging imports. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[17 Aug 2026] Simon forwarded notification of August 2026 PACS organisational structure changes moving colleges and societies from L2 to L3; directly related to college data in PXD project. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)",
       "[18 Aug 2026] Andrew Goff confirmed the next step for DTP1092 testing is to remove the API_USER account restrictions; currently blocked with no identified owner. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
-    ]
+    ],
+    "done": true
   },
   {
     "id": "t2608061800540",
