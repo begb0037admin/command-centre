@@ -559,7 +559,8 @@
       "[23 Jun 2026] Task created manually -- inbox triage had incorrectly classified as FYI.",
       "[TODO] Open thread, read full context, and respond to Support Call# 11688462."
     ],
-    "dateAdded": "2026-06-23"
+    "dateAdded": "2026-06-23",
+    "done": true
   },
   {
     "id": "t039",
