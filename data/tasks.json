@@ -756,7 +756,8 @@
       "[18 Aug 2026] Simon has raised clarification questions about DTP1092 testing assumptions regarding API_USER account restrictions that need resolution before final integrations testing. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[18 Aug 2026] Simon Burford clarified Company 90 setup for WFM integration; ignore for now as it was created only to attach a new default workgroup. (email: Simon Burford - RE: Balance Period End Matrix)",
       "[18 Aug 2026] Andrew Goff (IT Services) explains that the API_USER restriction lift was Guy's recommendation; technical discussion on DTP1092 testing assumptions and approach. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
-    ]
+    ],
+    "done": true
   },
   {
     "id": "t2608060900570",
