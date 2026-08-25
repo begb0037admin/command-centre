@@ -283,10 +283,11 @@
       "[03 Jul 2026] Crispin Muncaster has requested to move an earlier meeting slot for DTP1092 College staff in PXD work. (email: Crispin Muncaster - DTP1092 College staff in PXD)",
       "[03 Aug 2026] Crispin Muncaster forwards DTP1092 College Staff into PXD Integrations testing update from Guy Williams regarding progress on the college data project. (email: Crispin Muncaster - FW: DTP1092 College Staff into PXD - Integrations testing)",
       "[07 Aug 2026] Simon Burford's email to Ewan and Matt references June discussions with Marie about data warehouse feeds for Company 90 configuration, directly relevant to REF2029 pay admin codes setup in UOXU. (email: Simon Burford - RE: Business rules for Data Warehouse)",
-      "[17 Aug 2026] Simon clarifies that Company 90 WFM setup was temporary; requests to ignore Company 90 for now in balance period configuration work. (email: Simon Burford - RE: Balance Period End Matrix)"
+      "[17 Aug 2026] Simon clarifies that Company 90 WFM setup was temporary; requests to ignore Company 90 for now in balance period configuration work. (email: Simon Burford - RE: Balance Period End Matrix)",
+      "[25 Aug 2026] Simon has followed up on DWH test data availability for College Data in PXD project; Kevin should clarify DWH environment setup with IT. (email: Simon Burford - RE: Business rules for Data Warehouse)"
     ],
     "dateAdded": "2026-06-08",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C10000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890ED0000",
     "done": true
   },
   {
@@ -321,11 +322,12 @@
       "[TODO] Kevin to decide whether/how to respond before the 19 Aug 2026 deadline -- either to orgstructure@admin.ox.ac.uk directly (errors/omissions) or within the internal Simon/Sarah discussion (HR Systems' position on the Societies management-unit restructuring).",
       "[AWAITING] Simon Burford's answer to Sarah Rowles' question on go-live timing -- not yet received as of 18 Aug 2026.",
       "[19 Aug 2026] Michael O'Sullivan has forwarded a PeopleXD platform maintenance notice for Friday 28 August between 8-10 pm that will impact services during the org structure implementation period. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
-      "[19 Aug 2026] Organisational Structure Update - August 2026 FINAL received 19 Aug 2026 16:37 with updated org structure effective through 19 August. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - FINAL)"
+      "[19 Aug 2026] Organisational Structure Update - August 2026 FINAL received 19 Aug 2026 16:37 with updated org structure effective through 19 August. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - FINAL)",
+      "[25 Aug 2026] Julie Hickman is coordinating team farewell messages for Beth on Kudoboard; this is team coordination activity only, no Kevin action required beyond personal contribution. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)"
     ],
     "notes": "Retrieval + logging task only, no reply drafted or sent (Kevin's explicit instruction). Only one Simon appears in this thread (Simon Burford) -- no ambiguity to flag.",
     "dateAdded": "2026-08-18",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F890000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000"
   },
   {
     "id": "task-1787044968753",
@@ -435,10 +437,11 @@
       "[25 Jun 2026] Cority SFTP connection error confirmed on 22 June at 17:15; CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-06-22 17:15)",
       "[02 Aug 2026] Moved to Parked - CHI Team notified and working the SFTP fix; external, not an open action for Kevin.",
       "[19 Aug 2026] Cority Integration Platform reported another SFTP connection error on 14 August at 17:00; the CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-14 17:00)",
-      "[19 Aug 2026] Cority Employee Import successful on 19 Aug 2026 at 14:27 - previous SFTP error from 14 Aug has been resolved. (email: Cority_Integration_Platform_Notifications@Cority.com - [Success] Cority Employee Import Log File for OxfordUniversity - 2026-08-19 14:27)"
+      "[19 Aug 2026] Cority Employee Import successful on 19 Aug 2026 at 14:27 - previous SFTP error from 14 Aug has been resolved. (email: Cority_Integration_Platform_Notifications@Cority.com - [Success] Cority Employee Import Log File for OxfordUniversity - 2026-08-19 14:27)",
+      "[25 Aug 2026] Automated notification: OSM email listener has been re-enabled after weekend processing pause; no action required. (email: Louise Piper - RE: OSM: No incoming emails will be processed this weekend)"
     ],
     "dateAdded": "2026-06-23",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2900008DFB9C6852DC5A43B72538034BBFF5350007ACBD052C0000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890E80000"
   },
   {
     "id": "t2608171727070",
@@ -722,7 +725,7 @@
     "tier": "week",
     "source": "Inbox - Crispin Muncaster, 2026-08-03 14:18",
     "emailRef": "DTP1092 College Staff into PXD - Integrations testing",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F7E0000",
     "summary": "",
     "description": "Crispin Muncaster is requesting confirmation that integrations testing for the College Staff into PXD project can be completed by Friday 14 August 2026. This is a key deliverable for DTP1092 with Guy Williams and Simon involved on the IT side.",
     "origin": "inbox-auto",
@@ -731,7 +734,8 @@
       "[04 Aug 2026] Crispin has confirmed integrations testing deadline of Friday 14 August 2026 is reasonable and is requesting confirmation from Kevin. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)",
       "[10 Aug 2026] Crispin has sent detailed testing scenarios for Company 90 and HRIS Staging imports configuration. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[11 Aug 2026] Crispin Muncaster is out of office on annual leave, returning Monday 17 August; automatic reply confirms absence during testing period. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
-      "[18 Aug 2026] Michael O'Sullivan is forwarding notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm that may impact services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
+      "[18 Aug 2026] Michael O'Sullivan is forwarding notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm that may impact services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
+      "[25 Aug 2026] Crispin Muncaster sent follow-up on DTP1092 College Staff into PXD testing HRIS staging imports; context indicates testing discussion scheduled. (email: Crispin Muncaster - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
     ],
     "dateAdded": "2026-08-03"
   },
@@ -1387,10 +1391,11 @@
       "[TODO] Brief first-line support (Emma) ahead of the October rollover to handle staff queries about being unable to book bank holidays where the work group still carries the old scheme.",
       "[AWAITING] Department work-group lists (code + description) due 28 Aug 2026.",
       "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence.",
-      "[21 Aug 2026] Julie Hickman sent farewell message reminder for Beth, who is leaving the team. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)"
+      "[21 Aug 2026] Julie Hickman sent farewell message reminder for Beth, who is leaving the team. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
+      "[25 Aug 2026] Julie Hickman reports Chemistry estimates approximately 110 existing work groups that need configuration for 38-day balance rollout; this impacts the implementation timeline and resource planning. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
     ],
     "dateAdded": "2026-08-19",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F400000",
     "done": true
   },
   {
@@ -1501,5 +1506,19 @@
     ],
     "notes": "Owner: Kevin. No hard date currently -- due this week per Kevin's flag.",
     "dateAdded": "2026-08-25"
+  },
+  {
+    "id": "t2608251201190",
+    "title": "Confirm readiness for PeopleXD Quality project handover (Sophie Levy PO E22033553)",
+    "tier": "week",
+    "source": "Inbox - Sophie Levy, 2026-08-24 08:33",
+    "emailRef": "Re: PO ref E22033553 / Quality funded work",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2900008DFB9C6852DC5A43B72538034BBFF5350007AFD89AE00000",
+    "summary": "",
+    "description": "Sophie Levy confirms the project is fully staffed and having internal transition from sales to professional services. Kevin's 24 Aug email response needs follow-up to ensure clear handover and any HR Systems dependencies are identified before project execution begins.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[25 Aug 2026] Auto-created from inbox triage (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)."
+    ]
   }
 ]
