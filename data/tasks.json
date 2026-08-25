@@ -1454,7 +1454,8 @@
     "description": "Cority Integration Platform reported an SFTP connection error on 21 August at 17:00 during scheduled employee data import. Kevin needs to review the error log and confirm resolution with James Salas Guillen / Cority support, similar to the 22 June incident (t030).",
     "origin": "inbox-auto",
     "actions": [
-      "[21 Aug 2026] Auto-created from inbox triage (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)."
+      "[21 Aug 2026] Auto-created from inbox triage (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00).",
+      "[25 Aug 2026] Cority SFTP connection error occurred on 21 Aug at 17:00 during scheduled employee data import; Kevin needs to confirm resolution status. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)"
     ],
     "done": true
   },
@@ -1468,10 +1469,12 @@
     "description": "PDR (Personal Development Review) sessions need to be booked for Simon Burford and the FA team, deadline by end of September 2026. Progress is tracked centrally via the HR Systems PDR Completion 2026 tracker (SharePoint). This item was originally logged as \"Book PDR session with Stephen Kirker\" in the 22 Aug 2026 Weekly Granola Review and was corrected by Kevin on 25 Aug 2026 -- the actual owner is Simon Burford and the FA team, not Stephen Kirker.",
     "actions": [
       "[25 Aug 2026] Task created in command-centre, corrected from an earlier draft (\"Book PDR session with Stephen Kirker\") per Kevin's correction to the Weekly Granola Review -- actual scope is PDR sessions for Simon Burford and the FA team.",
-      "[TODO] Book PDR sessions with Simon Burford and the FA team by end of September 2026."
+      "[TODO] Book PDR sessions with Simon Burford and the FA team by end of September 2026.",
+      "[25 Aug 2026] Kevin has scheduled Asta Siautilaite's 2026 PDR for Friday 25 September, 12:00-1:00pm. (email: Kevin (sent to: Asta Siautilaite) - PDR 2026 – Friday 25 September)"
     ],
     "notes": "Tracker: https://unioxfordnexus.sharepoint.com/:x:/r/sites/HumanResources-HRSystems-HRSystemsManagementTeam/Shared%20Documents/HR%20Systems%20Management%20Team/HR%20Systems%20PDR%20Completion%202026.xlsx?d=w2e1b829d370d4c1f877cec77aec7bffb&csf=1&web=1&e=GoiKEZ",
-    "dateAdded": "2026-08-25"
+    "dateAdded": "2026-08-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B13C79250000"
   },
   {
     "id": "task-1787652746063",
@@ -1518,7 +1521,8 @@
     "description": "Sophie Levy confirms the project is fully staffed and having internal transition from sales to professional services. Kevin's 24 Aug email response needs follow-up to ensure clear handover and any HR Systems dependencies are identified before project execution begins.",
     "origin": "inbox-auto",
     "actions": [
-      "[25 Aug 2026] Auto-created from inbox triage (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)."
+      "[25 Aug 2026] Auto-created from inbox triage (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work).",
+      "[25 Aug 2026] Sophie Levy confirms the Quality project is fully staffed with internal transition from sales to professional services happening 24 Aug afternoon; project ready to proceed. (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)"
     ]
   }
 ]
