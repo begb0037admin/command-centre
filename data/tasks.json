@@ -1452,5 +1452,20 @@
       "[21 Aug 2026] Auto-created from inbox triage (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)."
     ],
     "done": true
+  },
+  {
+    "id": "task-1787645383808",
+    "title": "Book PDR sessions with Simon Burford and the FA team",
+    "tier": "week",
+    "source": "Weekly Granola Review, 22 Aug 2026 (corrected)",
+    "emailRef": "",
+    "summary": "PDR sessions need booking for Simon Burford and the FA team by end of September 2026, tracked via the HR Systems PDR Completion 2026 tracker.",
+    "description": "PDR (Personal Development Review) sessions need to be booked for Simon Burford and the FA team, deadline by end of September 2026. Progress is tracked centrally via the HR Systems PDR Completion 2026 tracker (SharePoint). This item was originally logged as \"Book PDR session with Stephen Kirker\" in the 22 Aug 2026 Weekly Granola Review and was corrected by Kevin on 25 Aug 2026 -- the actual owner is Simon Burford and the FA team, not Stephen Kirker.",
+    "actions": [
+      "[25 Aug 2026] Task created in command-centre, corrected from an earlier draft (\"Book PDR session with Stephen Kirker\") per Kevin's correction to the Weekly Granola Review -- actual scope is PDR sessions for Simon Burford and the FA team.",
+      "[TODO] Book PDR sessions with Simon Burford and the FA team by end of September 2026."
+    ],
+    "notes": "Tracker: https://unioxfordnexus.sharepoint.com/:x:/r/sites/HumanResources-HRSystems-HRSystemsManagementTeam/Shared%20Documents/HR%20Systems%20Management%20Team/HR%20Systems%20PDR%20Completion%202026.xlsx?d=w2e1b829d370d4c1f877cec77aec7bffb&csf=1&web=1&e=GoiKEZ",
+    "dateAdded": "2026-08-25"
   }
 ]
