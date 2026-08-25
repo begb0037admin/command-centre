@@ -1,3 +1,22 @@
+# Handover — 25 August 2026, ~11:20 UTC (Drew) — 2 tasks added from Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting)
+
+## What this was
+Kevin flagged that two action items from the Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting) were never added to command-centre, which is why they never surfaced in a "This Week" view. Added both as new tasks in `data/tasks.json`, tier `week`:
+1. `task-1787652746063` — "Confirm approximate FA validation effort per department with Michael (capacity check)". Owner Kevin, Michael as dependency/collaborator. Was logged in the Granola meeting as pending until Michael's return; Michael was due back Tue 25 Aug 2026, so as of today it's actionable, not a placeholder. Feeds into Marie/Ant's BA-effort estimate and David White's funding ask for department-by-department validation.
+2. `task-1787652746064` — "Check project folders for unhanded-over WFM/SBS 'second batch' sickness data files (Smith's School, Geography)". Owner Kevin. Open since the 11 Aug 2026 working group, no hard date, due this week per Kevin's flag.
+
+## Process followed
+Full backup-and-verify sequence: live GET of `data/tasks.json` (77 tasks, 165084 bytes, sha `7d79e390...`) confirmed non-zero; new `Archive/tasks_backup_20260825_1011.json` backup committed and independently re-verified by SHA (today's earlier `tasks_backup_20260825_0808.json` predated the same-day PDR task addition and was no longer an accurate restore point for this write, so a fresh one was taken rather than relying on the "one per day" default).
+
+This was also the first real end-to-end run of the local-render-then-screenshot-then-hold-for-approval procedure designed earlier today (see `docs/HANDOVER.md`'s prior PDR-task entry below and `begb0037admin/drew` confirmed-fact memory `2026-08-25-command-centre-local-render-screenshot-procedure-verified-working`): fetched live `index.html`/`css/styles.css`/`js/api.js`/`js/app.js` into scratch, patched a scratch-only copy of `api.js` so `loadTasks()`/`fetchTasksRemote()` resolved to a local draft `data/tasks.json` (79 tasks) instead of the live GitHub URLs, served it locally, and screenshotted with headless Chrome (`--window-size` set tall enough to capture the full This Week column without scrolling) plus a DOM-dump grep as a second, non-visual confirmation. This Week counter read 31 in the draft render (29 live + 2 new), matching expectation.
+
+Kevin required the actual screenshot file path, not a description, before approving (per his standing accessibility requirement) — gave the coordinator the exact scratch PNG paths, which were relayed to him directly. Only after his literal "approved" did the sha-guarded PUT run against the live repo; fresh sha re-checked immediately before the write (unchanged from the backup step — confirmed no other write landed in between), post-write sha (`7246cd0...`) re-verified independently via a fresh GET, and both task ids confirmed present via a cache-busted `raw.githubusercontent.com` fetch (same source api.js's `fetchTasksRemote()` hits).
+
+## Next action
+None outstanding for this task — both tasks are live and confirmed on `begb0037admin.github.io/command-centre/` (This Week tier). Note in passing: the PDR-task session earlier today (below) does not appear to have updated this file at the time — flagging for awareness, not backfilled here since it's out of this task's scope.
+
+---
+
 # Handover — 21 August 2026, ~17:13 UTC (Drew) — Duplicate-pair data cleanup — final item of stability plan, CLOSED
 
 ## What this was
