@@ -74,6 +74,7 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 - **Last updated:** 2026-06-27
 
 ## Bootstrap Order
+0. **Accountable lead: Drew** (`agent-commons/AGENT_DIRECTORY.md`). Any local session working in this repo should dispatch to Drew immediately rather than operating as a generic session — Drew reads its own `AGENT.md`, `MEMORY.md`, and this file before doing anything.
 1. This file (orientation)
 2. `HANDOVER.md` (current state, known issues, next action)
 3. `BRANDING.md` (dashboard visual standard)
