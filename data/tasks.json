@@ -1467,5 +1467,39 @@
     ],
     "notes": "Tracker: https://unioxfordnexus.sharepoint.com/:x:/r/sites/HumanResources-HRSystems-HRSystemsManagementTeam/Shared%20Documents/HR%20Systems%20Management%20Team/HR%20Systems%20PDR%20Completion%202026.xlsx?d=w2e1b829d370d4c1f877cec77aec7bffb&csf=1&web=1&e=GoiKEZ",
     "dateAdded": "2026-08-25"
+  },
+  {
+    "id": "task-1787652746063",
+    "title": "Confirm approximate FA validation effort per department with Michael (capacity check)",
+    "tier": "week",
+    "source": "Sickness Absence Data Catch-up, 21 Aug 2026 Granola meeting",
+    "emailRef": "",
+    "summary": "Kevin/Michael to confirm an approximate FA validation effort per department, to determine Michael's capacity and whether additional BA/FA support is needed. Michael was due back Tue 25 Aug 2026 -- now actionable.",
+    "description": "Raised in the Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting): Kevin and Michael need to confirm an approximate FA validation effort per department, in order to determine Michael's capacity and whether additional BA/FA support is needed. This feeds directly into Marie/Ant's BA-effort estimate and David White's funding ask for department-by-department validation -- both are blocked on this sizing exercise. At the time of the meeting this was logged as a forward-looking item pending Michael's return; Michael was due back Tuesday 25 August 2026, so as of today it is actionable rather than a placeholder.",
+    "actions": [
+      "[21 Aug 2026] Raised in the Sickness Absence Data Catch-up Granola meeting -- flagged as pending until Michael's return (due Tue 25 Aug 2026).",
+      "[25 Aug 2026] Michael back today -- item now actionable. Added to command-centre (was missed from the original write-up, flagged by Kevin).",
+      "[TODO] Kevin and Michael to confirm an approximate FA validation effort per department.",
+      "[TODO] Use the confirmed effort figures to determine Michael's capacity and whether additional BA/FA support is needed.",
+      "[AWAITING] Feeds into Marie/Ant's BA-effort estimate and David White's funding ask for department-by-department validation -- both pending this sizing."
+    ],
+    "notes": "Owner: Kevin, with Michael as dependency/collaborator.",
+    "dateAdded": "2026-08-25"
+  },
+  {
+    "id": "task-1787652746064",
+    "title": "Check project folders for unhanded-over WFM/SBS 'second batch' sickness data files (Smith's School, Geography)",
+    "tier": "week",
+    "source": "Sickness Absence Data Catch-up, 21 Aug 2026 Granola meeting",
+    "emailRef": "",
+    "summary": "Kevin to check project folders for the WFM/SBS 'second batch' sickness data files that were never handed over -- start with Smith's School and Geography. Open since the 11 Aug working group, no hard date.",
+    "description": "Raised in the Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting): a 'second batch' of WFM/SBS sickness data files was never handed over/actioned. This has been open since the 11 Aug 2026 working group and had not been picked up until Kevin flagged it as a miss on 25 Aug 2026. No hard deadline currently attached -- Kevin needs to check project folders for these files, starting with Smith's School and Geography, to establish what is actually still outstanding.",
+    "actions": [
+      "[11 Aug 2026] Working group flagged an unhanded-over WFM/SBS 'second batch' of sickness data files -- never actioned since.",
+      "[25 Aug 2026] Kevin flagged this as a miss from the original write-up. Added to command-centre.",
+      "[TODO] Kevin to check project folders for the WFM/SBS second-batch sickness data files, starting with Smith's School and Geography."
+    ],
+    "notes": "Owner: Kevin. No hard date currently -- due this week per Kevin's flag.",
+    "dateAdded": "2026-08-25"
   }
 ]
