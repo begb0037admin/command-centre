@@ -1030,7 +1030,7 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-11 11:49",
     "emailRef": "HR Systems Management",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007B13CE8FC0000",
     "summary": "",
     "description": "Marie Cooksey has sent a Microsoft Teams meeting link for HR Systems Management. Kevin needs to attend to participate in management discussions.",
     "origin": "inbox-auto",
@@ -1039,7 +1039,8 @@
       "[11 Aug 2026] Meeting invitation received from Marie Cooksey for HR Systems Management. (email: Marie Cooksey - HR Systems Management)",
       "[13 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan on 11 August, confirming attendance and participation in management discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
       "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the HR Systems Management meeting Kevin needs to attend. (email: Marie Cooksey - H&S Systems Supplier Reviews)",
-      "[20 Aug 2026] PeopleXD platform maintenance scheduled for Friday 28 August 2026 between 8-10 pm; Kevin should note this downtime window for planning purposes. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
+      "[20 Aug 2026] PeopleXD platform maintenance scheduled for Friday 28 August 2026 between 8-10 pm; Kevin should note this downtime window for planning purposes. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
+      "[25 Aug 2026] Asta Palmer has sent reminder that HR Systems team meeting is tomorrow (Wednesday 26 August) and it is Presentations week. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -1069,13 +1070,14 @@
     "tier": "week",
     "source": "Inbox - Alex Manton-Jones, 2026-08-11 16:50",
     "emailRef": "Oxford Uni - Pre-project Authentication (Follow up)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629957D0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2EB0000",
     "summary": "",
     "description": "Alex Manton-Jones sent a follow-up email from an authentication call held on 11 August. Kevin needs to review the full content and determine what action items, if any, are required from this call.",
     "origin": "inbox-auto",
     "actions": [
       "[11 Aug 2026] Auto-created from inbox triage (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up)).",
-      "[12 Aug 2026] Alex Manton-Jones follow-up email received on the pre-project authentication call held 11 August; Kevin needs to review full content and determine action items. (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up))"
+      "[12 Aug 2026] Alex Manton-Jones follow-up email received on the pre-project authentication call held 11 August; Kevin needs to review full content and determine action items. (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up))",
+      "[25 Aug 2026] Louise Piper has confirmed that authentication issues logging into OSM have now been resolved. (email: Louise Piper - UPDATE: OSM: Authentication Issues resolved)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -1392,10 +1394,11 @@
       "[AWAITING] Department work-group lists (code + description) due 28 Aug 2026.",
       "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence.",
       "[21 Aug 2026] Julie Hickman sent farewell message reminder for Beth, who is leaving the team. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
-      "[25 Aug 2026] Julie Hickman reports Chemistry estimates approximately 110 existing work groups that need configuration for 38-day balance rollout; this impacts the implementation timeline and resource planning. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+      "[25 Aug 2026] Julie Hickman reports Chemistry estimates approximately 110 existing work groups that need configuration for 38-day balance rollout; this impacts the implementation timeline and resource planning. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[25 Aug 2026] Julie Hickman is on annual leave from 21 August with return 2 September; urgent queries to be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)"
     ],
     "dateAdded": "2026-08-19",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F400000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2E90000",
     "done": true
   },
   {
@@ -1489,10 +1492,12 @@
       "[25 Aug 2026] Michael back today -- item now actionable. Added to command-centre (was missed from the original write-up, flagged by Kevin).",
       "[TODO] Kevin and Michael to confirm an approximate FA validation effort per department.",
       "[TODO] Use the confirmed effort figures to determine Michael's capacity and whether additional BA/FA support is needed.",
-      "[AWAITING] Feeds into Marie/Ant's BA-effort estimate and David White's funding ask for department-by-department validation -- both pending this sizing."
+      "[AWAITING] Feeds into Marie/Ant's BA-effort estimate and David White's funding ask for department-by-department validation -- both pending this sizing.",
+      "[25 Aug 2026] Kevin has sent follow-up to Marie and Simon on sickness absence survey BA resource requirements and timelines, noting he has spoken to Michael on capacity. (email: Kevin (sent to: Marie Cooksey; Simon Burford) - Sickness absence survey — BA resource requirement and timelines)"
     ],
     "notes": "Owner: Kevin, with Michael as dependency/collaborator.",
-    "dateAdded": "2026-08-25"
+    "dateAdded": "2026-08-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B13C79260000"
   },
   {
     "id": "task-1787652746064",
