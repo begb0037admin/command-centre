@@ -1,4 +1,17 @@
-# Handover — 26 August 2026, ~09:30 UTC (Drew) — Open-email opener: per-task `source` branch for Codex-connector tasks (BRANCH ONLY, awaiting Kevin's screenshot approval)
+# Handover — 26 August 2026, ~10:25 UTC (Drew) — Open-email opener: per-task `source` branch for Codex-connector tasks — MERGED, DEPLOYED, LIVE
+
+**UPDATE ~10:25 UTC — Kevin approved ("Approved - I'm happy with this. Please continue."), merged and deployed.**
+- **Merge commit:** `5054906ccfdb9d7ea07d0308b68cf372c0c4a3c2` on `main` (`--no-ff` merge of `drew/cc-codex-graph-opener-26aug`; `main` had not moved since the branch was cut, clean merge, 3 files: `js/app.js` +42/-1, `docs/HANDOVER.md`, `Archive/app_backup_20260826_0910.js`). `data/tasks.json` untouched.
+- **Deploy verified:** GitHub Pages build for `5054906` polled to `built`. Live-served `https://begb0037admin.github.io/command-centre/js/app.js` fetched and **`cmp`-checked byte-for-byte identical** to the approved branch-tip content (both 46612 bytes / 1015 CR; Contents API `js/app.js` sha `c222a2b306e7d813a4ad92347da11492a8370bd8` = branch-tip blob = approved). New `openEmailWeb` + `source==='codex-graph'` branch + host allowlist all present in the served file; legacy `openEmail(e,entryId)` → `window.location.href='openmail://'+entryId` byte-unchanged in the served file.
+- **Production behaviour re-checked live** (Playwright against the deployed URL, fixture `tasks.json` route-injected onto the production-served code): codex-graph + web_link → `window.open('https://outlook.office.com/owa/?ItemID=…','_blank','noopener')`; codex-graph + no link → the explanatory alert; real production board (no fixture) renders with zero page errors. Screenshots `04_prod_live_board.png`, `05_prod_code_codex_cards.png` in `C:\Users\admin\Downloads\cc-codex-opener-26aug\`.
+- **Branch `drew/cc-codex-graph-opener-26aug` deleted** — local and remote.
+- **Revert path if ever needed:** `git revert -m 1 5054906` (mainline = pre-merge `main` `08bd346`, `js/app.js` blob `ff31b15a…`), or restore `js/app.js` from `Archive/app_backup_20260826_0910.js`.
+
+**Next action for a cold session:** nothing outstanding on the opener itself — it is live and verified. Do **not** start Phase 2 / any Codex task-writer. The `source`-field collision (below) must be resolved first, and Phase 2 needs its own fresh brief from Kevin. The research doc's own checkpoint is on `begb0037admin/work-inbox` PR #29 branch `claude/outlook-codecs-connector-upgrade-fe3dgf`, Section 9 "Step 1 status".
+
+---
+
+## Original entry (branch stage) — Handover — 26 August 2026, ~09:30 UTC (Drew) — Open-email opener: per-task `source` branch for Codex-connector tasks
 
 ## What this is
 First "Next Step" from the Codex Connector Migration research doc (`begb0037admin/work-inbox` PR #29, `docs/CODEX_CONNECTOR_MIGRATION_RESEARCH.md`), Section 5 opener design. Command Centre's per-task **Open-email** button now branches on the task's `source`:
