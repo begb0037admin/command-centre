@@ -1,4 +1,17 @@
-# Handover — 26 August 2026, ~19:30 UTC (Drew) — `sourceType` field: opener routing separated from `source` provenance — STAGED, NOT MERGED, awaiting Kevin's screenshot approval
+# Handover — 26 August 2026, ~19:30 UTC (Drew) — `sourceType` field: opener routing separated from `source` provenance — MERGED, DEPLOYED, LIVE
+
+**UPDATE ~20:05 UTC — Kevin approved ("Approved."), merged and deployed.**
+- **Merge commit:** `986584e140aec3e65257ca6bf30ee38523f10d4f` on `main` (`--no-ff`-style merge via the GitHub Merges API of `drew/cc-sourcetype-field-26aug`; two parents confirmed — mainline `d759f6c8` [pre-merge `main`, unmoved since the branch was cut] and branch tip `5d2673c0`). Files changed: `js/app.js`, `docs/HANDOVER.md`, `Archive/app_backup_20260826_1917.js`. `data/tasks.json` untouched and verified byte-identical (content sha `f9272cbe…`, 176687 bytes, same before and after the merge) — no migration performed, exactly as designed.
+- **Deploy verified:** GitHub Pages build for `986584e1` polled to `built` (4 polls, ~24s). Live-served `https://begb0037admin.github.io/command-centre/js/app.js` fetched fresh (cache-busted) and byte-diffed (`cmp` + sha1) **identical** to the approved branch-tip content — both 48088 bytes, sha1 `11dd264b…`; Contents API confirms `js/app.js` on `main` now content sha `397e6d6e4870aa91403efa0aa8fc30647a1abd9b`, matching the reviewed/approved file exactly.
+- **Production behaviour re-checked live** (Playwright against the real deployed URL, no fixture): board renders (46 cards in default "done hidden" view) with **zero page errors**.
+- **Branch `drew/cc-sourcetype-field-26aug` deleted** — remote confirmed gone (404 on the ref). No local clone of this repo ever had the branch checked out (this session worked entirely via the GitHub Contents/Git API from a scratch directory), so there was nothing to delete locally.
+- **Revert path if ever needed:** `git revert -m 1 986584e1` (mainline = pre-merge `main` `d759f6c8`, `js/app.js` blob `c222a2b3…`), or restore `js/app.js` from `Archive/app_backup_20260826_1917.js`.
+
+**Next action for a cold session:** nothing outstanding on this fix — it is live and verified, and the field-name collision flagged in the codex-graph opener entry below is now fully closed. Do **not** start Phase 2 / any Codex task-writer without its own fresh brief from Kevin. The research doc's own checkpoint is on `begb0037admin/work-inbox` PR #29 branch `claude/outlook-codecs-connector-upgrade-fe3dgf` — see that document's Section 9 for the merged/deployed status.
+
+---
+
+## Original entry (branch stage) — Handover — 26 August 2026, ~19:30 UTC (Drew) — `sourceType` field: opener routing separated from `source` provenance
 
 ## What this is
 Resolves the field-name collision flagged in the prior entry below (and in the Codex Connector Migration research doc, `begb0037admin/work-inbox` PR #29 branch `claude/outlook-codecs-connector-upgrade-fe3dgf`, Section 9 "Field-name collision found"): the Open-email opener used to key on `t.source==='codex-graph'`, but `source` is a pre-existing human-readable provenance string already populated on all 82 live tasks (drives the card's source badge). Left as-is, a future Phase 2 Codex task-writer setting `source:"codex-graph"` for provenance would have silently also flipped the opener AND clobbered every affected card's badge to the literal text "codex-graph".
