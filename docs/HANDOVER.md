@@ -1,3 +1,43 @@
+# Handover — 26 August 2026, ~09:30 UTC (Drew) — Open-email opener: per-task `source` branch for Codex-connector tasks (BRANCH ONLY, awaiting Kevin's screenshot approval)
+
+## What this is
+First "Next Step" from the Codex Connector Migration research doc (`begb0037admin/work-inbox` PR #29, `docs/CODEX_CONNECTOR_MIGRATION_RESEARCH.md`), Section 5 opener design. Command Centre's per-task **Open-email** button now branches on the task's `source`:
+- **No `source` / `source:"outlook-com"` / any other value** — completely unchanged. Still `onclick="openEmail(event,'<entryId>')"` → `openmail://<entryId>` → `open_email.py` → Outlook COM `GetItemFromID`. `openEmail()` in `js/app.js` is byte-for-byte the original.
+- **`source:"codex-graph"`** (set only by future Codex task-creation logic — nothing writes it today) — new `openEmailWeb()` opens the connector's `web_link` (snake_case; `display_url` as fallback) as a plain new-tab hyperlink to Outlook Web Access. `GetItemFromID` is never called for these.
+  - each candidate link validated independently; only `https://` on `outlook.office.com` / `outlook.office365.com` is followed
+  - missing / non-https / unrecognised-host / no-link → visibly de-emphasised button (`opacity:.45`) + explanatory `alert()` on click. Never a silent no-op, never a throw.
+  - task id read from the card's `data-id` via the clicked element — nothing task-controlled is interpolated into the inline handler.
+
+## Scope guardrails honoured
+Purely additive, parallel coexistence. **No** cutover, **no** removal of the COM path, **no** `data/tasks.json` migration (no task gets a `source` value written by this work), **no** `fetch_inbox.py` change, **no** AI-triage / Phase 2 work. One file touched: `js/app.js`.
+
+## Known data-model wrinkle flagged for Phase 2 (NOT fixed here — out of scope)
+`source` is **already** a populated field on all 80 live tasks — a human-readable provenance string ("Inbox - Simon Burford, 2026-08-19 15:51", "manual", "H&S Roadmap 08/06", …) that also drives the small source badge on each card. The research doc Section 5 assumed `source` was a *new* field. The opener keys strictly on `source === "codex-graph"` (0 of 80 existing tasks have that value — verified), so the opener itself is regression-safe. But when a Codex task-writer goes live and sets `source:"codex-graph"`, that task loses its human-readable provenance badge (or the badge renders the literal text "codex-graph"). **Before any Codex task-creation logic ships, Phase 2 must separate the machine routing discriminator from the human-readable provenance** — e.g. a dedicated `mailOpener`/`sourceType` field, or move provenance to `emailRef`/`origin`. Recommendation only; Kevin/Lauren's call.
+
+## State
+- **Branch:** `drew/cc-codex-graph-opener-26aug` (pushed). **NOT merged. `main` is untouched** — `js/app.js` on `main` still content sha `ff31b15a…`, size 44238.
+- **Commits:** `0e937b1` (pre-edit backup `Archive/app_backup_20260826_0910.js`) → `ad571b2` (the change). Pushed `js/app.js` content sha `c222a2b3…`, size 46612 — verified equal to the local blob.
+- **Backup-and-verify:** done in full. Pre-edit backup `Archive/app_backup_20260826_0910.js` committed (`0e937b1`) and byte-verified (sha1 `6f76f64c…`, identical to the pre-change `js/app.js`) before any edit.
+
+## Verification run (all green)
+- `node --check js/app.js` — clean.
+- **33/33 logic assertions** (`opener_logic_test.js`) — extracts the *real* `openEmail`/`openEmailWeb` bodies and the *real* `emailIcon` render snippet from `js/app.js`, asserts every branch: legacy path byte-unchanged for descriptive-source / explicit-`outlook-com` / no-`source` / empty-`source` tasks; codex-graph web_link + display_url fallback; invalid `web_link` no longer suppresses a valid `display_url`; `javascript:` and non-allowlisted https hosts (userinfo spoof `outlook.office.com@evil.example`, subdomain spoof, path spoof, plain http) all rejected → alert; missing card / null `closest()` safe no-op; hostile task id cannot appear in the handler.
+- **Live Playwright run** against the real edited file with a fixture `tasks.json` (request-intercepted), 6 cards: existing descriptive-source and explicit `outlook-com` tasks → no `window.open`, no navigation (legacy `openmail://` path); codex-graph + web_link → `window.open(<OWA email URL>, '_blank', 'noopener')`; codex-graph + display_url only → `window.open(<OWA calendar URL>, …)`; codex-graph no link → native alert, no tab, no throw, button `opacity:.45`; codex-graph non-allowlisted host → native alert, rejected.
+- **Screenshots** (Kevin approves from these): `01_board_overview.png` (whole dashboard renders fine with the fixture), `02_today_cards.png` (the 6 cards; degraded button visibly faded), `03_behaviour_proof.png` (rendered board + a table of what every button did on click). Saved outside the repo — see the session checkpoint for the exact path.
+
+## Codex review (mandatory 3-touchpoint, per `agent-commons/operating-model/COORDINATOR_AND_CODEX_POLICY.md`)
+Config write-path safety re-verified first: both paths from the 2026-08-25 incident (`[mcp_servers.github]`, `apps.connector_76869538…` auto-approvals) still commented out in `C:\Users\admin\.codex\config.toml`. 3 passes, `codex exec -s read-only`:
+1. **Plan + diff** — 4 findings. F1 validate Graph URL before `window.open` → adopted (https-only + host allowlist). F2 keep the legacy opener literally, separate handler for codex-graph → adopted (`openEmail` restored verbatim, new `openEmailWeb`). F3 honest semantics for the unavailable control → partially adopted (de-emphasised + clickable + explanatory alert, not fully-disabled; reasoned: minimal-footprint task). F4 CRLF "trailing whitespace" on added lines → not a defect (the file is CRLF-committed — blob `ff31b15a` has 973 CR for 973 lines; added lines match; `git diff --check` flags every existing line the same way).
+2. **End-to-end** — 3 findings, all adopted: task-id injection via inline `onclick` (blocker) → id no longer interpolated, read from `data-id` via `this`; invalid `web_link` suppressing a valid `display_url` → each candidate validated independently; https guard allowed arbitrary hosts → exact-hostname allowlist.
+3. **Confirmation re-review** — all 3 resolved, no new regression, 33/33 + `node --check` confirmed. Clean.
+
+## Next action for a cold session
+1. **Kevin's call:** review `03_behaviour_proof.png` + `02_today_cards.png`. If he says "approved"/"merge", merge `drew/cc-codex-graph-opener-26aug` → `main` following this repo's branch-and-merge + Pages-poll + live-byte-diff routine (see the 22 Aug Sophie Levy entry for the exact sequence), then delete the branch.
+2. The doc-side checkpoint (Section 9 status) is committed on `begb0037admin/work-inbox` branch `claude/outlook-codecs-connector-upgrade-fe3dgf` (PR #29) — see the session checkpoint for the SHA.
+3. **Do not** start Phase 2 / any Codex task-writer. The `source`-field collision above must be resolved first, and Phase 2 needs its own fresh brief from Kevin (research doc is explicit).
+
+---
+
 # Handover — 25 August 2026, ~11:20 UTC (Drew) — 2 tasks added from Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting)
 
 ## What this was
