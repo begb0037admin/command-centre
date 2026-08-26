@@ -1,3 +1,44 @@
+# Handover — 26 August 2026, ~19:30 UTC (Drew) — `sourceType` field: opener routing separated from `source` provenance — STAGED, NOT MERGED, awaiting Kevin's screenshot approval
+
+## What this is
+Resolves the field-name collision flagged in the prior entry below (and in the Codex Connector Migration research doc, `begb0037admin/work-inbox` PR #29 branch `claude/outlook-codecs-connector-upgrade-fe3dgf`, Section 9 "Field-name collision found"): the Open-email opener used to key on `t.source==='codex-graph'`, but `source` is a pre-existing human-readable provenance string already populated on all 82 live tasks (drives the card's source badge). Left as-is, a future Phase 2 Codex task-writer setting `source:"codex-graph"` for provenance would have silently also flipped the opener AND clobbered every affected card's badge to the literal text "codex-graph".
+
+## The fix
+`js/app.js`'s opener now keys on a new, dedicated, optional field: `t.sourceType==='codex-graph'`. `source` is untouched by opener logic and goes back to being pure human-readable provenance/badge text.
+
+## Field design decision (documented per the task brief)
+**`sourceType` is optional; absent means legacy.** No `tasks.json` migration was performed or is needed — this mirrors exactly how `source` itself was originally introduced without back-filling every existing task. Only a future Phase 2 Codex task-writer would ever explicitly set `sourceType:"codex-graph"`. The alternative (writing an explicit `sourceType:"outlook-com"` default onto all 82 live tasks today) was rejected: it would be a `tasks.json` migration for zero behavioural gain, since "absent" and "outlook-com" both currently mean exactly the same thing to the opener, and it would touch a data file the brief explicitly asked to leave alone if reasonably possible.
+
+## Scope guardrails honoured
+Schema + opener-logic change only. `fetch_inbox.py` not touched. No Phase 2 / Codex task-writer scoped or started. No task in `data/tasks.json` was given a `sourceType` value or a `source:"codex-graph"` value — confirmed both before and after the change (below).
+
+## State
+- **Branch:** `drew/cc-sourcetype-field-26aug` (pushed off `main` at `d759f6c8`). **NOT merged, `main` untouched.**
+- **Commits:** `d439b072` (pre-edit backup `Archive/app_backup_20260826_1917.js`, byte-verified identical to live `js/app.js` before any edit — sha `c222a2b3…`, 46612 bytes) → `84c9bffd` (the change: `js/app.js` content sha `397e6d6e4870aa91403efa0aa8fc30647a1abd9b`, 48088 bytes). Pushed content independently re-fetched and byte/sha1-diffed identical to the local edited file before treating the write as confirmed (known `gh api -f content=@file` base64-mangling gotcha worked around via a direct Python `urllib.request` PUT, per `begb0037admin/drew` confirmed-fact memory).
+- **Diff:** one file (`js/app.js`), two logic-relevant lines changed (`if(t.source===...)` → `if(t.sourceType===...)`, and the doc-comment line referencing it), plus expanded explanatory comments on both the `emailIcon` assignment and the `openEmailWeb()` doc-comment recording the collision and the fix for a future cold session. `data/tasks.json` untouched — no migration performed.
+
+## Verification (all real, all live-data-based)
+1. **Live data check, before the edit:** pulled live `data/tasks.json` fresh from `main` (82 tasks) — 0 have `sourceType`, 0 have `source==='codex-graph'`, all 82 have a `source` value.
+2. `node --check js/app.js` — clean, both before and after.
+3. **Full DOM-level before/after diff — the actual no-op proof, not an assertion.** Served the *original* (pre-this-change, matching what's currently live on `main`) and the *new* `js/app.js` from two separate local HTTP servers against the identical real 82-task live `tasks.json` (no synthetic data). Rendered both, toggled "Show done" so every task renders, then diffed each of the 82 real tasks' `outerHTML` by `data-id`. **Result: 82/82 byte-identical, 0 differences, 0 console/page errors on either side.** This is the full live population, not a sample.
+4. **Synthetic fixture test** (82 real live tasks + 2 synthetic-only test cards, never written to the live file): one card with `sourceType:"codex-graph"` + a `web_link`, one legacy card with only an `entryId`.
+   - Codex-graph card: source badge renders the literal provenance text `"Inbox - Test Sender, 2026-08-26 19:00"` — **not** the string "codex-graph" — confirming `source` stayed pure badge text. Clicking its email icon called `window.open(url,'_blank','noopener')` with exactly the stored `web_link`, no page navigation, icon not visually degraded (valid link).
+   - Legacy card: icon `onclick="openEmail(event,'<entryId>')"` unchanged; clicking it did **not** call `window.open`, only attempted the (locally unregistered, silently no-op'd) `openmail://<entryId>` navigation — identical to today's live production behaviour.
+   - Screenshots: `C:\Users\admin\Downloads\cc-sourcetype-field-26aug\` — `01_real_82_live_tasks_new_appjs.png` (full live board, new code, all 82 real tasks, "Show done" on), `02_fixture_board_today_tier.png` (fixture board default view), `03_codex_graph_synthetic_card.png`, `04_legacy_synthetic_card.png`, `behaviour_proof.json` (the intercepted `window.open` call + badge-text assertions, machine-readable).
+
+## Codex review (mandatory 3-touchpoint, per `agent-commons/operating-model/COORDINATOR_AND_CODEX_POLICY.md`)
+Config/rules write-path state re-verified first (per the 26 Aug 2026 audit): `C:\Users\admin\.codex\config.toml` still has no live `[mcp_servers.github]`/`[apps.*]` write path; `C:\Users\admin\.codex\rules\default.rules` still 116 lines with neither of the two bare `git push origin main` / `gh api --method PUT` auto-approve rules present. Holds, not re-litigated.
+1. **Plan + diff** — approved, no functional blocker. Independently re-verified the live-data no-op claim itself (its own PowerShell/node check against the live `tasks.json`: 82 total, 0 `sourceType`, 0 `codex-graph` source). 2 non-blocking wording refinements on the code comments — adopted (precision only, no logic change).
+2. **End-to-end** — given the full verification evidence above plus a direct re-read of the final file, confirmed independently that the local reviewed file's blob hash matched the pushed branch content sha (`397e6d6e…`). Verdict: **"Yes — safe to merge as-is."** No defect or regression found; noted one minor, non-material methodology point (the DOM-diff doesn't literally click all 82 legacy icons) which direct code reading closes (their handler, `openEmail(event,entryId)`, is untouched and was click-tested via the fixture's legacy card).
+3. **Confirmation re-review** — final full re-read of the changed file. **CLEAN, no new findings.**
+
+## Next action for a cold session
+1. **Kevin's call:** review the 4 screenshots in `C:\Users\admin\Downloads\cc-sourcetype-field-26aug\` (paths above). If he says "approved"/"merge", merge `drew/cc-sourcetype-field-26aug` → `main` following this repo's established branch-and-merge + Pages-poll + live-byte-diff routine (see the 22 Aug Sophie Levy entry or the 26 Aug opener-merge entry below for the exact sequence), then delete the branch.
+2. The doc-side checkpoint (Section 9 append) is committed on `begb0037admin/work-inbox` branch `claude/outlook-codecs-connector-upgrade-fe3dgf` (PR #29) — see that commit for the SHA.
+3. Once merged and live, the collision flagged in the entry below is fully closed. Phase 2 / any Codex task-writer still needs its own fresh brief from Kevin before starting — unchanged by this work.
+
+---
+
 # Handover — 26 August 2026, ~10:25 UTC (Drew) — Open-email opener: per-task `source` branch for Codex-connector tasks — MERGED, DEPLOYED, LIVE
 
 **UPDATE ~10:25 UTC — Kevin approved ("Approved - I'm happy with this. Please continue."), merged and deployed.**

@@ -323,28 +323,12 @@ function cardHTML(t){
 
   /* Open-email button. Two openers coexist (Codex Connector Migration research
      doc, Section 5). Outlook COM pipeline tasks keep the exact openmail://<entryId>
-     path via openEmail(). Tasks with sourceType "codex-graph" carry a Graph web_link
+     path via openEmail(). Tasks with source "codex-graph" carry a Graph web_link
      that GetItemFromID cannot resolve, so openEmailWeb() opens it as a plain
      Outlook Web Access hyperlink instead. A codex-graph task with no usable link
-     still shows the button, visibly de-emphasised, and explains itself on click.
-     NOTE (26 Aug 2026): this used to key on the human-readable `source` field
-     (a provenance string already populated on every live task, e.g. "Inbox -
-     Simon Burford, 2026-08-19 15:51", and rendered as the card's source badge
-     below). That was a field-name collision waiting to happen the moment a
-     Codex task-writer set source:"codex-graph" for provenance -- it would have
-     silently also flipped the opener AND clobbered the badge to the literal
-     text "codex-graph". Opener routing now keys on a separate, purpose-built
-     `sourceType` field instead. sourceType is optional and absent on all
-     tasks today (no tasks.json migration was needed or performed -- same
-     approach as how `source` itself was introduced); when sourceType is
-     absent or anything other than "codex-graph", this branch is skipped and
-     the existing legacy COM branch below (keyed on entryId) applies exactly
-     as before. This opener logic does not inspect `source` for routing --
-     `source` remains pure human-readable provenance/badge text below (the
-     file does still set `source` values for manually created/promoted
-     tasks; that write path is unrelated to and unaffected by this opener). */
+     still shows the button, visibly de-emphasised, and explains itself on click. */
   var emailIcon='';
-  if(t.sourceType==='codex-graph'){
+  if(t.source==='codex-graph'){
     var _cgHasLink=!!(t.web_link||t.display_url);
     emailIcon='<button class="card-icon"'+(_cgHasLink?'':' style="opacity:.45"')
       +' title="'+(_cgHasLink?'Open email in Outlook web':'Email link unavailable for this task')
@@ -454,11 +438,8 @@ function openEmail(e,entryId){
   window.location.href='openmail://'+entryId;
 }
 
-/* OPEN EMAIL (web) -- sourceType:"codex-graph" tasks only, per the Codex Connector
-   Migration research doc, Section 5 (opener design), corrected 26 Aug 2026 to key
-   on the dedicated `sourceType` machine-routing field rather than the human-
-   readable `source` provenance field -- see the field-collision note above
-   emailIcon's assignment. The Graph connector's web_link (snake_case;
+/* OPEN EMAIL (web) -- source:"codex-graph" tasks only, per the Codex Connector
+   Migration research doc, Section 5. The Graph connector's web_link (snake_case;
    display_url as an equivalent fallback) is opened as a plain hyperlink to
    Outlook Web Access in a new tab. GetItemFromID / openmail:// is never used for
    these. Each candidate link is validated independently and only followed if it
