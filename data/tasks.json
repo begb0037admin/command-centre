@@ -976,7 +976,7 @@
     "tier": "tomorrow",
     "source": "Inbox - Conor O'Brien, 2026-08-07 12:30",
     "emailRef": "RE: #External# RE: Multi Company Setup",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A88157F40000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890EC0000",
     "summary": "",
     "description": "Conor O'Brien has sent updated work on the Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week. Kevin needs to review Conor's progress and confirm availability to continue discussions next week.",
     "origin": "inbox-auto",
@@ -986,7 +986,8 @@
       "[10 Aug 2026] Crispin provided new testing details and scenarios email on 10 August with full technical breakdown for integrations testing. (email: Simon Burford - Volunteering Leave)",
       "[10 Aug 2026] Crispin Muncaster has provided update on Company 90 testing scenarios and is seeking help on HRIS staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[13 Aug 2026] Simon Burford has advised Conor that he is on leave next week but Kevin should be back and able to continue the Multi Company Setup discussions. (email: Simon Burford - RE: Multi Company Setup)",
-      "[17 Aug 2026] Kevin has shared the KPI presentation for July 2026 with Michael O'Sullivan, indicating progress on documenting HR Systems performance metrics. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)"
+      "[17 Aug 2026] Kevin has shared the KPI presentation for July 2026 with Michael O'Sullivan, indicating progress on documenting HR Systems performance metrics. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
+      "[26 Aug 2026] Ewan Kilgour has scheduled a meeting for 25 August to discuss Data Warehouse business rules, Fabric, and develop a prioritised roadmap. (email: Ewan Kilgour - RE: Business rules for Data Warehouse)"
     ],
     "done": true
   },
@@ -1512,10 +1513,12 @@
     "actions": [
       "[11 Aug 2026] Working group flagged an unhanded-over WFM/SBS 'second batch' of sickness data files -- never actioned since.",
       "[25 Aug 2026] Kevin flagged this as a miss from the original write-up. Added to command-centre.",
-      "[TODO] Kevin to check project folders for the WFM/SBS second-batch sickness data files, starting with Smith's School and Geography."
+      "[TODO] Kevin to check project folders for the WFM/SBS second-batch sickness data files, starting with Smith's School and Geography.",
+      "[26 Aug 2026] Julie Hickman is on annual leave from 21 August, returning Wednesday 2 September; any urgent sickness absence data queries should be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)"
     ],
     "notes": "Owner: Kevin. No hard date currently -- due this week per Kevin's flag.",
-    "dateAdded": "2026-08-25"
+    "dateAdded": "2026-08-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2E90000"
   },
   {
     "id": "t2608251201190",
