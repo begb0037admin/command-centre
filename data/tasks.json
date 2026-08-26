@@ -1536,5 +1536,33 @@
       "[25 Aug 2026] Auto-created from inbox triage (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work).",
       "[25 Aug 2026] Sophie Levy confirms the Quality project is fully staffed with internal transition from sales to professional services happening 24 Aug afternoon; project ready to proceed. (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)"
     ]
+  },
+  {
+    "id": "t2608261500530",
+    "title": "Review REF2029 UDF promotion to UOXP",
+    "tier": "week",
+    "source": "Inbox - Nathan Kirwan, 2026-08-26 14:51",
+    "emailRef": "REF29 UDF - Promotion to UOXP",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B21C32130000",
+    "summary": "",
+    "description": "Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment. Kevin needs to review the promotion details and any HR Systems implications or sign-off requirements.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[26 Aug 2026] Auto-created from inbox triage (email: Nathan Kirwan - REF29 UDF - Promotion to UOXP)."
+    ]
+  },
+  {
+    "id": "t2608261500531",
+    "title": "Locate documentation on Grade 2 increment bar changes (2024 uplift)",
+    "tier": "week",
+    "source": "Inbox - Michael O'Sullivan, 2026-08-26 12:06",
+    "emailRef": "2024 non clinical uplift_Incremental bar changes for Grade 2",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007B21C6A640000",
+    "summary": "",
+    "description": "Michael O'Sullivan is asking Kevin whether he recalls any decisions or has documentation relating to Grade 2 increment bar changes made during the 2024 non-clinical uplift. Kevin needs to search records and respond.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[26 Aug 2026] Auto-created from inbox triage (email: Michael O'Sullivan - 2024 non clinical uplift_Incremental bar changes for Grade 2)."
+    ]
   }
 ]
