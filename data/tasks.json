@@ -528,10 +528,11 @@
       "[07 Jul 2026] Kevin created the REF Outcomes UDF in UOXU and notified Nathan, flagging an important caveat about system behavior that Nathan should be aware of. (email: Kevin (sent to: Nathan Kirwan) - Re: Copy of Test UDF for REF Outcomes)",
       "[07 Jul 2026] Nathan Kirwan confirmed that REF attributes UDF fields are now displaying correctly in UOXU following Kevin's activation of data labels. (email: Nathan Kirwan - RE: Copy of Test UDF for REF Outcomes)",
       "[07 Jul 2026] Kevin activated all data labels in UOXU to ensure the 12 fields required for REF attributes are displaying correctly for Nathan's testing. (email: Kevin (sent to: Nathan Kirwan) - Re: Copy of Test UDF for REF Outcomes)",
-      "[10 Aug 2026] Sarah Rowles forwarding Clockify news about upcoming free plan changes relevant to September deadline investigation. (email: Sarah Rowles - FW: Clockify: Upcoming Free plan changes & options for your team)"
+      "[10 Aug 2026] Sarah Rowles forwarding Clockify news about upcoming free plan changes relevant to September deadline investigation. (email: Sarah Rowles - FW: Clockify: Upcoming Free plan changes & options for your team)",
+      "[26 Aug 2026] Simon Burford escalates Data Warehouse business rules delay as risk to REF programme; no response since June meeting. (email: Simon Burford - RE: Business rules for Data Warehouse)"
     ],
     "dateAdded": "2026-06-24",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43160000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890EB0000",
     "done": true
   },
   {
@@ -1473,11 +1474,12 @@
     "actions": [
       "[25 Aug 2026] Task created in command-centre, corrected from an earlier draft (\"Book PDR session with Stephen Kirker\") per Kevin's correction to the Weekly Granola Review -- actual scope is PDR sessions for Simon Burford and the FA team.",
       "[TODO] Book PDR sessions with Simon Burford and the FA team by end of September 2026.",
-      "[25 Aug 2026] Kevin has scheduled Asta Siautilaite's 2026 PDR for Friday 25 September, 12:00-1:00pm. (email: Kevin (sent to: Asta Siautilaite) - PDR 2026 – Friday 25 September)"
+      "[25 Aug 2026] Kevin has scheduled Asta Siautilaite's 2026 PDR for Friday 25 September, 12:00-1:00pm. (email: Kevin (sent to: Asta Siautilaite) - PDR 2026 – Friday 25 September)",
+      "[26 Aug 2026] Asta Palmer reminder that HR Systems Team Meeting is tomorrow with Presentations week; Kevin should confirm if presenting. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)"
     ],
     "notes": "Tracker: https://unioxfordnexus.sharepoint.com/:x:/r/sites/HumanResources-HRSystems-HRSystemsManagementTeam/Shared%20Documents/HR%20Systems%20Management%20Team/HR%20Systems%20PDR%20Completion%202026.xlsx?d=w2e1b829d370d4c1f877cec77aec7bffb&csf=1&web=1&e=GoiKEZ",
     "dateAdded": "2026-08-25",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B13C79250000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007B13CE8FC0000"
   },
   {
     "id": "task-1787652746063",
