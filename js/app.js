@@ -321,7 +321,21 @@ function cardHTML(t){
     if(days!==null)staleBadge='<span class="new-badge badge-stale" title="Marked '+tierLabel(t.tier)+' but no activity logged for '+days+' days">'+days+'D QUIET</span>';
   }
 
-  var emailIcon=t.entryId?'<button class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</button>':'';
+  /* Open-email button. Two openers coexist (Codex Connector Migration research
+     doc, Section 5). Outlook COM pipeline tasks keep the exact openmail://<entryId>
+     path via openEmail(). Tasks with source "codex-graph" carry a Graph web_link
+     that GetItemFromID cannot resolve, so openEmailWeb() opens it as a plain
+     Outlook Web Access hyperlink instead. A codex-graph task with no usable link
+     still shows the button, visibly de-emphasised, and explains itself on click. */
+  var emailIcon='';
+  if(t.source==='codex-graph'){
+    var _cgHasLink=!!(t.web_link||t.display_url);
+    emailIcon='<button class="card-icon"'+(_cgHasLink?'':' style="opacity:.45"')
+      +' title="'+(_cgHasLink?'Open email in Outlook web':'Email link unavailable for this task')
+      +'" onclick="openEmailWeb(event,this)">&#9993;</button>';
+  }else if(t.entryId){
+    emailIcon='<button class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</button>';
+  }
   var editIcon='<button class="card-icon" title="Rename" onclick="startRename(event,\''+t.id+'\')">&#9998;</button>';
 
   var src='';
@@ -422,6 +436,34 @@ function toggleDrawer(id){
 function openEmail(e,entryId){
   e.stopPropagation();
   window.location.href='openmail://'+entryId;
+}
+
+/* OPEN EMAIL (web) -- source:"codex-graph" tasks only, per the Codex Connector
+   Migration research doc, Section 5. The Graph connector's web_link (snake_case;
+   display_url as an equivalent fallback) is opened as a plain hyperlink to
+   Outlook Web Access in a new tab. GetItemFromID / openmail:// is never used for
+   these. Each candidate link is validated independently and only followed if it
+   is https:// on a known Outlook Web host; anything missing or unrecognised
+   degrades to a visible notice -- never a silent no-op and never a throw. The
+   task id is read from the card's data-id via the clicked element, so no
+   task-controlled value is interpolated into this inline handler. */
+function openEmailWeb(e,btn){
+  e.stopPropagation();
+  var card=btn&&btn.closest?btn.closest('.task-card'):null;
+  var id=card?card.getAttribute('data-id'):null;
+  var t=id?tasks.find(function(x){return x.id===id;}):null;
+  if(!t)return;
+  var hosts={'outlook.office.com':1,'outlook.office365.com':1};
+  var url='';
+  [t.web_link,t.display_url].forEach(function(c){
+    if(url||!c)return;
+    try{var u=new URL(c);if(u.protocol==='https:'&&hosts[u.hostname])url=c;}catch(_){}
+  });
+  if(url){
+    window.open(url,'_blank','noopener');
+  }else{
+    alert('This task came from the Codex connector but has no usable Outlook Web link stored (an https web_link or display_url on outlook.office.com / outlook.office365.com is required), so the email cannot be opened from here.');
+  }
 }
 
 /* RENAME */
