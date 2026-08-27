@@ -1,3 +1,19 @@
+# Handover — 27 August 2026, ~09:15 UTC (Drew) — Nathan Kirwan "REF29 UDF - Promotion to UOXP": command-centre task reviewed, NO change made (already accurate); optional draft-link held for approval
+
+## What this is
+Coordinator task centred on `begb0037admin/work-inbox`: an email from Nathan Kirwan (26 Aug 14:51 UTC, "REF29 UDF - Promotion to UOXP", entry_id `…5350007B21C32130000`) was misclassified `needs_reply:false` in the work-inbox pipeline and its body was truncated to 157 chars everywhere. Full root-cause + a transient data repair were done on the work-inbox side (see that repo's `HANDOVER.md`, 27 Aug entry, commits `f560a6c` / `c9c070b` / `cf547b1` / `a29c2dc`). This entry records the command-centre half.
+
+## command-centre finding — no change needed
+Task **`t2608261500530`** "Review REF2029 UDF promotion to UOXP" already exists (tier `week`, correct `entryId`, `origin: inbox-auto`, created by fetch_inbox.py Phase 3.6 on 26 Aug). Its `description` — *"Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment. Kevin needs to review the promotion details and any HR Systems implications or sign-off requirements."* — is an accurate representation of the real email (verified against the full 2274-char body recovered via Outlook COM this session: Nathan forwards Simon Burford's CorePortal config to replicate in LIVE — Display on CorePortal + Hide Dates on; allow-update deliberately off — and asks Kevin to confirm / raise questions). Phase 3.5's task-suggestion prompt is a separate code path from Phase 3.2's `needs_reply` classifier and did **not** inherit the misclassification. **`data/tasks.json` was not touched.**
+
+## Held for Kevin's decision (NOT done)
+Optional enrichment: add one dated action line to `t2608261500530` linking Lauren's holding draft `agent-commons` `lauren-draft-19-20260827` and noting the full body is now in `work-inbox/data/needs_reply.json`. This renders in the card's action drawer = a visible change, so per the UI approval gate it needs a screenshot + Kevin's explicit "approved" before any push. Not load-bearing (draft-19 already carries the matching `source_entry_id`), so left as a proposal.
+
+## Next action for a cold session
+If Kevin wants the draft-link action line: GET live `data/tasks.json`, run the full mandatory backup-and-verify sequence, add the single `[27 Aug 2026]` action entry to `t2608261500530`, render the card locally, screenshot, wait for "approved", then PUT to main. Otherwise nothing outstanding here.
+
+---
+
 # Handover — 26 August 2026, ~19:30 UTC (Drew) — `sourceType` field: opener routing separated from `source` provenance — MERGED, DEPLOYED, LIVE
 
 **UPDATE ~20:05 UTC — Kevin approved ("Approved."), merged and deployed.**
