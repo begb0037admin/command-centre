@@ -77,11 +77,12 @@
       "[02 Aug 2026] Kevin awaiting SoundCloud pilot invitation to proceed with migrating the three in-scope DPIAs (PeopleXD, WFM, college data item) into the pilot platform for testing before formal sign-off.",
       "[04 Aug 2026] Marie's email acknowledges the DPIA work completed; Kevin should await her final sign-off to proceed to Information Compliance Team. (email: Marie Cooksey - RE: draft DPIA for college record to PXD)",
       "[21 Aug 2026] SoundCloud pilot contact was proposed on 24 Jun 2026 but no follow-up documented across 85 meetings through Aug 2026; Kevin to confirm whether SoundCloud team contact was made and, if not, chase initiation of pilot invitation for migrating the three in-scope DPIAs (PeopleXD, WFM, college data item).",
-      "[27 Aug 2026] Kevin has shared an updated DPIA v0.5 document, indicating progress toward stage 7 sign-off by Marie. (email: Kevin Lelitte - Kevin Lelitte shared \"PeopleXD - Data Protection Impact Assessment v0.5\" with you)"
+      "[27 Aug 2026] Kevin has shared an updated DPIA v0.5 document, indicating progress toward stage 7 sign-off by Marie. (email: Kevin Lelitte - Kevin Lelitte shared \"PeopleXD - Data Protection Impact Assessment v0.5\" with you)",
+      "[27 Aug 2026] Kevin shared updated DPIA v0.5 document; progress on signature/review process. (email: Kevin (sent to: Kevin Lelitte) - Kevin Lelitte shared \"PeopleXD - Data Protection Impact Assessment v0.5\" with you)"
     ],
     "dateAdded": "2026-06-08",
     "status": "Awaiting Marie Cooksey's Stage 7 signature (chase as and when). SoundCloud being piloted at Oxford for DPIAs â€” WFM DPIA proposed as pilot case; awaiting team contact.",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B27990180000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B2798C280000",
     "done": false
   },
   {
@@ -217,10 +218,11 @@
       "[TODO] Confirm with Asta current status of remaining trial users (Simon Burford ADMN2716, David Sanders UOHS0054, Asta Palmer OUIT0422).",
       "[TODO] Agree revised delivery timeline with Desktop Services once VS2022 licensing sorted.",
       "[TODO] Update user guidance, account provisioning process, and first-line support docs before broader rollout.",
-      "[03 Aug 2026] Simon Burford reports Nexus team have populated six PeopleXD data access groups in Entra ID with user lists provided by Asta on 16 July, advancing the SSO migration work. (email: Simon Burford - FW: Creation of your 6 PeopleXD data access groups in Entra ID)"
+      "[03 Aug 2026] Simon Burford reports Nexus team have populated six PeopleXD data access groups in Entra ID with user lists provided by Asta on 16 July, advancing the SSO migration work. (email: Simon Burford - FW: Creation of your 6 PeopleXD data access groups in Entra ID)",
+      "[27 Aug 2026] Louise Piper notified all OSM users of current authentication issues affecting login; this may impact HR Reporting SSO Migration work. (email: Louise Piper - OSM: Authentication Issues)"
     ],
     "dateAdded": "2026-06-25",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500079D7B8ACB0000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2E80000"
   },
   {
     "id": "t1781204987882",
@@ -531,10 +533,11 @@
       "[07 Jul 2026] Kevin activated all data labels in UOXU to ensure the 12 fields required for REF attributes are displaying correctly for Nathan's testing. (email: Kevin (sent to: Nathan Kirwan) - Re: Copy of Test UDF for REF Outcomes)",
       "[10 Aug 2026] Sarah Rowles forwarding Clockify news about upcoming free plan changes relevant to September deadline investigation. (email: Sarah Rowles - FW: Clockify: Upcoming Free plan changes & options for your team)",
       "[26 Aug 2026] Simon Burford escalates Data Warehouse business rules delay as risk to REF programme; no response since June meeting. (email: Simon Burford - RE: Business rules for Data Warehouse)",
-      "[26 Aug 2026] Ewan Kilgour has scheduled a meeting to discuss Data Warehouse business rules prioritisation, Fabric, and related roadmap items following Simon's escalation on REF programme risk. (email: Ewan Kilgour - RE: Business rules for Data Warehouse)"
+      "[26 Aug 2026] Ewan Kilgour has scheduled a meeting to discuss Data Warehouse business rules prioritisation, Fabric, and related roadmap items following Simon's escalation on REF programme risk. (email: Ewan Kilgour - RE: Business rules for Data Warehouse)",
+      "[27 Aug 2026] Simon Burford replied to Ewan Kilgour regarding Data Warehouse business rules; noted uncertainty about DWH environment pointing at test data. (email: Simon Burford - RE: Business rules for Data Warehouse)"
     ],
     "dateAdded": "2026-06-24",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890EC0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890ED0000",
     "done": true
   },
   {
@@ -1400,10 +1403,11 @@
       "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence.",
       "[21 Aug 2026] Julie Hickman sent farewell message reminder for Beth, who is leaving the team. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
       "[25 Aug 2026] Julie Hickman reports Chemistry estimates approximately 110 existing work groups that need configuration for 38-day balance rollout; this impacts the implementation timeline and resource planning. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
-      "[25 Aug 2026] Julie Hickman is on annual leave from 21 August with return 2 September; urgent queries to be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)"
+      "[25 Aug 2026] Julie Hickman is on annual leave from 21 August with return 2 September; urgent queries to be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)",
+      "[27 Aug 2026] Michael clarifies that the 131 workgroups flagged by Julie will need to be amended to reflect revised Holiday Scheme following the 38-day balance rollout. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )"
     ],
     "dateAdded": "2026-08-19",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2E90000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007B2797C6A0000",
     "done": true
   },
   {
@@ -1480,11 +1484,12 @@
       "[TODO] Book PDR sessions with Simon Burford and the FA team by end of September 2026.",
       "[25 Aug 2026] Kevin has scheduled Asta Siautilaite's 2026 PDR for Friday 25 September, 12:00-1:00pm. (email: Kevin (sent to: Asta Siautilaite) - PDR 2026 – Friday 25 September)",
       "[26 Aug 2026] Asta Palmer reminder that HR Systems Team Meeting is tomorrow with Presentations week; Kevin should confirm if presenting. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)",
-      "[26 Aug 2026] Kevin has declined the Cross-Team Process Improvement Working Group meeting due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)"
+      "[26 Aug 2026] Kevin has declined the Cross-Team Process Improvement Working Group meeting due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[27 Aug 2026] Kevin scheduled PDR for Asta Palmer (corrected recipient after initial email n15 sent to Asta Siautilaite) on Friday 25 September 12:00-1:00pm. (email: Kevin (sent to: Asta Palmer) - PDR 2026 – Friday 25 September)"
     ],
     "notes": "Tracker: https://unioxfordnexus.sharepoint.com/:x:/r/sites/HumanResources-HRSystems-HRSystemsManagementTeam/Shared%20Documents/HR%20Systems%20Management%20Team/HR%20Systems%20PDR%20Completion%202026.xlsx?d=w2e1b829d370d4c1f877cec77aec7bffb&csf=1&web=1&e=GoiKEZ",
     "dateAdded": "2026-08-25",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39ED0000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B2798C2A0000"
   },
   {
     "id": "task-1787652746063",
@@ -1545,13 +1550,14 @@
     "tier": "week",
     "source": "Inbox - Nathan Kirwan, 2026-08-26 14:51",
     "emailRef": "REF29 UDF - Promotion to UOXP",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B21C32130000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B2798C290000",
     "summary": "",
     "description": "Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment. Kevin needs to review the promotion details and any HR Systems implications or sign-off requirements.",
     "origin": "inbox-auto",
     "actions": [
       "[26 Aug 2026] Auto-created from inbox triage (email: Nathan Kirwan - REF29 UDF - Promotion to UOXP).",
-      "[26 Aug 2026] Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment and seeking Kevin's review. (email: Nathan Kirwan - REF29 UDF - Promotion to UOXP)"
+      "[26 Aug 2026] Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment and seeking Kevin's review. (email: Nathan Kirwan - REF29 UDF - Promotion to UOXP)",
+      "[27 Aug 2026] Kevin confirmed he will push REF2029 UDF promotion to live today and will notify Nathan when complete. (email: Kevin (sent to: Nathan Kirwan) - Re: REF29 UDF - Promotion to UOXP)"
     ]
   },
   {
@@ -1582,6 +1588,20 @@
     "actions": [
       "[27 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - FW: changing to 38 day balance - workgroups for updating  ).",
       "[27 Aug 2026] Marie is forwarding Chemistry's workgroup update request from Julie's absence, as flagged in the existing task. (email: Marie Cooksey - FW: changing to 38 day balance - workgroups for updating  )"
+    ]
+  },
+  {
+    "id": "t2608271200550",
+    "title": "Prepare presentation for HR Systems Team Meeting - presentations week",
+    "tier": "tomorrow",
+    "source": "Inbox - Asta Palmer, 2026-08-25 13:35",
+    "emailRef": "HR Systems Team Meeting - tomorrow",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2600008DFB9C6852DC5A43B72538034BBFF5350007B13CECEF0000",
+    "summary": "",
+    "description": "Asta Palmer is asking Kevin whether he has something to present at tomorrow's HR Systems Team Meeting, which is designated as 'Presentations week'. Kevin needs to confirm if he will present and prepare materials if required.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[27 Aug 2026] Auto-created from inbox triage (email: Asta Palmer - HR Systems Team Meeting - tomorrow)."
     ]
   }
 ]
