@@ -1463,14 +1463,15 @@
     "tier": "today",
     "source": "Inbox - Cority_Integration_Platform_Notifications@Cority.com, 2026-08-21 18:00",
     "emailRef": "[ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890EB0000",
+    "entryId": "",
     "summary": "",
     "description": "Cority Integration Platform reported an SFTP connection error on 21 August at 17:00 during scheduled employee data import. Kevin needs to review the error log and confirm resolution with James Salas Guillen / Cority support, similar to the 22 June incident (t030).",
     "origin": "inbox-auto",
     "actions": [
       "[21 Aug 2026] Auto-created from inbox triage (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00).",
       "[25 Aug 2026] Cority SFTP connection error occurred on 21 Aug at 17:00 during scheduled employee data import; Kevin needs to confirm resolution status. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)",
-      "[27 Aug 2026] Cority Integration Platform error log received for SFTP connection failure on 21 August 2026 at 17:00 during employee data import. (email: Simon Burford - RE: Business rules for Data Warehouse)"
+      "[27 Aug 2026] Cority Integration Platform error log received for SFTP connection failure on 21 August 2026 at 17:00 during employee data import. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[30 Aug 2026] Another Cority employee import error on 28 August 17:00; latest in series of import failures requiring investigation and resolution with Cority support. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-28 17:00)"
     ],
     "done": true
   },
@@ -1540,7 +1541,7 @@
     "tier": "week",
     "source": "Inbox - Sophie Levy, 2026-08-24 08:33",
     "emailRef": "Re: PO ref E22033553 / Quality funded work",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890EB0000",
+    "entryId": "",
     "summary": "",
     "description": "Sophie Levy confirms the project is fully staffed and having internal transition from sales to professional services. Kevin's 24 Aug email response needs follow-up to ensure clear handover and any HR Systems dependencies are identified before project execution begins.",
     "origin": "inbox-auto",
@@ -1548,7 +1549,8 @@
       "[25 Aug 2026] Auto-created from inbox triage (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work).",
       "[25 Aug 2026] Sophie Levy confirms the Quality project is fully staffed with internal transition from sales to professional services happening 24 Aug afternoon; project ready to proceed. (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)",
       "[27 Aug 2026] Sophie Levy confirmed Quality project is fully staffed and internal transition from sales to professional services is proceeding. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)",
-      "[30 Aug 2026] Sophie confirms Quality project (PO E22033553) is fully staffed with internal transition from sales to professional services proceeding. (email: Simon Burford - RE: Business rules for Data Warehouse)"
+      "[30 Aug 2026] Sophie confirms Quality project (PO E22033553) is fully staffed with internal transition from sales to professional services proceeding. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[30 Aug 2026] Sophie Levy confirms Cority Quality project (PO E22033553) is fully staffed with transition from sales to professional services proceeding. (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)"
     ]
   },
   {
@@ -1557,7 +1559,7 @@
     "tier": "week",
     "source": "Inbox - Nathan Kirwan, 2026-08-26 14:51",
     "emailRef": "REF29 UDF - Promotion to UOXP",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B279901D0000",
+    "entryId": "",
     "summary": "",
     "description": "Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment. Kevin needs to review the promotion details and any HR Systems implications or sign-off requirements.",
     "origin": "inbox-auto",
@@ -1567,7 +1569,8 @@
       "[27 Aug 2026] Kevin confirmed he will push REF2029 UDF promotion to live today and will notify Nathan when complete. (email: Kevin (sent to: Nathan Kirwan) - Re: REF29 UDF - Promotion to UOXP)",
       "[27 Aug 2026] Nathan confirms UDF is live but requests core portal display be turned off for now; Kevin should action this configuration change. (email: Nathan Kirwan - RE: REF29 UDF - Promotion to UOXP)",
       "[27 Aug 2026] Nathan confirms promotion can proceed; Kevin has completed the action of pushing REF2029 UDF to live production. (email: Nathan Kirwan - Re: REF29 UDF - Promotion to UOXP)",
-      "[27 Aug 2026] Nathan acknowledged Kevin's confirmation that REF2029 UDF will be pushed to live. (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes)"
+      "[27 Aug 2026] Nathan acknowledged Kevin's confirmation that REF2029 UDF will be pushed to live. (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes)",
+      "[30 Aug 2026] Kevin sent confirmation that REF2029 UDF is now live in UOXP production. (email: Kevin (sent to: Nathan Kirwan <nathan.kirwan@admin.ox.ac.uk>) - Re: REF29 UDF - Promotion to UOXP)"
     ]
   },
   {
