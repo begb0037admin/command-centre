@@ -1405,10 +1405,11 @@
       "[21 Aug 2026] Julie Hickman sent farewell message reminder for Beth, who is leaving the team. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
       "[25 Aug 2026] Julie Hickman reports Chemistry estimates approximately 110 existing work groups that need configuration for 38-day balance rollout; this impacts the implementation timeline and resource planning. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[25 Aug 2026] Julie Hickman is on annual leave from 21 August with return 2 September; urgent queries to be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)",
-      "[27 Aug 2026] Michael clarifies that the 131 workgroups flagged by Julie will need to be amended to reflect revised Holiday Scheme following the 38-day balance rollout. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )"
+      "[27 Aug 2026] Michael clarifies that the 131 workgroups flagged by Julie will need to be amended to reflect revised Holiday Scheme following the 38-day balance rollout. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )",
+      "[30 Aug 2026] Marie Cooksey provides update on 38-day balance workgroup changes; met with Michelle who will discuss responses with Julie upon her return from leave. (email: Marie Cooksey - RE: changing to 38 day balance - workgroups for updating)"
     ],
     "dateAdded": "2026-08-19",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007B2797C6A0000",
+    "entryId": "",
     "done": true
   },
   {
@@ -1487,11 +1488,12 @@
       "[25 Aug 2026] Kevin has scheduled Asta Siautilaite's 2026 PDR for Friday 25 September, 12:00-1:00pm. (email: Kevin (sent to: Asta Siautilaite) - PDR 2026 – Friday 25 September)",
       "[26 Aug 2026] Asta Palmer reminder that HR Systems Team Meeting is tomorrow with Presentations week; Kevin should confirm if presenting. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)",
       "[26 Aug 2026] Kevin has declined the Cross-Team Process Improvement Working Group meeting due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)",
-      "[27 Aug 2026] Kevin scheduled PDR for Asta Palmer (corrected recipient after initial email n15 sent to Asta Siautilaite) on Friday 25 September 12:00-1:00pm. (email: Kevin (sent to: Asta Palmer) - PDR 2026 – Friday 25 September)"
+      "[27 Aug 2026] Kevin scheduled PDR for Asta Palmer (corrected recipient after initial email n15 sent to Asta Siautilaite) on Friday 25 September 12:00-1:00pm. (email: Kevin (sent to: Asta Palmer) - PDR 2026 – Friday 25 September)",
+      "[30 Aug 2026] Michael O'Sullivan requests to reschedule his 2026 PDR from 18 September due to his leave that week plus annual leave year-end considerations. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)"
     ],
     "notes": "Tracker: https://unioxfordnexus.sharepoint.com/:x:/r/sites/HumanResources-HRSystems-HRSystemsManagementTeam/Shared%20Documents/HR%20Systems%20Management%20Team/HR%20Systems%20PDR%20Completion%202026.xlsx?d=w2e1b829d370d4c1f877cec77aec7bffb&csf=1&web=1&e=GoiKEZ",
     "dateAdded": "2026-08-25",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B2798C2A0000"
+    "entryId": ""
   },
   {
     "id": "task-1787652746063",
@@ -1507,11 +1509,12 @@
       "[TODO] Kevin and Michael to confirm an approximate FA validation effort per department.",
       "[TODO] Use the confirmed effort figures to determine Michael's capacity and whether additional BA/FA support is needed.",
       "[AWAITING] Feeds into Marie/Ant's BA-effort estimate and David White's funding ask for department-by-department validation -- both pending this sizing.",
-      "[25 Aug 2026] Kevin has sent follow-up to Marie and Simon on sickness absence survey BA resource requirements and timelines, noting he has spoken to Michael on capacity. (email: Kevin (sent to: Marie Cooksey; Simon Burford) - Sickness absence survey — BA resource requirement and timelines)"
+      "[25 Aug 2026] Kevin has sent follow-up to Marie and Simon on sickness absence survey BA resource requirements and timelines, noting he has spoken to Michael on capacity. (email: Kevin (sent to: Marie Cooksey; Simon Burford) - Sickness absence survey — BA resource requirement and timelines)",
+      "[30 Aug 2026] Kevin responds to Marie and Simon confirming he has discussed capacity with Michael regarding BA effort requirements and timelines for sickness absence data validation. (email: Kevin (sent to: Marie Cooksey <marie.cooksey@admin.ox.ac.uk>, Simon Burford <simon.burford@admin.ox.ac.uk>) - Sickness absence survey — BA resource requirement and timelines)"
     ],
     "notes": "Owner: Kevin, with Michael as dependency/collaborator.",
     "dateAdded": "2026-08-25",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B13C79260000"
+    "entryId": ""
   },
   {
     "id": "task-1787652746064",
@@ -1573,7 +1576,7 @@
     "tier": "week",
     "source": "Inbox - Michael O'Sullivan, 2026-08-26 12:06",
     "emailRef": "2024 non clinical uplift_Incremental bar changes for Grade 2",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B27990200000",
+    "entryId": "",
     "summary": "",
     "description": "Michael O'Sullivan is asking Kevin whether he recalls any decisions or has documentation relating to Grade 2 increment bar changes made during the 2024 non-clinical uplift. Kevin needs to search records and respond.",
     "origin": "inbox-auto",
@@ -1582,7 +1585,8 @@
       "[26 Aug 2026] Michael O'Sullivan is asking Kevin to recall or locate documentation on Grade 2 increment bar changes from the 2024 non-clinical uplift. (email: Michael O'Sullivan - 2024 non clinical uplift_Incremental bar changes for Grade 2)",
       "[27 Aug 2026] Simon has responded with details: employees on scale point 2.5 were moved to 2.6 during 2024 uplift, no one moved to 2.7 or 2.8; he has additional email from Tonya with more context. (email: Simon Burford - RE: 2024 non clinical uplift_Incremental bar changes for Grade 2)",
       "[27 Aug 2026] Simon confirmed employees on scale point 2.5 were moved to 2.6 during 2024 uplift; he has additional email from Tonya with more context. (email: Nathan Kirwan - Re: REF29 UDF - Promotion to UOXP)",
-      "[28 Aug 2026] Michael O'Sullivan is continuing the Grade 2 increment bar changes inquiry, noting SQL code evidence in Nik's folder suggesting development work was started. (email: Erik at Soundtrap - One class period, no production required)"
+      "[28 Aug 2026] Michael O'Sullivan is continuing the Grade 2 increment bar changes inquiry, noting SQL code evidence in Nik's folder suggesting development work was started. (email: Erik at Soundtrap - One class period, no production required)",
+      "[30 Aug 2026] Michael O'Sullivan asks Kevin to recall decisions or locate documentation on Grade 2 increment bar changes from 2024 non-clinical uplift; notes SQL code evidence in Nik's folder. (email: Michael O'Sullivan - RE: 2024 non clinical uplift_Incremental bar changes for Grade 2)"
     ]
   },
   {
@@ -1625,13 +1629,14 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-27 15:53",
     "emailRef": "RE: IRIS / IEX - Incidents Changes",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007B2797C6B0000",
+    "entryId": "",
     "summary": "",
     "description": "Marie Cooksey has copied Kevin and James in to provide timings on IRIS/IEX incidents changes. Amanda needs confirmation of when HR Systems can handle the implementation. Kevin needs to respond with realistic timelines.",
     "origin": "inbox-auto",
     "actions": [
       "[27 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes).",
-      "[27 Aug 2026] Marie explicitly stated that Kevin and James will respond in due course with incident timings for Amanda. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)"
+      "[27 Aug 2026] Marie explicitly stated that Kevin and James will respond in due course with incident timings for Amanda. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[30 Aug 2026] Marie Cooksey copied Kevin and James to respond with IRIS/IEX incidents changes timings; emphasizes need for clear communication plan. (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes)"
     ]
   }
 ]
