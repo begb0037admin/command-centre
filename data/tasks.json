@@ -1537,14 +1537,15 @@
     "tier": "week",
     "source": "Inbox - Sophie Levy, 2026-08-24 08:33",
     "emailRef": "Re: PO ref E22033553 / Quality funded work",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2900008DFB9C6852DC5A43B72538034BBFF5350007AE97F9690000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890EB0000",
     "summary": "",
     "description": "Sophie Levy confirms the project is fully staffed and having internal transition from sales to professional services. Kevin's 24 Aug email response needs follow-up to ensure clear handover and any HR Systems dependencies are identified before project execution begins.",
     "origin": "inbox-auto",
     "actions": [
       "[25 Aug 2026] Auto-created from inbox triage (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work).",
       "[25 Aug 2026] Sophie Levy confirms the Quality project is fully staffed with internal transition from sales to professional services happening 24 Aug afternoon; project ready to proceed. (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)",
-      "[27 Aug 2026] Sophie Levy confirmed Quality project is fully staffed and internal transition from sales to professional services is proceeding. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)"
+      "[27 Aug 2026] Sophie Levy confirmed Quality project is fully staffed and internal transition from sales to professional services is proceeding. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)",
+      "[30 Aug 2026] Sophie confirms Quality project (PO E22033553) is fully staffed with internal transition from sales to professional services proceeding. (email: Simon Burford - RE: Business rules for Data Warehouse)"
     ]
   },
   {
