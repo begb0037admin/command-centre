@@ -442,10 +442,11 @@
       "[02 Aug 2026] Moved to Parked - CHI Team notified and working the SFTP fix; external, not an open action for Kevin.",
       "[19 Aug 2026] Cority Integration Platform reported another SFTP connection error on 14 August at 17:00; the CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-14 17:00)",
       "[19 Aug 2026] Cority Employee Import successful on 19 Aug 2026 at 14:27 - previous SFTP error from 14 Aug has been resolved. (email: Cority_Integration_Platform_Notifications@Cority.com - [Success] Cority Employee Import Log File for OxfordUniversity - 2026-08-19 14:27)",
-      "[25 Aug 2026] Automated notification: OSM email listener has been re-enabled after weekend processing pause; no action required. (email: Louise Piper - RE: OSM: No incoming emails will be processed this weekend)"
+      "[25 Aug 2026] Automated notification: OSM email listener has been re-enabled after weekend processing pause; no action required. (email: Louise Piper - RE: OSM: No incoming emails will be processed this weekend)",
+      "[31 Aug 2026] Cority SFTP connection error logged 28 August 17:00 during employee import; similar to 22 June incident - requires urgent investigation. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-28 17:00)"
     ],
     "dateAdded": "2026-06-23",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890E80000"
+    "entryId": ""
   },
   {
     "id": "t2608171727070",
