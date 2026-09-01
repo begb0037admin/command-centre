@@ -181,29 +181,6 @@ function sortBySourceDate(arr){
     return cardSourceTs(y)-cardSourceTs(x);   /* newest source date first; stable for ties */
   });
 }
-/* One "Earlier" divider between cards whose SOURCE date is today or later
-   (local midnight -- the same day boundary Work Inbox's briefing uses) and
-   everything with an older source date. Only rendered when a tier holds both.
-   Most cards carry a historical source date, so in practice this divider only
-   surfaces once a genuinely same-day item lands in a tier. */
-function isTodayTs(ms){
-  if(!ms)return false;
-  var m=new Date();m.setHours(0,0,0,0);
-  return ms>=m.getTime();
-}
-function cardsWithDayDivider(items){
-  var out='',placed=false;
-  var anyToday=items.some(function(t){return isTodayTs(cardSourceTs(t));});
-  var anyOlder=items.some(function(t){return !isTodayTs(cardSourceTs(t));});
-  items.forEach(function(t){
-    if(anyToday&&anyOlder&&!placed&&!isTodayTs(cardSourceTs(t))){
-      out+='<div class="board-day-divider"><span>Earlier</span></div>';
-      placed=true;
-    }
-    out+=cardHTML(t);
-  });
-  return out;
-}
 function renderBoard(){
   var showDone=getShowDone();
   updateDoneToggleBtn();
@@ -215,7 +192,7 @@ function renderBoard(){
     items=sortBySourceDate(items);
     count.textContent=items.length;
     var badge=document.getElementById('badge-'+tier);if(badge)badge.textContent=allItems.length;
-    list.innerHTML=cardsWithDayDivider(items);
+    list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
   });
   renderStaleSummary();
   var badgeTotal=document.getElementById('badge-total'); if(badgeTotal) badgeTotal.textContent=tasks.length;
