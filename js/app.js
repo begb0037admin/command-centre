@@ -104,27 +104,88 @@ function renderStaleSummary(){
     +'. Tasks are marked quiet after 7 days (Today/Tomorrow), 21 days (This Week) or 45 days (Parked).';
 }
 
-/* Newest-first ordering within a tier: most recent genuine activity, then
-   dateAdded, then title. New and updated cards -- inbox-auto promotions and
-   quick-adds included -- land at the top on their own. This supersedes
-   manual intra-tier drag order; dragging BETWEEN tiers and the Move buttons
-   are unaffected. */
-function cardRecencyTs(t){
-  var a=lastActivityTs(t);
-  var d=t.dateAdded?new Date(t.dateAdded).getTime():0;
-  return Math.max(a||0,isNaN(d)?0:d);
+/* Newest-first ordering within a tier, keyed on the SOURCE date the card
+   shows -- the email received datetime / meeting date parsed out of t.source
+   (e.g. "Inbox - Nathan Kirwan, 2026-08-26 14:51", "21 Aug 2026 Granola
+   meeting", "19/08/2026", "Inbox 2026-06-08 15:58"). That printed date is
+   what Kevin reads on the card, so that is what drives order -- NOT the
+   Command Centre-internal activity/dateAdded recency the branch used before.
+   Precedence, each step only used when the previous found nothing:
+     (1) an explicit dated token in t.source -- ISO YYYY-MM-DD[ HH:MM], or
+         DD/MM/YYYY, or "DD[-DD] Mon YYYY", or bare "Mon YYYY" (-> day 1);
+         if several appear, the LATEST wins;
+     (2) t.dateAdded;
+     (3) the earliest "[DD Mon YYYY]" stamp in the action log;
+     (4) 0 (sorts last).
+   Never throws on a missing/malformed value. This supersedes manual intra-tier
+   drag order; dragging BETWEEN tiers and the Move buttons are unaffected.
+   Ties keep their existing relative order (Array.prototype.sort is stable). */
+function ccMonthIdx(s){
+  return CC_MONTHS[String(s||'').toLowerCase().slice(0,3)];
 }
-function sortByRecency(arr){
+function sourceDateFromText(s){
+  s=String(s||'');
+  var best=0,m,re,v,mo;
+  /* ISO: 2026-08-26  or  2026-08-26 14:51  or  2026-08-26T14:51 */
+  re=/(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{1,2}):(\d{2}))?/g;
+  while((m=re.exec(s))){
+    v=new Date(+m[1],+m[2]-1,+m[3],m[4]?+m[4]:0,m[5]?+m[5]:0).getTime();
+    if(!isNaN(v)&&v>best)best=v;
+  }
+  /* DD/MM/YYYY with optional HH:MM */
+  re=/\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b(?:[ T](\d{1,2}):(\d{2}))?/g;
+  while((m=re.exec(s))){
+    v=new Date(+m[3],+m[2]-1,+m[1],m[4]?+m[4]:0,m[5]?+m[5]:0).getTime();
+    if(!isNaN(v)&&v>best)best=v;
+  }
+  /* "DD Mon YYYY" or "DD-DD Mon YYYY"  e.g. "21 Aug 2026", "17-18 Jun 2026" */
+  re=/\b(\d{1,2})(?:\s*-\s*\d{1,2})?\s+([A-Za-z]{3,9})\.?\s+(\d{4})\b/g;
+  while((m=re.exec(s))){
+    mo=ccMonthIdx(m[2]);
+    if(mo===undefined)continue;
+    v=new Date(+m[3],mo,+m[1]).getTime();
+    if(!isNaN(v)&&v>best)best=v;
+  }
+  /* Bare "Mon YYYY" (no day) -> first of that month */
+  re=/\b([A-Za-z]{3,9})\.?\s+(\d{4})\b/g;
+  while((m=re.exec(s))){
+    mo=ccMonthIdx(m[1]);
+    if(mo===undefined)continue;
+    v=new Date(+m[2],mo,1).getTime();
+    if(!isNaN(v)&&v>best)best=v;
+  }
+  return best;
+}
+function earliestActionTs(t){
+  var acts=t&&t.actions;if(!acts)return 0;
+  if(!Array.isArray(acts))acts=[acts];
+  var earliest=Infinity;
+  acts.forEach(function(a){
+    var m=/^\s*\[(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\.?\s*(\d{4})?/.exec(String(a));
+    if(!m)return;
+    var mo=CC_MONTHS[m[2].toLowerCase()];if(mo===undefined)return;
+    var yr=m[3]?parseInt(m[3],10):new Date().getFullYear();
+    var v=new Date(yr,mo,parseInt(m[1],10)).getTime();
+    if(!isNaN(v)&&v<earliest)earliest=v;
+  });
+  return earliest===Infinity?0:earliest;
+}
+function cardSourceTs(t){
+  var v=sourceDateFromText(t&&t.source);
+  if(v)return v;
+  if(t&&t.dateAdded){var d=new Date(t.dateAdded).getTime();if(!isNaN(d)&&d)return d;}
+  return earliestActionTs(t)||0;
+}
+function sortBySourceDate(arr){
   return arr.slice().sort(function(x,y){
-    var dx=cardRecencyTs(x),dy=cardRecencyTs(y);
-    if(dy!==dx)return dy-dx;
-    return String(x.title||'').localeCompare(String(y.title||''));
+    return cardSourceTs(y)-cardSourceTs(x);   /* newest source date first; stable for ties */
   });
 }
-/* One "Earlier" divider between cards whose most recent activity is today
+/* One "Earlier" divider between cards whose SOURCE date is today or later
    (local midnight -- the same day boundary Work Inbox's briefing uses) and
-   everything older, so Command Centre's board has a visible "today" grouping
-   that lines up with Work Inbox's Today. */
+   everything with an older source date. Only rendered when a tier holds both.
+   Most cards carry a historical source date, so in practice this divider only
+   surfaces once a genuinely same-day item lands in a tier. */
 function isTodayTs(ms){
   if(!ms)return false;
   var m=new Date();m.setHours(0,0,0,0);
@@ -132,10 +193,10 @@ function isTodayTs(ms){
 }
 function cardsWithDayDivider(items){
   var out='',placed=false;
-  var anyToday=items.some(function(t){return isTodayTs(cardRecencyTs(t));});
-  var anyOlder=items.some(function(t){return !isTodayTs(cardRecencyTs(t));});
+  var anyToday=items.some(function(t){return isTodayTs(cardSourceTs(t));});
+  var anyOlder=items.some(function(t){return !isTodayTs(cardSourceTs(t));});
   items.forEach(function(t){
-    if(anyToday&&anyOlder&&!placed&&!isTodayTs(cardRecencyTs(t))){
+    if(anyToday&&anyOlder&&!placed&&!isTodayTs(cardSourceTs(t))){
       out+='<div class="board-day-divider"><span>Earlier</span></div>';
       placed=true;
     }
@@ -151,7 +212,7 @@ function renderBoard(){
     var count=document.getElementById('count-'+tier);
     var allItems=tasks.filter(function(t){return t.tier===tier;});
     var items=showDone?allItems:allItems.filter(function(t){return !t.done;});
-    items=sortByRecency(items);
+    items=sortBySourceDate(items);
     count.textContent=items.length;
     var badge=document.getElementById('badge-'+tier);if(badge)badge.textContent=allItems.length;
     list.innerHTML=cardsWithDayDivider(items);
