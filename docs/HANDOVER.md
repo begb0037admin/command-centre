@@ -1,3 +1,23 @@
+# Handover -- 1 September 2026, ~21:30 UTC (coordinator; Drew rate-limited) -- BOARD UX #15 MERGED: source-date newest-first sort + Outlook-web opener for IMAP cards; "Earlier" divider dropped
+
+## Merged
+**PR #15** `drew/cc-imap-open-email-and-board-ux` -> merge commit `fea8e70f` on `main` (2026-09-01T21:19:39Z). Draft -> ready -> merged after Kevin's literal "approved" on the rendered sort.
+
+`js/app.js` (net +90/-3 vs the pre-branch `main`; `css/styles.css` unchanged from baseline):
+- **Per-tier sort by source date, newest first.** `renderBoard` calls `sortBySourceDate(items)` before rendering each tier. `cardSourceTs(t)` picks the best date: a dated token parsed out of `t.source` free text (`ISO YYYY-MM-DD[ HH:MM]` -> `DD/MM/YYYY[ HH:MM]` -> `DD[-DD] Mon YYYY` -> bare `Mon YYYY`; if several tokens, the latest wins) -> `t.dateAdded` -> earliest `[DD Mon YYYY]` stamp in the action log -> `0` (sorts last). Stable for ties.
+- **Outlook-web opener for IMAP cards.** A task with `webLink`/`messageId` but no real `entryId` gets `openEmailWeb()` instead of the COM `openEmail()`; reads camelCase `webLink` or synthesises an OWA search link from `messageId`; same `https` + `outlook.office.com` / `outlook.office365.com` host allowlist as the existing opener. Pairs with work-inbox #32 (`_cc_mail_key`) -- without that, no IMAP card carries `webLink`/`messageId`, so this branch was inert until #32 landed (merge `6e56ed1e`, ~8 min earlier).
+- **"Earlier" day-divider: built then REMOVED.** Kevin's call. Re-based on the source-date key it would only render on a day when a card's source date is literally today, a small minority of days. `cardsWithDayDivider` / `isTodayTs` / the today-vs-older split / the `board-day-divider` markup and CSS rule are all gone (`grep` for `board-day-divider|cardsWithDayDivider|Earlier` in `js/app.js` on `main` -> 0).
+
+## Behaviour change to be aware of
+Manual **intra-tier** drag order is now superseded by the source-date sort -- a card dragged within its tier re-sorts by date on the next render. **Between-tier** drag and the Move buttons are unaffected. If Kevin later wants intra-tier manual order back, that is a follow-up (a `sort: date | manual` toggle).
+
+## Recovery note
+The coordinator built #15's final commit after a botched intermediate push (a `git/trees` call accepted empty-string blob SHAs; the branch ref was moved to a broken commit `868745c8`, then force-reset back to the good tip `7d8797da` and redone correctly). `main` was never involved; the broken commit is orphaned. Final branch tip `fa624b3c`, merged as `fea8e70f`.
+
+Drew was rate-limited (Anthropic session limit, resets ~02:10 Europe/London) before writing this entry; the coordinator wrote it. Coordinator also updated `work-inbox/HANDOVER.md` with the matching entry (#32 merge + ledger cleanup + #31 parked).
+
+---
+
 # Handover — 27 August 2026, ~09:15 UTC (Drew) — Nathan Kirwan "REF29 UDF - Promotion to UOXP": command-centre task reviewed, NO change made (already accurate); optional draft-link held for approval
 
 ## What this is
