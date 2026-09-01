@@ -379,3 +379,9 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 html{scrollbar-width:thin;scrollbar-color:#d1d5db transparent}
 html::-webkit-scrollbar{width:6px}
 html::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:4px}
+
+/* Board "today" grouping -- divider between cards active today (Work Inbox's
+   day boundary) and older cards. Added 2026-09-01 with the newest-first sort. */
+.board-day-divider{display:flex;align-items:center;gap:8px;margin:9px 2px 8px;user-select:none}
+.board-day-divider::before,.board-day-divider::after{content:"";flex:1;height:1px;background:var(--border)}
+.board-day-divider span{font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--text-very-muted)}
