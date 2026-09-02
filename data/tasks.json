@@ -1155,8 +1155,11 @@
       "[18 Aug 2026] Michael O'Sullivan has provided NHS Pension tier new pay ranges update; Athena notes the team only needs employer contribution rates for statutory reporting. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)",
       "[19 Aug 2026] Michael O'Sullivan provided context on the Balance Period End Matrix process for annual leave year-end and system calendar extension procedures. (email: Michael O'Sullivan - RE: Balance Period End Matrix)",
       "[19 Aug 2026] Julie Hickman provided contact details for 38-day balance department leads: Chemistry (Jenna Boyce, Alexia Leakey), Maths (Emma Harte), GLAM (Becky Fitzek). (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
-      "[20 Aug 2026] Julie Hickman provided update that Chemistry estimates approximately 110 existing work groups to convert for 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
-    ]
+      "[20 Aug 2026] Julie Hickman provided update that Chemistry estimates approximately 110 existing work groups to convert for 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[02 Sep 2026] Julie Hickman confirms Chemistry requires 131 workgroups to be updated and asks Kevin for effort estimate on GLAM capacity. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+    ],
+    "messageId": "LO0SPRMB0017EDD062776109663266368AB72@LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LO0SPRMB0017EDD062776109663266368AB72%40LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608121801281",
@@ -1633,10 +1636,11 @@
       "[27 Aug 2026] Michael confirmed the 131 workgroups list and that all will need amendment to reflect revised Holiday Scheme for 38-day balance. (email: Michael O'Sullivan - 2024 non clinical uplift_Incremental bar changes for Grade 2)",
       "[28 Aug 2026] Marie is coordinating with Michelle and Julie on workgroup update responses; expects discussion with Julie. (email: Michael O'Sullivan - RE: 2024 non clinical uplift_Incremental bar changes for Grade 2)",
       "[30 Aug 2026] Marie providing update on 38-day balance workgroup discussions; she met with Michelle who will discuss responses with Julie on return. (email: Marie Cooksey - RE: changing to 38 day balance - workgroups for updating)",
-      "[02 Sep 2026] Julie Hickman requests effort estimate on updating 131 Chemistry workgroups - this is the blocking decision for September implementation timeline. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+      "[02 Sep 2026] Julie Hickman requests effort estimate on updating 131 Chemistry workgroups - this is the blocking decision for September implementation timeline. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[02 Sep 2026] Simon Burford confirms he will ask Kevin to estimate how many GLAM workgroups the team can take on from GLAM beyond Chemistry's 131. (email: Simon Burford - RE: 38 day balance for departments update and decisions needed)"
     ],
-    "messageId": "LO0SPRMB0017EDD062776109663266368AB72@LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM",
-    "webLink": "https://outlook.office.com/mail/search?query=LO0SPRMB0017EDD062776109663266368AB72%40LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM"
+    "messageId": "CWLP265MB4176CD928473D0EDD95E89CB92B72@CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB4176CD928473D0EDD95E89CB92B72%40CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608271501000",
@@ -1690,7 +1694,8 @@
     "description": "Manager unable to approve leave requests—possible WFM module issue affecting day-to-day leave processing. Michael O'Sullivan received this support call on 1 September and flagged it for attention. Needs diagnostic work and coordination with the WFM team to identify root cause and restore normal leave approval workflow.",
     "origin": "inbox-auto",
     "actions": [
-      "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave)."
+      "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave).",
+      "[02 Sep 2026] Michael O'Sullivan forwards manager leave approval issue for investigation. (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave)"
     ]
   },
   {
@@ -1706,7 +1711,8 @@
     "description": "Michael O'Sullivan assigned this P5 incident directly to Kevin on 1 September for urgent investigation, affecting multiple users who reported the issue. Requires diagnostic and troubleshooting work to identify root cause and resolution path for the affected user group.",
     "origin": "inbox-auto",
     "actions": [
-      "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988)."
+      "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988).",
+      "[02 Sep 2026] Michael O'Sullivan assigns P5 Incident 11706988 directly to Kevin for investigation, affecting multiple users reporting the issue. (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988)"
     ]
   }
 ]
