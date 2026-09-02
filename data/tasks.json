@@ -248,9 +248,12 @@
       "[TODO] Confirm Asta Palmer's involvement in delivery.",
       "[TODO] Confirm Marie Cooksey sign-off on spend.",
       "[AWAITING] Access Group consultant to make contact and agree delivery timeline (within 3 weeks of approval).",
-      "[19 Aug 2026] Kevin replied to Alan Quirke and Marie Cooksey approving the Holiday Records 3 Reports project and confirming it is ready to schedule with Access Group. (email: Kevin (sent to: 'Alan Quirke'; Marie Cooksey) - RE: #External# PeopleXD Insight Reporting â€“ Quote Request for Holiday Records Reports)"
+      "[19 Aug 2026] Kevin replied to Alan Quirke and Marie Cooksey approving the Holiday Records 3 Reports project and confirming it is ready to schedule with Access Group. (email: Kevin (sent to: 'Alan Quirke'; Marie Cooksey) - RE: #External# PeopleXD Insight Reporting â€“ Quote Request for Holiday Records Reports)",
+      "[02 Sep 2026] Conor O'Shea proposes initial call on Friday 18 September at 14:00 for Holiday Records project; Kevin needs to confirm availability. (email: Conor O'Shea - RE: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)"
     ],
-    "dateAdded": "2026-06-11"
+    "dateAdded": "2026-06-11",
+    "messageId": "LOYP123MB30223D91DA4A5713E58287DB8AB72@LOYP123MB3022.GBRP123.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LOYP123MB30223D91DA4A5713E58287DB8AB72%40LOYP123MB3022.GBRP123.PROD.OUTLOOK.COM"
   },
   {
     "id": "t021",
@@ -978,9 +981,12 @@
       "[17 Aug 2026] Simon clarifies that Company 90 should be ignored for now as it was set up only for WFM workgroup attachment purposes. (email: Simon Burford - RE: Balance Period End Matrix)",
       "[17 Aug 2026] Simon continues discussion with Andrew Goff on testing approach for DTP1092 College Staff into PXD, noting the need to test the actual solution before go-live. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[18 Aug 2026] Michael O'Sullivan confirms that the clone from UOXP into UOXC was completed successfully and all post-clone activities are complete; this resolves the environment refresh work for Company 90 testing. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
-      "[19 Aug 2026] Michael O'Sullivan confirms the decision to proceed with clone from UOXP into UOXC only, scheduled by Access Group. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)"
+      "[19 Aug 2026] Michael O'Sullivan confirms the decision to proceed with clone from UOXP into UOXC only, scheduled by Access Group. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
+      "[02 Sep 2026] Simon Burford confirms API_USER account in UOXU has been configured with Company 90 restriction and system is ready for integration re-test. (email: Simon Burford - API_USER account)"
     ],
-    "dateAdded": "2026-08-07"
+    "dateAdded": "2026-08-07",
+    "messageId": "CWLP265MB4176CB1C902A5FAAFEF57CE392B72@CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB4176CB1C902A5FAAFEF57CE392B72%40CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608100901260",
@@ -1626,8 +1632,11 @@
       "[27 Aug 2026] Michael has confirmed the 131 workgroups list was expected and will need amendment to reflect revised Holiday Scheme; provides clarification on scope. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )",
       "[27 Aug 2026] Michael confirmed the 131 workgroups list and that all will need amendment to reflect revised Holiday Scheme for 38-day balance. (email: Michael O'Sullivan - 2024 non clinical uplift_Incremental bar changes for Grade 2)",
       "[28 Aug 2026] Marie is coordinating with Michelle and Julie on workgroup update responses; expects discussion with Julie. (email: Michael O'Sullivan - RE: 2024 non clinical uplift_Incremental bar changes for Grade 2)",
-      "[30 Aug 2026] Marie providing update on 38-day balance workgroup discussions; she met with Michelle who will discuss responses with Julie on return. (email: Marie Cooksey - RE: changing to 38 day balance - workgroups for updating)"
-    ]
+      "[30 Aug 2026] Marie providing update on 38-day balance workgroup discussions; she met with Michelle who will discuss responses with Julie on return. (email: Marie Cooksey - RE: changing to 38 day balance - workgroups for updating)",
+      "[02 Sep 2026] Julie Hickman requests effort estimate on updating 131 Chemistry workgroups - this is the blocking decision for September implementation timeline. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+    ],
+    "messageId": "LO0SPRMB0017EDD062776109663266368AB72@LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LO0SPRMB0017EDD062776109663266368AB72%40LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608271501000",
@@ -1643,8 +1652,11 @@
       "[27 Aug 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting).",
       "[27 Aug 2026] Michael confirms Kevin has already accepted the 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)",
       "[27 Aug 2026] Michael confirmed Kevin has already accepted the 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )",
-      "[30 Aug 2026] Michael confirms Kevin's prior acceptance of 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)"
-    ]
+      "[30 Aug 2026] Michael confirms Kevin's prior acceptance of 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[02 Sep 2026] Michael O'Sullivan confirms Kevin's prior acceptance of 28 September Cross-Team Process Improvement Working Group meeting and Otter's request for HR Systems attendance. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)"
+    ],
+    "messageId": "CWLP265MB18424072377979FFD4BA97A780AD2@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB18424072377979FFD4BA97A780AD2%40CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608271801020",
