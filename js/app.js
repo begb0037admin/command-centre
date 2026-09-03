@@ -423,16 +423,17 @@ function cardHTML(t){
      tasks; that write path is unrelated to and unaffected by this opener). */
   var emailIcon='';
   if(t.sourceType==='codex-graph'){
-    var _cgHasLink=!!(t.web_link||t.display_url||t.webLink||t.messageId);
+    var _cgHasLink=!!(t.web_link||t.display_url||t.webLink);
     emailIcon='<button class="card-icon"'+(_cgHasLink?'':' style="opacity:.45"')
       +' title="'+(_cgHasLink?'Open email in Outlook web':'Email link unavailable for this task')
       +'" onclick="openEmailWeb(event,this)">&#9993;</button>';
   }else if(t.entryId){
     emailIcon='<button class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</button>';
-  }else if(t.webLink||t.messageId){
+  }else if(t.webLink){
     /* Inbox pipeline task pulled via IMAP: no Outlook COM EntryID exists,
-       so open the stored OWA deep-link (or one synthesised from the
-       internet Message-ID) in Outlook web instead. Same host allowlist. */
+       so open the stored OWA deep-link (imap_mail._owa_search_link:
+       from:+subject+received: scoped search) in Outlook web instead.
+       Same host allowlist. */
     emailIcon='<button class="card-icon" title="Open email in Outlook web" onclick="openEmailWeb(event,this)">&#9993;</button>';
   }
   var editIcon='<button class="card-icon" title="Rename" onclick="startRename(event,\''+t.id+'\')">&#9998;</button>';
@@ -561,14 +562,10 @@ function openEmailWeb(e,btn){
     if(url||!c)return;
     try{var u=new URL(c);if(u.protocol==='https:'&&hosts[u.hostname])url=c;}catch(_){}
   });
-  if(!url&&t.messageId){
-    var mid=String(t.messageId).replace(/^<|>$/g,'');
-    if(mid)url='https://outlook.office.com/mail/search?query='+encodeURIComponent(mid);
-  }
   if(url){
     window.open(url,'_blank','noopener');
   }else{
-    alert('No usable Outlook Web link is stored for this task (an https link on outlook.office.com / outlook.office365.com, or an internet Message-ID, is required), so the email cannot be opened from here.');
+    alert('No usable Outlook Web link is stored for this task (an https link on outlook.office.com / outlook.office365.com is required), so the email cannot be opened from here.');
   }
 }
 
