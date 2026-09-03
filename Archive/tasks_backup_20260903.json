@@ -1,0 +1,1718 @@
+[
+  {
+    "id": "t002",
+    "title": "Smart notes escalation -- Cority ticket 00476764",
+    "tier": "week",
+    "source": "H&S Roadmap 08/06",
+    "emailRef": "Cority 00476764 / CCC-19664",
+    "summary": "Cority confirmed smart notes post-save editing is intentional; chasing firm delivery date for CCC-19664.",
+    "description": "Smart notes in Cority CoreEHS+ (GX2) do not allow edits after save and close. Raised November 2025, dev ref CCC-19664. Cority's official position (confirmed 08 Jun 2026 by Mehran Riaz, support leadership): this is an INTENDED feature -- not a bug or missing feature. Cority classify the request to allow post-save edits as an enhancement, and it is NOT on their current roadmap. No timeline will be provided. Beta/early access ('enhanced access support') requires Premium Support, which Oxford does not have. Oxford has no named account manager -- we are in a pool.",
+    "actions": [
+      "[Nov 2025] Ticket 00476764 raised by James -- smart notes cannot be edited after save/close.",
+      "[08 Jun 2026] Mehran Riaz (support leadership) responded: feature is INTENDED behaviour, classified as enhancement, NOT on roadmap. No timeline. Premium Support required for beta access (Oxford does not have it). No named account manager -- pool model.",
+      "[16 Jun 2026] Raised at Cority PUG with Christopher Sanders. PUG acknowledged smart notes as outstanding; Kevin to escalate directly with Cority for a firm delivery date.",
+      "[TODO] Chase Cority for firm delivery date on CCC-19664 draft/save functionality.",
+      "[TODO] Decide whether to pursue via sales/account route or accept as a known limitation and communicate to stakeholders."
+    ],
+    "dateAdded": "2026-06-08",
+    "done": true
+  },
+  {
+    "id": "t003",
+    "title": "Flex points plan before Marie returns",
+    "tier": "tomorrow",
+    "source": "SK 1-1 08/06",
+    "emailRef": "",
+    "summary": "Holiday Records 3 reports approved (2,800 flex points, case 69001638). Chemistry committed. T&C: 3-month grace period after expiry.",
+    "description": "2,935 flex points with expiry 29 June 2026. Chemistry bulk deletion (Â£525) committed. Holiday Records - 3 Reports Created (case 69001638) approved 24 June: 2,800 flex points total. Key T&C: where FlexPoints expire, customer has 3 months from date of expiry to utilise them -- 29 June expiry gives Oxford until ~29 September 2026.",
+    "actions": [
+      "[10 Jun 2026] Athena to produce requirements document for Holiday Records reports.",
+      "[15 Jun 2026] Kevin requested quote from Access Group for Holiday Records Reports (case 69001638).",
+      "[20 Jun 2026] Ann-Marie Topliss confirmed case 69001638 transitioned to Optimisation Services.",
+      "[24 Jun 2026] Quote received (Alan Quirke, V1.0). 2,800 flex points -- Payroll Consultant 2.5 days (1,750pts) + WFM Consultant 1.5 days (1,050pts).",
+      "[24 Jun 2026] Flex points approved by Kevin for case 69001638. Awaiting scheduling from Access Group.",
+      "[TODO] Confirm Marie Cooksey sign-off on spend.",
+      "[TODO] Confirm remaining balance after Chemistry and Holiday Records commitments."
+    ],
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000781E167640000",
+    "done": true
+  },
+  {
+    "id": "t006",
+    "title": "Org hierarchy documentation and process",
+    "tier": "week",
+    "source": "SK 1-1 08/06",
+    "emailRef": "",
+    "summary": "SharePoint guidance not updated when drive moved; written response to Simon and team alignment meeting needed.",
+    "description": "The shared drive was moved to SharePoint but guidance documentation was not updated to reflect the new location. Only Kevin and Lee were managing the migration, so other team members did not know where to find documents. Simon has raised this and Kevin needs to respond in writing before recommending an alignment meeting.",
+    "actions": [
+      "[08 Jun] Issue identified and raised by Simon -- shared drive moved to SharePoint, guidance not updated.",
+      "[09 Jun 2026] Root cause confirmed: documents exist and are correctly placed; signposting is the issue.",
+      "[TODO] Write response to Simon explaining the situation and confirming documents are accessible.",
+      "[TODO] Recommend alignment meeting to get whole team up to speed on SharePoint structure and org hierarchy documentation.",
+      "[TODO] Touch base with Michael separately on this.",
+      "[17 Aug 2026] Julie Hickman has acknowledged Athena's work on intranet hyperlinks as a positive step toward resolving the documentation and guidance issues raised by Simon. (email: Julie Hickman - RE: Review of intranet hyperlinks)"
+    ],
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7BD0000",
+    "done": true
+  },
+  {
+    "id": "t009",
+    "title": "DPIA -- awaiting Marie's signature",
+    "tier": "parked",
+    "source": "",
+    "emailRef": "",
+    "summary": "PeopleXD DPIA v0.2 complete through Stage 6; awaiting Marie Cooksey's Stage 7 signature. SoundCloud being piloted at Oxford for DPIAs -- WFM DPIA proposed as pilot case.",
+    "description": "PeopleXD Data Protection Impact Assessment (DPIA) is at v0.2 and complete through Stages 1-6. Stage 7 (sign-off) requires Marie Cooksey's signature before it can be sent to the Information Compliance Team (DPO review). Preliminary DPO review comments have been addressed. Separately, SoundCloud is being piloted at Oxford for third-party security assessments and DPIAs -- the WFM DPIA (already completed by Kevin using AI support) has been proposed as the pilot case to avoid a later migration.",
+    "actions": [
+      "[Apr 2026] DPIA v0.2 completed -- Stages 1-6 substantially complete, preliminary DPO comments addressed.",
+      "[AWAITING] Marie Cooksey to formally sign Stage 7 before submission to Information Compliance. Chase as and when.",
+      "[24 Jun 2026] Raised at HR Systems Roadmap Meeting -- SoundCloud being piloted at Oxford for DPIAs and security assessments. Proposal to use WFM DPIA as pilot case to avoid later migration. Kevin to be included in SoundCloud team contact.",
+      "[AWAITING] SoundCloud team contact to be made; Kevin to be included in that conversation.",
+      "[TODO] Once SoundCloud contact made, agree migration of WFM DPIA into SoundCloud as the pilot case.",
+      "[04 Jul 2026] Marie unavailable due to annual leave; Kevin to assess whether signature can be expedited or if chase should be deferred until her return.",
+      "[02 Aug 2026] Marie confirmed that DPIA v0.2 should be routed through SoundCloud pilot before formal sign-off, to test for issues or duplication. Three related DPIAs are in scope: PeopleXD (main), WFM, and college data item. Kevin confirmed as lead for progressing this work through SoundCloud pilot.",
+      "[02 Aug 2026] Kevin awaiting SoundCloud pilot invitation to proceed with migrating the three in-scope DPIAs (PeopleXD, WFM, college data item) into the pilot platform for testing before formal sign-off.",
+      "[04 Aug 2026] Marie's email acknowledges the DPIA work completed; Kevin should await her final sign-off to proceed to Information Compliance Team. (email: Marie Cooksey - RE: draft DPIA for college record to PXD)",
+      "[21 Aug 2026] SoundCloud pilot contact was proposed on 24 Jun 2026 but no follow-up documented across 85 meetings through Aug 2026; Kevin to confirm whether SoundCloud team contact was made and, if not, chase initiation of pilot invitation for migrating the three in-scope DPIAs (PeopleXD, WFM, college data item).",
+      "[27 Aug 2026] Kevin has shared an updated DPIA v0.5 document, indicating progress toward stage 7 sign-off by Marie. (email: Kevin Lelitte - Kevin Lelitte shared \"PeopleXD - Data Protection Impact Assessment v0.5\" with you)",
+      "[27 Aug 2026] Kevin shared updated DPIA v0.5 document; progress on signature/review process. (email: Kevin (sent to: Kevin Lelitte) - Kevin Lelitte shared \"PeopleXD - Data Protection Impact Assessment v0.5\" with you)",
+      "[30 Aug 2026] Kevin shared updated PeopleXD Data Protection Impact Assessment v0.5 document for editing. (email: Kevin (sent to: <kevin.lelitte@admin.ox.ac.uk>) - Kevin Lelitte shared \"PeopleXD - Data Protection Impact Assessment v0.5\" with you)",
+      "[02 Sep 2026] Kevin shared PeopleXD Data Protection Impact Assessment v0.5 document, advancing DPIA toward sign-off phase. (email: Kevin (sent to: <kevin.lelitte@admin.ox.ac.uk>) - Kevin Lelitte shared \"PeopleXD - Data Protection Impact Assessment v0.5\" with you)"
+    ],
+    "dateAdded": "2026-06-08",
+    "status": "Awaiting Marie Cooksey's Stage 7 signature (chase as and when). SoundCloud being piloted at Oxford for DPIAs â€” WFM DPIA proposed as pilot case; awaiting team contact.",
+    "entryId": "",
+    "done": false,
+    "messageId": "Share-5d5f5175-3174-4417-ba0a-3d43243a5193.rcid_fe4535a2-5089-2001-b577-73738e240075.wiid_53b3a540-0820-428c-85b1-47c02ca06d5c.r0-ioe_1-tid_cc95de1b-97f5-4f93-b4ba-fe68b852cf91-rh_uks_notifyp-aid_dcb9d3cf-648f-418c-9514-c9ffdb84baa0@odspnotify",
+    "webLink": "https://outlook.office.com/mail/search?query=Share-5d5f5175-3174-4417-ba0a-3d43243a5193.rcid_fe4535a2-5089-2001-b577-73738e240075.wiid_53b3a540-0820-428c-85b1-47c02ca06d5c.r0-ioe_1-tid_cc95de1b-97f5-4f93-b4ba-fe68b852cf91-rh_uks_notifyp-aid_dcb9d3cf-648f-418c-9514-c9ffdb84baa0%40odspnotify"
+  },
+  {
+    "id": "t010",
+    "title": "Odyssey annual review -- schedule with Marie",
+    "tier": "parked",
+    "source": "",
+    "emailRef": "",
+    "summary": "Odyssey review deferred pending Marie's return; monitoring period ongoing with no issues reported.",
+    "description": "Odyssey annual review with Marie has been an open action since at least April 2026. A decision was made on 1 June to monitor Odyssey and mark resolved if no issues arise within 2-3 weeks.",
+    "actions": [
+      "[01 Jun] Decision: monitor for 2-3 more weeks, mark resolved if no issues.",
+      "[AWAITING] Marie's return to schedule annual review."
+    ],
+    "dateAdded": "2026-06-08"
+  },
+  {
+    "id": "t012",
+    "title": "Vacancy alert email retest -- case 68388326",
+    "tier": "parked",
+    "source": "",
+    "emailRef": "Case 68388326",
+    "summary": "Vacancy notification email config needs retesting in OUXU and OUXZ; parked until Kevin is at fuller hours.",
+    "description": "Access Group support case open since April 2026. Kevin updated the vacancy notification config in Back Office but the opening text in outgoing emails is still not updating. AG support agent Iulian asked Kevin to re-test in both OUXU and OUXZ environments.",
+    "actions": [
+      "[Apr 2026] Case 68388326 raised -- vacancy alert email opening text not updating after config change.",
+      "[PARKED] Re-test in OUXU and OUXZ, capture email output, attach to case 68388326. Action when at fuller hours.",
+      "[07 Aug 2026] Julie Hickman has follow-up points on Patch Release 28.0.157 UAT update, including NI Number column addition to Employee Search; may be relevant to vacancy alert retest if UI changes affect the email config. (email: Julie Hickman - RE: Patch Release 28.0.157 â€“ UAT Update)",
+      "[10 Aug 2026] Julie Hickman thanked Michael for an update on P5 Task 50969697 (Incident 11693608), confirming progress on Access Group work. (email: Julie Hickman - RE: P5 Task assigned to your team - Task# 50969697 for Incident# 11693608)"
+    ],
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431B0000",
+    "done": true
+  },
+  {
+    "id": "t029",
+    "title": "DTP1334 SHSMS Evaluation -- review Helen Harbour briefing and weightings",
+    "tier": "parked",
+    "source": "Helen Harbour 17-18/06",
+    "emailRef": "DTP1334 SHSMS Evaluation Briefing - placeholder",
+    "summary": "Helen Harbour sent SHSMS evaluation briefing (17 Jun, RED) and weightings spreadsheet (18 Jun). Review before progressing POC documentation with Chris.",
+    "description": "Helen Harbour sent two emails in the week of 17-18 June related to DTP1334: a SHSMS Evaluation Briefing placeholder document and a Strategic H&S Modular System requirements evaluation weightings spreadsheet (Sonhal Mistry also involved). Both are directly relevant to the POC work Kevin needs to do with Christopher Sanders (t022).",
+    "actions": [
+      "[17 Jun 2026] Helen Harbour sent DTP1334 SHSMS Evaluation Briefing placeholder -- RED, act today (now overdue).",
+      "[18 Jun 2026] Helen Harbour sent Strategic H&S Modular System requirements evaluation weightings (Sonhal Mistry also on thread).",
+      "[TODO] Review Helen's evaluation briefing document.",
+      "[TODO] Review the evaluation weightings spreadsheet.",
+      "[TODO] Use both to inform POC meeting notes before sending to Chris (t022).",
+      "[30 Jun 2026] Kevin reviewed Helen's briefing and weightings against requirements catalogue; identified that compliance requirements (legal/regulatory) should be assessed separately from operational weightings, and flagged incident reporting (1.2) classification as inconsistent with RIDDOR obligations â€” to be raised with Helen and Caroline by Chris and James.",
+      "[30 Jun 2026] Christopher Sanders confirmed that compliance-related requirements will be flagged and assessed separately in the tender process with Caroline Gow; Neil Carveth (H&S SME) will verify the compliance requirements list. Incident reporting (1.2) clarified as a \"could\" requirement since system migration is out of current project scope but a potential future consideration.",
+      "[02 Jul 2026] Kevin sent written comments on the H&S Management System project requirements to Christopher Sanders and James Salas Guillen ahead of the meeting he could not attend. (email: Kevin (sent to: Christopher Sanders; James Salas Guillen) - Re: Strategic H&S modular system project requirements)",
+      "[03 Jul 2026] Christopher Sanders sent follow-up requirements relating to legal compliance from the SHSMS evaluation session, with weightings split by category. (email: Christopher Sanders - RE: Weightings spreadsheet)"
+    ],
+    "dateAdded": "2026-06-23",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078B27E4F60000",
+    "done": true
+  },
+  {
+    "id": "t013",
+    "title": "Insight module update -- Lindsey Spriggs",
+    "tier": "parked",
+    "source": "",
+    "emailRef": "",
+    "summary": "Overdue reply to Lindsey Spriggs on Insight module automated reminders; parked until fuller hours.",
+    "description": "Action item #6 from CDR/PD working group meeting originally due 17 February 2026. Kevin was asked to confirm whether automated reminder functionality can be enabled within the Insight module. Lindsey Spriggs chased on 13 April 2026.",
+    "actions": [
+      "[13 Apr 2026] Lindsey Spriggs chased for update -- no reply sent.",
+      "[PARKED] Reply to Lindsey with update on Insight module reminder investigation. Action when at fuller hours.",
+      "[07 Jul 2026] Sarah Rowles requested manager access in UOXU for Insight reporting investigation, related to automated reminder functionality confirmation. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)",
+      "[03 Aug 2026] Lindsey Spriggs has sent draft agenda for CDR/PD working group meeting on 11 Aug; this is the forum where Kevin's action on Insight automated reminder functionality (originally due 17 Feb, chased 13 Apr) will be discussed or expected. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group - 11 Aug)",
+      "[07 Aug 2026] Lindsey Spriggs has sent a Teams meeting link for the bi-monthly CDR/PD working group, likely including the Insight module reminder functionality item (action #6 originally due 17 Feb 2026). (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)"
+    ],
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998630000",
+    "done": true
+  },
+  {
+    "id": "t016",
+    "title": "DSE data feed issues -- post go-live",
+    "tier": "week",
+    "source": "H&S Roadmap 08/06",
+    "emailRef": "",
+    "summary": "SBS exclusion (Azure CR 126017 needs Kevin sign-off); James managing contractors and email-less users.",
+    "description": "DSE data feed went live on Wednesday 3 June 2026. Three issues emerged: 1. SBS opted out but were included -- Azure CR 126017 drafted by Tony Boydell, needs Kevin sign-off. 2. Contractors missing from PXD feed -- manual addition needed. 3. Users without university emails -- James investigating with supplier.",
+    "actions": [
+      "[03 Jun 2026] DSE data feed went live -- three issues identified post go-live.",
+      "[23 Jun 2026] Tony Boydell drafted Azure CR 126017 to exclude SBS users from DSE feed. James and Kevin both need to review.",
+      "[TODO] Kevin to review and sign off Azure CR 126017 (SBS exclusion from DSE feed).",
+      "[AWAITING] James to progress contractor manual addition and email-less user resolution with supplier.",
+      "[25 Jun 2026] Kevin requested access to the Azure CR 126017 link from Tony Boydell to review the SBS user exclusion change. (email: Kevin (sent to: Tony Boydell; James Salas Guillen; Erika Braverman) - Re: DSE System - exclude SBS users )",
+      "[26 Jun 2026] Reviewed CR 126017. State: Approved (Sprint 45 - ORMS, Card and CRM Halo). Requirement: exclude staff where Primary appointment.universityOrgLevel3 = \"MQ\" (Said Business School) from DSE CSV extract. Acceptance criteria confirmed: SSO users with MQ primary appointment excluded; non-MQ users included. BA/PO: Tony Boydell (Azure Integration Platform, People Data).",
+      "[04 Jul 2026] Kevin submitted his nomination for Michael O'Sullivan to the Awards for Excellence scheme, following his earlier draft email. (email: Kevin (sent to: Jonathan Roger) - Re: Nominations open for this yearâ€™s Awards for Excellence Scheme (deadline: 3 July 2026))",
+      "[31 Jul 2026] James confirms SBS user exclusion from DSE has been successfully tested in TEST environment with sample outputs verified. (email: James Salas Guillen - RE: DSE System - exclude SBS users )",
+      "[02 Aug 2026] James confirms funding approval for SBS exclusion from DSE upload and references progress on the change. (email: James Salas Guillen - RE: DSE System - exclude SBS users )",
+      "[02 Aug 2026] Tony Boydell confirmed the SBS exclusion change has already been completed and sample outputs posted to TEST file share. (email: Tony Boydell - Re: DSE System - exclude SBS users )",
+      "[27 Aug 2026] Simon confirms there is test data in UOXU but uncertain if DWH environment points at it; discussion scheduled for tomorrow to prioritise roadmap for DWH, Fabric and other items. (email: Simon Burford - RE: Business rules for Data Warehouse)"
+    ],
+    "dateAdded": "2026-06-09",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890ED0000",
+    "done": true
+  },
+  {
+    "id": "t017",
+    "title": "Iris / ECO Online -- enhancements, funding, new contact",
+    "tier": "parked",
+    "source": "H&S Roadmap 08/06",
+    "emailRef": "",
+    "summary": "All Iris enhancements on hold pending H&S funding approval; new contact Michael Hanson not yet established.",
+    "description": "All Iris/ECO Online enhancements are on hold pending H&S office funding decisions. Two funding requests are with Brian (H&S) awaiting sign-off. The previous Iris supplier rep has been replaced by Michael Hanson -- contact not yet established.",
+    "actions": [
+      "[08 Jun 2026] Status reviewed -- all enhancements on hold pending H&S office funding approval.",
+      "[AWAITING] Brian (H&S) to sign off two funding requests.",
+      "[TODO -- on return] Establish contact with Michael Hanson at ECO Online / Iris.",
+      "[10 Aug 2026] Sarah Rowles forwarded Clockify free plan changes notification; Marie is investigating future Clockify use ahead of September deadline. (email: Sarah Rowles - FW: Clockify: Upcoming Free plan changes & options for your team)"
+    ],
+    "dateAdded": "2026-06-09",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43160000"
+  },
+  {
+    "id": "t033",
+    "title": "HR Reporting SSO Migration -- Managed Desktop (Roadmap 179)",
+    "tier": "parked",
+    "source": "Email thread Jan-Jun 2026 / HR Systems Managers Meeting 24/06",
+    "emailRef": "Fw: Managed Desktop upgrade to the SSO login",
+    "summary": "Stalled since March. April deadline passed. Visual Studio 2022 fixes the blocker but licensing not confirmed. Do not migrate further users until VS2022 licensed.",
+    "description": "Migration of HRIS HR Reporting and Tableau users from CONNECT accounts to SSO on the Oxford Managed Desktop. Roadmap item 179. Lead: Kevin, Team: Asta. Project started November 2025 following initial call with IT Services (John Jones, Richard Jessett, Sadiq Abbasi, Desktop Services). Trial user list agreed February 2026: Simon Burford ADMN2716, David Sanders UOHS0054, Asta Palmer OUIT0422, Kevin Lelitte BEGB0037. Henry Acheampong ADMN5896 excluded at Kevin's request. Kevin migrated successfully March 2026 -- no issues. Stuart (Desktop Services) instructed to proceed with remaining users excluding Henry. Project stalled since March 2026; April 2026 deadline passed. Technical blocker identified at Managers Meeting 24 June: Visual Studio 2022 resolves the compatibility issue but is currently on a trial licence only. Do not migrate further users until VS2022 licensing is confirmed. Contacts: Desktop Services dstprojects@it.ox.ac.uk, Sadiq Abbasi, John Jones, Richard Jessett.",
+    "actions": [
+      "[Nov 2025] Initial call with IT Services (John Jones, Richard Jessett, Sadiq Abbasi) -- SSO strategy for HRIS managed desktop users outlined.",
+      "[Feb 2026] Asta sent trial user list to Desktop Services: Simon Burford ADMN2716, David Sanders UOHS0054, Henry Acheampong ADMN5896, Asta Palmer OUIT0422, Kevin Lelitte BEGB0037.",
+      "[Mar 2026] Kevin's account (BEGB0037) unblocked from 'Do Not Migrate' group by Richard Jessett. Kevin migrated successfully -- no issues. Instructed Stuart to proceed with remaining users excluding Henry Acheampong ADMN5896.",
+      "[19 Jun 2026] Project bumped by Kevin -- stalled since March, no progress recorded. April 2026 deadline passed.",
+      "[24 Jun 2026] HR Systems Managers Meeting: Visual Studio 2022 identified as fix for compatibility issue. Currently on trial licence only -- do not migrate further users until VS2022 licensing confirmed.",
+      "[AWAITING] Visual Studio 2022 licensing confirmed before further migrations proceed.",
+      "[TODO] Confirm with Asta current status of remaining trial users (Simon Burford ADMN2716, David Sanders UOHS0054, Asta Palmer OUIT0422).",
+      "[TODO] Agree revised delivery timeline with Desktop Services once VS2022 licensing sorted.",
+      "[TODO] Update user guidance, account provisioning process, and first-line support docs before broader rollout.",
+      "[03 Aug 2026] Simon Burford reports Nexus team have populated six PeopleXD data access groups in Entra ID with user lists provided by Asta on 16 July, advancing the SSO migration work. (email: Simon Burford - FW: Creation of your 6 PeopleXD data access groups in Entra ID)",
+      "[27 Aug 2026] Louise Piper notified all OSM users of current authentication issues affecting login; this may impact HR Reporting SSO Migration work. (email: Louise Piper - OSM: Authentication Issues)"
+    ],
+    "dateAdded": "2026-06-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2E80000"
+  },
+  {
+    "id": "t1781204987882",
+    "title": "Holiday Records - 3 Reports Created -- approved, awaiting scheduling (case 69001638)",
+    "tier": "week",
+    "source": "Inbox 2026-06-11 15:01 / Quote 24/06",
+    "emailRef": "RE: #External# PeopleXD Insight Reporting - Quote Request for Holiday Records Reports",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077C2A011C0000",
+    "summary": "Approved 24 Jun. 2,800 flex points committed. Awaiting Access Group scheduling. Discuss timing at Managers Meeting.",
+    "description": "Access Group Project Scope Document (case 69001638) received and approved 24 June 2026. Scope: 3 Holiday Records reports built by Payroll Consultant (2.5 days, 1,750pts) and WFM Consultant (1.5 days, 1,050pts). Total 2,800 flex points. Reports: Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Access Group T&C: consultant will make contact within 3 weeks of approval to agree delivery timelines. 3-month grace period applies to flex point expiry (29 Jun expiry = use by ~29 Sep 2026). Asta Palmer to be involved in delivery.",
+    "actions": [
+      "[15 Jun 2026] Kevin initiated quote request with Access Group (Mike West).",
+      "[20 Jun 2026] Ann-Marie Topliss confirmed case 69001638 transitioned to Optimisation Services.",
+      "[24 Jun 2026] Quote received (Alan Quirke, V1.0, dated 12 Jun). 2,800 flex points total.",
+      "[24 Jun 2026] Flex points approved by Kevin for case 69001638. Awaiting Access Group consultant to reach out and agree delivery timelines (within 3 weeks of approval per T&C).",
+      "[24 Jun 2026] Raised at HR Systems Managers Meeting. Access Group noted as notoriously slow. Statutory requirement means timeline cannot slip indefinitely. Third week of August: Marie Kay away, statutory returns season. Agreement: Kevin to reach out to team to agree delivery timing collectively, factoring in HEAT, July leave, and ~29 Sep flex point expiry.",
+      "[TODO] Kevin to reach out to team and agree delivery timing collectively -- factor in HEAT, July leave, statutory returns season, and ~29 Sep flex point expiry.",
+      "[TODO] Confirm Asta Palmer's involvement in delivery.",
+      "[TODO] Confirm Marie Cooksey sign-off on spend.",
+      "[AWAITING] Access Group consultant to make contact and agree delivery timeline (within 3 weeks of approval).",
+      "[19 Aug 2026] Kevin replied to Alan Quirke and Marie Cooksey approving the Holiday Records 3 Reports project and confirming it is ready to schedule with Access Group. (email: Kevin (sent to: 'Alan Quirke'; Marie Cooksey) - RE: #External# PeopleXD Insight Reporting â€“ Quote Request for Holiday Records Reports)",
+      "[02 Sep 2026] Conor O'Shea proposes initial call on Friday 18 September at 14:00 for Holiday Records project; Kevin needs to confirm availability. (email: Conor O'Shea - RE: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)"
+    ],
+    "dateAdded": "2026-06-11",
+    "messageId": "LOYP123MB30223D91DA4A5713E58287DB8AB72@LOYP123MB3022.GBRP123.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LOYP123MB30223D91DA4A5713E58287DB8AB72%40LOYP123MB3022.GBRP123.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t021",
+    "title": "FP 68261303 -- Multi Company Setup",
+    "tier": "tomorrow",
+    "source": "Email 15/06 12:54",
+    "emailRef": "RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup",
+    "summary": "Simon updated Conor O'Brien 23 Jun with post-design proposal. Monitor for Conor's response.",
+    "description": "Ongoing multi-company configuration work linked to DTP1092 / REF2029 colleges and halls project. Conor O'Brien (Access Group) is the main AG contact. Simon Burford updated Conor on 23 June with the project team's post-design proposal.",
+    "actions": [
+      "[17 Jun 2026] Kevin sent Conor O'Brien a draft REF2029 load file and Pay Administered By values.",
+      "[23 Jun 2026] Simon updated Conor O'Brien with post-design multi-company setup proposal.",
+      "[AWAITING] Conor O'Brien / Access Group response to Simon's post-design proposal.",
+      "[07 Jul 2026] Crispin Muncaster provided an update on DTP1092 PXD Company 90 testing, relevant to multi-company setup (FP 68261303). (email: Crispin Muncaster - RE: DTP1092 PXD Company 90 Testing)",
+      "[07 Aug 2026] Conor O'Brien has additional work to discuss on multi-company setup and is awaiting confirmation of Kevin's availability next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
+      "[10 Aug 2026] Conor O'Brien has initiated contact regarding multi-company setup progress and is ready to continue the work. (email: Conor O'Brien - Multi Company Setup)"
+    ],
+    "dateAdded": "2026-06-15",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998600000",
+    "done": true
+  },
+  {
+    "id": "t005",
+    "title": "College Data in PXD Project -- set up REF2029 pay admin codes in UOXU",
+    "tier": "today",
+    "source": "SK 1-1 08/06",
+    "emailRef": "",
+    "summary": "40 REF2029 pay admin codes to set up in UOXU; change request raised, awaiting Division Code resolution.",
+    "description": "Pay admin buy codes need to be set up in PeopleXD for DTP1092. Simon created Division 901, ZSD901, Z90101, Z901, Z902 in UOXU on 10 Jun. Division Code linkage to Company Code was blocked pending Conor O'Brien config session (happened 12 Jun). Draft load file sent to Conor 17 Jun. 40 Pay Administered By codes still need setting up in UOXU.",
+    "actions": [
+      "[10 Jun 2026] Simon created Division 901, ZSD901, Z90101, Z90101 (Colleges), Z902 (Permanent Private Halls) in UOXU.",
+      "[12 Jun 2026] Config session with Conor O'Brien re Division Code blocker.",
+      "[17 Jun 2026] Kevin sent draft REF2029 load file to Conor O'Brien.",
+      "[TODO] Set up all 40 Pay Administered By codes in UOXU (list in docs/REF2029_pay_admin_codes.md).",
+      "[AWAITING] Division Code resolution confirmed before proceeding.",
+      "[03 Jul 2026] Tony Boydell sent Acceptance Criteria for Company 10/Company 90 User Scenarios, advancing the testing phase of the DTP1092 PXD Company 90 setup work. (email: Tony Boydell - Re: DTP1092 PXD Company 90 Testing)",
+      "[03 Jul 2026] Crispin Muncaster flagged clarification and guidance needed on DTP1092 Company 90 testing; requests meeting slot. (email: Crispin Muncaster - DTP1092 PXD Company 90 Testing)",
+      "[03 Jul 2026] Crispin Muncaster has requested to move an earlier meeting slot for DTP1092 College staff in PXD work. (email: Crispin Muncaster - DTP1092 College staff in PXD)",
+      "[03 Aug 2026] Crispin Muncaster forwards DTP1092 College Staff into PXD Integrations testing update from Guy Williams regarding progress on the college data project. (email: Crispin Muncaster - FW: DTP1092 College Staff into PXD - Integrations testing)",
+      "[07 Aug 2026] Simon Burford's email to Ewan and Matt references June discussions with Marie about data warehouse feeds for Company 90 configuration, directly relevant to REF2029 pay admin codes setup in UOXU. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[17 Aug 2026] Simon clarifies that Company 90 WFM setup was temporary; requests to ignore Company 90 for now in balance period configuration work. (email: Simon Burford - RE: Balance Period End Matrix)",
+      "[25 Aug 2026] Simon has followed up on DWH test data availability for College Data in PXD project; Kevin should clarify DWH environment setup with IT. (email: Simon Burford - RE: Business rules for Data Warehouse)"
+    ],
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890ED0000",
+    "done": true
+  },
+  {
+    "id": "t024",
+    "title": "Provide reference for Nikolas Sharkey -- URGENT",
+    "tier": "today",
+    "source": "TSS Enquiries 23/06",
+    "emailRef": "Urgent Reference Request for Nikolas Sharkey",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF40000",
+    "summary": "TSS Enquiries requesting urgent reference for Nikolas Sharkey. 48+ hours outstanding -- time-critical.",
+    "description": "TSS Enquiries (Temporary Staffing Service) has requested an urgent reference from Kevin for Nikolas Sharkey, who is being considered for temporary vacancies at the University of Oxford. Kevin is listed as a referee. Received 23 June at 12:11. Now over 48 hours without a response -- employment verification references are time-critical and can block the candidate's placement.",
+    "actions": [
+      "[23 Jun 2026] Reference request received from TSS Enquiries for Nikolas Sharkey -- 48+ hours outstanding.",
+      "[TODO] Open email, complete and return reference for Nikolas Sharkey to TSS Enquiries immediately.",
+      "[30 Jun 2026] Kevin submitted the reference for Nikolas Sharkey via link after the 48-hour delay. (email: Kevin (sent to: Todd Graf) - Re: Reference Request for Nikolas Sharkey)"
+    ],
+    "dateAdded": "2026-06-23",
+    "done": true
+  },
+  {
+    "id": "task-1787072363309",
+    "title": "URGENT -- Organisational Structure Update - August 2026 - FINAL",
+    "tier": "today",
+    "source": "orgstructure@admin.ox.ac.uk / Simon Burford / Sarah Rowles -- email thread",
+    "emailRef": "Organisational Structure Update - August 2026 - DRAFT",
+    "summary": "FINAL version circulated 19 Aug 2026 16:36 by Katherine Corr (orgstructure@admin.ox.ac.uk), superseding the 12 Aug DRAFT -- changes effective through 19 Aug 2026. One correction from the draft: duplicate Oxuniprint Ltd subsidiary entity (XP) removed; minor name changes to entities 8HP0 and E7 at department's request. Full schedule covers Medical Sciences, UAS, and Colleges/Halls L2->L3 restructuring plus a wider Subsidiary Companies cleanup (deletions, renames, new entities). Latest file has migrated to SharePoint on the intranet -- bookmark update needed. System owners of local systems (card database, Salto, Oracle etc.) must reflect these changes and log updates via the Teams group. Simon Burford's PeopleXD/H&S-dashboard mapping question and Sarah Rowles' HESA go-live question (both raised 17 Aug, in response to the draft) remain unanswered in this thread as of the FINAL circulation.",
+    "description": "orgstructure@admin.ox.ac.uk circulated a draft University PACS Organisational Structure update on 12 Aug 2026 (16:22 UTC), covering a wholesale move of College/Society entities from PACS level 2 to level 3, and a large Subsidiary Companies correction. On 17 Aug 2026 (10:22 UTC) Simon Burford (HR Systems Analysis and Insights Manager, HR Systems, People Department, simon.burford@admin.ox.ac.uk) forwarded the notice to Kevin, Christopher Sanders, James Salas Guillen, Michael O'Sullivan and David Johnson (cc Marie Cooksey, Sarah Rowles, Athena Artuso), assessing limited PeopleXD impact but proposing 3 new management units (0C01 Kellogg, 0C02 St Cross, 0C03 Reuben) to properly align the Societies area, and flagging a knock-on risk to org-structure mapping tables in the data warehouse -- specifically including the H&S mapping David Johnson and Christopher Sanders built for the H&S dashboard -- plus a possible HESA reporting impact (societies now returned for HESA). On 17 Aug 2026 (11:28 UTC) Sarah Rowles replied-all to Simon (cc Marie Cooksey, Athena Artuso; Kevin still a recipient) asking when this goes into the live environment, since dept code drives the Exemption Rules for the HESA Module and she has a full HESA generate (the last one) planned for Monday 24 August 2026; she noted Societies currently pass the Exemption Rules so should be unaffected, but flagged the rules may need updating for next year.\n\nOn 19 Aug 2026 (16:36) Katherine Corr (orgstructure@admin.ox.ac.uk) circulated the FINAL version, subject 'RE: Organisational Structure Update - August 2026 - FINAL', superseding the 12 Aug DRAFT. Changes are effective up to and including 19 Aug 2026. One correction made from the draft: a duplicate Oxuniprint Ltd subsidiary entity (XP) was removed; minor name changes were also made to entities 8HP0 and E7 at the relevant department's request. The full change schedule covers Medical Sciences, UAS, and Colleges/Halls (L2->L3 restructure), plus a wider Subsidiary Companies cleanup (deletions, renames, new entities). The latest file now lives on the intranet, migrated to SharePoint -- existing bookmarks need updating. System owners/admins of local systems (card database, Salto, Oracle etc.) need to reflect these changes and should log updates via the Teams group. As of the FINAL circulation, Simon Burford's PeopleXD/H&S-dashboard mapping question and Sarah Rowles' HESA go-live question (both raised 17 Aug in response to the draft) had not been answered in this thread. No reply from Kevin has been found in Sent Items as of the last live Outlook search (18 Aug).",
+    "actions": [
+      "[12 Aug 2026] orgstructure@admin.ox.ac.uk circulated the draft PACS org-structure update; errors/omissions deadline set for Wed 19 Aug 2026.",
+      "[17 Aug 2026] Simon Burford forwarded internally, proposing 3 new PeopleXD management units for Colleges/Societies alignment and flagging H&S-dashboard mapping + HESA reporting risk.",
+      "[17 Aug 2026] Sarah Rowles replied to Simon asking for the live-environment date, given her planned 24 Aug HESA generate.",
+      "[TODO] Kevin to decide whether/how to respond before the 19 Aug 2026 deadline -- either to orgstructure@admin.ox.ac.uk directly (errors/omissions) or within the internal Simon/Sarah discussion (HR Systems' position on the Societies management-unit restructuring).",
+      "[AWAITING] Simon Burford's answer to Sarah Rowles' question on go-live timing -- not yet received as of 18 Aug 2026.",
+      "[19 Aug 2026] Michael O'Sullivan has forwarded a PeopleXD platform maintenance notice for Friday 28 August between 8-10 pm that will impact services during the org structure implementation period. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
+      "[19 Aug 2026] Organisational Structure Update - August 2026 FINAL received 19 Aug 2026 16:37 with updated org structure effective through 19 August. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - FINAL)"
+    ],
+    "notes": "Retrieval + logging task only, no reply drafted or sent (Kevin's explicit instruction). Only one Simon appears in this thread (Simon Burford) -- no ambiguity to flag.",
+    "dateAdded": "2026-08-18",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000"
+  },
+  {
+    "id": "task-1787044968753",
+    "title": "Auto job-alert notification email -- text changes (Laura Porter)",
+    "tier": "today",
+    "source": "Laura Porter (Talent Mobility Specialist, People Dept) -- email thread",
+    "emailRef": "Auto job alert notification email - text changes",
+    "summary": "Approved wording changes to the auto job-alert vacancy notification email stuck on an Access Group config issue since Jul 2026; pending on Kevin checking the support ticket and sending Laura the sign-off screenshot, not on Laura or Access Group.",
+    "description": "Text changes to the auto job-alert vacancy notification email (internal vs external wording, an unsubscribe text tweak), requested by Laura Porter (Talent Mobility Specialist, People Department) and approved by Laura and Philip Taylor (HR) in Feb 2026. Implementation stalled on a backend issue: Access Group (PeopleXD/back-office supplier) could not get the config change to actually apply to outgoing notification emails, despite it saving correctly and Access Group's own side showing it as correct. Kevin raised a fresh Access Group support ticket on 8 Jul 2026, then took 2 weeks' leave, telling Laura he'd pick it up towards the end of July and send her a screenshot for sign-off before pushing to Live once verified working. Laura's 8 Jul reply set no deadline -- she wished him a good holiday and said to touch base when he's back. This is pending on Kevin's own follow-up, not Laura's or Access Group's -- neither of them is currently the blocker.",
+    "actions": [
+      "[28 Jan 2026] Laura Porter (Talent Mobility Specialist) raised requested text changes to the auto job-alert vacancy notification email.",
+      "[Feb 2026] Wording changes approved by Laura Porter and Philip Taylor (HR).",
+      "[08 Jul 2026] Kevin raised a fresh Access Group support ticket after the config change saved correctly but failed to apply to outgoing notification emails; went on 2 weeks' leave, telling Laura he'd pick it up towards the end of July and send a screenshot for sign-off before pushing to Live.",
+      "[08 Jul 2026] Laura replied wishing Kevin a good holiday and said to touch base when he's back -- no deadline set, not the blocker.",
+      "[TODO] Check the Access Group support ticket status, confirm the config change actually applies to outgoing notification emails, then send Laura the screenshot for sign-off before pushing to Live.",
+      "[18 Aug 2026] Michael O'Sullivan has forwarded FYI notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm; this may impact job alert notification email testing if scheduled. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
+    ],
+    "notes": "",
+    "dateAdded": "2026-08-18",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000"
+  },
+  {
+    "id": "t2608111331410",
+    "title": "URGENT -- Cority Applicant Data Import file (James Salas Guillen / Simon Burford thread)",
+    "tier": "today",
+    "source": "Inbox - James Salas Guillen, 2026-08-11 13:11",
+    "emailRef": "Cority - Applicant Data Import file",
+    "entryId": "",
+    "summary": "5-message live thread (James Salas Guillen / Simon Burford) on Cority Applicant Data Import file formatting/mapping issues, incl. a screenshot showing real applicant PII in the raw production file. Simon's latest message (18 Aug 17:56) directly asks Kevin two open questions plus whether he has anything from Lee's handover on how this report was built outside the standard QA process. Unanswered as of this retrieval.",
+    "description": "FULL RETRIEVAL (18 Aug 2026, Drew) -- HIGH PRIORITY / URGENT per Kevin's explicit instruction. This entry has been enriched with full verbatim email bodies (not paraphrases) specifically so Adam can cross-reference against the HR Functional Analysis Knowledge Base / CORITY-FEASIBILITY.md -- that cross-reference is Adam's domain, not assessed here.\n\nTHREAD IDENTITY: Outlook ConversationID E9A6B1561BB4476ABA498A3167C89560, subject \"Cority - Applicant Data Import file\" (no \"Fw:\"-prefixed variant of this subject was found live in Inbox, subfolders, or Sent Items -- searched case-insensitively with RE:/FW: prefix stripped across all 34 folders in the Inbox tree, incl. Inbox/H&S/Cority, plus Sent Items; Kevin has not replied on this thread -- zero matches in Sent Items). 5 messages total, all between James Salas Guillen (Senior Functional Analyst) and Simon Burford (HR Systems Analysis and Insights Manager), addressed to/cc'ing Kevin throughout. A separate, unrelated earlier thread also titled just \"Cority\" (Marie Cooksey to James/Kevin, cc Christopher Sanders, 10 Apr 2026, different ConversationID B94B83BEB2CF4FA9A435E5A8BE527605, asking for an up/downstream system-impact schematic) surfaced in the same search but is NOT part of this chain -- noted for completeness only.\n\nCHRONOLOGICAL FULL THREAD:\n\n[1] 11 Aug 2026 13:11 UTC -- James Salas Guillen -> Kevin Lelitte, cc Simon Burford. Subject: \"Cority - Applicant Data Import file\".\nHi Kevin and Simon,\n\nI wanted to provide an update on the Cority Applicant Data Import.\n\nFollowing several uploads/imports in Production with real data, we've identified several formatting issues in the source report that require manual clean-up before the file can be successfully uploaded. These issues were not apparent during earlier testing and only became evident once we started processing production data.\n\nThe current report requires the following manual amendments before it can be uploaded to Cority:\n1. Remove quotation marks from all fields (e.g. \"First Name of Employee\").\n2. Ensure all column headers are contained within a single header row. Currently, the headers split across multiple rows when converted to CSV.\n3. Format the Date of Birth field as a date only (dd/mm/yyyy) with no time component.\n4. Ensure the file contains all 27 expected columns and corresponding headers even if no data is available.\n\nIdeally, if the above changes can be implemented within the report itself, the report should be exported directly to CSV rather than Excel to eliminate the additional conversion and clean-up steps currently required.\n\nAs previously discussed, there may be an opportunity to implement these changes directly within the PXD reporting module, which would remove the need for ongoing manual work.\n\nIn addition, I have identified what appears to be a potential mismatch in the column mapping between our report and Cority. I currently have a support ticket open with the Cority support team to investigate this further. If the issue turns out to be on our side, we may also need to adjust the report column order accordingly.\n\nWould it be possible to review whether these report changes can be made within PXD (RECSUP20_Applicant Cority Interface File)? Making these amendments at source would significantly reduce the manual effort required each time the file is processed for import.\n\nBest wishes,\nJames Salas, Senior Functional Analyst, HR Systems | People Department | University of Oxford\n\n[2] 18 Aug 2026 11:55 UTC -- Simon Burford replies (RE:).\nHi James,\n\nI'm sure this is possible to do.\n\nHowever, when I save the report as CSV and open it in notepad++ I see the following: [embedded screenshot -- see \"Attachment note\" below; the column headers to me look like they are in one row already, so how are you currently getting/viewing the CSV where it's split over multiple rows?]\n\nQuotation marks in this file only exist where there is a comma in the data field, to prevent the columns breaking (e.g. in the screenshot above the division name \"MATHS, PHYSICAL & LIFE SCIENCES\" has a comma in it, so it adds quotes to stop the file interpreting MATHS as one column and PHYSICAL & LIFE SCIENCES as the next column). I'm assuming that this is expected behaviour and Cority can handle this?\n\nThe date of birth field is clearly an issue so this can hopefully be sorted, the headers are just the names of the text boxes but I have an idea of how this could be fixed so fingers crossed, but it definitely has commas denoting the columns even if the data is blank, so that should be fine.\n\nMany thanks,\nSimon Burford, HR Systems Analysis and Insights Manager, HR Systems | People Department | University of Oxford\nATTACHMENT NOTE: this message carries an embedded screenshot (image004.png, 48219 bytes) of the actual live file \"RECSUP20_Applicant Cority Interface File_V1.csv\" open in Notepad++. Opened and viewed directly (not just noted). The screenshot shows: (a) the current column headers are generic auto-generated names (Textbox7, Textbox3, Textbox5, Textbox9, Textbox11, Textbox15... at least 32 distinct Textbox-labelled columns visible), not human-readable labels -- corroborating both James's and Simon's header discussion; (b) REAL, LIVE APPLICANT PERSONAL DATA is visible in the data rows -- full names, dates of birth, home addresses, phone numbers, personal/institutional email addresses, and job/grade/department detail for multiple real individuals. This is production personal data, not test/dummy data. Deliberately NOT reproduced verbatim in this log entry (or anywhere else) beyond this structural description -- duplicating real applicants' PII into a second data store (this dashboard) was judged to add exposure risk without adding decision-useful value; the original screenshot remains only in the source Outlook message. Flagging the fact of real PII being screenshotted into an email thread for visibility, not assessing whether that itself is a concern -- that judgment belongs to Kevin/Adam, not Drew's retrieval role. All other attachments across this thread (13 total across the 5 messages) are repeated signature-logo images (17545/15482/3934/3395 bytes, byte-size-identical across every message) -- confirmed not distinct content. No actual .csv/.txt data file was ever attached as a real attachment anywhere in this thread -- only this one screenshot of it.\n\n[3] 18 Aug 2026 13:02 UTC -- Simon Burford replies (RE:), follow-up questions.\nHi both,\n\nAnother couple of questions.\n\nDo you need to retain the spaces in the column headings? Or would it be ok to have titles like Applicant_Number, Applicant_Title, First_name_of_employee etc?\n\nSecondly, how was this report created? I can't see a copy of it on the QA server and I can't see a change request for it so it doesn't seem to have followed the standard approach to report development and deployment.\n\nMany thanks,\nSimon Burford\n\n[4] 18 Aug 2026 16:41 UTC -- James Salas Guillen replies (RE:), answers inline (\"in red\" in the original -- colour is lost in plain-text export, reconstructed as attributed answers below).\nHi Simon,\n\nThank you very much for looking into this. I have added my responses in red [inline in the quoted message -- reconstructed below since plain-text export flattens colour]:\n\n- On \"do headers need to retain spaces / exact labels\": \"The column headings do not need to retain the spaces and do not necessarily need to have the exact labels. As long as the columns are in the correct order, the file should import correctly. The headings simply make it easier for us to diagnose any issues if the upload fails.\"\n- On \"how was this report created / not on QA server / no change request\": \"This is a question for @Kevin, as I do not have direct access to this report. At the moment, I have been relying on a member of the FA team to export it for me.\"\n- On the notepad++ header-row discrepancy: \"This issue appears to occur only when the Excel file is converted to CSV format, and the behaviour is not consistent. Hopefully, this will not be an issue when the dataset is exported directly to CSV from the PXD reporting module.\"\n- On the quotation-marks-around-commas question: \"This makes sense. However, the upload process currently flags this as an error. I'll raise this with the consultant during tomorrow's meeting to see whether there is anything we can do to address it.\"\n\nBest wishes,\nJames Salas\n\n[5] 18 Aug 2026 17:56 UTC -- Simon Burford replies (RE:) -- MOST RECENT MESSAGE, thread currently ends here, nothing further found live.\nThanks for the response James.\n\nI am starting to think that it might be worth exploring if we can set up an automated export of a CSV to a file location. Do you have a network folder that you would want CSV files to be saved to? Presumably there's a location that is currently being used by whoever in the FA team is exporting the file now?\n\nTwo additional questions (sorry!)\n1 - How does Cority want null values to be handled? I think there's different options for how null values can be exported, I'm pretty sure we could export as the following: [blank] / NULL / N/A / -. I think by default it's exporting as the first option, i.e. absolutely no value, but I would want to explicitly set the fields to do this if we were to set up some automated process, just in case the global defaults change, so please confirm.\n2 - Does Cority expect UTF-8 encoding? This looks like the default encoding for automated CSV exports so just need to check that this is ok for Cority?\n\nUpon further investigation it looks like Lee might have created the report and perhaps it was still in testing when he left? Although it seems to be being used as a live interface file, so I'm really not sure. @Kevin Lelitte if you have anything to add from what Lee handed over when he left that would be helpful.\n\nMany thanks,\nSimon Burford\n\nSTATUS: OPEN, unanswered by Kevin. Simon's message [5] contains two direct open questions plus an explicit @Kevin tag asking whether Kevin has anything from Lee's handover about how/why this report (RECSUP20_Applicant Cority Interface File) was created outside the standard QA/change-request process, given it's being used as a live production interface file. This is the specific pending decision/input needed from Kevin -- not a general \"review\" note.\n\nCROSS-REFERENCE FLAG FOR ADAM: this report (RECSUP20_Applicant Cority Interface File) and its formatting/mapping issues sit squarely in the Cority H&S system expansion Adam tracks in CORITY-FEASIBILITY.md. Content assessment (e.g. whether the column-mapping mismatch, PXD reporting-module change, or the \"who built this and was it ever QA'd\" question affects the feasibility work) is explicitly Adam's call, not made here.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: James Salas Guillen - Cority - Applicant Data Import file).",
+      "[11 Aug 2026] James has provided an update on the Cority Applicant Data Import following Production uploads/imports; Kevin should review and action as needed. (email: James Salas Guillen - Cority - Applicant Data Import file)",
+      "[18 Aug 2026] Simon has provided technical details on the Cority Applicant Data Import file format issue when saved as CSV in Notepad++. (email: Simon Burford - RE: Cority - Applicant Data Import file)",
+      "[18 Aug 2026] Simon Burford has added further questions about column headings and CSV formatting for the Cority Applicant Data Import file. (email: Simon Burford - RE: Cority - Applicant Data Import file)",
+      "[18 Aug 2026] Simon Burford is exploring automated CSV export options for the Cority Applicant Data Import, building on James Salas Guillen's earlier responses. (email: Simon Burford - RE: Cority - Applicant Data Import file)",
+      "[18 Aug 2026] HIGH PRIORITY/URGENT -- full thread retrieved live via Outlook COM (Drew): 5 messages total (James Salas Guillen / Simon Burford), all verbatim bodies logged in description; one embedded screenshot opened and confirmed to show real applicant PII in the raw Cority import file (not reproduced here, flagged only); confirmed no reply from Kevin exists in Sent Items; confirmed no 'Fw:'-prefixed variant of this subject exists anywhere in the mailbox.",
+      "[TODO] Kevin to answer Simon Burford's two open questions from the 18 Aug 17:56 message (null-value handling for an automated CSV export; UTF-8 encoding confirmation) and to confirm/deny whether Lee's handover included anything about how/why the RECSUP20_Applicant Cority Interface File report was originally created outside the standard QA/change-request process.",
+      "[MONITOR] Cross-reference against Adam's CORITY-FEASIBILITY.md (HR Functional Analysis Knowledge Base) -- dispatched separately by Kevin; content assessment is Adam's domain, not Drew's.",
+      "[19 Aug 2026] James Salas Guillen confirmed with Cority consultant that quotation marks should be accepted by the system for applicant data import. (email: James Salas Guillen - RE: Cority - Applicant Data Import file)",
+      "[21 Aug 2026] Kevin replied to Simon Burford and James Salas Guillen clarifying that the Cority Applicant Data Import report was originally built by Grace, not Lee, and has been handed over. (email: Kevin (sent to: Simon Burford; James Salas Guillen) - Re: Cority - Applicant Data Import file)",
+      "[01 Sep 2026] Sarah Johnson introduces Victoria Myatt from Cority as consultant for the Cority Consultancy project preparation. (email: Sarah Johnson - University of Oxford: Cority Consultancy)"
+    ],
+    "dateAdded": "2026-08-11",
+    "priority": "urgent",
+    "notes": "Retrieval + full-unpack + priority-escalation task only (Drew) -- no reply drafted or sent (Lauren is handling any draft separately, per Kevin's instruction). Existing auto-created task updated in place per Kevin's explicit instruction, not duplicated. Screenshot attachment in message [2] contains real applicant PII -- opened and viewed, deliberately not reproduced verbatim in this record."
+  },
+  {
+    "id": "t035",
+    "title": "WFM / GLAM Rostering -- set up resolution meeting",
+    "tier": "today",
+    "source": "HR Systems Managers Meeting 24/06",
+    "emailRef": "",
+    "summary": "GLAM pulled out at last minute. Three waves outstanding (SBS, PEDS, GLAM). Blocking Sarah's UC dashboards. Set up meeting: Kevin, Simon, Marie, Michelle, Julie.",
+    "description": "GLAM decided at the last minute they did not have capacity to load rostering data into WFM. One wave was loaded, one was not. Three areas are now outstanding: SBS, PEDS, GLAM. This is blocking Sarah from running UC dashboards and reports. Handover notes from Michael were shared on 23 June. A separate resolution meeting is needed to establish what wasn't loaded and why, agree an approach, and produce an action plan. Meeting attendees: Kevin, Simon, Marie, Michelle, and potentially Julie given her proximity to the project. Note: WFM adoption is split -- staff who never used TeamSeer are positive; those who did are making direct comparisons, but TeamSeer was never calculating correctly. The recommendation is to bring vocal blockers like Steph Sparks into future system procurement from the start.",
+    "actions": [
+      "[23 Jun 2026] Michael shared handover notes on WFM rostering status.",
+      "[24 Jun 2026] Raised at HR Systems Managers Meeting -- three areas outstanding (SBS, PEDS, GLAM). GLAM did not load rostering data at last minute. Blocking Sarah's UC dashboards and reports.",
+      "[TODO] Set up resolution meeting -- Kevin, Simon, Marie, Michelle, and potentially Julie. Agenda: understand what wasn't loaded and why, agree approach, produce action list, address GLAM rostering."
+    ],
+    "dateAdded": "2026-06-25"
+  },
+  {
+    "id": "t027",
+    "title": "P5 Incident# 11687334 -- LOD agreement question",
+    "tier": "today",
+    "source": "Simon Burford / Michael O'Sullivan Jun 2026",
+    "emailRef": "RE: P5 Task assigned to you - Task# 50960484 for Incident# 11687334",
+    "summary": "Simon copied in Marie asking if there is an agreement with LOD. Michael added scope context. Kevin to review and respond if relevant.",
+    "description": "A P5 incident (#11687334) has task #50960484 assigned. Simon Burford copied in Marie Cooksey asking whether there is an agreement with LOD covering the issue. Michael O'Sullivan added a comment about original scope. Kevin needs to review the thread.",
+    "actions": [
+      "[Jun 2026] P5 Incident# 11687334 -- Task# 50960484 assigned. Simon looped in Marie re LOD agreement.",
+      "[TODO] Review thread -- determine if Kevin holds relevant information about LOD agreement and whether a response is needed."
+    ],
+    "dateAdded": "2026-06-23",
+    "done": true
+  },
+  {
+    "id": "t1781099896490",
+    "title": "Follow up on Scoping Session with Sophie Levy",
+    "tier": "parked",
+    "source": "Inbox 2026-06-08 15:58",
+    "emailRef": "RE: Scoping Session update",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F690000",
+    "summary": "Sophie Levy has had no contact in two months and needs a current update on the scoping work.",
+    "description": "Sophie Levy has not heard from Kevin in two months and is seeking an update. She references April 2026 information and needs clarity on project status.",
+    "actions": [
+      "[11 Jun 2026] Sophie Levy chased for an update after two months with no contact.",
+      "[PARKED] Reconnect with Sophie and provide update when at fuller hours.",
+      "[22 Aug 2026] Scoping session progressed: PO ref E22033553 issued by Rachel Midgley on 17 Jul 2026 and shared with Sophie Levy and Cority finance (Micia Cardozo) to proceed with invoice raising. Sophie confirmed closure in their system and flagged urgency for invoice submission before month-end budget deadline.",
+      "[22 Aug 2026] Kevin confirmed funding approval with James as main contact for work arrangement and requested initiation of consultant discussions to plan delivery approach, sequencing, and timelines; prioritized work items include Compliance reports, Primary job positions business rules, Teams/Outlook integration, Health surveillance business rules, and subquery optimization, with statement of work reattached for alignment."
+    ],
+    "dateAdded": "2026-06-10"
+  },
+  {
+    "id": "t030",
+    "title": "Cority SFTP production feed error -- 22 June",
+    "tier": "parked",
+    "source": "Cority Integration Platform 22/06",
+    "emailRef": "[ERROR] Cority Employee Import Log File - 2026-06-22 17:15",
+    "summary": "Cority production data feed SFTP connection failed 22 Jun. James managing -- Kevin to confirm resolved.",
+    "description": "The Cority Integration Platform reported an SFTP connection error on 22 June at 17:15 during the scheduled employee data import. James Salas Guillen is managing the correspondence with Edward Demetillo (Cority). Kevin needs to confirm the error is resolved.",
+    "actions": [
+      "[22 Jun 2026] Cority Integration Platform reported SFTP connection error for employee import at 17:15.",
+      "[MONITOR] James managing -- confirm production feed error has been resolved.",
+      "[TODO] Check with James that 22 Jun SFTP error is resolved and feed running correctly.",
+      "[25 Jun 2026] Cority SFTP connection error confirmed on 22 June at 17:15; CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-06-22 17:15)",
+      "[02 Aug 2026] Moved to Parked - CHI Team notified and working the SFTP fix; external, not an open action for Kevin.",
+      "[19 Aug 2026] Cority Integration Platform reported another SFTP connection error on 14 August at 17:00; the CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-14 17:00)",
+      "[19 Aug 2026] Cority Employee Import successful on 19 Aug 2026 at 14:27 - previous SFTP error from 14 Aug has been resolved. (email: Cority_Integration_Platform_Notifications@Cority.com - [Success] Cority Employee Import Log File for OxfordUniversity - 2026-08-19 14:27)",
+      "[25 Aug 2026] Automated notification: OSM email listener has been re-enabled after weekend processing pause; no action required. (email: Louise Piper - RE: OSM: No incoming emails will be processed this weekend)",
+      "[31 Aug 2026] Cority SFTP connection error logged 28 August 17:00 during employee import; similar to 22 June incident - requires urgent investigation. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-28 17:00)"
+    ],
+    "dateAdded": "2026-06-23",
+    "entryId": ""
+  },
+  {
+    "id": "t2608171727070",
+    "title": "SHMS Tender (DTP1334) Session (final) on Microsoft Teams",
+    "tier": "parked",
+    "source": "Inbox - Christopher Sanders, 2026-08-17 12:09",
+    "emailRef": "HSMS Tender Session (the final one)",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ADFEA7630000",
+    "summary": "",
+    "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the final HSMS (Health & Safety Management System) tender session. This is a meeting attendance commitment that requires Kevin's participation today.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[17 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - HSMS Tender Session (the final one)).",
+      "[17 Aug 2026] Meeting reminder received for final HSMS tender session scheduled for today. (email: Christopher Sanders - HSMS Tender Session (the final one))",
+      "[21 Aug 2026] Attended final HSMS tender session; next priorities are chasing Entra ID team on admin guide publication (target: 11 Sep handover to Brian), aggregating evaluator scores for supplier shortlist (early Sep), and scheduling resourcing meeting with Simon and Marie on return to confirm October resource and squad model ahead of 25 Sep revised roadmap deadline.",
+      "[21 Aug 2026] Kevin replied to Simon and James clarifying that the Cority Applicant Data Import report was originally built by Grace, not Lee, and has been handed over. (email: Kevin (sent to: Simon Burford; James Salas Guillen) - Re: Cority - Applicant Data Import file)"
+    ]
+  },
+  {
+    "id": "t025",
+    "title": "Support cover w/c 6 July -- plan needed today",
+    "tier": "tomorrow",
+    "source": "Julie Hickman 23/06",
+    "emailRef": "RE: Support cover for first two weeks in July",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007A0EB860F0000",
+    "summary": "Both Michael AND Emma off w/c 1 July. No first-line support cover that week. Plan needed today.",
+    "description": "Julie Hickman confirmed on 23 June that both Michael O'Sullivan AND Emma are on leave during the week commencing 6 July 2026. This leaves no first-line HR Systems support cover for that week. Kevin needs to decide who covers, what can be deferred, and whether Simon Burford or Marie Cooksey need to be informed or involved.",
+    "actions": [
+      "[23 Jun 2026] Julie Hickman confirmed Michael AND Emma both absent w/c 6 July. No cover currently in place.",
+      "[24 Jun 2026] Raised at HR Systems Managers Meeting -- Kevin was working on a plan at FA catch-up that morning.",
+      "[TODO] Identify who can provide first-line support cover w/c 6 July.",
+      "[TODO] Notify Simon Burford and/or Marie Cooksey of the gap.",
+      "[TODO] Confirm cover arrangements and communicate to team.",
+      "[02 Aug 2026] Closed - target date (w/c 6 July) has passed by four weeks; task as written is moot.",
+      "[05 Aug 2026] Kevin signalled to Simon on 31 July that he is undergoing physiotherapy and provided a personal update on his recovery status. (email: Kevin (sent to: Simon Burford) - Re: Surgery update - Sign off another week)"
+    ],
+    "dateAdded": "2026-06-23",
+    "done": true
+  },
+  {
+    "id": "t040",
+    "title": "Work Inbox -- render CC Today/This Week tasks as cards in priority panel",
+    "tier": "tomorrow",
+    "source": "Kevin 25/06",
+    "emailRef": "",
+    "summary": "Work Inbox should fetch tasks.json and render CC Today/This Week tasks as cards in priority panel. Each card: title, status, Email tag (opens email via openmail://), CC tag (opens CC task).",
+    "description": "Work Inbox and Command Centre work in tandem. Currently the CC button appears on work-inbox priority cards only when an email has been linked to a CC task by Phase 3.6. The gap: CC Today/This Week tasks that have no current email (e.g. t015 -- originating email is 22 days old, outside the 50-email fetch window) never appear in work-inbox at all. Kevin's workflow: scan Work Inbox first for morning overview, click CC button to go straight into the task. This should work for all active CC tasks, not just ones with a recent email. Card design: two visible tags on the card face -- Email tag (clickable, opens email via openmail:// using entryId, only shown if entryId is set) and CC tag (links to Command Centre task). The email open tag is more naturally at home in Work Inbox than in CC since WI is email-first. Cards visually distinct from inbox email cards -- CC-sourced label so Kevin knows at a glance where they came from. Exclude done tasks and Parked tier.",
+    "actions": [
+      "[25 Jun 2026] Feature scoped by Kevin -- CC Today/This Week tasks should appear in Work Inbox priority panel with CC button. Originating issue: t015 not visible in work-inbox because its email is 22 days old and outside the 50-email fetch window.",
+      "[25 Jun 2026] Card design refined -- two tags on card face: Email tag (openmail:// via entryId, shown only if entryId set) and CC tag (links to Command Centre). Email open is more relevant in WI than CC since WI is email-first; both tags should appear in both dashboards but Email tag is the primary action in WI.",
+      "[TODO] Implement in work-inbox index.html: fetch tasks.json from CC repo on load (cache-busted).",
+      "[TODO] Render Today-tier CC tasks in work-inbox Today priority section; This Week-tier in This Week section.",
+      "[TODO] Each card: title, status field, Email tag (openmail:// if entryId set), CC tag (Command Centre link).",
+      "[TODO] Exclude done tasks (commandCentre_done_v1 localStorage) and Parked tier.",
+      "[TODO] Visual distinction from inbox email cards -- CC-sourced label.",
+      "[TODO] Screenshot and get Kevin approval before pushing to main.",
+      "[30 Jun 2026] Kevin has raised a support portal email update request with Sarah Murphy, likely related to Work Inbox priority panel rendering. (email: Kevin (sent to: Sarah Murphy) - Request for support portal email update)",
+      "[02 Aug 2026] Closed - delivered. Command Centre Today/This Week tasks render as cards in the Work Inbox priority panel via fetch_inbox.py's priorities_today/tomorrow/week pull and renderPriorityCards() in app.js.",
+      "[19 Aug 2026] Michael O'Sullivan has identified discrepancies in the KPI presentation slides (Incident Tasks count on Slide 4 differs from Slide 3). (email: Michael O'Sullivan - RE: Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
+      "[20 Aug 2026] Kevin has declined the Cross-Team Process Improvement Working Group meeting due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group â€“ 1st Meeting)"
+    ],
+    "dateAdded": "2026-06-25",
+    "status": "Scoped 25 Jun â€” build CC task cards in work-inbox priority panel. Cards show title, status, Email tag (openmail://) and CC tag. Today + This Week tiers only, done/parked excluded.",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39ED0000",
+    "done": true
+  },
+  {
+    "id": "t031",
+    "title": "REF attributes via ESS -- end of July deadline (Sarah Rowles)",
+    "tier": "week",
+    "source": "Sarah Rowles 24/06",
+    "emailRef": "REF attributes via ESS",
+    "summary": "Sarah Rowles added Roadmap item: share specific REF attributes with staff via ESS by end of July for appeals process. Nathan looking at it; UDF question to resolve.",
+    "description": "Sarah Rowles has added a new item to the HR Systems Roadmap: sharing specific REF attributes with staff via Employee Self-Service (ESS) by end of July 2026, to enable the REF appeals process. Simon Burford and Kevin Lelitte are named. Nathan (Sarah's team) is looking at it from the technical side. Anne is sharing last time's guidance, but Sarah has flagged this is NOT a like-for-like repeat. Key question in thread: will this require a new UDF to be set up and data loaded, or re-use an existing UDF? Athena Artuso noted that UDFs were set up in advance for future REF cycles, so that stage may be future-proof -- but it depends on what the specific REF attributes are. Sarah has explicitly flagged that the team is thin on the ground in July and this will need FA input, testing time, and business change support for user instructions.",
+    "actions": [
+      "[24 Jun 2026] Sarah Rowles flagged new Roadmap item -- REF attributes via ESS, end of July deadline, for REF appeals process.",
+      "[24 Jun 2026] Managers Meeting: specific attributes confirmed -- REF qualifying contract, Unit of Assessment, academic employment function. RES indicator explicitly excluded (caused offence last cycle). Scoping meeting agreed: Nathan to set up with Kevin, Simon, Michelle. Marie to brief Michelle before invite goes out.",
+      "[TODO] Attend scoping meeting when Nathan arranges (avoid Thu 25 Jun).",
+      "[TODO] Confirm with Nathan/Athena whether existing UDFs cover the required attributes or if new setup is needed.",
+      "[TODO] Assess FA input and testing resource required -- flag capacity risk given thin July (especially w/c 6 Jul).",
+      "[TODO] Ensure business change support (Michelle) is engaged for user instructions -- Anne's guidance from last cycle is not reusable.",
+      "[02 Jul 2026] Nathan Kirwan has sent a draft UDF for recording REF outcomes 2025/26 for Kevin's review as needed. (email: Nathan Kirwan - Copy of Test UDF for REF Outcomes)",
+      "[02 Jul 2026] Kevin notified Nathan Kirwan, Anne Mortimer, Sarah Rowles and Michelle Williams on 29 June that he cannot attend the REF meeting due to a hospital appointment but provided comments on the UDF work. (email: Kevin (sent to: Nathan Kirwan; Anne Mortimer; Sarah Rowles; Michelle Williams) - Re: Staff EES Information for HESA - Research Data Items (REF))",
+      "[07 Jul 2026] Kevin created the REF Outcomes UDF in UOXU and notified Nathan, flagging an important caveat about system behavior that Nathan should be aware of. (email: Kevin (sent to: Nathan Kirwan) - Re: Copy of Test UDF for REF Outcomes)",
+      "[07 Jul 2026] Nathan Kirwan confirmed that REF attributes UDF fields are now displaying correctly in UOXU following Kevin's activation of data labels. (email: Nathan Kirwan - RE: Copy of Test UDF for REF Outcomes)",
+      "[07 Jul 2026] Kevin activated all data labels in UOXU to ensure the 12 fields required for REF attributes are displaying correctly for Nathan's testing. (email: Kevin (sent to: Nathan Kirwan) - Re: Copy of Test UDF for REF Outcomes)",
+      "[10 Aug 2026] Sarah Rowles forwarding Clockify news about upcoming free plan changes relevant to September deadline investigation. (email: Sarah Rowles - FW: Clockify: Upcoming Free plan changes & options for your team)",
+      "[26 Aug 2026] Simon Burford escalates Data Warehouse business rules delay as risk to REF programme; no response since June meeting. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[26 Aug 2026] Ewan Kilgour has scheduled a meeting to discuss Data Warehouse business rules prioritisation, Fabric, and related roadmap items following Simon's escalation on REF programme risk. (email: Ewan Kilgour - RE: Business rules for Data Warehouse)",
+      "[27 Aug 2026] Simon Burford replied to Ewan Kilgour regarding Data Warehouse business rules; noted uncertainty about DWH environment pointing at test data. (email: Simon Burford - RE: Business rules for Data Warehouse)"
+    ],
+    "dateAdded": "2026-06-24",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890ED0000",
+    "done": true
+  },
+  {
+    "id": "t026",
+    "title": "Owner Required -- Task# 50959264 / ServiceReq# 30412906",
+    "tier": "today",
+    "source": "Marie Cooksey 17/06",
+    "emailRef": "FW: Owner Required - Task# 50959264 for ServiceReq# 30412906",
+    "summary": "Marie forwarded an OSM task ownership request to Kevin on 17 Jun. Overdue -- 7 days without action.",
+    "description": "Marie Cooksey forwarded an OSM notification on 17 June: Owner Required for Task# 50959264 linked to ServiceReq# 30412906. Kevin is expected to accept ownership or reassign it.",
+    "actions": [
+      "[17 Jun 2026] Marie Cooksey forwarded OSM Owner Required notification -- Task# 50959264 / ServiceReq# 30412906.",
+      "[TODO] Open email, review Task# 50959264 in OSM, and accept or reassign ownership."
+    ],
+    "dateAdded": "2026-06-23",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
+    "status": "OSM task ownership notification forwarded by Marie 17 Jun â€” review Task# 50959264 in OSM and accept or reassign.",
+    "done": true
+  },
+  {
+    "id": "t023",
+    "title": "Respond to Support Call# 11688462 -- Ash VEA team",
+    "tier": "today",
+    "source": "Email 22/06 Marie Cooksey / Anna Carter-Windle",
+    "emailRef": "Support Call# 11688462",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007871663350000",
+    "summary": "Response required to Support Call# 11688462 re Ash VEA team. Kevin named in thread, response expected.",
+    "description": "Support Call# 11688462 concerns the Ash VEA team. Multiple emails received 22 June from Marie Cooksey and Anna Carter-Windle. Kevin is named in the emails and a response is expected. Inbox AI triage incorrectly classified as FYI based on subject line alone without reading the body.",
+    "actions": [
+      "[22 Jun 2026] Emails received from Marie Cooksey and Anna Carter-Windle on Support Call# 11688462 -- Kevin named, response expected.",
+      "[23 Jun 2026] Task created manually -- inbox triage had incorrectly classified as FYI.",
+      "[TODO] Open thread, read full context, and respond to Support Call# 11688462."
+    ],
+    "dateAdded": "2026-06-23",
+    "done": true
+  },
+  {
+    "id": "t039",
+    "title": "Summer support cover -- training checks during Julie's leave",
+    "tier": "week",
+    "source": "HR Systems Managers Meeting 24/06",
+    "emailRef": "",
+    "summary": "Julie on annual leave for two weeks. Need cover for training checks. Esther flagged as option. Marie to connect Morgan with Julie on Power Automate tool after People Conference.",
+    "description": "Julie Hickman is going on annual leave for two weeks. Training checks have been covered by Otter in the past but only for one week at a time. Esther has been flagged as a possible option to cover the two-week period. Morgan (presenting at the People Conference on 25 June) has built a Power Automate tool based on an Excel spreadsheet that flags training check status -- Marie to ask Morgan to connect with Julie after the conference to review whether it could streamline the process. OSM is building an interface with Cosy to flag things, but timeline is unclear. The mandatory training framework and process is going to People Committee next week or the week after, which will provide clearer ownership and structure.",
+    "actions": [
+      "[24 Jun 2026] Raised at HR Systems Managers Meeting -- Julie on leave for two weeks; training check cover needed. Esther flagged as an option.",
+      "[TODO] Identify who can cover training checks during Julie's two-week absence -- Esther flagged as option, confirm availability.",
+      "[TODO] Marie to ask Morgan to connect with Julie after People Conference (25 Jun) re Power Automate training check tool.",
+      "[19 Aug 2026] Marie Cooksey advised that Beth is also stepping away unwell, leaving no helpdesk cover; Sarah Rowles is coordinating alternative support. (email: Marie Cooksey - RE: Reduced Help Desk Support)"
+    ],
+    "dateAdded": "2026-06-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B021B0000",
+    "done": true
+  },
+  {
+    "id": "task-1782599584762",
+    "title": "Gate 2.0 equivalence test task",
+    "tier": "week",
+    "source": "manual",
+    "summary": "",
+    "description": "",
+    "actions": [
+      "[30 Jun 2026] Kevin updated the ticket (case 69001655) with information for the Dev team and asked Sarah Murphy to escalate. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request â€“ Case 69001655)"
+    ],
+    "notes": "",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
+    "dateAdded": "2026-06-27",
+    "done": true
+  },
+  {
+    "id": "task-1782599630157",
+    "title": "Review UOX case 69001655 catch-up from Maura McGlynn",
+    "tier": "today",
+    "source": "Maura McGlynn",
+    "summary": "",
+    "description": "Maura McGlynn sent a catch-up email on case 69001655 and indicated a Devs call may be arranged. Kevin needs to review the full email content and assess next steps, as this case has been escalated and is currently in progress with the development team.",
+    "actions": [
+      "[30 Jun 2026] Kevin updated case 69001655 ticket with information for the Dev team and is awaiting Sarah Murphy's next steps. (email: Kevin (sent to: Sarah Murphy) - Re: #External# Escalation Request â€“ Case 69001655)"
+    ],
+    "notes": "",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF535000788481EE90000",
+    "dateAdded": "2026-06-27",
+    "done": true
+  },
+  {
+    "id": "t014",
+    "title": "Chemistry bulk delete -- get details from Julie, pass to Reenu",
+    "tier": "today",
+    "source": "Case 68974493",
+    "emailRef": "68974493 / 67938206",
+    "summary": "UAT signed off 23 Jun â€” Reenu proceeding to live. Awaiting confirmation email.",
+    "description": "Bulk deletion of appraisal cycle assignments in PeopleXD for Chemistry department. Appraisal cycle name: '(DO NOT USE) CDR2025Chemistry'. 5,568 staff incorrectly assigned and need to be removed. AG contact: Reenu Delaney (cases 68974493 / 67938206). Payment via flex points (Â£525, approved by Marie).",
+    "actions": [
+      "[Oct 2025] Case 67938206 raised -- Chemistry bulk delete of appraisal assignments.",
+      "[02 Jun 2026] Marie handed case to Kevin as lead.",
+      "[10 Jun 2026] Julie shared OneDrive export of affected employee list. Forwarded to Reenu Delaney at AG.",
+      "[23 Jun 2026] Kevin signed off UAT â€” changes confirmed good, instructed Reenu to proceed to live.",
+      "[AWAITING] Reenu Delaney to confirm live deployment complete and email Kevin.",
+      "[30 Jun 2026] Kevin confirmed to Julie that Chemistry bulk deletion has been actioned and is now live. (email: Kevin (sent to: Julie Hickman) - Re: Access Support Team | 68974493 - New Case)",
+      "[30 Jun 2026] Reenu Delaney confirmed live deployment complete and requested Kevin's sign-off on project closure. Kevin to review live changes and confirm final approval.",
+      "[30 Jun 2026] Kevin reviewed live changes and confirmed final approval for project closure. Chemistry bulk deletion project signed off and complete."
+    ],
+    "dateAdded": "2026-06-08",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500078B270AF50000",
+    "notes": "",
+    "done": true
+  },
+  {
+    "id": "t046",
+    "title": "PACS org structure -- college entities L2 to L3 impact assessment",
+    "tier": "tomorrow",
+    "source": "Teams -- Simon Burford, 29 Jun 2026",
+    "emailRef": "",
+    "summary": "",
+    "description": "Katherine Corr (PACS team) is proposing to adjust how Oxford Colleges are recorded in the org structure -- moving them from L2 to L3 (with an appropriate L2 parent) so they can be used in PXD to record researcher personal data for REF and in the new DARS system. Currently Colleges, Societies and Halls are all set up at L2. Simon Burford asked Kevin on 29 Jun to work with James and Chris to establish the impact from a PeopleXD / H&S Systems point of view, then report back so the management team can pull together a formal response. Martin McGovern (ORMS) and Robert Bradley (IAM) have both confirmed the change would be fine for their respective systems.",
+    "actions": [
+      "[29 Jun 2026] Simon Burford asked Kevin to assess the impact with James and Chris. Kevin confirmed he would pick it up.",
+      "[TODO] Work with James and Chris to assess impact on PeopleXD and H&S systems of moving Colleges from L2 to L3 in org structure.",
+      "[TODO] Report back to Simon so the management team can pull together a formal response to Katherine Corr (PACS).",
+      "[17 Aug 2026] Simon Burford forwards notification of PACS organisational structure changes moving colleges and societies from L2 to L3, effective through 12 August 2026. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)"
+    ],
+    "dateAdded": "2026-06-29",
+    "done": true,
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C00000"
+  },
+  {
+    "id": "t034",
+    "title": "Sickness Absence Reporting -- open absence bug",
+    "tier": "tomorrow",
+    "source": "HR Systems Managers Meeting 24/06 (Simon Burford)",
+    "emailRef": "",
+    "summary": "Existing report not picking up unclosed absences. Pay impact: staff gone into half pay. Kevin to investigate: report fix or system issue.",
+    "description": "The existing sickness absence report is not picking up open-ended (unclosed) absences. This occurs when staff return to work but the absence record in PeopleXD is not closed. As a result, individuals have gone into half pay. Issue flagged by Simon Burford at the HR Systems Managers Meeting on 24 June. A task number was shared in the meeting. Kevin to investigate whether this is a report fix (SQL/RDL) or a system data quality issue requiring a data correction process.",
+    "actions": [
+      "[24 Jun 2026] Issue raised at HR Systems Managers Meeting by Simon Burford -- sickness absence report not picking up open-ended absences. Pay impact confirmed: individuals gone into half pay. Task number shared in meeting.",
+      "[TODO] Retrieve and log the task number shared at the meeting.",
+      "[TODO] Investigate root cause -- determine whether this is a report fix (SQL/RDL) or a system data issue in PeopleXD.",
+      "[TODO] Confirm fix approach and communicate resolution to Simon Burford.",
+      "[03 Jul 2026] Sarah Rowles' email to Henry about OSM request for manager access to UOXU is linked to the sickness absence reporting investigation that Kevin flagged at the HR Systems Managers Meeting. (email: Sarah Rowles - Manager access in UOXU for Insight reporting investigation)",
+      "[14 Aug 2026] Athena Artuso confirms that only Employer Contribution Rates for NHS Pension tiers are relevant for statutory reporting purposes. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)",
+      "[19 Aug 2026] Michael O'Sullivan is flagging potential changes to NHS pension tier bandings that may impact reporting and require configuration updates. (email: Michael O'Sullivan - FW: Support Call# 11701239: NHS Pension tiers new pay ranges)"
+    ],
+    "dateAdded": "2026-06-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007A8968C280000",
+    "done": true
+  },
+  {
+    "id": "task-1785704715215",
+    "title": "Review outstanding Development Insight reports actions with Julie",
+    "tier": "week",
+    "source": "Julie Hickman",
+    "summary": "",
+    "description": "Julie Hickman has flagged outstanding actions related to Development Insight reports following a conversation with Ilona. Kevin needs to review what these actions are and what work is required.",
+    "actions": [
+      "[10 Aug 2026] Julie Hickman has reached out regarding outstanding actions on Development Insight reports following conversation with Ilona. (email: Julie Hickman - Re: My Development Insight reports)",
+      "[10 Aug 2026] Lindsey Spriggs sent CDR/PD working group meeting reminder for tomorrow. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
+      "[17 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan, indicating he is working on tracking and reporting tasks. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
+      "[20 Aug 2026] Kevin declined the Cross-Team Process Improvement Working Group 1st meeting due to schedule conflict, but no new action is required from Kevin regarding the Development Insight reports actions task itself. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[21 Aug 2026] Julie has circulated a Kudoboard for farewell messages for Beth; Kevin should add his message if not yet done. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
+      "[21 Aug 2026] Merged duplicate task task-1785700344174 (\"Review outstanding Development Insight reports actions with Julie\", dateAdded 2026-08-02, byte-identical description) into this record. Duplicate removed from tasks.json; its two unique actions (Lindsey Spriggs CDR/PD reminder, KPI presentation share) consolidated above in date order. This record kept as base because it carried more actions, the most recent action (21 Aug vs 20 Aug), and the correctly-sourced originating email action; its entryId is also the target of an existing live work-inbox tick (eid_...7ADFE8F410000), which is preserved unchanged by keeping this record."
+    ],
+    "notes": "",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000",
+    "dateAdded": "2026-08-02"
+  },
+  {
+    "id": "t2608030857560",
+    "title": "Attend SH&SM Project HR Systems Tender Evaluation Response meeting",
+    "tier": "week",
+    "source": "Inbox - Christopher Sanders, 2026-07-27 11:00",
+    "emailRef": "SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ADFEA7630000",
+    "summary": "",
+    "description": "Christopher Sanders has sent two emails (pt. 1 and pt. 2) with Microsoft Teams meeting links for SH&SM Project HR Systems Tender Evaluation Response. Kevin needs to participate in this evaluation discussion related to the Health & Safety Management System (DTP1334) project.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[03 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)).",
+      "[04 Aug 2026] Crispin has confirmed the 14 August deadline for integrations testing completion. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)",
+      "[10 Aug 2026] Crispin is out of office on annual leave until Monday 17 August, which may impact SH&SM Project meeting attendance. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
+      "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning 17 August; testing work is proceeding with Guy Williams coordinating staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[10 Aug 2026] Guy Williams replied on 10 August confirming integration platforms (INT-STG, BT, AIP) are ready with current staging imports for testing. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Guy Williams confirms all integration platforms are current and ready; testing can proceed as planned for the 14 August deadline. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[10 Aug 2026] Nathan Kirwan confirmed that test scenarios for DTP1092 testing have been set up in UOXU. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)",
+      "[21 Aug 2026] Kevin clarified that the Cority applicant data import report was originally built by Grace, not Lee, and has been handed over with documentation. (email: Kevin (sent to: Simon Burford; James Salas Guillen) - Re: Cority - Applicant Data Import file)"
+    ],
+    "dateAdded": "2026-08-03"
+  },
+  {
+    "id": "t2608031500570",
+    "title": "DTP1092 College Staff into PXD - complete integrations testing by 14 Aug",
+    "tier": "week",
+    "source": "Inbox - Crispin Muncaster, 2026-08-03 14:18",
+    "emailRef": "DTP1092 College Staff into PXD - Integrations testing",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F7E0000",
+    "summary": "",
+    "description": "Crispin Muncaster is requesting confirmation that integrations testing for the College Staff into PXD project can be completed by Friday 14 August 2026. This is a key deliverable for DTP1092 with Guy Williams and Simon involved on the IT side.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[03 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing).",
+      "[04 Aug 2026] Crispin has confirmed integrations testing deadline of Friday 14 August 2026 is reasonable and is requesting confirmation from Kevin. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)",
+      "[10 Aug 2026] Crispin has sent detailed testing scenarios for Company 90 and HRIS Staging imports configuration. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[11 Aug 2026] Crispin Muncaster is out of office on annual leave, returning Monday 17 August; automatic reply confirms absence during testing period. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
+      "[18 Aug 2026] Michael O'Sullivan is forwarding notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm that may impact services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
+      "[25 Aug 2026] Crispin Muncaster sent follow-up on DTP1092 College Staff into PXD testing HRIS staging imports; context indicates testing discussion scheduled. (email: Crispin Muncaster - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+    ],
+    "dateAdded": "2026-08-03",
+    "done": true
+  },
+  {
+    "id": "t2608041500480",
+    "title": "Schedule DTP1092 integrations testing discussion with Crispin",
+    "tier": "tomorrow",
+    "source": "Inbox - Crispin Muncaster, 2026-08-04 10:31",
+    "emailRef": "DTP1092 College Staff into PXD - Testing",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C40000",
+    "summary": "",
+    "description": "Crispin Muncaster needs to discuss testing assumptions and steps for DTP1092 College Staff into PXD integrations testing. A specific meeting is required to align on approach before the 14 August deadline.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[04 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing).",
+      "[04 Aug 2026] Crispin has sent the discussion request for testing assumptions and steps for integrations testing. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing)",
+      "[05 Aug 2026] Crispin has sent the integrations link in readiness for tomorrow's testing meeting. (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)",
+      "[06 Aug 2026] Simon confirmed he can support Asta on Friday 7 August and is expecting Kevin to be back for the testing discussion. (email: Simon Burford - RE: Michael - Annual Leave)",
+      "[07 Aug 2026] Christopher Sanders has sent the Incident Reporting PUG meeting link; this is a separate PUG meeting Kevin needs to attend. (email: Christopher Sanders - Incident Reporting PUG)",
+      "[10 Aug 2026] Crispin sent detailed email outlining testing scenarios and assumptions for DTP1092 College Staff into PXD integrations testing, confirming 14 August deadline. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Crispin sent detailed testing scenarios and HRIS staging import details on 10 August, ready for discussion when Kevin returns. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[10 Aug 2026] DTP1092 College staff into PXD team meeting cancelled due to multiple invites being out of office. (email: Crispin Muncaster - Cancelled: DTP1092 College staff into PXD Team meeting)",
+      "[11 Aug 2026] Simon has been coordinating with the data warehouse team on ensuring only University of Oxford employees are included in feeds. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[14 Aug 2026] Andrew Goff (IT Services) has confirmed next step is to remove the restriction on user accounts (API_USER and API_USER2) for the test environment as part of DTP1092 integrations testing. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[18 Aug 2026] Simon has raised clarification questions about DTP1092 testing assumptions regarding API_USER account restrictions that need resolution before final integrations testing. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[18 Aug 2026] Simon Burford clarified Company 90 setup for WFM integration; ignore for now as it was created only to attach a new default workgroup. (email: Simon Burford - RE: Balance Period End Matrix)",
+      "[18 Aug 2026] Andrew Goff (IT Services) explains that the API_USER restriction lift was Guy's recommendation; technical discussion on DTP1092 testing assumptions and approach. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608060900570",
+    "title": "Attend DTP1092 integrations testing meeting tomorrow (Friday 7 Aug)",
+    "tier": "tomorrow",
+    "source": "Inbox - Crispin Muncaster, 2026-08-05 09:20",
+    "emailRef": "DTP1092 College Staff to PXD - testing meeting",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AA0D4F3C0000",
+    "summary": "",
+    "description": "Crispin Muncaster has sent the integrations link for tomorrow's testing meeting in readiness for the 14 August deadline. Kevin needs to attend and participate in the DTP1092 College Staff to PXD testing discussion.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[06 Aug 2026] Auto-created from inbox triage (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting).",
+      "[06 Aug 2026] Crispin sent the integrations link for tomorrow's testing meeting (Friday 7 August). (email: Crispin Muncaster - DTP1092 College Staff to PXD - testing meeting)",
+      "[07 Aug 2026] Crispin Muncaster has confirmed integrations testing meeting is set up with Nathan's test data in place for tomorrow's meeting. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)",
+      "[10 Aug 2026] Guy Williams provided update on DTP1092 testing; Crispin is managing coordination of staging import scenarios with multiple platforms (INT-STG, BT, AIP) involved. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Guy Williams responded to Crispin about HRIS Staging testing, confirming integration platform status for the testing work. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[10 Aug 2026] Crispin Muncaster is out of office on annual leave until Monday 17 August, affecting coordination of the DTP1092 testing meeting. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
+      "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning Monday 17 August; testing meeting tomorrow (11 Aug) may need rescheduling given his absence. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[10 Aug 2026] Julie Hickman has flagged several follow-up points from Patch Release 28.0.157 UAT testing that may require Kevin's attention on related systems work. (email: Julie Hickman - RE: Patch Release 28.0.157 â€“ UAT Update)",
+      "[14 Aug 2026] Kevin sent email to Marie confirming his return to work on Tuesday 11 August following his absence. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
+      "[17 Aug 2026] Simon Burford's follow-up on 17 Aug confirms he wants to test the actual go-live solution first before proceeding with staging imports. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[17 Aug 2026] Simon forwarded notification of August 2026 PACS organisational structure changes moving colleges and societies from L2 to L3; directly related to college data in PXD project. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)",
+      "[18 Aug 2026] Andrew Goff confirmed the next step for DTP1092 testing is to remove the API_USER account restrictions; currently blocked with no identified owner. (email: Andrew Goff (IT Services) - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608061800540",
+    "title": "Attend Oxford University Evo Pre project meeting in Simon's absence",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-06 16:44",
+    "emailRef": "FW: Oxford University Evo Pre project meeting ",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995760000",
+    "summary": "",
+    "description": "Simon Burford is asking Kevin to attend the Oxford University Evo Pre project meeting in his absence. Julian Williams from IT Services will be attending. Kevin needs to confirm his availability and prepare to represent HR Systems on this project.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[06 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Oxford University Evo Pre project meeting ).",
+      "[07 Aug 2026] Simon has asked Kevin to attend the Oxford University Evo Pre project meeting in his absence, confirming the delegation. (email: Simon Burford - FW: Oxford University Evo Pre project meeting )",
+      "[10 Aug 2026] Simon Burford confirmed to Michael that he can support Asta on Friday 7 August and hopes Kevin will be back to support the following week on DTP1092 work. (email: Simon Burford - RE: Michael - Annual Leave)",
+      "[11 Aug 2026] Meeting was held on 11 August at 15:25; follow-up action or notes from Mike West may require Kevin's response. (email: Mike West - Oxford University Evo Pre project meeting )",
+      "[12 Aug 2026] Meeting reminder notification that the Oxford University Evo Pre project meeting is starting soon. (email: Mike West via Clari Copilot - Your meeting \"Oxford University Evo Pre project meeting \" is starting soon...)"
+    ],
+    "dateAdded": "2026-08-06"
+  },
+  {
+    "id": "t2608061800541",
+    "title": "Attend Incident Reporting PUG meeting",
+    "tier": "week",
+    "source": "Inbox - Christopher Sanders, 2026-08-06 15:11",
+    "emailRef": "Incident Reporting PUG",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000",
+    "summary": "",
+    "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the Incident Reporting PUG. Kevin needs to attend this meeting to participate in the agenda discussion.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[06 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - Incident Reporting PUG).",
+      "[07 Aug 2026] Christopher Sanders has sent the Microsoft Teams meeting link for the Incident Reporting PUG meeting. (email: Christopher Sanders - Incident Reporting PUG)",
+      "[12 Aug 2026] Mike West sent the Microsoft Teams meeting link for the Oxford University Evo Pre project meeting scheduled for 11 August. (email: Mike West - Oxford University Evo Pre project meeting )",
+      "[19 Aug 2026] Michael O'Sullivan forwarded notification of PeopleXD platform maintenance scheduled for Friday 28 August 20:00-22:00 affecting services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
+    ],
+    "dateAdded": "2026-08-06"
+  },
+  {
+    "id": "t2608071200560",
+    "title": "Attend sickness absence survey working group catch-up",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-07 11:04",
+    "emailRef": "Sickness Absence Survey working group",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39ED0000",
+    "summary": "",
+    "description": "Simon Burford has scheduled a regular catch-up for the sickness absence survey working group. Kevin needs to attend this meeting to stay current on the working group's progress.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Sickness Absence Survey working group).",
+      "[07 Aug 2026] Simon Burford has scheduled the sickness absence survey working group catch-up meeting; Kevin needs to attend. (email: Simon Burford - Sickness Absence Survey working group)",
+      "[10 Aug 2026] Lindsey Spriggs has sent the Teams meeting link for the bi-monthly CDR/PD working group; Kevin needs to attend this meeting. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
+      "[11 Aug 2026] Christopher Sanders forwarded the sickness absence survey working group meeting appointment from Simon Burford. (email: Christopher Sanders - FW: Sickness Absence Survey working group)",
+      "[19 Aug 2026] Kevin declined Cross-Team Process Improvement Working Group meeting due to scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group â€“ 1st Meeting)"
+    ],
+    "dateAdded": "2026-08-07"
+  },
+  {
+    "id": "t2608071501070",
+    "title": "Confirm availability for Multi Company Setup discussion with Conor (FP 68261303)",
+    "tier": "tomorrow",
+    "source": "Inbox - Simon Burford, 2026-08-07 12:23",
+    "emailRef": "RE: Multi Company Setup",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C50000",
+    "summary": "",
+    "description": "Simon Burford is on leave next week and has indicated Kevin will be back. Conor O'Brien (Access Group) needs confirmation of Kevin's availability to continue the multi-company configuration work for DTP1092. This is a continuation of existing task t021 but requires immediate confirmation of readiness.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Multi Company Setup).",
+      "[07 Aug 2026] Simon confirmed Kevin will be back next week and can continue multi-company setup discussions with Conor. (email: Simon Burford - RE: Multi Company Setup)",
+      "[10 Aug 2026] Conor O'Brien sent follow-up noting he has additional work completed on Multi Company Setup and seeking availability for next week when Simon is on leave. (email: Conor O'Brien - Multi Company Setup)",
+      "[10 Aug 2026] Conor O'Brien has sent updated work on Multi Company Setup and is awaiting Kevin's availability to continue discussions this week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
+      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin should respond with availability. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder â€“ Occupational Health)",
+      "[17 Aug 2026] Simon Burford continues DTP1092 testing discussions; Simon raising questions about testing approach with Andrew Goff and IT Services on HRIS staging imports. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608071501071",
+    "title": "Respond to Occupational Health appointment offer",
+    "tier": "tomorrow",
+    "source": "Inbox - enquiries@uohs.ox.ac.uk, 2026-08-07 11:54",
+    "emailRef": "PRIVATE & CONFIDENTIAL - Occupational Health",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C50000",
+    "summary": "",
+    "description": "Occupational Health (enquiries@uohs.ox.ac.uk) has offered a revised appointment. Kevin needs to respond with his availability to confirm or reschedule.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health).",
+      "[07 Aug 2026] Occupational Health has sent a revised appointment offer for Kevin to respond to with availability. (email: enquiries@uohs.ox.ac.uk - PRIVATE & CONFIDENTIAL - Occupational Health)",
+      "[10 Aug 2026] Simon confirmed he is on leave next week but Kevin should be back. (email: Simon Burford - RE: Multi Company Setup)",
+      "[11 Aug 2026] Conor O'Brien (Access Group) has sent updated work on Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
+      "[12 Aug 2026] Occupational Health appointment reminder received; Kevin needs to confirm attendance or reschedule. (email: enquiries@uohs.ox.ac.uk - Appointment Reminder â€“ Occupational Health)",
+      "[17 Aug 2026] Simon Burford continuing to discuss DTP1092 College Staff into PXD testing approach with IT Services; technical discussion ongoing with Andrew Goff on API_USER restriction. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608071501072",
+    "title": "Confirm availability for Confidential OH Consultation with Maria Ignat",
+    "tier": "tomorrow",
+    "source": "Inbox - Maria Ignat, 2026-08-07 11:54",
+    "emailRef": "Confidential - OH Consultation ",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A569985E0000",
+    "summary": "",
+    "description": "Maria Ignat has sent a Teams meeting link for a confidential occupational health consultation. Kevin needs to confirm his attendance or reschedule if necessary.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Maria Ignat - Confidential - OH Consultation ).",
+      "[07 Aug 2026] Maria Ignat has sent Teams meeting link for confidential occupational health consultation requiring Kevin's confirmation. (email: Maria Ignat - Confidential - OH Consultation )"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608071801050",
+    "title": "Review volunteering leave pay code configuration work",
+    "tier": "tomorrow",
+    "source": "Inbox - Simon Burford, 2026-08-07 16:21",
+    "emailRef": "Volunteering Leave",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F110000",
+    "summary": "",
+    "description": "Simon Burford has been working on moving Volunteering Leave from a reason code under the manager-only-bookable 'Other Leave' pay code to its own standalone leave type so employees can book it directly. Origin: Access Group Support Case 69049424 (2 Jul 2026) confirmed two options -- open 'Other Leave' to all employees, or create a new standalone Volunteering Leave pay code (Access Group's recommended, cleanest approach, but with reporting-split, no-historic-migration, and workflow-config costs). Simon's 6 Jul summary to Marie Cooksey/Kevin asked Kevin to prioritise this against the FA team's POG backlog. On 18 Aug, Michael O'Sullivan flagged that the TIMDEP04 Absence Reasons report (currently run against 'Other Leave' filtered by reason code VOLPO) will need updating to include Volunteering Leave as its own Absence Type once implemented; Julie Hickman offered to update user guidance; Marie Cooksey confirmed HR Systems owns the technical/SME-wording side while Reward/Alex Betts' team owns staff engagement and communication. Kevin needs to review Simon's analysis, decide the FA team prioritisation, and determine next steps for implementation in PeopleXD.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Volunteering Leave).",
+      "[10 Aug 2026] Simon has completed analysis of moving volunteering leave from 'Other Leave' reason code to standalone leave type; Kevin to review and determine next steps. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Simon Burford has completed analysis on moving volunteering leave from 'Other Leave' reason code to its own standalone leave type in PeopleXD. (email: Simon Burford - Team Calendar Config)",
+      "[10 Aug 2026] PA to HR Director is holding time for the next in-person People Forum; agenda to follow. (email: PA to HR Director - People Forum (In person))",
+      "[18 Aug 2026] Michael O'Sullivan has responded with information that TIMDEP04 Absence Reasons report may need updating to include the Volunteering Leave Absence Type; this provides technical guidance for Simon's volunteering leave configuration work. (email: Michael O'Sullivan - RE: Volunteering Leave)",
+      "[18 Aug 2026] Marie Cooksey clarified the engagement/ownership split, per her prior agreement with Sarah Clarke: HR Systems (Marie's team) owns technical system changes and SME support on User Guide wording; Reward and Alex Betts' team own engagement and notification of changes to staff. (email: Marie Cooksey - RE: Volunteering Leave, 18:33)",
+      "[18 Aug 2026] Full retrieval and background check completed by Drew at Kevin's request ahead of his 19 Aug 1-1 with Simon Burford. Confirmed live via Outlook COM that the issue traces back to Access Group Support Case 69049424 (2 Jul 2026), where Simon first asked how to let employees book Volunteering Leave directly, and Simon's 6 Jul summary to Marie/Kevin recommending the standalone-pay-code option and asking Kevin to prioritise this against the FA team's POG backlog -- that prioritisation decision is still outstanding.",
+      "[TODO] Kevin to decide FA team prioritisation/timeline for the standalone Volunteering Leave pay code build, and to review Michael O'Sullivan's TIMDEP04 report-update point.",
+      "[AWAITING] Kevin has an unsent draft (\"Fw: Volunteering Leave\", 18 Aug 15:03, sitting in Deleted Items with no recipient) -- he has not yet replied on this thread. Reply is being drafted separately by Lauren.",
+      "[18 Aug 2026] Tier moved week -> tomorrow ahead of Kevin's 19 Aug 1-1 with Simon Burford on this topic."
+    ],
+    "dateAdded": "2026-08-07"
+  },
+  {
+    "id": "t2608071801051",
+    "title": "Investigate team calendar config issue with Asta",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-07 15:09",
+    "emailRef": "Team Calendar Config",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007ACBB5F110000",
+    "summary": "",
+    "description": "Simon encountered a missing option when trying to configure the Volunteering Leave pay code in UOXU. Kevin needs to work with Asta to diagnose and resolve the team calendar configuration problem.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Team Calendar Config).",
+      "[10 Aug 2026] Simon encountered missing configuration option when setting up Volunteering Leave pay code in UOXU; Kevin to investigate with Asta. (email: Simon Burford - Team Calendar Config)",
+      "[10 Aug 2026] Simon Burford encountered a missing option when configuring Volunteering Leave pay code in UOXU; diagnosis and resolution needed with Asta on team calendar configuration. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
+      "[18 Aug 2026] Simon Burford clarifies that Company 90 should be ignored for now as it was only set up for WFM workgroup configuration; this provides guidance on the team calendar configuration work with Asta. (email: Simon Burford - RE: Balance Period End Matrix)",
+      "[20 Aug 2026] Michael O'Sullivan has responded that the TIMDEP04 Absence Reasons report may need updating to include the new Volunteering Leave absence type. (email: Michael O'Sullivan - RE: Volunteering Leave)"
+    ],
+    "dateAdded": "2026-08-07"
+  },
+  {
+    "id": "t2608071801052",
+    "title": "Confirm UOXU/UOXC refresh approach for Company 90 testing",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-06 14:49",
+    "emailRef": "RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007A8968C290000",
+    "summary": "",
+    "description": "Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for DTP1092 Company 90 configuration and testing. Kevin needs to confirm this approach.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP).",
+      "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments for Company 90 testing; Kevin to confirm approach. (email: Simon Burford - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
+      "[10 Aug 2026] Simon is discussing with Michael O'Sullivan whether to refresh UOXU and UOXC environments with a new clone of UOXP for Company 90 testing. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[12 Aug 2026] Guy Williams has provided technical guidance on integration platform environments (INT-STG, BT, AIP) that Kevin needs to confirm approach for Company 90 refresh. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[17 Aug 2026] Simon clarifies that Company 90 should be ignored for now as it was set up only for WFM workgroup attachment purposes. (email: Simon Burford - RE: Balance Period End Matrix)",
+      "[17 Aug 2026] Simon continues discussion with Andrew Goff on testing approach for DTP1092 College Staff into PXD, noting the need to test the actual solution before go-live. (email: Simon Burford - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[18 Aug 2026] Michael O'Sullivan confirms that the clone from UOXP into UOXC was completed successfully and all post-clone activities are complete; this resolves the environment refresh work for Company 90 testing. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
+      "[19 Aug 2026] Michael O'Sullivan confirms the decision to proceed with clone from UOXP into UOXC only, scheduled by Access Group. (email: Michael O'Sullivan - RE: Refresh both the UOXU and UOXC environments with a new clone of UOXP)",
+      "[02 Sep 2026] Simon Burford confirms API_USER account in UOXU has been configured with Company 90 restriction and system is ready for integration re-test. (email: Simon Burford - API_USER account)"
+    ],
+    "dateAdded": "2026-08-07",
+    "messageId": "CWLP265MB4176CB1C902A5FAAFEF57CE392B72@CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB4176CB1C902A5FAAFEF57CE392B72%40CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t2608100901260",
+    "title": "Review Conor's Multi Company Setup work and align on next steps",
+    "tier": "tomorrow",
+    "source": "Inbox - Conor O'Brien, 2026-08-07 12:30",
+    "emailRef": "RE: #External# RE: Multi Company Setup",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AFD890EC0000",
+    "summary": "",
+    "description": "Conor O'Brien has sent updated work on the Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week. Kevin needs to review Conor's progress and confirm availability to continue discussions next week.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[10 Aug 2026] Auto-created from inbox triage (email: Conor O'Brien - RE: #External# RE: Multi Company Setup).",
+      "[10 Aug 2026] Conor has sent updated Multi Company Setup work and notes both Simon and Kevin are on leave next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
+      "[10 Aug 2026] Crispin provided new testing details and scenarios email on 10 August with full technical breakdown for integrations testing. (email: Simon Burford - Volunteering Leave)",
+      "[10 Aug 2026] Crispin Muncaster has provided update on Company 90 testing scenarios and is seeking help on HRIS staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[13 Aug 2026] Simon Burford has advised Conor that he is on leave next week but Kevin should be back and able to continue the Multi Company Setup discussions. (email: Simon Burford - RE: Multi Company Setup)",
+      "[17 Aug 2026] Kevin has shared the KPI presentation for July 2026 with Michael O'Sullivan, indicating progress on documenting HR Systems performance metrics. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
+      "[26 Aug 2026] Ewan Kilgour has scheduled a meeting for 25 August to discuss Data Warehouse business rules, Fabric, and develop a prioritised roadmap. (email: Ewan Kilgour - RE: Business rules for Data Warehouse)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608101804010",
+    "title": "Investigate Clockify role consolidation for Beth",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-10 17:05",
+    "emailRef": "Clockify",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998620000",
+    "summary": "",
+    "description": "Marie Cooksey is asking whether it is possible to combine Beth's two Clockify roles (HR Systems and Biology) into one. Kevin needs to investigate the Clockify platform capabilities and advise Marie on feasibility.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[10 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - Clockify).",
+      "[11 Aug 2026] Marie has reviewed the Clockify query and is waiting until Simon's return to understand impact on roadmap before proceeding. (email: Marie Cooksey - RE: Clockify)",
+      "[11 Aug 2026] Marie has confirmed preference for Jibble and agrees test account should be next step once funding clarity is established. (email: Marie Cooksey - RE: Clockify)",
+      "[12 Aug 2026] Conor O'Brien has sent updated work on the Multi Company Setup (FP 68261303) and notes that both Simon and Kevin are on leave next week, indicating work is progressing and needs Kevin's review. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)"
+    ],
+    "dateAdded": "2026-08-10"
+  },
+  {
+    "id": "t2608111309070",
+    "title": "Attend H&S Systems Supplier Reviews meeting",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-11 11:50",
+    "emailRef": "H&S Systems Supplier Reviews",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629956F0000",
+    "summary": "",
+    "description": "Marie Cooksey has sent a Microsoft Teams meeting link for H&S Systems Supplier Reviews. Kevin needs to attend this meeting to participate in the supplier evaluation process.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - H&S Systems Supplier Reviews).",
+      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for H&S Systems Supplier Reviews. (email: Marie Cooksey - H&S Systems Supplier Reviews)",
+      "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the H&S Systems Supplier Reviews meeting Kevin needs to attend. (email: Marie Cooksey - HR Systems Management)"
+    ],
+    "dateAdded": "2026-08-11"
+  },
+  {
+    "id": "t2608111309071",
+    "title": "Attend HR Systems Management meeting",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-11 11:49",
+    "emailRef": "HR Systems Management",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007B13CE8FC0000",
+    "summary": "",
+    "description": "Marie Cooksey has sent a Microsoft Teams meeting link for HR Systems Management. Kevin needs to attend to participate in management discussions.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - HR Systems Management).",
+      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for HR Systems Management. (email: Marie Cooksey - HR Systems Management)",
+      "[13 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan on 11 August, confirming attendance and participation in management discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
+      "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the HR Systems Management meeting Kevin needs to attend. (email: Marie Cooksey - H&S Systems Supplier Reviews)",
+      "[20 Aug 2026] PeopleXD platform maintenance scheduled for Friday 28 August 2026 between 8-10 pm; Kevin should note this downtime window for planning purposes. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
+      "[25 Aug 2026] Asta Palmer has sent reminder that HR Systems team meeting is tomorrow (Wednesday 26 August) and it is Presentations week. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)"
+    ],
+    "dateAdded": "2026-08-11"
+  },
+  {
+    "id": "t2608111507360",
+    "title": "Advise on GLAM joining 38-day balance departments scheme",
+    "tier": "week",
+    "source": "Inbox - Julie Hickman, 2026-08-11 13:39",
+    "emailRef": "RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C90000",
+    "summary": "",
+    "description": "Marie Cooksey is seeking Kevin's input on whether GLAM should join the 38-day balance scheme alongside Maths and Chemistry. Kevin needs to provide thoughts/advice to inform the decision.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing).",
+      "[11 Aug 2026] Julie is asking Marie for thoughts on GLAM joining the 38-day balance scheme; Marie has copied Kevin in for input. (email: Marie Cooksey - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)",
+      "[11 Aug 2026] Julie Hickman is asking Marie (copied to Kevin) for thoughts on whether GLAM should also join the 38-day balance scheme alongside Maths and Chemistry. (email: Julie Hickman - RE: 38 day balance departments - Maths, Chemistry and GLAM? - GLAM chasing)",
+      "[17 Aug 2026] Kevin shared KPI presentation (July 2026) with Michael O'Sullivan, providing data context for ongoing discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
+      "[18 Aug 2026] Julie Hickman has had an initial conversation with Becky Fitzek at GLAM which was productive; provides new information on GLAM's readiness to join 38-day balance scheme. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[21 Aug 2026] Merged duplicate task t2608120903060 (\"Advise Marie on GLAM joining 38-day balance scheme\", dateAdded 2026-08-12, byte-identical description) into this record. Duplicate removed from tasks.json; it added no new information beyond what this record already captures (same 11-12 Aug email thread, narrated from the Marie-side email one day later). This record kept as base because it carried more actions (5 vs 2) and the most recent action (18 Aug vs 12 Aug)."
+    ],
+    "dateAdded": "2026-08-11"
+  },
+  {
+    "id": "t2608111719550",
+    "title": "Follow up on Oxford Uni Pre-project Authentication call",
+    "tier": "week",
+    "source": "Inbox - Alex Manton-Jones, 2026-08-11 16:50",
+    "emailRef": "Oxford Uni - Pre-project Authentication (Follow up)",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B21C32170000",
+    "summary": "",
+    "description": "Alex Manton-Jones sent a follow-up email from an authentication call held on 11 August. Kevin needs to review the full content and determine what action items, if any, are required from this call.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up)).",
+      "[12 Aug 2026] Alex Manton-Jones follow-up email received on the pre-project authentication call held 11 August; Kevin needs to review full content and determine action items. (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up))",
+      "[25 Aug 2026] Louise Piper has confirmed that authentication issues logging into OSM have now been resolved. (email: Louise Piper - UPDATE: OSM: Authentication Issues resolved)",
+      "[26 Aug 2026] Alex Manton-Jones has sent the follow-up email from the authentication call on 11 August; Kevin should review the content and determine required actions. (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up))"
+    ],
+    "dateAdded": "2026-08-11"
+  },
+  {
+    "id": "t2608111719551",
+    "title": "Review updated DPIA and DPS documents for college record to PXD",
+    "tier": "week",
+    "source": "Inbox - Anne Mortimer, 2026-08-11 15:32",
+    "emailRef": "FW: draft DPIA for college record to PXD",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995780000",
+    "summary": "",
+    "description": "Anne Mortimer has provided updated access links to the current version of the DPIA and DPS documents. Kevin needs to review any changes that have been made since Marie's and Information Compliance's previous review.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[11 Aug 2026] Auto-created from inbox triage (email: Anne Mortimer - FW: draft DPIA for college record to PXD).",
+      "[11 Aug 2026] Anne Mortimer has provided updated access links to the current DPIA and DPS documents for review. (email: Anne Mortimer - FW: draft DPIA for college record to PXD)"
+    ],
+    "dateAdded": "2026-08-11"
+  },
+  {
+    "id": "t2608121100230",
+    "title": "Confirm support coverage for Marie's absence today",
+    "tier": "today",
+    "source": "Inbox - Marie Cooksey, 2026-08-12 10:19",
+    "emailRef": "Marie C not working",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B021A0000",
+    "summary": "",
+    "description": "Marie Cooksey is unwell and not working for the rest of today (Wednesday 12 August). Kevin should confirm what urgent support coverage is needed and delegate or handle critical items.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[12 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - Marie C not working).",
+      "[12 Aug 2026] Marie is unwell and not working for the rest of today (Wednesday 12 August); Kevin should confirm urgent support coverage needs. (email: Marie Cooksey - Marie C not working)",
+      "[13 Aug 2026] Kevin sent email to Marie Cooksey indicating he would be back on Tuesday 11 August and providing a heads up on certain matters. (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
+      "[13 Aug 2026] Marie has now advised Beth to step away too due to sickness, leaving no helpdesk cover today; Sarah Rowles and Ant are managing coverage. (email: Marie Cooksey - RE: Reduced Help Desk Support)",
+      "[13 Aug 2026] Sarah Rowles confirms Ant is covering the applicant inbox today and Athena is discussing task re-prioritization. (email: Sarah Rowles - RE: Reduced Help Desk Support)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608121801280",
+    "title": "Review 38-day balance implementation timeline and decisions",
+    "tier": "week",
+    "source": "Inbox - Julie Hickman, 2026-08-12 17:09",
+    "emailRef": "38 day balance for departments update and decisions needed",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F400000",
+    "summary": "",
+    "description": "Julie Hickman has shared a OneDrive file with timeframe of tasks for 38-day balance departments. Kevin needs to review the document and understand the implementation schedule and any decisions required from HR Systems.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[12 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - 38 day balance for departments update and decisions needed).",
+      "[13 Aug 2026] Julie Hickman has shared the OneDrive file with timeframe of tasks for 38-day balance departments that Kevin needs to review. (email: Julie Hickman - 38 day balance for departments update and decisions needed)",
+      "[13 Aug 2026] Kevin confirmed his return to work on Tuesday 11 August (already back as of email date). (email: Kevin (sent to: Marie Cooksey) - Returning to Work)",
+      "[17 Aug 2026] Julie has scheduled a Teams meeting for planning for departments moving to 38-day balance, providing follow-up discussion on the implementation timeline document previously shared. (email: Julie Hickman - Planning for depts move to 38 day balance )",
+      "[18 Aug 2026] Michael O'Sullivan has provided NHS Pension tier new pay ranges update; Athena notes the team only needs employer contribution rates for statutory reporting. (email: Athena Artuso - RE: Support Call# 11701239: NHS Pension tiers new pay ranges)",
+      "[19 Aug 2026] Michael O'Sullivan provided context on the Balance Period End Matrix process for annual leave year-end and system calendar extension procedures. (email: Michael O'Sullivan - RE: Balance Period End Matrix)",
+      "[19 Aug 2026] Julie Hickman provided contact details for 38-day balance department leads: Chemistry (Jenna Boyce, Alexia Leakey), Maths (Emma Harte), GLAM (Becky Fitzek). (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[20 Aug 2026] Julie Hickman provided update that Chemistry estimates approximately 110 existing work groups to convert for 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[02 Sep 2026] Julie Hickman confirms Chemistry requires 131 workgroups to be updated and asks Kevin for effort estimate on GLAM capacity. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+    ],
+    "messageId": "LO0SPRMB0017EDD062776109663266368AB72@LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LO0SPRMB0017EDD062776109663266368AB72%40LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t2608121801281",
+    "title": "Review PeopleXD uplift timeline from Jessica Oldershaw",
+    "tier": "week",
+    "source": "Inbox - Jessica Oldershaw, 2026-08-12 16:41",
+    "emailRef": "RE: Timeline for implementation of uplift",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000",
+    "summary": "",
+    "description": "Jessica Oldershaw has sent an update on the timeline for implementation of uplift, indicating we have reached a September decision point. Kevin needs to review the full email and confirm HR Systems readiness and any dependencies.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[12 Aug 2026] Auto-created from inbox triage (email: Jessica Oldershaw - RE: Timeline for implementation of uplift).",
+      "[13 Aug 2026] Jessica Oldershaw has sent an update indicating we have reached the September decision point on uplift implementation timeline. (email: Jessica Oldershaw - RE: Timeline for implementation of uplift)",
+      "[13 Aug 2026] Athena Artuso has provided input suggesting October implementation may be clearer than September decision point; Michael O'Sullivan also contributing breakdown to clarify timeline. (email: Athena Artuso - RE: Timeline for implementation of uplift)",
+      "[13 Aug 2026] Tracy Roberts has added payroll processing stats and monthly implementation details to the uplift timeline discussion. (email: Tracy Roberts - RE: Timeline for implementation of uplift)",
+      "[18 Aug 2026] Michael O'Sullivan has provided detailed analysis of uplift timeline and resource implications for FA team, recommending October implementation. (email: Michael O'Sullivan - RE: Timeline for implementation of uplift)",
+      "[19 Aug 2026] Michael O'Sullivan has provided detailed information on the Balance Period End Matrix process for annual leave year-end configuration for Company 1. (email: Michael O'Sullivan - RE: Balance Period End Matrix)",
+      "[19 Aug 2026] Michael O'Sullivan provided an update on PeopleXD platform maintenance scheduled for Friday 28 August between 8-10pm that may impact services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
+    ]
+  },
+  {
+    "id": "t2608121801282",
+    "title": "Review August 2026 organisational structure draft",
+    "tier": "week",
+    "source": "Inbox - Organisational Structure, 2026-08-12 16:24",
+    "emailRef": "RE: Organisational Structure Update - August 2026 - DRAFT",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C00000",
+    "summary": "",
+    "description": "An updated draft organisational structure has been circulated with changes effective through 12 August 2026. Kevin should review for any HR Systems implications or required actions.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[12 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT).",
+      "[13 Aug 2026] Updated draft organisational structure has been circulated with changes effective through 12 August 2026. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT)",
+      "[17 Aug 2026] Simon forwarded organisational structure update confirming changes to PACS org structure moving colleges and societies from L2 to L3, effective through 12 August 2026. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)",
+      "[18 Aug 2026] Simon Burford has forwarded notification of changes to the PACS organisational structure moving colleges and societies to level 3 from level 2; this is the update that Kevin needs to review for HR Systems implications. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)"
+    ]
+  },
+  {
+    "id": "t2608131801210",
+    "title": "Review DTP1334 SHSMS supplier requirements evaluations -- deadline 21 Aug",
+    "tier": "week",
+    "source": "Inbox - Helen Harbour, 2026-08-13 16:10",
+    "emailRef": "Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B02200000",
+    "summary": "",
+    "description": "Helen Harbour is coordinating supplier requirements evaluations for the Strategic Health & Safety Management System project (DTP1334) with an upcoming deadline of Friday 21 August. Kevin needs to review supplier submissions and clarifications and contribute to the evaluation process.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[13 Aug 2026] Auto-created from inbox triage (email: Helen Harbour - Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August).",
+      "[14 Aug 2026] Helen Harbour's email confirms the deadline for DTP1334 SHSMS supplier requirements evaluations is Friday 21 August and Kevin's input is needed. (email: Helen Harbour - Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August)"
+    ]
+  },
+  {
+    "id": "t2608131801211",
+    "title": "Review Supplier Submission Clarifications V2.0 -- DTP1334 SHSMS",
+    "tier": "week",
+    "source": "Inbox - Caroline Gow, 2026-08-13 16:56",
+    "emailRef": "Caroline Gow shared \"Supplier Submission Clarifications V2.0\" with you",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B02220000",
+    "summary": "",
+    "description": "Caroline Gow has shared a document containing supplier clarification questions for the DTP1334 SHSMS project evaluation. Kevin needs to review and provide input on supplier responses ahead of the 21 August deadline.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[13 Aug 2026] Auto-created from inbox triage (email: Caroline Gow - Caroline Gow shared \"Supplier Submission Clarifications V2.0\" with you).",
+      "[14 Aug 2026] Caroline Gow has shared the Supplier Submission Clarifications V2.0 document containing supplier responses for Kevin to review ahead of the 21 August deadline. (email: Caroline Gow - Caroline Gow shared \"Supplier Submission Clarifications V2.0\" with you)"
+    ]
+  },
+  {
+    "id": "t2608141501170",
+    "title": "Attend H&S Roadmap catch-up with Christopher Sanders",
+    "tier": "week",
+    "source": "Inbox - Christopher Sanders, 2026-08-14 13:13",
+    "emailRef": "H&S Roadmap",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AA5B58050000",
+    "summary": "",
+    "description": "Christopher Sanders has scheduled a regular catch-up to review open support tickets, health & safety roadmap, backlog items, blockers and concerns. Kevin needs to attend this meeting.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[14 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - H&S Roadmap).",
+      "[14 Aug 2026] Confirmation email received from Christopher Sanders for the H&S Roadmap catch-up meeting scheduled for Friday 14 August. (email: Christopher Sanders - H&S Roadmap)"
+    ]
+  },
+  {
+    "id": "t2608180901160",
+    "title": "Confirm appointment availability with Chris Little",
+    "tier": "tomorrow",
+    "source": "Inbox - Chris Little, 2026-08-18 08:50",
+    "emailRef": "Re: Appointment request",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E40000",
+    "summary": "",
+    "description": "Chris Little has offered two morning slots on 11 or 12 September for an appointment. Kevin needs to confirm which date works for him.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Chris Little - Re: Appointment request).",
+      "[18 Aug 2026] Kevin has confirmed availability and replied to Chris Little that Friday 11 September works for the appointment. (email: Kevin (sent to: Chris Little) - Re: Appointment request)",
+      "[19 Aug 2026] Kevin confirmed receipt of appointment details from Chris Little for 11 September. (email: Kevin (sent to: 'Chris Little') - RE: Appointment request)",
+      "[20 Aug 2026] Kevin has initiated contact with Chris Little to request an appointment on 11 or 12 September. (email: Kevin (sent to: hand.shouldersurgery@gmail.com) - Appointment request)",
+      "[20 Aug 2026] Kevin forwarded Chris Little's reply to his own inbox as a reminder. (email: Kevin (sent to: Kevin Lelitte) - Fw: Appointment request)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608181201060",
+    "title": "Confirm ER pension rates for annual Financial Statements",
+    "tier": "week",
+    "source": "Inbox - Kevin Lelitte, 2026-08-18 10:24",
+    "emailRef": "Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E80000",
+    "summary": "",
+    "description": "Simon Burford's email (forwarded by Kevin as a bump) concerns confirmation of employer pension rates needed for the university's annual Financial Statements. This appears to be an outstanding item requiring Kevin's input or sign-off.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL).",
+      "[18 Aug 2026] Kevin bumped the original email from Simon (28 May) requesting confirmation of employer pension rates for the university's annual Financial Statements; still outstanding. (email: Kevin Lelitte - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL)",
+      "[19 Aug 2026] Kevin bumped Simon Burford's email on 18 Aug regarding confirmation of employer pension rates for annual Financial Statements. (email: Kevin (sent to: Kevin Lelitte) - Fw: Confirming ERs pension rates for annual Financial Statements -- FINAL)"
+    ]
+  },
+  {
+    "id": "t2608181201061",
+    "title": "Resolve GLAM rostering requirements - Botanic Gardens and Ashmolean Security",
+    "tier": "week",
+    "source": "Inbox - Kevin Lelitte, 2026-08-18 10:23",
+    "emailRef": "Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E70000",
+    "summary": "",
+    "description": "Kevin has flagged an email from Anna Carter-Windle regarding GLAM's rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security. This requires follow-up action to clarify requirements and next steps with the team.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ).",
+      "[18 Aug 2026] Kevin bumped the original email from Anna Carter-Windle (28 May) regarding GLAM rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security; still requires follow-up. (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )",
+      "[19 Aug 2026] Kevin bumped this email on 18 Aug, indicating it remains an open action requiring follow-up. (email: Michael O'Sullivan - RE: Volunteering Leave)",
+      "[19 Aug 2026] Kevin bumped the GLAM rostering requirements email for Botanic Gardens and Ashmolean Security, signalling need for follow-up. (email: Kevin (sent to: Kevin Lelitte) - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )"
+    ]
+  },
+  {
+    "id": "t2608181201062",
+    "title": "Follow up on EcoOnline supplier engagement",
+    "tier": "week",
+    "source": "Inbox - Kevin Lelitte, 2026-08-18 10:23",
+    "emailRef": "Fw: EcoOnline /University of Oxford",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39E60000",
+    "summary": "",
+    "description": "Kevin has bumped an email from Joanne Grant at EcoOnline regarding University engagement. This appears to require a response or action from Kevin to progress the relationship or proposal discussion.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford).",
+      "[18 Aug 2026] Kevin bumped the original email from Joanne Grant (28 May) regarding EcoOnline/University engagement; still requires follow-up. (email: Kevin Lelitte - Fw: EcoOnline /University of Oxford)",
+      "[19 Aug 2026] Kevin bumped the EcoOnline supplier engagement email on 18 Aug, flagging it for follow-up action. (email: Kevin (sent to: Kevin Lelitte) - Fw: EcoOnline /University of Oxford)"
+    ]
+  },
+  {
+    "id": "t2608181501150",
+    "title": "Create user guidance for staff on grades 39Q, 30S, 38S, 36S leave entitlements",
+    "tier": "week",
+    "source": "Inbox - Julie Hickman, 2026-08-17 13:09",
+    "emailRef": "User guidance for staff on grades 39Q, 30S, 38S and 36S - leave entitlement calculations",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7CA0000",
+    "summary": "",
+    "description": "Julie Hickman has requested help creating user guidance for staff on leave entitlement calculations for new grades (39Q, 30S, 38S, 36S) following a meeting with Maths and Chemistry departments. This is part of the 38-day balance implementation.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[18 Aug 2026] Auto-created from inbox triage (email: Julie Hickman - User guidance for staff on grades 39Q, 30S, 38S and 36S - leave entitlement calculations).",
+      "[18 Aug 2026] Julie Hickman has scheduled a Teams meeting for planning departments' move to 38-day balance scheme. (email: Julie Hickman - Planning for depts move to 38 day balance )"
+    ]
+  },
+  {
+    "id": "t2608191200560",
+    "title": "Review intranet hyperlinks with Athena Artuso",
+    "tier": "week",
+    "source": "Inbox - Athena Artuso, 2026-08-13 16:53",
+    "emailRef": "Review of intranet hyperlinks",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A99B02210000",
+    "summary": "",
+    "description": "Athena Artuso has sent a request to review intranet hyperlinks. Kevin needs to understand the scope and provide input or approve the changes.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[19 Aug 2026] Auto-created from inbox triage (email: Athena Artuso - Review of intranet hyperlinks).",
+      "[19 Aug 2026] Athena Artuso sent request for intranet hyperlinks review. (email: Athena Artuso - Review of intranet hyperlinks)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608191643002",
+    "title": "GLAM HR Shared Service escalation â€” Ashmolean Visitor Experience Leave & Absence / Rostering",
+    "tier": "week",
+    "source": "Kevin â€” reported 19/08/2026",
+    "emailRef": "",
+    "summary": "",
+    "description": "Cathy Hamer (HR Operations Manager, GLAM HR Shared Service) has requested a meeting (Teams or in person) with the support team regarding the Visitor Experience team at the Ashmolean. They have Leave & Absence module issues and say Rostering \"is not working for them at all\" â€” these issues were previously raised to the project team with no response. Cathy is getting a written summary of the issues from the department to share. Separately, GLAM needs support handling variable-hours staff, currently using XD plus spreadsheets as a workaround. Needs a response/meeting scheduled.\n\nSourcing note: the linked Granola meeting (\"Planning for depts move to 38 day balance\", 19 Aug 2026) does not mention Cathy Hamer, the Ashmolean Visitor Experience team, or this specific escalation â€” that meeting covers only the 38-day-balance holiday scheme work (see t2608191643001). The same-day \"FA Team Catch-up â€” 19/08\" Granola note is thematically adjacent: it references two GLAM areas (security team, front of house) where annual leave through WFM isn't working, notes the team is exploring whether rostering would help, and that Julie will follow up after her leave â€” but it doesn't name Cathy Hamer either. This task record follows Kevin's own report of the escalation.\n\nRelated existing tasks: t035 (\"WFM / GLAM Rostering â€” set up resolution meeting\") and t2608181201061 (\"Resolve GLAM rostering requirements - Botanic Gardens and Ashmolean Security\") cover adjacent/overlapping GLAM rostering ground. This task is specifically the Cathy Hamer / Visitor Experience escalation, distinct from those but likely to intersect â€” worth checking whether it should route through the existing WFM/GLAM Rostering resolution meeting rather than a new one.",
+    "actions": [
+      "[19 Aug 2026] Task created from Kevin's report of Cathy Hamer's (HR Operations Manager, GLAM HR Shared Service) request for a meeting (Teams or in person) with the support team re: Ashmolean Visitor Experience Leave & Absence and Rostering issues, previously raised to the project team with no response.",
+      "[TODO] Schedule the requested meeting with Cathy Hamer (Teams or in person).",
+      "[AWAITING] Written summary of the issues from the Ashmolean Visitor Experience department, being prepared by Cathy.",
+      "[TODO] Address GLAM's need for support handling variable-hours staff, currently worked around via XD plus spreadsheets.",
+      "[MONITOR] Cross-reference against t035 and t2608181201061 â€” overlapping GLAM rostering ground; check whether this should route through the existing WFM/GLAM Rostering resolution meeting.",
+      "[20 Aug 2026] Kevin has bumped the GLAM rostering requirement email from 28 May regarding Botanic Gardens Ticket Office and Ashmolean Security, indicating this needs follow-up action. (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )"
+    ],
+    "dateAdded": "2026-08-19",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F6D0000",
+    "done": true
+  },
+  {
+    "id": "t2608191801190",
+    "title": "Estimate effort for application form internal candidate identification feature",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-19 15:51",
+    "emailRef": "FW: Application form - identification of internal candidates",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F400000",
+    "summary": "",
+    "description": "Simon Burford forwarded a request asking Kevin to estimate how much work it would be from a Functional Analysis point of view to implement identification of internal candidates in the application form. This is a scoping/estimation task.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[19 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates).",
+      "[20 Aug 2026] Simon is requesting Kevin's estimation of effort required from Functional Analysis perspective to implement internal candidate identification in the application form. (email: Simon Burford - FW: Application form - identification of internal candidates)",
+      "[20 Aug 2026] Simon Burford forwarded request for effort estimation on internal candidate identification in application form from Functional Analysis perspective. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[21 Aug 2026] Julie Hickman has reminded the team to add messages to Beth's Kudoboard; this is informational follow-up to the farewell/gift task. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
+      "[21 Aug 2026] Julie reports Chemistry are compiling work group lists and estimate approximately 110 existing work groups; progress update on 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+    ]
+  },
+  {
+    "id": "t2608200721490",
+    "title": "Review org structure specifics from Organisational Structure team",
+    "tier": "week",
+    "source": "Inbox - Organisational Structure, 2026-08-19 16:34",
+    "emailRef": "RE: Org Structure Update",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000",
+    "summary": "",
+    "description": "The Organisational Structure team has sent specific details about the org structure update for Kevin and Simon to action. Kevin needs to review the specifics and determine what changes or actions are required in HR Systems.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[20 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Org Structure Update).",
+      "[20 Aug 2026] Org Structure team has sent specific details about the org structure update for Kevin and Simon to action. (email: Organisational Structure - RE: Org Structure Update)",
+      "[20 Aug 2026] Julie Hickman sent reminder about Kudoboard for Beth's farewell messages - ongoing team coordination activity. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608191643001",
+    "title": "38-day balance rollout â€” Work Group Holiday Scheme updates by department",
+    "tier": "week",
+    "source": "Granola â€” \"Planning for depts move to 38 day balance\", 19/08/2026",
+    "emailRef": "",
+    "summary": "",
+    "description": "New \"38-day balance\" leave/absence type rolling out via PeopleXD/WFM: departments move from their current holiday scheme (bank holidays and fixed closure dates pre-loaded) to a simple 38-day balance, where staff book bank holidays and closures themselves. Removes significant admin burden for new appointments and manual balance calculations. Roughly 9 holiday schemes currently in use across the university; policy hasn't been updated to match how the system calculates leave, so the annual leave dashboard exists as a workaround bridge â€” a policy change would be the proper fix but none is expected soon.\n\nDepartment status (per the 19 Aug Granola meeting):\n- Chemistry: keen to proceed, on WFM since October, a full year of admin pain. Main contact Jenna Boyce. Chemistry HR will pre-book bank holidays and fixed closure dates on staff's behalf this round.\n- Maths: only on WFM since April, HR team still learning the system; recommendation is to advise them to pause and review after a full leave year rather than move now.\n- GLAM: large department, many staff types, complex rosters/shift patterns (some staff on concentrated shifts, e.g. 4-day 9-hour, with managers currently recording leave at 7.23 hrs rather than actual shift length). Not all GLAM staff need moving â€” some are likely moving to rostering instead. GLAM has asked for a ballpark on how many work groups can be updated; no commitment given yet, pending Chemistry's confirmed workgroup count. GLAM offered to pay for the work; no charging mechanism exists yet so it's too late to charge this year â€” needs a proper process for future years.\n- Biology: declining for this year â€” came in too late (likely heard about the approach via Anna's promotional sessions).\n\nMechanics: HR teams send a list of affected work groups (code + description); Kevin updates the Holiday Scheme attached to each work group, swapping to the scheme with no bank holidays/fixed closure dates. Nothing to create â€” pure data update. Michael estimated ~1-2 minutes per work group at a realistic pace. Kevin will personally do the Work Group updates once resourcing/timing is confirmed.\n\nTiming: must align with annual leave rollover (7 October); work can begin 5 October once the previous year is locked. Deadline for departments to submit their work group lists is 28 August. Priority order is first department to submit data gets done first. Risk flagged: departments may try to change balances themselves without understanding the work-group link â€” staff won't be able to book bank holidays if their work group still has the old scheme attached, which will surface quickly as a support query; first-line support (Emma) needs briefing to handle this without escalating.\n\nThis is being treated as a pilot, not a standard service offering. GLAM's separate, larger rostering problem (Ashmolean/Botanic Gardens area) is not in scope here and is not currently resourced â€” see related tasks t035 and t2608181201061.\n\nJulie is on leave from Fri 21 Aug to Wed 2 Sep 2026 (confirmed in the meeting â€” leave starts the day after the meeting); Marie Cooksey covers as department contact in her absence.",
+    "actions": [
+      "[19 Aug 2026] Task created from Granola meeting \"Planning for depts move to 38 day balance\" (19/08/2026).",
+      "[TODO] Julie to send a summary email covering all departments' status and timeline, copying Kevin and Simon, to use as the shared thread going forward â€” once Chemistry's workgroup count is known.",
+      "[TODO] Confirm how many GLAM work groups there's capacity to update, in addition to Chemistry and Maths â€” hold on committing to GLAM until Chemistry's submitted workgroup count is known.",
+      "[TODO] Confirm scheme codes for each department â€” not yet documented.",
+      "[TODO] Confirm who does the testing to prove scenarios are covered.",
+      "[TODO] Julie (or Marie Cooksey while Julie is on leave) to advise Maths to pause until next leave year.",
+      "[TODO] Decline Biology for this year â€” stress the process hasn't been fully tested and there's no resource available.",
+      "[TODO] Kevin to update work groups for confirmed departments from 5 October (once the 7 October rollover is locked), working in priority order by submission date â€” liaise with Michael on mechanics.",
+      "[TODO] Brief first-line support (Emma) ahead of the October rollover to handle staff queries about being unable to book bank holidays where the work group still carries the old scheme.",
+      "[AWAITING] Department work-group lists (code + description) due 28 Aug 2026.",
+      "[MONITOR] Julie on leave Fri 21 Aug - Wed 2 Sep 2026; Marie Cooksey covers as department contact in her absence.",
+      "[21 Aug 2026] Julie Hickman sent farewell message reminder for Beth, who is leaving the team. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
+      "[25 Aug 2026] Julie Hickman reports Chemistry estimates approximately 110 existing work groups that need configuration for 38-day balance rollout; this impacts the implementation timeline and resource planning. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[25 Aug 2026] Julie Hickman is on annual leave from 21 August with return 2 September; urgent queries to be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)",
+      "[27 Aug 2026] Michael clarifies that the 131 workgroups flagged by Julie will need to be amended to reflect revised Holiday Scheme following the 38-day balance rollout. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )",
+      "[30 Aug 2026] Marie Cooksey provides update on 38-day balance workgroup changes; met with Michelle who will discuss responses with Julie upon her return from leave. (email: Marie Cooksey - RE: changing to 38 day balance - workgroups for updating)",
+      "[02 Sep 2026] Marie Cooksey reports progress: she met with Michelle who will discuss workgroup update responses with Julie on her return. (email: Marie Cooksey - RE: changing to 38 day balance - workgroups for updating)"
+    ],
+    "dateAdded": "2026-08-19",
+    "entryId": "",
+    "done": true,
+    "messageId": "LO6P265MB62672A4572572EC4DD3B3ABF8BAC2@LO6P265MB6267.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LO6P265MB62672A4572572EC4DD3B3ABF8BAC2%40LO6P265MB6267.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t2608201500590",
+    "title": "Estimate effort for internal candidate identification in application form",
+    "tier": "week",
+    "source": "Inbox - Simon Burford, 2026-08-19 15:51",
+    "emailRef": "FW: Application form - identification of internal candidates",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F8A0000",
+    "summary": "",
+    "description": "Simon Burford forwarded a request asking Kevin to estimate the Functional Analysis effort required to implement identification of internal candidates in the application form. This is a scoping/estimation task.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[20 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates).",
+      "[20 Aug 2026] Simon Burford requests functional analysis effort estimate for internal candidate identification feature in application form. (email: Simon Burford - FW: Application form - identification of internal candidates)"
+    ]
+  },
+  {
+    "id": "t2608201801130",
+    "title": "Complete DTP1334 SHSMS supplier evaluation by Friday 21 Aug",
+    "tier": "tomorrow",
+    "source": "Inbox - Helen Harbour, 2026-08-20 16:24",
+    "emailRef": "Fw: Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F420000",
+    "summary": "",
+    "description": "Helen Harbour is checking that Kevin will complete and return the supplier requirements evaluations for the Strategic Health & Safety Management System project by the Friday 21 August deadline. Kevin needs to review supplier submissions and clarifications and return his evaluation.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[20 Aug 2026] Auto-created from inbox triage (email: Helen Harbour - Fw: Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August).",
+      "[21 Aug 2026] Helen Harbour sent a final check-in confirming the Friday 21 August deadline for supplier evaluation returns. (email: Helen Harbour - Fw: Strategic Health & Safety Management System project supplier requirements evaluations; upcoming deadline of Friday 21 August)"
+    ],
+    "done": true
+  },
+  {
+    "id": "t2608211201050",
+    "title": "Review sickness absence data completeness with Sarah Rowles",
+    "tier": "week",
+    "source": "Inbox - Sarah Rowles, 2026-08-21 11:09",
+    "emailRef": "Sickness Absence Data Catch-up",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AE972F550000",
+    "summary": "",
+    "description": "Sarah Rowles has sent data completeness analysis for the DWHS sickness absence dataset (OUTPUT_SicknessDataChecks_20260811.xlsx). Kevin needs to review the findings and discuss any data quality issues or follow-up actions required.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[21 Aug 2026] Auto-created from inbox triage (email: Sarah Rowles - Sickness Absence Data Catch-up)."
+    ]
+  },
+  {
+    "id": "t2608211926550",
+    "title": "Resolve Cority Employee Import error 2026-08-21 17:00",
+    "tier": "today",
+    "source": "Inbox - Cority_Integration_Platform_Notifications@Cority.com, 2026-08-21 18:00",
+    "emailRef": "[ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00",
+    "entryId": "",
+    "summary": "",
+    "description": "Cority Integration Platform reported an SFTP connection error on 21 August at 17:00 during scheduled employee data import. Kevin needs to review the error log and confirm resolution with James Salas Guillen / Cority support, similar to the 22 June incident (t030).",
+    "origin": "inbox-auto",
+    "actions": [
+      "[21 Aug 2026] Auto-created from inbox triage (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00).",
+      "[25 Aug 2026] Cority SFTP connection error occurred on 21 Aug at 17:00 during scheduled employee data import; Kevin needs to confirm resolution status. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)",
+      "[27 Aug 2026] Cority Integration Platform error log received for SFTP connection failure on 21 August 2026 at 17:00 during employee data import. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[30 Aug 2026] Another Cority employee import error on 28 August 17:00; latest in series of import failures requiring investigation and resolution with Cority support. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-28 17:00)"
+    ],
+    "done": true
+  },
+  {
+    "id": "task-1787645383808",
+    "title": "Book PDR sessions with Simon Burford and the FA team",
+    "tier": "week",
+    "source": "Weekly Granola Review, 22 Aug 2026 (corrected)",
+    "emailRef": "",
+    "summary": "PDR sessions need booking for Simon Burford and the FA team by end of September 2026, tracked via the HR Systems PDR Completion 2026 tracker.",
+    "description": "PDR (Personal Development Review) sessions need to be booked for Simon Burford and the FA team, deadline by end of September 2026. Progress is tracked centrally via the HR Systems PDR Completion 2026 tracker (SharePoint). This item was originally logged as \"Book PDR session with Stephen Kirker\" in the 22 Aug 2026 Weekly Granola Review and was corrected by Kevin on 25 Aug 2026 -- the actual owner is Simon Burford and the FA team, not Stephen Kirker.",
+    "actions": [
+      "[25 Aug 2026] Task created in command-centre, corrected from an earlier draft (\"Book PDR session with Stephen Kirker\") per Kevin's correction to the Weekly Granola Review -- actual scope is PDR sessions for Simon Burford and the FA team.",
+      "[TODO] Book PDR sessions with Simon Burford and the FA team by end of September 2026.",
+      "[25 Aug 2026] Kevin has scheduled Asta Siautilaite's 2026 PDR for Friday 25 September, 12:00-1:00pm. (email: Kevin (sent to: Asta Siautilaite) - PDR 2026 – Friday 25 September)",
+      "[26 Aug 2026] Asta Palmer reminder that HR Systems Team Meeting is tomorrow with Presentations week; Kevin should confirm if presenting. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)",
+      "[26 Aug 2026] Kevin has declined the Cross-Team Process Improvement Working Group meeting due to a scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[27 Aug 2026] Kevin scheduled PDR for Asta Palmer (corrected recipient after initial email n15 sent to Asta Siautilaite) on Friday 25 September 12:00-1:00pm. (email: Kevin (sent to: Asta Palmer) - PDR 2026 – Friday 25 September)",
+      "[30 Aug 2026] Michael O'Sullivan requests to reschedule his 2026 PDR from 18 September due to his leave that week plus annual leave year-end considerations. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)",
+      "[02 Sep 2026] Kevin scheduled Asta Palmer's 2026 PDR for Friday 25 September 12:00-1:00pm; Simon and FA team PDRs still need booking. (email: Kevin (sent to: Asta Palmer <asta.palmer@admin.ox.ac.uk>) - PDR 2026 – Friday 25 September)"
+    ],
+    "notes": "Tracker: https://unioxfordnexus.sharepoint.com/:x:/r/sites/HumanResources-HRSystems-HRSystemsManagementTeam/Shared%20Documents/HR%20Systems%20Management%20Team/HR%20Systems%20PDR%20Completion%202026.xlsx?d=w2e1b829d370d4c1f877cec77aec7bffb&csf=1&web=1&e=GoiKEZ",
+    "dateAdded": "2026-08-25",
+    "entryId": "",
+    "messageId": "CW1P265MB8765B617EE3AE653D97D215F88AD2@CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CW1P265MB8765B617EE3AE653D97D215F88AD2%40CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "task-1787652746063",
+    "title": "Confirm approximate FA validation effort per department with Michael (capacity check)",
+    "tier": "week",
+    "source": "Sickness Absence Data Catch-up, 21 Aug 2026 Granola meeting",
+    "emailRef": "",
+    "summary": "Kevin/Michael to confirm an approximate FA validation effort per department, to determine Michael's capacity and whether additional BA/FA support is needed. Michael was due back Tue 25 Aug 2026 -- now actionable.",
+    "description": "Raised in the Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting): Kevin and Michael need to confirm an approximate FA validation effort per department, in order to determine Michael's capacity and whether additional BA/FA support is needed. This feeds directly into Marie/Ant's BA-effort estimate and David White's funding ask for department-by-department validation -- both are blocked on this sizing exercise. At the time of the meeting this was logged as a forward-looking item pending Michael's return; Michael was due back Tuesday 25 August 2026, so as of today it is actionable rather than a placeholder.",
+    "actions": [
+      "[21 Aug 2026] Raised in the Sickness Absence Data Catch-up Granola meeting -- flagged as pending until Michael's return (due Tue 25 Aug 2026).",
+      "[25 Aug 2026] Michael back today -- item now actionable. Added to command-centre (was missed from the original write-up, flagged by Kevin).",
+      "[TODO] Kevin and Michael to confirm an approximate FA validation effort per department.",
+      "[TODO] Use the confirmed effort figures to determine Michael's capacity and whether additional BA/FA support is needed.",
+      "[AWAITING] Feeds into Marie/Ant's BA-effort estimate and David White's funding ask for department-by-department validation -- both pending this sizing.",
+      "[25 Aug 2026] Kevin has sent follow-up to Marie and Simon on sickness absence survey BA resource requirements and timelines, noting he has spoken to Michael on capacity. (email: Kevin (sent to: Marie Cooksey; Simon Burford) - Sickness absence survey — BA resource requirement and timelines)",
+      "[30 Aug 2026] Kevin responds to Marie and Simon confirming he has discussed capacity with Michael regarding BA effort requirements and timelines for sickness absence data validation. (email: Kevin (sent to: Marie Cooksey <marie.cooksey@admin.ox.ac.uk>, Simon Burford <simon.burford@admin.ox.ac.uk>) - Sickness absence survey — BA resource requirement and timelines)"
+    ],
+    "notes": "Owner: Kevin, with Michael as dependency/collaborator.",
+    "dateAdded": "2026-08-25",
+    "entryId": ""
+  },
+  {
+    "id": "task-1787652746064",
+    "title": "Check project folders for unhanded-over WFM/SBS 'second batch' sickness data files (Smith's School, Geography)",
+    "tier": "week",
+    "source": "Sickness Absence Data Catch-up, 21 Aug 2026 Granola meeting",
+    "emailRef": "",
+    "summary": "Kevin to check project folders for the WFM/SBS 'second batch' sickness data files that were never handed over -- start with Smith's School and Geography. Open since the 11 Aug working group, no hard date.",
+    "description": "Raised in the Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting): a 'second batch' of WFM/SBS sickness data files was never handed over/actioned. This has been open since the 11 Aug 2026 working group and had not been picked up until Kevin flagged it as a miss on 25 Aug 2026. No hard deadline currently attached -- Kevin needs to check project folders for these files, starting with Smith's School and Geography, to establish what is actually still outstanding.",
+    "actions": [
+      "[11 Aug 2026] Working group flagged an unhanded-over WFM/SBS 'second batch' of sickness data files -- never actioned since.",
+      "[25 Aug 2026] Kevin flagged this as a miss from the original write-up. Added to command-centre.",
+      "[TODO] Kevin to check project folders for the WFM/SBS second-batch sickness data files, starting with Smith's School and Geography.",
+      "[26 Aug 2026] Julie Hickman is on annual leave from 21 August, returning Wednesday 2 September; any urgent sickness absence data queries should be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)"
+    ],
+    "notes": "Owner: Kevin. No hard date currently -- due this week per Kevin's flag.",
+    "dateAdded": "2026-08-25",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2E90000"
+  },
+  {
+    "id": "t2608251201190",
+    "title": "Confirm readiness for PeopleXD Quality project handover (Sophie Levy PO E22033553)",
+    "tier": "week",
+    "source": "Inbox - Sophie Levy, 2026-08-24 08:33",
+    "emailRef": "Re: PO ref E22033553 / Quality funded work",
+    "entryId": "",
+    "summary": "",
+    "description": "Sophie Levy confirms the project is fully staffed and having internal transition from sales to professional services. Kevin's 24 Aug email response needs follow-up to ensure clear handover and any HR Systems dependencies are identified before project execution begins.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[25 Aug 2026] Auto-created from inbox triage (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work).",
+      "[25 Aug 2026] Sophie Levy confirms the Quality project is fully staffed with internal transition from sales to professional services happening 24 Aug afternoon; project ready to proceed. (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)",
+      "[27 Aug 2026] Sophie Levy confirmed Quality project is fully staffed and internal transition from sales to professional services is proceeding. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-21 17:00)",
+      "[30 Aug 2026] Sophie confirms Quality project (PO E22033553) is fully staffed with internal transition from sales to professional services proceeding. (email: Simon Burford - RE: Business rules for Data Warehouse)",
+      "[30 Aug 2026] Sophie Levy confirms Cority Quality project (PO E22033553) is fully staffed with transition from sales to professional services proceeding. (email: Sophie Levy - Re: PO ref E22033553 / Quality funded work)"
+    ]
+  },
+  {
+    "id": "t2608261500530",
+    "title": "Review REF2029 UDF promotion to UOXP",
+    "tier": "week",
+    "source": "Inbox - Nathan Kirwan, 2026-08-26 14:51",
+    "emailRef": "REF29 UDF - Promotion to UOXP",
+    "entryId": "",
+    "summary": "",
+    "description": "Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment. Kevin needs to review the promotion details and any HR Systems implications or sign-off requirements.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[26 Aug 2026] Auto-created from inbox triage (email: Nathan Kirwan - REF29 UDF - Promotion to UOXP).",
+      "[26 Aug 2026] Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment and seeking Kevin's review. (email: Nathan Kirwan - REF29 UDF - Promotion to UOXP)",
+      "[27 Aug 2026] Kevin confirmed he will push REF2029 UDF promotion to live today and will notify Nathan when complete. (email: Kevin (sent to: Nathan Kirwan) - Re: REF29 UDF - Promotion to UOXP)",
+      "[27 Aug 2026] Nathan confirms UDF is live but requests core portal display be turned off for now; Kevin should action this configuration change. (email: Nathan Kirwan - RE: REF29 UDF - Promotion to UOXP)",
+      "[27 Aug 2026] Nathan confirms promotion can proceed; Kevin has completed the action of pushing REF2029 UDF to live production. (email: Nathan Kirwan - Re: REF29 UDF - Promotion to UOXP)",
+      "[27 Aug 2026] Nathan acknowledged Kevin's confirmation that REF2029 UDF will be pushed to live. (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes)",
+      "[30 Aug 2026] Kevin sent confirmation that REF2029 UDF is now live in UOXP production. (email: Kevin (sent to: Nathan Kirwan <nathan.kirwan@admin.ox.ac.uk>) - Re: REF29 UDF - Promotion to UOXP)",
+      "[02 Sep 2026] Nathan Kirwan acknowledged Kevin's confirmation; REF2029 UDF promotion can proceed as planned. (email: Nathan Kirwan - Re: REF29 UDF - Promotion to UOXP)"
+    ],
+    "messageId": "CWLP265MB2964AF79DF919C7F67CDC2ED8AAD2@CWLP265MB2964.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB2964AF79DF919C7F67CDC2ED8AAD2%40CWLP265MB2964.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t2608261500531",
+    "title": "Locate documentation on Grade 2 increment bar changes (2024 uplift)",
+    "tier": "week",
+    "source": "Inbox - Michael O'Sullivan, 2026-08-26 12:06",
+    "emailRef": "2024 non clinical uplift_Incremental bar changes for Grade 2",
+    "entryId": "",
+    "summary": "",
+    "description": "Michael O'Sullivan is asking Kevin whether he recalls any decisions or has documentation relating to Grade 2 increment bar changes made during the 2024 non-clinical uplift. Kevin needs to search records and respond.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[26 Aug 2026] Auto-created from inbox triage (email: Michael O'Sullivan - 2024 non clinical uplift_Incremental bar changes for Grade 2).",
+      "[26 Aug 2026] Michael O'Sullivan is asking Kevin to recall or locate documentation on Grade 2 increment bar changes from the 2024 non-clinical uplift. (email: Michael O'Sullivan - 2024 non clinical uplift_Incremental bar changes for Grade 2)",
+      "[27 Aug 2026] Simon has responded with details: employees on scale point 2.5 were moved to 2.6 during 2024 uplift, no one moved to 2.7 or 2.8; he has additional email from Tonya with more context. (email: Simon Burford - RE: 2024 non clinical uplift_Incremental bar changes for Grade 2)",
+      "[27 Aug 2026] Simon confirmed employees on scale point 2.5 were moved to 2.6 during 2024 uplift; he has additional email from Tonya with more context. (email: Nathan Kirwan - Re: REF29 UDF - Promotion to UOXP)",
+      "[28 Aug 2026] Michael O'Sullivan is continuing the Grade 2 increment bar changes inquiry, noting SQL code evidence in Nik's folder suggesting development work was started. (email: Erik at Soundtrap - One class period, no production required)",
+      "[30 Aug 2026] Michael O'Sullivan asks Kevin to recall decisions or locate documentation on Grade 2 increment bar changes from 2024 non-clinical uplift; notes SQL code evidence in Nik's folder. (email: Michael O'Sullivan - RE: 2024 non clinical uplift_Incremental bar changes for Grade 2)",
+      "[02 Sep 2026] Michael O'Sullivan provided additional context: SQL code evidence in Nik's folder suggests development work was initiated for Grade 2 increment bar changes. (email: Michael O'Sullivan - RE: 2024 non clinical uplift_Incremental bar changes for Grade 2)"
+    ],
+    "messageId": "CWLP265MB1842AAF6A14285389FE84E3A80AC2@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB1842AAF6A14285389FE84E3A80AC2%40CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t2608270801360",
+    "title": "Assess 38-day balance workgroup update work for Chemistry",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-26 16:29",
+    "emailRef": "FW: changing to 38 day balance - workgroups for updating  ",
+    "entryId": "",
+    "summary": "",
+    "description": "Marie is asking whether the workgroup update request from Chemistry (in Julie's absence) represents significant planned work. Kevin needs to review the request, assess effort, and advise Marie on priority and resource allocation.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[27 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - FW: changing to 38 day balance - workgroups for updating  ).",
+      "[27 Aug 2026] Marie is forwarding Chemistry's workgroup update request from Julie's absence, as flagged in the existing task. (email: Marie Cooksey - FW: changing to 38 day balance - workgroups for updating  )",
+      "[27 Aug 2026] Michael has confirmed the 131 workgroups list was expected and will need amendment to reflect revised Holiday Scheme; provides clarification on scope. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )",
+      "[27 Aug 2026] Michael confirmed the 131 workgroups list and that all will need amendment to reflect revised Holiday Scheme for 38-day balance. (email: Michael O'Sullivan - 2024 non clinical uplift_Incremental bar changes for Grade 2)",
+      "[28 Aug 2026] Marie is coordinating with Michelle and Julie on workgroup update responses; expects discussion with Julie. (email: Michael O'Sullivan - RE: 2024 non clinical uplift_Incremental bar changes for Grade 2)",
+      "[30 Aug 2026] Marie providing update on 38-day balance workgroup discussions; she met with Michelle who will discuss responses with Julie on return. (email: Marie Cooksey - RE: changing to 38 day balance - workgroups for updating)",
+      "[02 Sep 2026] Julie Hickman requests effort estimate on updating 131 Chemistry workgroups - this is the blocking decision for September implementation timeline. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[02 Sep 2026] Simon Burford confirms he will ask Kevin to estimate how many GLAM workgroups the team can take on from GLAM beyond Chemistry's 131. (email: Simon Burford - RE: 38 day balance for departments update and decisions needed)"
+    ],
+    "messageId": "CWLP265MB4176CD928473D0EDD95E89CB92B72@CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB4176CD928473D0EDD95E89CB92B72%40CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t2608271501000",
+    "title": "Confirm Cross-Team Process Improvement Working Group attendance - 28 Sept",
+    "tier": "week",
+    "source": "Inbox - Michael O'Sullivan, 2026-08-27 09:18",
+    "emailRef": "FW: Cross-Team Process Improvement Working Group – 1st Meeting",
+    "entryId": "",
+    "summary": "",
+    "description": "Michael O'Sullivan is confirming that Kevin has already accepted the 28 September meeting and noting that Otter is looking for at least one member from HR Systems to attend. Kevin should confirm his continued participation or reassign if needed.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[27 Aug 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting).",
+      "[27 Aug 2026] Michael confirms Kevin has already accepted the 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[27 Aug 2026] Michael confirmed Kevin has already accepted the 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )",
+      "[30 Aug 2026] Michael confirms Kevin's prior acceptance of 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[02 Sep 2026] Michael O'Sullivan confirms Kevin's prior acceptance of 28 September Cross-Team Process Improvement Working Group meeting and Otter's request for HR Systems attendance. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)"
+    ],
+    "messageId": "CWLP265MB18424072377979FFD4BA97A780AD2@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB18424072377979FFD4BA97A780AD2%40CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t2608271801020",
+    "title": "Confirm IRIS/IEX incidents change timings with James and Amanda",
+    "tier": "week",
+    "source": "Inbox - Marie Cooksey, 2026-08-27 15:53",
+    "emailRef": "RE: IRIS / IEX - Incidents Changes",
+    "entryId": "",
+    "summary": "",
+    "description": "Marie Cooksey has copied Kevin and James in to provide timings on IRIS/IEX incidents changes. Amanda needs confirmation of when HR Systems can handle the implementation. Kevin needs to respond with realistic timelines.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[27 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes).",
+      "[27 Aug 2026] Marie explicitly stated that Kevin and James will respond in due course with incident timings for Amanda. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)",
+      "[30 Aug 2026] Marie Cooksey copied Kevin and James to respond with IRIS/IEX incidents changes timings; emphasizes need for clear communication plan. (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes)",
+      "[02 Sep 2026] Marie Cooksey explicitly copied Kevin and James to respond with timings on IRIS/IEX incidents changes to Amanda—urgent coordination needed. (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes)"
+    ],
+    "messageId": "LO6P265MB626770D0AE4061E13358EA6F8BAD2@LO6P265MB6267.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LO6P265MB626770D0AE4061E13358EA6F8BAD2%40LO6P265MB6267.GBRP265.PROD.OUTLOOK.COM"
+  },
+  {
+    "id": "t2609020705200",
+    "title": "Investigate manager leave approval failure - Support Call# 11707439",
+    "tier": "today",
+    "source": "Inbox - Michael O'Sullivan, 2026-09-01 16:29",
+    "emailRef": "Support Call# 11707439: Manager unable to approve leave",
+    "entryId": "",
+    "messageId": "CWLP265MB1842B7E69E25FD79D17400D280A82@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB1842B7E69E25FD79D17400D280A82%40CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
+    "summary": "",
+    "description": "Manager unable to approve leave requests—possible WFM module issue affecting day-to-day leave processing. Michael O'Sullivan received this support call on 1 September and flagged it for attention. Needs diagnostic work and coordination with the WFM team to identify root cause and restore normal leave approval workflow.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave).",
+      "[02 Sep 2026] Michael O'Sullivan forwards manager leave approval issue for investigation. (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave)"
+    ]
+  },
+  {
+    "id": "t2609020705201",
+    "title": "Investigate P5 Incident# 11706988 - Task# 50981420 assigned for investigation",
+    "tier": "today",
+    "source": "Inbox - Michael O'Sullivan, 2026-09-01 09:57",
+    "emailRef": "FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988",
+    "entryId": "",
+    "messageId": "CWLP265MB1842B0CB675A6D3AF9F715B980A82@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB1842B0CB675A6D3AF9F715B980A82%40CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
+    "summary": "",
+    "description": "Michael O'Sullivan assigned this P5 incident directly to Kevin on 1 September for urgent investigation, affecting multiple users who reported the issue. Requires diagnostic and troubleshooting work to identify root cause and resolution path for the affected user group.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988).",
+      "[02 Sep 2026] Michael O'Sullivan assigns P5 Incident 11706988 directly to Kevin for investigation, affecting multiple users reporting the issue. (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988)"
+    ]
+  }
+]
