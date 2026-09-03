@@ -1,7 +1,50 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-08-22 (Drew) - Per-entry delete control for a task's ACTIONS log SHIPPED, live on main. See "Session 2026-08-22 — per-action-log-entry delete control" below.
+**Last updated:** 2026-09-03 (Drew) - Live data-accuracy check + Today/Tomorrow done-task purge SHIPPED, closes the 12 Aug flagged hygiene item. See "Session 2026-09-03 — live accuracy check + Today/Tomorrow done-task purge" below.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
+
+---
+
+## Session 2026-09-03 — live accuracy check + Today/Tomorrow done-task purge, SHIPPED and verified live (Drew)
+
+**Trigger:** Kevin asked (via coordinator) whether command-centre's data is up to date and accurate, separate from the same-day work-inbox Lane B session. Investigation-first, no writes until scope was approved.
+
+**Live accuracy check findings:**
+- Freshness: healthy. Last write before this session was commit `c4d821b` (15:19 today, work-inbox's automated Phase 3.6 sync) — cadence throughout the day (07:15/09:48/13:04/14:46/15:19) all landed cleanly.
+- Cloudflare Worker `cc-tasks-writer.kevinlelitte.workers.dev`: live and correctly routing (405 on GET, 204 on OPTIONS/CORS preflight) — confirmed further by real writes landing in git throughout the day.
+- Structurally clean: no duplicate ids, no duplicate titles, no missing `title`/`tier` fields.
+- **Real problem found:** Today and Tomorrow tiers were dominated by long-completed (`done:true`) tasks never purged — Today 9/15 (60%), Tomorrow 14/15 (93%), some dated back to 8 June 2026 (~3 months stale), only hidden from view by the client-side "Show done" toggle. This is the exact issue a 12 Aug 2026 session flagged and explicitly left un-actioned ("9 done:true tasks remain live in Today/Tomorrow ... decide separately") — it had grown since (Today alone was 3 back then, 9 now).
+- Known, unchanged, not new: 34/87 tasks (39%) missing `dateAdded` — disclosed gap from 12 Aug, Today/Tomorrow backfill was out of scope then and remains so.
+
+**Kevin approved (coordinator relay):** purge `done:true` from Today and Tomorrow tiers only. Week and Parked explicitly out of scope, untouched.
+
+**Backup-and-verify protocol followed in full:**
+1. Live GET via GitHub Contents API (non-zero size confirmed: 198,578 bytes, sha `1f730a7e`).
+2. Backup committed first: `Archive/tasks_backup_20260903_1639.json`, commit `6d15aa5`. GET-back verified: sha matches, byte-identical to the live file.
+3. Purge computed locally (Python, not hand-edited) against a fresh re-GET (sha unchanged, no concurrent write in the gap): removed exactly the tasks where `tier in {today, tomorrow} and done is True` — 23 tasks (9 today + 14 tomorrow). Every kept task diffed byte-identical against its pre-edit self (no field mutation); no new/unexpected ids; arithmetic (87 − 23 = 64) checked programmatically before writing.
+4. Write via GitHub Contents API with the pre-edit sha as the conditional base (`sha` param) — protects against a concurrent work-inbox auto-sync clobbering an intervening change; re-checked live sha immediately before the write to minimise the race window. Write commit `df95017`, new content sha `8f1a6e5a`.
+5. Post-write GET-back verified: sha matches, byte-identical to the intended output.
+6. Live-dashboard read paths re-checked directly (not assumed): both `github-proxy.lelitte.co.uk/command-centre` and `raw.githubusercontent.com` (the two URLs `loadTasks()` actually fetches from, in that order) already served the purged 64-task set with no cache lag.
+
+**Before -> after tier counts:**
+
+| Tier | Before | Removed | After |
+|---|---|---|---|
+| Today | 15 | 9 | 6 |
+| Tomorrow | 15 | 14 | 1 |
+| Week | 47 | 0 (out of scope) | 47 |
+| Parked | 10 | 0 (out of scope) | 10 |
+| **Total** | **87** | **23** | **64** |
+
+Post-purge verification (programmatic, before AND after the live write): no duplicate ids, Week/Parked counts byte-for-byte unchanged, every remaining Today/Tomorrow task has `done` not-`true` (a mix of explicit `false` and unset/`None` — pre-existing data shape, not altered by this change), all kept tasks byte-identical to their pre-purge selves.
+
+**Not touched:** Week and Parked tiers (explicitly out of scope); the `dateAdded`-missing gap (separate, disclosed, unchanged); the Worker source code / deployment itself (no code change, data-only).
+
+**Closes:** the 12 Aug 2026 "This Week/Parked bloat" session's flagged-but-unapproved Today/Tomorrow observation — now actioned.
+
+**Next action:** none outstanding on this item. If similar bloat reappears in Today/Tomorrow later, the same pattern (backup, filter `tier in {today,tomorrow} and done is True`, verify, write, re-verify live) applies directly — Week/Parked purges would need their own separate approval, not assumed from this one.
+
+---
 
 ---
 
