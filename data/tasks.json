@@ -270,13 +270,14 @@
       "[07 Jul 2026] Crispin Muncaster provided an update on DTP1092 PXD Company 90 testing, relevant to multi-company setup (FP 68261303). (email: Crispin Muncaster - RE: DTP1092 PXD Company 90 Testing)",
       "[07 Aug 2026] Conor O'Brien has additional work to discuss on multi-company setup and is awaiting confirmation of Kevin's availability next week. (email: Conor O'Brien - RE: #External# RE: Multi Company Setup)",
       "[10 Aug 2026] Conor O'Brien has initiated contact regarding multi-company setup progress and is ready to continue the work. (email: Conor O'Brien - Multi Company Setup)",
-      "[03 Sep 2026] Simon updates on Multi Company Setup (FP 68261303) noting research team's requested ESS profile changes for separate profile configuration. (email: Simon Burford - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)"
+      "[03 Sep 2026] Simon updates on Multi Company Setup (FP 68261303) noting research team's requested ESS profile changes for separate profile configuration. (email: Simon Burford - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)",
+      "[03 Sep 2026] Conor O'Brien requesting requirements details from project team for FP 68261303 Multi Company Setup. (email: Conor O'Brien - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)"
     ],
     "dateAdded": "2026-06-15",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998600000",
     "done": true,
-    "messageId": "CWLP265MB4176BB5EC9B6CB5C6AF7C8A392B72@CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM",
-    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB4176BB5EC9B6CB5C6AF7C8A392B72%40CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM"
+    "messageId": "LO0P123MB4265A243BE88E1DF34823796FBB62@LO0P123MB4265.GBRP123.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LO0P123MB4265A243BE88E1DF34823796FBB62%40LO0P123MB4265.GBRP123.PROD.OUTLOOK.COM"
   },
   {
     "id": "t005",
@@ -453,10 +454,13 @@
       "[19 Aug 2026] Cority Integration Platform reported another SFTP connection error on 14 August at 17:00; the CHI Team has been notified and is working on resolution. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-14 17:00)",
       "[19 Aug 2026] Cority Employee Import successful on 19 Aug 2026 at 14:27 - previous SFTP error from 14 Aug has been resolved. (email: Cority_Integration_Platform_Notifications@Cority.com - [Success] Cority Employee Import Log File for OxfordUniversity - 2026-08-19 14:27)",
       "[25 Aug 2026] Automated notification: OSM email listener has been re-enabled after weekend processing pause; no action required. (email: Louise Piper - RE: OSM: No incoming emails will be processed this weekend)",
-      "[31 Aug 2026] Cority SFTP connection error logged 28 August 17:00 during employee import; similar to 22 June incident - requires urgent investigation. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-28 17:00)"
+      "[31 Aug 2026] Cority SFTP connection error logged 28 August 17:00 during employee import; similar to 22 June incident - requires urgent investigation. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-28 17:00)",
+      "[03 Sep 2026] Cority Integration Platform reporting SFTP error on 28 August 17:00 UTC during employee data import; log file requires review. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-08-28 17:00)"
     ],
     "dateAdded": "2026-06-23",
-    "entryId": ""
+    "entryId": "",
+    "messageId": "010101a049508036-40ee6a5b-4d67-44c5-aff4-359f86669eb9-000000@us-west-2.amazonses.com",
+    "webLink": "https://outlook.office.com/mail/search?query=010101a049508036-40ee6a5b-4d67-44c5-aff4-359f86669eb9-000000%40us-west-2.amazonses.com"
   },
   {
     "id": "t2608171727070",
@@ -1159,10 +1163,11 @@
       "[19 Aug 2026] Michael O'Sullivan provided context on the Balance Period End Matrix process for annual leave year-end and system calendar extension procedures. (email: Michael O'Sullivan - RE: Balance Period End Matrix)",
       "[19 Aug 2026] Julie Hickman provided contact details for 38-day balance department leads: Chemistry (Jenna Boyce, Alexia Leakey), Maths (Emma Harte), GLAM (Becky Fitzek). (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[20 Aug 2026] Julie Hickman provided update that Chemistry estimates approximately 110 existing work groups to convert for 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
-      "[02 Sep 2026] Julie Hickman confirms Chemistry requires 131 workgroups to be updated and asks Kevin for effort estimate on GLAM capacity. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+      "[02 Sep 2026] Julie Hickman confirms Chemistry requires 131 workgroups to be updated and asks Kevin for effort estimate on GLAM capacity. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[03 Sep 2026] Simon indicating Kevin needs to estimate how many GLAM workgroups the team can take on beyond Chemistry's 131. (email: Simon Burford - RE: 38 day balance for departments update and decisions needed)"
     ],
-    "messageId": "LO0SPRMB0017EDD062776109663266368AB72@LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM",
-    "webLink": "https://outlook.office.com/mail/search?query=LO0SPRMB0017EDD062776109663266368AB72%40LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM"
+    "messageId": "CWLP265MB4176CD928473D0EDD95E89CB92B72@CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB4176CD928473D0EDD95E89CB92B72%40CWLP265MB4176.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608121801281",
