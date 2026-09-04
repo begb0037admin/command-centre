@@ -250,11 +250,14 @@
       "[TODO] Kevin to decide whether/how to respond before the 19 Aug 2026 deadline -- either to orgstructure@admin.ox.ac.uk directly (errors/omissions) or within the internal Simon/Sarah discussion (HR Systems' position on the Societies management-unit restructuring).",
       "[AWAITING] Simon Burford's answer to Sarah Rowles' question on go-live timing -- not yet received as of 18 Aug 2026.",
       "[19 Aug 2026] Michael O'Sullivan has forwarded a PeopleXD platform maintenance notice for Friday 28 August between 8-10 pm that will impact services during the org structure implementation period. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
-      "[19 Aug 2026] Organisational Structure Update - August 2026 FINAL received 19 Aug 2026 16:37 with updated org structure effective through 19 August. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - FINAL)"
+      "[19 Aug 2026] Organisational Structure Update - August 2026 FINAL received 19 Aug 2026 16:37 with updated org structure effective through 19 August. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - FINAL)",
+      "[04 Sep 2026] Kevin forwarded Trinity Term 2026 non-college changes to Katherine Corr for review while on annual leave. (email: Kevin (sent to: Katherine Corr <katherine.corr@admin.ox.ac.uk>) - Trinity Term 2026 non-college changes)"
     ],
     "notes": "Retrieval + logging task only, no reply drafted or sent (Kevin's explicit instruction). Only one Simon appears in this thread (Simon Burford) -- no ambiguity to flag.",
     "dateAdded": "2026-08-18",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000"
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000",
+    "messageId": "CW1P265MB876580D3A0C2A55AFE8EBADF88B62@CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=CW1P265MB876580D3A0C2A55AFE8EBADF88B62%40CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "task-1787044968753",
@@ -1267,6 +1270,38 @@
       "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988).",
       "[02 Sep 2026] Michael O'Sullivan assigns P5 Incident 11706988 directly to Kevin for investigation, affecting multiple users reporting the issue. (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988)",
       "[04 Sep 2026] Christopher Sanders forwards urgent P5 Support Call #11707051 / Incident #11706988 to Kevin's team for investigation; ticket now formally assigned for diagnostic work. (email: Christopher Sanders - FW: Assigned to your team - Support Call# 11707051 - URGENT - problems with Cority)"
+    ]
+  },
+  {
+    "id": "t2609041614070",
+    "title": "Review and action Athena Artuso's annual leave requests",
+    "tier": "today",
+    "source": "Inbox - Athena Artuso, 2026-09-04 14:00",
+    "emailRef": "Athena A/L (summer 2027)",
+    "entryId": "",
+    "messageId": "CW1P265MB8736A7C6DFFEA5F86559423D87B52@CW1P265MB8736.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe0jqn2AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "summary": "",
+    "description": "Athena Artuso has submitted two annual leave requests (subjects: 'Athena A/L (summer 2027)' and 'Athena A/L'), both received unread today. Kevin needs to review, approve, or take any required action on these leave submissions.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[04 Sep 2026] Auto-created from inbox triage (email: Athena Artuso - Athena A/L (summer 2027))."
+    ]
+  },
+  {
+    "id": "t2609041614321",
+    "title": "Review and approve new pension schemes setup (Change 20020762) for September payroll",
+    "tier": "week",
+    "source": "Inbox - Michael O'Sullivan, 2026-09-03 15:33",
+    "emailRef": "Change # 20020762_New NHS ERRBO and USS DB AVC Pension Schemes and Pay Codes",
+    "entryId": "",
+    "messageId": "CWLP265MB184245C116FC4C5B02D4E3A580B62@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe0jqnjAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "summary": "",
+    "description": "Michael O'Sullivan is notifying that for the September payroll he will be setting up new NHS ERRBO and USS DB AVC pension schemes with associated deductions. Kevin needs to review and approve these changes before implementation.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[04 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Change # 20020762_New NHS ERRBO and USS DB AVC Pension Schemes and Pay Codes)."
     ]
   }
 ]
