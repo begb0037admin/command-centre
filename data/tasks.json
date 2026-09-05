@@ -214,7 +214,7 @@
     "tier": "week",
     "source": "Inbox 2026-06-11 15:01 / Quote 24/06",
     "emailRef": "RE: #External# PeopleXD Insight Reporting - Quote Request for Holiday Records Reports",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF53500077C2A011C0000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B48F14830000",
     "summary": "Approved 24 Jun. 2,800 flex points committed. Awaiting Access Group scheduling. Discuss timing at Managers Meeting.",
     "description": "Access Group Project Scope Document (case 69001638) received and approved 24 June 2026. Scope: 3 Holiday Records reports built by Payroll Consultant (2.5 days, 1,750pts) and WFM Consultant (1.5 days, 1,050pts). Total 2,800 flex points. Reports: Annual Leave Record by Person and Leave Year; Holiday Pay and Accrual Record for Variable-Hours and Casual Arrangements; Holiday Pay in Lieu on Termination. Access Group T&C: consultant will make contact within 3 weeks of approval to agree delivery timelines. 3-month grace period applies to flex point expiry (29 Jun expiry = use by ~29 Sep 2026). Asta Palmer to be involved in delivery.",
     "actions": [
@@ -229,7 +229,8 @@
       "[AWAITING] Access Group consultant to make contact and agree delivery timeline (within 3 weeks of approval).",
       "[19 Aug 2026] Kevin replied to Alan Quirke and Marie Cooksey approving the Holiday Records 3 Reports project and confirming it is ready to schedule with Access Group. (email: Kevin (sent to: 'Alan Quirke'; Marie Cooksey) - RE: #External# PeopleXD Insight Reporting â€“ Quote Request for Holiday Records Reports)",
       "[02 Sep 2026] Conor O'Shea proposes initial call on Friday 18 September at 14:00 for Holiday Records project; Kevin needs to confirm availability. (email: Conor O'Shea - RE: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)",
-      "[03 Sep 2026] Kevin confirmed with Access Group that 2pm Friday 18 September works for Holiday Records project kickoff call; awaiting calendar invite from Conor O'Shea. (email: Kevin (sent to: Conor O'Shea <C.OShea@theaccessgroup.com>, Alan Quirke <Alan.Quirke@theaccessgroup.com>, Marie Cooksey <marie.cooksey@admin.ox.ac.uk>) - Re: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)"
+      "[03 Sep 2026] Kevin confirmed with Access Group that 2pm Friday 18 September works for Holiday Records project kickoff call; awaiting calendar invite from Conor O'Shea. (email: Kevin (sent to: Conor O'Shea <C.OShea@theaccessgroup.com>, Alan Quirke <Alan.Quirke@theaccessgroup.com>, Marie Cooksey <marie.cooksey@admin.ox.ac.uk>) - Re: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)",
+      "[05 Sep 2026] Kevin confirmed 2pm Friday 18 September works for Holiday Records project kickoff call with Access Group (Conor O'Shea); awaiting calendar invite from Access Group. (email: Kevin (sent to: Conor O'Shea; Alan Quirke; Marie Cooksey) - Re: #External# PeopleXD Insight Reporting – Quote Request for Holiday Records Reports)"
     ],
     "dateAdded": "2026-06-11",
     "messageId": "CW1P265MB8765667963C4863AFFF403FA88B62@CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM",
@@ -251,11 +252,12 @@
       "[AWAITING] Simon Burford's answer to Sarah Rowles' question on go-live timing -- not yet received as of 18 Aug 2026.",
       "[19 Aug 2026] Michael O'Sullivan has forwarded a PeopleXD platform maintenance notice for Friday 28 August between 8-10 pm that will impact services during the org structure implementation period. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
       "[19 Aug 2026] Organisational Structure Update - August 2026 FINAL received 19 Aug 2026 16:37 with updated org structure effective through 19 August. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - FINAL)",
-      "[04 Sep 2026] Kevin forwarded Trinity Term 2026 non-college changes to Katherine Corr for review while on annual leave. (email: Kevin (sent to: Katherine Corr <katherine.corr@admin.ox.ac.uk>) - Trinity Term 2026 non-college changes)"
+      "[04 Sep 2026] Kevin forwarded Trinity Term 2026 non-college changes to Katherine Corr for review while on annual leave. (email: Kevin (sent to: Katherine Corr <katherine.corr@admin.ox.ac.uk>) - Trinity Term 2026 non-college changes)",
+      "[05 Sep 2026] Kevin forwarded Trinity Term 2026 non-college organisational structure changes to Katherine Corr for review while on annual leave 4 September. (email: Kevin (sent to: Katherine Corr) - Trinity Term 2026 non-college changes)"
     ],
     "notes": "Retrieval + logging task only, no reply drafted or sent (Kevin's explicit instruction). Only one Simon appears in this thread (Simon Burford) -- no ambiguity to flag.",
     "dateAdded": "2026-08-18",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B48F14860000",
     "messageId": "CW1P265MB876580D3A0C2A55AFE8EBADF88B62@CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM",
     "webLink": "https://outlook.office.com/mail/search?query=CW1P265MB876580D3A0C2A55AFE8EBADF88B62%40CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM"
   },
@@ -1179,7 +1181,7 @@
     "tier": "week",
     "source": "Inbox - Marie Cooksey, 2026-08-26 16:29",
     "emailRef": "FW: changing to 38 day balance - workgroups for updating  ",
-    "entryId": "",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B48F14810000",
     "summary": "",
     "description": "Marie is asking whether the workgroup update request from Chemistry (in Julie's absence) represents significant planned work. Kevin needs to review the request, assess effort, and advise Marie on priority and resource allocation.",
     "origin": "inbox-auto",
@@ -1193,7 +1195,8 @@
       "[02 Sep 2026] Julie Hickman requests effort estimate on updating 131 Chemistry workgroups - this is the blocking decision for September implementation timeline. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[02 Sep 2026] Simon Burford confirms he will ask Kevin to estimate how many GLAM workgroups the team can take on from GLAM beyond Chemistry's 131. (email: Simon Burford - RE: 38 day balance for departments update and decisions needed)",
       "[03 Sep 2026] Julie disputes prior meeting recollection and asserts Kevin agreed to support Chemistry and provide GLAM with count of workgroups Kevin can update. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
-      "[04 Sep 2026] Kevin provided effort analysis to Julie Hickman and Simon Burford confirming Chemistry as the 38-day balance pilot with 131 workgroups requiring updates. (email: Kevin (sent to: Julie Hickman <julie.hickman@admin.ox.ac.uk>, Simon Burford <simon.burford@admin.ox.ac.uk>) - Re: 38 day balance for departments update and decisions needed)"
+      "[04 Sep 2026] Kevin provided effort analysis to Julie Hickman and Simon Burford confirming Chemistry as the 38-day balance pilot with 131 workgroups requiring updates. (email: Kevin (sent to: Julie Hickman <julie.hickman@admin.ox.ac.uk>, Simon Burford <simon.burford@admin.ox.ac.uk>) - Re: 38 day balance for departments update and decisions needed)",
+      "[05 Sep 2026] Kevin provided effort analysis confirming Chemistry as 38-day balance pilot with 131 workgroups requiring updates; decision committed to Julie Hickman and Simon Burford. (email: Kevin (sent to: Julie Hickman; Simon Burford) - Re: 38 day balance for departments update and decisions needed)"
     ],
     "messageId": "CW1P265MB8765F429101C1984822C7A4788B62@CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM",
     "webLink": "https://outlook.office.com/mail/search?query=CW1P265MB8765F429101C1984822C7A4788B62%40CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM"
@@ -1260,7 +1263,7 @@
     "tier": "today",
     "source": "Inbox - Michael O'Sullivan, 2026-09-01 09:57",
     "emailRef": "FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988",
-    "entryId": "",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B48EA9F80000",
     "messageId": "CWXP265MB18139A34B333FD17B36F542895A82@CWXP265MB1813.GBRP265.PROD.OUTLOOK.COM",
     "webLink": "https://outlook.office.com/mail/search?query=CWXP265MB18139A34B333FD17B36F542895A82%40CWXP265MB1813.GBRP265.PROD.OUTLOOK.COM",
     "summary": "",
@@ -1269,7 +1272,8 @@
     "actions": [
       "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988).",
       "[02 Sep 2026] Michael O'Sullivan assigns P5 Incident 11706988 directly to Kevin for investigation, affecting multiple users reporting the issue. (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988)",
-      "[04 Sep 2026] Christopher Sanders forwards urgent P5 Support Call #11707051 / Incident #11706988 to Kevin's team for investigation; ticket now formally assigned for diagnostic work. (email: Christopher Sanders - FW: Assigned to your team - Support Call# 11707051 - URGENT - problems with Cority)"
+      "[04 Sep 2026] Christopher Sanders forwards urgent P5 Support Call #11707051 / Incident #11706988 to Kevin's team for investigation; ticket now formally assigned for diagnostic work. (email: Christopher Sanders - FW: Assigned to your team - Support Call# 11707051 - URGENT - problems with Cority)",
+      "[05 Sep 2026] Gillian Wilson responded to urgent Cority support call #11707051 (Incident #11706988); team investigation ongoing. (email: DistroKid - Your requested updates have been cancelled)"
     ]
   },
   {
@@ -1278,14 +1282,15 @@
     "tier": "today",
     "source": "Inbox - Athena Artuso, 2026-09-04 14:00",
     "emailRef": "Athena A/L (summer 2027)",
-    "entryId": "",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B48EA9DC0000",
     "messageId": "CW1P265MB8736A7C6DFFEA5F86559423D87B52@CW1P265MB8736.GBRP265.PROD.OUTLOOK.COM",
     "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe0jqn2AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
     "summary": "",
     "description": "Athena Artuso has submitted two annual leave requests (subjects: 'Athena A/L (summer 2027)' and 'Athena A/L'), both received unread today. Kevin needs to review, approve, or take any required action on these leave submissions.",
     "origin": "inbox-auto",
     "actions": [
-      "[04 Sep 2026] Auto-created from inbox triage (email: Athena Artuso - Athena A/L (summer 2027))."
+      "[04 Sep 2026] Auto-created from inbox triage (email: Athena Artuso - Athena A/L (summer 2027)).",
+      "[05 Sep 2026] Athena Artuso submitted second annual leave request; both requests from emails 10 and 11 require Kevin's review and approval. (email: Simon Burford - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)"
     ]
   },
   {
@@ -1294,14 +1299,31 @@
     "tier": "week",
     "source": "Inbox - Michael O'Sullivan, 2026-09-03 15:33",
     "emailRef": "Change # 20020762_New NHS ERRBO and USS DB AVC Pension Schemes and Pay Codes",
-    "entryId": "",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B48EA9A60000",
     "messageId": "CWLP265MB184245C116FC4C5B02D4E3A580B62@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
     "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe0jqnjAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
     "summary": "",
     "description": "Michael O'Sullivan is notifying that for the September payroll he will be setting up new NHS ERRBO and USS DB AVC pension schemes with associated deductions. Kevin needs to review and approve these changes before implementation.",
     "origin": "inbox-auto",
     "actions": [
-      "[04 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Change # 20020762_New NHS ERRBO and USS DB AVC Pension Schemes and Pay Codes)."
+      "[04 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Change # 20020762_New NHS ERRBO and USS DB AVC Pension Schemes and Pay Codes).",
+      "[05 Sep 2026] Michael O'Sullivan detailing change #20020762 setup of new NHS ERRBO and USS DB AVC pension schemes for September payroll; Kevin must review and approve before implementation. (email: Christopher Sanders - RE: Assigned to your team - Support Call# 11707051 - URGENT - problems with Cority)"
+    ]
+  },
+  {
+    "id": "t2609051524490",
+    "title": "Investigate Cority Employee Import error 2026-09-04 17:00",
+    "tier": "today",
+    "source": "Inbox - Simon Burford, 2026-09-03 16:03",
+    "emailRef": "RE: Proposal: WFM Pay Code Parameter Change – Restrict Entry to Valid Balance Period",
+    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B48EA9E40000",
+    "messageId": "",
+    "webLink": "",
+    "summary": "",
+    "description": "Cority integration platform reported SFTP connection error at 17:00 on 4 September during scheduled employee data import; log file attached in email. Kevin must review log file, investigate root cause, and confirm whether import completed successfully or requires re-run.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[05 Sep 2026] Auto-created from inbox triage (email: Simon Burford - RE: Proposal: WFM Pay Code Parameter Change – Restrict Entry to Valid Balance Period)."
     ]
   }
 ]
