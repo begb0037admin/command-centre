@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-09-08 (Drew) - DIAGNOSIS ONLY, no change made. "Open email" on IMAP-era tasks opens OWA to an empty inbox: 9 live tasks carry a stale `webLink` in the known-dead `outlook.office.com/mail/search?query=<Message-ID>` search form. Root cause = data-backfill gap from the 3 Sept OWA-weblink fix (fixed forward for new tasks, old tasks explicitly not retrofitted), not an opener bug. See "Session 2026-09-08" entry below. Awaiting Kevin's decision on fix option + screenshot approval before any write.
+**Last updated:** 2026-09-08 (Drew) - UPDATE 2: new direction (port work-inbox's working OWA opener to CC) + new PERMANENT standing rule (Outlook Classic retired, OWA-in-browser only) recorded in CLAUDE.md/work-inbox CLAUDE.md/agent-commons. Investigation done, NOTHING written to js/app.js or tasks.json, awaiting Kevin. DIAGNOSIS ONLY, no change made. "Open email" on IMAP-era tasks opens OWA to an empty inbox: 9 live tasks carry a stale `webLink` in the known-dead `outlook.office.com/mail/search?query=<Message-ID>` search form. Root cause = data-backfill gap from the 3 Sept OWA-weblink fix (fixed forward for new tasks, old tasks explicitly not retrofitted), not an opener bug. See "Session 2026-09-08" entry below. Awaiting Kevin's decision on fix option + screenshot approval before any write.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
 
 ---
@@ -34,6 +34,25 @@ Why "meant to have been resolved": the 3 Sept fix (`fcb47a9` work-inbox + `0096c
 3. **Harden `fetch_inbox.py` (work-inbox, separate repo/approval).** Stop `_owa_link()` being used as a `webLink` value — write `""` when the connector can't resolve — so new tasks never re-acquire a broken search-URL `webLink`. Not required to fix the 9 existing.
 
 **Recommendation:** Option 1 + Option 2 in one command-centre cycle; flag Option 3 to the work-inbox side separately.
+
+### UPDATE 2 (2026-09-08, later) — new direction: port work-inbox's working opener; + permanent standing rule
+
+**Standing rule now in force (Kevin, permanent).** Recorded this cycle in `CLAUDE.md` (Hard Rules), `work-inbox/CLAUDE.md`, `agent-commons/AGENT_DIRECTORY.md` (Shared rules), drew memory: *no machine uses desktop Win32 Outlook any more; every open-email path opens OWA in the browser via a real message deep-link (`outlook.office365.com/owa/?ItemID=...&viewmodel=ReadMessageItem`); never `openmail://`, never COM/MAPI, never a bare `?query=<Message-ID>` search; no deep-link -> no opener / honest notice.*
+
+**Why work-inbox's dashboard opener works (verified against live files/data):**
+- Live `data/briefing.json` (8 Sep, refreshed 12:18): 15/69 mail cards carry a `web_link`, **every one** in the real Graph form `https://outlook.office365.com/owa/?ItemID=...&viewmodel=ReadMessageItem`. **Zero** cards carry a `/mail/search?query=` link.
+- `fetch_inbox.py` **Phase 3.1** (work-inbox dashboard cards) resolves `web_link` via `lane_b_call1.resolve_mail_weblink()` (connector) and, on failure, **leaves `web_link=""` with no fallback** — the code comment is explicit: *"No broken outlook.office.com/mail/search fallback is baked in here ... deliberate, narrow divergence from Phase 3.6's line-3267 fallback."*
+- `js/app.js` `_owaWebUrl()` / `openEmailWeb()` open whatever's in `web_link`; since it's always a real deep-link or empty, it always lands on the message (empty -> `openmail://` EntryID fallback, or no icon).
+
+**The concrete delta that makes CC fail = pipeline, not client.** CC's `js/app.js` opener (`openEmailWeb()` + the `else if(t.webLink)` branch) is already functionally identical to work-inbox's `_owaWebUrl()` — same `https` + `outlook.office.com`/`outlook.office365.com` allowlist, same `[web_link, display_url, webLink]` candidates. The difference is the data: `fetch_inbox.py`'s **CC-task** write paths still bake in the banned `_owa_link()` `?query=` form as the final fallback — line 3333 `"webLink": resolved_link or nt.get("web_link","") or _owa_link(mid)` (new tasks), lines 3055/3066 feed `email_candidates[*].web_link` (transitively line 3260-3261, updates). work-inbox's Phase 3.1 dropped exactly this fallback for its own cards; the CC-task paths never did.
+
+**Minimal change to make CC behave identically (NOT yet built/pushed):**
+1. **work-inbox `fetch_inbox.py` (separate repo, separate approval):** remove the `_owa_link(...)` fallback from the 3 CC-task write points (lines ~3055, ~3066, ~3333). Result: CC `webLink` is a real `?ItemID=` deep-link or `""` — never a `?query=` search. This is the true "same as work-inbox".
+2. **command-centre `js/app.js` (backup-and-verify + screenshot gate):** in `openEmailWeb()`, reject a candidate whose URL path starts `/mail/search` (treat as not-usable -> existing honest "no usable link" alert). Small, safe divergence from work-inbox's client, in the compliant direction; also neutralises any already-stored / future straggler banned link without a data write. Also brings CC's `openmail://` `else if(t.entryId)` branch into scope of the new standing rule — flag for a follow-up (52 CC tasks have an `entryId`).
+
+**Does this fix the 9 stale-link tasks?** **No, not by itself.** The pipeline change only affects tasks created/updated after it ships; `fetch_inbox.py` overwrites an existing task's `webLink` only when a *new* email update on that thread carries a resolved `web_link` (line 3260-3261). The 9 (`t009, t030, t2608191643001, task-1787645383808, t2608261500530, t2608261500531, t2608271501000, t2608271801020, t2609020705200`) keep their banned `?query=` `webLink` until a one-time data pass: either resolve a real `?ItemID=` for each via `resolve_mail_weblink()` (best — lets Kevin actually open them), or blank the 9 `webLink` values (removes the misleading empty-inbox, matches work-inbox's "no icon when no real link"). The client guard in step 2 stops the *misleading* empty-inbox for the 9 immediately, but does not let Kevin open those emails.
+
+**Connector-env note:** `resolve_mail_weblink()` needs `C:\WorkInboxAI\codex-laneb` (personal-account Codex connector) — that env is on the laptop (`oxford-lan`), NOT this admin box (checked: `C:\WorkInboxAI\codex-laneb` absent locally). Any real-link resolution/backfill runs there via SSH, same as the 3 Sept / 8 Sept work.
 
 ### Next action for a cold session
 
