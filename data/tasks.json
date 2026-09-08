@@ -470,28 +470,6 @@
     "dateAdded": "2026-08-02"
   },
   {
-    "id": "t2608030857560",
-    "title": "Attend SH&SM Project HR Systems Tender Evaluation Response meeting",
-    "tier": "week",
-    "source": "Inbox - Christopher Sanders, 2026-07-27 11:00",
-    "emailRef": "SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ADFEA7630000",
-    "summary": "",
-    "description": "Christopher Sanders has sent two emails (pt. 1 and pt. 2) with Microsoft Teams meeting links for SH&SM Project HR Systems Tender Evaluation Response. Kevin needs to participate in this evaluation discussion related to the Health & Safety Management System (DTP1334) project.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[03 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - SH&SM Project - HR Systems Tender Evaluation Response (pt. 2)).",
-      "[04 Aug 2026] Crispin has confirmed the 14 August deadline for integrations testing completion. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Integrations testing)",
-      "[10 Aug 2026] Crispin is out of office on annual leave until Monday 17 August, which may impact SH&SM Project meeting attendance. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
-      "[10 Aug 2026] Crispin Muncaster is out of office on annual leave returning 17 August; testing work is proceeding with Guy Williams coordinating staging imports. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[10 Aug 2026] Guy Williams replied on 10 August confirming integration platforms (INT-STG, BT, AIP) are ready with current staging imports for testing. (email: Simon Burford - Volunteering Leave)",
-      "[10 Aug 2026] Guy Williams confirms all integration platforms are current and ready; testing can proceed as planned for the 14 August deadline. (email: Guy Williams - Re: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
-      "[10 Aug 2026] Nathan Kirwan confirmed that test scenarios for DTP1092 testing have been set up in UOXU. (email: Crispin Muncaster - RE: DTP1092 College Staff to PXD - testing meeting)",
-      "[21 Aug 2026] Kevin clarified that the Cority applicant data import report was originally built by Grace, not Lee, and has been handed over with documentation. (email: Kevin (sent to: Simon Burford; James Salas Guillen) - Re: Cority - Applicant Data Import file)"
-    ],
-    "dateAdded": "2026-08-03"
-  },
-  {
     "id": "t2608031500570",
     "title": "DTP1092 College Staff into PXD - complete integrations testing by 14 Aug",
     "tier": "week",
@@ -511,62 +489,6 @@
     ],
     "dateAdded": "2026-08-03",
     "done": true
-  },
-  {
-    "id": "t2608061800540",
-    "title": "Attend Oxford University Evo Pre project meeting in Simon's absence",
-    "tier": "week",
-    "source": "Inbox - Simon Burford, 2026-08-06 16:44",
-    "emailRef": "FW: Oxford University Evo Pre project meeting ",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995760000",
-    "summary": "",
-    "description": "Simon Burford is asking Kevin to attend the Oxford University Evo Pre project meeting in his absence. Julian Williams from IT Services will be attending. Kevin needs to confirm his availability and prepare to represent HR Systems on this project.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[06 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Oxford University Evo Pre project meeting ).",
-      "[07 Aug 2026] Simon has asked Kevin to attend the Oxford University Evo Pre project meeting in his absence, confirming the delegation. (email: Simon Burford - FW: Oxford University Evo Pre project meeting )",
-      "[10 Aug 2026] Simon Burford confirmed to Michael that he can support Asta on Friday 7 August and hopes Kevin will be back to support the following week on DTP1092 work. (email: Simon Burford - RE: Michael - Annual Leave)",
-      "[11 Aug 2026] Meeting was held on 11 August at 15:25; follow-up action or notes from Mike West may require Kevin's response. (email: Mike West - Oxford University Evo Pre project meeting )",
-      "[12 Aug 2026] Meeting reminder notification that the Oxford University Evo Pre project meeting is starting soon. (email: Mike West via Clari Copilot - Your meeting \"Oxford University Evo Pre project meeting \" is starting soon...)"
-    ],
-    "dateAdded": "2026-08-06"
-  },
-  {
-    "id": "t2608061800541",
-    "title": "Attend Incident Reporting PUG meeting",
-    "tier": "week",
-    "source": "Inbox - Christopher Sanders, 2026-08-06 15:11",
-    "emailRef": "Incident Reporting PUG",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007AAB5BD9C0000",
-    "summary": "",
-    "description": "Christopher Sanders has sent a Microsoft Teams meeting link for the Incident Reporting PUG. Kevin needs to attend this meeting to participate in the agenda discussion.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[06 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - Incident Reporting PUG).",
-      "[07 Aug 2026] Christopher Sanders has sent the Microsoft Teams meeting link for the Incident Reporting PUG meeting. (email: Christopher Sanders - Incident Reporting PUG)",
-      "[12 Aug 2026] Mike West sent the Microsoft Teams meeting link for the Oxford University Evo Pre project meeting scheduled for 11 August. (email: Mike West - Oxford University Evo Pre project meeting )",
-      "[19 Aug 2026] Michael O'Sullivan forwarded notification of PeopleXD platform maintenance scheduled for Friday 28 August 20:00-22:00 affecting services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)"
-    ],
-    "dateAdded": "2026-08-06"
-  },
-  {
-    "id": "t2608071200560",
-    "title": "Attend sickness absence survey working group catch-up",
-    "tier": "week",
-    "source": "Inbox - Simon Burford, 2026-08-07 11:04",
-    "emailRef": "Sickness Absence Survey working group",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007ACBB39ED0000",
-    "summary": "",
-    "description": "Simon Burford has scheduled a regular catch-up for the sickness absence survey working group. Kevin needs to attend this meeting to stay current on the working group's progress.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[07 Aug 2026] Auto-created from inbox triage (email: Simon Burford - Sickness Absence Survey working group).",
-      "[07 Aug 2026] Simon Burford has scheduled the sickness absence survey working group catch-up meeting; Kevin needs to attend. (email: Simon Burford - Sickness Absence Survey working group)",
-      "[10 Aug 2026] Lindsey Spriggs has sent the Teams meeting link for the bi-monthly CDR/PD working group; Kevin needs to attend this meeting. (email: Lindsey Spriggs - Bi-monthly CDR/PD working group)",
-      "[11 Aug 2026] Christopher Sanders forwarded the sickness absence survey working group meeting appointment from Simon Burford. (email: Christopher Sanders - FW: Sickness Absence Survey working group)",
-      "[19 Aug 2026] Kevin declined Cross-Team Process Improvement Working Group meeting due to scheduling conflict. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group â€“ 1st Meeting)"
-    ],
-    "dateAdded": "2026-08-07"
   },
   {
     "id": "t2608071801050",
@@ -655,43 +577,6 @@
     "dateAdded": "2026-08-10"
   },
   {
-    "id": "t2608111309070",
-    "title": "Attend H&S Systems Supplier Reviews meeting",
-    "tier": "week",
-    "source": "Inbox - Marie Cooksey, 2026-08-11 11:50",
-    "emailRef": "H&S Systems Supplier Reviews",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A629956F0000",
-    "summary": "",
-    "description": "Marie Cooksey has sent a Microsoft Teams meeting link for H&S Systems Supplier Reviews. Kevin needs to attend this meeting to participate in the supplier evaluation process.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - H&S Systems Supplier Reviews).",
-      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for H&S Systems Supplier Reviews. (email: Marie Cooksey - H&S Systems Supplier Reviews)",
-      "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the H&S Systems Supplier Reviews meeting Kevin needs to attend. (email: Marie Cooksey - HR Systems Management)"
-    ],
-    "dateAdded": "2026-08-11"
-  },
-  {
-    "id": "t2608111309071",
-    "title": "Attend HR Systems Management meeting",
-    "tier": "week",
-    "source": "Inbox - Marie Cooksey, 2026-08-11 11:49",
-    "emailRef": "HR Systems Management",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B07008DFB9C6852DC5A43B72538034BBFF53500077C29BF2500008DFB9C6852DC5A43B72538034BBFF5350007B13CE8FC0000",
-    "summary": "",
-    "description": "Marie Cooksey has sent a Microsoft Teams meeting link for HR Systems Management. Kevin needs to attend to participate in management discussions.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[11 Aug 2026] Auto-created from inbox triage (email: Marie Cooksey - HR Systems Management).",
-      "[11 Aug 2026] Meeting invitation received from Marie Cooksey for HR Systems Management. (email: Marie Cooksey - HR Systems Management)",
-      "[13 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan on 11 August, confirming attendance and participation in management discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
-      "[17 Aug 2026] Marie Cooksey has sent the Teams meeting link for the HR Systems Management meeting Kevin needs to attend. (email: Marie Cooksey - H&S Systems Supplier Reviews)",
-      "[20 Aug 2026] PeopleXD platform maintenance scheduled for Friday 28 August 2026 between 8-10 pm; Kevin should note this downtime window for planning purposes. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
-      "[25 Aug 2026] Asta Palmer has sent reminder that HR Systems team meeting is tomorrow (Wednesday 26 August) and it is Presentations week. (email: Michael O'Sullivan - RE: PDR 2026 – Friday 18 September)"
-    ],
-    "dateAdded": "2026-08-11"
-  },
-  {
     "id": "t2608111507360",
     "title": "Advise on GLAM joining 38-day balance departments scheme",
     "tier": "week",
@@ -708,40 +593,6 @@
       "[17 Aug 2026] Kevin shared KPI presentation (July 2026) with Michael O'Sullivan, providing data context for ongoing discussions. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
       "[18 Aug 2026] Julie Hickman has had an initial conversation with Becky Fitzek at GLAM which was productive; provides new information on GLAM's readiness to join 38-day balance scheme. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[21 Aug 2026] Merged duplicate task t2608120903060 (\"Advise Marie on GLAM joining 38-day balance scheme\", dateAdded 2026-08-12, byte-identical description) into this record. Duplicate removed from tasks.json; it added no new information beyond what this record already captures (same 11-12 Aug email thread, narrated from the Marie-side email one day later). This record kept as base because it carried more actions (5 vs 2) and the most recent action (18 Aug vs 12 Aug)."
-    ],
-    "dateAdded": "2026-08-11"
-  },
-  {
-    "id": "t2608111719550",
-    "title": "Follow up on Oxford Uni Pre-project Authentication call",
-    "tier": "week",
-    "source": "Inbox - Alex Manton-Jones, 2026-08-11 16:50",
-    "emailRef": "Oxford Uni - Pre-project Authentication (Follow up)",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B21C32170000",
-    "summary": "",
-    "description": "Alex Manton-Jones sent a follow-up email from an authentication call held on 11 August. Kevin needs to review the full content and determine what action items, if any, are required from this call.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[11 Aug 2026] Auto-created from inbox triage (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up)).",
-      "[12 Aug 2026] Alex Manton-Jones follow-up email received on the pre-project authentication call held 11 August; Kevin needs to review full content and determine action items. (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up))",
-      "[25 Aug 2026] Louise Piper has confirmed that authentication issues logging into OSM have now been resolved. (email: Louise Piper - UPDATE: OSM: Authentication Issues resolved)",
-      "[26 Aug 2026] Alex Manton-Jones has sent the follow-up email from the authentication call on 11 August; Kevin should review the content and determine required actions. (email: Alex Manton-Jones - Oxford Uni - Pre-project Authentication (Follow up))"
-    ],
-    "dateAdded": "2026-08-11"
-  },
-  {
-    "id": "t2608111719551",
-    "title": "Review updated DPIA and DPS documents for college record to PXD",
-    "tier": "week",
-    "source": "Inbox - Anne Mortimer, 2026-08-11 15:32",
-    "emailRef": "FW: draft DPIA for college record to PXD",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A62995780000",
-    "summary": "",
-    "description": "Anne Mortimer has provided updated access links to the current version of the DPIA and DPS documents. Kevin needs to review any changes that have been made since Marie's and Information Compliance's previous review.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[11 Aug 2026] Auto-created from inbox triage (email: Anne Mortimer - FW: draft DPIA for college record to PXD).",
-      "[11 Aug 2026] Anne Mortimer has provided updated access links to the current DPIA and DPS documents for review. (email: Anne Mortimer - FW: draft DPIA for college record to PXD)"
     ],
     "dateAdded": "2026-08-11"
   },
@@ -795,23 +646,6 @@
     ]
   },
   {
-    "id": "t2608121801282",
-    "title": "Review August 2026 organisational structure draft",
-    "tier": "week",
-    "source": "Inbox - Organisational Structure, 2026-08-12 16:24",
-    "emailRef": "RE: Organisational Structure Update - August 2026 - DRAFT",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AAB5B7C00000",
-    "summary": "",
-    "description": "An updated draft organisational structure has been circulated with changes effective through 12 August 2026. Kevin should review for any HR Systems implications or required actions.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[12 Aug 2026] Auto-created from inbox triage (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT).",
-      "[13 Aug 2026] Updated draft organisational structure has been circulated with changes effective through 12 August 2026. (email: Organisational Structure - RE: Organisational Structure Update - August 2026 - DRAFT)",
-      "[17 Aug 2026] Simon forwarded organisational structure update confirming changes to PACS org structure moving colleges and societies from L2 to L3, effective through 12 August 2026. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)",
-      "[18 Aug 2026] Simon Burford has forwarded notification of changes to the PACS organisational structure moving colleges and societies to level 3 from level 2; this is the update that Kevin needs to review for HR Systems implications. (email: Simon Burford - FW: Organisational Structure Update - August 2026 - DRAFT)"
-    ]
-  },
-  {
     "id": "t2608131801210",
     "title": "Review DTP1334 SHSMS supplier requirements evaluations -- deadline 21 Aug",
     "tier": "week",
@@ -839,21 +673,6 @@
     "actions": [
       "[13 Aug 2026] Auto-created from inbox triage (email: Caroline Gow - Caroline Gow shared \"Supplier Submission Clarifications V2.0\" with you).",
       "[14 Aug 2026] Caroline Gow has shared the Supplier Submission Clarifications V2.0 document containing supplier responses for Kevin to review ahead of the 21 August deadline. (email: Caroline Gow - Caroline Gow shared \"Supplier Submission Clarifications V2.0\" with you)"
-    ]
-  },
-  {
-    "id": "t2608141501170",
-    "title": "Attend H&S Roadmap catch-up with Christopher Sanders",
-    "tier": "week",
-    "source": "Inbox - Christopher Sanders, 2026-08-14 13:13",
-    "emailRef": "H&S Roadmap",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007AA5B58050000",
-    "summary": "",
-    "description": "Christopher Sanders has scheduled a regular catch-up to review open support tickets, health & safety roadmap, backlog items, blockers and concerns. Kevin needs to attend this meeting.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[14 Aug 2026] Auto-created from inbox triage (email: Christopher Sanders - H&S Roadmap).",
-      "[14 Aug 2026] Confirmation email received from Christopher Sanders for the H&S Roadmap catch-up meeting scheduled for Friday 14 August. (email: Christopher Sanders - H&S Roadmap)"
     ]
   },
   {
@@ -974,7 +793,8 @@
       "[20 Aug 2026] Simon is requesting Kevin's estimation of effort required from Functional Analysis perspective to implement internal candidate identification in the application form. (email: Simon Burford - FW: Application form - identification of internal candidates)",
       "[20 Aug 2026] Simon Burford forwarded request for effort estimation on internal candidate identification in application form from Functional Analysis perspective. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[21 Aug 2026] Julie Hickman has reminded the team to add messages to Beth's Kudoboard; this is informational follow-up to the farewell/gift task. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
-      "[21 Aug 2026] Julie reports Chemistry are compiling work group lists and estimate approximately 110 existing work groups; progress update on 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+      "[21 Aug 2026] Julie reports Chemistry are compiling work group lists and estimate approximately 110 existing work groups; progress update on 38-day balance rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[08 Sep 2026] Archived duplicate task t2608201500590 (\"Estimate effort for internal candidate identification in application form\") -- same source email as this task (FW: Application form - identification of internal candidates, Simon Burford 2026-08-19), no information not already captured here. Merged during the This-Week false-positive/duplicate cleanup (kevin_is_primary_recipient/is_meeting_invite triage fix session)."
     ]
   },
   {
@@ -1028,21 +848,6 @@
     "done": true,
     "messageId": "CW1P265MB8765F429101C1984822C7A4788B62@CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM",
     "webLink": "https://outlook.office.com/mail/search?query=CW1P265MB8765F429101C1984822C7A4788B62%40CW1P265MB8765.GBRP265.PROD.OUTLOOK.COM"
-  },
-  {
-    "id": "t2608201500590",
-    "title": "Estimate effort for internal candidate identification in application form",
-    "tier": "week",
-    "source": "Inbox - Simon Burford, 2026-08-19 15:51",
-    "emailRef": "FW: Application form - identification of internal candidates",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ACBB4F8A0000",
-    "summary": "",
-    "description": "Simon Burford forwarded a request asking Kevin to estimate the Functional Analysis effort required to implement identification of internal candidates in the application form. This is a scoping/estimation task.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[20 Aug 2026] Auto-created from inbox triage (email: Simon Burford - FW: Application form - identification of internal candidates).",
-      "[20 Aug 2026] Simon Burford requests functional analysis effort estimate for internal candidate identification feature in application form. (email: Simon Burford - FW: Application form - identification of internal candidates)"
-    ]
   },
   {
     "id": "t2608211201050",
@@ -1140,29 +945,6 @@
     ]
   },
   {
-    "id": "t2608261500530",
-    "title": "Review REF2029 UDF promotion to UOXP",
-    "tier": "week",
-    "source": "Inbox - Nathan Kirwan, 2026-08-26 14:51",
-    "emailRef": "REF29 UDF - Promotion to UOXP",
-    "entryId": "",
-    "summary": "",
-    "description": "Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment. Kevin needs to review the promotion details and any HR Systems implications or sign-off requirements.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[26 Aug 2026] Auto-created from inbox triage (email: Nathan Kirwan - REF29 UDF - Promotion to UOXP).",
-      "[26 Aug 2026] Nathan Kirwan is flagging the promotion of the REF2029 UDF to UOXP production environment and seeking Kevin's review. (email: Nathan Kirwan - REF29 UDF - Promotion to UOXP)",
-      "[27 Aug 2026] Kevin confirmed he will push REF2029 UDF promotion to live today and will notify Nathan when complete. (email: Kevin (sent to: Nathan Kirwan) - Re: REF29 UDF - Promotion to UOXP)",
-      "[27 Aug 2026] Nathan confirms UDF is live but requests core portal display be turned off for now; Kevin should action this configuration change. (email: Nathan Kirwan - RE: REF29 UDF - Promotion to UOXP)",
-      "[27 Aug 2026] Nathan confirms promotion can proceed; Kevin has completed the action of pushing REF2029 UDF to live production. (email: Nathan Kirwan - Re: REF29 UDF - Promotion to UOXP)",
-      "[27 Aug 2026] Nathan acknowledged Kevin's confirmation that REF2029 UDF will be pushed to live. (email: Marie Cooksey - RE: IRIS / IEX - Incidents Changes)",
-      "[30 Aug 2026] Kevin sent confirmation that REF2029 UDF is now live in UOXP production. (email: Kevin (sent to: Nathan Kirwan <nathan.kirwan@admin.ox.ac.uk>) - Re: REF29 UDF - Promotion to UOXP)",
-      "[02 Sep 2026] Nathan Kirwan acknowledged Kevin's confirmation; REF2029 UDF promotion can proceed as planned. (email: Nathan Kirwan - Re: REF29 UDF - Promotion to UOXP)"
-    ],
-    "messageId": "CWLP265MB2964AF79DF919C7F67CDC2ED8AAD2@CWLP265MB2964.GBRP265.PROD.OUTLOOK.COM",
-    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB2964AF79DF919C7F67CDC2ED8AAD2%40CWLP265MB2964.GBRP265.PROD.OUTLOOK.COM"
-  },
-  {
     "id": "t2608261500531",
     "title": "Locate documentation on Grade 2 increment bar changes (2024 uplift)",
     "tier": "week",
@@ -1211,26 +993,6 @@
     ],
     "messageId": "CWLP265MB59699CBDEE669E4AA760D54288B12@CWLP265MB5969.GBRP265.PROD.OUTLOOK.COM",
     "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB59699CBDEE669E4AA760D54288B12%40CWLP265MB5969.GBRP265.PROD.OUTLOOK.COM"
-  },
-  {
-    "id": "t2608271501000",
-    "title": "Confirm Cross-Team Process Improvement Working Group attendance - 28 Sept",
-    "tier": "week",
-    "source": "Inbox - Michael O'Sullivan, 2026-08-27 09:18",
-    "emailRef": "FW: Cross-Team Process Improvement Working Group – 1st Meeting",
-    "entryId": "",
-    "summary": "",
-    "description": "Michael O'Sullivan is confirming that Kevin has already accepted the 28 September meeting and noting that Otter is looking for at least one member from HR Systems to attend. Kevin should confirm his continued participation or reassign if needed.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[27 Aug 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting).",
-      "[27 Aug 2026] Michael confirms Kevin has already accepted the 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)",
-      "[27 Aug 2026] Michael confirmed Kevin has already accepted the 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - RE: changing to 38 day balance - workgroups for updating  )",
-      "[30 Aug 2026] Michael confirms Kevin's prior acceptance of 28 September Cross-Team Process Improvement Working Group meeting. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)",
-      "[02 Sep 2026] Michael O'Sullivan confirms Kevin's prior acceptance of 28 September Cross-Team Process Improvement Working Group meeting and Otter's request for HR Systems attendance. (email: Michael O'Sullivan - FW: Cross-Team Process Improvement Working Group – 1st Meeting)"
-    ],
-    "messageId": "CWLP265MB18424072377979FFD4BA97A780AD2@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
-    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB18424072377979FFD4BA97A780AD2%40CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608271801020",
@@ -1304,24 +1066,6 @@
       "[04 Sep 2026] Auto-created from inbox triage (email: Athena Artuso - Athena A/L (summer 2027)).",
       "[05 Sep 2026] Athena Artuso submitted second annual leave request; both requests from emails 10 and 11 require Kevin's review and approval. (email: Simon Burford - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)",
       "[07 Sep 2026] Athena Artuso submitted first annual leave request (summer 2027) on 4 September; unread and awaiting Kevin's approval or response. (email: Athena Artuso - Athena A/L (summer 2027))"
-    ]
-  },
-  {
-    "id": "t2609041614321",
-    "title": "Review and approve new pension schemes setup (Change 20020762) for September payroll",
-    "tier": "week",
-    "source": "Inbox - Michael O'Sullivan, 2026-09-03 15:33",
-    "emailRef": "Change # 20020762_New NHS ERRBO and USS DB AVC Pension Schemes and Pay Codes",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B48EA9A60000",
-    "messageId": "CWLP265MB184245C116FC4C5B02D4E3A580B62@CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
-    "webLink": "https://outlook.office.com/mail/search?query=CWLP265MB184245C116FC4C5B02D4E3A580B62%40CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM",
-    "summary": "",
-    "description": "Michael O'Sullivan is notifying that for the September payroll he will be setting up new NHS ERRBO and USS DB AVC pension schemes with associated deductions. Kevin needs to review and approve these changes before implementation.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[04 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Change # 20020762_New NHS ERRBO and USS DB AVC Pension Schemes and Pay Codes).",
-      "[05 Sep 2026] Michael O'Sullivan detailing change #20020762 setup of new NHS ERRBO and USS DB AVC pension schemes for September payroll; Kevin must review and approve before implementation. (email: Christopher Sanders - RE: Assigned to your team - Support Call# 11707051 - URGENT - problems with Cority)",
-      "[07 Sep 2026] Michael O'Sullivan notifies of Change # 20020762 for new NHS ERRBO and USS DB AVC pension schemes requiring setup for September payroll; awaiting Kevin's review and approval. (email: Michael O'Sullivan - Change # 20020762_New NHS ERRBO and USS DB AVC Pension Schemes and Pay Codes)"
     ]
   },
   {
