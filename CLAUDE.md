@@ -125,6 +125,7 @@ Before any task where higher effort is warranted, signal to Kevin: what the task
 - tasks.json is the source of truth for task content — not session memory
 - Load order: `styles.css` → `api.js` → `app.js` — never change without testing
 - **NEVER embed the Oxford crest as base64.** The crest is `images/oxford-crest.jpg`; do not delete it, move it, rename it, or replace the `<img class="sidebar-crest">` source with a data URI.
+- **Outlook Classic is retired — OWA-in-browser only (Kevin, 8 Sep 2026, permanent).** No machine uses desktop Win32 Outlook. Every open-email / mail-link path opens Outlook Web in the browser via a real message deep-link (`https://outlook.office365.com/owa/?ItemID=...&viewmodel=ReadMessageItem`). Never `openmail://`, never a desktop COM/MAPI launch, never a bare `?query=<Message-ID>` OWA search. If no real deep-link resolves, show no opener / an honest "no link" notice — never a banned fallback.
 - All mockups and visual designs are produced as Claude Artifacts — never committed to the repository (see CONSTITUTION.md Section 11)
 
 ## Domain
