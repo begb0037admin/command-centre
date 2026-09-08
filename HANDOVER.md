@@ -1,5 +1,47 @@
 # command-centre — Living Handover Document
 
+**Last updated:** 2026-09-08, later (Drew) -- This-Week false-positive cleanup + UI-approval-gate amendment. SHIPPED, applied directly, verified live.
+
+## Triage-tightening cleanup: 12 false-positive This-Week tasks archived, 1 duplicate merged, 37 -> 23
+
+**Trigger:** root-cause diagnosis from a prior session (This Week bucket at 37 tasks, ~55-65% false positives -- work-inbox's Phase 3.5 task triage was creating tasks from meeting invites and Cc-only mail with no direct ask). This session fixed the pipeline (see work-inbox `HANDOVER.md` section H) and cleared the existing backlog it had already created.
+
+**Kevin waived the UI-screenshot approval gate and per-step review for this session's work-inbox + command-centre changes (relayed via coordinator)** -- diagnosis + archive list below is Drew's own judgement against the live task data, not individually pre-approved item by item. Backup-and-verify-before-write was still followed in full (mandatory, not part of the waiver).
+
+**Archived (8, meeting-invite / meeting-attendance -- "Attend X" tasks with no personal deliverable beyond showing up, several confirmed already past/complete in their own action log):**
+`t2608030857560` (Attend SH&SM Tender Evaluation meeting), `t2608061800540` (Attend Oxford Uni Evo Pre-project meeting, Simon's absence -- meeting already held 11 Aug per its own action log), `t2608061800541` (Attend Incident Reporting PUG), `t2608071200560` (Attend sickness absence survey WG catch-up), `t2608111309070` (Attend H&S Systems Supplier Reviews), `t2608111309071` (Attend HR Systems Management meeting), `t2608141501170` (Attend H&S Roadmap catch-up), `t2608271501000` (Confirm Cross-Team Process Improvement WG attendance -- action log shows Michael repeatedly just re-confirming Kevin's prior acceptance).
+
+**Archived (4, Cc-only / circulated-for-review with no direct personal ask):**
+`t2608121801282` (Review Aug 2026 org structure draft -- source "Organisational Structure" distribution list, "review for any implications"), `t2608111719550` (Follow up on Oxford Uni Pre-project Authentication call -- "review the full content and determine what action items, if any" -- no concrete ask ever materialised in 2 weeks of action log), `t2608111719551` (Review updated DPIA/DPS documents -- forwarded doc, "review any changes", single-touch), `t2608261500530` (Review REF2029 UDF promotion -- action log shows Kevin already completed this, pushed to live 27 Aug; stale/complete, not live work).
+
+**Archived (1, specified directly):** `t2609041614321` (pension schemes review/approval -- Kevin Cc-only on the source email, fabricated `2026-09-15` due date).
+
+**Merged (1 true duplicate):** `t2608201500590` -> kept `t2608191801190` (both "Estimate effort for internal candidate identification in application form", identical source email from Simon Burford 2026-08-19). Merge note appended to `t2608191801190`'s `actions` log recording the merge; `t2608201500590` had no information not already captured on the kept task.
+
+**Before -> after:** This Week (not-done) 37 -> 23. Total tasks 67 -> 53.
+
+**Backup-and-verify protocol followed in full**, per this repo's own mandatory sequence, direct GitHub Contents API:
+1. Live GET, confirmed non-zero (163,992 bytes, sha `97fc69df`).
+2. Backup first: `Archive/tasks_backup_20260908_1437.json`, commit `71ac7943`, GET-back verified sha-match + byte-identical.
+3. New list computed against the verified snapshot; arithmetic checked (67-14=53, week 37-14=23) before writing.
+4. Pre-write sha re-checked immediately before the PUT (race guard) -- unchanged, no concurrent write.
+5. Write: commit `a071de43`, new content sha `1f9d4b0f`.
+6. Post-write GET-back verified sha-match + byte-identical; `raw.githubusercontent.com` cache-busted re-fetch confirmed the same total/week counts live.
+
+**Not touched:** Today/Tomorrow/Parked tiers, the remaining 23 This-Week tasks (all confirmed to carry a genuine direct ask or an open real deliverable), the `dateAdded`/`webLink` data-quality gaps tracked elsewhere.
+
+## UI Approval Gate amendment (Kevin, standing instruction, permanent)
+
+`CLAUDE.md`'s "UI APPROVAL GATE" section now carries a permanent amendment: the screenshot-and-wait-for-"approved" ceremony is waived for routine changes (visual and data) -- implement, verify, push, report with a before/after. The mandatory Backup and Verify Protocol is explicitly untouched by this -- still required for every write, no exceptions. A one-line heads-up before any production write, and flagging (not silently proceeding on) anything destructive/irreversible/out-of-scope, both still apply. Kevin can reinstate the full gate for any specific change by asking. Commit `62b6d25c`.
+
+**Also noted while editing:** `CLAUDE.md`'s Bootstrap Order still points at `docs/HANDOVER.md`, but the last several days of real HANDOVER entries (including the 8 Sep OWA-opener diagnosis and this one) have actually been landing in the root `HANDOVER.md` instead -- `docs/HANDOVER.md`'s top entry is stale at 1 Sept. Not fixed this session (out of scope); flagging so the next session checks the root file first, matching what's actually being kept current, rather than trusting the bootstrap pointer.
+
+**Next action:** none open on this cleanup. Watch whether This Week creeps back up over the next few days now that the work-inbox triage gate is live -- if it does, check whether the fix is actually firing in production before assuming a regression.
+
+---
+
+# command-centre — Living Handover Document
+
 **Last updated:** 2026-09-08 (Drew) - UPDATE 2: new direction (port work-inbox's working OWA opener to CC) + new PERMANENT standing rule (Outlook Classic retired, OWA-in-browser only) recorded in CLAUDE.md/work-inbox CLAUDE.md/agent-commons. Investigation done, NOTHING written to js/app.js or tasks.json, awaiting Kevin. DIAGNOSIS ONLY, no change made. "Open email" on IMAP-era tasks opens OWA to an empty inbox: 9 live tasks carry a stale `webLink` in the known-dead `outlook.office.com/mail/search?query=<Message-ID>` search form. Root cause = data-backfill gap from the 3 Sept OWA-weblink fix (fixed forward for new tasks, old tasks explicitly not retrofitted), not an opener bug. See "Session 2026-09-08" entry below. Awaiting Kevin's decision on fix option + screenshot approval before any write.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
 
