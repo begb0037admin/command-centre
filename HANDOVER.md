@@ -1,6 +1,6 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-09-08, later (Drew) -- This-Week false-positive cleanup + UI-approval-gate amendment. SHIPPED, applied directly, verified live.
+**Last updated:** 2026-09-08 (Drew) - CLOSED. "Open email" fix live and Kevin-confirmed working: work-inbox's proven opener ported verbatim to `js/app.js`, `_owa_link()` fallback removed from `fetch_inbox.py`, one-time connector backfill applied to `tasks.json` (17/20 resolved, 3 removed by the pipeline in the interim), standing rule (Outlook Classic retired, OWA-in-browser only) recorded in all 4 durable locations. No open action items on this. See "Session 2026-09-08 CLOSE-OUT" below.
 
 ## Triage-tightening cleanup: 12 false-positive This-Week tasks archived, 1 duplicate merged, 37 -> 23
 
@@ -76,6 +76,26 @@ Why "meant to have been resolved": the 3 Sept fix (`fcb47a9` work-inbox + `0096c
 3. **Harden `fetch_inbox.py` (work-inbox, separate repo/approval).** Stop `_owa_link()` being used as a `webLink` value — write `""` when the connector can't resolve — so new tasks never re-acquire a broken search-URL `webLink`. Not required to fix the 9 existing.
 
 **Recommendation:** Option 1 + Option 2 in one command-centre cycle; flag Option 3 to the work-inbox side separately.
+
+### CLOSE-OUT (2026-09-08, final) — fix live, Kevin-confirmed working
+
+**Kevin confirmed the live dashboard works.** Full resolved state, superseding the UPDATE 2 analysis above (which was correct in diagnosis; Kevin's later explicit instruction was to port work-inbox's opener verbatim rather than build a narrower CC-only guard, so the shipped fix is broader than UPDATE 2's original minimal proposal).
+
+**What shipped, in order:**
+1. **Standing rule recorded** (Kevin, permanent, 8 Sep 2026): "Outlook Classic is retired — OWA-in-browser only." In `command-centre/CLAUDE.md` (`25d062c8`), `work-inbox/CLAUDE.md` (`71a911ed`), `agent-commons/AGENT_DIRECTORY.md` Shared rules (`3654c5fa`), and drew memory (`memory/standing-rule-owa-in-browser-only-8sept.md`, `f23ef050`).
+2. **`js/app.js` opener replaced entirely** — ported verbatim from work-inbox's proven `_owaWebUrl()`/`openEmailWeb()` (live there since 8 Sep 2026). The old 3-branch system (`sourceType==='codex-graph'`, `entryId`→`openmail://` COM, `webLink`-only) is gone, replaced by one path: a real Outlook Web deep-link (`web_link`/`display_url`/`webLink`, https on `outlook.office.com`/`outlook.office365.com`, `/mail/search` paths explicitly rejected) opened via `openEmailWeb()`; no usable link → no icon at all. `openEmail()`/`openmail://` removed from the task-card opener. Backup `Archive/app_backup_20260908_1514.js` (byte-verified against the true pre-edit original, sha `1e7b6baa…`, after a first attempt was caught and redone — see the CRLF note below). Edit commit `de4d1cf7`, byte-verified live (Pages built, proxy and raw both confirmed serving it), `node --check` clean.
+3. **`fetch_inbox.py` `_owa_link()` fallback removed** from the 3 CC-task write sites (new-task creation + the two `email_candidates` builders feeding task updates) — commit `5d7a86ba`, byte-verified live, `py_compile` clean. A failed/unresolved connector resolve now leaves `webLink` blank, matching Phase 3.1's own behaviour for work-inbox's own mail cards; the dead `?query=<Message-ID>` OWA-search form can no longer be written to a CC task.
+4. **One-time connector backfill of `tasks.json`** — 20 tasks with a `messageId` were resolved via `lane_b_call1.resolve_mail_weblink()` over SSH `oxford-lan` (laptop connector env `C:\WorkInboxAI\codex-laneb`): **20/20 resolved successfully (100%)**. By the time of the write, 3 of those 20 (`t2608261500530`, `t2608271501000`, `t2609041614321`) had already been removed from `tasks.json` by the automated pipeline running concurrently — nothing to write for those, not a failure. **17/17 remaining were written** with a real `outlook.office365.com/owa/?ItemID=…&viewmodel=ReadMessageItem` link, replacing the dead `/mail/search?query=` form — including `t2608261500531` (Kevin's originally-reported task). Backup `Archive/tasks_backup_20260908_1529.json` (byte-verified identical to the pre-edit live file, sha `938d0132…`). Edit commit `a643e711`, byte-verified live on both the raw Contents API and `github-proxy.lelitte.co.uk/command-centre` (what the dashboard actually fetches) — confirmed no cache lag. Round-trip JSON formatting checked byte-identical before editing, so the diff touches only the 17 `webLink` fields; task count unchanged (53) either side of the edit.
+
+**Live-confirmed:** Kevin clicked through and confirmed the live dashboard opens the real message.
+
+**Mid-session correction, worth remembering:** the first `js/app.js` backup+edit attempt silently converted the file from its CRLF convention to LF (via Python `read_text()`/`write_text()`, which universal-newline-translate on Windows) — caught by the backup-verify byte-cmp failing, NOT assumed clean. Both the backup and the edit were rebuilt reading/writing raw bytes directly (decode → edit on LF-normalised copy → re-encode to the file's actual CRLF convention) and re-verified byte-identical (backup content sha landed exactly equal to the true pre-edit `js/app.js` sha — definitive proof). Confirmed both `js/app.js` (CRLF) and `fetch_inbox.py` (CRLF) and `tasks.json` (LF) conventions directly from raw bytes before writing, not assumed. **Lesson for any future edit of these three files: read/write raw bytes, never Python text-mode `read_text()`/`write_text()`, and check the file's actual CRLF-vs-LF convention first.**
+
+**Known, out-of-scope, not an open item on this fix (flagged for context only):**
+- The separate "From your inbox" suggestion-panel opener (`openTaskEmail()`, a different button/UI element from the task-card opener fixed here) still uses `openmail://`. Now non-compliant with the standing rule; not touched this cycle — different code path, different data shape (`entry_id` only, no resolved link available today).
+- The ~30 remaining mail tasks that have an `entryId` but no `messageId` (pre-IMAP-cutover, COM-era) cannot be resolved via `resolve_mail_weblink()` (it needs an `internetMessageId`) — they now show no envelope icon at all, which is the explicitly-approved behaviour ("icon disappearing only on tasks with genuinely no resolvable link"), not a defect.
+
+**Nothing outstanding on this fix.**
 
 ### UPDATE 2 (2026-09-08, later) — new direction: port work-inbox's working opener; + permanent standing rule
 
