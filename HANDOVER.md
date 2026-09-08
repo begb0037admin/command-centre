@@ -1,7 +1,43 @@
 # command-centre — Living Handover Document
 
-**Last updated:** 2026-09-03 (Drew) - Live data-accuracy check + Today/Tomorrow done-task purge SHIPPED, closes the 12 Aug flagged hygiene item. See "Session 2026-09-03 — live accuracy check + Today/Tomorrow done-task purge" below.
+**Last updated:** 2026-09-08 (Drew) - DIAGNOSIS ONLY, no change made. "Open email" on IMAP-era tasks opens OWA to an empty inbox: 9 live tasks carry a stale `webLink` in the known-dead `outlook.office.com/mail/search?query=<Message-ID>` search form. Root cause = data-backfill gap from the 3 Sept OWA-weblink fix (fixed forward for new tasks, old tasks explicitly not retrofitted), not an opener bug. See "Session 2026-09-08" entry below. Awaiting Kevin's decision on fix option + screenshot approval before any write.
 **Status:** Active — Module 1 live at https://begb0037admin.github.io/command-centre/ | https://cc.lelitte.co.uk/
+
+---
+
+## Session 2026-09-08 — "Open email" opens empty OWA inbox on IMAP-era tasks (DIAGNOSIS — no change made) (Drew)
+
+**Trigger:** Kevin reported (via coordinator) that command-centre still does not open a specific email — task `t2608261500531` "Locate documentation on Grade 2 increment bar changes (2024 uplift)" (header "INBOX - MICHAEL O'SULLIVAN, 2026-08-26 12:06", auto-created from inbox triage 26 Aug 2026). Second screenshot clarified: the envelope icon **does** open Outlook Web now (not desktop Outlook), but OWA lands on the inbox with "Select an item to read" — the message itself never opens. Kevin: "this issue was meant to have been resolved."
+
+### Root cause — data-backfill gap, NOT an opener code bug
+
+Live `data/tasks.json` record `t2608261500531` (verified directly this session): `entryId: ""`, no `sourceType`, `messageId` present, and
+`webLink: "https://outlook.office.com/mail/search?query=CWLP265MB1842AAF6A14285389FE84E3A80AC2%40CWLP265MB1842.GBRP265.PROD.OUTLOOK.COM"`.
+
+`js/app.js` opener behaves exactly as designed: `sourceType!=='codex-graph'` and `entryId` empty, so the `else if(t.webLink)` branch renders the envelope with `onclick="openEmailWeb(event,this)"`. `openEmailWeb()` walks `[t.web_link, t.display_url, t.webLink]`; only `t.webLink` is set; it is `https:` on the allow-listed host `outlook.office.com`, so `window.open()` follows it. That URL is an **OWA search on the raw RFC Message-ID**, and OWA search does not index the `Message-ID` header — a form conclusively proven dead on 3 Sept 2026 (Kevin live-tested all query variants; `drew/memory/architecture-verification-no-outlook-dependency-3sept.md`, work-inbox HANDOVER §E, revert `79e6471`). So the card faithfully opens a link that always resolves to an empty inbox.
+
+Why "meant to have been resolved": the 3 Sept fix (`fcb47a9` work-inbox + `0096cac` command-centre) **did** deliver the real mechanism — `lane_b_call1.resolve_mail_weblink()` resolves a genuine Graph `?ItemID=…&viewmodel=ReadMessageItem` OWA deep-link via the connector — but wired it into `fetch_inbox.py` **for tasks created/updated after the fix only**. Drew's own memory records the deferred item verbatim: *"Pre-existing tasks keep the old broken `webLink` in tasks.json until re-triaged / a one-time rewrite — out of scope, flagged."* `0096cac` on this repo only dropped the client-side fallback that *constructed* a `?query=<messageId>` link; it did not (and was not meant to) stop the opener from *following* a broken `?query=` `webLink` already persisted in a task. `t2608261500531` is one such task.
+
+### Scope — 9 live tasks reproduce, not just the one Kevin saw
+
+20 of 67 live tasks carry a `webLink` in the dead `/mail/search?query=` form. 11 of those also have a real Outlook `entryId`, so their opener takes the `else if(t.entryId)` COM branch first and the stale `webLink` is never used (they open desktop Outlook — separate matter, not this bug). The **9 with empty `entryId` + a dead search `webLink`** reproduce Kevin's report exactly:
+`t009` (DPIA – Marie's signature), `t030` (Cority SFTP production feed error), `t2608191643001` (38-day balance rollout), `task-1787645383808` (Book PDR sessions), `t2608261500530` (Review REF2029 UDF promotion to UOXP), `t2608261500531` (Grade 2 increment bar changes — the reported one), `t2608271501000` (Cross-Team Process Improvement WG attendance), `t2608271801020` (IRIS/IEX incidents change timings), `t2609020705200` (manager leave approval failure). No task currently has a `web_link`/`display_url` (snake) or `sourceType` value.
+
+### Forward path — mostly fixed, one residual
+
+`fetch_inbox.py` new-CC-task creation (line ~3324-3333) already does `resolved_link = _resolve_mail_weblink(mid)` then `"webLink": resolved_link or … or _owa_link(mid)`, and the CC-task update path (line ~3260) overwrites `webLink` only when an update carries a resolved `web_link`. So new tasks get a real `?ItemID=` deep-link **when the connector resolves**. Residual: `_owa_link()` (line ~1459) still returns the known-dead `outlook.office.com/mail/search?query=<message_id>` form as a last-resort fallback, so any new task where resolution soft-fails re-acquires the same broken link.
+
+### Fix options (nothing built, nothing pushed)
+
+1. **One-time connector backfill of the 9 affected tasks (recommended).** From the work-inbox env (`C:\WorkInboxAI\codex-laneb`), call the already-built, already-Kevin-risk-accepted, verb-guarded `lane_b_call1.resolve_mail_weblink(messageId)` for each of the 9. Replace `webLink` with the resolved `?ItemID=` deep-link; for any that don't resolve (message moved/deleted) set `webLink:""` so the card degrades to `openEmailWeb()`'s visible "No usable Outlook Web link" alert instead of an empty inbox. One `data/tasks.json` write via the full mandatory backup-and-verify sequence. No visual change (envelope already renders) — screenshot for the approval gate = the card plus a click-through landing on the real message.
+2. **Client hardening in `js/app.js` (do alongside 1).** Make the `else if(t.webLink)` branch / `openEmailWeb()` treat a `.../mail/search?query=` URL as not-usable, so any unresolvable or future-broken case fails honestly (visible alert) rather than opening an empty inbox. Behaviour-only, visual-gated.
+3. **Harden `fetch_inbox.py` (work-inbox, separate repo/approval).** Stop `_owa_link()` being used as a `webLink` value — write `""` when the connector can't resolve — so new tasks never re-acquire a broken search-URL `webLink`. Not required to fix the 9 existing.
+
+**Recommendation:** Option 1 + Option 2 in one command-centre cycle; flag Option 3 to the work-inbox side separately.
+
+### Next action for a cold session
+
+Await Kevin's pick of fix option. If Option 1: enumerate the 9 task IDs above from live `data/tasks.json`, resolve each `messageId` via `lane_b_call1.resolve_mail_weblink()` from the work-inbox env, run the full backup-and-verify sequence, PUT the single updated `tasks.json`, screenshot a real click-through on `t2608261500531` landing on the actual message, get Kevin's literal "approved", verify live. If Option 2 as well: separate `js/app.js` cycle with its own screenshot + "approved". Nothing is to be written until Kevin decides.
 
 ---
 
