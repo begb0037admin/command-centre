@@ -489,10 +489,13 @@
       "[10 Aug 2026] Crispin has sent detailed testing scenarios for Company 90 and HRIS Staging imports configuration. (email: Crispin Muncaster - DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
       "[11 Aug 2026] Crispin Muncaster is out of office on annual leave, returning Monday 17 August; automatic reply confirms absence during testing period. (email: Crispin Muncaster - Automatic reply: DTP1092 College staff into PXD Team meeting)",
       "[18 Aug 2026] Michael O'Sullivan is forwarding notification of planned PeopleXD maintenance on Friday 28 August between 8-10 pm that may impact services. (email: Michael O'Sullivan - FW: [MLB People ] - Platform Maintenance 28th August  - New Maintenance)",
-      "[25 Aug 2026] Crispin Muncaster sent follow-up on DTP1092 College Staff into PXD testing HRIS staging imports; context indicates testing discussion scheduled. (email: Crispin Muncaster - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)"
+      "[25 Aug 2026] Crispin Muncaster sent follow-up on DTP1092 College Staff into PXD testing HRIS staging imports; context indicates testing discussion scheduled. (email: Crispin Muncaster - RE: DTP1092 College Staff into PXD - Testing HRIS Staging imports)",
+      "[09 Sep 2026] Crispin Muncaster provides meeting update on DTP1092 College Staff into PeopleXD integration. (email: Crispin Muncaster - DTP1092 College staff into PXD Team meeting)"
     ],
     "dateAdded": "2026-08-03",
-    "done": true
+    "done": true,
+    "messageId": "LOVP265MB870942DB14A449F97B629441F4B12@LOVP265MB8709.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LOVP265MB870942DB14A449F97B629441F4B12%40LOVP265MB8709.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608071801050",
@@ -1105,13 +1108,14 @@
     "source": "Inbox - Christopher Sanders, 2026-09-08 16:28",
     "emailRef": "IRIS Changes - September 2026",
     "entryId": "",
-    "messageId": "CWXP265MB181394DC1EA73E6088E9799095B12@CWXP265MB1813.GBRP265.PROD.OUTLOOK.COM",
+    "messageId": "CWLP265MB596983B629BEE8A6E735CEB788B12@CWLP265MB5969.GBRP265.PROD.OUTLOOK.COM",
     "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe5PtHUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
     "summary": "",
     "description": "Christopher Sanders has provided a detailed project plan for IRIS Changes implementation in September 2026 with planned activities and timeline. Kevin needs to review the plan and provide feedback on HR Systems readiness, dependencies, and any constraints affecting implementation.",
     "origin": "inbox-auto",
     "actions": [
-      "[08 Sep 2026] Auto-created from inbox triage (email: Christopher Sanders - IRIS Changes - September 2026)."
+      "[08 Sep 2026] Auto-created from inbox triage (email: Christopher Sanders - IRIS Changes - September 2026).",
+      "[09 Sep 2026] Christopher Sanders provided detailed IRIS Changes project plan for September 2026; Kevin must review and confirm HR Systems readiness. (email: Kevin (sent to: Anthony Kong <anthony.kong@admin.ox.ac.uk>) - Finance code B8 Review)"
     ]
   }
 ]
