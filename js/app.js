@@ -399,43 +399,23 @@ function cardHTML(t){
     if(days!==null)staleBadge='<span class="new-badge badge-stale" title="Marked '+tierLabel(t.tier)+' but no activity logged for '+days+' days">'+days+'D QUIET</span>';
   }
 
-  /* Open-email button. Two openers coexist (Codex Connector Migration research
-     doc, Section 5). Outlook COM pipeline tasks keep the exact openmail://<entryId>
-     path via openEmail(). Tasks with sourceType "codex-graph" carry a Graph web_link
-     that GetItemFromID cannot resolve, so openEmailWeb() opens it as a plain
-     Outlook Web Access hyperlink instead. A codex-graph task with no usable link
-     still shows the button, visibly de-emphasised, and explains itself on click.
-     NOTE (26 Aug 2026): this used to key on the human-readable `source` field
-     (a provenance string already populated on every live task, e.g. "Inbox -
-     Simon Burford, 2026-08-19 15:51", and rendered as the card's source badge
-     below). That was a field-name collision waiting to happen the moment a
-     Codex task-writer set source:"codex-graph" for provenance -- it would have
-     silently also flipped the opener AND clobbered the badge to the literal
-     text "codex-graph". Opener routing now keys on a separate, purpose-built
-     `sourceType` field instead. sourceType is optional and absent on all
-     tasks today (no tasks.json migration was needed or performed -- same
-     approach as how `source` itself was introduced); when sourceType is
-     absent or anything other than "codex-graph", this branch is skipped and
-     the existing legacy COM branch below (keyed on entryId) applies exactly
-     as before. This opener logic does not inspect `source` for routing --
-     `source` remains pure human-readable provenance/badge text below (the
-     file does still set `source` values for manually created/promoted
-     tasks; that write path is unrelated to and unaffected by this opener). */
-  var emailIcon='';
-  if(t.sourceType==='codex-graph'){
-    var _cgHasLink=!!(t.web_link||t.display_url||t.webLink);
-    emailIcon='<button class="card-icon"'+(_cgHasLink?'':' style="opacity:.45"')
-      +' title="'+(_cgHasLink?'Open email in Outlook web':'Email link unavailable for this task')
-      +'" onclick="openEmailWeb(event,this)">&#9993;</button>';
-  }else if(t.entryId){
-    emailIcon='<button class="card-icon" title="Open email" onclick="openEmail(event,\''+escHtml(t.entryId)+'\')">&#9993;</button>';
-  }else if(t.webLink){
-    /* Inbox pipeline task pulled via IMAP: no Outlook COM EntryID exists,
-       so open the stored OWA deep-link (imap_mail._owa_search_link:
-       from:+subject+received: scoped search) in Outlook web instead.
-       Same host allowlist. */
-    emailIcon='<button class="card-icon" title="Open email in Outlook web" onclick="openEmailWeb(event,this)">&#9993;</button>';
-  }
+  /* Open-email button -- PORTED VERBATIM from work-inbox's proven opener
+     (work-inbox js/app.js _owaWebUrl()/openEmailWeb(), live since 8 Sept
+     2026) per Kevin's explicit instruction (8 Sept 2026): "use the wi
+     method -- proven and currently working", not a bespoke CC fix. ONE
+     path only, replacing the old two/three-branch system (sourceType
+     "codex-graph" branch, openmail://<entryId> COM branch, and the
+     separate webLink-only branch) entirely: a real Outlook Web deep-link
+     (Graph web_link / display_url / webLink, e.g.
+     https://outlook.office365.com/owa/?ItemID=...&viewmodel=ReadMessageItem)
+     opened via openEmailWeb(); no usable link -> no icon at all, matching
+     work-inbox's own behaviour for a card with no web_link. This retires
+     openmail:// / desktop Outlook Classic from command-centre entirely,
+     per the standing rule recorded the same day in CLAUDE.md Hard Rules,
+     work-inbox/CLAUDE.md, and agent-commons/AGENT_DIRECTORY.md Shared
+     rules: no machine uses desktop Win32 Outlook any more. */
+  var _emailUrl=_owaWebUrl(t);
+  var emailIcon=_emailUrl?'<button class="card-icon" title="Open email in Outlook web" onclick="openEmailWeb(event,this)">&#9993;</button>':'';
   var editIcon='<button class="card-icon" title="Rename" onclick="startRename(event,\''+t.id+'\')">&#9998;</button>';
 
   var src='';
@@ -532,36 +512,32 @@ function toggleDrawer(id){
   }
 }
 
-/* OPEN EMAIL */
-function openEmail(e,entryId){
-  e.stopPropagation();
-  window.location.href='openmail://'+entryId;
+/* OPEN EMAIL (web) -- the single opener, ported verbatim from work-inbox's
+   _owaWebUrl()/openEmailWeb() (live there since 8 Sept 2026). openmail://
+   (desktop Outlook Classic / COM) is retired -- see the standing rule in
+   CLAUDE.md Hard Rules. Task looked up from the clicked card's data-id, so
+   no task-controlled value is interpolated into this inline handler. */
+function _owaWebUrl(o){
+  if(!o) return '';
+  var hosts={'outlook.office.com':1,'outlook.office365.com':1};
+  var cands=[o.web_link,o.display_url,o.webLink];
+  for(var i=0;i<cands.length;i++){
+    var c=cands[i];
+    if(!c) continue;
+    try{
+      var u=new URL(c);
+      if(u.protocol==='https:'&&hosts[u.hostname]&&u.pathname.indexOf('/mail/search')!==0)return c;
+    }catch(_){}
+  }
+  return '';
 }
-
-/* OPEN EMAIL (web) -- sourceType:"codex-graph" tasks only, per the Codex Connector
-   Migration research doc, Section 5 (opener design), corrected 26 Aug 2026 to key
-   on the dedicated `sourceType` machine-routing field rather than the human-
-   readable `source` provenance field -- see the field-collision note above
-   emailIcon's assignment. The Graph connector's web_link (snake_case;
-   display_url as an equivalent fallback) is opened as a plain hyperlink to
-   Outlook Web Access in a new tab. GetItemFromID / openmail:// is never used for
-   these. Each candidate link is validated independently and only followed if it
-   is https:// on a known Outlook Web host; anything missing or unrecognised
-   degrades to a visible notice -- never a silent no-op and never a throw. The
-   task id is read from the card's data-id via the clicked element, so no
-   task-controlled value is interpolated into this inline handler. */
 function openEmailWeb(e,btn){
   e.stopPropagation();
   var card=btn&&btn.closest?btn.closest('.task-card'):null;
   var id=card?card.getAttribute('data-id'):null;
   var t=id?tasks.find(function(x){return x.id===id;}):null;
   if(!t)return;
-  var hosts={'outlook.office.com':1,'outlook.office365.com':1};
-  var url='';
-  [t.web_link,t.display_url,t.webLink].forEach(function(c){
-    if(url||!c)return;
-    try{var u=new URL(c);if(u.protocol==='https:'&&hosts[u.hostname])url=c;}catch(_){}
-  });
+  var url=_owaWebUrl(t);
   if(url){
     window.open(url,'_blank','noopener');
   }else{
