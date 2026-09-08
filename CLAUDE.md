@@ -49,6 +49,11 @@ Do not skip, defer, or partially complete these steps. If either file cannot be 
 
 ## UI APPROVAL GATE — BEFORE EVERY VISUAL PUSH
 
+**AMENDED 8 Sep 2026 (Kevin, standing instruction, permanent):** the screenshot-and-wait-for-"approved" ceremony below is WAIVED for routine changes, both visual and data. Implement, verify, push, then report with a before/after (screenshot, dry-run output, or equivalent evidence) — do not wait for a per-step "approved" first. This waiver does **NOT** touch the Backup and Verify Protocol above — that stays mandatory, no exceptions, for every write, exactly as written. Still required regardless of this waiver:
+- A one-line "deploying X now" / "pushing Y now" heads-up before any production write — not silence.
+- Stop and flag rather than proceed for anything genuinely destructive, irreversible, or outside the agreed task scope — this waiver covers the approval *ceremony*, not Kevin's authority over what gets done.
+Kevin can reinstate the full gate for any specific change by saying so explicitly (e.g. a high-risk redesign) — this is a default, not a removal of his authority to ask for it back. Original gate text kept below as that fallback.
+
 **Every visual change to the dashboard must be screenshotted and approved before it goes to main. No exceptions — not for small tweaks, not for "obvious" fixes.**
 
 1. Implement the change locally.
