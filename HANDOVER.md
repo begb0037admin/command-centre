@@ -1,5 +1,17 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 8 Sep 2026 afternoon (Drew): session wound down, final checkpoint
+
+Everything from today is pushed and verified live:
+- **This Week cleanup:** 37 -> 23 (now ~22 after Kevin's own live done-ticks), commit `a071de43`, backup `Archive/tasks_backup_20260908_1437.json` (`71ac7943`). Detail in the entry directly below.
+- **work-inbox side (paired, no command-centre change):** triage-gate tightening merged (`28dd9e8` in work-inbox) so Phase 3.5 stops auto-creating tasks from meeting invites / Cc-only mail going forward; plus an `entry_id`->`entry_id or message_id` fix (`7cb5223` in work-inbox) re-enabling the no_action_needed->FYI demotion path for fresh IMAP mail. See work-inbox `HANDOVER.md` sections H and I.
+- **UI Approval Gate amendment** (screenshot/per-step-checkin ceremony waived for routine changes; Backup-and-Verify Protocol untouched) -- `CLAUDE.md` commit `62b6d25c`.
+
+**PARKED, explicit next action (work-inbox, not command-centre) -- pending Kevin's decision, do NOT build unasked:** tighten `categorise()` / `NEEDS_SUBJECTS` in `fetch_inbox.py` so the "Needs Response" bucket stops over-filling at the source (the `re:`/`fw:`/`fwd:` keyword net catches almost every reply thread). Kevin said "stop for now" -- this is his call to make.
+
+---
+
+
 **Last updated:** 2026-09-08 (Drew) - CLOSED. "Open email" fix live and Kevin-confirmed working: work-inbox's proven opener ported verbatim to `js/app.js`, `_owa_link()` fallback removed from `fetch_inbox.py`, one-time connector backfill applied to `tasks.json` (17/20 resolved, 3 removed by the pipeline in the interim), standing rule (Outlook Classic retired, OWA-in-browser only) recorded in all 4 durable locations. No open action items on this. See "Session 2026-09-08 CLOSE-OUT" below.
 
 ## Triage-tightening cleanup: 12 false-positive This-Week tasks archived, 1 duplicate merged, 37 -> 23
