@@ -1085,6 +1085,7 @@
     "actions": [
       "[05 Sep 2026] Auto-created from inbox triage (email: Simon Burford - RE: Proposal: WFM Pay Code Parameter Change – Restrict Entry to Valid Balance Period).",
       "[07 Sep 2026] Error log file received for Cority Employee Import failure on 2026-09-04 17:00; investigation required to determine if import completed successfully or requires re-run. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-09-04 17:00)"
-    ]
+    ],
+    "done": true
   }
 ]
