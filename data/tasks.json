@@ -626,10 +626,11 @@
       "[03 Sep 2026] Simon reiterates that Kevin committed to stating workgroup update capacity for GLAM after Chemistry rollout. (email: Simon Burford - RE: 38 day balance for departments update and decisions needed)",
       "[03 Sep 2026] Julie disputes prior meeting recollection and asserts Kevin agreed to support Chemistry and provide GLAM with specific workgroup update capacity numbers. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[04 Sep 2026] Simon proposes asking Access Group whether they can write a script to automate workgroup updates once the September rollover is complete, suggesting potential efficiency gains for future 38-day balance rollouts. (email: Simon Burford - RE: 38 day balance for departments update and decisions needed)",
-      "[08 Sep 2026] Julie reports Chemistry prefers batching all system updates in one phase; Kevin's capacity assessment for GLAM still needed. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+      "[08 Sep 2026] Julie reports Chemistry prefers batching all system updates in one phase; Kevin's capacity assessment for GLAM still needed. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[08 Sep 2026] Julie reports Chemistry prefers batching all system updates in one phase after call with Jenna; Kevin's capacity confirmation for this approach is critical to proceeding with 131-workgroup rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
     ],
-    "messageId": "LO0SPRMB0017119C3A1DFEE1495921BC8AB12@LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM",
-    "webLink": "https://outlook.office.com/mail/search?query=LO0SPRMB0017119C3A1DFEE1495921BC8AB12%40LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM"
+    "messageId": "LO0SPRMB001751076714F85C307D65988AB12@LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office.com/mail/search?query=LO0SPRMB001751076714F85C307D65988AB12%40LO0SPRMB0017.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608121801281",
@@ -711,8 +712,10 @@
       "[18 Aug 2026] Auto-created from inbox triage (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement ).",
       "[18 Aug 2026] Kevin bumped the original email from Anna Carter-Windle (28 May) regarding GLAM rostering requirements for Botanic Gardens Ticket Office and Ashmolean Security; still requires follow-up. (email: Kevin Lelitte - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )",
       "[19 Aug 2026] Kevin bumped this email on 18 Aug, indicating it remains an open action requiring follow-up. (email: Michael O'Sullivan - RE: Volunteering Leave)",
-      "[19 Aug 2026] Kevin bumped the GLAM rostering requirements email for Botanic Gardens and Ashmolean Security, signalling need for follow-up. (email: Kevin (sent to: Kevin Lelitte) - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )"
-    ]
+      "[19 Aug 2026] Kevin bumped the GLAM rostering requirements email for Botanic Gardens and Ashmolean Security, signalling need for follow-up. (email: Kevin (sent to: Kevin Lelitte) - Fw: GLAM- Botanic Gardens Ticket Office and Ashmolean Security- Rostering requirement )",
+      "[08 Sep 2026] Kevin forwarded GLAM Ashmolean Visitor Experience incident 11688462 (leave and absence module issues) to Julie for escalation and follow-up. (email: Kevin (sent to: Julie Hickman <julie.hickman@admin.ox.ac.uk>) - GLAM – Ashmolean Visitor Experience / Incident 11688462)"
+    ],
+    "messageId": "CWLP265MB59697F153CE33D8483C4B82288B12@CWLP265MB5969.GBRP265.PROD.OUTLOOK.COM"
   },
   {
     "id": "t2608181201062",
@@ -1094,5 +1097,21 @@
       "[08 Sep 2026] Cority employee import error from 4 September 2026 at 17:00 requires investigation; log file review and root cause analysis needed. (email: Kevin (sent to: Julie Hickman <julie.hickman@admin.ox.ac.uk>) - GLAM – Ashmolean Visitor Experience / Incident 11688462)"
     ],
     "done": true
+  },
+  {
+    "id": "t2609082321250",
+    "title": "Review IRIS Changes project plan - September 2026",
+    "tier": "today",
+    "source": "Inbox - Christopher Sanders, 2026-09-08 16:28",
+    "emailRef": "IRIS Changes - September 2026",
+    "entryId": "",
+    "messageId": "CWXP265MB181394DC1EA73E6088E9799095B12@CWXP265MB1813.GBRP265.PROD.OUTLOOK.COM",
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe5PtHUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "summary": "",
+    "description": "Christopher Sanders has provided a detailed project plan for IRIS Changes implementation in September 2026 with planned activities and timeline. Kevin needs to review the plan and provide feedback on HR Systems readiness, dependencies, and any constraints affecting implementation.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[08 Sep 2026] Auto-created from inbox triage (email: Christopher Sanders - IRIS Changes - September 2026)."
+    ]
   }
 ]
