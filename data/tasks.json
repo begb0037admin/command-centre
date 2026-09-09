@@ -636,9 +636,10 @@
       "[04 Sep 2026] Simon proposes asking Access Group whether they can write a script to automate workgroup updates once the September rollover is complete, suggesting potential efficiency gains for future 38-day balance rollouts. (email: Simon Burford - RE: 38 day balance for departments update and decisions needed)",
       "[08 Sep 2026] Julie reports Chemistry prefers batching all system updates in one phase; Kevin's capacity assessment for GLAM still needed. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[08 Sep 2026] Julie reports Chemistry prefers batching all system updates in one phase after call with Jenna; Kevin's capacity confirmation for this approach is critical to proceeding with 131-workgroup rollout. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
-      "[09 Sep 2026] Julie reports Chemistry prefers batching all 38-day balance system updates in one phase after 14 Sep. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)"
+      "[09 Sep 2026] Julie reports Chemistry prefers batching all 38-day balance system updates in one phase after 14 Sep. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
+      "[09 Sep 2026] Kevin confirmed to Julie that Chemistry is ready as 38-day balance pilot with 131 workgroups. (email: Kevin (sent to: Julie Hickman) - Re: 38 day balance for departments update and decisions needed)"
     ],
-    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l1AACN_5xoUtxaQ7clOANLv-U1AAe5PtHSAAA=",
+    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe5PrQ-AAA=",
     "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe5PtHSAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
   },
   {
@@ -1127,6 +1128,22 @@
     "actions": [
       "[08 Sep 2026] Auto-created from inbox triage (email: Christopher Sanders - IRIS Changes - September 2026).",
       "[09 Sep 2026] Christopher Sanders provided detailed IRIS Changes project plan for September 2026; Kevin must review and confirm HR Systems readiness. (email: Kevin (sent to: Anthony Kong <anthony.kong@admin.ox.ac.uk>) - Finance code B8 Review)"
+    ]
+  },
+  {
+    "id": "t2609091622020",
+    "title": "Approve annual leave for James Salas Guillen (25-28 September)",
+    "tier": "today",
+    "source": "Inbox - peoplexd@accessacloud.com, 2026-09-09T13:43",
+    "emailRef": "ANNUAL LEAVE request submitted. ACTION REQUIRED.",
+    "entryId": "",
+    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l4AACN_5xoUtxaQ7clOANLv-U1AAe6H9QqAAA=",
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l4AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6H9QqAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "summary": "",
+    "description": "James Salas Guillen has submitted duplicate annual leave requests (received 13:43 today, 9 September) for 25-28 September 2026; Kevin must review and approve or decline these requests as his manager.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[09 Sep 2026] Auto-created from inbox triage (email: peoplexd@accessacloud.com - ANNUAL LEAVE request submitted. ACTION REQUIRED.)."
     ]
   }
 ]
