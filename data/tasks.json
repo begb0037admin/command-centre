@@ -629,7 +629,8 @@
       "[18 Aug 2026] Julie Hickman has had an initial conversation with Becky Fitzek at GLAM which was productive; provides new information on GLAM's readiness to join 38-day balance scheme. (email: Julie Hickman - RE: 38 day balance for departments update and decisions needed)",
       "[21 Aug 2026] Merged duplicate task t2608120903060 (\"Advise Marie on GLAM joining 38-day balance scheme\", dateAdded 2026-08-12, byte-identical description) into this record. Duplicate removed from tasks.json; it added no new information beyond what this record already captures (same 11-12 Aug email thread, narrated from the Marie-side email one day later). This record kept as base because it carried more actions (5 vs 2) and the most recent action (18 Aug vs 12 Aug)."
     ],
-    "dateAdded": "2026-08-11"
+    "dateAdded": "2026-08-11",
+    "done": true
   },
   {
     "id": "t2608121801280",
