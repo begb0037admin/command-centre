@@ -563,7 +563,8 @@
       "[18 Aug 2026] Simon Burford clarifies that Company 90 should be ignored for now as it was only set up for WFM workgroup configuration; this provides guidance on the team calendar configuration work with Asta. (email: Simon Burford - RE: Balance Period End Matrix)",
       "[20 Aug 2026] Michael O'Sullivan has responded that the TIMDEP04 Absence Reasons report may need updating to include the new Volunteering Leave absence type. (email: Michael O'Sullivan - RE: Volunteering Leave)"
     ],
-    "dateAdded": "2026-08-07"
+    "dateAdded": "2026-08-07",
+    "done": true
   },
   {
     "id": "t2608071801052",
