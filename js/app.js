@@ -465,13 +465,21 @@ function boldActs(s){return escHtml(s).replace(/\[[^\]]+\]/g,'<strong>$&</strong
 
 /* One row per action-log entry, each with its own remove control so a single
    bad/duplicate line can be deleted without touching the rest of the log or
-   the task itself. Indexed by array position (not content), so deleting one
-   of two byte-identical entries removes only the one clicked. */
+   the task itself. Indexed by array position in the underlying t.actions
+   array (not content, not display order), so deleting one of two byte-
+   identical entries removes only the one clicked.
+   Display order is newest-first (Kevin, 10 Sep 2026) while the underlying
+   t.actions array itself stays oldest-first/append-only -- every writer
+   (fetch_inbox.py Phase 3.6, aiLog's push, quick-add's actions:[]) always
+   appends new entries to the end, so reversing only at render time is
+   sufficient and never needs the storage order itself to change. */
 function actionRowsHTML(taskId,acts){
   var arr=Array.isArray(acts)?acts:(acts?[acts]:[]);
-  return arr.map(function(a,i){
-    return '<div class="da-row"><span class="da-text">'+boldActs(String(a))+'</span>'
-      +'<button type="button" class="da-del" title="Remove this entry" aria-label="Remove this log entry" onclick="deleteAction(event,\''+taskId+'\','+i+')">&times;</button></div>';
+  var indexed=arr.map(function(a,i){return {a:a,i:i};});
+  indexed.reverse();
+  return indexed.map(function(o){
+    return '<div class="da-row"><span class="da-text">'+boldActs(String(o.a))+'</span>'
+      +'<button type="button" class="da-del" title="Remove this entry" aria-label="Remove this log entry" onclick="deleteAction(event,\''+taskId+'\','+o.i+')">&times;</button></div>';
   }).join('');
 }
 function tierLabel(t){return{today:'Today',tomorrow:'Tomorrow',week:'This Week',parked:'Parked'}[t]||t;}
