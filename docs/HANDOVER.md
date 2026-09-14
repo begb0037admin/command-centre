@@ -1,3 +1,11 @@
+# Handover -- 14 September 2026, late evening (Drew, via Codex as lead implementer) -- email-link backfill completed (33/34); closes the "~33 still not backfilled" follow-up below
+
+Closes the follow-up flagged in the entry directly below. Dispatched Codex (`codex exec`, lead-implementer pattern) against the exact 34 tasks confirmed missing a `web_link`/`display_url`/`webLink` field. Result, verified directly against the live post-push `data/tasks.json` (not taken on Codex's report alone): **56/57 tasks now have a real resolved link; only `t010` ("Odyssey annual review -- schedule with Marie") remains unresolved** -- no relevant email was found for it, so it was correctly left alone rather than fabricated.
+
+Backup-and-verify protocol followed: `Archive/tasks_backup_20260914_2127.json` (57 tasks, pre-edit, confirmed byte-identical to live-before-write) committed separately (`0aa9eba`) before the content commit (`d39d665`). Existing `CC->` button/behaviour untouched -- purely additive. Same-night companion work: work-inbox's own `prioritiesToday`/`prioritiesTomorrow`/`prioritiesWeek` cards (25/25, previously all unresolved -- a separate gap from the mail-card `needs`/`fyi` arrays already fixed) and a calendar-event-duplication root-cause fix (`work-inbox@bdeb8f6`) -- both detailed in work-inbox's own `HANDOVER.md`.
+
+---
+
 # Handover -- 14 September 2026, evening (Drew) -- email-open icon bug fixed + backfilled; link tab-reuse fixed
 
 Two things Kevin flagged from a dashboard screenshot, both closed this session (full detail/root cause in work-inbox's own `HANDOVER.md` top entry, since the root-cause fix lives in `fetch_inbox.py`):
