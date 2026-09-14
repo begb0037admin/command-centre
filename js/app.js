@@ -38,7 +38,11 @@ function renderCustomLinks(){
     row.className='ql-link-row';
     var label=link.label.replace(/</g,'&lt;').replace(/>/g,'&gt;');
     var url=link.url.replace(/"/g,'&quot;');
-    row.innerHTML='<a class="ql-link-a" href="'+url+'" target="_blank">'+label+'</a>'
+    // Named per-destination target (14 Sep 2026, Kevin) -- reuses the same
+    // tab on repeat clicks to the same URL instead of spawning a new one
+    // every time, while distinct quick links still open in their own tabs.
+    var qlTarget='ql-'+link.url.replace(/[^a-zA-Z0-9]+/g,'-').toLowerCase().slice(0,60);
+    row.innerHTML='<a class="ql-link-a" href="'+url+'" target="'+qlTarget+'">'+label+'</a>'
       +'<button class="ql-remove-btn" onclick="removeCustomLink('+i+')" title="Remove">\xd7</button>';
     el.appendChild(row);
   });
@@ -547,7 +551,7 @@ function openEmailWeb(e,btn){
   if(!t)return;
   var url=_owaWebUrl(t);
   if(url){
-    window.open(url,'_blank','noopener');
+    window.open(url,'cc-email-view','noopener');
   }else{
     alert('No usable Outlook Web link is stored for this task (an https link on outlook.office.com / outlook.office365.com is required), so the email cannot be opened from here.');
   }
