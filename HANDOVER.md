@@ -1,5 +1,9 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 14 Sep 2026 late evening (Codex): additive email-link backfill
+
+The full missing-link sweep in `data/tasks.json` is complete: 33 of 34 tasks received real OWA `web_link` values, with `t010` left unchanged because no relevant Odyssey annual-review email chain could be resolved from the live Outlook search. Existing task fields and the existing `CC→` behaviour were preserved. The required pre-edit backup is `Archive/tasks_backup_20260914_2127.json`, committed and pushed separately as `0aa9eba`; the additive content commit follows this checkpoint.
+
 ## Addendum -- 8 Sep 2026 afternoon (Drew): session wound down, final checkpoint
 
 Everything from today is pushed and verified live:
