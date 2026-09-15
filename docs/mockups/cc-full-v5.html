@@ -392,6 +392,58 @@ function clickStat(tier){
     });
   }
 
+  /* ==========================================================================
+     DELIBERATE HAND-MAINTAINED PORT of command-centre/js/app.js's
+     lastActivityTs() (the canonical definition -- see that file for the full
+     rationale comment). work-inbox/js/app.js's loadCcTicker() carries a third
+     independent copy (ccLastActivityTs()). ANY change to the genuine-activity
+     definition here MUST be applied in BOTH other places too, or they will
+     drift out of sync again -- this is exactly the "27 days stale" bug fixed
+     15 Sep 2026 (this file copied js/app.js's OLD buggy dateAdded-only logic
+     as "already proven"; it wasn't). See command-centre/docs/HANDOVER.md,
+     15 Sep 2026 entry, and command-centre/tests/staleness_parity_test.js
+     (the regression guard that checks all three copies agree).
+     ========================================================================== */
+  var CC_MONTHS={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+
+  function lastActivityTs(t){
+    var best=0,earliest=Infinity,genuine=0;
+    ['lastUpdated','dateAdded'].forEach(function(f){
+      if(t[f]){var v=new Date(t[f]).getTime();if(!isNaN(v)&&v>best)best=v;}
+    });
+    var acts=t.actions;
+    if(acts){
+      if(!Array.isArray(acts))acts=[acts];
+      acts.forEach(function(a){
+        var s=String(a);
+        var m=/^\s*\[(\d{1,2})\s+([A-Za-z]{3})[A-Za-z]*\.?\s*(\d{4})?/.exec(s);
+        if(!m)return;
+        var mo=CC_MONTHS[m[2].toLowerCase()];
+        if(mo===undefined)return;
+        var yr=m[3]?parseInt(m[3],10):new Date().getFullYear();
+        var v=new Date(yr,mo,parseInt(m[1],10)).getTime();
+        if(isNaN(v))return;
+        if(v<earliest)earliest=v;
+        var hasEmailTag=/\(email:/i.test(s);
+        var isKevinSent=/\(email:\s*Kevin\s*\(sent to:/i.test(s);
+        if(hasEmailTag&&!isKevinSent)return;
+        if(v>genuine)genuine=v;
+      });
+    }
+    if(genuine>best)best=genuine;
+    if(!best&&earliest!==Infinity)best=earliest;
+    return best;
+  }
+  var CC_STALE_DAYS={today:7,tomorrow:7,week:21,parked:45};
+  function staleDays(t){
+    var ts=lastActivityTs(t);
+    if(!ts)return null;
+    var days=Math.floor((Date.now()-ts)/(24*3600*1000));
+    var threshold=CC_STALE_DAYS[t.tier];
+    if(threshold===undefined)threshold=21;
+    return days>=threshold?days:null;
+  }
+
   async function loadIntelData(){
     var t=Date.now();
     var urls=[CC_PROXY+'/data/tasks.json?t='+t,'https://raw.githubusercontent.com/begb0037admin/command-centre/main/data/tasks.json?t='+t];
@@ -423,10 +475,10 @@ function clickStat(tier){
     var nowMs=new Date().setHours(0,0,0,0);
     var todayTasks=tasks.filter(function(t){return t.tier==='today'&&!t.done;});
 
-    /* Watch — Stale today: Today-tier, not done, dateAdded more than 3 days
-       ago -- identical threshold to js/app.js renderStaleBanner(). */
-    var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
-    var staleAges=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
+    /* Watch — Stale today: Today-tier, not done, with no genuine recent
+       activity -- identical logic to js/app.js renderStaleBanner(). */
+    var stale=todayTasks.filter(function(t){return staleDays(t)!==null;});
+    var staleAges=stale.map(function(t){return staleDays(t);});
 
     /* Act now: [TODO] action lines logged against Today-tier tasks -- these
        are already written "Kevin to..." style by the pipeline/manual entry. */

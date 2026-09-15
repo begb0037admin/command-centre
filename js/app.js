@@ -259,8 +259,8 @@ function renderStaleBanner(){
   if(!panel)return;
   var nowMs=new Date().setHours(0,0,0,0);
   var todayTasks=tasks.filter(function(t){return t.tier==='today'&&!t.done;});
-  var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
-  var ages=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
+  var stale=todayTasks.filter(function(t){return staleDays(t)!==null;});
+  var ages=stale.map(function(t){return staleDays(t);});
   var todos=[];
   todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push({id:t.id,text:a.replace('[TODO]','').trim()});});});
   var awaits=[];
@@ -310,6 +310,22 @@ function renderStaleBanner(){
   panel.innerHTML='<div class="intel-panel">'+w+a+wt+'</div>';
   panel.style.display='';
 }
+
+/* ============================================================================
+   CANONICAL DEFINITION -- this is THE source of truth for "genuine activity".
+   Two other files carry deliberate, hand-maintained PORTS of this exact logic
+   because neither can import this module (no build step in this repo, and
+   work-inbox is a separate repo/deploy):
+     - command-centre/docs/mockups/cc-full-v5.html (its own inline <script>,
+       local lastActivityTs()/staleDays()/CC_MONTHS)
+     - work-inbox/js/app.js (loadCcTicker()'s ccLastActivityTs()/CC_MONTHS)
+   ANY change to the genuine-activity definition below (email-tag patterns,
+   fallback order, thresholds) MUST be applied in both of those places too, or
+   they will drift out of sync again -- this is exactly the bug fixed 15 Sep
+   2026 (renderStaleBanner() used raw dateAdded instead of this function, and
+   the mockup copied that same bug in). See docs/HANDOVER.md, 15 Sep 2026
+   entry, for the full incident and the regression-guard test that checks all
+   three copies agree (tests/staleness_parity_test.js). ============================================================================ */
 
 /* Most recent GENUINE activity timestamp for a task.
    Prefers explicit lastUpdated/dateAdded fields; otherwise reads the newest
