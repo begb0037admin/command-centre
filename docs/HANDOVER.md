@@ -1,3 +1,77 @@
+# Handover -- 15 September 2026, ~07:15 UTC (Drew, Codex as write-mode implementer) -- Watch-panel/CC-ticker staleness bug: full audit, structural fix, regression guard, MERGED to main on both repos, live-verified
+
+Closes out the entry immediately below (staged-not-merged). Kevin asked for the fix to be widened from the one flagged task to a full audit of every staleness reading, for the root cause (duplicated logic) to be closed structurally rather than value-patched, and for a regression guard -- all three done, then Kevin gave literal "approved" and this was merged.
+
+## Root cause, restated precisely
+Not one bug -- one buggy CALCULATION (raw `dateAdded` age instead of genuine-activity age) that got **hand-copied into three separate places** across two repos, because neither repo has a build step and work-inbox is a separate deploy target:
+1. `command-centre/js/app.js` `renderStaleBanner()` -- the ORIGINAL instance (pre-dates 15 Sep, never caught by the 21 Aug card-badge fix).
+2. `command-centre/docs/mockups/cc-full-v5.html` -- copied from #1's buggy version by an earlier session the SAME night, treating it as "already proven."
+3. `work-inbox/js/app.js` `loadCcTicker()` (the sidebar "Stalled"/"oldest"/"avg age"/"2wk+" widget) -- an independently-written THIRD copy of the same `dateAdded`-only pattern, found this session by grepping both repos for every age/date-diff computation rather than assuming only two existed.
+
+## Full audit -- every reading that changes, both directions
+Ran the OLD and NEW logic against the real live `data/tasks.json` (post-merge, re-verified fresh -- not the same pull used to design the fix) for every non-done task in scope of each widget.
+
+### command-centre "Watch -- Stale today" panel (Today tier only)
+| Task | Old (dateAdded-only) | New (genuine-activity) | Direction |
+|---|---|---|---|
+| `task-1787072363309` (org structure) | 27d | not flagged (real activity 14 Sep) | false positive REMOVED |
+| `t2608111331410` (Cority) | 34d | not flagged | false positive REMOVED |
+| `t035` (WFM/GLAM) | 81d | not flagged | false positive REMOVED |
+| `task-1787044968753` (Laura Porter job-alert) | 27d | 28d (still flagged, genuinely stale) | unchanged in kind, day-count shifts by rounding |
+| `t2609020705200` (leave-approval support call) | not flagged | 13d | **previously-masked genuine staleness now correctly surfaced** |
+| `t2609020705201` (P5 Incident 11706988) | not flagged | 13d | **previously-masked genuine staleness now correctly surfaced** |
+
+### work-inbox CC-ticker sidebar widget (all open tasks, cross-tier)
+- **Today "Stalled" count**: old 4 (`task-1787072363309`, `task-1787044968753`, `t2608111331410`, `t035`) -> new 5 (`task-1787044968753`, `t2609020705200`, `t2609020705201`, `t2609082321250`, `t2609091622020`) -- same 3 false positives removed, 4 genuinely-stale tasks that were being missed now correctly counted.
+- **"2 weeks+" count**: 16 -> 16 (same total, DIFFERENT composition underneath -- individual tasks swap in/out, coincidental match on the total).
+- **Average age**: 29d -> 19d (a real, meaningful drop -- the old figure was inflated by counting long-dormant-by-creation-date but actively-worked tasks at their full creation-date age).
+- **Oldest**: 99d -> 99d unchanged (the single oldest task by creation date also happens to have no genuine activity since, so its figure is correct under both old and new logic -- not a coincidence needing further investigation, checked directly).
+- 28 individual tasks' displayed age changes (full list captured in this session's evidence, available on request) -- most SHRINK (task has been actively worked despite an old creation date, e.g. `t009` DPIA 99d->13d, `t017` Iris/ECO Online 98d->7d), a handful GROW (a task created very recently that then went quiet immediately, e.g. `t2608121801281` PeopleXD uplift 0d->34d) -- both directions are the fix working as intended, not a regression.
+
+## Other staleness/freshness calculations checked, NOT found buggy (verified by reading the code, not assumed)
+- `js/app.js`'s `lastActivityTs()`/`staleDays()` (per-card "NdQUIET" badge) -- already correct since 21 Aug, this is the CANONICAL definition the other three copies/fix now match.
+- `js/app.js`'s NEW/UPDATED card badge (`cardHTML()`, ~line 388-394) -- uses `dateAdded`/`lastUpdated` directly with a 4-day cutoff. **Different bug class, flagged not fixed**: `lastUpdated` is never written anywhere in `fetch_inbox.py` or `js/app.js` (grepped both, confirmed dead field) -- so the "UPDATED" badge can structurally never fire from pipeline activity, only "NEW" (from `dateAdded`) ever shows. This doesn't mislead (it just under-shows, never over-claims freshness), so it's a different failure mode from today's bug and was left alone -- flagged to Kevin as a separate, smaller gap if he wants it addressed.
+- `js/app.js`'s `sourceDateFromText()`/`cardSourceTs()` (drives card SORT ORDER within a tier) -- intentionally uses the source-text date / dateAdded / earliest action as a deliberate design choice (documented in its own comment block) for what date a card visually represents, not a staleness claim -- not the same bug class, left alone.
+- work-inbox's own `_priLastActivityTs()`/`_priStaleDays()` (Priorities This Week board) -- already correct since 21 Aug, a different, pre-existing genuine-activity implementation for a different board section. Left alone.
+- `js/app.js`'s `generated_at`-based briefing-staleness check (~line 846, "is the pipeline data itself more than 24h old") -- a legitimately different thing (pipeline freshness, not task staleness), correctly uses a raw timestamp by design. Not the same bug class.
+
+## Structural fix -- duplication addressed, not just values patched
+**Did not fully eliminate the duplication** -- judged too risky for a same-day merge: this repo's CLAUDE.md is explicit ("No framework, no build step -- static files only"), and `js/app.js` has DOM/init assumptions (`#intel-panel`, `#tierGrid`, event listeners wired at load) that would need real testing before safely loading it wholesale into the standalone mockup page or into a different repo's `js/app.js` via `<script src>` -- not something to risk without a proper test pass, and it doesn't change the constraint that work-inbox is a genuinely separate repo/deploy target regardless.
+
+**What was done instead**: every one of the three copies now carries a **loud, unmissable banner comment** directly above its implementation, explicitly naming the other two copies by file path and stating that any change to the genuine-activity definition must be applied in all three or they will drift again -- pointing at this exact incident as the reason. `js/app.js` is marked as canonical; the mockup and the CC-ticker are marked as deliberate hand-maintained ports.
+
+**Regression guard, concrete and runnable**: new `command-centre/tests/staleness_parity_test.js` (Node, no dependencies). It extracts the REAL shipped `lastActivityTs`-family function from all three files by source location (not a hand-copied reimplementation of the logic itself, which would defeat the point), runs a fixed set of fixture tasks through each, and fails loudly (non-zero exit, clear diagnostic output) if any two copies disagree, or if the result doesn't match the expected genuine-activity-driven date for a fixture engineered to distinguish "genuine activity" from "creation date." **Verified the test actually catches the class of bug it exists for**: deliberately reverted the mockup copy to its pre-fix buggy version and re-ran the test -- it failed loudly (exit 1) rather than passing silently. Run it with `node tests/staleness_parity_test.js` from a checkout with both repos as siblings (`command-centre/` and `work-inbox/` side by side) for full 3-way coverage; run from `command-centre` alone still checks the first two copies and warns (does not silently pass) if work-inbox isn't present.
+
+## Codex write-mode dispatches, all independently reviewed before anything was pushed
+Per Kevin's explicit instruction, every fix was written by `codex exec` in write mode against an isolated disposable scratch copy (never the live repo), then independently diffed against the pre-change original, syntax-checked (`node --check`, or extracted-`<script>`-block checks for the HTML file), and validated against real live data before being pushed anywhere:
+1. `js/app.js` `renderStaleBanner()` -- 2-line fix, 3rd attempt succeeded after 2 genuine sandbox-infra timeouts (not review findings).
+2. `docs/mockups/cc-full-v5.html` -- ported helpers + 2-line fix, succeeded first attempt; Codex's own narration was actually wrong ("no edit needed") but the diff proved it made the correct edit -- caught by independently diffing rather than trusting the agent's self-report.
+3. `work-inbox/js/app.js` `loadCcTicker()` -- ported helper + `ageDays()` fix, succeeded first attempt, included the cross-reference comment unprompted-thoroughly (matched what was asked).
+Cross-reference comments in the other two files (canonical `js/app.js`, mockup) and the regression test itself were written directly (pure documentation / new test infrastructure, no logic risk, consistent with how HANDOVER.md entries and memory writes are handled outside the Codex loop).
+
+## Backup-and-verify sequence, full protocol, all 4 writes
+| Repo | File | Pre-change live SHA | Backup path | Merged content SHA | Live-served byte-diff |
+|---|---|---|---|---|---|
+| command-centre | `js/app.js` | `5acbcfc9ddfdd5370552932771f42fe74322f672` | `Archive/app_backup_20260915_0630.js` | `4e95380fa1ae4b6eb685567f4a98299f144d8db2` | byte-identical, confirmed |
+| command-centre | `docs/mockups/cc-full-v5.html` | `8dbad9c2f589c74c21f52a32c621f83b524750f5` | `Archive/cc-full-v5_backup_20260915_0645.html` | `6d6ccc57071f65d9bbddafdb33b05a838a17f34d` | byte-identical, confirmed |
+| command-centre | `tests/staleness_parity_test.js` | (new file) | n/a | `37820d84f2a853224263c2768a122755e74ea692` | n/a |
+| work-inbox | `js/app.js` | `d406a75e17278c7ddcb3306f16b2afa3f1e7c820` | `Archive/app_backup_20260915_0700.js` | `b5639011910ba9c71fc8a866b89a6fa09198f99f` | (not byte-diffed against a live Pages URL -- work-inbox's own dashboard verification follows that repo's own convention; content SHA verified live via Contents API post-merge) |
+
+## Merge -- Kevin's literal "approved" received, both repos merged
+- command-centre: `watch-panel-staleness-fix-15sep` -> `main`, merge commit `f1064bfeebb2066527e1fff9f48a16cd059784d8` (2 divergent main commits checked first -- backup + prior checkpoint entry, no file overlap, clean).
+- work-inbox: `watch-panel-staleness-fix-15sep` -> `main`, merge commit `a46d1dd1cbca758e487876a3cbddb6dfd01e63f5` (no divergence, clean fast-forward-equivalent merge).
+- Post-merge, all four files' content SHAs re-verified via a fresh Contents API GET against `main` -- exact match to what was reviewed pre-merge (table above).
+- GitHub Pages build polled `building` -> `built` for command-centre; the actually-served `js/app.js` and `docs/mockups/cc-full-v5.html` (fetched cache-busted from `begb0037admin.github.io`) byte-diffed identical to the merged git blobs -- confirmed live, not just "merge succeeded."
+- Re-ran the full audit query (old-vs-new numbers above) against a FRESH post-merge pull of live `data/tasks.json` -- numbers unchanged from the pre-merge audit (data hadn't moved in the interim), confirming the fix is what's actually live now.
+
+## Not done, flagged only
+- Full de-duplication into a single shared module -- judged too risky for a same-day merge given this repo's no-build-step constraint and `js/app.js`'s DOM/init side effects; mitigated with cross-reference comments + the parity test instead (see Structural fix above). If Kevin wants true single-sourcing later, the realistic path is a small shared `<script src>`-able utility file (`js/staleness.js`) with zero DOM dependencies, loaded by both `index.html` and the mockup -- work-inbox would still need its own copy since it's a separate repo, but the comment/test pairing at least makes that drift loud instead of silent.
+- `js/app.js`'s dead `lastUpdated`/"UPDATED" badge gap (found during the audit) -- different bug class (never-shows, not false-shows), not fixed, Kevin's call whether it's worth a follow-up.
+- `docs/INBOX_PICKUP_ROUTINE.md`'s keyword-table gap (no org-structure entry) -- real but confirmed unrelated to this bug, still open.
+- Granola-to-command-centre wiring -- still a structural gap, unrelated to this bug, still open.
+
+---
+
 # Handover -- 15 September 2026, ~06:45 UTC (Drew, Codex as write-mode implementer) -- root-caused Kevin's "task-1787072363309 shows 27 days stale" report; fix built and reviewed, STAGED not merged
 
 ## What Kevin reported
