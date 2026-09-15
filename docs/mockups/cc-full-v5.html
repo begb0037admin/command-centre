@@ -392,6 +392,18 @@ function clickStat(tier){
     });
   }
 
+  /* ==========================================================================
+     DELIBERATE HAND-MAINTAINED PORT of command-centre/js/app.js's
+     lastActivityTs() (the canonical definition -- see that file for the full
+     rationale comment). work-inbox/js/app.js's loadCcTicker() carries a third
+     independent copy (ccLastActivityTs()). ANY change to the genuine-activity
+     definition here MUST be applied in BOTH other places too, or they will
+     drift out of sync again -- this is exactly the "27 days stale" bug fixed
+     15 Sep 2026 (this file copied js/app.js's OLD buggy dateAdded-only logic
+     as "already proven"; it wasn't). See command-centre/docs/HANDOVER.md,
+     15 Sep 2026 entry, and command-centre/tests/staleness_parity_test.js
+     (the regression guard that checks all three copies agree).
+     ========================================================================== */
   var CC_MONTHS={jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
 
   function lastActivityTs(t){
