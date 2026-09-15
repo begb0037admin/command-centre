@@ -259,8 +259,8 @@ function renderStaleBanner(){
   if(!panel)return;
   var nowMs=new Date().setHours(0,0,0,0);
   var todayTasks=tasks.filter(function(t){return t.tier==='today'&&!t.done;});
-  var stale=todayTasks.filter(function(t){return t.dateAdded&&Math.floor((nowMs-new Date(t.dateAdded))/86400000)>3;});
-  var ages=stale.map(function(t){return Math.floor((nowMs-new Date(t.dateAdded))/86400000);});
+  var stale=todayTasks.filter(function(t){return staleDays(t)!==null;});
+  var ages=stale.map(function(t){return staleDays(t);});
   var todos=[];
   todayTasks.forEach(function(t){(t.actions||[]).forEach(function(a){if(a.indexOf('[TODO]')===0)todos.push({id:t.id,text:a.replace('[TODO]','').trim()});});});
   var awaits=[];
