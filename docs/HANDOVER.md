@@ -1,3 +1,30 @@
+# Handover -- 15 September 2026 (Drew) -- cc-full-v5.html mockup: intel panel (Watch/Act Now/Waiting On) wired to live data/tasks.json
+
+Kevin's instruction tonight: no visual redesign of `docs/mockups/cc-full-v5.html` ("Command Centre -- Full page mockup v5") -- layout/CSS/markup pixel-for-pixel unchanged. Only change: wire the three `.intel-panel` columns (Watch -- Stale Today / Act Now / Waiting On) to real live data instead of the hardcoded static sample rows that were typed directly into the HTML body (no `<script>`-driven rendering existed for this panel before today).
+
+## Mapping logic (judgement-based, cross-referenced against the real static rows before writing any code)
+Reused the exact fetch pattern and thresholds already proven live in `js/app.js`'s `renderStaleBanner()` (same PROXY -> `raw.githubusercontent.com` fallback, cache-busted, same stale/`[TODO]`/`[AWAITING]` logic) rather than inventing new logic:
+- **Watch -- Stale Today**: Today-tier, not done, `dateAdded` more than 3 days ago (identical threshold to production). Row = `<span class="intel-days">Xd</span><span class="intel-item-text">title</span>`, same markup as before.
+- **Act Now**: `[TODO]` action lines logged against Today-tier tasks. Row keeps the mockup's existing two-line block -- bold line = task title, muted line = the actual `[TODO]` text (already phrased "Kevin to...").
+- **Waiting On**: `[AWAITING]` action lines logged against any non-done task, any tier. Row = the existing single muted-line block, text = the `[AWAITING]` line itself.
+
+Capped each column at 5 rows with a "+N more" line (`.intel-more`, same class the mockup already used for Act/Waiting) when the real count exceeds that -- avoids an unbounded column, doesn't fabricate content to fill sparse ones. All three columns are legitimately populated by live data tonight (4 stale, 4 act, 9 waiting -> 5 shown + "+4 more"); no column was forced or left artificially padded.
+
+Did **not** touch the sidebar "Daily Focus" ticker/absences (already-flagged as work-inbox placeholder, out of scope) or the main Today/Tomorrow/Week/Parked board (`tierGrid`) -- both stay static, exactly as Kevin scoped the task to "the three columns" only.
+
+## Verification (live, not just code-read)
+Local headless-Chrome render (`chrome.exe --headless=new --dump-dom`) served against the file's own real fetch of live `data/tasks.json` (no fixture) confirmed all three columns populated with real, current tasks -- including the exact "URGENT -- Organisational Structure Update - August 2026 - FINAL" task (27 days stale) appearing correctly in both Watch and Act Now, matching the real live record. Zero console/page errors. `node --check`-equivalent syntax check on the injected script block clean.
+
+## Backup-and-verify (mandatory protocol followed in full)
+Live GET confirmed non-zero (30714 bytes, sha `f32d8f41...`) -> `Archive/cc-full-v5_backup_20260915_0625.html` committed (`67a6eef2`) and independently re-verified byte-identical by SHA -> edit made -> sha-guarded PUT (commit `7297abaa`, new content sha `ca99c6d2...`, 33886 bytes) -> post-write sha independently re-fetched and confirmed matching. Live on GitHub Pages, confirmed reachable (`200`) at `https://begb0037admin.github.io/command-centre/docs/mockups/cc-full-v5.html`.
+
+No screenshot-approval wait needed -- covered by the 8 Sep 2026 no-screenshot-gate waiver for work-inbox/command-centre ("just do it"); pushed per Kevin's explicit same-night instruction.
+
+## Next action
+Nothing outstanding on this task. If Kevin wants the sidebar Daily Focus ticker or the main board wired to live data too, that's a separate follow-up, not started tonight (deliberately out of scope).
+
+---
+
 # Handover -- 14 September 2026, late evening (Drew, via Codex as lead implementer) -- email-link backfill completed (33/34); closes the "~33 still not backfilled" follow-up below
 
 Closes the follow-up flagged in the entry directly below. Dispatched Codex (`codex exec`, lead-implementer pattern) against the exact 34 tasks confirmed missing a `web_link`/`display_url`/`webLink` field. Result, verified directly against the live post-push `data/tasks.json` (not taken on Codex's report alone): **56/57 tasks now have a real resolved link; only `t010` ("Odyssey annual review -- schedule with Marie") remains unresolved** -- no relevant email was found for it, so it was correctly left alone rather than fabricated.
