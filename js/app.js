@@ -311,6 +311,22 @@ function renderStaleBanner(){
   panel.style.display='';
 }
 
+/* ============================================================================
+   CANONICAL DEFINITION -- this is THE source of truth for "genuine activity".
+   Two other files carry deliberate, hand-maintained PORTS of this exact logic
+   because neither can import this module (no build step in this repo, and
+   work-inbox is a separate repo/deploy):
+     - command-centre/docs/mockups/cc-full-v5.html (its own inline <script>,
+       local lastActivityTs()/staleDays()/CC_MONTHS)
+     - work-inbox/js/app.js (loadCcTicker()'s ccLastActivityTs()/CC_MONTHS)
+   ANY change to the genuine-activity definition below (email-tag patterns,
+   fallback order, thresholds) MUST be applied in both of those places too, or
+   they will drift out of sync again -- this is exactly the bug fixed 15 Sep
+   2026 (renderStaleBanner() used raw dateAdded instead of this function, and
+   the mockup copied that same bug in). See docs/HANDOVER.md, 15 Sep 2026
+   entry, for the full incident and the regression-guard test that checks all
+   three copies agree (tests/staleness_parity_test.js). ============================================================================ */
+
 /* Most recent GENUINE activity timestamp for a task.
    Prefers explicit lastUpdated/dateAdded fields; otherwise reads the newest
    [DD Mon YYYY] stamp from the action log. Phase 3.6 (fetch_inbox.py, in
