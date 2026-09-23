@@ -312,6 +312,26 @@
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AARyARmoAACN%2B5xoUtxaQ7clOANLv%2FU1AAesuzIKAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
   },
   {
+    "id": "t035",
+    "title": "WFM / GLAM Rostering -- set up resolution meeting",
+    "tier": "today",
+    "source": "HR Systems Managers Meeting 24/06",
+    "emailRef": "",
+    "summary": "GLAM pulled out at last minute. Three waves outstanding (SBS, PEDS, GLAM). Blocking Sarah's UC dashboards. Set up meeting: Kevin, Simon, Marie, Michelle, Julie.",
+    "description": "GLAM decided at the last minute they did not have capacity to load rostering data into WFM. One wave was loaded, one was not. Three areas are now outstanding: SBS, PEDS, GLAM. This is blocking Sarah from running UC dashboards and reports. Handover notes from Michael were shared on 23 June. A separate resolution meeting is needed to establish what wasn't loaded and why, agree an approach, and produce an action plan. Meeting attendees: Kevin, Simon, Marie, Michelle, and potentially Julie given her proximity to the project. Note: WFM adoption is split -- staff who never used TeamSeer are positive; those who did are making direct comparisons, but TeamSeer was never calculating correctly. The recommendation is to bring vocal blockers like Steph Sparks into future system procurement from the start.",
+    "actions": [
+      "[23 Jun 2026] Michael shared handover notes on WFM rostering status.",
+      "[24 Jun 2026] Raised at HR Systems Managers Meeting -- three areas outstanding (SBS, PEDS, GLAM). GLAM did not load rostering data at last minute. Blocking Sarah's UC dashboards and reports.",
+      "[TODO] Set up resolution meeting -- Kevin, Simon, Marie, Michelle, and potentially Julie. Agenda: understand what wasn't loaded and why, agree approach, produce action list, address GLAM rostering.",
+      "[09 Sep 2026] Kevin escalated GLAM Ashmolean Visitor Experience incident 11688462 (leave/absence and rostering issues) to Julie Hickman. (email: Kevin (sent to: Julie Hickman) - GLAM – Ashmolean Visitor Experience / Incident 11688462)",
+      "[14 Sep 2026] Julie Hickman confirmed that Tracy and Mel in IT Services are handling GLAM Ashmolean Visitor Experience Incident 11688462 (leave/absence and rostering issues Kevin escalated). (email: Kevin (sent to: Simon Burford) - RE: Application form - identification of internal candidates)",
+      "[15 Sep 2026] Julie Hickman confirms that Tracy and Mel in IT Services are addressing the GLAM Ashmolean Visitor Experience incident escalated by Kevin. (email: Kevin (sent to: Marie Cooksey, Simon Burford) - Physio (Hand and Knee))"
+    ],
+    "dateAdded": "2026-06-25",
+    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe6xa7hAAA=",
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6xYVQAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+  },
+  {
     "id": "t2608111331410",
     "title": "URGENT -- Cority Applicant Data Import file (James Salas Guillen / Simon Burford thread)",
     "tier": "today",
@@ -342,26 +362,6 @@
     "notes": "Retrieval + full-unpack + priority-escalation task only (Drew) -- no reply drafted or sent (Lauren is handling any draft separately, per Kevin's instruction). Existing auto-created task updated in place per Kevin's explicit instruction, not duplicated. Screenshot attachment in message [2] contains real applicant PII -- opened and viewed, deliberately not reproduced verbatim in this record.",
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe8zFsYAAA=",
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6H%2F92AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
-  },
-  {
-    "id": "t035",
-    "title": "WFM / GLAM Rostering -- set up resolution meeting",
-    "tier": "today",
-    "source": "HR Systems Managers Meeting 24/06",
-    "emailRef": "",
-    "summary": "GLAM pulled out at last minute. Three waves outstanding (SBS, PEDS, GLAM). Blocking Sarah's UC dashboards. Set up meeting: Kevin, Simon, Marie, Michelle, Julie.",
-    "description": "GLAM decided at the last minute they did not have capacity to load rostering data into WFM. One wave was loaded, one was not. Three areas are now outstanding: SBS, PEDS, GLAM. This is blocking Sarah from running UC dashboards and reports. Handover notes from Michael were shared on 23 June. A separate resolution meeting is needed to establish what wasn't loaded and why, agree an approach, and produce an action plan. Meeting attendees: Kevin, Simon, Marie, Michelle, and potentially Julie given her proximity to the project. Note: WFM adoption is split -- staff who never used TeamSeer are positive; those who did are making direct comparisons, but TeamSeer was never calculating correctly. The recommendation is to bring vocal blockers like Steph Sparks into future system procurement from the start.",
-    "actions": [
-      "[23 Jun 2026] Michael shared handover notes on WFM rostering status.",
-      "[24 Jun 2026] Raised at HR Systems Managers Meeting -- three areas outstanding (SBS, PEDS, GLAM). GLAM did not load rostering data at last minute. Blocking Sarah's UC dashboards and reports.",
-      "[TODO] Set up resolution meeting -- Kevin, Simon, Marie, Michelle, and potentially Julie. Agenda: understand what wasn't loaded and why, agree approach, produce action list, address GLAM rostering.",
-      "[09 Sep 2026] Kevin escalated GLAM Ashmolean Visitor Experience incident 11688462 (leave/absence and rostering issues) to Julie Hickman. (email: Kevin (sent to: Julie Hickman) - GLAM – Ashmolean Visitor Experience / Incident 11688462)",
-      "[14 Sep 2026] Julie Hickman confirmed that Tracy and Mel in IT Services are handling GLAM Ashmolean Visitor Experience Incident 11688462 (leave/absence and rostering issues Kevin escalated). (email: Kevin (sent to: Simon Burford) - RE: Application form - identification of internal candidates)",
-      "[15 Sep 2026] Julie Hickman confirms that Tracy and Mel in IT Services are addressing the GLAM Ashmolean Visitor Experience incident escalated by Kevin. (email: Kevin (sent to: Marie Cooksey, Simon Burford) - Physio (Hand and Knee))"
-    ],
-    "dateAdded": "2026-06-25",
-    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe6xa7hAAA=",
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6xYVQAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
   },
   {
     "id": "t1781099896490",
