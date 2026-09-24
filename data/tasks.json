@@ -1264,5 +1264,17 @@
       "[18 Sep 2026] Nathan Kirwan confirms UAT spot-checks complete with no errors found; file ready for production upload. (email: Nathan Kirwan - RE: Support Call# 11712394: URGENT - REF29 UDF Upload to UOXP by Friday 18th September)"
     ],
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6xYVYAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+  },
+  {
+    "id": "task-1790236948396",
+    "title": "ZZ Drew live check - delete me",
+    "tier": "tomorrow",
+    "source": "manual",
+    "summary": "",
+    "description": "Throwaway live-verification task.\n\nSecond paragraph.",
+    "actions": [],
+    "notes": "",
+    "entryId": "",
+    "dateAdded": "2026-09-24"
   }
 ]
