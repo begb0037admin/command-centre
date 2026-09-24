@@ -147,6 +147,15 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .card-actions{display:flex;flex-shrink:0;gap:6px;align-items:center;padding-top:1px}
 .card-icon{width:26px;height:26px;border-radius:5px;border:1px solid #e5e9f2;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#94a3b8;font-size:12px;transition:background .15s,color .15s,border-color .15s;flex-shrink:0}
 .card-icon:hover{background:#eff6ff;color:#3b82f6;border-color:#bfdbfe}
+.expand-tier-btn{border:0;background:transparent;color:var(--text-muted);font:inherit;font-size:11px;cursor:pointer;padding:0 3px;white-space:nowrap}
+.expand-tier-btn:hover{color:var(--oxford)}
+.sortable-ghost{opacity:.45;border:1px dashed #94a3b8!important;box-shadow:none!important;background:#f8fafc!important}
+.sortable-chosen{opacity:.7}
+.sortable-drag{opacity:1!important;border:2px solid #3b82f6!important;background:#fff!important;box-shadow:0 4px 12px rgba(59,130,246,.25)!important}
+#cc-confirm-dialog{border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 30px rgba(0,33,71,.2);padding:16px;min-width:250px}
+#cc-confirm-dialog::backdrop{background:rgba(0,33,71,.2)}
+#cc-confirm-text{margin:0 0 14px;font-size:13px;color:var(--text-dark)}
+.confirm-actions{display:flex;justify-content:flex-end;gap:8px}.confirm-actions button{border:1px solid var(--border);background:#fff;border-radius:5px;padding:6px 10px;cursor:pointer}.confirm-actions #cc-confirm-delete{background:#dc2626;color:#fff;border-color:#dc2626}
 .task-card.deep-linked-today{border-color:var(--today)!important;box-shadow:0 0 0 4px rgba(239,68,68,.22)!important;animation:deeplink-flash-today 2s ease-out}
 .task-card.deep-linked-tomorrow{border-color:var(--tomorrow)!important;box-shadow:0 0 0 4px rgba(234,179,8,.25)!important;animation:deeplink-flash-tomorrow 2s ease-out}
 .task-card.deep-linked-week{border-color:var(--week)!important;box-shadow:0 0 0 4px rgba(34,197,94,.22)!important;animation:deeplink-flash-week 2s ease-out}

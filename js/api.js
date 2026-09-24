@@ -75,16 +75,18 @@ function mergeRemote(remote){
 }
 
 /* PERSIST */
-function showSaveToast(state,text){
+function showSaveToast(state,text,actionLabel,action){
   var t=document.getElementById('save-toast');
   if(!t)return;
   t.className='visible '+state;
+  t.onclick=null;
   t.textContent=text;
+  if(actionLabel&&action){var b=document.createElement('button');b.type='button';b.className='toast-action';b.textContent=actionLabel;b.onclick=function(){t.className='';action();};t.appendChild(b);}
   clearTimeout(t._timer);
   if(state==='error'){
     t.onclick=function(){t.className='';}
   } else {
-    t._timer=setTimeout(function(){t.className='';},2500);
+    t._timer=setTimeout(function(){t.className='';},actionLabel?10000:2500);
   }
 }
 /* Phase 3 (21 Aug 2026): the old client-side one-way "CC done -> tick WI"
@@ -110,7 +112,9 @@ function showSaveToast(state,text){
    see that file's DONE-SYNC section. Nothing else in this file needs to
    drive it. */
 
-async function persistTasks(msg){
+var _persistQueue=Promise.resolve();
+function persistTasks(msg){
+  var run=async function(){
   showSaveToast('saving','Saving…');
   try{
     var res=await fetch(WRITER,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({doc:{tasks:tasks},message:msg,baseSha:_tasksBaseSha})});
@@ -130,4 +134,8 @@ async function persistTasks(msg){
     console.warn('Writer fetch failed',e);
     return false;
   }
+  };
+  var queued=_persistQueue.then(run,run);
+  _persistQueue=queued.then(function(){},function(){});
+  return queued;
 }
