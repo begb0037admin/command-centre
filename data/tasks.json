@@ -1120,7 +1120,7 @@
       "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave).",
       "[02 Sep 2026] Michael O'Sullivan forwards manager leave approval issue for investigation. (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave)"
     ],
-    "tierRank": 2
+    "tierRank": 1
   },
   {
     "id": "t2609020705201",
@@ -1287,6 +1287,7 @@
     "actions": [],
     "notes": "",
     "entryId": "",
-    "dateAdded": "2026-09-24"
+    "dateAdded": "2026-09-24",
+    "tierRank": 2
   }
 ]
