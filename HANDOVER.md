@@ -1,8 +1,8 @@
 # command-centre — Living Handover Document
 
-## Addendum -- 24 Sep 2026 (Codex): 3-row card action grid
+## Addendum -- 24 Sep 2026 (Codex): 3-column x 2-row card action grid
 
-- Moved the card drawer chevron into the third row of the single two-column action grid. Rows are Archive/Restore + Delete, Email (or hidden placeholder) + Edit, then chevron (or hidden placeholder) + a reserved hidden placeholder for the future Tracker jump-link icon.
+- Reordered the single action grid to three columns and two rows: chevron, Archive/Restore, Delete on row one; a reserved hidden placeholder, Email (or hidden placeholder), Edit on row two.
 - Retained 26px buttons, 6px gaps, existing labels/ARIA/handlers, the title's flexible width and the under-600px right-aligned action-row rule.
 - Checks passed: `node --check js/app.js`; `node tests/tier_order_test.js`; `node tests/staleness_parity_test.js`; `git diff --check`.
 - Exact next action: none -- requested scope is committed locally only; no push or deployment.

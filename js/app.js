@@ -486,7 +486,7 @@ function cardHTML(t){
     +'</div>'
     +descPreview
     +'</div>'
-    +'<div class="card-actions"><div class="card-action-grid">'+archiveIcon+deleteIcon+emailIcon+editIcon+(chevron||emptyIcon)+emptyIcon+'</div></div>'
+    +'<div class="card-actions"><div class="card-action-grid">'+(chevron||emptyIcon)+archiveIcon+deleteIcon+emptyIcon+emailIcon+editIcon+'</div></div>'
     +'</div>'
     +'<div class="task-drawer" id="drawer-'+t.id+'">'
     +desc

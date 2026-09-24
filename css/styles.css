@@ -145,7 +145,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .card-title-pills .badge,.card-title-pills .new-badge{margin-left:0}
 .card-title-pills .badge{white-space:normal;overflow-wrap:break-word;word-break:break-word}
 .card-actions{display:flex;flex-shrink:0;align-items:center;padding-top:1px}
-.card-action-grid{display:grid;grid-template-columns:repeat(2,26px);grid-template-rows:repeat(3,26px);gap:6px}
+.card-action-grid{display:grid;grid-template-columns:repeat(3,26px);grid-template-rows:repeat(2,26px);gap:6px}
 .card-icon-placeholder{visibility:hidden;pointer-events:none}
 .card-icon{width:26px;height:26px;border-radius:5px;border:1px solid #e5e9f2;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#94a3b8;font-size:12px;transition:background .15s,color .15s,border-color .15s;flex-shrink:0}
 .card-icon:hover{background:#eff6ff;color:#3b82f6;border-color:#bfdbfe}
