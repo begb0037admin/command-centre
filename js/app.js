@@ -547,9 +547,30 @@ function toggleDone(e,id){
 
 /* DRAWER */
 var dragEndedAt=0;
+var lastJumpDrawerId=null;
+var DEEP_LINK_CLASSES=['deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked'];
+function fadeDeepLink(card){
+  var hadHighlight=false;
+  DEEP_LINK_CLASSES.forEach(function(name){if(card.classList.contains(name))hadHighlight=true;card.classList.remove(name);});
+  if(!hadHighlight)return;
+  card.classList.remove('deep-link-fading');
+  void card.offsetWidth;
+  card.classList.add('deep-link-fading');
+  window.setTimeout(function(){card.classList.remove('deep-link-fading');},4000);
+}
+function clearJumpState(){
+  document.querySelectorAll('.task-card').forEach(function(card){fadeDeepLink(card);});
+  document.querySelectorAll('.task-drawer[data-opened-by-jump="true"]').forEach(function(drawer){
+    var id=drawer.id.replace(/^drawer-/,'');
+    if(drawer.classList.contains('open'))toggleDrawer(id);
+    drawer.removeAttribute('data-opened-by-jump');
+    if(lastJumpDrawerId===id)lastJumpDrawerId=null;
+  });
+}
 function toggleDrawer(id,e){
   if(e){e.stopPropagation();if(Date.now()-dragEndedAt<250)return;}
   var d=document.getElementById('drawer-'+id);
+  if(e){d.removeAttribute('data-opened-by-jump');if(lastJumpDrawerId===id)lastJumpDrawerId=null;}
   d.classList.toggle('open');
   var card=document.getElementById('card-'+id);
   if(card){
@@ -561,16 +582,20 @@ function toggleDrawer(id,e){
     var btn=card.querySelector('.drawer-chevron');
     if(btn){btn.setAttribute('aria-expanded',opening?'true':'false');btn.setAttribute('aria-label',opening?'Collapse':'Expand');btn.title=opening?'Collapse':'Expand';btn.innerHTML=cardSvg(opening?'M6 9l6 6 6-6':'M9 6l6 6-6 6');}
     card.classList.toggle('expanded',opening);
-    card.classList.remove('deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked');
-    if(opening){
-      var tier=card.dataset.tier;
-      if(!tier){var t=tasks.find(function(x){return x.id===id;});tier=t?t.tier:'today';}
-      void card.offsetWidth;
-      card.classList.add('deep-linked-'+tier);
-    }
   }
 }
-function applyExpandedDrawers(){expandedIds().forEach(function(id){var d=document.getElementById('drawer-'+id);if(d&&!d.classList.contains('open'))toggleDrawer(id);});}
+function applyExpandedDrawers(){
+  expandedIds().forEach(function(id){var d=document.getElementById('drawer-'+id);if(d&&!d.classList.contains('open'))toggleDrawer(id);});
+  var jumpDrawer=lastJumpDrawerId&&document.getElementById('drawer-'+lastJumpDrawerId);
+  if(jumpDrawer&&jumpDrawer.classList.contains('open'))jumpDrawer.setAttribute('data-opened-by-jump','true');
+}
+function openDrawerForJump(id){
+  var d=document.getElementById('drawer-'+id);
+  if(!d||d.classList.contains('open'))return;
+  toggleDrawer(id);
+  d.setAttribute('data-opened-by-jump','true');
+  lastJumpDrawerId=id;
+}
 
 /* OPEN EMAIL (web) -- the single opener, ported verbatim from work-inbox's
    _owaWebUrl()/openEmailWeb() (live there since 8 Sept 2026). openmail://
@@ -949,6 +974,7 @@ function goToCard(id){
   var task=tasks.find(function(t){return t.id===id;});
   if(!task)return;
   var tier=task.tier||'today';
+  clearJumpState();
   if(task.done&&!getShowDone()){
     storageSet(SHOW_DONE_KEY,'1');
     renderBoard();
@@ -957,11 +983,9 @@ function goToCard(id){
   var card=document.getElementById('card-'+id);
   if(!card)return;
   card.scrollIntoView({behavior:'smooth',block:'center'});
-  card.classList.remove('deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked');
   void card.offsetWidth;
   card.classList.add('deep-linked-'+tier);
-  var drawer=document.getElementById('drawer-'+id);
-  if(drawer&&!drawer.classList.contains('open'))toggleDrawer(id);
+  openDrawerForJump(id);
 }
 
 /* WAITING ON / ACT NOW EXPAND-COLLAPSE */

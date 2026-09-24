@@ -909,3 +909,4 @@ Each trigger must read the previous meeting prep doc from the repo AND the previ
 - Daily Focus card margin fix: flush with sidebar nav elements.
 
 - 24 Sep 2026 (Codex): Panel and hash jump links now reveal hidden done/folded tasks before opening them; inbox suggestion email links use Outlook web only.
+# 24 Sep 2026 (Codex): single-card top-panel jump highlight fix implemented locally; the regression check passes after three consecutive jumps and manual drawer preservation is covered. Commit remains pending because this managed session cannot write `.git` (`.git/index` is read-only); no push or deployment.
