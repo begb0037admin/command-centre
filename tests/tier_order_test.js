@@ -52,4 +52,9 @@ expect('unranked card dated between ranks slots between them', [
 expect('dragged rank stays put when a newer card arrives', [
   card('dragged', '01 Jan 2026', 1), card('neighbour', '02 Jan 2026', 2), card('newer-arrival', '04 Jan 2026')
 ], 'newer-arrival,dragged,neighbour');
+const movedCard = card('moved-card', '02 Jan 2026', 99);
+delete movedCard.tierRank;
+expect('clearing a stale moved-card rank slots it by source date', [
+  card('rank-newer', '03 Jan 2026', 1), card('rank-older', '01 Jan 2026', 2), movedCard
+], 'rank-newer,moved-card,rank-older');
 console.log('All tier ordering checks passed.');

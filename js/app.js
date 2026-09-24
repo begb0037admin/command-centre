@@ -745,9 +745,10 @@ function clearDragStyles(){
 function safeRenderBoard(){if(boardDragging){deferredBoardRender=true;return;}renderBoard();}
 function moveTaskToTier(task,tier){
   var previous=task.tier;if(previous===tier){renderBoard();return;}
-  task.tier=tier;renderBoard();
+  var previousTierRank=task.tierRank;
+  task.tier=tier;delete task.tierRank;renderBoard();
   persistTasks('Move task to '+tier+': '+task.title).then(function(ok){
-    if(ok)showSaveToast('success','Moved to '+tierLabel(tier),'Undo',function(){task.tier=previous;renderBoard();persistTasks('Undo move '+task.id);});
+    if(ok)showSaveToast('success','Moved to '+tierLabel(tier),'Undo',function(){task.tier=previous;if(previousTierRank===undefined)delete task.tierRank;else task.tierRank=previousTierRank;renderBoard();persistTasks('Undo move '+task.id);});
     else {loadTasks().then(function(){renderBoard();showSaveToast('error','Move not saved — the board has been reloaded. Please try again.');});}
   });
 }
@@ -778,7 +779,7 @@ function initSortables(){
   TIERS.forEach(function(tier){var list=document.getElementById('list-'+tier);if(!list)return;
     window._ccSortables.push(new Sortable(list,{group:'cc-tiers',animation:150,forceFallback:true,fallbackOnBody:true,ghostClass:'sortable-ghost',chosenClass:'sortable-chosen',dragClass:'sortable-fallback',filter:'button,input,textarea,.task-drawer,.drawer-chevron',preventOnFilter:false,delay:150,delayOnTouchOnly:true,
       onStart:function(){activeDragPrevious=[];TIERS.forEach(function(name){activeDragPrevious=activeDragPrevious.concat(snapshotTierLayout(name));});boardDragging=true;},
-      onEnd:function(evt){var id=evt.item&&evt.item.dataset.id;var from=evt.from&&evt.from.id?evt.from.id.replace('list-',''):tier;var target=evt.to&&evt.to.id?evt.to.id.replace('list-',''):tier;var affected=from===target?[target]:[from,target];var previous=activeDragPrevious.filter(function(s){return affected.indexOf(s.tier)>=0;});activeDragPrevious=[];boardDragging=false;dragEndedAt=Date.now();if(id)saveDropLayout(affected,previous,id);else renderBoard();if(deferredBoardRender){deferredBoardRender=false;renderBoard();}}
+      onEnd:function(evt){var id=evt.item&&evt.item.dataset.id;var from=evt.from&&evt.from.id?evt.from.id.replace('list-',''):tier;var target=evt.to&&evt.to.id?evt.to.id.replace('list-',''):tier;if(evt.from===evt.to&&evt.oldIndex===evt.newIndex){activeDragPrevious=[];boardDragging=false;deferredBoardRender=false;dragEndedAt=Date.now();clearDragStyles();renderBoard();return;}var affected=from===target?[target]:[from,target];var previous=activeDragPrevious.filter(function(s){return affected.indexOf(s.tier)>=0;});activeDragPrevious=[];boardDragging=false;dragEndedAt=Date.now();if(id)saveDropLayout(affected,previous,id);else renderBoard();if(deferredBoardRender){deferredBoardRender=false;renderBoard();}}
     }));
   });
   updateTierExpandButtons();

@@ -1,5 +1,15 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 24 Sep 2026 (Codex): tier-order round 2b fixes
+
+- Existing-task non-drag moves now remove a stale `tierRank`, so the card slots in the destination tier by source date; Undo restores its prior tier and exact rank state (including an absent rank).
+- A Sortable drop that leaves a card at the same index in the same list now only clears drag state and re-renders: no ranks are changed, no persistence request runs, and no toast appears.
+- `tests/tier_order_test.js` now proves that a cleared stale rank slots a dated card between the ranked source-date neighbours.
+- Checks passed: `node --check js/app.js`; `node tests/staleness_parity_test.js`; `node tests/tier_order_test.js`.
+- Local-only commit requested; no push or deployment.
+
+Exact next action: none — review/commit requested scope is complete locally.
+
 ## Addendum -- 24 Sep 2026: persisted within-tier manual order
 
 Within each tier, new unranked cards continue to slot by newest source date. Once a card is dragged, the affected tier is saved with `tierRank` values and that explicit order is retained; later unranked arrivals slot around the ranked backbone by source date. This supersedes the 1 Sep 2026 pure source-date sort rule.
