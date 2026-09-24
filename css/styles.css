@@ -145,13 +145,15 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .card-title-pills .badge,.card-title-pills .new-badge{margin-left:0}
 .card-title-pills .badge{white-space:normal;overflow-wrap:break-word;word-break:break-word}
 .card-actions{display:flex;flex-shrink:0;gap:6px;align-items:center;padding-top:1px}
+.card-action-grid{display:grid;grid-template-columns:repeat(2,26px);gap:6px}
+.card-icon-placeholder{visibility:hidden;pointer-events:none}
 .card-icon{width:26px;height:26px;border-radius:5px;border:1px solid #e5e9f2;background:#f8fafc;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#94a3b8;font-size:12px;transition:background .15s,color .15s,border-color .15s;flex-shrink:0}
 .card-icon:hover{background:#eff6ff;color:#3b82f6;border-color:#bfdbfe}
 .expand-tier-btn{border:0;background:transparent;color:var(--text-muted);font:inherit;font-size:11px;cursor:pointer;padding:0 3px;white-space:nowrap}
 .expand-tier-btn:hover{color:var(--oxford)}
 .sortable-ghost{opacity:.45;border:1px dashed #94a3b8!important;box-shadow:none!important;background:#f8fafc!important}
 .sortable-chosen{opacity:.7}
-.sortable-drag{opacity:1!important;border:2px solid #3b82f6!important;background:#fff!important;box-shadow:0 4px 12px rgba(59,130,246,.25)!important}
+.sortable-fallback{opacity:1!important;border:2px solid #3b82f6!important;background:#fff!important;box-shadow:0 4px 12px rgba(59,130,246,.25)!important}
 #cc-confirm-dialog{border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 30px rgba(0,33,71,.2);padding:16px;min-width:250px}
 #cc-confirm-dialog::backdrop{background:rgba(0,33,71,.2)}
 #cc-confirm-text{margin:0 0 14px;font-size:13px;color:var(--text-dark)}
@@ -382,6 +384,7 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:var(--main-bg);c
 .intel-empty{font-size:11.5px;color:var(--text-very-muted);font-style:italic;padding:4px 0}
 @media(max-width:1060px){.intel-panel{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.intel-panel{grid-template-columns:1fr}}
+@media(max-width:600px){.card-row{flex-wrap:wrap}.card-actions{width:100%;justify-content:flex-end;padding-top:0}.card-body{min-width:calc(100% - 23px)}}
 .sidebar{scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
 .sidebar::-webkit-scrollbar{width:4px}
 .sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:4px}
