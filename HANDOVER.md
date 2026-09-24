@@ -1,5 +1,13 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 24 Sep 2026 (Codex): single section toggle
+
+- Replaced each tier's bulk card-drawer “Expand all” / “Collapse all” control with one visible section button. It folds or unfolds the whole card list, while the existing per-card chevron continues to control that card's drawer only.
+- The button is a native keyboard-accessible `type="button"`, stops propagation to avoid a double header toggle, exposes `aria-expanded` and `aria-controls`, and always shows `Collapse` for an open section or `Expand` for a folded one.
+- Reused `commandCentre_tierCollapse_v1`, so existing saved section states carry over. The section header keeps its name and card count when folded; state and label are re-synchronised after each board render and drag.
+- Checks passed: `node --check js/app.js`; `node tests/tier_order_test.js`; `node tests/staleness_parity_test.js`; `git diff --check`.
+- Exact next action: none -- requested scope is committed locally only; no push or deployment.
+
 ## Addendum -- 24 Sep 2026 evening (Drew): 3x2 action grid (PR #18) + deploy-race gotcha
 
 - Kevin's final mock-up: the card action grid is 3 columns x 2 rows: `›` | Archive | Delete / (empty slot reserved for a future Tracker jump link) | Email | Edit. Same 26px cells and gap. Codex (lelittecom) `8716033` + `be3f9c2`; merged PR #18 (`2171892`). Backups `Archive/{styles,app}_backup_20260924_1530.*` (`1ba51d7`, `32232c4`) SHA-verified.
