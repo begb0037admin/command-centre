@@ -1,17 +1,14 @@
-# Codex brief — command-centre round 2b (review fixes, small)
+# Codex brief — command-centre: 3-column x 2-row action grid (Kevin's final mock-up, 24 Sep)
 
-Branch `drew/cc-order-and-icons-24sep` (HEAD `311e3c5`). Same rules as round 2 (only `js/app.js`,
-`tests/tier_order_test.js`, `HANDOVER.md`; no push/deploy; don't touch/print `data/`, `Archive/`,
-`js/vendor/`; commit locally; short final message).
+Branch `drew/cc-grid-row3` (HEAD `8716033`). Only touch `js/app.js`, `css/styles.css`,
+`HANDOVER.md`. Don't read/print `data/`, `Archive/`, `js/vendor/`, `cloudflare-worker/`. Work in
+C:/Users/admin/github/command-centre. Commit locally; no push.
 
-1. **Stale rank on non-drag tier moves.** `moveTaskToTier()` (Move buttons, drawer moves) changes
-   `tier` but leaves the card's old `tierRank` from the previous tier, so the card lands at that
-   rank in the new tier instead of slotting in by source date. On a non-drag tier change, delete
-   `tierRank` (remember the old value; Undo restores both `tier` and `tierRank`). Same for any other
-   non-drag path that changes an existing task's tier.
-2. **No-op drops must not write.** In the Sortable `onEnd`, if `evt.from === evt.to` and
-   `evt.oldIndex === evt.newIndex`, just clear the drag state and re-render — no rank write, no save,
-   no toast.
-3. Add a test in `tests/tier_order_test.js`: a card with a stale high rank removed (`tierRank`
-   deleted) slots by date among ranked cards. Run `node --check js/app.js`,
-   `node tests/staleness_parity_test.js`, `node tests/tier_order_test.js`.
+SUPERSEDES the 3-row layout in `8716033`. The action grid is 3 columns x 2 rows, 26px cells,
+same gap:
+- Row 1: › chevron | Archive (Restore on done cards) | Delete
+- Row 2: empty placeholder (reserved for a future Tracker jump-link icon) | Email (placeholder if
+  none) | Edit
+i.e. DOM order: chevron, archive, delete, placeholder, email, edit; `.card-action-grid`
+`grid-template-columns:repeat(3,26px)`. Title/meta keep all remaining width. Keep the <600px rule.
+Update the HANDOVER line. `node --check js/app.js`; both tests in `tests/`.
