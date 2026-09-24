@@ -68,7 +68,8 @@
     "entryId": "",
     "done": false,
     "messageId": "Share-5d5f5175-3174-4417-ba0a-3d43243a5193.rcid_fe4535a2-5089-2001-b577-73738e240075.wiid_53b3a540-0820-428c-85b1-47c02ca06d5c.r0-ioe_1-tid_cc95de1b-97f5-4f93-b4ba-fe68b852cf91-rh_uks_notifyp-aid_dcb9d3cf-648f-418c-9514-c9ffdb84baa0@odspnotify",
-    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l3AACN%2B5xoUtxaQ7clOANLv%2FU1AAeyeYwoAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l3AACN%2B5xoUtxaQ7clOANLv%2FU1AAeyeYwoAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 8
   },
   {
     "id": "t010",
@@ -82,7 +83,8 @@
       "[01 Jun] Decision: monitor for 2-3 more weeks, mark resolved if no issues.",
       "[AWAITING] Marie's return to schedule annual review."
     ],
-    "dateAdded": "2026-06-08"
+    "dateAdded": "2026-06-08",
+    "tierRank": 9
   },
   {
     "id": "t012",
@@ -101,7 +103,8 @@
     "dateAdded": "2026-06-08",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD431B0000",
     "done": true,
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AAd8Kb8hAACN%2B5xoUtxaQ7clOANLv%2FU1AAd8KdNuAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AAd8Kb8hAACN%2B5xoUtxaQ7clOANLv%2FU1AAd8KdNuAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 12
   },
   {
     "id": "t029",
@@ -130,7 +133,8 @@
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF53500078B27E4F60000",
     "done": true,
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l1AACN_5xoUtxaQ7clOANLv-U1AAfAARdIAAA=",
-    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAfAARdIAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAfAARdIAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 11
   },
   {
     "id": "t013",
@@ -150,7 +154,8 @@
     "dateAdded": "2026-06-08",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A56998630000",
     "done": true,
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AAemKO3xAACN%2B5xoUtxaQ7clOANLv%2FU1AAemKww1AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AAemKO3xAACN%2B5xoUtxaQ7clOANLv%2FU1AAemKww1AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 13
   },
   {
     "id": "t016",
@@ -196,7 +201,8 @@
     "dateAdded": "2026-06-09",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007A4CD43160000",
     "messageId": "CWLP265MB596983B629BEE8A6E735CEB788B12@CWLP265MB5969.GBRP265.PROD.OUTLOOK.COM",
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe5PtHUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe5PtHUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 6
   },
   {
     "id": "t033",
@@ -221,7 +227,8 @@
     ],
     "dateAdded": "2026-06-25",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2E80000",
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AARyARmoAACN%2B5xoUtxaQ7clOANLv%2FU1AAesuzIUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AARyARmoAACN%2B5xoUtxaQ7clOANLv%2FU1AAesuzIUAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 10
   },
   {
     "id": "t1781204987882",
@@ -379,7 +386,8 @@
       "[22 Aug 2026] Kevin confirmed funding approval with James as main contact for work arrangement and requested initiation of consultant discussions to plan delivery approach, sequencing, and timelines; prioritized work items include Compliance reports, Primary job positions business rules, Teams/Outlook integration, Health surveillance business rules, and subquery optimization, with statement of work reattached for alignment."
     ],
     "dateAdded": "2026-06-10",
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AAd8Kb8pAACN%2B5xoUtxaQ7clOANLv%2FU1AAeWsyWxAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AAd8Kb8pAACN%2B5xoUtxaQ7clOANLv%2FU1AAeWsyWxAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 7
   },
   {
     "id": "t2608071801050",
@@ -404,7 +412,8 @@
       "[18 Aug 2026] Tier moved week -> tomorrow ahead of Kevin's 19 Aug 1-1 with Simon Burford on this topic."
     ],
     "dateAdded": "2026-08-07",
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAesu099AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAesu099AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 4
   },
   {
     "id": "t030",
@@ -429,7 +438,8 @@
     "dateAdded": "2026-06-23",
     "entryId": "",
     "messageId": "010101a049508036-40ee6a5b-4d67-44c5-aff4-359f86669eb9-000000@us-west-2.amazonses.com",
-    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AAd8Kb8pAACN%2B5xoUtxaQ7clOANLv%2FU1AAezdF2DAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwCN%2B5xoUtxaQ7clOANLv%2FU1AAd8Kb8pAACN%2B5xoUtxaQ7clOANLv%2FU1AAezdF2DAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 5
   },
   {
     "id": "t2608171727070",
@@ -449,7 +459,8 @@
       "[21 Sep 2026] Chris Taylor argues OSM Change 20020827 coordination is overcomplicated; Access Group standby status unnecessary. (email: Kevin (sent to: Charlie Richards-Gladstone) - Re: Missing EOI form - any help required?)"
     ],
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l3AACN%2B5xoUtxaQ7clOANLv%2FU1AAeqtVzvAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe96npYAAA="
+    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe96npYAAA=",
+    "tierRank": 3
   },
   {
     "id": "t031",
@@ -1108,7 +1119,8 @@
     "actions": [
       "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave).",
       "[02 Sep 2026] Michael O'Sullivan forwards manager leave approval issue for investigation. (email: Michael O'Sullivan - Support Call# 11707439: Manager unable to approve leave)"
-    ]
+    ],
+    "tierRank": 1
   },
   {
     "id": "t2609020705201",
@@ -1275,6 +1287,7 @@
     "actions": [],
     "notes": "",
     "entryId": "",
-    "dateAdded": "2026-09-24"
+    "dateAdded": "2026-09-24",
+    "tierRank": 2
   }
 ]
