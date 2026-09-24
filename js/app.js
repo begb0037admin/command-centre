@@ -591,11 +591,11 @@ function _owaWebUrl(o){
   }
   return '';
 }
-function openEmailWeb(e,btn){
+function openEmailWeb(e,btn,item){
   e.stopPropagation();
   var card=btn&&btn.closest?btn.closest('.task-card'):null;
   var id=card?card.getAttribute('data-id'):null;
-  var t=id?tasks.find(function(x){return x.id===id;}):null;
+  var t=id?tasks.find(function(x){return x.id===id;}):item;
   if(!t)return;
   var url=_owaWebUrl(t);
   if(url){
@@ -843,7 +843,7 @@ async function loadInboxSuggestions(){
         +'<div class="sg-title-row">'+(tierChip[s.tier]||tierChip.week)+'<span class="sg-title">'+escHtml(s.title)+'</span></div>'
         +'<div class="sg-desc">'+escHtml(s.description)+'</div>'
         +'<div class="sg-meta">From '+escHtml(s.email_from)+' \xb7 "'+escHtml(s.email_subject)+'" \xb7 '+escHtml(s.received||'')+'</div>'
-        +'<div class="sg-actions"><button class="sg-btn" onclick="openTaskEmail(\''+s.entry_id+'\', event)">&#128231; Open email</button>'
+        +'<div class="sg-actions"><button class="sg-btn"'+(_owaWebUrl({web_link:s.web_link})?' onclick="openTaskEmail('+i+', event)"':' disabled title="Email link not available"')+'>&#128231; Open email</button>'
         +'<button class="sg-btn" onclick="dismissSuggestion(\'n_'+s.entry_id+'\')" >Dismiss</button>'
         +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'today\')">+ Today</button>'
         +'<button class="sg-btn sg-add" onclick="promoteSuggestion('+i+',\'tomorrow\')">+ Tomorrow</button>'
@@ -856,9 +856,9 @@ async function loadInboxSuggestions(){
 }
 loadInboxSuggestions();
 
-function openTaskEmail(entryId,e){
-  if(e)e.stopPropagation();
-  window.location.href='openmail://'+entryId;
+function openTaskEmail(idx,e){
+  var suggestion=window.sgList&&window.sgList[idx];
+  if(suggestion)openEmailWeb(e,null,suggestion);
 }
 
 async function promoteSuggestion(idx,tier){
@@ -925,15 +925,17 @@ function applyTierCollapse(tier,collapsed){
   var wrap=document.getElementById('sec-wrap-'+tier);
   var button=document.getElementById('section-toggle-'+tier);
   if(wrap) wrap.classList.toggle('sec-collapsed',collapsed);
-  if(button){button.textContent=collapsed?'Expand':'Collapse';button.setAttribute('aria-expanded',collapsed?'false':'true');}
+  if(button){button.textContent=collapsed?'Expand ▸':'Collapse ▾';button.setAttribute('aria-expanded',collapsed?'false':'true');}
 }
-function toggleTierSection(tier,e){
-  if(e)e.stopPropagation();
+function setTierSectionCollapsed(tier,collapsed){
   var state=getTierCollapseState();
-  var collapsed=!state[tier];
   state[tier]=collapsed;
   storageSet(TIER_COLLAPSE_KEY,JSON.stringify(state));
   applyTierCollapse(tier,collapsed);
+}
+function toggleTierSection(tier,e){
+  if(e)e.stopPropagation();
+  setTierSectionCollapsed(tier,!getTierCollapseState()[tier]);
 }
 function initTierCollapse(){
   var state=getTierCollapseState();
@@ -944,11 +946,17 @@ function initTierCollapse(){
 
 /* CLICK ITEM -> JUMP TO CARD */
 function goToCard(id){
+  var task=tasks.find(function(t){return t.id===id;});
+  if(!task)return;
+  var tier=task.tier||'today';
+  if(task.done&&!getShowDone()){
+    storageSet(SHOW_DONE_KEY,'1');
+    renderBoard();
+  }
+  if(getTierCollapseState()[tier])setTierSectionCollapsed(tier,false);
   var card=document.getElementById('card-'+id);
   if(!card)return;
   card.scrollIntoView({behavior:'smooth',block:'center'});
-  var tierEl=card.closest('.task-list');
-  var tier=tierEl?tierEl.id.replace('list-',''):(card.dataset.tier||'today');
   card.classList.remove('deep-linked-today','deep-linked-tomorrow','deep-linked-week','deep-linked-parked');
   void card.offsetWidth;
   card.classList.add('deep-linked-'+tier);
@@ -1081,16 +1089,7 @@ loadTasks().then(function(){
   var hash=window.location.hash.replace('#','');
   if(hash){
     setTimeout(function(){
-      var card=document.getElementById('card-'+hash);
-      if(card){
-        card.scrollIntoView({behavior:'smooth',block:'center'});
-        var _tierEl=card.closest('.task-list');
-        var _tier=_tierEl?_tierEl.id.replace('list-',''):'';
-        var _dlClass='deep-linked-'+(_tier||'today');
-        card.classList.add(_dlClass);
-        var drawer=document.getElementById('drawer-'+hash);
-        if(drawer&&!drawer.classList.contains('open')) toggleDrawer(hash);
-      }
+      goToCard(hash);
     },400);
   }
 });
