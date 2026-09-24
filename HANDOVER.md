@@ -1,5 +1,11 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 24 Sep 2026 ~19:30 (Drew): section Collapse/Expand toggle LIVE (PR #19, main `0e737b0`)
+
+- Kevin's rule (24 Sep): ONE section toggle per section labelled Collapse/Expand that folds the whole section (state remembered); NO bulk card-drawer expand -- each card's own › opens its details. Verified live 1440+1100px from folded/open/drawer-open state: 88/88 checks across all three boards, no page errors.
+- Backups `Archive/*_backup_20260924_1920.*` (`f6ede6b`, `cc29224`, `2fd51f8`) SHA-verified; merged only after their builds finished; served app.js == main; post-merge blob SHAs match.
+- Rollback: revert PR #19 on main (Workers Builds redeploys), or restore the three files from the 1920 backups.
+
 ## Addendum -- 24 Sep 2026 (Codex): single section toggle
 
 - Replaced each tier's bulk card-drawer “Expand all” / “Collapse all” control with one visible section button. It folds or unfolds the whole card list, while the existing per-card chevron continues to control that card's drawer only.
