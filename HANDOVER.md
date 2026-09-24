@@ -901,3 +901,5 @@ Each trigger must read the previous meeting prep doc from the repo AND the previ
 - Sidebar nav reorder: Daily Focus → From your inbox → Tasks counts → Links → My Links.
 - Oxford crest restored (full 10,416-char base64 — truncated in PR #5 squash).
 - Daily Focus card margin fix: flush with sidebar nav elements.
+
+- 24 Sep 2026 (Codex): Panel and hash jump links now reveal hidden done/folded tasks before opening them; inbox suggestion email links use Outlook web only.
