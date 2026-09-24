@@ -1,5 +1,9 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 24 Sep 2026 (Codex): Sortable card actions and drawers
+
+Implemented cross-tier SortableJS drag (source-date order retained), card edit/archive/restore/delete actions with Undo and in-page delete confirmation, and persistent card/section expand-collapse state. Added serial save queuing and move-failure reload handling. Checks run: `node --check js/app.js js/api.js`; `node tests/staleness_parity_test.js` (pass). Exact next action: Drew browser-verifies cross-tier drag/Undo and save-failure reload, native suggestion drag, drawers and section expansion persistence, card actions/confirmations/Undo, and existing quick add, AI log, moves, filters, focus, stale, inbox and email flows. Local commit only; no deploy.
+
 ## Addendum -- 14 Sep 2026 late evening (Codex): additive email-link backfill
 
 The full missing-link sweep in `data/tasks.json` is complete: 33 of 34 tasks received real OWA `web_link` values, with `t010` left unchanged because no relevant Odyssey annual-review email chain could be resolved from the live Outlook search. Existing task fields and the existing `CC→` behaviour were preserved. The required pre-edit backup is `Archive/tasks_backup_20260914_2127.json`, committed and pushed separately as `0aa9eba`; the additive content commit follows this checkpoint.
