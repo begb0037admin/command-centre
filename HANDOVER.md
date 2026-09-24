@@ -1,5 +1,17 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 24 Sep 2026 (Drew): tracker-identical drag + persisted within-tier order + 2x2 card icons DEPLOYED LIVE, verified
+
+Kevin approved build + deploy (24 Sep, via Jacob). Codex (default account) built `311e3c5` + review fixes `8628461`; Drew reviewed, browser-tested, merged PR #17 (`bf410ff`). cc.lelitte.co.uk auto-deployed.
+- **New ordering rule (supersedes Kevin's 1 Sep pure source-date sort):** new cards take their place by source date; once Kevin drags a card within a tier, the tier's order is saved as `tierRank` in `tasks.json` (via cc-tasks-writer) and stays put; later unranked cards slot around the ranked cards by date (`orderTier()` in `js/app.js`, tests in `tests/tier_order_test.js`). Move-button tier changes clear the card's rank so it slots by date. Known gap: if the pipeline itself re-tiers a task, its old `tierRank` travels with it (same effect as a stale rank; harmless but may place it higher/lower than date order).
+- **Drag:** Sortable options now match kevin-task-tracker (sort on, no handle, `sortable-fallback` clone, same filter/delay). Cards move aside mid-drag; the drop stays where the placeholder is. A pick-up-and-drop with no movement writes nothing.
+- **Card icons:** chevron on its own at the left, then a 2x2 grid: Archive, Delete / Email, Edit. Same 26px buttons and gap; an invisible placeholder keeps the grid when there's no email link. Restore takes Archive's slot on done cards.
+- **Backup-and-verify:** `Archive/{index,styles,app,api}_backup_20260924_1300.*` (commits `c823ba0`, `5ccb07b`, `84b2880`, `bbc3c56`) SHA-verified via Contents API before the change; post-merge blob SHAs of the four files match the Contents API; served `app.js` byte-identical to main.
+- **Live version:** `0b27c5b8-1bf8-4425-876c-28ff507d1a87`. **Rollback:** `npx wrangler rollback ae2b628d-8a00-4c27-afd9-c77afe3b44d1 --name command-centre`, then revert PR #17 on main so the next auto-deploy doesn't re-ship it. `tierRank` fields in tasks.json are inert to the old code.
+- **Verified pre-deploy (mocked store, Chromium 1440px):** within-Today drag (ghost + neighbours shift mid-drag, drop kept, tierRank saved, reload keeps order), cross-tier Tomorrow->Today at the placeholder position + reload, no-op drop no write, icon grid geometry identical across cards, inbox-suggestion drop onto a tier creates a task, no page errors.
+- **Verified live (production):** throwaway "ZZ Drew live check" task: within-Parked drag (ghost, neighbours moved, kept after reload), Parked->This Week cross-tier (persisted after reload), icon order Archive/Delete/(empty)/Edit, then deleted. Side effect: Parked and This Week cards now carry `tierRank` in their existing order (no visible change).
+- **Exact next action:** none on command-centre; Kevin reviews live.
+
 ## Addendum -- 24 Sep 2026 (Codex): tier-order round 2b fixes
 
 - Existing-task non-drag moves now remove a stale `tierRank`, so the card slots in the destination tier by source date; Undo restores its prior tier and exact rank state (including an absent rank).
