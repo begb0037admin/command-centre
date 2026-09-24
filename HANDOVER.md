@@ -1,5 +1,9 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 24 Sep 2026: persisted within-tier manual order
+
+Within each tier, new unranked cards continue to slot by newest source date. Once a card is dragged, the affected tier is saved with `tierRank` values and that explicit order is retained; later unranked arrivals slot around the ranked backbone by source date. This supersedes the 1 Sep 2026 pure source-date sort rule.
+
 ## Addendum -- 24 Sep 2026 (Drew): SortableJS drag + card actions + expand/collapse DEPLOYED LIVE, verified
 
 Kevin approved (24 Sep, via Jacob): port the kevin-task-tracker drag, card actions and expand/collapse, **no layout change**. Codex (default account) built it (`2395bde`); Drew reviewed and browser-verified, then merged PR #16 (`9129832`). cc.lelitte.co.uk auto-deploys from `main` (Workers Builds).

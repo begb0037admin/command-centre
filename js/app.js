@@ -127,8 +127,8 @@ function renderStaleSummary(){
      (2) t.dateAdded;
      (3) the earliest "[DD Mon YYYY]" stamp in the action log;
      (4) 0 (sorts last).
-   Never throws on a missing/malformed value. This supersedes manual intra-tier
-   drag order; dragging BETWEEN tiers and the Move buttons are unaffected.
+   Never throws on a missing/malformed value. Source date decides where unranked
+   cards land; a manual drag writes tierRank and preserves that explicit order.
    Ties keep their existing relative order (Array.prototype.sort is stable). */
 function ccMonthIdx(s){
   return CC_MONTHS[String(s||'').toLowerCase().slice(0,3)];
@@ -191,6 +191,21 @@ function sortBySourceDate(arr){
     return cardSourceTs(y)-cardSourceTs(x);   /* newest source date first; stable for ties */
   });
 }
+/* Manual order is an opt-in backbone: ranked cards keep their positions while
+   unranked arrivals slot around them by source date. */
+function orderTier(arr){
+  var ranked=arr.filter(function(t){return t&&Number.isFinite(t.tierRank);}).sort(function(a,b){return a.tierRank-b.tierRank;});
+  var unranked=sortBySourceDate(arr.filter(function(t){return !t||!Number.isFinite(t.tierRank)?true:false;}));
+  var ordered=ranked.slice();
+  unranked.forEach(function(task){
+    var ts=cardSourceTs(task),at=-1;
+    for(var i=0;i<ordered.length;i++){
+      if(Number.isFinite(ordered[i].tierRank)&&cardSourceTs(ordered[i])<ts){at=i;break;}
+    }
+    if(at<0)ordered.push(task);else ordered.splice(at,0,task);
+  });
+  return ordered;
+}
 function renderBoard(){
   if(boardDragging){deferredBoardRender=true;return;}
   if(window._ccSortables){window._ccSortables.forEach(function(s){s.destroy();});window._ccSortables=[];}
@@ -201,7 +216,7 @@ function renderBoard(){
     var count=document.getElementById('count-'+tier);
     var allItems=tasks.filter(function(t){return t.tier===tier;});
     var items=showDone?allItems:allItems.filter(function(t){return !t.done;});
-    items=sortBySourceDate(items);
+    items=orderTier(items);
     count.textContent=items.length;
     var badge=document.getElementById('badge-'+tier);if(badge)badge.textContent=allItems.length;
     list.innerHTML=items.map(function(t){return cardHTML(t);}).join('');
@@ -440,7 +455,7 @@ function cardHTML(t){
      work-inbox/CLAUDE.md, and agent-commons/AGENT_DIRECTORY.md Shared
      rules: no machine uses desktop Win32 Outlook any more. */
   var _emailUrl=_owaWebUrl(t);
-  var emailIcon=_emailUrl?'<button class="card-icon" aria-label="Open email" title="Open email in Outlook web" onclick="openEmailWeb(event,this)">'+cardSvg('M3 5h18v14H3z M3 6l9 7 9-7')+'</button>':'';
+  var emailIcon=_emailUrl?'<button class="card-icon" aria-label="Open email" title="Open email in Outlook web" onclick="openEmailWeb(event,this)">'+cardSvg('M3 5h18v14H3z M3 6l9 7 9-7')+'</button>':'<span class="card-icon card-icon-placeholder" aria-hidden="true"></span>';
   var editIcon='<button class="card-icon" aria-label="Edit" title="Edit" onclick="startRename(event,\''+t.id+'\')">'+cardSvg('M4 17.5V20h2.5L18 8.5 15.5 6z M14.5 7l2.5 2.5')+'</button>';
   var archiveIcon=done?'<button class="card-icon" aria-label="Restore" title="Restore" onclick="restoreTask(event,\''+t.id+'\')">'+cardSvg('M5 12a7 7 0 1 0 2-5 M5 4v4h4')+'</button>':'<button class="card-icon" aria-label="Archive" title="Archive" onclick="archiveTask(event,\''+t.id+'\')">'+cardSvg('M4 7h16v13H4z M3 4h18v3H3z M9 11h6')+'</button>';
   var deleteIcon='<button class="card-icon" aria-label="Delete" title="Delete" onclick="deleteTask(event,\''+t.id+'\')">'+cardSvg('M5 7h14 M9 7V4h6v3 M7 7l1 13h8l1-13 M10 11v5 M14 11v5')+'</button>';
@@ -470,7 +485,7 @@ function cardHTML(t){
     +'</div>'
     +descPreview
     +'</div>'
-    +'<div class="card-actions">'+chevron+emailIcon+editIcon+archiveIcon+deleteIcon+'</div>'
+    +'<div class="card-actions">'+chevron+'<div class="card-action-grid">'+archiveIcon+deleteIcon+emailIcon+editIcon+'</div></div>'
     +'</div>'
     +'<div class="task-drawer" id="drawer-'+t.id+'">'
     +desc
@@ -720,9 +735,10 @@ async function aiLog(id){
   }
 }
 
-/* DRAG (tasks) -- Sortable only moves between tiers; source-date ordering owns each tier. */
+/* DRAG (tasks) -- Sortable persists the visible drop order as tierRank. */
 var boardDragging=false;
 var deferredBoardRender=false;
+var activeDragPrevious=[];
 function clearDragStyles(){
   TIERS.forEach(function(t){var el=document.getElementById('tier-'+t);if(el){el.classList.remove('drag-over','sug-drag-over');}});
 }
@@ -735,13 +751,34 @@ function moveTaskToTier(task,tier){
     else {loadTasks().then(function(){renderBoard();showSaveToast('error','Move not saved — the board has been reloaded. Please try again.');});}
   });
 }
+function snapshotTierLayout(tier){
+  return tasks.filter(function(t){return t.tier===tier;}).map(function(t){return {id:t.id,tier:t.tier,tierRank:t.tierRank};});
+}
+function restoreTierLayout(snapshot){
+  snapshot.forEach(function(s){var task=tasks.find(function(t){return t.id===s.id;});if(task){task.tier=s.tier;if(s.tierRank===undefined)delete task.tierRank;else task.tierRank=s.tierRank;}});
+}
+function rankTierFromDom(tier){
+  var list=document.getElementById('list-'+tier);if(!list)return;
+  var ids=Array.prototype.map.call(list.querySelectorAll('.task-card'),function(el){return el.dataset.id;});
+  var visible={};ids.forEach(function(id){visible[id]=true;});
+  orderTier(tasks.filter(function(t){return t.tier===tier&&!visible[t.id];})).forEach(function(t){ids.push(t.id);});
+  ids.forEach(function(id,index){var task=tasks.find(function(t){return t.id===id;});if(task){task.tier=tier;task.tierRank=index+1;}});
+}
+function saveDropLayout(affected,previous,movedId){
+  affected.forEach(rankTierFromDom);
+  renderBoard();
+  persistTasks('Save task order').then(function(ok){
+    if(ok){var moved=tasks.find(function(t){return t.id===movedId;});var text=moved&&previous.some(function(s){return s.id===movedId&&s.tier!==moved.tier;})?'Moved to '+tierLabel(moved.tier):'Order saved';showSaveToast('success',text,'Undo',function(){restoreTierLayout(previous);renderBoard();persistTasks('Undo task order');});}
+    else {loadTasks().then(function(){renderBoard();showSaveToast('error','Order not saved — the board has been reloaded. Please try again.');});}
+  });
+}
 function initSortables(){
   if(!window.Sortable)return;
   window._ccSortables=[];
   TIERS.forEach(function(tier){var list=document.getElementById('list-'+tier);if(!list)return;
-    window._ccSortables.push(new Sortable(list,{group:'cc-tiers',sort:false,animation:150,forceFallback:true,fallbackOnBody:true,ghostClass:'sortable-ghost',chosenClass:'sortable-chosen',dragClass:'sortable-drag',handle:'.card-drag, .card-row',filter:'button,input,.task-drawer,.drawer-chevron',preventOnFilter:false,delay:150,delayOnTouchOnly:true,
-      onStart:function(){boardDragging=true;},
-      onEnd:function(evt){var id=evt.item&&evt.item.dataset.id;var target=evt.to&&evt.to.id?evt.to.id.replace('list-',''):tier;boardDragging=false;dragEndedAt=Date.now();if(id&&evt.from!==evt.to){var task=tasks.find(function(t){return t.id===id;});if(task)moveTaskToTier(task,target);}else renderBoard();if(deferredBoardRender){deferredBoardRender=false;renderBoard();}}
+    window._ccSortables.push(new Sortable(list,{group:'cc-tiers',animation:150,forceFallback:true,fallbackOnBody:true,ghostClass:'sortable-ghost',chosenClass:'sortable-chosen',dragClass:'sortable-fallback',filter:'button,input,textarea,.task-drawer,.drawer-chevron',preventOnFilter:false,delay:150,delayOnTouchOnly:true,
+      onStart:function(){activeDragPrevious=[];TIERS.forEach(function(name){activeDragPrevious=activeDragPrevious.concat(snapshotTierLayout(name));});boardDragging=true;},
+      onEnd:function(evt){var id=evt.item&&evt.item.dataset.id;var from=evt.from&&evt.from.id?evt.from.id.replace('list-',''):tier;var target=evt.to&&evt.to.id?evt.to.id.replace('list-',''):tier;var affected=from===target?[target]:[from,target];var previous=activeDragPrevious.filter(function(s){return affected.indexOf(s.tier)>=0;});activeDragPrevious=[];boardDragging=false;dragEndedAt=Date.now();if(id)saveDropLayout(affected,previous,id);else renderBoard();if(deferredBoardRender){deferredBoardRender=false;renderBoard();}}
     }));
   });
   updateTierExpandButtons();
