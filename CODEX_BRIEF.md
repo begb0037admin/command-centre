@@ -1,19 +1,21 @@
-# Codex brief — command-centre round 2 on this branch: jump links unfold folded tiers; no openmail
+# Codex brief — command-centre: only the last jumped-to card is highlighted (Kevin bug, small)
 
-Branch `drew/cc-toggle-style` (HEAD `49fe04a`, keep that work). Work only in
-C:/Users/admin/github/command-centre. Only touch `js/app.js`, `css/styles.css`, `HANDOVER.md`.
-Don't read/print `data/`, `Archive/`, `js/vendor/`, `cloudflare-worker/`. Commit locally; no push.
+Branch `drew/cc-single-highlight` off main. Work only in C:/Users/admin/github/command-centre.
+Only touch `js/app.js`, `HANDOVER.md`. Don't read/print `data/`, `Archive/`, `js/vendor/`,
+`cloudflare-worker/`. Commit locally; no push.
 
-1. **Top panels "don't do anything" (Kevin).** `goToCard(id)` scrolls to `#card-<id>`, but when
-   the card's tier section is folded the card is hidden, so nothing happens. Fix: find the task's
-   tier from `tasks` (not the DOM), and if that tier is folded, unfold it first through the same
-   code path as the section toggle (so the "Collapse ▾"/"Expand ▸" label, aria-expanded and the
-   remembered state update), then scroll into view, highlight and open the drawer. If the task is
-   done and "Show done" is off, turn Show done on first. Same for the `#<taskId>` hash deep link on
-   page load (~line 1081) — it must work when the tier is folded. Watch/Act now/Waiting on items:
-   `cursor:pointer` and hover underline.
-2. **No Outlook Classic.** `openTaskEmail()` (~859) uses `openmail://` for the inbox-suggestion
-   "Open email" button. Remove it; that button must use the existing OWA opener (`_owaWebUrl` /
-   `openEmailWeb`) with the suggestion's `web_link` if present, else render disabled with tooltip
-   "Email link not available". `grep openmail js/app.js` → comments only.
+Bug: every top-panel click (Watch / Act now / Waiting on) calls `goToCard(id)` (~line 948), which
+adds `deep-linked-<tier>` and opens the drawer, but never clears previous jumps — so several cards
+stay red-bordered and open.
+Fix in `goToCard`:
+- Before highlighting the target, remove `deep-linked-today/-tomorrow/-week/-parked` from EVERY
+  `.task-card`.
+- Track drawers opened BY a jump (module-level `var jumpOpenedDrawers=[]`): when goToCard opens a
+  drawer that was closed, record its id. On the next goToCard, close the recorded drawers (only if
+  still open, and not the new target) via the existing `toggleDrawer` path so expanded-state
+  storage stays consistent, then reset the list. Drawers Kevin opened himself with › are never
+  closed (they're not in the list; if Kevin toggles a recorded drawer himself, drop it from the
+  list in toggleDrawer).
+- Fade: remove the deep-linked class ~4 s after it's added (clear any previous timer).
+- Same for the `#<taskId>` hash deep link on load (it goes through goToCard or equivalent).
 `node --check js/app.js`; both tests. One HANDOVER line.
