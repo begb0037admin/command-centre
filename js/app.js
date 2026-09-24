@@ -925,7 +925,7 @@ function applyTierCollapse(tier,collapsed){
   var wrap=document.getElementById('sec-wrap-'+tier);
   var button=document.getElementById('section-toggle-'+tier);
   if(wrap) wrap.classList.toggle('sec-collapsed',collapsed);
-  if(button){button.textContent=collapsed?'Expand':'Collapse';button.setAttribute('aria-expanded',collapsed?'false':'true');}
+  if(button){button.textContent=collapsed?'Expand ▸':'Collapse ▾';button.setAttribute('aria-expanded',collapsed?'false':'true');}
 }
 function toggleTierSection(tier,e){
   if(e)e.stopPropagation();

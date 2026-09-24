@@ -1,5 +1,6 @@
 # command-centre — Living Handover Document
 
+- 24 Sep 2026 (Codex): tracker-style toggle labels (`Collapse ▾` / `Expand ▸`) with existing ARIA/behaviour retained; each tier count remains driven by the same rendered `items` collection; checks passed: syntax and both tests.
 ## Addendum -- 24 Sep 2026 ~19:30 (Drew): section Collapse/Expand toggle LIVE (PR #19, main `0e737b0`)
 
 - Kevin's rule (24 Sep): ONE section toggle per section labelled Collapse/Expand that folds the whole section (state remembered); NO bulk card-drawer expand -- each card's own › opens its details. Verified live 1440+1100px from folded/open/drawer-open state: 88/88 checks across all three boards, no page errors.
