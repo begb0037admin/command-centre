@@ -1,5 +1,11 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 24 Sep 2026 evening (Drew): 3x2 action grid (PR #18) + deploy-race gotcha
+
+- Kevin's final mock-up: the card action grid is 3 columns x 2 rows: `›` | Archive | Delete / (empty slot reserved for a future Tracker jump link) | Email | Edit. Same 26px cells and gap. Codex (lelittecom) `8716033` + `be3f9c2`; merged PR #18 (`2171892`). Backups `Archive/{styles,app}_backup_20260924_1530.*` (`1ba51d7`, `32232c4`) SHA-verified.
+- **Deploy-race gotcha (real, hit today):** every commit to main triggers its own Workers Build. The two backup commits and the merge were pushed within 15 s, their builds finished out of order, and the LAST deployment (`89940dc8`) was a backup commit's build still serving the OLD app.js. Fix: push one more commit to main (this entry) so a single build deploys HEAD. **Rule going forward: commit the Archive backups well before the merge (let their builds finish first), then verify the served `js/app.js` against main after every deploy.**
+- Expand all on command-centre: verified at 1440 and 1100px. Label flips, state survives reload, works after a drag. Drawer sits below the header at full width with no overflow.
+
 ## Addendum -- 24 Sep 2026 (Codex): 3-column x 2-row card action grid
 
 - Reordered the single action grid to three columns and two rows: chevron, Archive/Restore, Delete on row one; a reserved hidden placeholder, Email (or hidden placeholder), Edit on row two.
