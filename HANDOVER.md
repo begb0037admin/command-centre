@@ -1,5 +1,12 @@
 # command-centre — Living Handover Document
 
+## Addendum -- 24 Sep 2026 (Codex): 3-row card action grid
+
+- Moved the card drawer chevron into the third row of the single two-column action grid. Rows are Archive/Restore + Delete, Email (or hidden placeholder) + Edit, then chevron (or hidden placeholder) + a reserved hidden placeholder for the future Tracker jump-link icon.
+- Retained 26px buttons, 6px gaps, existing labels/ARIA/handlers, the title's flexible width and the under-600px right-aligned action-row rule.
+- Checks passed: `node --check js/app.js`; `node tests/tier_order_test.js`; `node tests/staleness_parity_test.js`; `git diff --check`.
+- Exact next action: none -- requested scope is committed locally only; no push or deployment.
+
 ## Addendum -- 24 Sep 2026 (Drew): tracker-identical drag + persisted within-tier order + 2x2 card icons DEPLOYED LIVE, verified
 
 Kevin approved build + deploy (24 Sep, via Jacob). Codex (default account) built `311e3c5` + review fixes `8628461`; Drew reviewed, browser-tested, merged PR #17 (`bf410ff`). cc.lelitte.co.uk auto-deployed.

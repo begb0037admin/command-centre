@@ -475,6 +475,7 @@ function cardHTML(t){
 
   var hasDrawer=!!(t.description||(t.actions&&t.actions.length));
   var chevron=hasDrawer?'<button class="card-icon drawer-chevron" aria-label="'+(isExpanded(t.id)?'Collapse':'Expand')+'" aria-expanded="'+(isExpanded(t.id)?'true':'false')+'" aria-controls="drawer-'+t.id+'" title="'+(isExpanded(t.id)?'Collapse':'Expand')+'" onclick="toggleDrawer(\''+t.id+'\',event)">'+cardSvg(isExpanded(t.id)?'M6 9l6 6 6-6':'M9 6l6 6-6 6')+'</button>':'';
+  var emptyIcon='<span class="card-icon card-icon-placeholder" aria-hidden="true"></span>';
   return '<div class="task-card '+doneCls+'" id="card-'+t.id+'" data-id="'+t.id+'" data-tier="'+t.tier+'">'
     +'<div class="card-row">'
     +'<span class="card-drag" onclick="event.stopPropagation()">⠇</span>'
@@ -485,7 +486,7 @@ function cardHTML(t){
     +'</div>'
     +descPreview
     +'</div>'
-    +'<div class="card-actions">'+chevron+'<div class="card-action-grid">'+archiveIcon+deleteIcon+emailIcon+editIcon+'</div></div>'
+    +'<div class="card-actions"><div class="card-action-grid">'+archiveIcon+deleteIcon+emailIcon+editIcon+(chevron||emptyIcon)+emptyIcon+'</div></div>'
     +'</div>'
     +'<div class="task-drawer" id="drawer-'+t.id+'">'
     +desc
