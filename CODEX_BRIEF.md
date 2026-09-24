@@ -1,14 +1,27 @@
-# Codex brief — command-centre: 3-column x 2-row action grid (Kevin's final mock-up, 24 Sep)
+# Codex brief — command-centre: single section toggle (Kevin, 24 Sep)
 
-Branch `drew/cc-grid-row3` (HEAD `8716033`). Only touch `js/app.js`, `css/styles.css`,
-`HANDOVER.md`. Don't read/print `data/`, `Archive/`, `js/vendor/`, `cloudflare-worker/`. Work in
-C:/Users/admin/github/command-centre. Commit locally; no push.
+Branch `drew/section-toggle` off main. Work only in C:/Users/admin/github/command-centre. Only touch `index.html`, `js/app.js`, `css/styles.css`, `HANDOVER.md`. Don't read/print `data/`, `Archive/`, `js/vendor/`, `cloudflare-worker/`. Commit locally; no push; short final message.
 
-SUPERSEDES the 3-row layout in `8716033`. The action grid is 3 columns x 2 rows, 26px cells,
-same gap:
-- Row 1: › chevron | Archive (Restore on done cards) | Delete
-- Row 2: empty placeholder (reserved for a future Tracker jump-link icon) | Email (placeholder if
-  none) | Edit
-i.e. DOM order: chevron, archive, delete, placeholder, email, edit; `.card-action-grid`
-`grid-template-columns:repeat(3,26px)`. Title/meta keep all remaining width. Keep the <600px rule.
-Update the HANDOVER line. `node --check js/app.js`; both tests in `tests/`.
+Existing code: `toggleTierSection()`/`applyTierCollapse()`/`TIER_COLLAPSE_KEY` (section fold, header onclick + `.sec-chevron` ▾), and `toggleTierExpanded()`/`updateTierExpandButtons()` + the `.expand-tier-btn` buttons in index.html (bulk drawer expand — remove).
+
+## Kevin's rule (24 Sep, final): ONE section toggle per section — no bulk card expand
+Kevin: "I would expect it to expand the section and click it again to collapse the section... not
+expand the already opened tiles and show me the information. I can do that with whichever tile I
+want to read."
+- Replace the per-section "Expand all"/"Collapse all" (which bulk-opens card drawers) with a
+  SECTION toggle button in the section header. Label: **"Collapse"** when the section is open,
+  **"Expand"** when it is folded. Clicking folds/unfolds the whole section (all its cards hidden /
+  shown). Merge it with the existing section-fold mechanism (reuse the existing remembered
+  collapse state and storage key so Kevin's current folded/open choices carry over) so there is
+  ONE clear control per section: remove the separate small fold chevron/arrow glyph (or put the
+  glyph inside the same button, e.g. "Collapse ▾" / "Expand ▸"). Clicking the header row itself
+  may keep toggling the same state, but the button is the visible control and its label must
+  always match the state (after reload, drag, re-render, and header click).
+- When folded, keep the header showing the section name and its card count, so it's obvious the
+  section has hidden cards.
+- Remove the bulk card-drawer expand function and its button entirely. Each card's own › still
+  opens/closes that card's details, remembered per card as now.
+- Button: `type="button"`, `aria-expanded` true/false, `aria-controls` the section's list,
+  keyboard Enter/Space, `event.stopPropagation()` so it doesn't double-toggle with the header.
+
+Checks: `node --check js/app.js`; `node tests/tier_order_test.js`; `node tests/staleness_parity_test.js`. Top-of-HANDOVER entry.
