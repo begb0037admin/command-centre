@@ -1,5 +1,7 @@
 # command-centre — Living Handover Document
 
+- 25 Sep 2026 (Codex): added read-only Tracker jump icon in the reserved 3×2 row-2/col-1 slot, backed by tracker `/api/links`; one/multi-target navigation and existing folded-tier single-highlight arrival are covered by `tests/dashboard_links_test.js` and `tests/deep_link_highlight_test.js`. Backup/verify: `Archive/app_backup_20260925_1701.js` and `Archive/styles_backup_20260925_1701.css`, Contents API SHA-verified before source changes.
+
 - 24 Sep 2026 (Codex): tracker-style toggle labels (`Collapse ▾` / `Expand ▸`) with existing ARIA/behaviour retained; each tier count remains driven by the same rendered `items` collection; checks passed: syntax and both tests.
 ## Addendum -- 24 Sep 2026 ~20:20 (Drew): PR #20 LIVE -- toggle style like tracker (Collapse ▾ / Expand ▸), goToCard + #hash unfold folded tiers, openTaskEmail (openmail://) removed
 

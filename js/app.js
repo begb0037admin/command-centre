@@ -206,6 +206,40 @@ function orderTier(arr){
   });
   return ordered;
 }
+var ccLinkDocument={version:1,links:[]};
+async function loadDashboardLinks(){
+  try{
+    var response=await fetch('https://tracker.lelitte.co.uk/api/links?t='+Date.now(),{cache:'no-store'});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    var value=await response.json();
+    if(value&&Array.isArray(value.links))ccLinkDocument=value;
+  }catch(e){console.warn('Dashboard link map unavailable',e);}
+}
+function ccLinkDestinations(id){
+  var seen={};
+  return (ccLinkDocument.links||[]).filter(function(link){return link.status==='active'&&(link.ccTaskIds||[]).indexOf(id)>=0;}).map(function(link){
+    var target=link.trackerId;if(seen[target])return null;seen[target]=true;
+    return {url:'https://tracker.lelitte.co.uk/#'+encodeURIComponent(target),label:target};
+  }).filter(Boolean);
+}
+function ccCloseLinkPicker(){document.querySelectorAll('.dashboard-link-picker').forEach(function(picker){picker.remove();});}
+function ccOpenDashboardLinks(event,destinations){
+  event.stopPropagation();
+  if(destinations.length===1){window.open(destinations[0].url,'cc-tracker-task','noopener');return;}
+  ccCloseLinkPicker();
+  var picker=document.createElement('div');picker.className='dashboard-link-picker';picker.setAttribute('role','dialog');picker.setAttribute('aria-label','Choose Tracker link');
+  var heading=document.createElement('div');heading.className='dashboard-link-picker-title';heading.textContent='Choose Tracker';picker.append(heading);
+  destinations.forEach(function(destination){var button=document.createElement('button');button.type='button';button.textContent=destination.label;button.onclick=function(){window.open(destination.url,'cc-tracker-task','noopener');ccCloseLinkPicker();};picker.append(button);});
+  document.body.append(picker);var rect=event.currentTarget.getBoundingClientRect();picker.style.left=Math.min(rect.left,window.innerWidth-picker.offsetWidth-12)+'px';picker.style.top=(rect.bottom+6)+'px';
+}
+function decorateJumpLinks(){
+  document.querySelectorAll('.task-card[data-id]').forEach(function(card){
+    var grid=card.querySelector('.card-action-grid');if(!grid||grid.children.length<4||grid.querySelector('[data-dashboard-link="tracker"]'))return;
+    var destinations=ccLinkDestinations(card.dataset.id);if(!destinations.length)return;
+    var button=document.createElement('button');button.type='button';button.className='card-icon dashboard-link-icon';button.dataset.dashboardLink='tracker';button.textContent='T';button.title='Open in Tracker';button.setAttribute('aria-label','Open in Tracker');button.onclick=function(event){ccOpenDashboardLinks(event,destinations);};
+    grid.children[3].replaceWith(button);
+  });
+}
 function renderBoard(){
   if(boardDragging){deferredBoardRender=true;return;}
   if(window._ccSortables){window._ccSortables.forEach(function(s){s.destroy();});window._ccSortables=[];}
@@ -273,6 +307,7 @@ function renderBoard(){
   applyExpandedDrawers();
   initTierCollapse();
   initSortables();
+  decorateJumpLinks();
 }
 
 /* INTEL PANEL (Stage 2 — replaces stale banner) */
@@ -1109,7 +1144,7 @@ loadSidebarBriefing();
 loadSidebarAbsences();
 renderCustomLinks();
 initTierCollapse();
-loadTasks().then(function(){
+loadDashboardLinks().then(function(){ return loadTasks(); }).then(function(){
   var hash=window.location.hash.replace('#','');
   if(hash){
     setTimeout(function(){

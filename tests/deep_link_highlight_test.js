@@ -71,6 +71,7 @@ const window = { setTimeout() { return 1; } };
 const tasks = ids.map((id, index) => ({ id, tier: ['today', 'tomorrow', 'parked'][index] }));
 let expanded = [];
 const storage = {};
+const collapseState = {};
 const implementation = new Function(
   'document', 'window', 'tasks', 'getShowDone', 'getTierCollapseState',
   'setTierSectionCollapsed', 'renderBoard', 'storageGet', 'storageSet',
@@ -81,7 +82,7 @@ const implementation = new Function(
    ${['toggleDrawer', 'fadeDeepLink', 'clearJumpState', 'openDrawerForJump', 'goToCard'].map(extractFunction).join('\n')}
    return {goToCard,toggleDrawer};`
 )(
-  document, window, tasks, () => false, () => ({}), () => {}, () => {},
+  document, window, tasks, () => false, () => collapseState, (tier, collapsed) => { collapseState[tier] = collapsed; }, () => {},
   key => storage[key] || null, (key, value) => { storage[key] = value; },
   () => expanded, value => { expanded = value; }
 );
@@ -90,6 +91,11 @@ function activeCards() {
   return cards.filter(card => activeClasses.some(name => card.classList.contains(name)));
 }
 function assert(condition, message) { if (!condition) throw new Error(message); }
+
+collapseState.tomorrow = true;
+implementation.goToCard('tomorrow-card');
+assert(collapseState.tomorrow === false, 'folded tier was not unfolded on deep-link arrival');
+assert(activeCards().length === 1 && activeCards()[0].id === 'card-tomorrow-card', 'folded-tier jump did not leave one highlighted card');
 
 ids.forEach((id, index) => {
   implementation.goToCard(id);
