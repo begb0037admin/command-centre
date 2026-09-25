@@ -548,13 +548,15 @@
       "[17 Aug 2026] Kevin shared KPI presentation for July 2026 with Michael O'Sullivan, indicating he is working on tracking and reporting tasks. (email: Kevin (sent to: Michael O'Sullivan) - Kevin Lelitte shared \"KPI presentation - July 2026\" with you)",
       "[20 Aug 2026] Kevin declined the Cross-Team Process Improvement Working Group 1st meeting due to schedule conflict, but no new action is required from Kevin regarding the Development Insight reports actions task itself. (email: Kevin (sent to: Otter Ho) - Re: Cross-Team Process Improvement Working Group – 1st Meeting)",
       "[21 Aug 2026] Julie has circulated a Kudoboard for farewell messages for Beth; Kevin should add his message if not yet done. (email: Julie Hickman - RE: Farewell wishes and gift for Beth)",
-      "[21 Aug 2026] Merged duplicate task task-1785700344174 (\"Review outstanding Development Insight reports actions with Julie\", dateAdded 2026-08-02, byte-identical description) into this record. Duplicate removed from tasks.json; its two unique actions (Lindsey Spriggs CDR/PD reminder, KPI presentation share) consolidated above in date order. This record kept as base because it carried more actions, the most recent action (21 Aug vs 20 Aug), and the correctly-sourced originating email action; its entryId is also the target of an existing live work-inbox tick (eid_...7ADFE8F410000), which is preserved unchanged by keeping this record."
+      "[21 Aug 2026] Merged duplicate task task-1785700344174 (\"Review outstanding Development Insight reports actions with Julie\", dateAdded 2026-08-02, byte-identical description) into this record. Duplicate removed from tasks.json; its two unique actions (Lindsey Spriggs CDR/PD reminder, KPI presentation share) consolidated above in date order. This record kept as base because it carried more actions, the most recent action (21 Aug vs 20 Aug), and the correctly-sourced originating email action; its entryId is also the target of an existing live work-inbox tick (eid_...7ADFE8F410000), which is preserved unchanged by keeping this record.",
+      "[25 Sep 2026] Kevin confirmed with Asta Palmer that OSM Change is required and background information is needed for Development Insight reports. (email: Kevin (sent to: Asta Palmer) - My Development Insight reports)"
     ],
     "notes": "",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007ADFE8F410000",
     "dateAdded": "2026-08-02",
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAede4rEAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-    "tierRank": 15
+    "tierRank": 15,
+    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAfD6gc4AAA="
   },
   {
     "id": "t2608031500570",
@@ -1042,12 +1044,13 @@
       "[15 Sep 2026] Michael O'Sullivan submitted completed 2026 PDR form ahead of Friday 18 September review meeting with Kevin. (email: Kevin (sent to: Anna Gilbert) - RE: Trinity Term 2026 non-college changes)",
       "[15 Sep 2026] Michael O'Sullivan submitted completed 2026 PDR form ahead of Friday 18 September review meeting with Kevin. (email: Kevin (sent to: Nathan Kirwan) - Re: Notice of FA works required later in the year 18th of September)",
       "[21 Sep 2026] James Salas Guillen submitted his completed 2026 PDR form ahead of tomorrow's scheduled review meeting with Kevin. (email: Kevin (sent to: Marie Cooksey, Simon Burford) - Canceled: Busy)",
-      "[24 Sep 2026] Kevin sent PDR review calendar invite to James Salas Guillen for 1-1 session. (email: Kevin (sent to: James Salas Guillen) - James - H&S Catch-up)"
+      "[24 Sep 2026] Kevin sent PDR review calendar invite to James Salas Guillen for 1-1 session. (email: Kevin (sent to: James Salas Guillen) - James - H&S Catch-up)",
+      "[25 Sep 2026] Kevin submitted his completed 2026 PDR form to Simon Burford for review ahead of their scheduled meeting. (email: Kevin (sent to: Simon Burford) - Kevin - PDR Review)"
     ],
     "notes": "Tracker: https://unioxfordnexus.sharepoint.com/:x:/r/sites/HumanResources-HRSystems-HRSystemsManagementTeam/Shared%20Documents/HR%20Systems%20Management%20Team/HR%20Systems%20PDR%20Completion%202026.xlsx?d=w2e1b829d370d4c1f877cec77aec7bffb&csf=1&web=1&e=GoiKEZ",
     "dateAdded": "2026-08-25",
     "entryId": "",
-    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAfAAVH1AAA=",
+    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAfDbA-IAAA=",
     "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l3AACN%2B5xoUtxaQ7clOANLv%2FU1AAeyeYwqAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
     "tierRank": 4
   },
