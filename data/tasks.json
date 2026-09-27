@@ -1019,11 +1019,11 @@
     "description": "Sarah Rowles has sent data completeness analysis for the DWHS sickness absence dataset (OUTPUT_SicknessDataChecks_20260811.xlsx). Kevin needs to review the findings and discuss any data quality issues or follow-up actions required.",
     "origin": "inbox-auto",
     "actions": [
+      "[27 Sep 2026] Reopened during cross-board reconciliation: tracker trk_33ecb629 and linked Work Inbox cards still show unresolved data-review, FA-capacity, and second-batch file work; the prior done flag was inconsistent.",
       "[21 Aug 2026] Auto-created from inbox triage (email: Sarah Rowles - Sickness Absence Data Catch-up)."
     ],
     "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAeuly9VAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-    "tierRank": 5,
-    "done": true
+    "tierRank": 5
   },
   {
     "id": "task-1787645383808",
