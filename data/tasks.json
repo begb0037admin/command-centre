@@ -369,7 +369,8 @@
       "[01 Sep 2026] Sarah Johnson introduces Victoria Myatt from Cority as consultant for the Cority Consultancy project preparation. (email: Sarah Johnson - University of Oxford: Cority Consultancy)",
       "[14 Sep 2026] Simon Burford reported progress on Cority Applicant Data Import file; created test subscription report and exporting CSV file to network location for review. (email: Kevin (sent to: Marie Cooksey, Simon Burford, Athena Artuso, Sarah Rowles) - Canceled: Kevin A/L (pm))",
       "[15 Sep 2026] Simon Burford reports he has created test subscription report for Cority Applicant Data Import with CSV export to network location for review. (email: Kevin (sent to: Nathan Kirwan) - Re: Notice of FA works required later in the year 18th of September)",
-      "[15 Sep 2026] Simon Burford created test subscription report for Cority applicant data import with CSV export to network location. (email: Kevin (sent to: Marie Cooksey, Simon Burford) - Busy)"
+      "[15 Sep 2026] Simon Burford created test subscription report for Cority applicant data import with CSV export to network location. (email: Kevin (sent to: Marie Cooksey, Simon Burford) - Busy)",
+      "[28 Sept 2026] Kevin clarified that the applicant data merge process (run manually by James every Monday) is working separately; the remaining blocker is the applicant data upload report, which still requires quotation-mark handling and column-ordering adjustments before going live. James will document all manual processes ahead of the Tuesday 29 September handover."
     ],
     "dateAdded": "2026-08-11",
     "priority": "urgent",
