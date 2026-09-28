@@ -1164,26 +1164,6 @@
     "tierRank": 1
   },
   {
-    "id": "t2609020705201",
-    "title": "Investigate P5 Incident# 11706988 - Task# 50981420 assigned for investigation",
-    "tier": "today",
-    "source": "Inbox - Michael O'Sullivan, 2026-09-01 09:57",
-    "emailRef": "FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988",
-    "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B48EA9F80000",
-    "messageId": "CWXP265MB31284B4E3D7E2659EA06A5AD98A82@CWXP265MB3128.GBRP265.PROD.OUTLOOK.COM",
-    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe0jqmnAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-    "summary": "",
-    "description": "Michael O'Sullivan assigned this P5 incident directly to Kevin on 1 September for urgent investigation, affecting multiple users who reported the issue. Requires diagnostic and troubleshooting work to identify root cause and resolution path for the affected user group.",
-    "origin": "inbox-auto",
-    "actions": [
-      "[02 Sep 2026] Auto-created from inbox triage (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988).",
-      "[02 Sep 2026] Michael O'Sullivan assigns P5 Incident 11706988 directly to Kevin for investigation, affecting multiple users reporting the issue. (email: Michael O'Sullivan - FW: P5 Task assigned to your team - Task# 50981420 for Incident# 11706988)",
-      "[04 Sep 2026] Christopher Sanders forwards urgent P5 Support Call #11707051 / Incident #11706988 to Kevin's team for investigation; ticket now formally assigned for diagnostic work. (email: Christopher Sanders - FW: Assigned to your team - Support Call# 11707051 - URGENT - problems with Cority)",
-      "[05 Sep 2026] Gillian Wilson responded to urgent Cority support call #11707051 (Incident #11706988); team investigation ongoing. (email: DistroKid - Your requested updates have been cancelled)",
-      "[07 Sep 2026] Gillian Wilson responds to urgent Cority support call # 11707051 (Incident# 11706988); investigation underway. (email: Gillian Wilson - RE: Assigned to your team - Support Call# 11707051 - URGENT - problems with Cority)"
-    ]
-  },
-  {
     "id": "t2609041614070",
     "title": "Review and action Athena Artuso's annual leave requests",
     "tier": "today",
