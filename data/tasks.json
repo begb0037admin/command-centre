@@ -301,7 +301,8 @@
     "dateAdded": "2026-08-18",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B48F14860000",
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe6xa7qAAA=",
-    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe5EotMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe5EotMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 1
   },
   {
     "id": "task-1787044968753",
@@ -343,7 +344,8 @@
     ],
     "dateAdded": "2026-06-25",
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAfCx5v7AAA=",
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6xYVQAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6xYVQAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 3
   },
   {
     "id": "t2608111331410",
@@ -376,7 +378,8 @@
     "priority": "urgent",
     "notes": "Retrieval + full-unpack + priority-escalation task only (Drew) -- no reply drafted or sent (Lauren is handling any draft separately, per Kevin's instruction). Existing auto-created task updated in place per Kevin's explicit instruction, not duplicated. Screenshot attachment in message [2] contains real applicant PII -- opened and viewed, deliberately not reproduced verbatim in this record.",
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe8zFsYAAA=",
-    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6H%2F92AAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6H%2F92AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 2
   },
   {
     "id": "t1781099896490",
@@ -1181,7 +1184,8 @@
       "[05 Sep 2026] Athena Artuso submitted second annual leave request; both requests from emails 10 and 11 require Kevin's review and approval. (email: Simon Burford - RE: #External# Re: University of Oxford: FP 68261303 - Multi Company Setup)",
       "[07 Sep 2026] Athena Artuso submitted first annual leave request (summer 2027) on 4 September; unread and awaiting Kevin's approval or response. (email: Athena Artuso - Athena A/L (summer 2027))"
     ],
-    "done": true
+    "done": true,
+    "tierRank": 5
   },
   {
     "id": "t2609051524490",
@@ -1200,7 +1204,8 @@
       "[07 Sep 2026] Error log file received for Cority Employee Import failure on 2026-09-04 17:00; investigation required to determine if import completed successfully or requires re-run. (email: Cority_Integration_Platform_Notifications@Cority.com - [ERROR] Cority Employee Import Log File for OxfordUniversity - 2026-09-04 17:00)",
       "[08 Sep 2026] Cority employee import error from 4 September 2026 at 17:00 requires investigation; log file review and root cause analysis needed. (email: Kevin (sent to: Julie Hickman <julie.hickman@admin.ox.ac.uk>) - GLAM – Ashmolean Visitor Experience / Incident 11688462)"
     ],
-    "done": true
+    "done": true,
+    "tierRank": 6
   },
   {
     "id": "t2609082321250",
@@ -1221,7 +1226,8 @@
       "[15 Sep 2026] Christopher Sanders provided detailed IRIS Changes project plan for September 2026; Kevin must review and confirm HR Systems readiness. (email: Kevin (sent to: Simon Burford, Marie Cooksey) - Ultrasound hospital appt)",
       "[15 Sep 2026] Christopher forwards IRIS supervisor notification content and asks Kevin to check GDPR implications with Brian. (email: Kevin (sent to: Julie Hickman) - Re: 38 day balance for departments - Chemistry timeframe)",
       "[28 Sept 2026] IRIS/IEX Incidents Changes implementation scheduled for 15 October 2026 during working hours (starting 9am); review meeting confirmed for 22 October 2026 at 11am with Amanda Bracks (EcoOnline), James Salas, Christopher Sanders, and Joanne Grant. Kevin to ensure HR Systems readiness and confirm any dependencies ahead of implementation."
-    ]
+    ],
+    "tierRank": 4
   },
   {
     "id": "t2609141647411",
