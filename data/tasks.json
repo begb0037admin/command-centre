@@ -329,7 +329,7 @@
   {
     "id": "t035",
     "title": "WFM / GLAM Rostering -- set up resolution meeting",
-    "tier": "today",
+    "tier": "tomorrow",
     "source": "HR Systems Managers Meeting 24/06",
     "emailRef": "",
     "summary": "GLAM pulled out at last minute. Three waves outstanding (SBS, PEDS, GLAM). Blocking Sarah's UC dashboards. Set up meeting: Kevin, Simon, Marie, Michelle, Julie.",
@@ -616,7 +616,8 @@
       "[18 Sep 2026] Kevin confirms agreement with 28 September implementation date given tight 3-day window before Amanda's return. (email: Kevin (sent to: Christopher Sanders, James Salas Guillen) - Re: IRIS / IEX - Incidents Changes)"
     ],
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe96npcAAA=",
-    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe8y99RAAA%3D&exvsurl=1&viewmodel=ReadMessageItem"
+    "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe8y99RAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "tierRank": 2
   },
   {
     "id": "t2608071801051",
@@ -1186,7 +1187,7 @@
       "[07 Sep 2026] Athena Artuso submitted first annual leave request (summer 2027) on 4 September; unread and awaiting Kevin's approval or response. (email: Athena Artuso - Athena A/L (summer 2027))"
     ],
     "done": true,
-    "tierRank": 3
+    "tierRank": 2
   },
   {
     "id": "t2609051524490",
@@ -1206,7 +1207,7 @@
       "[08 Sep 2026] Cority employee import error from 4 September 2026 at 17:00 requires investigation; log file review and root cause analysis needed. (email: Kevin (sent to: Julie Hickman <julie.hickman@admin.ox.ac.uk>) - GLAM – Ashmolean Visitor Experience / Incident 11688462)"
     ],
     "done": true,
-    "tierRank": 4
+    "tierRank": 3
   },
   {
     "id": "t2609082321250",
