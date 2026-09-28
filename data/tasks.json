@@ -302,7 +302,7 @@
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97700008DFB9C6852DC5A43B72538034BBFF5350007B48F14860000",
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe6xa7qAAA=",
     "webLink": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe5EotMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-    "tierRank": 1
+    "tierRank": 4
   },
   {
     "id": "task-1787044968753",
@@ -345,7 +345,7 @@
     "dateAdded": "2026-06-25",
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAfCx5v7AAA=",
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6xYVQAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-    "tierRank": 3
+    "tierRank": 2
   },
   {
     "id": "t2608111331410",
@@ -379,7 +379,7 @@
     "notes": "Retrieval + full-unpack + priority-escalation task only (Drew) -- no reply drafted or sent (Lauren is handling any draft separately, per Kevin's instruction). Existing auto-created task updated in place per Kevin's explicit instruction, not duplicated. Screenshot attachment in message [2] contains real applicant PII -- opened and viewed, deliberately not reproduced verbatim in this record.",
     "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAe8zFsYAAA=",
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6H%2F92AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-    "tierRank": 2
+    "tierRank": 1
   },
   {
     "id": "t1781099896490",
@@ -1227,7 +1227,7 @@
       "[15 Sep 2026] Christopher forwards IRIS supervisor notification content and asks Kevin to check GDPR implications with Brian. (email: Kevin (sent to: Julie Hickman) - Re: 38 day balance for departments - Chemistry timeframe)",
       "[28 Sept 2026] IRIS/IEX Incidents Changes implementation scheduled for 15 October 2026 during working hours (starting 9am); review meeting confirmed for 22 October 2026 at 11am with Amanda Bracks (EcoOnline), James Salas, Christopher Sanders, and Joanne Grant. Kevin to ensure HR Systems readiness and confirm any dependencies ahead of implementation."
     ],
-    "tierRank": 4
+    "tierRank": 3
   },
   {
     "id": "t2609141647411",
