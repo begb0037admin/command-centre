@@ -306,7 +306,7 @@
   {
     "id": "task-1787044968753",
     "title": "Auto job-alert notification email -- text changes (Laura Porter)",
-    "tier": "today",
+    "tier": "parked",
     "source": "Laura Porter (Talent Mobility Specialist, People Dept) -- email thread",
     "emailRef": "Auto job alert notification email - text changes",
     "summary": "Approved wording changes to the auto job-alert vacancy notification email stuck on an Access Group config issue since Jul 2026; pending on Kevin checking the support ticket and sending Laura the sign-off screenshot, not on Laura or Access Group.",
