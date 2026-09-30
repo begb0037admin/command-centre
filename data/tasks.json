@@ -1,5 +1,21 @@
 [
   {
+    "id": "t2609301201001",
+    "title": "Ticket-queue handling while Asta (also referred to as 'Esther') is on leave",
+    "tier": "week",
+    "source": "FA Team Catch-up, 30 Sep 2026",
+    "emailRef": "",
+    "summary": "Decision made at the 30 Sep FA Team Catch-up: while Asta Palmer is on leave, incoming tickets stay in the main RSM queue rather than being assigned to her own queue, so others can pick them up. Asta's explicit preference, agreed by Michael and Kevin.",
+    "description": "Raised at the FA Team Catch-up (30 Sep 2026): Kevin asked whether, while Asta Palmer is on leave, incoming tickets should be assigned into her own queue so she can see clearly what's outstanding on her return. Asta's preference is to keep them in the main RSM queue instead, so someone else can action them while she's away rather than sitting untouched. Michael separately noted he does the same in reverse -- pulling self-service tickets out of the main queue when actively working them, but preferring the main queue as the default resting place otherwise.",
+    "actions": [
+      "[30 Sep 2026] Decision made and agreed: tickets stay in the main RSM queue during Asta's leave, not routed to her personal queue."
+    ],
+    "notes": "Owner: Kevin/Asta. Team-process decision, not an open action.",
+    "dateAdded": "2026-09-30",
+    "done": true,
+    "tierRank": 0
+  },
+  {
     "id": "t002",
     "title": "Smart notes escalation -- Cority ticket 00476764",
     "tier": "week",
