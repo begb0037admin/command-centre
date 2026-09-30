@@ -1063,21 +1063,19 @@
   },
   {
     "id": "task-1787652746064",
-    "title": "Sickness Absence Data & Survey working group — WFM/SBS 'second batch' ownership (Smith's School, Geography)",
+    "title": "Check project folders for unhanded-over WFM/SBS 'second batch' sickness data files (Smith's School, Geography)",
     "tier": "week",
-    "source": "Sickness Absence Data Catch-up, 21 Aug 2026 Granola meeting; corrected 30 Sep 2026 FA Team Catch-up",
+    "source": "Sickness Absence Data Catch-up, 21 Aug 2026 Granola meeting",
     "emailRef": "",
-    "summary": "Part of the Sickness Absence Data & Survey working group. WFM/SBS 'second batch' file question for Smith's School/Geography resolved as to ownership: Michael never held the original department data; the second uplift was worked by Mel and Tracy, now handed to Simon. Kevin to relay to Simon -- no longer a 'check project folders' task.",
-    "description": "Raised in the Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting): a 'second batch' of WFM/SBS sickness data files was never confirmed handed over for Smith's School and Geography. Open since the 11 Aug 2026 working group and not picked up until Kevin flagged it as a miss on 25 Aug 2026. CORRECTED 30 Sep 2026 (FA Team Catch-up with Michael O'Sullivan): Michael never had the original department source data -- he only ever received an already-processed upload file from 'the project' and did the first upload from that alone. The SECOND uplift/batch was worked on by Melanie (Mel) and Tracy, who have since handed their work to Simon. If data is genuinely missing, it sits with Mel/Tracy's handover to Simon, not in any project folder Kevin has access to. The earlier 'check project folders' instruction was the wrong lead and is superseded.",
+    "summary": "Kevin to check project folders for the WFM/SBS 'second batch' sickness data files that were never handed over -- start with Smith's School and Geography. Open since the 11 Aug working group, no hard date.",
+    "description": "Raised in the Sickness Absence Data Catch-up (21 Aug 2026 Granola meeting): a 'second batch' of WFM/SBS sickness data files was never handed over/actioned. This has been open since the 11 Aug 2026 working group and had not been picked up until Kevin flagged it as a miss on 25 Aug 2026. No hard deadline currently attached -- Kevin needs to check project folders for these files, starting with Smith's School and Geography, to establish what is actually still outstanding.",
     "actions": [
       "[11 Aug 2026] Working group flagged an unhanded-over WFM/SBS 'second batch' of sickness data files -- never actioned since.",
       "[25 Aug 2026] Kevin flagged this as a miss from the original write-up. Added to command-centre.",
-      "[SUPERSEDED] Kevin to check project folders for the WFM/SBS second-batch sickness data files -- wrong lead, see 30 Sep correction.",
-      "[26 Aug 2026] Julie Hickman is on annual leave from 21 August, returning Wednesday 2 September; any urgent sickness absence data queries should be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)",
-      "[30 Sep 2026] FA Team Catch-up with Michael O'Sullivan: Michael never had original department data, only did the first upload from an already-processed file from 'the project'. Second uplift/batch was Mel and Tracy's, now handed to Simon.",
-      "[TODO] Kevin to relay this ownership correction to Simon directly and confirm whether Smith's School/Geography data is actually covered in the Mel/Tracy handover."
+      "[TODO] Kevin to check project folders for the WFM/SBS second-batch sickness data files, starting with Smith's School and Geography.",
+      "[26 Aug 2026] Julie Hickman is on annual leave from 21 August, returning Wednesday 2 September; any urgent sickness absence data queries should be redirected. (email: Julie Hickman - Automatic reply: Sickness absence survey — BA resource requirement and timelines)"
     ],
-    "notes": "Owner: Kevin. Parent item: Sickness Absence Data & Survey working group. No hard date currently -- due this week per Kevin's flag.",
+    "notes": "Owner: Kevin. No hard date currently -- due this week per Kevin's flag.",
     "dateAdded": "2026-08-25",
     "entryId": "0000000060196AC9D4535F45A195B2716E93E76B0700FA1BE8B83D691D48B2219F82D0D3C4FB000000C7C97500008DFB9C6852DC5A43B72538034BBFF5350007B13CC2E90000",
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAexPMLpAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
