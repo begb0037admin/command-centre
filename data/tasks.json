@@ -1264,5 +1264,21 @@
     "web_link": "https://outlook.office365.com/owa/?ItemID=AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk%2BdrBwD6G%2Bi4PWkdSLIhn4LQ08T7AAAAx8l1AACN%2B5xoUtxaQ7clOANLv%2FU1AAe6xYVYAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
     "tierRank": 3,
     "done": true
+  },
+  {
+    "id": "t2610091605090",
+    "title": "Ask Access Group for RoD form copy for Marie",
+    "tier": "week",
+    "source": "Inbox - Kevin (sent to: Marie Cooksey), ",
+    "emailRef": "Re: PSL Application - People XD",
+    "entryId": "",
+    "messageId": "AAMkADRkYzlmMjkxLTIyY2QtNDZlZS04ZmYzLTE2ZTUzZGM0YzhmNwBGAAAAAABgGWrJ1FNfRaGVsnFuk_drBwD6G_i4PWkdSLIhn4LQ08T7AAAAx8l3AACN_5xoUtxaQ7clOANLv-U1AAfNQvIFAAA=",
+    "webLink": "",
+    "summary": "",
+    "description": "Marie Cooksey needs a copy of the RoD form for the PSL Application in PeopleXD. Kevin cannot export it from PeopleXD and told Marie he will ask Access Group for a copy, then share it with her.",
+    "origin": "inbox-auto",
+    "actions": [
+      "[09 Oct 2026] Auto-created from inbox triage (email: Kevin (sent to: Marie Cooksey) - Re: PSL Application - People XD)."
+    ]
   }
 ]
